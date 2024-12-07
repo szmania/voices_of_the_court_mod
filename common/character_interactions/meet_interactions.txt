@@ -1,0 +1,220 @@
+﻿
+
+
+
+ckms_meet_interaction = {
+	category = interaction_category_friendly
+	use_diplomatic_range = yes
+	ignores_pending_interaction_block = yes
+	interface_priority = 200
+	common_interaction = yes
+	desc = talk_interaction.desc
+
+
+	ai_will_do = {
+		base = 0
+	}
+
+	is_valid = {
+		OR = {
+			custom_description = {
+				text = not_in_same_province
+				scope:actor.location = scope:recipient.location
+				
+			}
+			scope:actor = {
+				is_available_adult = yes
+			}
+			
+		}
+	}
+	
+
+	
+	populate_recipient_list = {
+				scope:actor = {
+					every_pinned_character = {
+									limit = {
+										is_at_same_location = scope:actor
+										is_at_same_location = scope:recipient
+										NOT = { this = scope:recipient }
+									}
+									add_to_list = characters
+					}
+				}	
+	}				
+	on_accept = {
+	
+	#set meet_scene global var
+		if = {
+			limit = {
+				scope:meet_scene_throneroom = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_throneroom
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_garden = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_garden
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_bedchamber = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_bedchamber
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_dungeon = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_dungeon
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_feast = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_feast
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_armycamp = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_armycamp
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:meet_scene_hunt = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_hunt
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:meet_scene_alley = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_alley
+			}
+		}
+		
+		##
+		
+		if = {
+			limit = {
+				OR = {
+					scope:meet_scene_throneroom = yes
+					scope:meet_scene_garden = yes
+					scope:meet_scene_bedchamber = yes
+					scope:meet_scene_dungeon = yes
+					scope:meet_scene_feast = yes
+					scope:meet_scene_armycamp = yes
+					scope:meet_scene_hunt = yes
+					scope:meet_scene_alley = yes
+				}
+			}
+			scope:actor = { 
+				trigger_event = ckms_meet_event.9001
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					scope:talk_travel = yes
+				}
+				
+				scope:actor = {
+					start_travel_plan = {
+					destination = scope:recipient.location
+					on_arrival_event = ckms_meet_event.1001
+					}
+				}
+				
+			}
+			
+		}
+		
+		
+	}
+	
+	send_option = {
+		is_shown = { can_meet_in_bedchamber = yes }
+		flag = meet_scene_bedchamber
+		localization = meet_scene_bedchamber_string
+	}
+	
+	send_option = {
+		is_shown = { can_meet_in_throneroom = yes }
+		flag = meet_scene_throneroom
+		localization = meet_scene_throneroom_string
+	}
+	
+	send_option = {
+		is_shown = { can_meet_in_garden = yes }
+		flag = meet_scene_garden
+		localization = meet_scene_garden_string
+	}
+		
+	
+	send_option = {
+		is_shown = { can_meet_in_dungeon = yes }
+		flag = meet_scene_dungeon
+		localization = meet_scene_dungeon_string
+	}
+	
+	send_option = {
+		is_shown = { can_meet_in_feast = yes }
+		flag = meet_scene_feast
+		localization = meet_scene_feast_string
+	}
+	
+	send_option = {
+		is_shown = { can_meet_in_armycamp = yes }
+		flag = meet_scene_armycamp
+		localization = meet_scene_armycamp_string
+	}
+	
+	send_option = {
+		is_shown = { can_meet_in_hunt = yes }
+		flag = meet_scene_hunt
+		localization = meet_scene_hunt_string
+	}
+	
+	send_option = {
+		is_shown = { can_meet_in_alley = yes }
+		flag = meet_scene_alley
+		localization = meet_scene_alley_string
+	}
+	
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor.location = scope:recipient.location }
+		}
+		flag = talk_travel
+	}			
+	auto_accept = yes
+	
+}

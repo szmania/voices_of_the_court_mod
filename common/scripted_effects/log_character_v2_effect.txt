@@ -1,9 +1,11 @@
-﻿log_character = {
+﻿log_character_v2 = {
 	debug_log = log_character
 
 	log_relations = yes
 	
 	log_opinion_breakdown = yes
+
+	log_new_relations = yes
 
 	log_personality_traits = yes
 
@@ -15,6 +17,43 @@
 log_relations = {
 	debug_log = "VOTC:IN/;/relations/;/[THIS.Char.GetID]/;/STARTMULTILINE#[THIS.Char.GetRelationToStringExtended(GetPlayer)]#ENDMULTILINE/;/"
 }
+
+log_new_relations = {
+	save_scope_as = mcc_tmp_char
+	scope:actor = {
+		every_pinned_character = {
+			if {
+				limit = {
+					is_at_same_location = scope:actor
+					NOT = { this = scope:curr_char }
+				}
+				scope:mcc_tmp_char = {
+					debug_log = "VOTC:IN/;/new_relations/;/[THIS.Char.GetID]/;/[PREV.Char.GetID]/;/STARTMULTILINE#[THIS.Char.GetRelationToStringExtended(PREV.Char.Self)]#ENDMULTILINE/;/"
+				}
+			}
+		}
+	}	
+	## debug_log = "VOTC:IN/;/new_relations/;/[THIS.Char.GetID]/;/STARTMULTILINE#[THIS.Char.GetRelationToStringExtended(GetPlayer)]#ENDMULTILINE/;/"
+}
+
+log_opinions = {
+	save_scope_as = mcc_tmp_char
+	scope:actor = {
+		every_pinned_character = {
+			if {
+				limit = {
+					is_at_same_location = scope:actor
+					NOT = { this = scope:curr_char }
+				}
+				scope:mcc_tmp_char = {
+					debug_log = "VOTC:IN/;/opinions/;/[THIS.Char.GetID]/;/[PREV.Char.GetID]/;/[THIS.Char.GetOpinionOf(PREV.Char.Self)]/;/"
+				}
+			}
+		}
+	}	
+	## debug_log = "VOTC:IN/;/new_relations/;/[THIS.Char.GetID]/;/STARTMULTILINE#[THIS.Char.GetRelationToStringExtended(GetPlayer)]#ENDMULTILINE/;/"
+}
+
 
 log_opinion_breakdown = {
 	debug_log = "VOTC:IN/;/opinionBreakdown/;/[THIS.Char.GetID]/;/STARTMULTILINE#[THIS.Char.GetOpinionBreakdownText(GetPlayer)]#ENDMULTILINE/;/"

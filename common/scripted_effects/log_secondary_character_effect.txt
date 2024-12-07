@@ -1,5 +1,5 @@
-﻿log_character = {
-	debug_log = log_character
+﻿log_secondary_character = {
+	debug_log = log_secondary_character
 
 	log_relations = yes
 	
