@@ -22,10 +22,10 @@ log_new_relations = {
 	save_scope_as = mcc_tmp_char
 	scope:actor = {
 		every_pinned_character = {
-			if {
+			if = {
 				limit = {
 					is_at_same_location = scope:actor
-					NOT = { this = scope:curr_char }
+					NOT = { this = scope:mcc_tmp_char }
 				}
 				scope:mcc_tmp_char = {
 					debug_log = "VOTC:IN/;/new_relations/;/[THIS.Char.GetID]/;/[PREV.Char.GetID]/;/STARTMULTILINE#[THIS.Char.GetRelationToStringExtended(PREV.Char.Self)]#ENDMULTILINE/;/"
@@ -40,10 +40,10 @@ log_opinions = {
 	save_scope_as = mcc_tmp_char
 	scope:actor = {
 		every_pinned_character = {
-			if {
+			if = {
 				limit = {
 					is_at_same_location = scope:actor
-					NOT = { this = scope:curr_char }
+					NOT = { this = scope:mcc_tmp_char }
 				}
 				scope:mcc_tmp_char = {
 					debug_log = "VOTC:IN/;/opinions/;/[THIS.Char.GetID]/;/[PREV.Char.GetID]/;/[THIS.Char.GetOpinionOf(PREV.Char.Self)]/;/"
