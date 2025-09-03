@@ -1,0 +1,184 @@
+﻿namespace = ckms_meet_event
+
+## 
+##9000 - 9999 hidden events
+
+#Travel arrival event
+ckms_meet_event.1001 = {
+	type = character_event
+	theme = faith
+	title = talk_event.1001.title
+	desc = talk_event.1001.desc
+	left_portrait = {
+		character = scope:recipient
+	}
+	right_portrait = {
+		character = scope:secondary_recipient
+	}
+
+	
+	option ={
+		name = talk_scene_throneroom_string
+		
+		trigger = {can_meet_in_throneroom = yes}
+		
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_throneroom
+		}
+		
+		trigger_event = ckms_meet_event.9001	
+	}
+	
+	option ={
+		name = talk_scene_garden_string
+		
+		
+		trigger = {can_meet_in_garden = yes}
+		
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_garden
+		}
+		trigger_event = ckms_meet_event.9001
+	}
+	
+	option ={
+		name = talk_scene_bedchamber_string
+		trigger = {can_meet_in_bedchamber = yes}
+		
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_bedchamber
+		}
+		
+		
+		trigger_event = ckms_meet_event.9001
+	}	
+	
+	option ={
+		name = talk_scene_harem_string
+		trigger = {can_meet_in_harem = yes}
+		
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_harem
+		}
+		
+		
+		trigger_event = ckms_meet_event.9001
+	}
+	
+	option ={
+		name = talk_scene_dungeon_string
+		
+		trigger = {can_meet_in_dungeon = yes}
+		
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_dungeon
+		}
+		trigger_event = ckms_meet_event.9001
+	}
+	
+	option ={
+		name = talk_scene_feast_string
+		
+		trigger = {can_meet_in_feast = yes}
+		
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_feast
+		}
+		trigger_event = ckms_meet_event.9001
+	}
+	
+	option ={
+		name = talk_event.1001.exit
+	}
+}
+
+
+#hidden Event fired when initating conversation with someone. 
+#The only reason this exist is to open the 'event_window_widget_talk' gui event widget, so we can copy the data to the clipboard using the EventWindowData.CopyToClipboard guifunction.
+ckms_meet_event.9001 = {
+	type = character_event
+	title = "aha"
+	window = fullscreen_event
+	theme = clipboard_transfer_event_theme
+	desc = talk_event.9001.desc
+	
+	immediate = {		 								
+			set_global_variable = {
+				name = talk_first_scope
+				value = scope:actor
+			}
+			set_global_variable = {
+				name = talk_second_scope
+				value = scope:recipient
+			}			
+			set_global_variable = {
+				name = talk_third_scope
+				value = scope:secondary_recipient
+			}
+			
+			
+		
+			scope:recipient = {
+				log_meet_gamedata = {}
+			}
+		
+			scope:secondary_recipient = {
+				log_meet_gamedata = {}
+			}
+		
+		
+		
+	}
+	
+	#this widget is what calls the EventWindowData.CopyToClipboard guifunction, 
+	widget = {
+		gui = "event_window_widget_meet"
+        container = "custom_widgets_container"
+    }
+	
+
+	#option ={
+	#	name = "debug"
+	#}
+}
+
+#close talk window
+ckms_meet_event.9002 = {
+	type = character_event
+	title = "aha"
+	window = fullscreen_event
+	theme = clipboard_transfer_event_theme
+	desc = talk_event.9002.desc
+	
+	widget = {
+        gui = "event_window_widget_meet_close"
+        container = "custom_widgets_container"
+    }
+	
+	immediate = {
+		remove_global_variable = talk_pose
+	}
+}
+
+## action event
+ckms_meet_event.9003 = {
+	type = character_event
+	title = "aha"
+	window = fullscreen_event
+	theme = clipboard_transfer_event_theme
+	desc = talk_event.9003.desc
+	
+	widget = {
+        gui = "event_window_widget_meet_clear"
+        container = "custom_widgets_container"
+    }
+	
+
+}
+

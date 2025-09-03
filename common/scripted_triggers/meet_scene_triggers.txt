@@ -1,0 +1,199 @@
+﻿#these triggers check if the player can meet with the character in the given scenes. they are used in the character interaction, and in the travel arrival event.
+
+can_meet_in_throneroom = {
+	AND = {
+		OR = {
+			scope:actor = {is_landless_ruler = no}
+			OR = {
+				scope:recipient = { is_courtier_of = scope:actor.location.province_owner }
+				scope:recipient = scope:actor.location.province_owner						
+			}
+			OR = {
+				scope:secondary_recipient ?= { is_courtier_of = scope:actor.location.province_owner }											
+				scope:secondary_recipient ?= scope:actor.location.province_owner					
+			}			
+		}
+		scope:actor.location = scope:recipient.location		
+#		scope:recipient.location = scope:secondary_recipient.location			
+		scope:actor = { is_imprisoned = no }
+		scope:recipient = { is_imprisoned = no }
+		scope:secondary_recipient ?= { is_imprisoned = no }
+		
+	}
+}
+
+can_meet_in_garden = {
+	AND = {
+		OR = {
+			scope:actor = { is_landless_ruler = no }
+			OR = {
+				scope:recipient = { is_courtier_of = scope:actor.location.province_owner }
+				scope:recipient = scope:actor.location.province_owner						
+			}
+			OR = {
+				scope:secondary_recipient ?= { is_courtier_of = scope:actor.location.province_owner }											
+				scope:secondary_recipient ?= scope:actor.location.province_owner					
+			}			
+		}	
+		scope:actor.location = scope:recipient.location			
+		scope:actor = { is_imprisoned = no }
+		scope:recipient = { is_imprisoned = no }
+		scope:secondary_recipient ?= { is_imprisoned = no }
+				
+	}
+}
+
+can_meet_in_bedchamber = {		
+			scope:actor.location = scope:recipient.location
+			
+			scope:actor = { is_imprisoned = no }
+			scope:recipient = { is_imprisoned = no }	
+			scope:secondary_recipient ?= { is_imprisoned = no }
+			OR = {
+				scope:recipient = {
+							OR = {
+								has_court_position = str_slave_concubine_court_position 
+								is_consort_of = scope:actor
+								is_close_family_of = scope:actor
+							}
+				}
+				scope:secondary_recipient ?= {
+							OR = {
+								has_court_position = str_slave_concubine_court_position 
+								is_consort_of = scope:actor
+							}
+				}
+				scope:actor = {
+						OR = {
+							is_consort_of = scope:recipient
+							has_relation_slave_owner = scope:recipient
+							has_relation_lover = scope:recipient
+							is_consort_of = scope:secondary_recipient
+							has_relation_slave_owner = scope:secondary_recipient
+							has_relation_lover = scope:secondary_recipient
+
+							
+						}	
+				}
+			}	
+}
+
+can_meet_in_harem = {		
+			scope:actor.location = scope:recipient.location
+			
+			scope:actor = { is_imprisoned = no }
+			scope:recipient = { is_imprisoned = no }	
+			scope:secondary_recipient ?= { is_imprisoned = no }
+			OR = {
+				scope:recipient = {
+							OR = {
+								has_court_position = str_slave_concubine_court_position
+								has_court_position = chief_eunuch_court_position 
+								is_consort_of = scope:actor
+							}
+				}
+				scope:secondary_recipient ?= {
+							OR = {
+								has_court_position = str_slave_concubine_court_position
+								has_court_position = chief_eunuch_court_position
+								is_consort_of = scope:actor
+							}
+				}
+				scope:actor = {
+						OR = {
+							is_consort_of = scope:recipient
+							has_relation_slave_owner = scope:recipient
+							has_relation_lover = scope:recipient
+							is_consort_of = scope:secondary_recipient
+							has_relation_slave_owner = scope:secondary_recipient
+							has_relation_lover = scope:secondary_recipient
+
+							
+						}	
+				}
+			}	
+}
+
+can_meet_in_dungeon = {
+	AND = {
+		scope:actor.location = scope:recipient.location					
+		OR = {
+			scope:actor = { is_imprisoned = yes }
+			scope:recipient = { is_imprisoned = yes }
+			scope:secondary_recipient ?= { is_imprisoned = yes }
+		}
+			
+	}
+}
+
+#not how to do it correctly but whatever
+can_meet_in_feast = {
+	AND = {
+		scope:actor.location = scope:recipient.location					
+		scope:actor = {
+			involved_activity ?= { has_activity_type = activity_feast }
+			location ?= involved_activity.activity_location
+		}
+		scope:recipient = {
+				involved_activity ?= { has_activity_type = activity_feast }
+				location ?= involved_activity.activity_location
+		}
+		scope:secondary_recipient ?= {
+				involved_activity ?= { has_activity_type = activity_feast }
+				location ?= involved_activity.activity_location
+		}					
+	}
+}
+
+can_meet_in_armycamp = {	
+	AND = {	
+
+		scope:actor.location = scope:recipient.location
+		OR = {
+			scope:actor = {
+					is_in_army = yes
+			}
+			scope:recipient = {
+					is_in_army = yes
+			}
+			scope:actor = {	
+					is_landless_ruler = yes
+			}
+			scope:secondary_recipient ?= {
+					is_in_army = yes
+			}
+		}	
+	
+	}
+}
+
+can_meet_in_hunt = {
+	AND = {
+	
+		scope:actor.location = scope:recipient.location				
+		scope:actor = {
+			involved_activity ?= { has_activity_type = activity_hunt }
+			location ?= involved_activity.activity_location
+		}
+		scope:recipient = {
+				involved_activity ?= { has_activity_type = activity_hunt }
+				location ?= involved_activity.activity_location
+		}
+		scope:secondary_recipient ?= {
+				involved_activity ?= { has_activity_type = activity_hunt }
+				location ?= involved_activity.activity_location
+		}
+	}	
+	
+}
+
+can_meet_in_alley = {
+	AND = {	
+		scope:actor.location = scope:recipient.location		
+		scope:actor = { is_imprisoned = no }
+		scope:recipient = { is_imprisoned = no }
+		scope:secondary_recipient ?= { is_imprisoned = no }
+			
+	}
+}
+

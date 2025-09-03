@@ -1,0 +1,72 @@
+﻿
+
+# Called from code once every three years for "playable" (count+) characters.
+# Root is the character
+three_year_playable_pulse = {
+					on_actions = {
+							votc_three_year_playable_pulse
+					}
+}
+votc_three_year_playable_pulse = {
+					effect = {
+					
+					
+					
+					}
+					events = {
+
+					}					
+}
+
+
+votc_ai_initiates_talk = {		
+
+	events = {
+		talk_event.9004
+	
+	}
+}			
+
+
+seduce_success = {
+	on_actions = {
+			votc_seduce_succes
+	}		
+}
+
+votc_seduce_succes = {
+	effect = {
+		if = {
+			limit = {
+				any_pinned_character = {
+						has_character_flag = report_requested		
+				}
+			}
+			add_character_flag = { flag = seduce_scheme_succes days = 180 }
+			trigger_event = talk_event.9004
+		}	
+	}	
+}
+
+
+
+
+seduce_failure = {
+		on_actions = {
+			votc_seduce_failure
+	}
+}
+
+votc_seduce_failure = {
+		effect = {
+			if = {
+				limit = {
+					any_pinned_character = {
+							has_character_flag = report_requested		
+					}
+				}
+				add_character_flag = { flag = seduce_scheme_failure days = 180 }
+				trigger_event = talk_event.9004
+		}
+	}
+}		
