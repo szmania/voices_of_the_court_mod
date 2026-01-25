@@ -1,0 +1,160 @@
+﻿l_simp_chinese:
+
+talk_interaction:0 "谈话"
+talk_interaction.desc:0 "开启一个谈话"
+
+talk_herhim:0 "[recipient.GetHerHim]"
+
+#在此段注释的下方添加_代码块17
+#代码块17示例
+#talk_scene_"scene_name"_string:0 "在scene_name见面"
+#meet_scene_"scene_name"_string:0 "在scene_name见面"
+
+talk_scene_market_east_string:0 "在市场见面"
+meet_scene_market_east_string:0 "在市场见面"
+
+talk_scene_market_string:0 "在市场见面"
+meet_scene_market_string:0 "在市场见面"
+
+talk_scene_tavern_string:0 "在酒馆见面"
+meet_scene_tavern_string:0 "在酒馆见面"
+
+talk_scene_tavern_east_string:0 "在酒馆见面"
+meet_scene_tavern_east_string:0 "在酒馆见面"
+
+talk_scene_iron_throne_string:0 "在铁王座见面"
+meet_scene_iron_throne_string:0 "在铁王座见面"
+
+talk_scene_lingyinsi_string:0 "在灵隐寺见面"
+meet_scene_lingyinsi_string:0 "在灵隐寺见面"
+
+talk_scene_throneroom_japan_string:0 "在平安宫见面"
+meet_scene_throneroom_japan_string:0 "在平安宫见面"
+
+talk_scene_shaolinsi_string:0 "在少林寺见面"
+meet_scene_shaolinsi_string:0 "在少林寺见面"
+
+talk_scene_wudangshandaoguan_string:0 "在武当山道观见面"
+meet_scene_wudangshandaoguan_string:0 "在武当山道观见面"
+
+talk_scene_leshandafou_string:0 "在乐山大佛见面"
+meet_scene_leshandafou_string:0 "在乐山大佛见面"
+
+talk_scene_taishan_string:0 "在泰山见面"
+meet_scene_taishan_string:0 "在泰山见面"
+
+talk_scene_wulingyuan_string:0 "在武陵源见面"
+meet_scene_wulingyuan_string:0 "在武陵源见面"
+
+talk_scene_kaifenghuangcheng_string:0 "在开封皇城见面"
+meet_scene_kaifenghuangcheng_string:0 "在开封皇城见面"
+
+talk_scene_tengwangge_string:0 "在滕王阁见面"
+meet_scene_tengwangge_string:0 "在滕王阁见面"
+
+meet_scene_yueyanglou_string:0 "在岳阳楼见面"
+meet_scene_huanghelou_string:0 "在黄鹤楼见面"
+meet_scene_yungangshiku_string:0 "在云冈石窟见面"
+meet_scene_bedchamber_east1_string:0 "在卧室见面"
+meet_scene_garden_east1_string:0 "在御花园见面"
+meet_scene_throneroom_east_fuya1_string:0 "在府衙接见"
+meet_scene_throneroom_east_fuya_string:0 "在府衙拜见"
+meet_scene_throneroom_east_empire_string:0 "在皇宫觐见"
+meet_scene_throneroom_east_empire1_string:0 "在皇宫召见"
+meet_scene_throneroom_string:0 "在王座厅见面"
+meet_scene_garden_string:0 "在花园见面"
+meet_scene_bedchamber_string:0 "在卧室见面"
+meet_scene_dungeon_string:0 "在地牢见面"
+meet_scene_feast_string:0 "在宴会中见面"
+meet_scene_armycamp_string:0 "在军营中见面"
+meet_scene_hunt_string:0 "在狩猎中见面"
+meet_scene_alley_string:0 "在镇胡同见面"
+
+talk_scene_yueyanglou_string:0 "在岳阳楼见面"
+talk_scene_huanghelou_string:0 "在黄鹤楼见面"
+talk_scene_yungangshiku_string:0 "在云冈石窟见面"
+talk_scene_bedchamber_east1_string:0 "在卧室见面"
+talk_scene_garden_east1_string:0 "在御花园见面"
+talk_scene_throneroom_east_fuya1_string:0 "在府衙接见"
+talk_scene_throneroom_east_fuya_string:0 "在府衙拜见"
+talk_scene_throneroom_east_empire_string:0 "在皇宫觐见"
+talk_scene_throneroom_east_empire1_string:0 "在皇宫召见"
+talk_scene_throneroom_string:0 "在王座厅见面"
+talk_scene_garden_string:0 "在花园见面"
+talk_scene_bedchamber_string:0 "在卧室见面"
+talk_scene_dungeon_string:0 "在地牢见面"
+talk_scene_feast_string:0 "在宴会中见面"
+talk_scene_armycamp_string:0 "在军营中见面"
+talk_scene_hunt_string:0 "在狩猎中见面"
+talk_scene_alley_string:0 "在镇胡同见面"
+talk_travel:0 "旅行"
+
+talk_event.1001.title:0 "到达"
+talk_event.1001.desc:0 "您终于到达[actor.GetCurrentLocation.GetName] 与 [recipient.GetTitledFirstName] 会面。现在的问题是，我们应该在哪里与$talk_herhim$会面?"
+talk_event.1001.exit:0 "我不想和$talk_herhim$谈话."
+
+talk_window_end:0 "结束对话"
+
+conversation_opinion:0 "近期对话"
+
+not_in_same_province:0 "我们不在同一个省"
+
+mcc_interaction:0 "多人谈话"
+ckms_meet_interaction:0 "三人谈话"
+ckms_meet_interaction.desc:0 "与 [recipient.GetShortUINameNoTooltip] 和另一方（需要先钉选）发起对话"
+recipient_secondary_ckms_meet_interaction:0 "第二受邀者"
+mcc_interaction.desc:0 "与所有在同一地点的钉选角色发起对话"
+
+invite_to_talk_interaction:0 "邀请来谈话"
+invite_to_talk_interaction.desc:0 "邀请 [recipient.GetTitledFirstName] 来谈话"
+invite_to_talk_event.1003.desc:0 "[actor.GetCurrentLocation.GetName] 终于来见你了。现在的问题是，你想在哪里见$talk_herhim$?"
+i_said_we_will_meet:0 "你应该服从我!"
+
+decision_group_type_votc_group_type:0 "会议"
+votc_family_decision:0 "家族会议"
+votc_family_decision_tooltip:0 "家族会议"  # 从决策列表中选中决策时显示的提示文本。
+votc_family_decision_desc:0 "召开一场家族会议，所有与你在同一地点的家族成员都会参加"
+votc_family_decision_confirm:0 "召开家族会议"
+votc_family_decision_effect:0 "你将召开一场家族会议"
+famliy_member_too_much:0 "同一地点的家族成员过少或过多（小于2或大于20）"
+
+votc_cabinet_decision_tooltip:0 "内阁会议" 
+votc_cabinet_decision_desc:0 "召开一场内阁会议，所有与你在同一地点的内阁成员都会参加"
+votc_cabinet_decision_confirm:0 "召开内阁会议"
+votc_cabinet_decision_effect:0 "你将召开一场内阁会议"
+not_enough_cabinet_member:0 "需要至少2个内阁成员与你在同一地点"
+votc_chinese_empire_cabinet_decision_desc:0 "你将召开一场中枢会议"
+votc_cabinet_decision:0 "内阁会议"
+
+votc_relaese_letter_decision:0 "VOTC释放信件线程"
+votc_relaese_letter_decision_desc:0 "释放当前等待回复的信件线程"
+votc_relaese_letter_decision_tooltip:0 "释放信件线程"
+votc_relaese_letter_decision_confirm:0 "释放信件线程"
+votc_relaese_letter_decision_effect_desc:0 "你将释放当前等待回复的信件线程，这个操作让你可以无视信件进程计数，很大可能会导致之前还未收到的回信被覆盖。如果你在未开启后端程序的情况下使用了写信功能，建议手动进行一次这个操作！"
+
+message_interaction.desc:0 "写一封信"
+message_interaction:0 "写信"
+votc_message_title:0 "写信给 [recipient.GetShortUINamePossessive]"
+votc_message_desc:0 " "
+votc_message_tooltip:0 "如果消息显示不全，可以查看对应的信件宝物。"
+message_text:0 "VOTC:LETTER/;/中文/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/"
+send_message:0 "发送"
+
+#每个信件线程对应的标题
+votc_huixin_title1:0 "[GetGlobalVariable('message_second_scope_letter_1').Char.GetTitledFirstName]的回信"
+votc_huixin_title2:0 "[GetGlobalVariable('message_second_scope_letter_2').Char.GetTitledFirstName]的回信"
+votc_huixin_title3:0 "[GetGlobalVariable('message_second_scope_letter_3').Char.GetTitledFirstName]的回信"
+votc_huixin_title4:0 "[GetGlobalVariable('message_second_scope_letter_4').Char.GetTitledFirstName]的回信"
+votc_huixin_title5:0 "[GetGlobalVariable('message_second_scope_letter_5').Char.GetTitledFirstName]的回信"
+votc_huixin_title6:0 "[GetGlobalVariable('message_second_scope_letter_6').Char.GetTitledFirstName]的回信"
+votc_huixin_title7:0 "[GetGlobalVariable('message_second_scope_letter_7').Char.GetTitledFirstName]的回信"
+votc_huixin_title8:0 "[GetGlobalVariable('message_second_scope_letter_8').Char.GetTitledFirstName]的回信"
+votc_huixin_title9:0 "[GetGlobalVariable('message_second_scope_letter_9').Char.GetTitledFirstName]的回信"
+
+
+
+
+votc_letter_full:0 "信件线程已满(9/9)"
+
+event_window_widget_message_write_prompt:0 "输入信件内容"
+

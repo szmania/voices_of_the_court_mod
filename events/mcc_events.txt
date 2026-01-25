@@ -1,4 +1,4 @@
-﻿
+
 namespace = mcc_event
 
 ## EVENTS BELOW ARE NEW ONES FOR MULTICHAR CONVOS
@@ -12,6 +12,291 @@ mcc_event.1001 = {
 	desc = mcc_event.1001.desc
 	left_portrait = {
 		character = scope:recipient
+	}
+	
+	#在此段注释的下方添加_代码块12
+	#代码块12示例
+	#option ={
+	#	name = talk_scene_"sence_name"_string
+	#	trigger = {can_talk_in_"sence_name" = yes}
+	#		set_global_variable = {
+	#			name = talk_scene
+	#			value = flag:talk_scene_"sence_name"
+	#		}
+	#	trigger_event = talk_event.9001
+	#}
+
+	#在中国市场
+	option ={
+		name = talk_scene_market_east_string
+		trigger = {can_talk_in_market_east = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_market_east
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在market
+	option ={
+		name = talk_scene_market_string
+		trigger = {can_talk_in_market = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_market
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在酒馆
+	option ={
+		name = talk_scene_tavern_string
+		trigger = {can_talk_in_tavern = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_tavern
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在tavern_east
+	option ={
+		name = talk_scene_tavern_east_string
+		trigger = {can_talk_in_tavern_east = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_tavern_east
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在铁王座
+	option ={
+		name = talk_scene_iron_throne_string
+		trigger = {can_talk_in_iron_throne = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_iron_throne
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在灵隐寺
+	option ={
+		name = talk_scene_lingyinsi_string
+		trigger = {can_talk_in_lingyinsi = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_lingyinsi
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在日本皇宫
+	option ={
+		name = talk_scene_throneroom_japan_string
+		trigger = {can_talk_in_throneroom_japan = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_throneroom_japan
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在少林寺
+	option ={
+		name = talk_scene_shaolinsi_string
+		trigger = {can_talk_in_shaolinsi = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_shaolinsi
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在武当山道观
+	option ={
+		name = talk_scene_wudangshandaoguan_string
+		trigger = {can_talk_in_wudangshandaoguan = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_wudangshandaoguan
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在乐山大佛
+	option ={
+		name = talk_scene_leshandafou_string
+		trigger = {can_talk_in_leshandafou = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_leshandafou
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在泰山
+	option ={
+		name = talk_scene_taishan_string
+		trigger = {can_talk_in_taishan = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_taishan
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在武陵源
+	option ={
+		name = talk_scene_wulingyuan_string
+		trigger = {can_talk_in_wulingyuan = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_wulingyuan
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在开封皇城
+	option ={
+		name = talk_scene_kaifenghuangcheng_string
+		trigger = {can_talk_in_kaifenghuangcheng = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_kaifenghuangcheng
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在滕王阁
+	option ={
+		name = talk_scene_tengwangge_string
+		trigger = {can_talk_in_tengwangge = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_tengwangge
+			}
+		trigger_event = talk_event.9001
+	}	
+
+	#在岳阳楼
+	option ={
+		name = talk_scene_yueyanglou_string
+		trigger = {can_talk_in_yueyanglou = yes}
+		
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_yueyanglou
+			}
+		trigger_event = talk_event.9001
+	}
+
+
+	#在黄鹤楼
+	option ={
+		name = talk_scene_huanghelou_string
+		trigger = {can_talk_in_huanghelou = yes}
+	
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_huanghelou
+			}
+		trigger_event = talk_event.9001
+	}	
+	
+	#在云冈石窟
+	option ={
+		name = talk_scene_yungangshiku_string
+		trigger = {can_talk_in_yungangshiku = yes}
+	
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_yungangshiku
+			}
+		trigger_event = talk_event.9001
+	}	
+	
+	#在卧室
+	option ={
+		name = talk_scene_bedchamber_east1_string
+		trigger = {can_talk_in_bedchamber_east1 = yes}
+		
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_bedchamber_east1
+			}
+		trigger_event = talk_event.9001
+	}	
+	
+	#在御花园见面	
+	option ={
+		name = talk_scene_garden_east1_string
+		
+		
+		trigger = {can_talk_in_garden_east1 = yes}
+		
+		set_global_variable = {
+			name = talk_scene
+			value = flag:talk_scene_garden_east1
+		}
+		trigger_event = talk_event.9001
+	}
+	
+	#在府衙接见
+	option ={
+		name = talk_scene_throneroom_east_fuya1_string
+		
+		trigger = {can_talk_in_throneroom_east_fuya1 = yes}
+		
+		set_global_variable = {
+			name = talk_scene
+			value = flag:talk_scene_throneroom_east_fuya1
+		}
+		
+		trigger_event = talk_event.9001	
+	}
+
+	#在府衙见面
+	option ={
+		name = talk_scene_throneroom_east_fuya_string
+		
+		trigger = {can_talk_in_throneroom_east_fuya = yes}
+		
+		set_global_variable = {
+			name = talk_scene
+			value = flag:talk_scene_throneroom_east_fuya
+		}
+		
+		trigger_event = talk_event.9001	
+	}
+
+	#在皇宫召见
+	option ={
+		name = talk_scene_throneroom_east_empire1_string
+		
+		trigger = {can_talk_in_throneroom_east_empire1 = yes}
+		
+		set_global_variable = {
+			name = talk_scene
+			value = flag:talk_scene_throneroom_east_empire1
+		}
+		
+		trigger_event = talk_event.9001	
+	}
+
+	#在皇宫觐见
+	option ={
+		name = talk_scene_throneroom_east_empire_string
+		
+		trigger = {can_talk_in_throneroom_east_empire = yes}
+		
+		set_global_variable = {
+			name = talk_scene
+			value = flag:talk_scene_throneroom_east_empire
+		}
+		
+		trigger_event = talk_event.9001	
 	}
 	
 	option ={
@@ -52,20 +337,6 @@ mcc_event.1001 = {
 		
 		trigger_event = mcc_event.9001
 	}	
-	
-	option ={
-		name = talk_scene_harem_string
-		trigger = {can_talk_in_harem = yes}
-		
-		set_global_variable = {
-			name = meet_scene
-			value = flag:talk_scene_harem
-		}
-		
-		
-		trigger_event = mcc_event.9001
-	}
-	
 	
 	option ={
 		name = talk_scene_dungeon_string
@@ -118,11 +389,6 @@ mcc_event.9001 = {
 			value = scope:recipient
 		}
 		
-		set_global_variable = {
-			name = talk_third_scope
-			value = scope:secondary_recipient
-		}
-		
 		scope:recipient = {
 			log_gamedata_v2 = {}
 		}
@@ -141,6 +407,8 @@ mcc_event.9001 = {
 	#}
 }
 
+
+
 #close talk window
 mcc_event.9002 = {
 	type = character_event
@@ -156,6 +424,7 @@ mcc_event.9002 = {
 	
 	immediate = {
 		remove_global_variable = talk_pose
+		remove_global_variable = meet_scene
 	}
 }
 

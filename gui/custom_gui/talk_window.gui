@@ -1,4 +1,4 @@
-window = {
+﻿window = {
 	name = "talk_window"
 	size = { 100% 100% }
 	parentanchor = center
@@ -31,10 +31,17 @@ window = {
 		position = { 0 0}
 		size = { 60 20 }
 		raw_text = "exit"
-		
-		onclick = "[ExecuteConsoleCommand('event talk_event.9002')]"		
+				
+		onclick = "[ExecuteConsoleCommand('event talk_event.9002')]"
 		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets talk_window talk_window_counter')]"		
 	}
+	
+	button_standard = {
+		position = { 200 400}
+		size = { 400 100 }
+		text = "DIALOG_FAILED_TO_OPEN"
+	}
+
 	
 	#close window
 	hbox = {

@@ -1,0 +1,151 @@
+﻿l_english:
+
+talk_interaction:0 "Talk"
+talk_interaction.desc:0 "Initiate a conversation"
+
+talk_herhim:0 "[recipient.GetHerHim]"
+
+talk_scene_market_east_string:0 "Meet at the market"
+meet_scene_market_east_string:0 "Meet at the market"
+
+talk_scene_market_string:0 "Meet at the market"
+meet_scene_market_string:0 "Meet at the market"
+
+talk_scene_tavern_string:0 "Meet at the tavern"
+meet_scene_tavern_string:0 "Meet at the tavern"
+
+talk_scene_tavern_east_string:0 "Meet at the tavern"
+meet_scene_tavern_east_string:0 "Meet at the tavern"
+
+talk_scene_iron_throne_string:0 "Meet at the Iron Throne"
+meet_scene_iron_throne_string:0 "Meet at the Iron Throne"
+
+talk_scene_lingyinsi_string:0 "Meet at Lingyin Temple"
+meet_scene_lingyinsi_string:0 "Meet at Lingyin Temple"
+
+talk_scene_throneroom_japan_string:0 "Meet at Heian Palace"
+meet_scene_throneroom_japan_string:0 "Meet at Heian Palace"
+
+talk_scene_shaolinsi_string:0 "Meet at Shaolin Temple"
+meet_scene_shaolinsi_string:0 "Meet at Shaolin Temple"
+
+talk_scene_wudangshandaoguan_string:0 "Meet at Wudang Mountain Temple"
+meet_scene_wudangshandaoguan_string:0 "Meet at Wudang Mountain Temple"
+
+talk_scene_leshandafou_string:0 "Meet at Leshan Giant Buddha"
+meet_scene_leshandafou_string:0 "Meet at Leshan Giant Buddha"
+
+talk_scene_taishan_string:0 "Meet at Mount Tai"
+meet_scene_taishan_string:0 "Meet at Mount Tai"
+
+talk_scene_wulingyuan_string:0 "Meet at Wulingyuan"
+meet_scene_wulingyuan_string:0 "Meet at Wulingyuan"
+
+talk_scene_kaifenghuangcheng_string:0 "Meet at Kaifeng Imperial Palace"
+meet_scene_kaifenghuangcheng_string:0 "Meet at Kaifeng Imperial Palace"
+
+talk_scene_tengwangge_string:0 "Meet at Tengwang Pavilion"
+meet_scene_tengwangge_string:0 "Meet at Tengwang Pavilion"
+
+meet_scene_yueyanglou_string:0 "Meet at Yueyang Tower"
+meet_scene_huanghelou_string:0 "Meet at Yellow Crane Tower"
+meet_scene_yungangshiku_string:0 "Meet at Yungang Grottoes"
+meet_scene_bedchamber_east1_string:0 "Meet in the bedchamber"
+meet_scene_garden_east1_string:0 "Meet in the Imperial Garden"
+meet_scene_throneroom_east_fuya1_string:0 "Receive at the yamen"
+meet_scene_throneroom_east_fuya_string:0 "Audience at the yamen"
+meet_scene_throneroom_east_empire_string:0 "Audience at the Imperial Palace"
+meet_scene_throneroom_east_empire1_string:0 "Summon at the Imperial Palace"
+meet_scene_throneroom_string:0 "Meet in the throneroom"
+meet_scene_garden_string:0 "Meet in the garden"
+meet_scene_bedchamber_string:0 "Meet in the bedchamber"
+meet_scene_dungeon_string:0 "Meet in the dungeon"
+meet_scene_feast_string:0 "Meet at the feast"
+meet_scene_armycamp_string:0 "Meet at the army camp"
+meet_scene_hunt_string:0 "Meet during the hunt"
+meet_scene_alley_string:0 "Meet in the town alley"
+
+talk_scene_yueyanglou_string:0 "Meet at Yueyang Tower"
+talk_scene_huanghelou_string:0 "Meet at Yellow Crane Tower"
+talk_scene_yungangshiku_string:0 "Meet at Yungang Grottoes"
+talk_scene_bedchamber_east1_string:0 "Meet in the bedchamber"
+talk_scene_garden_east1_string:0 "Meet in the Imperial Garden"
+talk_scene_throneroom_east_fuya1_string:0 "Receive at the yamen"
+talk_scene_throneroom_east_fuya_string:0 "Audience at the yamen"
+talk_scene_throneroom_east_empire_string:0 "Audience at the Imperial Palace"
+talk_scene_throneroom_east_empire1_string:0 "Summon at the Imperial Palace"
+
+talk_scene_throneroom_string:0 "Meet in the throneroom"
+talk_scene_garden_string:0 "Meet in the garden"
+talk_scene_bedchamber_string:0 "Meet in the bedchamber"
+talk_scene_dungeon_string:0 "Meetin the dungeon"
+talk_scene_feast_string:0 "Meet in the feast"
+talk_scene_armycamp_string:0 "Meet in the army camp"
+talk_scene_hunt_string:0 "Meet in the hunt"
+talk_scene_alley_string:0 "Meet in the town alley"
+talk_travel:0 "Travel"
+
+talk_event.1001.title:0 "Arrival"
+talk_event.1001.desc:0 "You finally arrived to [actor.GetCurrentLocation.GetName] to meet [recipient.GetTitledFirstName]. Now the question is, where should we meet $talk_herhim$?"
+talk_event.1001.exit:0 "Actually, I don't want to talk to $talk_herhim$."
+
+talk_window_end:0 "End conversation"
+
+conversation_opinion:0 "From conversations"
+
+not_in_same_province:0 "We are in the same province"
+
+meet_interaction: "Meet"
+meet_interaction.desc: "Initiate a conversation with [recipient.GetShortUINameNoTooltip] and one other party"
+secondary_recipient_meet: "secondary recipient"
+
+invite_to_talk_interaction:0 "Invite to talk"
+invite_to_talk_interaction.desc:0 "Invite [recipient.GetTitledFirstName] to a conversation"
+invite_to_talk_event.1003.desc:0 "[actor.GetCurrentLocation.GetName] finally arrived to meet you. Now the question is, where want you meet $talk_herhim$?"
+i_said_we_will_meet:0 "YOU SHALL OBEY ME!"
+
+
+decision_group_type_votc_group_type:0 "Meeting"
+votc_family_decision:0 "House Meeting"
+votc_family_decision_tooltip:0 "House Meeting" 
+votc_family_decision_desc:0 "Hold a house council; all dynasty members in the same location will attend"
+votc_family_decision_confirm:0 "Hold House Council"
+votc_family_decision_effect:0 "You will hold a house council"
+famliy_member_too_much:0 "Too many dynasty members (greater than 20)"
+
+votc_cabinet_decision_tooltip:0 "Council Meeting" 
+votc_cabinet_decision_desc:0 "Hold a council meeting; all council members in the same location will attend"
+votc_cabinet_decision_confirm:0 "Hold Council Meeting"
+votc_cabinet_decision_effect:0 "You will hold a council meeting"
+not_enough_cabinet_member:0 "At least 2 council members must be in the same location as you"
+votc_chinese_empire_cabinet_decision_desc:0 "You will hold a central council meeting"
+votc_cabinet_decision:0 "Council Meeting"
+
+votc_relaese_letter_decision:0 "VOTC Release Letter Thread"
+votc_relaese_letter_decision_desc:0 "Release the current letter thread awaiting a reply"
+votc_relaese_letter_decision_tooltip:0 "Release Letter Thread"
+votc_relaese_letter_decision_confirm:0 "Release Letter Thread"
+votc_relaese_letter_decision_effect_desc:0 "You will release the current letter thread awaiting a reply. This action allows you to bypass the letter process counter and will most likely overwrite any previous replies not yet received. If you used the letter-writing function without the backend program running, it is recommended to manually perform this operation once!"
+
+message_interaction.desc:0 "Write a Letter"
+message_interaction:0 "Write Letter"
+votc_message_title:0 "Write to [recipient.GetShortUINamePossessive]"
+votc_message_desc:0 " "
+votc_message_tooltip:0 "If the message is incomplete, check the corresponding letter artifact."
+message_text:0 "VOTC:LETTER/;/English/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/"
+send_message:0 "Send"
+
+# Titles for each letter thread
+votc_huixin_title1:0 "Reply from [GetGlobalVariable('message_second_scope_letter_1').Char.GetTitledFirstName]"
+votc_huixin_title2:0 "Reply from [GetGlobalVariable('message_second_scope_letter_2').Char.GetTitledFirstName]"
+votc_huixin_title3:0 "Reply from [GetGlobalVariable('message_second_scope_letter_3').Char.GetTitledFirstName]"
+votc_huixin_title4:0 "Reply from [GetGlobalVariable('message_second_scope_letter_4').Char.GetTitledFirstName]"
+votc_huixin_title5:0 "Reply from [GetGlobalVariable('message_second_scope_letter_5').Char.GetTitledFirstName]"
+votc_huixin_title6:0 "Reply from [GetGlobalVariable('message_second_scope_letter_6').Char.GetTitledFirstName]"
+votc_huixin_title7:0 "Reply from [GetGlobalVariable('message_second_scope_letter_7').Char.GetTitledFirstName]"
+votc_huixin_title8:0 "Reply from [GetGlobalVariable('message_second_scope_letter_8').Char.GetTitledFirstName]"
+votc_huixin_title9:0 "Reply from [GetGlobalVariable('message_second_scope_letter_9').Char.GetTitledFirstName]"
+
+votc_letter_full:0 "Letter thread full (9/9)"
+
+event_window_widget_message_write_prompt:0 "Enter letter content"

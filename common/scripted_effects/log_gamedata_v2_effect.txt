@@ -15,7 +15,7 @@ log_gamedata_v2 = {
 	
 	scope:actor = {
 		every_pinned_character = {
-			if = {
+			if {
 				limit = {
 					is_at_same_location = scope:actor
 					NOT = { scope:this = scope:recipient }

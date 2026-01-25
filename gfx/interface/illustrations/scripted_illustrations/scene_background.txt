@@ -1,12 +1,701 @@
-﻿#datacontext is the talking partner, use the 'talk_first_scope' global variable to scope the player
+#datacontext is the talking partner, use the 'talk_first_scope' global variable to scope the player
 talk_background = {
+	##########################################
+	#家族会议
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_family_meeting
+				global_var:meet_scene = flag:talk_scene_family_meeting
+			}
+		}
+		
+		reference = "scenes/frontend_west.dds"		
+	}
 	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_family_meeting
+				global_var:meet_scene = flag:talk_scene_family_meeting
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#家族会议 中国
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_family_meeting_east
+				global_var:meet_scene = flag:talk_scene_family_meeting_east
+			}
+		}
+		
+		reference = "scenes/family_meeting_east.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_family_meeting_east
+				global_var:meet_scene = flag:talk_scene_family_meeting_east
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#内阁会议
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_cabinet_meeting_chinese
+				global_var:meet_scene = flag:talk_scene_cabinet_meeting_chinese
+			}
+		}
+		
+		reference = "scenes/throneroom_east_fuya1.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_cabinet_meeting_chinese
+				global_var:meet_scene = flag:talk_scene_cabinet_meeting_chinese
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+	#内阁会议 中枢
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_cabinet_meeting_chinese_empire
+				global_var:meet_scene = flag:talk_scene_cabinet_meeting_chinese_empire
+			}
+		}
+		
+		reference = "scenes/tgp_frontend_celestial.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_cabinet_meeting_chinese_empire
+				global_var:meet_scene = flag:talk_scene_cabinet_meeting_chinese_empire
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+	#内阁会议 普通
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_cabinet_meeting
+				global_var:meet_scene = flag:talk_scene_cabinet_meeting
+			}
+		}
+		
+		reference = "scenes/frontend_west.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_cabinet_meeting
+				global_var:meet_scene = flag:talk_scene_cabinet_meeting
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+	##########################################
+
+
+#在此段注释的下方添加_代码块16
+#代码块16示例
+#	texture = {
+#		trigger = {		
+#			OR = {
+#				global_var:talk_scene = flag:talk_scene_"scene_name"
+#				global_var:meet_scene = flag:meet_scene_"scene_name"
+#			}
+#		}
+#		
+#		reference = "scenes/"scene_name".dds"		
+#	}
+#	
+#	environment = {
+#		trigger = {		
+#			OR = {
+#				global_var:talk_scene = flag:talk_scene_"scene_name"
+#				global_var:meet_scene = flag:meet_scene_"scene_name"
+#			}
+#		}
+#		
+#		reference = "environment_event_garden"		
+#	}
+
+	#在中国市场
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_market_east
+				global_var:meet_scene = flag:meet_scene_market_east
+			}
+		}
+		
+		reference = "scenes_Vanilla/market_east.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_market_east
+				global_var:meet_scene = flag:meet_scene_market_east
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在market
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_market
+				global_var:meet_scene = flag:meet_scene_market
+			}
+		}
+		
+		reference = "scenes_Vanilla/market_west.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_market
+				global_var:meet_scene = flag:meet_scene_market
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在酒馆
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tavern
+				global_var:meet_scene = flag:meet_scene_tavern
+			}
+		}
+		
+		reference = "scenes_Vanilla/tavern.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tavern
+				global_var:meet_scene = flag:meet_scene_tavern
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在tavern_east
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tavern_east
+				global_var:meet_scene = flag:meet_scene_tavern_east
+			}
+		}
+		
+		reference = "scenes_Vanilla/tgp_tavern_asia.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tavern_east
+				global_var:meet_scene = flag:meet_scene_tavern_east
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+	
+
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_iron_throne
+				global_var:meet_scene = flag:meet_scene_iron_throne
+			}
+		}
+		
+		reference = "scenes/iron_throne.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_iron_throne
+				global_var:meet_scene = flag:meet_scene_iron_throne
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+#				global_var:talk_scene = flag:talk_scene_"scene_name"
+#				global_var:meet_scene = flag:meet_scene_"scene_name"
+#			}
+#		}
+#		
+#		reference = "environment_event_garden"		
+#	}
+
+	#在灵隐寺见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_lingyinsi
+				global_var:meet_scene = flag:meet_scene_lingyinsi
+			}
+		}
+		
+		reference = "scenes/lingyinsi.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_lingyinsi
+				global_var:meet_scene = flag:meet_scene_lingyinsi
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在日本皇宫见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_japan
+				global_var:meet_scene = flag:meet_scene_throneroom_japan
+			}
+		}
+		
+		reference = "scenes/tgp_frontend_japan.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_japan
+				global_var:meet_scene = flag:meet_scene_throneroom_japan
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在少林寺见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_shaolinsi
+				global_var:meet_scene = flag:meet_scene_shaolinsi
+			}
+		}
+		
+		reference = "scenes/shaolinsi.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_shaolinsi
+				global_var:meet_scene = flag:meet_scene_shaolinsi
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在武当山道观见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_wudangshandaoguan
+				global_var:meet_scene = flag:meet_scene_wudangshandaoguan
+			}
+		}
+		
+		reference = "scenes/wudangshandaoguan.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_wudangshandaoguan
+				global_var:meet_scene = flag:meet_scene_wudangshandaoguan
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在乐山大佛见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_leshandafou
+				global_var:meet_scene = flag:meet_scene_leshandafou
+			}
+		}
+		
+		reference = "scenes/leshandafou.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_leshandafou
+				global_var:meet_scene = flag:meet_scene_leshandafou
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在泰山见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_taishan
+				global_var:meet_scene = flag:meet_scene_taishan
+			}
+		}
+		
+		reference = "scenes/taishan.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_taishan
+				global_var:meet_scene = flag:meet_scene_taishan
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在武陵源见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_wulingyuan
+				global_var:meet_scene = flag:meet_scene_wulingyuan
+			}
+		}
+		
+		reference = "scenes/wulingyuan.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_wulingyuan
+				global_var:meet_scene = flag:meet_scene_wulingyuan
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在开封皇城见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_kaifenghuangcheng
+				global_var:meet_scene = flag:meet_scene_kaifenghuangcheng
+			}
+		}
+		
+		reference = "scenes/kaifenghuangcheng.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_kaifenghuangcheng
+				global_var:meet_scene = flag:meet_scene_kaifenghuangcheng
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在滕王阁见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tengwangge
+				global_var:meet_scene = flag:meet_scene_tengwangge
+			}
+		}
+		
+		reference = "scenes/tengwangge.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tengwangge
+				global_var:meet_scene = flag:meet_scene_tengwangge
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在岳阳楼见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_yueyanglou
+				global_var:meet_scene = flag:meet_scene_yueyanglou
+			}
+		}
+		
+		reference = "scenes/yueyanglou.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_yueyanglou
+				global_var:meet_scene = flag:meet_scene_yueyanglou
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+	#在黄鹤楼见面	
+
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_huanghelou
+				global_var:meet_scene = flag:meet_scene_huanghelou
+			}
+		}
+		
+		reference = "scenes/huanghelou.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_huanghelou
+				global_var:meet_scene = flag:meet_scene_huanghelou
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+
+#在云冈石窟见面
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_yungangshiku
+				global_var:meet_scene = flag:meet_scene_yungangshiku
+			}
+		}
+		
+		reference = "scenes/yungangshiku.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_yungangshiku
+				global_var:meet_scene = flag:meet_scene_yungangshiku
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+	
+	#在卧室	
+
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber_east1
+				global_var:meet_scene = flag:meet_scene_bedchamber_east1
+			}
+		}
+		
+		reference = "scenes/bedchamber_east1.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber
+				global_var:meet_scene = flag:meet_scene_bedchamber
+			}
+		}
+		
+		reference = "environment_event_bedchamber"		
+	}
+	
+	##########################################
+	#在御花园见面
+
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_garden_east1
+				global_var:meet_scene = flag:meet_scene_garden_east1
+			}
+		}
+		
+		reference = "scenes/garden_east1.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_garden
+				global_var:meet_scene = flag:meet_scene_garden
+			}
+		}
+		
+		reference = "environment_event_garden"		
+	}
+	
+
+	##########################################
+	#在府衙接见
+
+	texture = {
+		trigger = {
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_east_fuya1
+				global_var:meet_scene = flag:meet_scene_throneroom_east_fuya1
+			}	
+		}
+		
+		reference = "scenes/throneroom_east_fuya1.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom
+				global_var:meet_scene = flag:meet_scene_throneroom
+			}
+		}
+		
+		reference = "environment_frontend_west_main"		
+	}
+	
+	##########################################
+	#在府衙见面
+
+	texture = {
+		trigger = {
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_east_fuya
+				global_var:meet_scene = flag:meet_scene_throneroom_east_fuya
+			}	
+		}
+		
+		reference = "scenes/throneroom_east_fuya.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom
+				global_var:meet_scene = flag:meet_scene_throneroom
+			}
+		}
+		
+		reference = "environment_frontend_west_main"		
+	}
+	
+	##########################################
+	#御座召见
+
+	texture = {
+		trigger = {
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_east_empire1
+				global_var:meet_scene = flag:meet_scene_throneroom_east_empire1
+			}	
+		}
+		
+		reference = "scenes/throneroom_east_empire1.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom
+				global_var:meet_scene = flag:meet_scene_throneroom
+			}
+		}
+		
+		reference = "environment_frontend_west_main"		
+	}
+	##########################################
+	#御座觐见
+
+	texture = {
+		trigger = {
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_east_empire
+				global_var:meet_scene = flag:meet_scene_throneroom_east_empire
+			}	
+		}
+		
+		reference = "scenes/tgp_frontend_celestial.dds"		
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom
+				global_var:meet_scene = flag:meet_scene_throneroom
+			}
+		}
+		
+		reference = "environment_frontend_west_main"		
+	}
 	##########################################
 	#throneroom
 
 	texture = {
-		trigger = {		
-			global_var:talk_scene = flag:talk_scene_throneroom
+		trigger = {
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom
+				global_var:meet_scene = flag:meet_scene_throneroom
+			}	
 		}
 		
 		reference = "scenes/throneroom_west.dds"		
@@ -14,7 +703,10 @@ talk_background = {
 	
 	environment = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_throneroom
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom
+				global_var:meet_scene = flag:meet_scene_throneroom
+			}
 		}
 		
 		reference = "environment_frontend_west_main"		
@@ -26,7 +718,10 @@ talk_background = {
 
 	texture = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_garden
+			OR = {
+				global_var:talk_scene = flag:talk_scene_garden
+				global_var:meet_scene = flag:meet_scene_garden
+			}
 		}
 		
 		reference = "scenes/garden.dds"		
@@ -34,7 +729,10 @@ talk_background = {
 	
 	environment = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_garden
+			OR = {
+				global_var:talk_scene = flag:talk_scene_garden
+				global_var:meet_scene = flag:meet_scene_garden
+			}
 		}
 		
 		reference = "environment_event_garden"		
@@ -45,7 +743,10 @@ talk_background = {
 
 	texture = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_bedchamber
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber
+				global_var:meet_scene = flag:meet_scene_bedchamber
+			}
 		}
 		
 		reference = "scenes/bedchamber.dds"		
@@ -53,7 +754,10 @@ talk_background = {
 	
 	environment = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_bedchamber
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber
+				global_var:meet_scene = flag:meet_scene_bedchamber
+			}
 		}
 		
 		reference = "environment_event_bedchamber"		
@@ -64,7 +768,10 @@ talk_background = {
 	
 	texture = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_dungeon
+			OR = {
+				global_var:talk_scene = flag:talk_scene_dungeon
+				global_var:meet_scene = flag:meet_scene_dungeon
+			}
 		}
 		
 		reference = "scenes/dungeon.dds"		
@@ -72,7 +779,10 @@ talk_background = {
 	
 	environment = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_dungeon
+			OR = {
+				global_var:talk_scene = flag:talk_scene_dungeon
+				global_var:meet_scene = flag:meet_scene_dungeon
+			}
 		}
 		
 		reference = "environment_event_dungeon"		
@@ -83,7 +793,10 @@ talk_background = {
 	
 	texture = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_feast
+			OR = {
+				global_var:talk_scene = flag:talk_scene_feast
+				global_var:meet_scene = flag:meet_scene_feast
+			}
 		}
 		
 		reference = "scenes/feast.dds"	
@@ -91,7 +804,10 @@ talk_background = {
 	
 	environment = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_feast
+			OR = {
+				global_var:talk_scene = flag:talk_scene_feast
+				global_var:meet_scene = flag:meet_scene_feast
+			}
 		}
 		
 		reference = "environment_event_feast"	
@@ -103,15 +819,21 @@ talk_background = {
 	
 	texture = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_armycamp
+			OR = {
+				global_var:talk_scene = flag:talk_scene_armycamp
+				global_var:meet_scene = flag:meet_scene_armycamp
+			}
 		}
 		
 		reference = "scenes/armycamp.dds"	
 	}
 	
-	texture = {
+	environment = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_armycamp
+			OR = {
+				global_var:talk_scene = flag:talk_scene_armycamp
+				global_var:meet_scene = flag:meet_scene_armycamp
+			}
 		}
 		
 		reference = "environment_event_genericcamp"	
@@ -122,15 +844,21 @@ talk_background = {
 	
 	texture = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_landlesscamp
+			OR = {
+				global_var:talk_scene = flag:talk_scene_landlesscamp
+				global_var:meet_scene = flag:meet_scene_landlesscamp
+			}
 		}
 		
 		reference = "scenes/camp.dds"	
 	}
 	
-	texture = {
+	environment = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_landlesscamp
+			OR = {
+				global_var:talk_scene = flag:talk_scene_landlesscamp
+				global_var:meet_scene = flag:meet_scene_landlesscamp
+			}
 		}
 		
 		reference = "environment_event_genericcamp"	
@@ -141,15 +869,21 @@ talk_background = {
 	
 	texture = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_hunt
+			OR = {
+				global_var:talk_scene = flag:talk_scene_hunt
+				global_var:meet_scene = flag:meet_scene_hunt
+			}
 		}
 		
 		reference = "scenes/hunt_foggy.dds"	
 	}
 	
-	texture = {
+	environment = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_hunt
+			OR = {
+				global_var:talk_scene = flag:talk_scene_hunt
+				global_var:meet_scene = flag:meet_scene_hunt
+			}
 		}
 		
 		reference = "environment_hunt_foggy_forest"	
@@ -160,7 +894,10 @@ talk_background = {
 	
 	texture = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_alley
+			OR = {
+				global_var:talk_scene = flag:talk_scene_alley
+				global_var:meet_scene = flag:meet_scene_alley
+			}
 		}
 		
 		reference = "scenes/alley.dds"	
@@ -168,7 +905,10 @@ talk_background = {
 	
 	environment = {
 		trigger = {		
-			global_var:talk_scene = flag:talk_scene_alley
+			OR = {
+				global_var:talk_scene = flag:talk_scene_alley
+				global_var:meet_scene = flag:meet_scene_alley
+			}
 		}
 		
 		reference = "environment_event_alley"	
