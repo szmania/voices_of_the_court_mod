@@ -95,6 +95,12 @@ conversation_opinion:0 "From conversations"
 
 not_in_same_province:0 "We are in the same province"
 
+mcc_interaction:0 "Multi-Character Conversation"
+ckms_meet_interaction:0 "Three-Way Conversation"
+ckms_meet_interaction.desc:0 "Initiate a conversation with [recipient.GetShortUINameNoTooltip] and another party (must be pinned first)"
+secondary_recipient_meet:0 "Secondary Recipient"
+mcc_interaction.desc:0 "Initiate a conversation with all pinned characters in the same location"
+
 meet_interaction:0 "Meet"
 meet_interaction.desc:0 "Initiate a conversation with [recipient.GetShortUINameNoTooltip] and one other party"
 
