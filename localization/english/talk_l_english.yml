@@ -95,9 +95,8 @@ conversation_opinion:0 "From conversations"
 
 not_in_same_province:0 "We are in the same province"
 
-meet_interaction: "Meet"
-meet_interaction.desc: "Initiate a conversation with [recipient.GetShortUINameNoTooltip] and one other party"
-secondary_recipient_meet: "secondary recipient"
+meet_interaction:0 "Meet"
+meet_interaction.desc:0 "Initiate a conversation with [recipient.GetShortUINameNoTooltip] and one other party"
 
 invite_to_talk_interaction:0 "Invite to talk"
 invite_to_talk_interaction.desc:0 "Invite [recipient.GetTitledFirstName] to a conversation"
