@@ -285,6 +285,16 @@ ckms_meet_interaction = {
 				value = flag:meet_scene_throneroom_east_empire
 			}
 		}	
+
+		if = {
+			limit = {
+				scope:meet_scene_harem = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_harem
+			}
+		}
 	
 	#set meet_scene global var
 		if = {
@@ -395,6 +405,7 @@ ckms_meet_interaction = {
 					scope:meet_scene_throneroom_east_empire1 = yes	
 					scope:meet_scene_throneroom_east_empire = yes	
 					#上方增加					
+					scope:meet_scene_harem = yes
 					scope:meet_scene_throneroom = yes
 					scope:meet_scene_garden = yes
 					scope:meet_scene_bedchamber = yes
@@ -586,6 +597,12 @@ ckms_meet_interaction = {
 		is_shown = {can_meet_in_yungangshiku = yes}
 		flag = meet_scene_yungangshiku
 		localization = meet_scene_yungangshiku_string
+	}
+	#在后宫
+	send_option = {
+		is_shown = {can_meet_in_harem = yes}
+		flag = meet_scene_harem
+		localization = meet_scene_harem_string
 	}
 
 	send_option = {

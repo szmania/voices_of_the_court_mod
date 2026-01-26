@@ -298,6 +298,19 @@ mcc_event.1001 = {
 		
 		trigger_event = talk_event.9001	
 	}
+
+	#在后宫
+	option ={
+		name = talk_scene_harem_string
+		trigger = {can_talk_in_harem = yes}
+		
+		set_global_variable = {
+			name = talk_scene
+			value = flag:talk_scene_harem
+		}
+		
+		trigger_event = talk_event.9001
+	}
 	
 	option ={
 		name = talk_scene_throneroom_string
@@ -387,6 +400,11 @@ mcc_event.9001 = {
 		set_global_variable = {
 			name = talk_second_scope
 			value = scope:recipient
+		}
+
+		set_global_variable = {
+			name = talk_third_scope
+			value = scope:secondary_recipient
 		}
 		
 		scope:recipient = {

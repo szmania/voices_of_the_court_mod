@@ -209,6 +209,27 @@ can_meet_in_huanghelou = {
 	}
 }
 
+#在后宫见面
+can_meet_in_harem = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = { is_imprisoned = no }
+		scope:recipient = { is_imprisoned = no }
+		scope:secondary_recipient ?= { is_imprisoned = no }
+		scope:actor.culture = {
+			NOT = { has_coa_gfx = chinese_group_coa_gfx }
+		}
+		OR = {
+			scope:actor = { has_court_position = str_slave_concubine_court_position }
+			scope:recipient = { has_court_position = str_slave_concubine_court_position }
+			scope:secondary_recipient ?= { has_court_position = str_slave_concubine_court_position }
+			scope:actor = { is_concubine_of = scope:recipient }
+			scope:recipient = { is_concubine_of = scope:actor }
+			scope:secondary_recipient ?= { is_concubine_of = scope:actor }
+		}
+	}
+}
+
 #在云冈石窟见面
 can_meet_in_yungangshiku = {
 	AND = {
@@ -395,6 +416,7 @@ can_meet_in_bedchamber = {
 			scope:recipient = { is_imprisoned = no }	
 			scope:secondary_recipient ?= { is_imprisoned = no }
 			OR = {
+				is_close_family_of = scope:actor
 				scope:recipient = {
 							OR = {
 								has_court_position = str_slave_concubine_court_position 
