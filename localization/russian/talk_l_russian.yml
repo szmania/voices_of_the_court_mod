@@ -1,0 +1,156 @@
+﻿l_russian:
+
+talk_interaction:0 "Поговорить"
+talk_interaction.desc:0 "Начать разговор"
+
+talk_herhim:0 "[recipient.GetHerHim]"
+
+talk_scene_market_east_string:0 "Встретиться на рынке"
+meet_scene_market_east_string:0 "Встретиться на рынке"
+
+talk_scene_market_string:0 "Встретиться на рынке"
+meet_scene_market_string:0 "Встретиться на рынке"
+
+talk_scene_tavern_string:0 "Встретиться в таверне"
+meet_scene_tavern_string:0 "Встретиться в таверне"
+
+talk_scene_tavern_east_string:0 "Встретиться в таверне"
+meet_scene_tavern_east_string:0 "Встретиться в таверне"
+
+talk_scene_iron_throne_string:0 "Встретиться у Железного трона"
+meet_scene_iron_throne_string:0 "Встретиться у Железного трона"
+
+talk_scene_lingyinsi_string:0 "Встретиться в храме Линьинь"
+meet_scene_lingyinsi_string:0 "Встретиться в храме Линьинь"
+
+talk_scene_throneroom_japan_string:0 "Встретиться во дворце Хэйан"
+meet_scene_throneroom_japan_string:0 "Встретиться во дворце Хэйан"
+
+talk_scene_shaolinsi_string:0 "Встретиться в храме Шаолинь"
+meet_scene_shaolinsi_string:0 "Встретиться в храме Шаолинь"
+
+talk_scene_wudangshandaoguan_string:0 "Встретиться в храме на горе Удан"
+meet_scene_wudangshandaoguan_string:0 "Встретиться в храме на горе Удан"
+
+talk_scene_leshandafou_string:0 "Встретиться у Большого Будды в Лэшане"
+meet_scene_leshandafou_string:0 "Встретиться у Большого Будды в Лэшане"
+
+talk_scene_taishan_string:0 "Встретиться на горе Тайшань"
+meet_scene_taishan_string:0 "Встретиться на горе Тайшань"
+
+talk_scene_wulingyuan_string:0 "Встретиться в Улинъюане"
+meet_scene_wulingyuan_string:0 "Встретиться в Улинъюане"
+
+talk_scene_kaifenghuangcheng_string:0 "Встретиться в императорском дворце Кайфэна"
+meet_scene_kaifenghuangcheng_string:0 "Встретиться в императорском дворце Кайфэна"
+
+talk_scene_tengwangge_string:0 "Встретиться в павильоне Тэнван"
+meet_scene_tengwangge_string:0 "Встретиться в павильоне Тэнван"
+
+meet_scene_yueyanglou_string:0 "Встретиться в башне Юэян"
+meet_scene_huanghelou_string:0 "Встретиться в башне Желтого журавля"
+meet_scene_yungangshiku_string:0 "Встретиться в гротах Юньган"
+meet_scene_bedchamber_east1_string:0 "Встретиться в опочивальне"
+meet_scene_garden_east1_string:0 "Встретиться в императорском саду"
+meet_scene_throneroom_east_fuya1_string:0 "Принять в ямэне"
+meet_scene_throneroom_east_fuya_string:0 "Аудиенция в ямэне"
+meet_scene_throneroom_east_empire_string:0 "Аудиенция в императорском дворце"
+meet_scene_throneroom_east_empire1_string:0 "Вызвать в императорский дворец"
+meet_scene_throneroom_string:0 "Встретиться в тронном зале"
+meet_scene_garden_string:0 "Встретиться в саду"
+meet_scene_bedchamber_string:0 "Встретиться в опочивальне"
+meet_scene_dungeon_string:0 "Встретиться в темнице"
+meet_scene_feast_string:0 "Встретиться на пиру"
+meet_scene_armycamp_string:0 "Встретиться в военном лагере"
+meet_scene_hunt_string:0 "Встретиться во время охоты"
+meet_scene_alley_string:0 "Встретиться в городском переулке"
+
+talk_scene_yueyanglou_string:0 "Встретиться в башне Юэян"
+talk_scene_huanghelou_string:0 "Встретиться в башне Желтого журавля"
+talk_scene_yungangshiku_string:0 "Встретиться в гротах Юньган"
+talk_scene_bedchamber_east1_string:0 "Встретиться в опочивальне"
+talk_scene_garden_east1_string:0 "Встретиться в императорском саду"
+talk_scene_throneroom_east_fuya1_string:0 "Принять в ямэне"
+talk_scene_throneroom_east_fuya_string:0 "Аудиенция в ямэне"
+talk_scene_throneroom_east_empire_string:0 "Аудиенция в императорском дворце"
+talk_scene_throneroom_east_empire1_string:0 "Вызвать в императорский дворец"
+
+talk_scene_throneroom_string:0 "Встретиться в тронном зале"
+talk_scene_garden_string:0 "Встретиться в саду"
+talk_scene_bedchamber_string:0 "Встретиться в опочивальне"
+talk_scene_dungeon_string:0 "Встретиться в темнице"
+talk_scene_feast_string:0 "Встретиться на пиру"
+talk_scene_armycamp_string:0 "Встретиться в военном лагере"
+talk_scene_hunt_string:0 "Встретиться на охоте"
+talk_scene_alley_string:0 "Встретиться в городском переулке"
+talk_travel:0 "Путешествие"
+
+talk_event.1001.title:0 "Прибытие"
+talk_event.1001.desc:0 "Вы наконец прибыли в [actor.GetCurrentLocation.GetName], чтобы встретиться с [recipient.GetTitledFirstName]. Теперь вопрос в том, где нам встретиться с $talk_herhim$?"
+talk_event.1001.exit:0 "На самом деле, я не хочу говорить с $talk_herhim$."
+
+talk_window_end:0 "Завершить разговор"
+
+conversation_opinion:0 "Из разговоров"
+
+not_in_same_province:0 "Мы находимся в одной провинции"
+
+mcc_interaction:0 "Разговор с несколькими персонажами"
+ckms_meet_interaction:0 "Разговор на троих"
+ckms_meet_interaction.desc:0 "Начать разговор с [recipient.GetShortUINameNoTooltip] и еще одной стороной (сначала нужно закрепить)"
+secondary_recipient_meet:0 "Второй получатель"
+mcc_interaction.desc:0 "Начать разговор со всеми закрепленными персонажами в той же локации"
+
+meet_interaction:0 "Встретиться"
+meet_interaction.desc:0 "Начать разговор с [recipient.GetShortUINameNoTooltip] и еще одной стороной"
+
+invite_to_talk_interaction:0 "Пригласить к разговору"
+invite_to_talk_interaction.desc:0 "Пригласить [recipient.GetTitledFirstName] к разговору"
+invite_to_talk_event.1003.desc:0 "[actor.GetCurrentLocation.GetName] наконец прибыл, чтобы встретиться с вами. Теперь вопрос в том, где вы хотите встретиться с $talk_herhim$?"
+i_said_we_will_meet:0 "ТЫ ДОЛЖЕН МНЕ ПОВИНОВАТЬСЯ!"
+
+
+decision_group_type_votc_group_type:0 "Встреча"
+votc_family_decision:0 "Семейный совет"
+votc_family_decision_tooltip:0 "Семейный совет" 
+votc_family_decision_desc:0 "Провести семейный совет; все члены династии в той же локации примут участие"
+votc_family_decision_confirm:0 "Провести семейный совет"
+votc_family_decision_effect:0 "Вы проведете семейный совет"
+famliy_member_too_much:0 "Слишком много членов династии (более 20)"
+
+votc_cabinet_decision_tooltip:0 "Заседание совета" 
+votc_cabinet_decision_desc:0 "Провести заседание совета; все члены совета в той же локации примут участие"
+votc_cabinet_decision_confirm:0 "Провести заседание совета"
+votc_cabinet_decision_effect:0 "Вы проведете заседание совета"
+not_enough_cabinet_member:0 "По крайней мере 2 члена совета должны находиться в той же локации, что и вы"
+votc_chinese_empire_cabinet_decision_desc:0 "Вы проведете заседание центрального совета"
+votc_cabinet_decision:0 "Заседание совета"
+
+votc_relaese_letter_decision:0 "VOTC: Освободить ветку писем"
+votc_relaese_letter_decision_desc:0 "Освободить текущую ветку писем, ожидающую ответа"
+votc_relaese_letter_decision_tooltip:0 "Освободить ветку писем"
+votc_relaese_letter_decision_confirm:0 "Освободить ветку писем"
+votc_relaese_letter_decision_effect_desc:0 "Вы освободите текущую ветку писем, ожидающую ответа. Это действие позволяет обойти счетчик процесса обработки писем и, скорее всего, перезапишет любые предыдущие ответы, которые еще не были получены. Если вы использовали функцию написания писем без запущенной фоновой программы, рекомендуется выполнить эту операцию вручную один раз!"
+
+message_interaction.desc:0 "Написать письмо"
+message_interaction:0 "Написать письмо"
+votc_message_title:0 "Написать [recipient.GetShortUINamePossessive]"
+votc_message_desc:0 " "
+votc_message_tooltip:0 "Если сообщение неполное, проверьте соответствующий артефакт письма."
+message_text:0 "VOTC:LETTER/;/Russian/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/"
+send_message:0 "Отправить"
+
+# Titles for each letter thread
+votc_huixin_title1:0 "Ответ от [GetGlobalVariable('message_second_scope_letter_1').Char.GetTitledFirstName]"
+votc_huixin_title2:0 "Ответ от [GetGlobalVariable('message_second_scope_letter_2').Char.GetTitledFirstName]"
+votc_huixin_title3:0 "Ответ от [GetGlobalVariable('message_second_scope_letter_3').Char.GetTitledFirstName]"
+votc_huixin_title4:0 "Ответ от [GetGlobalVariable('message_second_scope_letter_4').Char.GetTitledFirstName]"
+votc_huixin_title5:0 "Ответ от [GetGlobalVariable('message_second_scope_letter_5').Char.GetTitledFirstName]"
+votc_huixin_title6:0 "Ответ от [GetGlobalVariable('message_second_scope_letter_6').Char.GetTitledFirstName]"
+votc_huixin_title7:0 "Ответ от [GetGlobalVariable('message_second_scope_letter_7').Char.GetTitledFirstName]"
+votc_huixin_title8:0 "Ответ от [GetGlobalVariable('message_second_scope_letter_8').Char.GetTitledFirstName]"
+votc_huixin_title9:0 "Ответ от [GetGlobalVariable('message_second_scope_letter_9').Char.GetTitledFirstName]"
+
+votc_letter_full:0 "Ветка писем заполнена (9/9)"
+
+event_window_widget_message_write_prompt:0 "Введите содержание письма"
