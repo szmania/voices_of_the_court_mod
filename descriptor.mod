@@ -1,7 +1,8 @@
-version="1.3.11"
+version="1.3.12"
 tags={
-	"1.18 'Crane'"
+	"Gameplay"
+  "1.18 'Crane'"
 }
-name="Votc"
+name="Voices of the Court - Community Edition"
 supported_version="1.18.*"
-path="C:/Users/wang7/Documents/Paradox Interactive/Crusader Kings III/mod/VOTC"
+path="mod/votc_community_edition"
