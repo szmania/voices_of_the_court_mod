@@ -1,4 +1,4 @@
-﻿# 自定义编辑框 用于输入信件内容
+﻿# Custom edit box for entering letter content
 types Editboxes
 {
     type editbox_votc_with_label = vbox {

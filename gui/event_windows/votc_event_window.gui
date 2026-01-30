@@ -294,9 +294,9 @@ types BigWindowTypes {
 
         widget = {
             visible = "[GetGlobalVariable('sex_animation_event').IsSet]"
-			parentanchor = bottom|right #parentanchor = top|left this moves the whole animation across the window
-            size = { 900 450 } #size = { 1200 600 }
-			position = { 100 30 } #position = { 200 0 } #the second number moves it up or down - is up 
+			parentanchor = bottom|right # parentanchor = top|left this moves the whole animation across the window
+            size = { 900 450 } # size = { 1200 600 }
+			position = { 100 30 } # position = { 200 0 } # the second number moves it up or down - is up 
         
             ### RIGHT CHARACTER ###
             portrait_event = {
