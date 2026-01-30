@@ -29,9 +29,9 @@ talk_interaction = {
 	
 	#set talk_scene global var
 
-	#增加
-	#在此段注释的下方添加_代码块7
-	#代码块7示例
+	# Add
+	# Add code block 7 below this comment
+	# Code block 7 example
 	#		if = {
 	#		limit = {
 	#			scope:talk_scene_"sence_name" = yes
@@ -42,7 +42,7 @@ talk_interaction = {
 	#		}
 	#	}
 
-		#在中国市场
+		# In the Chinese market
 		if = {
 		limit = {
 			scope:talk_scene_market_east = yes
@@ -53,7 +53,7 @@ talk_interaction = {
 		}
 	}
 
-		#在market
+		# In the market
 		if = {
 		limit = {
 			scope:talk_scene_market = yes
@@ -64,7 +64,7 @@ talk_interaction = {
 		}
 	}
 
-		#在酒馆
+		# In the tavern
 		if = {
 		limit = {
 			scope:talk_scene_tavern = yes
@@ -75,7 +75,7 @@ talk_interaction = {
 		}
 	}
 
-	#在tavern_east
+	# In tavern_east
 	if = {
 		limit = {
 			scope:talk_scene_tavern_east = yes
@@ -95,7 +95,7 @@ talk_interaction = {
 			value = flag:talk_scene_iron_throne
 		}
 	}
-	#在灵隐寺
+	# In Lingyin Temple
 	if = {
 		limit = {
 			scope:talk_scene_lingyinsi = yes
@@ -105,7 +105,7 @@ talk_interaction = {
 			value = flag:talk_scene_lingyinsi
 		}
 	}
-	#在日本皇宫
+	# In the Japanese Imperial Palace
 		if = {
 			limit = {
 				scope:talk_scene_throneroom_japan = yes
@@ -115,7 +115,7 @@ talk_interaction = {
 				value = flag:talk_scene_throneroom_japan
 			}
 		}
-	#在少林寺
+	# In Shaolin Temple
 		if = {
 			limit = {
 				scope:talk_scene_shaolinsi = yes
@@ -125,7 +125,7 @@ talk_interaction = {
 				value = flag:talk_scene_shaolinsi
 			}
 		}
-		#在武当山道观
+		# In Wudang Mountain Taoist Temple
 		if = {
 			limit = {
 				scope:talk_scene_wudangshandaoguan = yes
@@ -135,7 +135,7 @@ talk_interaction = {
 				value = flag:talk_scene_wudangshandaoguan
 			}
 		}
-		#在云冈石窟
+		# In Yungang Grottoes
 		if = {
 			limit = {
 				scope:talk_scene_yungangshiku = yes
@@ -145,7 +145,7 @@ talk_interaction = {
 				value = flag:talk_scene_yungangshiku
 			}
 		}
-		#在乐山大佛
+		# In Leshan Giant Buddha
 		if = {
 			limit = {
 				scope:talk_scene_leshandafou = yes
@@ -350,8 +350,8 @@ talk_interaction = {
 		if = {
 			limit = {
 				OR = {
-					#在此段注释的下方添加_代码块8
-					#代码块8示例scope:talk_scene_"sence_name" = yes
+					# Add code block 8 below this comment
+					# Code block 8 example scope:talk_scene_"sence_name" = yes
 					scope:talk_scene_market_east = yes
 					scope:talk_scene_market = yes
 					scope:talk_scene_tavern = yes
@@ -375,7 +375,7 @@ talk_interaction = {
 					scope:talk_scene_throneroom_east_fuya1 = yes
 					scope:talk_scene_throneroom_east_empire1 = yes	
 					scope:talk_scene_throneroom_east_empire = yes	
-					#上方增加				
+					# Added above				
 					scope:talk_scene_throneroom = yes
 					scope:talk_scene_garden = yes
 					scope:talk_scene_bedchamber = yes
@@ -409,133 +409,133 @@ talk_interaction = {
 		
 		
 	}
-	#在此段注释的下方添加_代码块9
-	#代码块9示例
-	##场景中文名注释
+	# Add code block 9 below this comment
+	# Code block 9 example
+	## Scene name comment
 	#	send_option = {
 	#	is_shown = {can_talk_in_sence_"sence_name" = yes}
 	#	flag = talk_scene_"sence_name"
 	#	localization = talk_scene_"sence_name"_string
 	#}
-	#在中国市场
+	# In the Chinese market
 	send_option = {
 		is_shown = {can_talk_in_market_east = yes}
 		flag = talk_scene_market_east
 		localization = talk_scene_market_east_string
 	}
-	#在market
+	# In the market
 	send_option = {
 		is_shown = {can_talk_in_market = yes}
 		flag = talk_scene_market
 		localization = talk_scene_market_string
 	}
-	#在酒馆
+	# In the tavern
 	send_option = {
 		is_shown = {can_talk_in_tavern = yes}
 		flag = talk_scene_tavern
 		localization = talk_scene_tavern_string
 	}
-	#在tavern_east
+	# In tavern_east
 	send_option = {
 		is_shown = {can_talk_in_tavern_east = yes}
 		flag = talk_scene_tavern_east
 		localization = talk_scene_tavern_east_string
 	}
-	#在铁王座
+	# In the Iron Throne
 	send_option = {
 		is_shown = {can_talk_in_iron_throne = yes}
 		flag = talk_scene_iron_throne
 		localization = talk_scene_iron_throne_string
 	}
-	#在灵隐寺
+	# In Lingyin Temple
 	send_option = {
 		is_shown = {can_talk_in_lingyinsi = yes}
 		flag = talk_scene_lingyinsi
 		localization = talk_scene_lingyinsi_string
 	}
-	#在日本皇宫
+	# In the Japanese Imperial Palace
 	send_option = {
 		is_shown = {can_talk_in_throneroom_japan = yes}
 		flag = talk_scene_throneroom_japan
 		localization = talk_scene_throneroom_japan_string
 	}
-	#在少林寺
+	# In Shaolin Temple
 	send_option = {
 		is_shown = {can_talk_in_shaolinsi = yes}
 		flag = talk_scene_shaolinsi
 		localization = talk_scene_shaolinsi_string
 	}
-	#在武当山道观
+	# In Wudang Mountain Taoist Temple
 	send_option = {
 		is_shown = {can_talk_in_wudangshandaoguan = yes}
 		flag = talk_scene_wudangshandaoguan
 		localization = talk_scene_wudangshandaoguan_string
 	}
-	#在乐山大佛
+	# In Leshan Giant Buddha
 	send_option = {
 		is_shown = {can_talk_in_leshandafou = yes}
 		flag = talk_scene_leshandafou
 		localization = talk_scene_leshandafou_string
 	}
-	#在泰山
+	# In Mount Tai
 	send_option = {
 		is_shown = {can_talk_in_taishan = yes}
 		flag = talk_scene_taishan
 		localization = talk_scene_taishan_string
 	}
-	#在武陵源
+	# In Wulingyuan
 	send_option = {
 		is_shown = {can_talk_in_wulingyuan = yes}
 		flag = talk_scene_wulingyuan
 		localization = talk_scene_wulingyuan_string
 	}
-	#在开封皇城
+	# In Kaifeng Imperial City
 	send_option = {
 		is_shown = {can_talk_in_kaifenghuangcheng = yes}
 		flag = talk_scene_kaifenghuangcheng
 		localization = talk_scene_kaifenghuangcheng_string
 	}
-	#在滕王阁
+	# In Tengwang Pavilion
 	send_option = {
 		is_shown = {can_talk_in_tengwangge = yes}
 		flag = talk_scene_tengwangge
 		localization = talk_scene_tengwangge_string
 	}
 
-	#在岳阳楼
+	# In Yueyang Tower
 	send_option = {
 		is_shown = {can_talk_in_yueyanglou = yes}
 		flag = talk_scene_yueyanglou
 		localization = talk_scene_yueyanglou_string
 	}
 
-	#在黄鹤楼
+	# In Yellow Crane Tower
 	send_option = {
 		is_shown = {can_talk_in_huanghelou = yes}
 		flag = talk_scene_huanghelou
 		localization = talk_scene_huanghelou_string
 	}
-	#在云冈石窟
+	# In Yungang Grottoes
 	send_option = {
 		is_shown = {can_talk_in_yungangshiku = yes}
 		flag = talk_scene_yungangshiku
 		localization = talk_scene_yungangshiku_string
 	}
-	#在卧室
+	# In the bedroom
 	send_option = {
 		is_shown = {can_talk_in_bedchamber_east1 = yes}
 		flag = talk_scene_bedchamber_east1
 		localization = talk_scene_bedchamber_east1_string
 	}
 		
-	#在御花园见面
+	# Meet in the Imperial Garden
 	send_option = {
 		is_shown = {can_talk_in_garden_east1 = yes}
 		flag = talk_scene_garden_east1
 		localization = talk_scene_garden_east1_string
 	}
 
-	#在衙府接见
+	# Audience in the government office
 	send_option = {
 		
 		is_shown = {can_talk_in_throneroom_east_fuya1 = yes}
@@ -543,7 +543,7 @@ talk_interaction = {
 		localization = talk_scene_throneroom_east_fuya1_string
 	}
 
-	#在衙府见面
+	# Meet in the government office
 	send_option = {
 		
 		is_shown = {can_talk_in_throneroom_east_fuya = yes}
@@ -551,7 +551,7 @@ talk_interaction = {
 		localization = talk_scene_throneroom_east_fuya_string
 	}
 
-	#在皇宫觐见
+	# Audience in the Imperial Palace
 	send_option = {
 		
 		is_shown = {can_talk_in_throneroom_east_empire = yes}
@@ -559,7 +559,7 @@ talk_interaction = {
 		localization = talk_scene_throneroom_east_empire_string
 	}
 
-	#在皇宫召见
+	# Summoned to the Imperial Palace
 	send_option = {
 		
 		is_shown = {can_talk_in_throneroom_east_empire1 = yes}

@@ -46,9 +46,9 @@ ckms_meet_interaction = {
 	on_accept = {
 
 
-		#增加
-		#在此段注释的下方添加_代码块4
-		#代码块4示例
+		# Add
+		# Add code block 4 below this comment
+		# Code block 4 example
 		#		if = {
 		#limit = {
 		#			scope:meet_scene_"sence_name" = yes
@@ -59,7 +59,7 @@ ckms_meet_interaction = {
 		#		}
 		#}
 
-		#在中国市场
+		# In the Chinese market
 		if = {
 		limit = {
 			scope:meet_scene_market_east = yes
@@ -70,7 +70,7 @@ ckms_meet_interaction = {
 		}
 	}
 
-		#在market
+		# In the market
 		if = {
 		limit = {
 			scope:meet_scene_market = yes
@@ -81,7 +81,7 @@ ckms_meet_interaction = {
 		}
 	}
 
-		#在酒馆
+		# In the tavern
 		if = {
 		limit = {
 			scope:meet_scene_tavern = yes
@@ -92,7 +92,7 @@ ckms_meet_interaction = {
 		}
 	}
 
-	#在tavern_east
+	# In tavern_east
 	if = {
 		limit = {
 			scope:meet_scene_tavern_east = yes
@@ -112,7 +112,7 @@ ckms_meet_interaction = {
 			value = flag:meet_scene_iron_throne
 		}
 	}
-		#在灵隐寺
+		# In Lingyin Temple
 		if = {
 			limit = {
 				scope:meet_scene_lingyinsi = yes
@@ -122,7 +122,7 @@ ckms_meet_interaction = {
 				value = flag:meet_scene_lingyinsi
 			}
 		}
-		#在日本皇宫
+		# In the Japanese Imperial Palace
 		if = {
 			limit = {
 				scope:meet_scene_throneroom_japan = yes
@@ -132,7 +132,7 @@ ckms_meet_interaction = {
 				value = flag:meet_scene_throneroom_japan
 			}
 		}
-		#在少林寺
+		# In Shaolin Temple
 		if = {
 			limit = {
 				scope:meet_scene_shaolinsi = yes
@@ -142,7 +142,7 @@ ckms_meet_interaction = {
 				value = flag:meet_scene_shaolinsi
 			}
 		}
-		#在武当山道观
+		# In Wudang Mountain Taoist Temple
 		if = {
 			limit = {
 				scope:meet_scene_wudangshandaoguan = yes
@@ -152,7 +152,7 @@ ckms_meet_interaction = {
 				value = flag:meet_scene_wudangshandaoguan
 			}
 		}
-		#在云冈石窟
+		# In Yungang Grottoes
 		if = {
 			limit = {
 				scope:meet_scene_yungangshiku = yes
@@ -162,7 +162,7 @@ ckms_meet_interaction = {
 				value = flag:meet_scene_yungangshiku
 			}
 		}
-		#在乐山大佛
+		# In Leshan Giant Buddha
 		if = {
 			limit = {
 				scope:meet_scene_leshandafou = yes
@@ -377,8 +377,8 @@ ckms_meet_interaction = {
 		if = {
 			limit = {
 				OR = {
-					#在此段注释的下方添加_代码块5
-				#代码块5示例
+					# Add code block 5 below this comment
+				# Code block 5 example
 				#scope:meet_scene_"sence_name" = yes
 				scope:meet_scene_market_east = yes
 				scope:meet_scene_market = yes
@@ -404,7 +404,7 @@ ckms_meet_interaction = {
 					scope:meet_scene_throneroom_east_fuya1 = yes
 					scope:meet_scene_throneroom_east_empire1 = yes	
 					scope:meet_scene_throneroom_east_empire = yes	
-					#上方增加					
+					# Added above					
 					scope:meet_scene_harem = yes
 					scope:meet_scene_throneroom = yes
 					scope:meet_scene_garden = yes
@@ -440,128 +440,128 @@ ckms_meet_interaction = {
 		
 	}
 
-#在此段注释的下方添加_代码块6
-	#代码块6示例
-	##场景中文名注释
+# Add code block 6 below this comment
+	# Code block 6 example
+	## Scene name comment
 	#	send_option = {
 	#	is_shown = {can_meet_in_sence_"sence_name" = yes}
 	#	flag = meet_scene_"sence_name"
 	#	localization = meet_scene_"sence_name"_string
 	#}
-	#在中国市场
+	# In the Chinese market
 	send_option = {
 		is_shown = {can_meet_in_market_east = yes}
 		flag = meet_scene_market_east
 		localization = meet_scene_market_east_string
 	}
-	#在market
+	# In the market
 	send_option = {
 		is_shown = {can_meet_in_market = yes}
 		flag = meet_scene_market
 		localization = meet_scene_market_string
 	}
-	#在酒馆
+	# In the tavern
 	send_option = {
 		is_shown = {can_meet_in_tavern = yes}
 		flag = meet_scene_tavern
 		localization = meet_scene_tavern_string
 	}
-	#在中国酒馆
+	# In the Chinese tavern
 	send_option = {
 		is_shown = {can_meet_in_tavern_east = yes}
 		flag = meet_scene_tavern_east
 		localization = meet_scene_tavern_east_string
 	}
-	#在铁王座
+	# In the Iron Throne
 	send_option = {
 		is_shown = {can_meet_in_iron_throne = yes}
 		flag = meet_scene_iron_throne
 		localization = meet_scene_iron_throne_string
 	}
-	#在灵隐寺
+	# In Lingyin Temple
 	send_option = {
 		is_shown = {can_meet_in_lingyinsi = yes}
 		flag = meet_scene_lingyinsi
 		localization = meet_scene_lingyinsi_string
 	}
-	#在日本皇宫
+	# In the Japanese Imperial Palace
 	send_option = {
 		is_shown = {can_meet_in_throneroom_japan = yes}
 		flag = meet_scene_throneroom_japan
 		localization = meet_scene_throneroom_japan_string
 	}
-#在少林寺
+# In Shaolin Temple
 	send_option = {
 		is_shown = {can_meet_in_shaolinsi = yes}
 		flag = meet_scene_shaolinsi
 		localization = meet_scene_shaolinsi_string
 	}
-#在武当山道观
+# In Wudang Mountain Taoist Temple
 	send_option = {
 		is_shown = {can_meet_in_wudangshandaoguan = yes}
 		flag = meet_scene_wudangshandaoguan
 		localization = meet_scene_wudangshandaoguan_string
 	}
-#在乐山大佛
+# In Leshan Giant Buddha
 	send_option = {
 		is_shown = {can_meet_in_leshandafou = yes}
 		flag = meet_scene_leshandafou
 		localization = meet_scene_leshandafou_string
 	}
-#在泰山
+# In Mount Tai
 	send_option = {
 		is_shown = {can_meet_in_taishan = yes}
 		flag = meet_scene_taishan
 		localization = meet_scene_taishan_string
 	}
-#在武陵源
+# In Wulingyuan
 	send_option = {
 		is_shown = {can_meet_in_wulingyuan = yes}
 		flag = meet_scene_wulingyuan
 		localization = meet_scene_wulingyuan_string
 	}
-#在开封皇城
+# In Kaifeng Imperial City
 	send_option = {
 		is_shown = {can_meet_in_kaifenghuangcheng = yes}
 		flag = meet_scene_kaifenghuangcheng
 		localization = meet_scene_kaifenghuangcheng_string
 	}
-#在滕王阁
+# In Tengwang Pavilion
 	send_option = {
 		is_shown = {can_meet_in_tengwangge = yes}
 		flag = meet_scene_tengwangge
 		localization = meet_scene_tengwangge_string
 	}
 
-#在岳阳楼
+# In Yueyang Tower
 	send_option = {
 		is_shown = {can_meet_in_yueyanglou = yes}
 		flag = meet_scene_yueyanglou
 		localization = meet_scene_yueyanglou_string
 	}
 
-#在黄鹤楼
+# In Yellow Crane Tower
 	send_option = {
 		is_shown = {can_meet_in_huanghelou = yes}
 		flag = meet_scene_huanghelou
 		localization = meet_scene_huanghelou_string
 	}
 	
-#在卧室
+# In the bedroom
 	send_option = {
 		is_shown = {can_meet_in_bedchamber_east1 = yes}
 		flag = meet_scene_bedchamber_east1
 		localization = meet_scene_bedchamber_east1_string
 	}
 		
-	#在御花园见面
+	# Meet in the Imperial Garden
 	send_option = {
 		is_shown = {can_meet_in_garden_east1 = yes}
 		flag = meet_scene_garden_east1
 		localization = meet_scene_garden_east1_string
 	}
 
-	#在衙府接见
+	# Audience in the government office
 	send_option = {
 		
 		is_shown = {can_meet_in_throneroom_east_fuya1 = yes}
@@ -569,7 +569,7 @@ ckms_meet_interaction = {
 		localization = meet_scene_throneroom_east_fuya1_string
 	}
 
-	#在衙府见面
+	# Meet in the government office
 	send_option = {
 		
 		is_shown = {can_meet_in_throneroom_east_fuya = yes}
@@ -577,7 +577,7 @@ ckms_meet_interaction = {
 		localization = meet_scene_throneroom_east_fuya_string
 	}
 
-	#在皇宫觐见
+	# Audience in the Imperial Palace
 	send_option = {
 		
 		is_shown = {can_meet_in_throneroom_east_empire = yes}
@@ -585,20 +585,20 @@ ckms_meet_interaction = {
 		localization = meet_scene_throneroom_east_empire_string
 	}
 
-	#在皇宫召见
+	# Summoned to the Imperial Palace
 	send_option = {
 		
 		is_shown = {can_meet_in_throneroom_east_empire1 = yes}
 		flag = meet_scene_throneroom_east_empire1
 		localization = meet_scene_throneroom_east_empire1_string
 	}
-	#在云冈石窟
+	# In Yungang Grottoes
 	send_option = {
 		is_shown = {can_meet_in_yungangshiku = yes}
 		flag = meet_scene_yungangshiku
 		localization = meet_scene_yungangshiku_string
 	}
-	#在后宫
+	# In the harem
 	send_option = {
 		is_shown = {can_meet_in_harem = yes}
 		flag = meet_scene_harem

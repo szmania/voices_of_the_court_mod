@@ -1,7 +1,7 @@
 #these triggers check if the player can talk with the character in the given scenes. they are used in the character interaction, and in the travel arrival event.
 
-#在此段注释的下方添加_代码块11
-#代码块11示例
+# Add code block 11 below this comment
+# Code block 11 example
 #can_talk_in_"sence_name" = {
 #	AND = {
 #		scope:actor.location = scope:recipient.location
@@ -11,7 +11,7 @@
 #	}
 #}
 
-#在中国市场见面
+# Meet in the Chinese market
 can_talk_in_market_east = {
 	AND = {
 		scope:actor = {is_imprisoned = no}
@@ -25,7 +25,7 @@ can_talk_in_market_east = {
 	}
 }
 
-#在market见面
+# Meet in the market
 can_talk_in_market = {
 	AND = {
 		scope:actor = {is_imprisoned = no}
@@ -41,7 +41,7 @@ can_talk_in_market = {
 	}
 }
 
-#在酒馆见面 中国之外
+# Meet in the tavern (outside China)
 can_talk_in_tavern = {
 	AND = {
 		scope:actor = {is_imprisoned = no}
@@ -57,7 +57,7 @@ can_talk_in_tavern = {
 	}
 }
 
-#在tavern_east见面 中国
+# Meet in tavern_east (China)
 can_talk_in_tavern_east = {
 	AND = {
 		scope:actor = {is_imprisoned = no}
@@ -88,7 +88,7 @@ can_talk_in_iron_throne = {
 		}
 	}
 
-#在灵隐寺见面
+# Meet in Lingyin Temple
 can_talk_in_lingyinsi = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -98,7 +98,7 @@ can_talk_in_lingyinsi = {
 	}
 }
 
-#在日本皇宫见面
+# Meet in the Japanese Imperial Palace
 can_talk_in_throneroom_japan = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -108,7 +108,7 @@ can_talk_in_throneroom_japan = {
 	}
 }
 
-#在少林寺见面
+# Meet in Shaolin Temple
 can_talk_in_shaolinsi = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -118,7 +118,7 @@ can_talk_in_shaolinsi = {
 	}
 }
 
-#在武当山道观见面
+# Meet in Wudang Mountain Taoist Temple
 can_talk_in_wudangshandaoguan = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -128,7 +128,7 @@ can_talk_in_wudangshandaoguan = {
 	}
 }
 
-#在乐山大佛见面
+# Meet in Leshan Giant Buddha
 can_talk_in_leshandafou = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -138,7 +138,7 @@ can_talk_in_leshandafou = {
 	}
 }
 
-#在泰山见面
+# Meet in Mount Tai
 can_talk_in_taishan = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -148,7 +148,7 @@ can_talk_in_taishan = {
 	}
 }
 
-#在武陵源见面
+# Meet in Wulingyuan
 can_talk_in_wulingyuan = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -158,7 +158,7 @@ can_talk_in_wulingyuan = {
 	}
 }
 
-#在开封皇城见面
+# Meet in Kaifeng Imperial City
 can_talk_in_kaifenghuangcheng = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -168,7 +168,7 @@ can_talk_in_kaifenghuangcheng = {
 	}
 }
 
-#在滕王阁见面
+# Meet in Tengwang Pavilion
 can_talk_in_tengwangge = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -182,7 +182,7 @@ can_talk_in_tengwangge = {
 	}
 }
 
-#在岳阳楼见面
+# Meet in Yueyang Tower
 can_talk_in_yueyanglou = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -197,8 +197,8 @@ can_talk_in_yueyanglou = {
 	}
 }
 
-#在某个建筑见面，如果其他mod的添加特殊建筑会导致闪退吗？ 不会
-#在黄鹤楼见面
+# Meet in a certain building, will adding special buildings from other mods cause a crash? No
+# Meet in Yellow Crane Tower
 can_talk_in_huanghelou = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -212,7 +212,7 @@ can_talk_in_huanghelou = {
 	}
 }
 
-#在云冈石窟见面
+# Meet in Yungang Grottoes
 can_talk_in_yungangshiku = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -224,7 +224,7 @@ can_talk_in_yungangshiku = {
 }
 
 
-#在后宫见面
+# Meet in the harem
 can_talk_in_harem = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -242,7 +242,7 @@ can_talk_in_harem = {
 	}
 }
 
-#在卧榻见面
+# Meet in the bedroom
 
 can_talk_in_bedchamber_east1 = {
 	AND = {
@@ -258,7 +258,7 @@ can_talk_in_bedchamber_east1 = {
 	}
 }
 
-#在御花园见面
+# Meet in the Imperial Garden
 can_talk_in_garden_east1 = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -290,7 +290,7 @@ can_talk_in_garden_east1 = {
 	}
 
 
-#在府衙接见
+# Audience in the government office
 can_talk_in_throneroom_east_fuya1 = {
 	AND = {
 		or = {
@@ -312,7 +312,7 @@ can_talk_in_throneroom_east_fuya1 = {
 	}
 	}
 
-#在府衙见面
+# Meet in the government office
 can_talk_in_throneroom_east_fuya = {
 	AND = {
 		OR = {
@@ -330,7 +330,7 @@ can_talk_in_throneroom_east_fuya = {
 	}
 
 
-#在皇宫觐见
+# Audience in the Imperial Palace
 can_talk_in_throneroom_east_empire = {
 	AND = {
 		OR = {
@@ -349,7 +349,7 @@ can_talk_in_throneroom_east_empire = {
 	}
 	}
 
-#在皇宫召见	
+# Summoned to the Imperial Palace	
 can_talk_in_throneroom_east_empire1 = {
 	AND = {
 		OR = {
@@ -379,7 +379,7 @@ can_talk_in_throneroom = {
 			}
 			
 		}
-		#修改
+		# Modify
 		scope:actor.culture = {
 					NOT = { has_coa_gfx = chinese_group_coa_gfx }
 				}

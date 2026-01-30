@@ -1,4 +1,4 @@
-﻿#用于接收votc回信消息弹窗
+﻿# Used to receive votc reply message pop-up windows
 votc_message_feed = {
 	display = feed
 	title = event_message_title

@@ -1,16 +1,16 @@
 ﻿
-#内阁会议决策
+# Cabinet meeting decision
 votc_cabinet_decision = { 
- # 决策的核心定义结构，"my_decision"为决策的唯一标识（键名）
+ # Core definition structure of the decision, "my_decision" is the unique identifier (key name) for the decision
   
-# title = <key> | { ... }  # 决策的标题。
-                           # - 默认值：使用决策的键名（即"my_decision"）
-                           # - 支持动态描述（如使用first_valid等事件中的动态语法）
-                           # - 作用范围：角色（character）
+# title = <key> | { ... }  # Title of the decision.
+                           # - Default value: uses the decision's key name (i.e., "my_decision")
+                           # - Supports dynamic descriptions (e.g., using dynamic syntax in events like first_valid)
+                           # - Scope: character
   
-  ### 图片配置
-  # 用于决策的展示图片。
-  # 若配置多个图片，会选择第一个满足trigger条件的图片'
+  ### Image configuration
+  # Image used for displaying the decision.
+  # If multiple images are configured, the first one that satisfies the trigger condition will be selected'
 	picture = {
 		trigger = {
 			culture = { has_coa_gfx = chinese_group_coa_gfx }
@@ -35,39 +35,39 @@ votc_cabinet_decision = {
 		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
 	}
 
-decision_group_type = votc_group_type  # 用于归类决策的可折叠分组类型。
-                               # 默认值：若不指定，归入"decisions"分组
+decision_group_type = votc_group_type  # Collapsible grouping type used to categorize decisions.
+                               # Default value: if not specified, categorized into the "decisions" group
 
-  ai_goal = no  # 若设为yes，AI会将此决策视为"目标"，与创建头衔、建造领地等高额成本行为同等对待。
-                    # - 会忽略ai_check_interval参数
-                    # - 仅用于成本极高、需要AI提前规划预算的决策（性能消耗高于高频率的ai_check_interval）
+  ai_goal = no  # If set to yes, the AI will treat this decision as a "goal," equivalent to high-cost behaviors like creating titles or building holdings.
+                    # - Will ignore the ai_check_interval parameter
+                    # - Only used for decisions with extremely high costs that require the AI to plan a budget in advance (performance consumption is higher than high-frequency ai_check_interval)
 
-  ai_check_frequency = 0  # AI检查此决策是否可执行的间隔（单位：月）。
-                           # - 必须设置，除非ai_goal = yes
-                           # - 设为0时，AI永远不会检查此决策
+  ai_check_frequency = 0  # Interval at which the AI checks if this decision is executable (unit: months).
+                           # - Must be set unless ai_goal = yes
+                           # - When set to 0, the AI will never check this decision
 
-  sort_order = 99  # 决策在界面中相对于其他决策的显示顺序。
-                        # - 数值越高，排序越靠前
-                        # - 若数值相同，按定义顺序排序
+  sort_order = 99  # Display order of the decision in the interface relative to other decisions.
+                        # - Higher values appear first
+                        # - If values are the same, sorted by definition order
 
-  selection_tooltip = votc_cabinet_decision_tooltip  # 从决策列表中选中决策时显示的提示文本。
-                                       # - 默认值："<key>_tooltip"（键名+_tooltip）
-                                       # - 支持动态描述
-                                       # - 作用范围：角色
+  selection_tooltip = votc_cabinet_decision_tooltip  # Tooltip text displayed when selecting a decision from the decision list.
+                                       # - Default value: "<key>_tooltip" (key name + _tooltip)
+                                       # - Supports dynamic descriptions
+                                       # - Scope: character
 
-  desc = votc_cabinet_decision_desc  # 决策的详细描述。
-                          # - 默认值："<key>_desc"（键名+_desc）
-                          # - 支持动态描述
-                          # - 作用范围：角色
+  desc = votc_cabinet_decision_desc  # Detailed description of the decision.
+                          # - Default value: "<key>_desc" (key name + _desc)
+                          # - Supports dynamic descriptions
+                          # - Scope: character
 
-  confirm_text = votc_cabinet_decision_confirm  # 确认执行决策时的文本。
-                                  # - 默认值："<key>_confirm"（键名+_confirm）
-                                  # - 支持动态描述
-                                  # - 作用范围：角色
+  confirm_text = votc_cabinet_decision_confirm  # Text when confirming the execution of the decision.
+                                  # - Default value: "<key>_confirm" (key name + _confirm)
+                                  # - Supports dynamic descriptions
+                                  # - Scope: character
 
-  is_shown = { always = yes }  # 决策是否对角色可见。
-                      # - 作用范围：角色
-                      # - 默认值：{ always = yes }（始终可见）
+  is_shown = { always = yes }  # Whether the decision is visible to the character.
+                      # - Scope: character
+                      # - Default value: { always = yes } (always visible)
 
   is_valid_showing_failures_only = { 
     is_ai = no
@@ -80,16 +80,16 @@ decision_group_type = votc_group_type  # 用于归类决策的可折叠分组类
           }
         }
       }  
-  # 决策是否可执行（仅在不满足条件时显示失败原因）。
-                                            # - 若不满足，失败原因会显示在确认按钮的提示中
-                                            # - 作用范围：角色
-                                            # - 默认值：{ always = yes }（始终可执行）
+  # Whether the decision is executable (only shows failure reasons when conditions are not met).
+                                            # - If not met, the failure reason will be displayed in the confirmation button's tooltip
+                                            # - Scope: character
+                                            # - Default value: { always = yes } (always executable)
 
-  #is_valid = { always = yes }  # 决策是否可执行（不满足条件时在详情页的"要求"部分显示）。
-                      # - 作用范围：角色
-                      # - 默认值：{ always = yes }（始终可执行）
+  #is_valid = { always = yes }  # Whether the decision is executable (displayed in the "Requirements" section of the details page when conditions are not met).
+                      # - Scope: character
+                      # - Default value: { always = yes } (always executable)
   effect = {
-    # 中国皇帝内阁会议
+    # Chinese Emperor Cabinet Meeting
 		if = {
 			limit = {
 			  culture = { has_coa_gfx = chinese_group_coa_gfx }
@@ -101,7 +101,7 @@ decision_group_type = votc_group_type  # 用于归类决策的可折叠分组类
 			    value = flag:talk_scene_cabinet_meeting_chinese_empire
 				}
 			}
-    # 中国普通内阁会议
+    # Ordinary Chinese Cabinet Meeting
 		else_if = {
       limit = {
 			  culture = { has_coa_gfx = chinese_group_coa_gfx }
@@ -113,7 +113,7 @@ decision_group_type = votc_group_type  # 用于归类决策的可折叠分组类
 				}
 			}
 		
-    # 其他国家内阁会议
+    # Cabinet meetings in other countries
     else = {
 			custom_tooltip = votc_cabinet_decision_effect
 			set_global_variable = {
@@ -135,32 +135,32 @@ decision_group_type = votc_group_type  # 用于归类决策的可折叠分组类
 }
 
 
-#家族会议决策
-votc_family_decision = {  # 决策的核心定义结构，"my_decision"为决策的唯一标识（键名）
+# Family meeting decision
+votc_family_decision = {  # Core definition structure of the decision, "my_decision" is the unique identifier (key name) for the decision
   
-# title = <key> | { ... }  # 决策的标题。
-                           # - 默认值：使用决策的键名（即"my_decision"）
-                           # - 支持动态描述（如使用first_valid等事件中的动态语法）
-                           # - 作用范围：角色（character）
+# title = <key> | { ... }  # Title of the decision.
+                           # - Default value: uses the decision's key name (i.e., "my_decision")
+                           # - Supports dynamic descriptions (e.g., using dynamic syntax in events like first_valid)
+                           # - Scope: character
   
-  ### 图片配置
-  # 用于决策的展示图片。
-  # 若配置多个图片，会选择第一个满足trigger条件的图片
+  ### Image configuration
+  # Image used for displaying the decision.
+  # If multiple images are configured, the first one that satisfies the trigger condition will be selected
   picture = {
     
-    ### 触发条件（jomini语法的触发器）
-    # 接收角色（character）作为作用范围，判断图片是否适用
-    # 若不设置trigger，默认始终生效
+    ### Trigger conditions (jomini syntax triggers)
+    # Receives character as scope to determine if the image is applicable
+    # If trigger is not set, it defaults to always being effective
 		trigger = {
 			culture = { has_coa_gfx = chinese_group_coa_gfx }
 		}
-    ### 资源路径（字符串路径）
-    # 图片纹理的路径
+    ### Resource path (string path)
+    # Path to the image texture
     reference = "gfx/interface/illustrations/scenes/throneroom_east_fuya1.dds"
 
-    ### 音效（音效名称）
-    # 展示决策详情时播放的音效
-    # 默认值："event:/SFX/UI/Generic/Windows/sfx_ui_generic_window_standard_show"
+    ### Sound effects (sound effect name)
+    # Sound effect played when displaying decision details
+    # Default value: "event:/SFX/UI/Generic/Windows/sfx_ui_generic_window_standard_show"
   }
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
@@ -214,14 +214,14 @@ decision_group_type = votc_group_type  # 用于归类决策的可折叠分组类
         }
     }  
   }
-  # 决策是否可执行（仅在不满足条件时显示失败原因）。
-                                            # - 若不满足，失败原因会显示在确认按钮的提示中
-                                            # - 作用范围：角色
-                                            # - 默认值：{ always = yes }（始终可执行）
+  # Whether the decision is executable (only shows failure reasons when conditions are not met).
+                                            # - If not met, the failure reason will be displayed in the confirmation button's tooltip
+                                            # - Scope: character
+                                            # - Default value: { always = yes } (always executable)
 
-  #is_valid = { always = yes }  # 决策是否可执行（不满足条件时在详情页的"要求"部分显示）。
-                      # - 作用范围：角色
-                      # - 默认值：{ always = yes }（始终可执行）
+  #is_valid = { always = yes }  # Whether the decision is executable (displayed in the "Requirements" section of the details page when conditions are not met).
+                      # - Scope: character
+                      # - Default value: { always = yes } (always executable)
 
 
   effect = {
@@ -243,13 +243,13 @@ decision_group_type = votc_group_type  # 用于归类决策的可折叠分组类
 		}
     }
 		trigger_event = mcc_decision_event.9011
-  }  # 执行决策时触发的效果。
-                    # 作用范围：角色
+  }  # Effects triggered when executing the decision.
+                    # Scope: character
 
 	ai_potential = { always = no }
 
-	ai_will_do = { base = 0 }   # 返回AI执行此决策的概率（0=永不执行，100=必定执行）。
-                          # 同时决定玩家的默认选项（若决策有多个选项）
+	ai_will_do = { base = 0 }   # Returns the probability of the AI executing this decision (0=never execute, 100=always execute).
+                          # Also determines the player's default option (if the decision has multiple options)
 
 }
 

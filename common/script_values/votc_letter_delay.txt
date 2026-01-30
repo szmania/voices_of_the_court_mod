@@ -1,11 +1,11 @@
-﻿# 信件延迟时间，根据距离计算，单位为天，取整
+﻿# Letter delay time, calculated based on distance, in days, rounded
 
 votc_letter_delay = {
 	if = {
 		limit = {
 			votc_squared_distance_value >= 70000000
 		}
-		# 来回需要4年以上
+		# Round trip takes more than 4 years
 		value = 1600 
 
 	}
@@ -13,88 +13,88 @@ votc_letter_delay = {
 		limit = {
 			votc_squared_distance_value >= 39325442
 		}
-		# 直线距离1万公里左右，来回需要3年
+		# Straight-line distance is about 10,000 km, round trip takes 3 years
 		value = 1400
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= 22940480
 		}
-		# 直线距离8000公里左右，来回需要2年
+		# Straight-line distance is about 8,000 km, round trip takes 2 years
 		value = 1100
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= 10735029
 		}
-		# 直线距离6000公里左右，来回需要2年		
+		# Straight-line distance is about 6,000 km, round trip takes 2 years		
 		value = 800
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= squared_distance_monstrous
 		}
-		# 3000公里，需要1年
+		# 3,000 km, takes 1 year
 		value = 600
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= squared_distance_mega
 		}
-		# 2282公里，需要1年
+		# 2,282 km, takes 1 year
 		value = 380
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= squared_distance_massive
 		}
-		# 1550公里，需要1年
+		# 1,550 km, takes 1 year
 		value = 260
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= squared_distance_almost_massive
 		}
-		# 1200公里，需要半年
+		# 1,200 km, takes half a year
 		value = 200
 	}	
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= squared_distance_huge
 		}
-		# 850公里，需要5个月
+		# 850 km, takes 5 months
 		value = 120
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= squared_distance_large
 		}
-		# 650公里，需要4个月
+		# 650 km, takes 4 months
 		value = 110
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= squared_distance_major
 		}
-		# 460公里，需要3个月
+		# 460 km, takes 3 months
 		value = 110
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= squared_distance_medium
 		}
-		# 250公里，需要2个月
+		# 250 km, takes 2 months
 		value = 110
 	}
 	else_if = {
 		limit = {
 			votc_squared_distance_value >= squared_distance_small
 		}
-		# 150公里，需要1个月
+		# 150 km, takes 1 month
 		value = 60
 	}
 	else = {
-		# 近距离，最低30天，防止模型还没生成回复
+		# Short distance, minimum 30 days, to prevent the model from not having generated a reply yet
 		value = 30
 	}
 	min = 30

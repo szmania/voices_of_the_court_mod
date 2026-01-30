@@ -1,9 +1,9 @@
 #these triggers check if the player can meet with the character in the given scenes. they are used in the character interaction, and in the travel arrival event.
 #triggers for the mutltiple characters conversations
 
-#在此段注释的下方添加_代码块10
-#代码块10示例
-##在"sence_name"见面
+# Add code block 10 below this comment
+# Code block 10 example
+## Meet in "sence_name"
 #can_meet_in_"sence_name" = {
 #	AND = {
 #		scope:actor.location = scope:recipient.location
@@ -13,7 +13,7 @@
 #	}
 #}
 
-#在中国市场见面
+# Meet in the Chinese market
 can_meet_in_market_east = {
 	AND = {
 		scope:actor = {is_imprisoned = no}
@@ -27,7 +27,7 @@ can_meet_in_market_east = {
 	}
 }
 
-#在market见面
+# Meet in the market
 can_meet_in_market = {
 	AND = {
 		scope:actor = {is_imprisoned = no}
@@ -43,7 +43,7 @@ can_meet_in_market = {
 	}
 }
 
-#在酒馆见面
+# Meet in the tavern
 can_meet_in_tavern = {
 	AND = {
 		scope:actor = {is_imprisoned = no}
@@ -59,7 +59,7 @@ can_meet_in_tavern = {
 	}
 }
 
-#在tavern_east见面
+# Meet in tavern_east
 can_meet_in_tavern_east = {
 	AND = {
 		scope:actor = {is_imprisoned = no}
@@ -73,7 +73,7 @@ can_meet_in_tavern_east = {
 	}
 }
 
-#在铁王座见面
+# Meet in the Iron Throne
 can_meet_in_iron_throne = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -90,7 +90,7 @@ can_meet_in_iron_throne = {
 		}
 }
 
-#在灵隐寺见面
+# Meet in Lingyin Temple
 can_meet_in_lingyinsi = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -100,7 +100,7 @@ can_meet_in_lingyinsi = {
 	}
 }
 
-#在日本皇宫见面
+# Meet in the Japanese Imperial Palace
 can_meet_in_throneroom_japan = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -110,7 +110,7 @@ can_meet_in_throneroom_japan = {
 	}
 }
 
-#在少林寺见面
+# Meet in Shaolin Temple
 can_meet_in_shaolinsi = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -120,7 +120,7 @@ can_meet_in_shaolinsi = {
 	}
 }
 
-#在武当山道观见面
+# Meet in Wudang Mountain Taoist Temple
 can_meet_in_wudangshandaoguan = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -130,7 +130,7 @@ can_meet_in_wudangshandaoguan = {
 	}
 }
 
-#在乐山大佛见面
+# Meet in Leshan Giant Buddha
 can_meet_in_leshandafou = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -140,7 +140,7 @@ can_meet_in_leshandafou = {
 	}
 }
 
-#在泰山见面
+# Meet in Mount Tai
 can_meet_in_taishan = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -150,7 +150,7 @@ can_meet_in_taishan = {
 	}
 }
 
-#在武陵源见面
+# Meet in Wulingyuan
 can_meet_in_wulingyuan = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -160,7 +160,7 @@ can_meet_in_wulingyuan = {
 	}
 }
 
-#在开封皇城见面
+# Meet in Kaifeng Imperial City
 can_meet_in_kaifenghuangcheng = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -170,7 +170,7 @@ can_meet_in_kaifenghuangcheng = {
 	}
 }
 
-#在滕王阁见面
+# Meet in Tengwang Pavilion
 can_meet_in_tengwangge = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -184,7 +184,7 @@ can_meet_in_tengwangge = {
 	}
 }
 
-#在岳阳楼见面
+# Meet in Yueyang Tower
 can_meet_in_yueyanglou = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -198,7 +198,7 @@ can_meet_in_yueyanglou = {
 	}
 }
 
-#在黄鹤楼见面
+# Meet in Yellow Crane Tower
 can_meet_in_huanghelou = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -209,7 +209,7 @@ can_meet_in_huanghelou = {
 	}
 }
 
-#在后宫见面
+# Meet in the harem
 can_meet_in_harem = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -230,7 +230,7 @@ can_meet_in_harem = {
 	}
 }
 
-#在云冈石窟见面
+# Meet in Yungang Grottoes
 can_meet_in_yungangshiku = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -241,7 +241,7 @@ can_meet_in_yungangshiku = {
 	}
 }
 
-#在卧榻见面
+# Meet in the bedroom
 can_meet_in_bedchamber_east1 = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -256,7 +256,7 @@ can_meet_in_bedchamber_east1 = {
 	}
 }
 
-#在御花园见面
+# Meet in the Imperial Garden
 can_meet_in_garden_east1 = {
 	AND = {
 		scope:actor.location = scope:recipient.location
@@ -288,7 +288,7 @@ can_meet_in_garden_east1 = {
 	}
 
 
-#在府衙接见
+# Audience in the government office
 can_meet_in_throneroom_east_fuya1 = {
 	AND = {
 		scope:actor = scope:actor.location.province_owner
@@ -301,7 +301,7 @@ can_meet_in_throneroom_east_fuya1 = {
 	}
 	}
 
-#在府衙见面
+# Meet in the government office
 can_meet_in_throneroom_east_fuya = {
 	AND = {
 		OR = {
@@ -319,7 +319,7 @@ can_meet_in_throneroom_east_fuya = {
 	}
 
 
-#在皇宫觐见
+# Audience in the Imperial Palace
 can_meet_in_throneroom_east_empire = {
 	AND = {
 		OR = {
@@ -338,7 +338,7 @@ can_meet_in_throneroom_east_empire = {
 	}
 	}
 
-#在皇宫召见	
+# Summoned to the Imperial Palace	
 can_meet_in_throneroom_east_empire1 = {
 	AND = {
 		OR = {
@@ -371,7 +371,7 @@ can_meet_in_throneroom = {
 				scope:secondary_recipient ?= scope:actor.location.province_owner					
 			}			
 		}
-				#修改
+				# Modify
 		scope:actor.culture = {
 					NOT = { has_coa_gfx = chinese_group_coa_gfx }
 				}
