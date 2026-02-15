@@ -1,7 +1,7 @@
 # Часто задаваемые вопросы
 
 ## 1. Диалоговое окно не появляется
-Этот мод требует дополнительную фоновую программу для работы. Скачайте локализованную фоновую программу здесь: [https://github.com/Lisiyuan233/Voices_of_the_Court1/releases/tag/betaZh](https://github.com/Lisiyuan233/Voices_of_the_Court1/releases/tag/betaZh). Скачанный .exe файл установится автоматически при открытии.
+Этот мод требует дополнительную фоновую программу для работы. Скачайте локализованную фоновую программу здесь: [https://github.com/szmania/Voices_of_the_Court/releases/latest](https://github.com/szmania/Voices_of_the_Court/releases/latest). Скачанный .exe файл установится автоматически при открытии.
 
 ## 2. Проблемы с настройкой API
 Рекомендуется использовать официальный DeepSeek API. В выпадающем меню для подключения модели диалога выберите страницу `custom(openai-compatible)` для настройки:

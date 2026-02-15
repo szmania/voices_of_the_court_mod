@@ -1,0 +1,155 @@
+﻿l_spanish:
+
+talk_interaction:0 "Hablar"
+talk_interaction.desc:0 "Iniciar una conversación"
+
+talk_herhim:0 "[recipient.GetHerHim]"
+
+talk_scene_market_east_string:0 "Reunirse en el mercado"
+meet_scene_market_east_string:0 "Reunirse en el mercado"
+
+talk_scene_market_string:0 "Reunirse en el mercado"
+meet_scene_market_string:0 "Reunirse en el mercado"
+
+talk_scene_tavern_string:0 "Reunirse en la taberna"
+meet_scene_tavern_string:0 "Reunirse en la taberna"
+
+talk_scene_tavern_east_string:0 "Reunirse en la taberna"
+meet_scene_tavern_east_string:0 "Reunirse en la taberna"
+
+talk_scene_iron_throne_string:0 "Reunirse en el Trono de Hierro"
+meet_scene_iron_throne_string:0 "Reunirse en el Trono de Hierro"
+
+talk_scene_lingyinsi_string:0 "Reunirse en el Templo Lingyin"
+meet_scene_lingyinsi_string:0 "Reunirse en el Templo Lingyin"
+
+talk_scene_throneroom_japan_string:0 "Reunirse en el Palacio Heian"
+meet_scene_throneroom_japan_string:0 "Reunirse en el Palacio Heian"
+
+talk_scene_shaolinsi_string:0 "Reunirse en el Templo Shaolin"
+meet_scene_shaolinsi_string:0 "Reunirse en el Templo Shaolin"
+
+talk_scene_wudangshandaoguan_string:0 "Reunirse en el Templo de la Montaña Wudang"
+meet_scene_wudangshandaoguan_string:0 "Reunirse en el Templo de la Montaña Wudang"
+
+talk_scene_leshandafou_string:0 "Reunirse en el Gran Buda de Leshan"
+meet_scene_leshandafou_string:0 "Reunirse en el Gran Buda de Leshan"
+
+talk_scene_taishan_string:0 "Reunirse en el Monte Tai"
+meet_scene_taishan_string:0 "Reunirse en el Monte Tai"
+
+talk_scene_wulingyuan_string:0 "Reunirse en Wulingyuan"
+meet_scene_wulingyuan_string:0 "Reunirse en Wulingyuan"
+
+talk_scene_kaifenghuangcheng_string:0 "Reunirse en el Palacio Imperial de Kaifeng"
+meet_scene_kaifenghuangcheng_string:0 "Reunirse en el Palacio Imperial de Kaifeng"
+
+talk_scene_tengwangge_string:0 "Reunirse en el Pabellón Tengwang"
+meet_scene_tengwangge_string:0 "Reunirse en el Pabellón Tengwang"
+
+meet_scene_yueyanglou_string:0 "Reunirse en la Torre Yueyang"
+meet_scene_huanghelou_string:0 "Reunirse en la Torre de la Grulla Amarilla"
+meet_scene_yungangshiku_string:0 "Reunirse en las Grutas de Yungang"
+meet_scene_bedchamber_east1_string:0 "Reunirse en el dormitorio"
+meet_scene_garden_east1_string:0 "Reunirse en el Jardín Imperial"
+meet_scene_throneroom_east_fuya1_string:0 "Recibir en el yamen"
+meet_scene_throneroom_east_fuya_string:0 "Audiencia en el yamen"
+meet_scene_throneroom_east_empire_string:0 "Audiencia en el Palacio Imperial"
+meet_scene_throneroom_east_empire1_string:0 "Convocar en el Palacio Imperial"
+meet_scene_throneroom_string:0 "Reunirse en el salón del trono"
+meet_scene_garden_string:0 "Reunirse en el jardín"
+meet_scene_bedchamber_string:0 "Reunirse en el dormitorio"
+meet_scene_dungeon_string:0 "Reunirse en la mazmorra"
+meet_scene_feast_string:0 "Reunirse en el banquete"
+meet_scene_armycamp_string:0 "Reunirse en el campamento militar"
+meet_scene_hunt_string:0 "Reunirse durante la caza"
+meet_scene_alley_string:0 "Reunirse en el callejón de la ciudad"
+
+talk_scene_yueyanglou_string:0 "Reunirse en la Torre Yueyang"
+talk_scene_huanghelou_string:0 "Reunirse en la Torre de la Grulla Amarilla"
+talk_scene_yungangshiku_string:0 "Reunirse en las Grutas de Yungang"
+talk_scene_bedchamber_east1_string:0 "Reunirse en el dormitorio"
+talk_scene_garden_east1_string:0 "Reunirse en el Jardín Imperial"
+talk_scene_throneroom_east_fuya1_string:0 "Recibir en el yamen"
+talk_scene_throneroom_east_fuya_string:0 "Audiencia en el yamen"
+talk_scene_throneroom_east_empire_string:0 "Audiencia en el Palacio Imperial"
+talk_scene_throneroom_east_empire1_string:0 "Convocar en el Palacio Imperial"
+
+talk_scene_throneroom_string:0 "Reunirse en el salón del trono"
+talk_scene_garden_string:0 "Reunirse en el jardín"
+talk_scene_bedchamber_string:0 "Reunirse en el dormitorio"
+talk_scene_dungeon_string:0 "Reunirse en la mazmorra"
+talk_scene_feast_string:0 "Reunirse en el banquete"
+talk_scene_armycamp_string:0 "Reunirse en el campamento militar"
+talk_scene_hunt_string:0 "Reunirse en la caza"
+talk_scene_alley_string:0 "Reunirse en el callejón de la ciudad"
+talk_travel:0 "Viajar"
+
+talk_event.1001.title:0 "Llegada"
+talk_event.1001.desc:0 "Finalmente has llegado a [actor.GetCurrentLocation.GetName] para reunirte con [recipient.GetTitledFirstName]. Ahora la pregunta es, ¿dónde deberíamos reunirnos con \$talk_herhim\$?"
+talk_event.1001.exit:0 "En realidad, no quiero hablar con \$talk_herhim\$."
+
+talk_window_end:0 "Finalizar conversación"
+
+conversation_opinion:0 "De conversaciones"
+
+not_in_same_province:0 "Estamos en la misma provincia"
+
+mcc_interaction:0 "Conversación Multi-Personaje"
+ckms_meet_interaction:0 "Conversación a Tres Bandas"
+ckms_meet_interaction.desc:0 "Iniciar una conversación con [recipient.GetShortUINameNoTooltip] y otra parte (debe estar fijado primero)"
+secondary_recipient_meet:0 "Destinatario Secundario"
+mcc_interaction.desc:0 "Iniciar una conversación con todos los personajes fijados en la misma ubicación"
+
+meet_interaction:0 "Reunirse"
+meet_interaction.desc:0 "Iniciar una conversación con [recipient.GetShortUINameNoTooltip] y otra parte"
+
+invite_to_talk_interaction:0 "Invitar a hablar"
+invite_to_talk_interaction.desc:0 "Invitar a [recipient.GetTitledFirstName] a una conversación"
+invite_to_talk_event.1003.desc:0 "[actor.GetCurrentLocation.GetName] finalmente ha llegado para reunirse contigo. Ahora la pregunta es, ¿dónde quieres reunirte con \$talk_herhim\$?"
+i_said_we_will_meet:0 "¡DEBES OBEDECERME!"
+
+
+decision_group_type_votc_group_type:0 "Reunión"
+votc_family_decision:0 "Reunión de la Casa"
+votc_family_decision_tooltip:0 "Reunión de la Casa" 
+votc_family_decision_desc:0 "Celebrar un consejo de la casa; todos los miembros de la dinastía en la misma ubicación asistirán"
+votc_family_decision_confirm:0 "Celebrar Consejo de la Casa"
+votc_family_decision_effect:0 "Celebrarás un consejo de la casa"
+famliy_member_too_much:0 "Demasiados miembros de la dinastía (más de 20)"
+
+votc_cabinet_decision_tooltip:0 "Reunión del Consejo" 
+votc_cabinet_decision_desc:0 "Celebrar una reunión del consejo; todos los miembros del consejo en la misma ubicación asistirán"
+votc_cabinet_decision_confirm:0 "Celebrar Reunión del Consejo"
+votc_cabinet_decision_effect:0 "Celebrarás una reunión del consejo"
+not_enough_cabinet_member:0 "Al menos 2 miembros del consejo deben estar en la misma ubicación que tú"
+votc_chinese_empire_cabinet_decision_desc:0 "Celebrarás una reunión del consejo central"
+votc_cabinet_decision:0 "Reunión del Consejo"
+
+votc_relaese_letter_decision:0 "VOTC Liberar Hilo de Carta"
+votc_relaese_letter_decision_desc:0 "Liberar el hilo de carta actual que espera una respuesta"
+votc_relaese_letter_decision_tooltip:0 "Liberar Hilo de Carta"
+votc_relaese_letter_decision_confirm:0 "Liberar Hilo de Carta"
+votc_relaese_letter_decision_effect_desc:0 "Liberarás el hilo de carta actual que espera una respuesta. Esta acción te permite omitir el contador del proceso de cartas y muy probablemente sobrescribirá cualquier respuesta anterior aún no recibida. Si usaste la función de escritura de cartas sin el programa backend en ejecución, ¡se recomienda realizar esta operación manualmente una vez!"
+
+message_interaction.desc:0 "Escribir una Carta"
+message_interaction:0 "Escribir Carta"
+votc_message_title:0 "Escribir a [recipient.GetShortUINamePossessive]"
+votc_message_desc:0 " "
+votc_message_tooltip:0 "Si el mensaje está incompleto, verifique el artefacto de carta correspondiente."
+message_text:0 "VOTC:LETTER/;/Spanish/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/"
+send_message:0 "Enviar"
+
+votc_huixin_title1:0 "Respuesta de [GetGlobalVariable('message_second_scope_letter_1').Char.GetTitledFirstName]"
+votc_huixin_title2:0 "Respuesta de [GetGlobalVariable('message_second_scope_letter_2').Char.GetTitledFirstName]"
+votc_huixin_title3:0 "Respuesta de [GetGlobalVariable('message_second_scope_letter_3').Char.GetTitledFirstName]"
+votc_huixin_title4:0 "Respuesta de [GetGlobalVariable('message_second_scope_letter_4').Char.GetTitledFirstName]"
+votc_huixin_title5:0 "Respuesta de [GetGlobalVariable('message_second_scope_letter_5').Char.GetTitledFirstName]"
+votc_huixin_title6:0 "Respuesta de [GetGlobalVariable('message_second_scope_letter_6').Char.GetTitledFirstName]"
+votc_huixin_title7:0 "Respuesta de [GetGlobalVariable('message_second_scope_letter_7').Char.GetTitledFirstName]"
+votc_huixin_title8:0 "Respuesta de [GetGlobalVariable('message_second_scope_letter_8').Char.GetTitledFirstName]"
+votc_huixin_title9:0 "Respuesta de [GetGlobalVariable('message_second_scope_letter_9').Char.GetTitledFirstName]"
+
+votc_letter_full:0 "Hilo de cartas lleno (9/9)"
+
+event_window_widget_message_write_prompt:0 "Ingrese el contenido de la carta"

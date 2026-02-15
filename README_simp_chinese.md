@@ -1,7 +1,7 @@
 # 一些常见问题
 
 ## 一、没有弹出对话框
-该mod需要运行额外后端程序，汉化后端程序下载地址：[https://github.com/Lisiyuan233/Voices_of_the_Court1/releases/tag/betaZh](https://github.com/Lisiyuan233/Voices_of_the_Court1/releases/tag/betaZh)，下载下来的exe文件打开后会自动安装。
+该mod需要运行额外后端程序，汉化后端程序下载地址：[https://github.com/szmania/Voices_of_the_Court/releases/latest](https://github.com/szmania/Voices_of_the_Court/releases/latest)，下载下来的exe文件打开后会自动安装。
 
 
 ## 二、api配置问题

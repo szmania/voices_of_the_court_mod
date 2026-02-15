@@ -1,7 +1,7 @@
 # Preguntas Frecuentes
 
 ## 1. No aparece el cuadro de diálogo
-Este mod requiere un programa backend adicional para ejecutarse. Descargue el programa backend localizado aquí: [https://github.com/Lisiyuan233/Voices_of_the_Court1/releases/tag/betaZh](https://github.com/Lisiyuan233/Voices_of_the_Court1/releases/tag/betaZh). El archivo .exe descargado se instalará automáticamente al abrirlo.
+Este mod requiere un programa backend adicional para ejecutarse. Descargue el programa backend localizado aquí: [https://github.com/szmania/Voices_of_the_Court/releases/latest](https://github.com/szmania/Voices_of_the_Court/releases/latest). El archivo .exe descargado se instalará automáticamente al abrirlo.
 
 ## 2. Problemas de configuración de la API
 Se recomienda utilizar la API oficial de DeepSeek. En el menú desplegable para la conexión del modelo de diálogo, seleccione la página `custom(openai-compatible)` para configurar:
