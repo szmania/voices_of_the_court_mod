@@ -64,6 +64,8 @@ meet_scene_feast_string:0 "Встретиться на пиру"
 meet_scene_armycamp_string:0 "Встретиться в военном лагере"
 meet_scene_hunt_string:0 "Встретиться во время охоты"
 meet_scene_alley_string:0 "Встретиться в городском переулке"
+talk_scene_harem_string:0 "Встретиться в гареме"
+meet_scene_harem_string:0 "Встретиться в гареме"
 
 talk_scene_yueyanglou_string:0 "Встретиться в башне Юэян"
 talk_scene_huanghelou_string:0 "Встретиться в башне Желтого журавля"

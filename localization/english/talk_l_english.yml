@@ -64,6 +64,8 @@ meet_scene_feast_string:0 "Meet at the feast"
 meet_scene_armycamp_string:0 "Meet at the army camp"
 meet_scene_hunt_string:0 "Meet during the hunt"
 meet_scene_alley_string:0 "Meet in the town alley"
+talk_scene_harem_string:0 "Meet in the harem"
+meet_scene_harem_string:0 "Meet in the harem"
 
 talk_scene_yueyanglou_string:0 "Meet at Yueyang Tower"
 talk_scene_huanghelou_string:0 "Meet at Yellow Crane Tower"

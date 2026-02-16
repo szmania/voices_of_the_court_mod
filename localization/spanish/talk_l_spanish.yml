@@ -64,6 +64,8 @@ meet_scene_feast_string:0 "Reunirse en el banquete"
 meet_scene_armycamp_string:0 "Reunirse en el campamento militar"
 meet_scene_hunt_string:0 "Reunirse durante la caza"
 meet_scene_alley_string:0 "Reunirse en el callejón de la ciudad"
+talk_scene_harem_string:0 "Reunirse en el harén"
+meet_scene_harem_string:0 "Reunirse en el harén"
 
 talk_scene_yueyanglou_string:0 "Reunirse en la Torre Yueyang"
 talk_scene_huanghelou_string:0 "Reunirse en la Torre de la Grulla Amarilla"

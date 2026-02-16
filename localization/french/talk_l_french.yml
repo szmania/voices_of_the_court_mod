@@ -64,6 +64,8 @@ meet_scene_feast_string:0 "Se rencontrer au banquet"
 meet_scene_armycamp_string:0 "Se rencontrer au camp militaire"
 meet_scene_hunt_string:0 "Se rencontrer pendant la chasse"
 meet_scene_alley_string:0 "Se rencontrer dans la ruelle de la ville"
+talk_scene_harem_string:0 "Se rencontrer dans le harem"
+meet_scene_harem_string:0 "Se rencontrer dans le harem"
 
 talk_scene_yueyanglou_string:0 "Se rencontrer à la Tour Yueyang"
 talk_scene_huanghelou_string:0 "Se rencontrer à la Tour de la Grue Jaune"
