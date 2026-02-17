@@ -11,328 +11,35 @@ talk_event.1001 = {
 	desc = talk_event.1001.desc
 	left_portrait = {
 		character = scope:recipient
+	immediate = {
+		populate_valid_scenes_list = yes
 	}
-	
-	#在此段注释的下方添加_代码块15
-#代码块15示例
-#	option ={
-#	name = talk_scene_"scene_name"_string
-#	trigger = {can_talk_in_"scene_name" = yes}
-#	
-#		set_global_variable = {
-#			name = talk_scene
-#			value = flag:talk_scene_"scene_name"
-#		}
-#
-#	
-#	
-#	
-#	trigger_event = talk_event.9001
-#	}
 
-	#在中国市场
-	option ={
-	name = talk_scene_market_east_string
-	trigger = {can_talk_in_market_east = yes}
-	
-		set_global_variable = {
-			name = talk_scene
-			value = flag:talk_scene_market_east
+	option = {
+		name = "SELECT_SCENE_OPTION"
+		custom_tooltip = "SELECT_SCENE_OPTION_TOOLTIP"
+		trigger_event = {
+			id = talk_event.9006
 		}
-
-	
-	
-	
-	trigger_event = talk_event.9001
 	}
 
-	#在market
-	option ={
-	name = talk_scene_market_string
-	trigger = {can_talk_in_market = yes}
-	
-		set_global_variable = {
-			name = talk_scene
-			value = flag:talk_scene_market
-		}
-	
-	
-	
-	trigger_event = talk_event.9001
+	option = {
+		name = talk_event.1001.exit
 	}
+}
 
-	#在酒馆
-	option ={
-	name = talk_scene_tavern_string
-	trigger = {can_talk_in_tavern = yes}
-	
-		set_global_variable = {
-			name = talk_scene
-			value = flag:talk_scene_tavern
-		}
-	
-	
-	
-	trigger_event = talk_event.9001
+# Hidden event to open the Scene Picker GUI
+talk_event.9006 = {
+	type = character_event
+	hidden = yes
+	immediate = {
+		debug_log = "Opening Scene Picker GUI"
 	}
-
-	#在tavern_east
-	option ={
-	name = talk_scene_tavern_east_string
-	trigger = {can_talk_in_tavern_east = yes}
-	
-		set_global_variable = {
-			name = talk_scene
-			value = flag:talk_scene_tavern_east
-		}
-	
-	
-	
-	trigger_event = talk_event.9001
+	widget = {
+		gui = "scene_picker_window"
+		container = "custom_widgets_container"
 	}
-	
-
-
-	#在铁王座
-	option ={
-	name = talk_scene_iron_throne_string
-	trigger = {can_talk_in_iron_throne = yes}
-	
-		set_global_variable = {
-			name = talk_scene
-			value = flag:talk_scene_iron_throne
-		}
-	
-	
-	
-	
-	trigger_event = talk_event.9001
-	}
-
-	#在灵隐寺
-	option ={
-		name = talk_scene_lingyinsi_string
-		trigger = {can_talk_in_lingyinsi = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_lingyinsi
-			}
-
-		
-		
-		
-		trigger_event = talk_event.9001
-	}
-
-	#在日本皇宫
-	option ={
-		name = talk_scene_throneroom_japan_string
-		trigger = {can_talk_in_throneroom_japan = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_throneroom_japan
-			}
-
-		
-		
-		
-		trigger_event = talk_event.9001
-	}
-
-	#在少林寺
-	option ={
-		name = talk_scene_shaolinsi_string
-		trigger = {can_talk_in_shaolinsi = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_shaolinsi
-			}
-
-		
-		
-		
-		trigger_event = talk_event.9001
-	}
-
-	#在武当山道观
-	option ={
-		name = talk_scene_wudangshandaoguan_string
-		trigger = {can_talk_in_wudangshandaoguan = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_wudangshandaoguan
-			}
-
-		
-		
-		trigger_event = talk_event.9001
-	}
-
-	#在乐山大佛
-	option ={
-		name = talk_scene_leshandafou_string
-		trigger = {can_talk_in_leshandafou = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_leshandafou
-			}
-
-		
-		
-		trigger_event = talk_event.9001
-	}
-
-	#在泰山
-	option ={
-		name = talk_scene_taishan_string
-		trigger = {can_talk_in_taishan = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_taishan
-			}
-
-		
-		
-		trigger_event = talk_event.9001
-	}
-
-	#在武陵源
-	option ={
-		name = talk_scene_wulingyuan_string
-		trigger = {can_talk_in_wulingyuan = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_wulingyuan
-			}
-
-		
-		
-		trigger_event = talk_event.9001
-	}
-
-	#在开封皇城
-	option ={
-		name = talk_scene_kaifenghuangcheng_string
-		trigger = {can_talk_in_kaifenghuangcheng = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_kaifenghuangcheng
-			}
-
-		
-		
-		trigger_event = talk_event.9001
-	}
-
-	#在滕王阁
-	option ={
-		name = talk_scene_tengwangge_string
-		trigger = {can_talk_in_tengwangge = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_tengwangge
-			}
-
-		
-		
-		trigger_event = talk_event.9001
-	}	
-
-	#在岳阳楼
-	option ={
-		name = talk_scene_yueyanglou_string
-		trigger = {can_talk_in_yueyanglou = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_yueyanglou
-			}
-
-		
-		
-		trigger_event = talk_event.9001
-	}	
-
-	#在黄鹤楼
-
-	option ={
-		name = talk_scene_huanghelou_string
-		trigger = {can_talk_in_huanghelou = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_huanghelou
-			}
-
-	
-		
-		
-		trigger_event = talk_event.9001
-	}	
-
-#在云冈石窟
-	option ={
-		name = talk_scene_yungangshiku_string
-		trigger = {can_talk_in_yungangshiku = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_yungangshiku
-			}
-
-	
-		
-		
-		trigger_event = talk_event.9001
-	}	
-	
-	#在卧室
-	option ={
-		name = talk_scene_bedchamber_east1_string
-		trigger = {can_talk_in_bedchamber_east1 = yes}
-		
-			set_global_variable = {
-				name = talk_scene
-				value = flag:talk_scene_bedchamber_east1
-			}
-
-	
-		
-		
-		trigger_event = talk_event.9001
-	}	
-	
-	#在御花园见面	
-	option ={
-		name = talk_scene_garden_east1_string
-		
-		
-		trigger = {can_talk_in_garden_east1 = yes}
-		
-		set_global_variable = {
-			name = talk_scene
-			value = flag:talk_scene_garden_east1
-		}
-		trigger_event = talk_event.9001
-	}
-	
-	#在府衙接见
-	option ={
-		name = talk_scene_throneroom_east_fuya1_string
-		
-		trigger = {can_talk_in_throneroom_east_fuya1 = yes}
-		
-		set_global_variable = {
-			name = talk_scene
+}
 			value = flag:talk_scene_throneroom_east_fuya1
 		}
 		

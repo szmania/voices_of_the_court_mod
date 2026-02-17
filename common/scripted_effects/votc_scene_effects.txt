@@ -3,29 +3,173 @@ populate_valid_scenes_list = {
 	# Clear existing list
 	remove_variable_list = valid_scenes_list
 	
-	# Check each scene and add to list if valid, up to 10
-	# This is a template; we will expand this to all 260+ scenes
+	# --- Generic Scenes (Prioritized) ---
 	
 	if = {
 		limit = { 
-			is_valid_scene_iron_throne = yes 
+			is_valid_scene_throneroom = yes 
 		}
 		add_to_variable_list = {
 			name = valid_scenes_list
-			target = flag:scene_iron_throne
+			target = flag:talk_scene_throneroom
 		}
 	}
 	
 	if = {
 		limit = {
 			size_of_variable_list = { name = valid_scenes_list } < 10
-			is_valid_scene_generic_throneroom = yes
+			is_valid_scene_garden = yes
 		}
 		add_to_variable_list = {
 			name = valid_scenes_list
-			target = flag:scene_throneroom
+			target = flag:talk_scene_garden
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_bedchamber = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_bedchamber
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_tavern = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_tavern
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_market = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_market
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_dungeon = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_dungeon
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_feast = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_feast
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_temple = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_temple
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_alley = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_alley
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_armycamp = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_armycamp
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_courtyard_night = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_courtyard_night
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_camp = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_camp
 		}
 	}
 	
-	# ... Repeat for other scenes ...
+	# --- Specific / Landmark Scenes ---
+	
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_iron_throne = yes 
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_iron_throne
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_harem = yes 
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_harem
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_lingyinsi = yes 
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_lingyinsi
+		}
+	}
+	
+	# ... More scenes will be added here ...
 }

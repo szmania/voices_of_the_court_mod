@@ -1,0 +1,66 @@
+window = {
+	name = "scene_picker_window"
+	size = { 600 800 }
+	parentanchor = center
+	layer = middle
+	movable = yes
+	using = Window_Background
+	using = Window_Decoration_Flat
+
+	vbox = {
+		using = Window_Margins
+		spacing = 10
+
+		header_standard = {
+			layoutpolicy_horizontal = expanding
+			blockoverride "header_text"
+			{
+				text = "SELECT_SCENE_HEADER"
+			}
+			blockoverride "button_close"
+			{
+				onclick = "[ExecuteConsoleCommand('gui.clearwidgets scene_picker_window')]"
+			}
+		}
+
+		scrollbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+
+			blockoverride "scrollbox_content"
+			{
+				fixedgridbox = {
+					name = "scene_grid"
+					datamodel = "[GetPlayer.MakeScope.GetList('valid_scenes_list')]"
+					addcolumn = 180
+					addrow = 140
+					datamodel_wrap = 3
+					flip_direction = yes
+
+					item = {
+						button_standard = {
+							size = { 170 130 }
+							tooltip = "[Scope.GetFlagName]"
+							
+							onclick = "[GetScriptedGui('select_scene').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('scene', Scope.Self ).End )]"
+							onclick = "[ExecuteConsoleCommand('gui.clearwidgets scene_picker_window')]"
+
+							icon = {
+								size = { 100% 100% }
+								texture = "[GetIllustration( Scope.GetFlagName ).GetTexture( GetPlayer.MakeScope )]"
+								alpha = 0.8
+							}
+
+							text_single = {
+								parentanchor = bottom|hcenter
+								position = { 0 -5 }
+								text = "[Scope.GetFlagName]"
+								max_width = 160
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

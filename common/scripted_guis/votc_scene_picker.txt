@@ -1,0 +1,23 @@
+select_scene = {
+	scope = character
+	effect = {
+		set_global_variable = {
+			name = talk_scene
+			value = scope:scene
+		}
+		# Trigger the main conversation event now that the scene is selected
+		if = {
+			limit = { has_character_flag = is_mcc_convo }
+			trigger_event = mcc_event.9001
+			remove_character_flag = is_mcc_convo
+		}
+		else_if = {
+			limit = { has_character_flag = is_meet_convo }
+			trigger_event = ckms_meet_event.9001
+			remove_character_flag = is_meet_convo
+		}
+		else = {
+			trigger_event = talk_event.9001
+		}
+	}
+}

@@ -93,6 +93,27 @@ talk_event.1001.exit:0 "Actually, I don't want to talk to $talk_herhim$."
 
 talk_window_end:0 "End conversation"
 
+SELECT_SCENE_HEADER:0 "Select Meeting Location"
+SELECT_SCENE_OPTION:0 "Choose where to meet..."
+SELECT_SCENE_OPTION_TOOLTIP:0 "Open the scene picker to select a contextual background for this conversation."
+
+scene_throneroom:0 "Throne Room"
+scene_garden:0 "Garden"
+scene_bedchamber:0 "Bedchamber"
+scene_tavern:0 "Tavern"
+scene_market:0 "Market"
+scene_dungeon:0 "Dungeon"
+scene_feast:0 "Feast"
+scene_temple:0 "Temple"
+scene_alley:0 "Alley"
+scene_armycamp:0 "Army Camp"
+scene_courtyard_night:0 "Courtyard (Night)"
+scene_camp:0 "Travel Camp"
+scene_iron_throne:0 "The Iron Throne"
+scene_harem:0 "Harem"
+scene_lingyinsi:0 "Lingyin Temple"
+
+
 conversation_opinion:0 "From conversations"
 
 not_in_same_province:0 "We are in the same province"
