@@ -317,6 +317,18 @@ ckms_meet_event.1001 = {
 		trigger_event = talk_event.9001	
 	}
 	
+	# In the harem
+	option ={
+		name = meet_scene_harem_string
+		trigger = {can_meet_in_harem = yes}
+		
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_harem
+		}
+		
+		trigger_event = ckms_meet_event.9001
+	}
 	
 	option ={
 		name = meet_scene_throneroom_string
@@ -470,4 +482,3 @@ ckms_meet_event.9003 = {
 	
 
 }
-

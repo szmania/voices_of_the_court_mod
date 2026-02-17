@@ -380,6 +380,19 @@ talk_event.1001 = {
 		
 		trigger_event = talk_event.9001	
 	}
+	
+	# In the harem
+	option ={
+		name = talk_scene_harem_string
+		trigger = {can_talk_in_harem = yes}
+		
+		set_global_variable = {
+			name = talk_scene
+			value = flag:talk_scene_harem
+		}
+		
+		trigger_event = talk_event.9001
+	}
 
 	option ={
 		name = talk_scene_throneroom_string
@@ -556,5 +569,3 @@ talk_event.2001 = {
 		}
 	}
 		
-
-
