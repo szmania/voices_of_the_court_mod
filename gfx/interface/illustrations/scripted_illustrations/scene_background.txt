@@ -913,6 +913,3910 @@ talk_background = {
 		
 		reference = "environment_event_alley"	
 	}
+	
+	##########################################
+	#harem
+	
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_harem
+				global_var:meet_scene = flag:meet_scene_harem
+			}
+		}
+		
+		reference = "scenes/harem.dds"	
+	}
+	
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_harem
+				global_var:meet_scene = flag:meet_scene_harem
+			}
+		}
+		
+		reference = "environment_event_garden"	
+	}
+
+	# bedchamber_east2
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber_east2
+				global_var:meet_scene = flag:meet_scene_bedchamber_east2
+			}
+		}
+		reference = "scenes/bedchamber_east2.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber_east2
+				global_var:meet_scene = flag:meet_scene_bedchamber_east2
+			}
+		}
+		reference = "environment_event_bedchamber"		
+	}
+
+	# bedchamber_east3
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber_east3
+				global_var:meet_scene = flag:meet_scene_bedchamber_east3
+			}
+		}
+		reference = "scenes/bedchamber_east3.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber_east3
+				global_var:meet_scene = flag:meet_scene_bedchamber_east3
+			}
+		}
+		reference = "environment_event_bedchamber"		
+	}
+
+	# courtyard_night
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_courtyard_night
+				global_var:meet_scene = flag:meet_scene_courtyard_night
+			}
+		}
+		reference = "scenes/courtyard_night.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_courtyard_night
+				global_var:meet_scene = flag:meet_scene_courtyard_night
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# ep3_frontend_adventurer
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_frontend_adventurer
+				global_var:meet_scene = flag:meet_scene_ep3_frontend_adventurer
+			}
+		}
+		reference = "scenes/ep3_frontend_adventurer.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_frontend_adventurer
+				global_var:meet_scene = flag:meet_scene_ep3_frontend_adventurer
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_frontend_byzantine
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_frontend_byzantine
+				global_var:meet_scene = flag:meet_scene_ep3_frontend_byzantine
+			}
+		}
+		reference = "scenes/ep3_frontend_byzantine.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_frontend_byzantine
+				global_var:meet_scene = flag:meet_scene_ep3_frontend_byzantine
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp1_frontend_nontribal
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_frontend_nontribal
+				global_var:meet_scene = flag:meet_scene_fp1_frontend_nontribal
+			}
+		}
+		reference = "scenes/fp1_frontend_nontribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_frontend_nontribal
+				global_var:meet_scene = flag:meet_scene_fp1_frontend_nontribal
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp1_frontend_tribal
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_frontend_tribal
+				global_var:meet_scene = flag:meet_scene_fp1_frontend_tribal
+			}
+		}
+		reference = "scenes/fp1_frontend_tribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_frontend_tribal
+				global_var:meet_scene = flag:meet_scene_fp1_frontend_tribal
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp2_frontend_iberian
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_frontend_iberian
+				global_var:meet_scene = flag:meet_scene_fp2_frontend_iberian
+			}
+		}
+		reference = "scenes/fp2_frontend_iberian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_frontend_iberian
+				global_var:meet_scene = flag:meet_scene_fp2_frontend_iberian
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp3_frontend_iranian
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_frontend_iranian
+				global_var:meet_scene = flag:meet_scene_fp3_frontend_iranian
+			}
+		}
+		reference = "scenes/fp3_frontend_iranian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_frontend_iranian
+				global_var:meet_scene = flag:meet_scene_fp3_frontend_iranian
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# frontend_east
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_frontend_east
+				global_var:meet_scene = flag:meet_scene_frontend_east
+			}
+		}
+		reference = "scenes/frontend_east.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_frontend_east
+				global_var:meet_scene = flag:meet_scene_frontend_east
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# frontend_india
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_frontend_india
+				global_var:meet_scene = flag:meet_scene_frontend_india
+			}
+		}
+		reference = "scenes/frontend_india.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_frontend_india
+				global_var:meet_scene = flag:meet_scene_frontend_india
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# frontend_mediterranean
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_frontend_mediterranean
+				global_var:meet_scene = flag:meet_scene_frontend_mediterranean
+			}
+		}
+		reference = "scenes/frontend_mediterranean.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_frontend_mediterranean
+				global_var:meet_scene = flag:meet_scene_frontend_mediterranean
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# frontend_tribal
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_frontend_tribal
+				global_var:meet_scene = flag:meet_scene_frontend_tribal
+			}
+		}
+		reference = "scenes/frontend_tribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_frontend_tribal
+				global_var:meet_scene = flag:meet_scene_frontend_tribal
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# garden_east2
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_garden_east2
+				global_var:meet_scene = flag:meet_scene_garden_east2
+			}
+		}
+		reference = "scenes/garden_east2.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_garden_east2
+				global_var:meet_scene = flag:meet_scene_garden_east2
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# mpo_frontend_nomad
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_frontend_nomad
+				global_var:meet_scene = flag:meet_scene_mpo_frontend_nomad
+			}
+		}
+		reference = "scenes/mpo_frontend_nomad.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_frontend_nomad
+				global_var:meet_scene = flag:meet_scene_mpo_frontend_nomad
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# throneroom_east_empire2
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
+				global_var:meet_scene = flag:meet_scene_throneroom_east_empire2
+			}
+		}
+		reference = "scenes/throneroom_east_empire2.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
+				global_var:meet_scene = flag:meet_scene_throneroom_east_empire2
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# throneroom_east_fuya2
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_east_fuya2
+				global_var:meet_scene = flag:meet_scene_throneroom_east_fuya2
+			}
+		}
+		reference = "scenes/throneroom_east_fuya2.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_east_fuya2
+				global_var:meet_scene = flag:meet_scene_throneroom_east_fuya2
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# alley (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_alley_vanilla
+				global_var:meet_scene = flag:meet_scene_alley_vanilla
+			}
+		}
+		reference = "scenes_Vanilla/alley.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_alley_vanilla
+				global_var:meet_scene = flag:meet_scene_alley_vanilla
+			}
+		}
+		reference = "environment_event_alley"		
+	}
+
+	# alley_day (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_alley_day
+				global_var:meet_scene = flag:meet_scene_alley_day
+			}
+		}
+		reference = "scenes_Vanilla/alley_day.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_alley_day
+				global_var:meet_scene = flag:meet_scene_alley_day
+			}
+		}
+		reference = "environment_event_alley"		
+	}
+
+	# armory (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_armory
+				global_var:meet_scene = flag:meet_scene_armory
+			}
+		}
+		reference = "scenes_Vanilla/armory.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_armory
+				global_var:meet_scene = flag:meet_scene_armory
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# battlefield (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_battlefield
+				global_var:meet_scene = flag:meet_scene_battlefield
+			}
+		}
+		reference = "scenes_Vanilla/battlefield.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_battlefield
+				global_var:meet_scene = flag:meet_scene_battlefield
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bedchamber (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber_vanilla
+				global_var:meet_scene = flag:meet_scene_bedchamber_vanilla
+			}
+		}
+		reference = "scenes_Vanilla/bedchamber.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bedchamber_vanilla
+				global_var:meet_scene = flag:meet_scene_bedchamber_vanilla
+			}
+		}
+		reference = "environment_event_bedchamber"		
+	}
+
+	# bp1_bonfire (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_bonfire
+				global_var:meet_scene = flag:meet_scene_bp1_bonfire
+			}
+		}
+		reference = "scenes_Vanilla/bp1_bonfire.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_bonfire
+				global_var:meet_scene = flag:meet_scene_bp1_bonfire
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp1_corridor_indian_day (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_corridor_indian_day
+				global_var:meet_scene = flag:meet_scene_bp1_corridor_indian_day
+			}
+		}
+		reference = "scenes_Vanilla/bp1_corridor_indian_day.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_corridor_indian_day
+				global_var:meet_scene = flag:meet_scene_bp1_corridor_indian_day
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# bp1_corridor_indian_night (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_corridor_indian_night
+				global_var:meet_scene = flag:meet_scene_bp1_corridor_indian_night
+			}
+		}
+		reference = "scenes_Vanilla/bp1_corridor_indian_night.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_corridor_indian_night
+				global_var:meet_scene = flag:meet_scene_bp1_corridor_indian_night
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# bp1_courtyard_indian (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_courtyard_indian
+				global_var:meet_scene = flag:meet_scene_bp1_courtyard_indian
+			}
+		}
+		reference = "scenes_Vanilla/bp1_courtyard_indian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_courtyard_indian
+				global_var:meet_scene = flag:meet_scene_bp1_courtyard_indian
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# bp1_courtyard_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_courtyard_mena
+				global_var:meet_scene = flag:meet_scene_bp1_courtyard_mena
+			}
+		}
+		reference = "scenes_Vanilla/bp1_courtyard_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_courtyard_mena
+				global_var:meet_scene = flag:meet_scene_bp1_courtyard_mena
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# bp1_crossroads_inn (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_crossroads_inn
+				global_var:meet_scene = flag:meet_scene_bp1_crossroads_inn
+			}
+		}
+		reference = "scenes_Vanilla/bp1_crossroads_inn.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_crossroads_inn
+				global_var:meet_scene = flag:meet_scene_bp1_crossroads_inn
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp1_desert (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_desert
+				global_var:meet_scene = flag:meet_scene_bp1_desert
+			}
+		}
+		reference = "scenes_Vanilla/bp1_desert.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_desert
+				global_var:meet_scene = flag:meet_scene_bp1_desert
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp1_docks_tribal (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_docks_tribal
+				global_var:meet_scene = flag:meet_scene_bp1_docks_tribal
+			}
+		}
+		reference = "scenes_Vanilla/bp1_docks_tribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_docks_tribal
+				global_var:meet_scene = flag:meet_scene_bp1_docks_tribal
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp1_garden_mena_day (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_garden_mena_day
+				global_var:meet_scene = flag:meet_scene_bp1_garden_mena_day
+			}
+		}
+		reference = "scenes_Vanilla/bp1_garden_mena_day.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_garden_mena_day
+				global_var:meet_scene = flag:meet_scene_bp1_garden_mena_day
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# bp1_hills (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_hills
+				global_var:meet_scene = flag:meet_scene_bp1_hills
+			}
+		}
+		reference = "scenes_Vanilla/bp1_hills.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_hills
+				global_var:meet_scene = flag:meet_scene_bp1_hills
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp1_jungle (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_jungle
+				global_var:meet_scene = flag:meet_scene_bp1_jungle
+			}
+		}
+		reference = "scenes_Vanilla/bp1_jungle.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_jungle
+				global_var:meet_scene = flag:meet_scene_bp1_jungle
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp1_kitchen_western (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_kitchen_western
+				global_var:meet_scene = flag:meet_scene_bp1_kitchen_western
+			}
+		}
+		reference = "scenes_Vanilla/bp1_kitchen_western.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_kitchen_western
+				global_var:meet_scene = flag:meet_scene_bp1_kitchen_western
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# bp1_plains (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_plains
+				global_var:meet_scene = flag:meet_scene_bp1_plains
+			}
+		}
+		reference = "scenes_Vanilla/bp1_plains.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_plains
+				global_var:meet_scene = flag:meet_scene_bp1_plains
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp1_relaxing_room_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_relaxing_room_mena
+				global_var:meet_scene = flag:meet_scene_bp1_relaxing_room_mena
+			}
+		}
+		reference = "scenes_Vanilla/bp1_relaxing_room_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_relaxing_room_mena
+				global_var:meet_scene = flag:meet_scene_bp1_relaxing_room_mena
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# bp1_relaxing_room_western (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_relaxing_room_western
+				global_var:meet_scene = flag:meet_scene_bp1_relaxing_room_western
+			}
+		}
+		reference = "scenes_Vanilla/bp1_relaxing_room_western.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_relaxing_room_western
+				global_var:meet_scene = flag:meet_scene_bp1_relaxing_room_western
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# bp1_wetlands (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_wetlands
+				global_var:meet_scene = flag:meet_scene_bp1_wetlands
+			}
+		}
+		reference = "scenes_Vanilla/bp1_wetlands.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_wetlands
+				global_var:meet_scene = flag:meet_scene_bp1_wetlands
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp1_wine_cellar (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_wine_cellar
+				global_var:meet_scene = flag:meet_scene_bp1_wine_cellar
+			}
+		}
+		reference = "scenes_Vanilla/bp1_wine_cellar.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp1_wine_cellar
+				global_var:meet_scene = flag:meet_scene_bp1_wine_cellar
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# bp2_courtyard (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_courtyard
+				global_var:meet_scene = flag:meet_scene_bp2_courtyard
+			}
+		}
+		reference = "scenes_Vanilla/bp2_courtyard.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_courtyard
+				global_var:meet_scene = flag:meet_scene_bp2_courtyard
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# bp2_indian_garden (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_indian_garden
+				global_var:meet_scene = flag:meet_scene_bp2_indian_garden
+			}
+		}
+		reference = "scenes_Vanilla/bp2_indian_garden.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_indian_garden
+				global_var:meet_scene = flag:meet_scene_bp2_indian_garden
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# bp2_nursery (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_nursery
+				global_var:meet_scene = flag:meet_scene_bp2_nursery
+			}
+		}
+		reference = "scenes_Vanilla/bp2_nursery.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_nursery
+				global_var:meet_scene = flag:meet_scene_bp2_nursery
+			}
+		}
+		reference = "environment_event_bedchamber"		
+	}
+
+	# bp2_study_indian (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_study_indian
+				global_var:meet_scene = flag:meet_scene_bp2_study_indian
+			}
+		}
+		reference = "scenes_Vanilla/bp2_study_indian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_study_indian
+				global_var:meet_scene = flag:meet_scene_bp2_study_indian
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# bp2_tavern_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_tavern_mena
+				global_var:meet_scene = flag:meet_scene_bp2_tavern_mena
+			}
+		}
+		reference = "scenes_Vanilla/bp2_tavern_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_tavern_mena
+				global_var:meet_scene = flag:meet_scene_bp2_tavern_mena
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp2_university (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_university
+				global_var:meet_scene = flag:meet_scene_bp2_university
+			}
+		}
+		reference = "scenes_Vanilla/bp2_university.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_university
+				global_var:meet_scene = flag:meet_scene_bp2_university
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# bp2_university_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_university_mena
+				global_var:meet_scene = flag:meet_scene_bp2_university_mena
+			}
+		}
+		reference = "scenes_Vanilla/bp2_university_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp2_university_mena
+				global_var:meet_scene = flag:meet_scene_bp2_university_mena
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# bp3_coast (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_coast
+				global_var:meet_scene = flag:meet_scene_bp3_coast
+			}
+		}
+		reference = "scenes_Vanilla/bp3_coast.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_coast
+				global_var:meet_scene = flag:meet_scene_bp3_coast
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp3_hills_winter (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_hills_winter
+				global_var:meet_scene = flag:meet_scene_bp3_hills_winter
+			}
+		}
+		reference = "scenes_Vanilla/bp3_hills_winter.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_hills_winter
+				global_var:meet_scene = flag:meet_scene_bp3_hills_winter
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp3_mountain_winter (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_mountain_winter
+				global_var:meet_scene = flag:meet_scene_bp3_mountain_winter
+			}
+		}
+		reference = "scenes_Vanilla/bp3_mountain_winter.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_mountain_winter
+				global_var:meet_scene = flag:meet_scene_bp3_mountain_winter
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp3_plains_winter (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_plains_winter
+				global_var:meet_scene = flag:meet_scene_bp3_plains_winter
+			}
+		}
+		reference = "scenes_Vanilla/bp3_plains_winter.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_plains_winter
+				global_var:meet_scene = flag:meet_scene_bp3_plains_winter
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp3_riverside (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_riverside
+				global_var:meet_scene = flag:meet_scene_bp3_riverside
+			}
+		}
+		reference = "scenes_Vanilla/bp3_riverside.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_riverside
+				global_var:meet_scene = flag:meet_scene_bp3_riverside
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp3_steppe_winter (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_steppe_winter
+				global_var:meet_scene = flag:meet_scene_bp3_steppe_winter
+			}
+		}
+		reference = "scenes_Vanilla/bp3_steppe_winter.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_steppe_winter
+				global_var:meet_scene = flag:meet_scene_bp3_steppe_winter
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# bp3_wetlands_winter (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_wetlands_winter
+				global_var:meet_scene = flag:meet_scene_bp3_wetlands_winter
+			}
+		}
+		reference = "scenes_Vanilla/bp3_wetlands_winter.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_bp3_wetlands_winter
+				global_var:meet_scene = flag:meet_scene_bp3_wetlands_winter
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# church (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_church
+				global_var:meet_scene = flag:meet_scene_church
+			}
+		}
+		reference = "scenes_Vanilla/church.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_church
+				global_var:meet_scene = flag:meet_scene_church
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# corridor (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_corridor
+				global_var:meet_scene = flag:meet_scene_corridor
+			}
+		}
+		reference = "scenes_Vanilla/corridor.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_corridor
+				global_var:meet_scene = flag:meet_scene_corridor
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# corridor_day (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_corridor_day
+				global_var:meet_scene = flag:meet_scene_corridor_day
+			}
+		}
+		reference = "scenes_Vanilla/corridor_day.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_corridor_day
+				global_var:meet_scene = flag:meet_scene_corridor_day
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# councilchamber (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_councilchamber
+				global_var:meet_scene = flag:meet_scene_councilchamber
+			}
+		}
+		reference = "scenes_Vanilla/councilchamber.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_councilchamber
+				global_var:meet_scene = flag:meet_scene_councilchamber
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# courtyard (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_courtyard
+				global_var:meet_scene = flag:meet_scene_courtyard
+			}
+		}
+		reference = "scenes_Vanilla/courtyard.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_courtyard
+				global_var:meet_scene = flag:meet_scene_courtyard
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# desert (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_desert
+				global_var:meet_scene = flag:meet_scene_desert
+			}
+		}
+		reference = "scenes_Vanilla/desert.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_desert
+				global_var:meet_scene = flag:meet_scene_desert
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# desert_nomad (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_desert_nomad
+				global_var:meet_scene = flag:meet_scene_desert_nomad
+			}
+		}
+		reference = "scenes_Vanilla/desert_nomad.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_desert_nomad
+				global_var:meet_scene = flag:meet_scene_desert_nomad
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# desert_settlement (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_desert_settlement
+				global_var:meet_scene = flag:meet_scene_desert_settlement
+			}
+		}
+		reference = "scenes_Vanilla/desert_settlement.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_desert_settlement
+				global_var:meet_scene = flag:meet_scene_desert_settlement
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# docks (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_docks
+				global_var:meet_scene = flag:meet_scene_docks
+			}
+		}
+		reference = "scenes_Vanilla/docks.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_docks
+				global_var:meet_scene = flag:meet_scene_docks
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# drylands (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_drylands
+				global_var:meet_scene = flag:meet_scene_drylands
+			}
+		}
+		reference = "scenes_Vanilla/drylands.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_drylands
+				global_var:meet_scene = flag:meet_scene_drylands
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# dungeon (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_dungeon_vanilla
+				global_var:meet_scene = flag:meet_scene_dungeon_vanilla
+			}
+		}
+		reference = "scenes_Vanilla/dungeon.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_dungeon_vanilla
+				global_var:meet_scene = flag:meet_scene_dungeon_vanilla
+			}
+		}
+		reference = "environment_event_dungeon"		
+	}
+
+	# ep2_dog_kennels (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_dog_kennels
+				global_var:meet_scene = flag:meet_scene_ep2_dog_kennels
+			}
+		}
+		reference = "scenes_Vanilla/ep2_dog_kennels.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_dog_kennels
+				global_var:meet_scene = flag:meet_scene_ep2_dog_kennels
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_feast_indian (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_feast_indian
+				global_var:meet_scene = flag:meet_scene_ep2_feast_indian
+			}
+		}
+		reference = "scenes_Vanilla/ep2_feast_indian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_feast_indian
+				global_var:meet_scene = flag:meet_scene_ep2_feast_indian
+			}
+		}
+		reference = "environment_event_feast"		
+	}
+
+	# ep2_feast_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_feast_mena
+				global_var:meet_scene = flag:meet_scene_ep2_feast_mena
+			}
+		}
+		reference = "scenes_Vanilla/ep2_feast_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_feast_mena
+				global_var:meet_scene = flag:meet_scene_ep2_feast_mena
+			}
+		}
+		reference = "environment_event_feast"		
+	}
+
+	# ep2_feast_steppe (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_feast_steppe
+				global_var:meet_scene = flag:meet_scene_ep2_feast_steppe
+			}
+		}
+		reference = "scenes_Vanilla/ep2_feast_steppe.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_feast_steppe
+				global_var:meet_scene = flag:meet_scene_ep2_feast_steppe
+			}
+		}
+		reference = "environment_event_feast"		
+	}
+
+	# ep2_feast_sub_saharan (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_feast_sub_saharan
+				global_var:meet_scene = flag:meet_scene_ep2_feast_sub_saharan
+			}
+		}
+		reference = "scenes_Vanilla/ep2_feast_sub_saharan.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_feast_sub_saharan
+				global_var:meet_scene = flag:meet_scene_ep2_feast_sub_saharan
+			}
+		}
+		reference = "environment_event_feast"		
+	}
+
+	# ep2_holysite_indian (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_indian
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_indian
+			}
+		}
+		reference = "scenes_Vanilla/ep2_holysite_indian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_indian
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_indian
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep2_holysite_jerusalem (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_jerusalem
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_jerusalem
+			}
+		}
+		reference = "scenes_Vanilla/ep2_holysite_jerusalem.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_jerusalem
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_jerusalem
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep2_holysite_mecca (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_mecca
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_mecca
+			}
+		}
+		reference = "scenes_Vanilla/ep2_holysite_mecca.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_mecca
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_mecca
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep2_holysite_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_mena
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_mena
+			}
+		}
+		reference = "scenes_Vanilla/ep2_holysite_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_mena
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_mena
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep2_holysite_tribal (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_tribal
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_tribal
+			}
+		}
+		reference = "scenes_Vanilla/ep2_holysite_tribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_tribal
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_tribal
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep2_holysite_western (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_western
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_western
+			}
+		}
+		reference = "scenes_Vanilla/ep2_holysite_western.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_holysite_western
+				global_var:meet_scene = flag:meet_scene_ep2_holysite_western
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep2_hunt_cave_entrance (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_cave_entrance
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_cave_entrance
+			}
+		}
+		reference = "scenes_Vanilla/ep2_hunt_cave_entrance.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_cave_entrance
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_cave_entrance
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# ep2_hunt_falconry_mews (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_falconry_mews
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_falconry_mews
+			}
+		}
+		reference = "scenes_Vanilla/ep2_hunt_falconry_mews.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_falconry_mews
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_falconry_mews
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# ep2_hunt_foggy_forest (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_foggy_forest
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_foggy_forest
+			}
+		}
+		reference = "scenes_Vanilla/ep2_hunt_foggy_forest.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_foggy_forest
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_foggy_forest
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# ep2_hunt_forest_managed (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_forest_managed
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_forest_managed
+			}
+		}
+		reference = "scenes_Vanilla/ep2_hunt_forest_managed.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_forest_managed
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_forest_managed
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# ep2_hunt_generic (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_generic
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_generic
+			}
+		}
+		reference = "scenes_Vanilla/ep2_hunt_generic.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_generic
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_generic
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# ep2_hunt_poachers_camp (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_poachers_camp
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_poachers_camp
+			}
+		}
+		reference = "scenes_Vanilla/ep2_hunt_poachers_camp.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_poachers_camp
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_poachers_camp
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_hunt_snowy_forest (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_snowy_forest
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_snowy_forest
+			}
+		}
+		reference = "scenes_Vanilla/ep2_hunt_snowy_forest.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_hunt_snowy_forest
+				global_var:meet_scene = flag:meet_scene_ep2_hunt_snowy_forest
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# ep2_tournament_india (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_tournament_india
+				global_var:meet_scene = flag:meet_scene_ep2_tournament_india
+			}
+		}
+		reference = "scenes_Vanilla/ep2_tournament_india.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_tournament_india
+				global_var:meet_scene = flag:meet_scene_ep2_tournament_india
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_tournament_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_tournament_mena
+				global_var:meet_scene = flag:meet_scene_ep2_tournament_mena
+			}
+		}
+		reference = "scenes_Vanilla/ep2_tournament_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_tournament_mena
+				global_var:meet_scene = flag:meet_scene_ep2_tournament_mena
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_tournament_tribal (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_tournament_tribal
+				global_var:meet_scene = flag:meet_scene_ep2_tournament_tribal
+			}
+		}
+		reference = "scenes_Vanilla/ep2_tournament_tribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_tournament_tribal
+				global_var:meet_scene = flag:meet_scene_ep2_tournament_tribal
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_tournament_western (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_tournament_western
+				global_var:meet_scene = flag:meet_scene_ep2_tournament_western
+			}
+		}
+		reference = "scenes_Vanilla/ep2_tournament_western.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_tournament_western
+				global_var:meet_scene = flag:meet_scene_ep2_tournament_western
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_travel_bridge (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_bridge
+				global_var:meet_scene = flag:meet_scene_ep2_travel_bridge
+			}
+		}
+		reference = "scenes_Vanilla/ep2_travel_bridge.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_bridge
+				global_var:meet_scene = flag:meet_scene_ep2_travel_bridge
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_travel_desert (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_desert
+				global_var:meet_scene = flag:meet_scene_ep2_travel_desert
+			}
+		}
+		reference = "scenes_Vanilla/ep2_travel_desert.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_desert
+				global_var:meet_scene = flag:meet_scene_ep2_travel_desert
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_travel_farm (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_farm
+				global_var:meet_scene = flag:meet_scene_ep2_travel_farm
+			}
+		}
+		reference = "scenes_Vanilla/ep2_travel_farm.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_farm
+				global_var:meet_scene = flag:meet_scene_ep2_travel_farm
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_travel_hills (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_hills
+				global_var:meet_scene = flag:meet_scene_ep2_travel_hills
+			}
+		}
+		reference = "scenes_Vanilla/ep2_travel_hills.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_hills
+				global_var:meet_scene = flag:meet_scene_ep2_travel_hills
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_travel_mountains (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_mountains
+				global_var:meet_scene = flag:meet_scene_ep2_travel_mountains
+			}
+		}
+		reference = "scenes_Vanilla/ep2_travel_mountains.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_mountains
+				global_var:meet_scene = flag:meet_scene_ep2_travel_mountains
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_travel_steppe (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_steppe
+				global_var:meet_scene = flag:meet_scene_ep2_travel_steppe
+			}
+		}
+		reference = "scenes_Vanilla/ep2_travel_steppe.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_travel_steppe
+				global_var:meet_scene = flag:meet_scene_ep2_travel_steppe
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_village_festival_western (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_village_festival_western
+				global_var:meet_scene = flag:meet_scene_ep2_village_festival_western
+			}
+		}
+		reference = "scenes_Vanilla/ep2_village_festival_western.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_village_festival_western
+				global_var:meet_scene = flag:meet_scene_ep2_village_festival_western
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep2_wedding_bedroom_indian (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_bedroom_indian
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_bedroom_indian
+			}
+		}
+		reference = "scenes_Vanilla/ep2_wedding_bedroom_indian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_bedroom_indian
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_bedroom_indian
+			}
+		}
+		reference = "environment_event_bedchamber"		
+	}
+
+	# ep2_wedding_bedroom_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_bedroom_mena
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_bedroom_mena
+			}
+		}
+		reference = "scenes_Vanilla/ep2_wedding_bedroom_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_bedroom_mena
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_bedroom_mena
+			}
+		}
+		reference = "environment_event_bedchamber"		
+	}
+
+	# ep2_wedding_ceremony_indian (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_ceremony_indian
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_ceremony_indian
+			}
+		}
+		reference = "scenes_Vanilla/ep2_wedding_ceremony_indian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_ceremony_indian
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_ceremony_indian
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep2_wedding_ceremony_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_ceremony_mena
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_ceremony_mena
+			}
+		}
+		reference = "scenes_Vanilla/ep2_wedding_ceremony_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_ceremony_mena
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_ceremony_mena
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep2_wedding_ceremony_western (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_ceremony_western
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_ceremony_western
+			}
+		}
+		reference = "scenes_Vanilla/ep2_wedding_ceremony_western.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep2_wedding_ceremony_western
+				global_var:meet_scene = flag:meet_scene_ep2_wedding_ceremony_western
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep3_adventurer_background (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_adventurer_background
+				global_var:meet_scene = flag:meet_scene_ep3_adventurer_background
+			}
+		}
+		reference = "scenes_Vanilla/ep3_adventurer_background.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_adventurer_background
+				global_var:meet_scene = flag:meet_scene_ep3_adventurer_background
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_byzantine_throne_room (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_byzantine_throne_room
+				global_var:meet_scene = flag:meet_scene_ep3_byzantine_throne_room
+			}
+		}
+		reference = "scenes_Vanilla/ep3_byzantine_throne_room.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_byzantine_throne_room
+				global_var:meet_scene = flag:meet_scene_ep3_byzantine_throne_room
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep3_campfire (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_campfire
+				global_var:meet_scene = flag:meet_scene_ep3_campfire
+			}
+		}
+		reference = "scenes_Vanilla/ep3_campfire.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_campfire
+				global_var:meet_scene = flag:meet_scene_ep3_campfire
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_camp_arid_terrain (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_camp_arid_terrain
+				global_var:meet_scene = flag:meet_scene_ep3_camp_arid_terrain
+			}
+		}
+		reference = "scenes_Vanilla/ep3_camp_arid_terrain.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_camp_arid_terrain
+				global_var:meet_scene = flag:meet_scene_ep3_camp_arid_terrain
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_chariots_track (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_chariots_track
+				global_var:meet_scene = flag:meet_scene_ep3_chariots_track
+			}
+		}
+		reference = "scenes_Vanilla/ep3_chariots_track.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_chariots_track
+				global_var:meet_scene = flag:meet_scene_ep3_chariots_track
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_city_gate (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_city_gate
+				global_var:meet_scene = flag:meet_scene_ep3_city_gate
+			}
+		}
+		reference = "scenes_Vanilla/ep3_city_gate.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_city_gate
+				global_var:meet_scene = flag:meet_scene_ep3_city_gate
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_constantinople (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_constantinople
+				global_var:meet_scene = flag:meet_scene_ep3_constantinople
+			}
+		}
+		reference = "scenes_Vanilla/ep3_constantinople.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_constantinople
+				global_var:meet_scene = flag:meet_scene_ep3_constantinople
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_constantinople_riot (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_constantinople_riot
+				global_var:meet_scene = flag:meet_scene_ep3_constantinople_riot
+			}
+		}
+		reference = "scenes_Vanilla/ep3_constantinople_riot.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_constantinople_riot
+				global_var:meet_scene = flag:meet_scene_ep3_constantinople_riot
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_feast_byzantine (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_feast_byzantine
+				global_var:meet_scene = flag:meet_scene_ep3_feast_byzantine
+			}
+		}
+		reference = "scenes_Vanilla/ep3_feast_byzantine.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_feast_byzantine
+				global_var:meet_scene = flag:meet_scene_ep3_feast_byzantine
+			}
+		}
+		reference = "environment_event_feast"		
+	}
+
+	# ep3_hagia_sophia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_hagia_sophia
+				global_var:meet_scene = flag:meet_scene_ep3_hagia_sophia
+			}
+		}
+		reference = "scenes_Vanilla/ep3_hagia_sophia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_hagia_sophia
+				global_var:meet_scene = flag:meet_scene_ep3_hagia_sophia
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep3_hippodrome_chariot_race (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_hippodrome_chariot_race
+				global_var:meet_scene = flag:meet_scene_ep3_hippodrome_chariot_race
+			}
+		}
+		reference = "scenes_Vanilla/ep3_hippodrome_chariot_race.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_hippodrome_chariot_race
+				global_var:meet_scene = flag:meet_scene_ep3_hippodrome_chariot_race
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_holysite_orthodox (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_holysite_orthodox
+				global_var:meet_scene = flag:meet_scene_ep3_holysite_orthodox
+			}
+		}
+		reference = "scenes_Vanilla/ep3_holysite_orthodox.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_holysite_orthodox
+				global_var:meet_scene = flag:meet_scene_ep3_holysite_orthodox
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep3_medi_estate (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_medi_estate
+				global_var:meet_scene = flag:meet_scene_ep3_medi_estate
+			}
+		}
+		reference = "scenes_Vanilla/ep3_medi_estate.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_medi_estate
+				global_var:meet_scene = flag:meet_scene_ep3_medi_estate
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# ep3_medi_market (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_medi_market
+				global_var:meet_scene = flag:meet_scene_ep3_medi_market
+			}
+		}
+		reference = "scenes_Vanilla/ep3_medi_market.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_medi_market
+				global_var:meet_scene = flag:meet_scene_ep3_medi_market
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_medi_study (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_medi_study
+				global_var:meet_scene = flag:meet_scene_ep3_medi_study
+			}
+		}
+		reference = "scenes_Vanilla/ep3_medi_study.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_medi_study
+				global_var:meet_scene = flag:meet_scene_ep3_medi_study
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep3_military_tent (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_military_tent
+				global_var:meet_scene = flag:meet_scene_ep3_military_tent
+			}
+		}
+		reference = "scenes_Vanilla/ep3_military_tent.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_military_tent
+				global_var:meet_scene = flag:meet_scene_ep3_military_tent
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# ep3_relaxing_room (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_relaxing_room
+				global_var:meet_scene = flag:meet_scene_ep3_relaxing_room
+			}
+		}
+		reference = "scenes_Vanilla/ep3_relaxing_room.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_relaxing_room
+				global_var:meet_scene = flag:meet_scene_ep3_relaxing_room
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# ep3_relaxing_tent (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_relaxing_tent
+				global_var:meet_scene = flag:meet_scene_ep3_relaxing_tent
+			}
+		}
+		reference = "scenes_Vanilla/ep3_relaxing_tent.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_ep3_relaxing_tent
+				global_var:meet_scene = flag:meet_scene_ep3_relaxing_tent
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# farms (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_farms
+				global_var:meet_scene = flag:meet_scene_farms
+			}
+		}
+		reference = "scenes_Vanilla/farms.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_farms
+				global_var:meet_scene = flag:meet_scene_farms
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# feast (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_feast_vanilla
+				global_var:meet_scene = flag:meet_scene_feast_vanilla
+			}
+		}
+		reference = "scenes_Vanilla/feast.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_feast_vanilla
+				global_var:meet_scene = flag:meet_scene_feast_vanilla
+			}
+		}
+		reference = "environment_event_feast"		
+	}
+
+	# forest (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_forest
+				global_var:meet_scene = flag:meet_scene_forest
+			}
+		}
+		reference = "scenes_Vanilla/forest.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_forest
+				global_var:meet_scene = flag:meet_scene_forest
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# forest_pine (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_forest_pine
+				global_var:meet_scene = flag:meet_scene_forest_pine
+			}
+		}
+		reference = "scenes_Vanilla/forest_pine.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_forest_pine
+				global_var:meet_scene = flag:meet_scene_forest_pine
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# fp1_beached_longship (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_beached_longship
+				global_var:meet_scene = flag:meet_scene_fp1_beached_longship
+			}
+		}
+		reference = "scenes_Vanilla/fp1_beached_longship.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_beached_longship
+				global_var:meet_scene = flag:meet_scene_fp1_beached_longship
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp1_ocean (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_ocean
+				global_var:meet_scene = flag:meet_scene_fp1_ocean
+			}
+		}
+		reference = "scenes_Vanilla/fp1_ocean.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_ocean
+				global_var:meet_scene = flag:meet_scene_fp1_ocean
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp1_ocean_norse (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_ocean_norse
+				global_var:meet_scene = flag:meet_scene_fp1_ocean_norse
+			}
+		}
+		reference = "scenes_Vanilla/fp1_ocean_norse.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_ocean_norse
+				global_var:meet_scene = flag:meet_scene_fp1_ocean_norse
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp1_runestone (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_runestone
+				global_var:meet_scene = flag:meet_scene_fp1_runestone
+			}
+		}
+		reference = "scenes_Vanilla/fp1_runestone.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_runestone
+				global_var:meet_scene = flag:meet_scene_fp1_runestone
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp1_runestone_circle (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_runestone_circle
+				global_var:meet_scene = flag:meet_scene_fp1_runestone_circle
+			}
+		}
+		reference = "scenes_Vanilla/fp1_runestone_circle.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_runestone_circle
+				global_var:meet_scene = flag:meet_scene_fp1_runestone_circle
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp1_steward_study (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_steward_study
+				global_var:meet_scene = flag:meet_scene_fp1_steward_study
+			}
+		}
+		reference = "scenes_Vanilla/fp1_steward_study.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_steward_study
+				global_var:meet_scene = flag:meet_scene_fp1_steward_study
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp1_throneroom_nontribal (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_throneroom_nontribal
+				global_var:meet_scene = flag:meet_scene_fp1_throneroom_nontribal
+			}
+		}
+		reference = "scenes_Vanilla/fp1_throneroom_nontribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_throneroom_nontribal
+				global_var:meet_scene = flag:meet_scene_fp1_throneroom_nontribal
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp1_throneroom_tribal (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_throneroom_tribal
+				global_var:meet_scene = flag:meet_scene_fp1_throneroom_tribal
+			}
+		}
+		reference = "scenes_Vanilla/fp1_throneroom_tribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_throneroom_tribal
+				global_var:meet_scene = flag:meet_scene_fp1_throneroom_tribal
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp1_tribal_corridor (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_tribal_corridor
+				global_var:meet_scene = flag:meet_scene_fp1_tribal_corridor
+			}
+		}
+		reference = "scenes_Vanilla/fp1_tribal_corridor.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_tribal_corridor
+				global_var:meet_scene = flag:meet_scene_fp1_tribal_corridor
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp1_tribal_prison (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_tribal_prison
+				global_var:meet_scene = flag:meet_scene_fp1_tribal_prison
+			}
+		}
+		reference = "scenes_Vanilla/fp1_tribal_prison.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_tribal_prison
+				global_var:meet_scene = flag:meet_scene_fp1_tribal_prison
+			}
+		}
+		reference = "environment_event_dungeon"		
+	}
+
+	# fp1_tribal_temple (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_tribal_temple
+				global_var:meet_scene = flag:meet_scene_fp1_tribal_temple
+			}
+		}
+		reference = "scenes_Vanilla/fp1_tribal_temple.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_tribal_temple
+				global_var:meet_scene = flag:meet_scene_fp1_tribal_temple
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp1_viking_feast (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_viking_feast
+				global_var:meet_scene = flag:meet_scene_fp1_viking_feast
+			}
+		}
+		reference = "scenes_Vanilla/fp1_viking_feast.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp1_viking_feast
+				global_var:meet_scene = flag:meet_scene_fp1_viking_feast
+			}
+		}
+		reference = "environment_event_feast"		
+	}
+
+	# fp2_corridor_day (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_corridor_day
+				global_var:meet_scene = flag:meet_scene_fp2_corridor_day
+			}
+		}
+		reference = "scenes_Vanilla/fp2_corridor_day.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_corridor_day
+				global_var:meet_scene = flag:meet_scene_fp2_corridor_day
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp2_corridor_night (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_corridor_night
+				global_var:meet_scene = flag:meet_scene_fp2_corridor_night
+			}
+		}
+		reference = "scenes_Vanilla/fp2_corridor_night.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_corridor_night
+				global_var:meet_scene = flag:meet_scene_fp2_corridor_night
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp2_courtyard (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_courtyard
+				global_var:meet_scene = flag:meet_scene_fp2_courtyard
+			}
+		}
+		reference = "scenes_Vanilla/fp2_courtyard.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_courtyard
+				global_var:meet_scene = flag:meet_scene_fp2_courtyard
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# fp2_garden (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_garden
+				global_var:meet_scene = flag:meet_scene_fp2_garden
+			}
+		}
+		reference = "scenes_Vanilla/fp2_garden.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_garden
+				global_var:meet_scene = flag:meet_scene_fp2_garden
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# fp2_prison (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_prison
+				global_var:meet_scene = flag:meet_scene_fp2_prison
+			}
+		}
+		reference = "scenes_Vanilla/fp2_prison.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_prison
+				global_var:meet_scene = flag:meet_scene_fp2_prison
+			}
+		}
+		reference = "environment_event_dungeon"		
+	}
+
+	# fp2_relaxing_room (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_relaxing_room
+				global_var:meet_scene = flag:meet_scene_fp2_relaxing_room
+			}
+		}
+		reference = "scenes_Vanilla/fp2_relaxing_room.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_relaxing_room
+				global_var:meet_scene = flag:meet_scene_fp2_relaxing_room
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp2_temple (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_temple
+				global_var:meet_scene = flag:meet_scene_fp2_temple
+			}
+		}
+		reference = "scenes_Vanilla/fp2_temple.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_temple
+				global_var:meet_scene = flag:meet_scene_fp2_temple
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp2_throneroom (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_throneroom
+				global_var:meet_scene = flag:meet_scene_fp2_throneroom
+			}
+		}
+		reference = "scenes_Vanilla/fp2_throneroom.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp2_throneroom
+				global_var:meet_scene = flag:meet_scene_fp2_throneroom
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp3_bathhouse (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_bathhouse
+				global_var:meet_scene = flag:meet_scene_fp3_bathhouse
+			}
+		}
+		reference = "scenes_Vanilla/fp3_bathhouse.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_bathhouse
+				global_var:meet_scene = flag:meet_scene_fp3_bathhouse
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp3_cave (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_cave
+				global_var:meet_scene = flag:meet_scene_fp3_cave
+			}
+		}
+		reference = "scenes_Vanilla/fp3_cave.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_cave
+				global_var:meet_scene = flag:meet_scene_fp3_cave
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp3_courtyard_night (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_courtyard_night
+				global_var:meet_scene = flag:meet_scene_fp3_courtyard_night
+			}
+		}
+		reference = "scenes_Vanilla/fp3_courtyard_night.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_courtyard_night
+				global_var:meet_scene = flag:meet_scene_fp3_courtyard_night
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# fp3_docks (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_docks
+				global_var:meet_scene = flag:meet_scene_fp3_docks
+			}
+		}
+		reference = "scenes_Vanilla/fp3_docks.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_docks
+				global_var:meet_scene = flag:meet_scene_fp3_docks
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp3_temple (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_temple
+				global_var:meet_scene = flag:meet_scene_fp3_temple
+			}
+		}
+		reference = "scenes_Vanilla/fp3_temple.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_temple
+				global_var:meet_scene = flag:meet_scene_fp3_temple
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp3_throneroom (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_throneroom
+				global_var:meet_scene = flag:meet_scene_fp3_throneroom
+			}
+		}
+		reference = "scenes_Vanilla/fp3_throneroom.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp3_throneroom
+				global_var:meet_scene = flag:meet_scene_fp3_throneroom
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp4_catacombs (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_catacombs
+				global_var:meet_scene = flag:meet_scene_fp4_catacombs
+			}
+		}
+		reference = "scenes_Vanilla/fp4_catacombs.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_catacombs
+				global_var:meet_scene = flag:meet_scene_fp4_catacombs
+			}
+		}
+		reference = "environment_event_dungeon"		
+	}
+
+	# fp4_condemned_village (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_condemned_village
+				global_var:meet_scene = flag:meet_scene_fp4_condemned_village
+			}
+		}
+		reference = "scenes_Vanilla/fp4_condemned_village.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_condemned_village
+				global_var:meet_scene = flag:meet_scene_fp4_condemned_village
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp4_funeral_pyre (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_funeral_pyre
+				global_var:meet_scene = flag:meet_scene_fp4_funeral_pyre
+			}
+		}
+		reference = "scenes_Vanilla/fp4_funeral_pyre.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_funeral_pyre
+				global_var:meet_scene = flag:meet_scene_fp4_funeral_pyre
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp4_legendary_battlefield (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_legendary_battlefield
+				global_var:meet_scene = flag:meet_scene_fp4_legendary_battlefield
+			}
+		}
+		reference = "scenes_Vanilla/fp4_legendary_battlefield.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_legendary_battlefield
+				global_var:meet_scene = flag:meet_scene_fp4_legendary_battlefield
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp4_legendary_oasis (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_legendary_oasis
+				global_var:meet_scene = flag:meet_scene_fp4_legendary_oasis
+			}
+		}
+		reference = "scenes_Vanilla/fp4_legendary_oasis.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_legendary_oasis
+				global_var:meet_scene = flag:meet_scene_fp4_legendary_oasis
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp4_legendary_spring (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_legendary_spring
+				global_var:meet_scene = flag:meet_scene_fp4_legendary_spring
+			}
+		}
+		reference = "scenes_Vanilla/fp4_legendary_spring.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_legendary_spring
+				global_var:meet_scene = flag:meet_scene_fp4_legendary_spring
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# fp4_physician_tribal (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_physician_tribal
+				global_var:meet_scene = flag:meet_scene_fp4_physician_tribal
+			}
+		}
+		reference = "scenes_Vanilla/fp4_physician_tribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_physician_tribal
+				global_var:meet_scene = flag:meet_scene_fp4_physician_tribal
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp4_study_physician_indian (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_study_physician_indian
+				global_var:meet_scene = flag:meet_scene_fp4_study_physician_indian
+			}
+		}
+		reference = "scenes_Vanilla/fp4_study_physician_indian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_study_physician_indian
+				global_var:meet_scene = flag:meet_scene_fp4_study_physician_indian
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# fp4_study_physician_mena (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_study_physician_mena
+				global_var:meet_scene = flag:meet_scene_fp4_study_physician_mena
+			}
+		}
+		reference = "scenes_Vanilla/fp4_study_physician_mena.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_fp4_study_physician_mena
+				global_var:meet_scene = flag:meet_scene_fp4_study_physician_mena
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# gallows (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_gallows
+				global_var:meet_scene = flag:meet_scene_gallows
+			}
+		}
+		reference = "scenes_Vanilla/gallows.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_gallows
+				global_var:meet_scene = flag:meet_scene_gallows
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# genericcamp (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_genericcamp
+				global_var:meet_scene = flag:meet_scene_genericcamp
+			}
+		}
+		reference = "scenes_Vanilla/genericcamp.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_genericcamp
+				global_var:meet_scene = flag:meet_scene_genericcamp
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# market_tribal (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_market_tribal
+				global_var:meet_scene = flag:meet_scene_market_tribal
+			}
+		}
+		reference = "scenes_Vanilla/market_tribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_market_tribal
+				global_var:meet_scene = flag:meet_scene_market_tribal
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# mosque (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mosque
+				global_var:meet_scene = flag:meet_scene_mosque
+			}
+		}
+		reference = "scenes_Vanilla/mosque.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mosque
+				global_var:meet_scene = flag:meet_scene_mosque
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# mountains (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mountains
+				global_var:meet_scene = flag:meet_scene_mountains
+			}
+		}
+		reference = "scenes_Vanilla/mountains.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mountains
+				global_var:meet_scene = flag:meet_scene_mountains
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# mpo_campfire_steppe (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_campfire_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_campfire_steppe
+			}
+		}
+		reference = "scenes_Vanilla/mpo_campfire_steppe.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_campfire_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_campfire_steppe
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# mpo_camp_steppe (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_camp_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_camp_steppe
+			}
+		}
+		reference = "scenes_Vanilla/mpo_camp_steppe.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_camp_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_camp_steppe
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# mpo_city_steppe (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_city_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_city_steppe
+			}
+		}
+		reference = "scenes_Vanilla/mpo_city_steppe.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_city_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_city_steppe
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# mpo_hunt_steppe (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_hunt_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_hunt_steppe
+			}
+		}
+		reference = "scenes_Vanilla/mpo_hunt_steppe.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_hunt_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_hunt_steppe
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# mpo_raid_burning_asian (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_raid_burning_asian
+				global_var:meet_scene = flag:meet_scene_mpo_raid_burning_asian
+			}
+		}
+		reference = "scenes_Vanilla/mpo_raid_burning_asian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_raid_burning_asian
+				global_var:meet_scene = flag:meet_scene_mpo_raid_burning_asian
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# mpo_rural_village_asian (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_rural_village_asian
+				global_var:meet_scene = flag:meet_scene_mpo_rural_village_asian
+			}
+		}
+		reference = "scenes_Vanilla/mpo_rural_village_asian.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_rural_village_asian
+				global_var:meet_scene = flag:meet_scene_mpo_rural_village_asian
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# mpo_steppe_evening (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_steppe_evening
+				global_var:meet_scene = flag:meet_scene_mpo_steppe_evening
+			}
+		}
+		reference = "scenes_Vanilla/mpo_steppe_evening.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_steppe_evening
+				global_var:meet_scene = flag:meet_scene_mpo_steppe_evening
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# mpo_temple_steppe (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_temple_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_temple_steppe
+			}
+		}
+		reference = "scenes_Vanilla/mpo_temple_steppe.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_temple_steppe
+				global_var:meet_scene = flag:meet_scene_mpo_temple_steppe
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# mpo_tent_interior_mongol (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_tent_interior_mongol
+				global_var:meet_scene = flag:meet_scene_mpo_tent_interior_mongol
+			}
+		}
+		reference = "scenes_Vanilla/mpo_tent_interior_mongol.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mpo_tent_interior_mongol
+				global_var:meet_scene = flag:meet_scene_mpo_tent_interior_mongol
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# raid_burning (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_raid_burning
+				global_var:meet_scene = flag:meet_scene_raid_burning
+			}
+		}
+		reference = "scenes_Vanilla/raid_burning.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_raid_burning
+				global_var:meet_scene = flag:meet_scene_raid_burning
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# sittingroom (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_sittingroom
+				global_var:meet_scene = flag:meet_scene_sittingroom
+			}
+		}
+		reference = "scenes_Vanilla/sittingroom.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_sittingroom
+				global_var:meet_scene = flag:meet_scene_sittingroom
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# steppe (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_steppe
+				global_var:meet_scene = flag:meet_scene_steppe
+			}
+		}
+		reference = "scenes_Vanilla/steppe.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_steppe
+				global_var:meet_scene = flag:meet_scene_steppe
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# study (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_study
+				global_var:meet_scene = flag:meet_scene_study
+			}
+		}
+		reference = "scenes_Vanilla/study.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_study
+				global_var:meet_scene = flag:meet_scene_study
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# study_physician (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_study_physician
+				global_var:meet_scene = flag:meet_scene_study_physician
+			}
+		}
+		reference = "scenes_Vanilla/study_physician.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_study_physician
+				global_var:meet_scene = flag:meet_scene_study_physician
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# tgp_alley_day_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_alley_day_asia
+				global_var:meet_scene = flag:meet_scene_tgp_alley_day_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_alley_day_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_alley_day_asia
+				global_var:meet_scene = flag:meet_scene_tgp_alley_day_asia
+			}
+		}
+		reference = "environment_event_alley"		
+	}
+
+	# tgp_alley_night_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_alley_night_asia
+				global_var:meet_scene = flag:meet_scene_tgp_alley_night_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_alley_night_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_alley_night_asia
+				global_var:meet_scene = flag:meet_scene_tgp_alley_night_asia
+			}
+		}
+		reference = "environment_event_alley"		
+	}
+
+	# tgp_asia_estate (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_asia_estate
+				global_var:meet_scene = flag:meet_scene_tgp_asia_estate
+			}
+		}
+		reference = "scenes_Vanilla/tgp_asia_estate.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_asia_estate
+				global_var:meet_scene = flag:meet_scene_tgp_asia_estate
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# tgp_asia_throne_room (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_asia_throne_room
+				global_var:meet_scene = flag:meet_scene_tgp_asia_throne_room
+			}
+		}
+		reference = "scenes_Vanilla/tgp_asia_throne_room.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_asia_throne_room
+				global_var:meet_scene = flag:meet_scene_tgp_asia_throne_room
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# tgp_camp_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_camp_asia
+				global_var:meet_scene = flag:meet_scene_tgp_camp_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_camp_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_camp_asia
+				global_var:meet_scene = flag:meet_scene_tgp_camp_asia
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# tgp_chinese_city (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_chinese_city
+				global_var:meet_scene = flag:meet_scene_tgp_chinese_city
+			}
+		}
+		reference = "scenes_Vanilla/tgp_chinese_city.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_chinese_city
+				global_var:meet_scene = flag:meet_scene_tgp_chinese_city
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# tgp_chinese_corridor_day (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_chinese_corridor_day
+				global_var:meet_scene = flag:meet_scene_tgp_chinese_corridor_day
+			}
+		}
+		reference = "scenes_Vanilla/tgp_chinese_corridor_day.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_chinese_corridor_day
+				global_var:meet_scene = flag:meet_scene_tgp_chinese_corridor_day
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# tgp_chinese_corridor_night (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_chinese_corridor_night
+				global_var:meet_scene = flag:meet_scene_tgp_chinese_corridor_night
+			}
+		}
+		reference = "scenes_Vanilla/tgp_chinese_corridor_night.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_chinese_corridor_night
+				global_var:meet_scene = flag:meet_scene_tgp_chinese_corridor_night
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# tgp_courtyard_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_courtyard_asia
+				global_var:meet_scene = flag:meet_scene_tgp_courtyard_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_courtyard_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_courtyard_asia
+				global_var:meet_scene = flag:meet_scene_tgp_courtyard_asia
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# tgp_crossroad_inn_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_crossroad_inn_asia
+				global_var:meet_scene = flag:meet_scene_tgp_crossroad_inn_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_crossroad_inn_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_crossroad_inn_asia
+				global_var:meet_scene = flag:meet_scene_tgp_crossroad_inn_asia
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# tgp_docks_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_docks_asia
+				global_var:meet_scene = flag:meet_scene_tgp_docks_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_docks_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_docks_asia
+				global_var:meet_scene = flag:meet_scene_tgp_docks_asia
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# tgp_examination_room (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_examination_room
+				global_var:meet_scene = flag:meet_scene_tgp_examination_room
+			}
+		}
+		reference = "scenes_Vanilla/tgp_examination_room.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_examination_room
+				global_var:meet_scene = flag:meet_scene_tgp_examination_room
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# tgp_farm_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_farm_asia
+				global_var:meet_scene = flag:meet_scene_tgp_farm_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_farm_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_farm_asia
+				global_var:meet_scene = flag:meet_scene_tgp_farm_asia
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# tgp_feast_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_feast_asia
+				global_var:meet_scene = flag:meet_scene_tgp_feast_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_feast_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_feast_asia
+				global_var:meet_scene = flag:meet_scene_tgp_feast_asia
+			}
+		}
+		reference = "environment_event_feast"		
+	}
+
+	# tgp_festival_ritual_japan (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_festival_ritual_japan
+				global_var:meet_scene = flag:meet_scene_tgp_festival_ritual_japan
+			}
+		}
+		reference = "scenes_Vanilla/tgp_festival_ritual_japan.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_festival_ritual_japan
+				global_var:meet_scene = flag:meet_scene_tgp_festival_ritual_japan
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# tgp_garden_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_garden_asia
+				global_var:meet_scene = flag:meet_scene_tgp_garden_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_garden_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_garden_asia
+				global_var:meet_scene = flag:meet_scene_tgp_garden_asia
+			}
+		}
+		reference = "environment_event_garden"		
+	}
+
+	# tgp_holysite_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_holysite_asia
+				global_var:meet_scene = flag:meet_scene_tgp_holysite_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_holysite_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_holysite_asia
+				global_var:meet_scene = flag:meet_scene_tgp_holysite_asia
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# tgp_hunt_generic_asia (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_hunt_generic_asia
+				global_var:meet_scene = flag:meet_scene_tgp_hunt_generic_asia
+			}
+		}
+		reference = "scenes_Vanilla/tgp_hunt_generic_asia.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_hunt_generic_asia
+				global_var:meet_scene = flag:meet_scene_tgp_hunt_generic_asia
+			}
+		}
+		reference = "environment_hunt_foggy_forest"		
+	}
+
+	# tgp_japanese_city (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_japanese_city
+				global_var:meet_scene = flag:meet_scene_tgp_japanese_city
+			}
+		}
+		reference = "scenes_Vanilla/tgp_japanese_city.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_japanese_city
+				global_var:meet_scene = flag:meet_scene_tgp_japanese_city
+			}
+		}
+		reference = "environment_event_genericcamp"		
+	}
+
+	# tgp_japan_throne_room (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_japan_throne_room
+				global_var:meet_scene = flag:meet_scene_tgp_japan_throne_room
+			}
+		}
+		reference = "scenes_Vanilla/tgp_japan_throne_room.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_tgp_japan_throne_room
+				global_var:meet_scene = flag:meet_scene_tgp_japan_throne_room
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
 }
 	
-
