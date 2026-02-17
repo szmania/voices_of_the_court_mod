@@ -1,0 +1,27 @@
+# Triggers for the Scene Selection System
+# Each trigger checks if a specific scene is valid for the current context
+
+# Example of a generic trigger
+is_valid_scene_generic_throneroom = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = { is_imprisoned = no }
+		scope:recipient = { is_imprisoned = no }
+		NOT = { scope:actor.culture = { has_coa_gfx = chinese_group_coa_gfx } }
+		OR = {
+			scope:recipient = { is_courtier_of = scope:actor.location.province_owner }
+			scope:recipient = scope:actor.location.province_owner
+		}
+	}
+}
+
+# Example of a specific landmark trigger
+is_valid_scene_iron_throne = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		OR = {
+			scope:actor = { has_title = title:e_the_iron_throne }
+			scope:recipient = { has_title = title:e_the_iron_throne }
+		}
+	}
+}

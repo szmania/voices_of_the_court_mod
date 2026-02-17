@@ -1,0 +1,31 @@
+# Effect to populate the list of valid scenes for the UI
+populate_valid_scenes_list = {
+	# Clear existing list
+	remove_variable_list = valid_scenes_list
+	
+	# Check each scene and add to list if valid, up to 10
+	# This is a template; we will expand this to all 260+ scenes
+	
+	if = {
+		limit = { 
+			is_valid_scene_iron_throne = yes 
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:scene_iron_throne
+		}
+	}
+	
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_generic_throneroom = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:scene_throneroom
+		}
+	}
+	
+	# ... Repeat for other scenes ...
+}
