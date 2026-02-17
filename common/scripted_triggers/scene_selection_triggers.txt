@@ -127,6 +127,44 @@ is_valid_scene_courtyard_night = {
 	}
 }
 
+is_valid_scene_study = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = { is_imprisoned = no }
+		scope:recipient = { is_imprisoned = no }
+		OR = {
+			scope:actor = { has_trait = intellectual }
+			scope:recipient = { has_trait = intellectual }
+			scope:actor = { has_lifestyle_perk = scholar_perk }
+			scope:recipient = { has_lifestyle_perk = scholar_perk }
+		}
+	}
+}
+
+is_valid_scene_councilchamber = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = { is_imprisoned = no }
+		scope:recipient = { is_imprisoned = no }
+		OR = {
+			scope:actor = { is_councillor_of = scope:recipient }
+			scope:recipient = { is_councillor_of = scope:actor }
+		}
+	}
+}
+
+is_valid_scene_battlefield = {
+	AND = {
+		scope:actor = { is_imprisoned = no }
+		scope:recipient = { is_imprisoned = no }
+		scope:actor.location = { has_province_modifier = battlefield_modifier } # Hypothetical
+		OR = {
+			scope:actor = { is_in_army = yes }
+			scope:recipient = { is_in_army = yes }
+		}
+	}
+}
+
 
 
 # --- Specific / Landmark Scenes ---

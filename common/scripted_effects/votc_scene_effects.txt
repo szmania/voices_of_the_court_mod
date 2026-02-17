@@ -135,6 +135,39 @@ populate_valid_scenes_list = {
 			target = flag:talk_scene_camp
 		}
 	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_study = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_study
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_councilchamber = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_councilchamber
+		}
+	}
+
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } < 10
+			is_valid_scene_battlefield = yes
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_battlefield
+		}
+	}
 	
 	# --- Specific / Landmark Scenes ---
 	

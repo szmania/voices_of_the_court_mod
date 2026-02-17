@@ -4860,3 +4860,60 @@ talk_background = {
 	}
 }
 	
+
+
+	# Simple illustrations for the Scene Picker GUI
+	talk_scene_throneroom = {
+		texture = { reference = "scenes_Vanilla/throneroom_west.dds" }
+	}
+	talk_scene_garden = {
+		texture = { reference = "scenes_Vanilla/garden.dds" }
+	}
+	talk_scene_bedchamber = {
+		texture = { reference = "scenes_Vanilla/bedchamber.dds" }
+	}
+	talk_scene_tavern = {
+		texture = { reference = "scenes_Vanilla/tavern.dds" }
+	}
+	talk_scene_market = {
+		texture = { reference = "scenes_Vanilla/market_west.dds" }
+	}
+	talk_scene_dungeon = {
+		texture = { reference = "scenes_Vanilla/dungeon.dds" }
+	}
+	talk_scene_feast = {
+		texture = { reference = "scenes_Vanilla/feast.dds" }
+	}
+	talk_scene_temple = {
+		texture = { reference = "scenes_Vanilla/temple.dds" }
+	}
+	talk_scene_alley = {
+		texture = { reference = "scenes_Vanilla/alley.dds" }
+	}
+	talk_scene_armycamp = {
+		texture = { reference = "scenes_Vanilla/armycamp.dds" }
+	}
+	talk_scene_courtyard_night = {
+		texture = { reference = "scenes_Vanilla/fp3_courtyard_night.dds" }
+	}
+	talk_scene_camp = {
+		texture = { reference = "scenes_Vanilla/genericcamp.dds" }
+	}
+	talk_scene_study = {
+		texture = { reference = "scenes_Vanilla/study.dds" }
+	}
+	talk_scene_councilchamber = {
+		texture = { reference = "scenes_Vanilla/councilchamber.dds" }
+	}
+	talk_scene_battlefield = {
+		texture = { reference = "scenes_Vanilla/battlefield.dds" }
+	}
+	talk_scene_iron_throne = {
+		texture = { reference = "scenes/iron_throne.dds" }
+	}
+	talk_scene_harem = {
+		texture = { reference = "scenes/harem.dds" }
+	}
+	talk_scene_lingyinsi = {
+		texture = { reference = "scenes/lingyinsi.dds" }
+	}
