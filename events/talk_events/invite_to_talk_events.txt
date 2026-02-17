@@ -24,9 +24,7 @@ invite_to_talk_event.1003 = {
 	option = {
 		name = "SELECT_SCENE_OPTION"
 		custom_tooltip = "SELECT_SCENE_OPTION_TOOLTIP"
-		trigger_event = {
-			id = talk_event.9006
-		}
+		execute_console_command = "gui.createwidget gui/custom_gui/scene_picker.gui scene_picker_window"
 	}
 
 	option ={

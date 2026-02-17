@@ -20,9 +20,7 @@ talk_event.1001 = {
 	option = {
 		name = "SELECT_SCENE_OPTION"
 		custom_tooltip = "SELECT_SCENE_OPTION_TOOLTIP"
-		trigger_event = {
-			id = talk_event.9006
-		}
+		execute_console_command = "gui.createwidget gui/custom_gui/scene_picker.gui scene_picker_window"
 	}
 
 	option = {
@@ -36,10 +34,8 @@ talk_event.9006 = {
 	hidden = yes
 	immediate = {
 		debug_log = "Opening Scene Picker GUI"
-	}
-	widget = {
-		gui = "scene_picker_window"
-		container = "custom_widgets_container"
+		# Use console command to create the standalone window
+		execute_console_command = "gui.createwidget gui/custom_gui/scene_picker.gui scene_picker_window"
 	}
 }
 

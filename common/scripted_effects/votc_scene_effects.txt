@@ -204,5 +204,14 @@ populate_valid_scenes_list = {
 		}
 	}
 	
-	# ... More scenes will be added here ...
+	# --- Fallback ---
+	if = {
+		limit = {
+			size_of_variable_list = { name = valid_scenes_list } == 0
+		}
+		add_to_variable_list = {
+			name = valid_scenes_list
+			target = flag:talk_scene_throneroom
+		}
+	}
 }
