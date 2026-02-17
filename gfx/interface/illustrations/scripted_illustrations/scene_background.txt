@@ -4818,5 +4818,45 @@ talk_background = {
 		}
 		reference = "environment_frontend_west_main"		
 	}
+
+	# throneroom_tribal (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_tribal
+				global_var:meet_scene = flag:meet_scene_throneroom_tribal
+			}
+		}
+		reference = "scenes_Vanilla/throneroom_tribal.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_throneroom_tribal
+				global_var:meet_scene = flag:meet_scene_throneroom_tribal
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
+
+	# mosque (Vanilla)
+	texture = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mosque_vanilla
+				global_var:meet_scene = flag:meet_scene_mosque_vanilla
+			}
+		}
+		reference = "scenes_Vanilla/mosque.dds"		
+	}
+	environment = {
+		trigger = {		
+			OR = {
+				global_var:talk_scene = flag:talk_scene_mosque_vanilla
+				global_var:meet_scene = flag:meet_scene_mosque_vanilla
+			}
+		}
+		reference = "environment_frontend_west_main"		
+	}
 }
 	
