@@ -16,18 +16,103 @@ invite_to_talk_event.1003 = {
 	left_portrait = {
 		character = scope:recipient
 	}
-	
+
 	immediate = {
 		populate_valid_scenes_list = yes
 	}
 
 	option = {
-		name = "SELECT_SCENE_OPTION"
-		custom_tooltip = "SELECT_SCENE_OPTION_TOOLTIP"
-		execute_console_command = "gui.createwidget gui/custom_gui/scene_picker.gui scene_picker_window"
+		name = VOTC_SCENE_OPTION_1
+		trigger = { exists = votc_scene_1 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_1
+		}
+		trigger_event = talk_event.9001
+	}
+	option = {
+		name = VOTC_SCENE_OPTION_2
+		trigger = { exists = votc_scene_2 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_2
+		}
+		trigger_event = talk_event.9001
+	}
+	option = {
+		name = VOTC_SCENE_OPTION_3
+		trigger = { exists = votc_scene_3 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_3
+		}
+		trigger_event = talk_event.9001
+	}
+	option = {
+		name = VOTC_SCENE_OPTION_4
+		trigger = { exists = votc_scene_4 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_4
+		}
+		trigger_event = talk_event.9001
+	}
+	option = {
+		name = VOTC_SCENE_OPTION_5
+		trigger = { exists = votc_scene_5 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_5
+		}
+		trigger_event = talk_event.9001
+	}
+	option = {
+		name = VOTC_SCENE_OPTION_6
+		trigger = { exists = votc_scene_6 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_6
+		}
+		trigger_event = talk_event.9001
+	}
+	option = {
+		name = VOTC_SCENE_OPTION_7
+		trigger = { exists = votc_scene_7 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_7
+		}
+		trigger_event = talk_event.9001
+	}
+	option = {
+		name = VOTC_SCENE_OPTION_8
+		trigger = { exists = votc_scene_8 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_8
+		}
+		trigger_event = talk_event.9001
+	}
+	option = {
+		name = VOTC_SCENE_OPTION_9
+		trigger = { exists = votc_scene_9 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_9
+		}
+		trigger_event = talk_event.9001
+	}
+	option = {
+		name = VOTC_SCENE_OPTION_10
+		trigger = { exists = votc_scene_10 }
+		set_global_variable = {
+			name = talk_scene
+			value = votc_scene_10
+		}
+		trigger_event = talk_event.9001
 	}
 
-	option ={
+	option = {
 		name = talk_event.1001.exit
 		scope:recipient = {
 			add_opinion = {
