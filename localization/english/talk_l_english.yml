@@ -107,8 +107,8 @@ talk_scene_councilchamber:0 "Council Chamber"
 talk_scene_battlefield:0 "Battlefield"
 talk_travel:0 "Travel"
 
-talk_event.1001.title:0 "Arrival"
-talk_event.1001.desc:0 "You finally arrived to [actor.GetCurrentLocation.GetName] to meet [recipient.GetTitledFirstName]. Now the question is, where should we meet $talk_herhim$?"
+talk_event.1001.title:0 "Meeting Location"
+talk_event.1001.desc:0 "You are meeting with [recipient.GetTitledFirstName] in [actor.GetCurrentLocation.GetName]. Where should the conversation take place?"
 talk_event.1001.exit:0 "Actually, I don't want to talk to $talk_herhim$."
 
  VOTC_SCENE_OPTION_1:0 "$[GetPlayer.MakeScope.Var('votc_scene_1').GetFlagName]_string$"

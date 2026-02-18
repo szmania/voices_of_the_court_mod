@@ -26,8 +26,6 @@ mcc_interaction = {
 	}
 	
 	on_accept = {
-
-	on_accept = {
 		if = {
 			limit = {
 				scope:actor.location = scope:recipient.location
@@ -50,6 +48,6 @@ mcc_interaction = {
 		}
 		flag = talk_travel
 	}
-
 	auto_accept = yes
+	
 }

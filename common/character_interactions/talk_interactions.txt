@@ -48,6 +48,6 @@ talk_interaction = {
 		}
 		flag = talk_travel
 	}
-
 	auto_accept = yes
+	
 }
