@@ -44,9 +44,208 @@ ckms_meet_interaction = {
 				}	
 	}				
 	on_accept = {
+
+
+		# Add
+		# Add code block 4 below this comment
+		# Code block 4 example
+		#		if = {
+		#limit = {
+		#			scope:meet_scene_"sence_name" = yes
+		#		}
+		#		set_global_variable = {
+		#			name = meet_scene
+		#			value = flag:meet_scene_"sence_name"
+		#		}
+		#}
+
+		# In the Chinese market
+		if = {
+		limit = {
+			scope:meet_scene_market_east = yes
+		}
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_market_east
+		}
+	}
+
+		# In the market
+		if = {
+		limit = {
+			scope:meet_scene_market = yes
+		}
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_market
+		}
+	}
+
+		# In the tavern
+		if = {
+		limit = {
+			scope:meet_scene_tavern = yes
+		}
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_tavern
+		}
+	}
+
+	# In tavern_east
+	if = {
+		limit = {
+			scope:meet_scene_tavern_east = yes
+		}
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_tavern_east
+		}
+	}
+
+		if = {
+		limit = {
+			scope:meet_scene_iron_throne = yes
+		}
+		set_global_variable = {
+			name = meet_scene
+			value = flag:meet_scene_iron_throne
+		}
+	}
+		# In Lingyin Temple
 		if = {
 			limit = {
-				scope:actor.location = scope:recipient.location
+				scope:meet_scene_lingyinsi = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_lingyinsi
+			}
+		}
+		# In the Japanese Imperial Palace
+		if = {
+			limit = {
+				scope:meet_scene_throneroom_japan = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_throneroom_japan
+			}
+		}
+		# In Shaolin Temple
+		if = {
+			limit = {
+				scope:meet_scene_shaolinsi = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_shaolinsi
+			}
+		}
+		# In Wudang Mountain Taoist Temple
+		if = {
+			limit = {
+				scope:meet_scene_wudangshandaoguan = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_wudangshandaoguan
+			}
+		}
+		# In Yungang Grottoes
+		if = {
+			limit = {
+				scope:meet_scene_yungangshiku = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_yungangshiku
+			}
+		}
+		# In Leshan Giant Buddha
+		if = {
+			limit = {
+				scope:meet_scene_leshandafou = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_leshandafou
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_taishan = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_taishan
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_wulingyuan = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_wulingyuan
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_kaifenghuangcheng = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_kaifenghuangcheng
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_tengwangge = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_tengwangge
+			}
+		}
+
+		if = {
+			limit = {
+				scope:meet_scene_yueyanglou = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_yueyanglou
+			}
+		}
+
+		if = {
+			limit = {
+				scope:meet_scene_huanghelou = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_huanghelou
+			}
+		}
+
+		if = {
+			limit = {
+				scope:meet_scene_bedchamber_east1 = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_bedchamber_east1
+			}
+		}
+
+		if = {
+			limit = {
+				scope:meet_scene_garden_east1 = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_garden_east1
 			}
 			scope:actor = { trigger_event = ckms_meet_event.1001 }
 		}
