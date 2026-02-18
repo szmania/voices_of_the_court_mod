@@ -69,6 +69,101 @@ populate_valid_scenes_list = {
 		limit = { is_alley_valid = yes }
 		add_scene_to_list_effect = { SCENE = flag:talk_scene_alley }
 	}
+	# Temple
+	if = {
+		limit = { is_temple_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_temple }
+	}
+	# Church
+	if = {
+		limit = { is_church_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_church }
+	}
+	# Mosque
+	if = {
+		limit = { is_mosque_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_mosque_vanilla }
+	}
+	# Sitting Room
+	if = {
+		limit = { is_sittingroom_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_sittingroom }
+	}
+	# Study
+	if = {
+		limit = { is_study_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_study }
+	}
+	# University
+	if = {
+		limit = { is_university_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_bp2_university }
+	}
+	# Harem
+	if = {
+		limit = { is_harem_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_harem }
+	}
+	# Armory
+	if = {
+		limit = { is_armory_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_armory }
+	}
+	# Docks
+	if = {
+		limit = { is_docks_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_docks }
+	}
+	# Forest
+	if = {
+		limit = { is_forest_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_forest }
+	}
+	# Mountains
+	if = {
+		limit = { is_mountains_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_mountains }
+	}
+	# Desert
+	if = {
+		limit = { is_desert_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_desert }
+	}
+	# Steppe
+	if = {
+		limit = { is_steppe_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_steppe }
+	}
+	# Jungle
+	if = {
+		limit = { is_jungle_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_bp1_jungle }
+	}
+	# Wetlands
+	if = {
+		limit = { is_wetlands_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_bp1_wetlands }
+	}
+	# Hills
+	if = {
+		limit = { is_hills_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_bp1_hills }
+	}
+	# Plains
+	if = {
+		limit = { is_plains_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_bp1_plains }
+	}
+	# Coast
+	if = {
+		limit = { is_coast_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_bp3_coast }
+	}
+	# Riverside
+	if = {
+		limit = { is_riverside_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_bp3_riverside }
+	}
 }
 
 add_scene_to_list_effect = {

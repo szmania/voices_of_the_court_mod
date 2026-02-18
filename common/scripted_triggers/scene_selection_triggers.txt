@@ -87,3 +87,123 @@ is_alley_valid = {
 		}
 	}
 }
+
+is_temple_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_building_or_higher = temple_01 }
+}
+
+is_church_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_building_or_higher = temple_01 }
+	scope:actor.religion = { has_doctrine = christian_faith }
+}
+
+is_mosque_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_building_or_higher = temple_01 }
+	scope:actor.religion = { has_doctrine = islamic_faith }
+}
+
+is_sittingroom_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_building_or_higher = castle_01 }
+}
+
+is_study_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_building_or_higher = castle_01 }
+}
+
+is_university_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_building_or_higher = university_01 }
+}
+
+is_harem_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.culture = {
+		NOT = { has_coa_gfx = chinese_group_coa_gfx }
+	}
+	OR = {
+		scope:actor = { has_court_position = str_slave_concubine_court_position }
+		scope:recipient = { has_court_position = str_slave_concubine_court_position }
+		scope:actor = { is_concubine_of = scope:recipient }
+		scope:recipient = { is_concubine_of = scope:actor }
+	}
+}
+
+is_armory_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_building_or_higher = castle_01 }
+}
+
+is_docks_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { is_coastal = yes }
+}
+
+is_forest_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = {
+		OR = {
+			has_terrain = forest
+			has_terrain = taiga
+		}
+	}
+}
+
+is_mountains_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = {
+		OR = {
+			has_terrain = mountain
+			has_terrain = desert_mountains
+		}
+	}
+}
+
+is_desert_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = {
+		OR = {
+			has_terrain = desert
+			has_terrain = drylands
+		}
+	}
+}
+
+is_steppe_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_terrain = steppe }
+}
+
+is_jungle_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_terrain = jungle }
+}
+
+is_wetlands_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_terrain = wetlands }
+}
+
+is_hills_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_terrain = hills }
+}
+
+is_plains_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_terrain = plains }
+}
+
+is_coast_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { is_coastal = yes }
+}
+
+is_riverside_valid = {
+	is_scene_valid_for_location = yes
+	scope:actor.location = { has_river = yes }
+}

@@ -136,11 +136,5 @@ mcc_interaction = {
 	}
 	
 	
-	on_accept = {
-		scope:actor = {
-			trigger_event = mcc_event.1001
-		}
-	}
 	auto_accept = yes
-	
 }

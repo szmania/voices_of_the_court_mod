@@ -136,11 +136,5 @@ talk_interaction = {
 	}
 	
 	
-	on_accept = {
-		scope:actor = {
-			trigger_event = talk_event.1001
-		}
-	}
 	auto_accept = yes
-	
 }
