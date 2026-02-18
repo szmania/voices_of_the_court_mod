@@ -35,7 +35,7 @@ window = {
 					addcolumn = 180
 					addrow = 140
 					datamodel_wrap = 3
-					flip_direction = yes
+					# flip_direction = yes
 
 					item = {
 						button_standard = {
