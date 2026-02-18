@@ -1,0 +1,124 @@
+populate_valid_scenes_list = {
+	# Clear existing slots
+	remove_variable = votc_scene_1
+	remove_variable = votc_scene_2
+	remove_variable = votc_scene_3
+	remove_variable = votc_scene_4
+	remove_variable = votc_scene_5
+	remove_variable = votc_scene_6
+	remove_variable = votc_scene_7
+	remove_variable = votc_scene_8
+	remove_variable = votc_scene_9
+	remove_variable = votc_scene_10
+	
+	set_variable = {
+		name = votc_scene_count
+		value = 0
+	}
+
+	# Helper effect to add a scene to the next available slot
+	# Usage: add_scene_to_list = { SCENE = flag:talk_scene_tavern TRIGGER = is_tavern_valid }
+	
+	# Tavern
+	if = {
+		limit = { is_tavern_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_tavern }
+	}
+	# Market
+	if = {
+		limit = { is_market_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_market }
+	}
+	# Throneroom
+	if = {
+		limit = { is_throneroom_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_throneroom }
+	}
+	# Garden
+	if = {
+		limit = { is_garden_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_garden }
+	}
+	# Bedchamber
+	if = {
+		limit = { is_bedchamber_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_bedchamber }
+	}
+	# Dungeon
+	if = {
+		limit = { is_dungeon_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_dungeon }
+	}
+	# Feast
+	if = {
+		limit = { is_feast_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_feast }
+	}
+	# Hunt
+	if = {
+		limit = { is_hunt_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_hunt }
+	}
+	# Army Camp
+	if = {
+		limit = { is_armycamp_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_armycamp }
+	}
+	# Alley
+	if = {
+		limit = { is_alley_valid = yes }
+		add_scene_to_list_effect = { SCENE = flag:talk_scene_alley }
+	}
+}
+
+add_scene_to_list_effect = {
+	if = {
+		limit = {
+			var:votc_scene_count < 10
+		}
+		change_variable = {
+			name = votc_scene_count
+			add = 1
+		}
+		if = {
+			limit = { var:votc_scene_count = 1 }
+			set_variable = { name = votc_scene_1 value = $SCENE$ }
+		}
+		else_if = {
+			limit = { var:votc_scene_count = 2 }
+			set_variable = { name = votc_scene_2 value = $SCENE$ }
+		}
+		else_if = {
+			limit = { var:votc_scene_count = 3 }
+			set_variable = { name = votc_scene_3 value = $SCENE$ }
+		}
+		else_if = {
+			limit = { var:votc_scene_count = 4 }
+			set_variable = { name = votc_scene_4 value = $SCENE$ }
+		}
+		else_if = {
+			limit = { var:votc_scene_count = 5 }
+			set_variable = { name = votc_scene_5 value = $SCENE$ }
+		}
+		else_if = {
+			limit = { var:votc_scene_count = 6 }
+			set_variable = { name = votc_scene_6 value = $SCENE$ }
+		}
+		else_if = {
+			limit = { var:votc_scene_count = 7 }
+			set_variable = { name = votc_scene_7 value = $SCENE$ }
+		}
+		else_if = {
+			limit = { var:votc_scene_count = 8 }
+			set_variable = { name = votc_scene_8 value = $SCENE$ }
+		}
+		else_if = {
+			limit = { var:votc_scene_count = 9 }
+			set_variable = { name = votc_scene_9 value = $SCENE$ }
+		}
+		else_if = {
+			limit = { var:votc_scene_count = 10 }
+			set_variable = { name = votc_scene_10 value = $SCENE$ }
+		}
+	}
+}

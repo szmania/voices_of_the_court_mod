@@ -44,219 +44,106 @@ ckms_meet_interaction = {
 				}	
 	}				
 	on_accept = {
-
-
-		# Add
-		# Add code block 4 below this comment
-		# Code block 4 example
-		#		if = {
-		#limit = {
-		#			scope:meet_scene_"sence_name" = yes
-		#		}
-		#		set_global_variable = {
-		#			name = meet_scene
-		#			value = flag:meet_scene_"sence_name"
-		#		}
-		#}
-
-		# In the Chinese market
-		if = {
-		limit = {
-			scope:meet_scene_market_east = yes
-		}
-		set_global_variable = {
-			name = meet_scene
-			value = flag:meet_scene_market_east
-		}
-	}
-
-		# In the market
-		if = {
-		limit = {
-			scope:meet_scene_market = yes
-		}
-		set_global_variable = {
-			name = meet_scene
-			value = flag:meet_scene_market
-		}
-	}
-
-		# In the tavern
-		if = {
-		limit = {
-			scope:meet_scene_tavern = yes
-		}
-		set_global_variable = {
-			name = meet_scene
-			value = flag:meet_scene_tavern
-		}
-	}
-
-	# In tavern_east
-	if = {
-		limit = {
-			scope:meet_scene_tavern_east = yes
-		}
-		set_global_variable = {
-			name = meet_scene
-			value = flag:meet_scene_tavern_east
-		}
-	}
-
-		if = {
-		limit = {
-			scope:meet_scene_iron_throne = yes
-		}
-		set_global_variable = {
-			name = meet_scene
-			value = flag:meet_scene_iron_throne
-		}
-	}
-		# In Lingyin Temple
-		if = {
-			limit = {
-				scope:meet_scene_lingyinsi = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_lingyinsi
-			}
-		}
-		# In the Japanese Imperial Palace
-		if = {
-			limit = {
-				scope:meet_scene_throneroom_japan = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_throneroom_japan
-			}
-		}
-		# In Shaolin Temple
-		if = {
-			limit = {
-				scope:meet_scene_shaolinsi = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_shaolinsi
-			}
-		}
-		# In Wudang Mountain Taoist Temple
-		if = {
-			limit = {
-				scope:meet_scene_wudangshandaoguan = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_wudangshandaoguan
-			}
-		}
-		# In Yungang Grottoes
-		if = {
-			limit = {
-				scope:meet_scene_yungangshiku = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_yungangshiku
-			}
-		}
-		# In Leshan Giant Buddha
-		if = {
-			limit = {
-				scope:meet_scene_leshandafou = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_leshandafou
-			}
-		}
-		if = {
-			limit = {
-				scope:meet_scene_taishan = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_taishan
-			}
-		}
-		if = {
-			limit = {
-				scope:meet_scene_wulingyuan = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_wulingyuan
-			}
-		}
-		if = {
-			limit = {
-				scope:meet_scene_kaifenghuangcheng = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_kaifenghuangcheng
-			}
-		}
-		if = {
-			limit = {
-				scope:meet_scene_tengwangge = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_tengwangge
-			}
-		}
+		populate_valid_scenes_list = yes
 
 		if = {
 			limit = {
-				scope:meet_scene_yueyanglou = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_yueyanglou
-			}
-		}
-
-		if = {
-			limit = {
-				scope:meet_scene_huanghelou = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_huanghelou
-			}
-		}
-
-		if = {
-			limit = {
-				scope:meet_scene_bedchamber_east1 = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_bedchamber_east1
-			}
-		}
-
-		if = {
-			limit = {
-				scope:meet_scene_garden_east1 = yes
-			}
-			set_global_variable = {
-				name = meet_scene
-				value = flag:meet_scene_garden_east1
-			}
-			scope:actor = { trigger_event = ckms_meet_event.1001 }
-		}
-		else = {
-			scope:actor = {
-				start_travel_plan = {
-					destination = scope:recipient.location
-					on_arrival_event = ckms_meet_event.1001
+				OR = {
+					scope:talk_scene_1 = yes
+					scope:talk_scene_2 = yes
+					scope:talk_scene_3 = yes
+					scope:talk_scene_4 = yes
+					scope:talk_scene_5 = yes
+					scope:talk_scene_6 = yes
+					scope:talk_scene_7 = yes
+					scope:talk_scene_8 = yes
+					scope:talk_scene_9 = yes
+					scope:talk_scene_10 = yes
 				}
 			}
+			# Set the selected scene from the interaction option
+			if = { limit = { scope:talk_scene_1 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_1 } }
+			else_if = { limit = { scope:talk_scene_2 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_2 } }
+			else_if = { limit = { scope:talk_scene_3 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_3 } }
+			else_if = { limit = { scope:talk_scene_4 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_4 } }
+			else_if = { limit = { scope:talk_scene_5 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_5 } }
+			else_if = { limit = { scope:talk_scene_6 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_6 } }
+			else_if = { limit = { scope:talk_scene_7 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_7 } }
+			else_if = { limit = { scope:talk_scene_8 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_8 } }
+			else_if = { limit = { scope:talk_scene_9 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_9 } }
+			else_if = { limit = { scope:talk_scene_10 = yes } set_global_variable = { name = talk_scene value = scope:votc_scene_10 } }
+
+			scope:actor = { 
+				trigger_event = ckms_meet_event.9001
+			}
 		}
+		else = {
+			if = {
+				limit = {
+					scope:talk_travel = yes
+				}
+				
+				scope:actor = {
+					start_travel_plan = {
+					destination = scope:recipient.location
+					on_arrival_event = ckms_meet_event.1001
+					}
+				}
+				
+			}
+			
+		}
+	}
+
+	send_option = {
+		is_shown = { exists = var:votc_scene_1 }
+		flag = talk_scene_1
+		localization = VOTC_SCENE_OPTION_1
+	}
+	send_option = {
+		is_shown = { exists = var:votc_scene_2 }
+		flag = talk_scene_2
+		localization = VOTC_SCENE_OPTION_2
+	}
+	send_option = {
+		is_shown = { exists = var:votc_scene_3 }
+		flag = talk_scene_3
+		localization = VOTC_SCENE_OPTION_3
+	}
+	send_option = {
+		is_shown = { exists = var:votc_scene_4 }
+		flag = talk_scene_4
+		localization = VOTC_SCENE_OPTION_4
+	}
+	send_option = {
+		is_shown = { exists = var:votc_scene_5 }
+		flag = talk_scene_5
+		localization = VOTC_SCENE_OPTION_5
+	}
+	send_option = {
+		is_shown = { exists = var:votc_scene_6 }
+		flag = talk_scene_6
+		localization = VOTC_SCENE_OPTION_6
+	}
+	send_option = {
+		is_shown = { exists = var:votc_scene_7 }
+		flag = talk_scene_7
+		localization = VOTC_SCENE_OPTION_7
+	}
+	send_option = {
+		is_shown = { exists = var:votc_scene_8 }
+		flag = talk_scene_8
+		localization = VOTC_SCENE_OPTION_8
+	}
+	send_option = {
+		is_shown = { exists = var:votc_scene_9 }
+		flag = talk_scene_9
+		localization = VOTC_SCENE_OPTION_9
+	}
+	send_option = {
+		is_shown = { exists = var:votc_scene_10 }
+		flag = talk_scene_10
+		localization = VOTC_SCENE_OPTION_10
 	}
 
 	send_option = {
