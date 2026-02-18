@@ -26,17 +26,27 @@ talk_interaction = {
 	}
 	
 	on_accept = {
+		set_global_variable = {
+			name = talk_first_scope
+			value = scope:actor
+		}
+		set_global_variable = {
+			name = talk_second_scope
+			value = scope:recipient
+		}
 		if = {
 			limit = {
 				scope:actor.location = scope:recipient.location
 			}
-			scope:actor = { trigger_event = talk_event.1001 }
+			scope:actor = { 
+				execute_console_command = "gui.createwidget gui/custom_gui/scene_picker.gui scene_picker_window"
+			}
 		}
 		else = {
 			scope:actor = {
 				start_travel_plan = {
 					destination = scope:recipient.location
-					on_arrival_event = talk_event.1001
+					on_arrival_event = talk_event.1001 # Keep this for now as a fallback or update it later
 				}
 			}
 		}
