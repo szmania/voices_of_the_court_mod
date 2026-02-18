@@ -133,10 +133,14 @@ is_valid_scene_study = {
 		scope:actor = { is_imprisoned = no }
 		scope:recipient = { is_imprisoned = no }
 		OR = {
-			scope:actor = { has_trait = intellectual }
-			scope:recipient = { has_trait = intellectual }
-			scope:actor = { has_lifestyle_perk = scholar_perk }
-			scope:recipient = { has_lifestyle_perk = scholar_perk }
+			scope:actor = { has_trait = scholar }
+			scope:recipient = { has_trait = scholar }
+			scope:actor = { has_trait = genius }
+			scope:recipient = { has_trait = genius }
+			scope:actor = { has_trait = quick }
+			scope:recipient = { has_trait = quick }
+			scope:actor = { has_lifestyle_perk = pedagogy_perk }
+			scope:recipient = { has_lifestyle_perk = pedagogy_perk }
 		}
 	}
 }
@@ -157,7 +161,6 @@ is_valid_scene_battlefield = {
 	AND = {
 		scope:actor = { is_imprisoned = no }
 		scope:recipient = { is_imprisoned = no }
-		scope:actor.location = { has_province_modifier = battlefield_modifier } # Hypothetical
 		OR = {
 			scope:actor = { is_in_army = yes }
 			scope:recipient = { is_in_army = yes }
