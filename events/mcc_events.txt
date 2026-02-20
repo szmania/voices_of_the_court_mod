@@ -143,6 +143,18 @@ mcc_event.9001 = {
 		
 		scope:recipient = {
 			log_gamedata_v2 = {}
+			every_child = {
+				limit = { is_alive = yes }
+				debug_log = "VOTC:FAMILY/;/[ROOT.Char.GetID]/;/Child/;/[THIS.Char.GetID]/;/[THIS.Char.GetFirstName]"
+			}
+			every_parent = {
+				limit = { is_alive = yes }
+				debug_log = "VOTC:FAMILY/;/[ROOT.Char.GetID]/;/Parent/;/[THIS.Char.GetID]/;/[THIS.Char.GetFirstName]"
+			}
+			every_sibling = {
+				limit = { is_alive = yes }
+				debug_log = "VOTC:FAMILY/;/[ROOT.Char.GetID]/;/Sibling/;/[THIS.Char.GetID]/;/[THIS.Char.GetFirstName]"
+			}
 		}
 		
 	}
