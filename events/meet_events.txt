@@ -146,15 +146,15 @@ ckms_meet_event.9001 = {
 				log_meet_gamedata = {}
 				every_child = {
 					limit = { is_alive = yes }
-					debug_log = "VOTC:FAMILY/;/[ROOT.Char.GetID]/;/Child/;/[THIS.Char.GetID]/;/[THIS.Char.GetFirstName]"
+					debug_log = "VOTC:FAMILY/;/[PREV.Char.GetID]/;/Child/;/[THIS.Char.GetID]/;/[THIS.Char.GetFirstName]"
 				}
 				every_parent = {
 					limit = { is_alive = yes }
-					debug_log = "VOTC:FAMILY/;/[ROOT.Char.GetID]/;/Parent/;/[THIS.Char.GetID]/;/[THIS.Char.GetFirstName]"
+					debug_log = "VOTC:FAMILY/;/[PREV.Char.GetID]/;/Parent/;/[THIS.Char.GetID]/;/[THIS.Char.GetFirstName]"
 				}
 				every_sibling = {
 					limit = { is_alive = yes }
-					debug_log = "VOTC:FAMILY/;/[ROOT.Char.GetID]/;/Sibling/;/[THIS.Char.GetID]/;/[THIS.Char.GetFirstName]"
+					debug_log = "VOTC:FAMILY/;/[PREV.Char.GetID]/;/Sibling/;/[THIS.Char.GetID]/;/[THIS.Char.GetFirstName]"
 				}
 			}
 		
