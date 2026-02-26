@@ -102,6 +102,7 @@ mcc_interaction:0 "多人数会話"
 ckms_meet_interaction:0 "三者会話"
 ckms_meet_interaction.desc:0 "[recipient.GetShortUINameNoTooltip]ともう一人の人物（あらかじめピン留めが必要）との会話を開始する"
 secondary_recipient_meet:0 "第二の受信者"
+recipient_secondary_ckms_meet_interaction:0 "第二の受信者"
 mcc_interaction.desc:0 "同じ場所にいるすべてのピン留めされたキャラクターとの会話を開始する"
 
 meet_interaction:0 "会う"

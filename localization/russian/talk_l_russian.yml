@@ -101,6 +101,7 @@ mcc_interaction:0 "Разговор с несколькими персонажа
 ckms_meet_interaction:0 "Разговор на троих"
 ckms_meet_interaction.desc:0 "Начать разговор с [recipient.GetShortUINameNoTooltip] и еще одной стороной (сначала нужно закрепить)"
 secondary_recipient_meet:0 "Второй получатель"
+recipient_secondary_ckms_meet_interaction:0 "Второй получатель"
 mcc_interaction.desc:0 "Начать разговор со всеми закрепленными персонажами в той же локации"
 
 meet_interaction:0 "Встретиться"

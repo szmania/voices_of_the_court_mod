@@ -102,6 +102,7 @@ mcc_interaction:0 "Rozmowa wieloosobowa"
 ckms_meet_interaction:0 "Rozmowa trójstronna"
 ckms_meet_interaction.desc:0 "Rozpocznij rozmowę z [recipient.GetShortUINameNoTooltip] i inną stroną (musi być najpierw przypięta)"
 secondary_recipient_meet:0 "Drugi odbiorca"
+recipient_secondary_ckms_meet_interaction:0 "Drugi odbiorca"
 mcc_interaction.desc:0 "Rozpocznij rozmowę ze wszystkimi przypiętymi postaciami w tej samej lokalizacji"
 
 meet_interaction:0 "Spotkanie"

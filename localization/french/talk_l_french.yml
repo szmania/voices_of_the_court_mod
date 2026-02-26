@@ -102,6 +102,7 @@ mcc_interaction:0 "Conversation multi-personnages"
 ckms_meet_interaction:0 "Conversation à trois"
 ckms_meet_interaction.desc:0 "Engager une conversation avec [recipient.GetShortUINameNoTooltip] et une autre partie (doit être épinglée d'abord)"
 secondary_recipient_meet:0 "Destinataire secondaire"
+recipient_secondary_ckms_meet_interaction:0 "Destinataire secondaire"
 mcc_interaction.desc:0 "Engager une conversation avec tous les personnages épinglés au même endroit"
 
 meet_interaction:0 "Rencontrer"

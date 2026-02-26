@@ -102,6 +102,7 @@ mcc_interaction:0 "Mehrpersonen-Gespräch"
 ckms_meet_interaction:0 "Drei-Wege-Gespräch"
 ckms_meet_interaction.desc:0 "Ein Gespräch mit [recipient.GetShortUINameNoTooltip] und einer weiteren Partei einleiten (muss zuerst angeheftet werden)"
 secondary_recipient_meet:0 "Sekundärer Empfänger"
+recipient_secondary_ckms_meet_interaction:0 "Sekundärer Empfänger"
 mcc_interaction.desc:0 "Ein Gespräch mit allen angehefteten Charakteren am selben Ort einleiten"
 
 meet_interaction:0 "Treffen"

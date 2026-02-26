@@ -102,6 +102,7 @@ mcc_interaction:0 "다인 대화"
 ckms_meet_interaction:0 "3인 대화"
 ckms_meet_interaction.desc:0 "[recipient.GetShortUINameNoTooltip] 및 다른 일행(먼저 고정해야 함)과 대화 시작"
 secondary_recipient_meet:0 "보조 수신자"
+recipient_secondary_ckms_meet_interaction:0 "보조 수신자"
 mcc_interaction.desc:0 "같은 장소에 있는 모든 고정된 캐릭터와 대화 시작"
 
 meet_interaction:0 "만남"
