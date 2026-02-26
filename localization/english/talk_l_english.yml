@@ -102,6 +102,7 @@ mcc_interaction:0 "Multi-Character Conversation"
 ckms_meet_interaction:0 "Three-Way Conversation"
 ckms_meet_interaction.desc:0 "Initiate a conversation with [recipient.GetShortUINameNoTooltip] and another party (must be pinned first)"
 secondary_recipient_meet:0 "Secondary Recipient"
+recipient_secondary_ckms_meet_interaction:0 "Secondary Recipient"
 mcc_interaction.desc:0 "Initiate a conversation with all pinned characters in the same location"
 
 meet_interaction:0 "Meet"
