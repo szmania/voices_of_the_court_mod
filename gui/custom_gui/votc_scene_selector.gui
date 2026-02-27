@@ -28,7 +28,7 @@
                 parentanchor = top|hcenter
                 position = { -70 22 }
                 size = { 24 24 }
-                texture = "gfx/interface/icons/logo/thumbnail.png"
+                texture = "gfx/interface/icons/logo/thumbnail_2.png"
             }
 
             text_single = {
