@@ -37,3 +37,24 @@ path="C:/Users/ [사용자 PC 이름] / Documents/Paradox Interactive/Crusader K
 ## 6. 백엔드 프로그램을 재시작하면 프롬프트 생성 스크립트가 초기화됩니다
 **해결책**:
 `custom` 폴더에 별도의 파일로 저장하세요.
+
+Mod Name: Voices of the Court - Community Edition
+License: GNU General Public License v3.0 (GPLv3)
+
+Credits & Attribution
+This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+
+Original Creators: The VOTC Team and community contributors.
+
+Continued Development: Special thanks to the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
+
+Community Support: Thanks to Durond and MrAndroPC and the broader community for their insights and historical context regarding the project.
+
+Licensing Information
+Some of original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+
+In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+
+Original License: CC BY-SA 4.0
+
+Current License: GPLv3

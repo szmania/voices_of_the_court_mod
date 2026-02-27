@@ -1,6 +1,6 @@
 ﻿namespace = message_event
 
-#写信事件，用于输入文本
+# Thanks to Lisiyuan233 (aka wushenggui137), who built some parts of this code, which has been used as foundation
 message_event.360 = {
 	type = character_event
 	title = votc_message_title
@@ -13,7 +13,7 @@ message_event.360 = {
 
 	widget = {
 		gui = "event_window_widget_message_write"
-		container = "dynamic_birth_name"
+		container = "custom_widgets_container"
 		controller = {
 			type = text
 			data = {
@@ -34,14 +34,13 @@ message_event.360 = {
 			name = message_second_scope
 			value = scope:recipient
 		}
-		#测试距离计算天数
+		# Testing distance calculation for days
 		set_global_variable = {
 			name = votc_letter_distance
 			value = votc_letter_delay
 		}
-		debug_log = "VOTC:LETTER 延迟[GetGlobalVariable('votc_letter_distance').GetValue]天"
 
-		#if/else根据变量情况设置递送线程
+		# if/else structure to set delivery thread based on variable availability
 		if = {
 			limit = { 
 				not = { exists = global_var:votc_letter_1 }
@@ -55,20 +54,12 @@ message_event.360 = {
 				name = message_second_scope_letter_1
 				value = scope:recipient
 			}
-			debug_log = "VOTC:LETTER设置为线程votc_letter_1"
-			scope:actor = {
-				trigger_event = {
-					id = message_event.3621
-					days = votc_letter_delay
-				}
-			}
-			
 		}
 		else_if = {
 			limit = { 
 				not = { exists = global_var:votc_letter_2 }
 			}
-			# 当变量letter2不存在时，设置letter2为当前线程
+			# When variable letter2 does not exist, set letter2 as the current thread
 			set_global_variable = votc_letter_2
 			set_global_variable = {
 				name = votc_letter_num
@@ -78,19 +69,12 @@ message_event.360 = {
 				name = message_second_scope_letter_2
 				value = scope:recipient
 			}
-			debug_log = "VOTC:LETTER设置为线程votc_letter_2"
-			scope:actor = {
-				trigger_event = {
-					id = message_event.3622
-					days = votc_letter_delay
-				}
-			}	
 		}
 		else_if = {
 			limit = { 
 				not = { exists = global_var:votc_letter_3 }
 			}
-			# 当变量letter3不存在时，设置letter3为当前线程
+			# When variable letter3 does not exist, set letter3 as the current thread
 			set_global_variable = votc_letter_3
 			set_global_variable = {
 				name = votc_letter_num
@@ -100,19 +84,12 @@ message_event.360 = {
 				name = message_second_scope_letter_3
 				value = scope:recipient
 			}
-			debug_log = "VOTC:LETTER设置为线程votc_letter_3"	
-			scope:actor = {
-				trigger_event = {
-					id = message_event.3623
-					days = votc_letter_delay
-				}
-			}	
 		}
 		else_if = {
 			limit = { 
 				not = { exists = global_var:votc_letter_4 }
 			}
-			# 当变量letter4不存在时，设置letter4为当前线程
+			# When variable letter4 does not exist, set letter4 as the current thread
 			set_global_variable = votc_letter_4
 			set_global_variable = {
 				name = votc_letter_num
@@ -122,19 +99,12 @@ message_event.360 = {
 				name = message_second_scope_letter_4
 				value = scope:recipient
 			}
-			debug_log = "VOTC:LETTER设置为线程votc_letter_4"
-			scope:actor = {
-				trigger_event = {
-					id = message_event.3624
-					days = votc_letter_delay
-				}
-			}	
 		}
 		else_if = {
 			limit = { 
 				not = { exists = global_var:votc_letter_5 }
 			}
-			# 当变量letter5不存在时，设置letter5为当前线程
+			# When variable letter5 does not exist, set letter5 as the current thread
 			set_global_variable = votc_letter_5
 			set_global_variable = {
 				name = votc_letter_num
@@ -144,19 +114,12 @@ message_event.360 = {
 				name = message_second_scope_letter_5
 				value = scope:recipient
 			}
-			debug_log = "VOTC:LETTER设置为线程votc_letter_5"
-			scope:actor = {
-				trigger_event = {
-					id = message_event.3625
-					days = votc_letter_delay
-				}
-			}	
 		}
 		else_if = {
 			limit = { 
 				not = { exists = global_var:votc_letter_6 }
 			}
-			# 当变量letter6不存在时，设置letter6为当前线程
+			# When variable letter6 does not exist, set letter6 as the current thread
 			set_global_variable = votc_letter_6
 			set_global_variable = {
 				name = votc_letter_num
@@ -166,19 +129,13 @@ message_event.360 = {
 				name = message_second_scope_letter_6
 				value = scope:recipient
 			}
-			debug_log = "VOTC:LETTER设置为线程votc_letter_6"
-			scope:actor = {
-				trigger_event = {
-					id = message_event.3626
-					days = votc_letter_delay
-				}
-			}	
+			#debug_log = "VOTC:LETTER set to thread votc_letter_6"
 		}
 		else_if = {
 			limit = { 
 				not = { exists = global_var:votc_letter_7 }
 			}
-			# 当变量letter7不存在时，设置letter7为当前线程
+			# When variable letter7 does not exist, set letter7 as the current thread
 			set_global_variable = votc_letter_7
 			set_global_variable = {
 				name = votc_letter_num
@@ -188,19 +145,13 @@ message_event.360 = {
 				name = message_second_scope_letter_7
 				value = scope:recipient
 			}
-			debug_log = "VOTC:LETTER设置为线程votc_letter_7"
-			scope:actor = {
-				trigger_event = {
-					id = message_event.3627
-					days = votc_letter_delay
-				}
-			}	
+			#debug_log = "VOTC:LETTER set to thread votc_letter_7"
 		}
 		else_if = {
 			limit = { 
 				not = { exists = global_var:votc_letter_8 }
 			}
-			# 当变量letter8不存在时，设置letter8为当前线程
+			# When variable letter8 does not exist, set letter8 as the current thread
 			set_global_variable = votc_letter_8
 			set_global_variable = {
 				name = votc_letter_num
@@ -210,19 +161,12 @@ message_event.360 = {
 				name = message_second_scope_letter_8
 				value = scope:recipient
 			}
-			debug_log = "VOTC:LETTER设置为线程votc_letter_8"
-			scope:actor = {
-				trigger_event = {
-					id = message_event.3628
-					days = votc_letter_delay
-				}
-			}	
 		}
 		else_if = {
 			limit = { 
 				not = { exists = global_var:votc_letter_9 }
 			}
-			# 当变量letter9不存在时，设置letter9为当前线程
+			# When variable letter9 does not exist, set letter9 as the current thread
 			set_global_variable = votc_letter_9
 			set_global_variable = {
 				name = votc_letter_num
@@ -232,21 +176,23 @@ message_event.360 = {
 				name = message_second_scope_letter_9
 				value = scope:recipient
 			}
-			debug_log = "VOTC:LETTER设置为线程votc_letter_9"
-			scope:actor = {
-				trigger_event = {
-					id = message_event.3629
-					days = votc_letter_delay
-				}
-			}	
 		}
-
+		
 		scope:recipient = {
-			log_gamedata = {}
+			log_gamedata_v3l = yes
 		}
+		remove_global_variable = mcc_character_0
+		remove_global_variable = mcc_character_1
+		remove_global_variable = mcc_character_2
+		remove_global_variable = mcc_character_3
+		remove_global_variable = mcc_character_4
+		remove_global_variable = mcc_character_5
+
+		clear_global_variable_list = mcc_characters_list_v2
+
 		trigger_event = {
 			id = message_event.361
-			#设置延迟给debuglog和后端程序反应时间，否则会出现读取debuglog失败或错误的情况
+			# Setting delay to give debuglog and backend program time to react, otherwise debuglog reading may fail or produce errors
 			days = 1
 		}
 	}
@@ -255,15 +201,21 @@ message_event.360 = {
 		name = send_message
 		#store_localized_text_in_death = test_saved_text
 		debug_log = message_text
+		trigger_event = mcc_event_v2.9998
 		#remove_variable = votc_message_text
+	}
+	option = {
+		name = mcc_event.1002.exit
 	}
 }
 
-#剪切板事件，用于通知后端程序开始处理信件消息
+# Clipboard event, used to notify backend program to begin processing letter messages with VOTC:LETTER signature
 message_event.361 = {
 	type = character_event
-	title = "aha"
+	title = votc_placeholder
+	window = fullscreen_event
 	theme = clipboard_transfer_event_theme
+	
 	desc = message_event.361.desc
 	widget = {
         gui = "event_window_widget_talk_clear"
@@ -272,113 +224,14 @@ message_event.361 = {
 }
 
 
-#用于接收不同线程的消息 运行控制台命令run letter1/2/3/4/5/6/7/8/9.txt
-message_event.3621 = {
+# Opens letter widget
+message_event.362 = {
 	type = character_event
-	title = "aha"
+	title = votc_placeholder
 	theme = realm
 	desc = message_event.362.desc
 	widget = {
-        gui = "event_window_widget_message_1"
-        container = "custom_widgets_container"
-    }
-}
-
-message_event.3622 = {
-	type = character_event
-	title = "aha"
-	theme = realm
-	desc = message_event.362.desc
-	widget = {
-        gui = "event_window_widget_message_2"
-        container = "custom_widgets_container"
-    }
-}
-
-message_event.3623 = {
-	type = character_event
-	title = "aha"
-	theme = realm
-	desc = message_event.362.desc
-	widget = {
-        gui = "event_window_widget_message_3"
-        container = "custom_widgets_container"
-    }
-}
-
-message_event.3624 = {
-	type = character_event
-	title = "aha"
-	theme = realm
-	desc = message_event.362.desc
-	widget = {
-        gui = "event_window_widget_message_4"
-        container = "custom_widgets_container"
-    }
-}
-
-message_event.3624 = {
-	type = character_event
-	title = "aha"
-	theme = realm
-	desc = message_event.362.desc
-	widget = {
-        gui = "event_window_widget_message_4"	
-        container = "custom_widgets_container"
-    }
-}
-
-message_event.3625 = {
-	type = character_event
-	title = "aha"
-	theme = realm
-	desc = message_event.362.desc
-	widget = {
-        gui = "event_window_widget_message_5"
-        container = "custom_widgets_container"
-    }
-}
-
-message_event.3626 = {
-	type = character_event
-	title = "aha"
-	theme = realm
-	desc = message_event.362.desc
-	widget = {
-        gui = "event_window_widget_message_6"
-        container = "custom_widgets_container"
-    }
-}
-
-message_event.3627 = {
-	type = character_event
-	title = "aha"
-	theme = realm
-	desc = message_event.362.desc
-	widget = {
-        gui = "event_window_widget_message_7"
-        container = "custom_widgets_container"
-    }
-}		
-
-message_event.3628 = {
-	type = character_event
-	title = "aha"
-	theme = realm
-	desc = message_event.362.desc
-	widget = {
-        gui = "event_window_widget_message_8"
-        container = "custom_widgets_container"
-    }
-}
-
-message_event.3629 = {
-	type = character_event
-	title = "aha"
-	theme = realm
-	desc = message_event.362.desc
-	widget = {
-        gui = "event_window_widget_message_9"
+        gui = "event_window_widget_message_open"
         container = "custom_widgets_container"
     }
 }

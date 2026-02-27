@@ -1,3 +1,0 @@
-﻿votc_group_type = {
-	sort_order = 99
-}

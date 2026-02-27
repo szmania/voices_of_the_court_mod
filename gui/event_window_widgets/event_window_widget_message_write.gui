@@ -22,6 +22,7 @@
 		blockoverride "editbox_label"
 		{
 			text = event_window_widget_message_write_prompt
+			
 		}
 	}
 

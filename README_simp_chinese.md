@@ -40,4 +40,23 @@ path="C:/Users/ 这里是你电脑的用户名 / Documents/Paradox Interactive/C
 **解决**：  
 另存一个放在custom文件夹中。
 
+Mod Name: Voices of the Court - Community Edition
+License: GNU General Public License v3.0 (GPLv3)
 
+Credits & Attribution
+This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+
+Original Creators: The VOTC Team and community contributors.
+
+Continued Development: Special thanks to the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
+
+Community Support: Thanks to Durond and MrAndroPC and the broader community for their insights and historical context regarding the project.
+
+Licensing Information
+Some of original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+
+In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+
+Original License: CC BY-SA 4.0
+
+Current License: GPLv3

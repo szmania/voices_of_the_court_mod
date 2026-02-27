@@ -1,5 +1,4 @@
-﻿# Custom edit box for entering letter content
-types Editboxes
+﻿types Editboxes
 {
     type editbox_votc_with_label = vbox {
         spacing = 4
