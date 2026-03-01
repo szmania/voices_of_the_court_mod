@@ -225,7 +225,7 @@ window = {
     icon = {
         name = "votc_background_logo"
         parentanchor = center
-        size = { 400 400 }
+        size = { 500 500 }
         texture = "gfx/interface/icons/logo/logo_transparent.dds"
         alpha = 0.1
         position = { 0 0 }
@@ -243,7 +243,7 @@ window = {
             }
             icon = {
                 parentanchor = top|left
-                position = { 10 25 }
+                position = { 10 22 }
                 size = { 32 32 }
                 texture = "gfx/interface/icons/logo/logo_transparent.dds"
             }
@@ -270,6 +270,14 @@ window = {
                 layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = expanding
                 
+                text_single = {
+                    text = "Characters"
+                    layoutpolicy_horizontal = expanding
+                    align = center
+                    default_format = "#high"
+                    margin_bottom = 5
+                }
+
                 scrollbox = {
                     name = "mcc_select_characters"
                     using = Animation_Tab_Switch
@@ -857,6 +865,15 @@ window = {
                         expand = {}
                     }
                 }
+
+                text_single = {
+                    text = "Selected Characters"
+                    layoutpolicy_horizontal = expanding
+                    align = center
+                    default_format = "#high"
+                    margin_bottom = 5
+                }
+
                 scrollbox = {
                     name = "mcc_select_characters"
                     using = Animation_Tab_Switch
