@@ -221,17 +221,17 @@ window = {
         }
     }
 
+    # Large VOTC-CE logo watermark in background
+    icon = {
+        name = "votc_background_logo"
+        parentanchor = center
+        size = { 400 400 }
+        texture = "gfx/interface/icons/logo/logo_transparent.dds"
+        alpha = 0.1
+        position = { 0 0 }
+    }
+
     vbox = {
-        # Large VOTC-CE logo watermark in background
-        icon = {
-            name = "votc_background_logo"
-            parentanchor = center
-            size = { 400 400 }
-            texture = "gfx/interface/icons/logo/logo_transparent.dds"
-            alpha = 0.1
-            position = { 0 0 }
-        }
-        
         header_standard = {
             layoutpolicy_horizontal = expanding
 
@@ -239,6 +239,7 @@ window = {
             {
                 text = "Select characters"
                 align = center
+                parentanchor = hcenter
             }
             icon = {
                 parentanchor = top|left
