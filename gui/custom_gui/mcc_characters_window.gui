@@ -1029,6 +1029,20 @@ window = {
             }
         }
 
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            margin = { 0 10 }
+
+            expand = {}
+
+            button_standard = {
+                name = "continue_button"
+                text = "votc_continue_button"
+                onclick = "[GetVariableSystem.Clear('mcc_characters_window_opened')]"
+                align = right
+            }
+        }
+
         text_single = {
             layoutpolicy_horizontal = expanding
             text = "Community Edition"
