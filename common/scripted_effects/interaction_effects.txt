@@ -27,3 +27,14 @@
 	}
 	
 }
+
+mcc_select_all_characters_effect = {
+    every_in_global_list = {
+        list = mcc_characters_available
+        add_to_global_list = {
+            name = mcc_characters_selected
+            scope = character
+        }
+    }
+    clear_global_list = mcc_characters_available
+}
