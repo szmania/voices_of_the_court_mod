@@ -23,6 +23,8 @@ types mcc_character_presentation_types {
                 using = acs_skill_grid_text
                 text = "[Character.GetSkill('diplomacy')]"
                 tooltip = "[diplomacy|E] [Character.GetSkillWithLevel('diplomacy')]"
+                default_format = "#medium"
+                fontsize_min = 12
             }
             background = {
                 using = acs_skill_grid_background
@@ -221,16 +223,16 @@ window = {
                 parentanchor = top|hcenter
                 position = { -70 22 }
                 size = { 24 24 }
-                texture = "gfx/interface/icons/logo/thumbnail_2.png"
+                texture = "gfx/interface/icons/logo/logo_transparent.dds"
             }
 
             text_single = {
                 parentanchor = top|hcenter
-                position = { 0 25 }
-                text = "Community Edition"
+                position = { 0 20 }
+                text = "Voices of the Court - Community Edition"
                 default_format = "#low"
                 using = Font_Size_Small
-                max_width = 200
+                max_width = 250
             }
 
             blockoverride "button_close"
@@ -265,6 +267,23 @@ window = {
                             item = {
                                 container = {
                                     datacontext = "[Scope.GetCharacter]"
+                                    background = {
+                                        name = "mcc_character_card_border"
+                                        texture = "gfx/interface/icons/logo/logo_transparent.dds"
+                                        color = { 0.7 0.6 0.8 0.4 }
+                                        framesize = { 4 4 }
+                                        size = { 100% 100% }
+                                        alpha = 0.5
+                                            
+                                        state = {
+                                            name = load_animation
+                                            trigger_on_create = yes
+                                            duration = 0.4
+                                            property = alpha
+                                            start = 0.0
+                                            end = 0.5
+                                        }
+                                    }
                                     hbox = {
                                         spacing = 5
 
@@ -272,6 +291,18 @@ window = {
                                             using = Background_Area_With_Header
                                             margin_right = 7
                                             margin_left = 5
+                                            alpha = 0.9
+                                                
+                                            state = {
+                                                name = hover_effect
+                                                trigger_on_hover_start = yes
+                                                on_finish = "[SetWidgetColor('mcc_character_card_border', 0.9, 0.8, 1.0, 0.7)]"
+                                            }
+                                            state = {
+                                                name = unhover_effect
+                                                trigger_on_hover_end = yes
+                                                on_finish = "[SetWidgetColor('mcc_character_card_border', 0.7, 0.6, 0.8, 0.4)]"
+                                            }
                                         }
 
                                         portrait_head = {}
@@ -291,8 +322,10 @@ window = {
                                                     text = "[Character.GetUINameNoTooltip]"
                                                     using = Font_Size_Medium
                                                     align = nobaseline
-                                                    fontsize_min = 14
+                                                    fontsize_min = 16
+                                                    fontsize_max = 18
                                                     margin_right = 10
+                                                    default_format = "#high"
                                                 }
                                                 mcc_skills_grid = {}
                                             }
@@ -311,24 +344,43 @@ window = {
                                                         size = { 20 20 }
                                                         tooltip = "[Character.GetCourtierLeaveDescription]"
                                                     }
+                                                    icon = {
+                                                        name = "imprisoned_indicator"
+                                                        size = { 18 18 }
+                                                        texture = "gfx/interface/icons/icon_prisoner.dds"
+                                                        alpha = 0.9
+                                                        visible = "[Character.IsImprisoned]"
+                                                        tooltip = "IMPRISONED_TOOLTIP"
+                                                        margin_right = 3
+                                                    }
 
 
-                                                    text_single = {
-                                                        name = "relation_to_court_owner"
-                                                        default_format = "#high"
-                                                        align = nobaseline
-                                                        max_width = 300
-                                                        visible = "[Not(Character.IsHostage)]"
-
-                                                        block "description_relation_text" {
-                                                            text = "[Character.GetRelationToString( GetPlayer )]"
-                                                            tooltip = "EXTENDED_RELATIONS_TOOLTIP"
+                                                    hbox = {
+                                                        spacing = 3
+                                                        icon = {
+                                                            size = { 16 16 }
+                                                            texture = "[Character.GetRelationIcon(GetPlayer)]"
+                                                            alpha = 0.8
+                                                            margin_right = 3
+                                                            visible = "[Not(Character.IsHostage)]"
                                                         }
+                                                        text_single = {
+                                                            name = "relation_to_court_owner"
+                                                            default_format = "#high"
+                                                            align = nobaseline
+                                                            max_width = 300
+                                                            visible = "[Not(Character.IsHostage)]"
 
-                                                        background = {
-                                                            visible = "[Character.IsImprisoned]"
-                                                            using = Status_Bad
-                                                            alpha = 0.5
+                                                            block "description_relation_text" {
+                                                                text = "[Character.GetRelationToString( GetPlayer )]"
+                                                                tooltip = "EXTENDED_RELATIONS_TOOLTIP"
+                                                            }
+
+                                                            background = {
+                                                                visible = "[Character.IsImprisoned]"
+                                                                using = Status_Bad
+                                                                alpha = 0.5
+                                                            }
                                                         }
                                                     }
 
@@ -384,6 +436,15 @@ window = {
                                                                 onclick = "[GetScriptedGui('mcc_select_char_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('mcc_target', Character.MakeScope).End)]"
                                                             }
                                                             onclick = "[GetScriptedGui('mcc_select_char_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('mcc_target', Character.MakeScope).End)]"
+                                                            state = {
+                                                                name = select_feedback
+                                                                trigger_on_click = yes
+                                                                duration = 0.3
+                                                                on_finish = "[SetWidgetColor('mcc_character_card_border', 1.0, 0.9, 0.6, 0.8)]"
+                                                                property = color
+                                                                start = { 0.7 0.6 0.8 0.4 }
+                                                                end = { 1.0 0.9 0.6 0.8 }
+                                                            }
                                                         }
                                                     }
                                                 }
