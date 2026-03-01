@@ -798,14 +798,16 @@ window = {
                 button_round = {
                     name = "move_all_right"
                     size = { 60 60 }
-                    onclick = "[Execute(mcc_select_all_characters_effect)]"
+                    onclick = "[mcc_select_all_characters_effect.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                     visible = "[LessThanOrEqualTo_int32( Add_int32( GlobalListSize('mcc_characters_available'), GlobalListSize('mcc_characters_selected') ), 6 )]"
                     tooltip = "MOVE_ALL_CHARACTERS"
 
                     icon = {
-                        texture = "gfx/interface/icons/icon_fast_forward.dds"
+                        texture = "gfx/interface/icons/arrows.dds"
                         size = { 40 40 }
                         parentanchor = center
+                        framesize = { 84 42 }
+                        frame = 4 # GUESS: Using frame 4 for a potential 'fast forward' icon. Adjust if incorrect.
                     }
                 }
             }
