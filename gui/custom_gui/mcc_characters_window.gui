@@ -297,6 +297,7 @@ window = {
                             item = {
                                 container = {
                                     datacontext = "[Scope.GetCharacter]"
+                                    alpha = "[If(GetPlayer.MakeScope.HasInList('mcc_characters_selected', Character.Self), 0.4, 1.0)]"
                                     background = {
                                         name = "mcc_character_card_border"
                                         texture = "gfx/interface/skinned/frame_border.dds"
@@ -497,6 +498,7 @@ window = {
                             item = {
                                 container = {
                                     datacontext = "[Scope.GetCharacter]"
+                                    alpha = "[If(GetPlayer.MakeScope.HasInList('mcc_characters_selected', Character.Self), 0.4, 1.0)]"
                                     hbox = {
                                         spacing = 5
 
@@ -638,6 +640,7 @@ window = {
                             item = {
                                 container = {
                                     datacontext = "[Scope.GetCharacter]"
+                                    alpha = "[If(GetPlayer.MakeScope.HasInList('mcc_characters_selected', Character.Self), 0.4, 1.0)]"
                                     hbox = {
                                         spacing = 5
 
@@ -1040,7 +1043,6 @@ window = {
                 name = "continue_button"
                 text = "votc_continue_button"
                 onclick = "[GetVariableSystem.Clear('mcc_characters_window_opened')]"
-                align = right
             }
         }
 
