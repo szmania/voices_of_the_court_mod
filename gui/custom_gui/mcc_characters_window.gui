@@ -1032,6 +1032,7 @@ window = {
         hbox = {
             layoutpolicy_horizontal = expanding
             margin = { 0 10 }
+            margin_right = 40 # Increased to pull button from the edge of the screen
 
             expand = {}
 
