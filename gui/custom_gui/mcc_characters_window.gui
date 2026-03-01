@@ -797,7 +797,8 @@ window = {
 							layoutpolicy_horizontal = expanding
 							text = votc_mcc_selector_mode1
 							align = nobaseline
-							fontsize_min = 10
+							fontsize_min = 12
+                            default_format = "[If(GetVariableSystem.HasValue('mcc_mode_flag', 'mode1'), '#high', '#low')]"
                         }
                         expand = {}
                     }
@@ -817,7 +818,8 @@ window = {
 							layoutpolicy_horizontal = expanding
 							text = votc_mcc_selector_mode2
 							align = nobaseline
-							fontsize_min = 10
+							fontsize_min = 12
+                            default_format = "[If(GetVariableSystem.HasValue('mcc_mode_flag', 'mode2'), '#high', '#low')]"
                         }
                         expand = {}
                     }
@@ -837,7 +839,8 @@ window = {
 							layoutpolicy_horizontal = expanding
 							text = votc_mcc_selector_mode3
 							align = nobaseline
-							fontsize_min = 10
+							fontsize_min = 12
+                            default_format = "[If(GetVariableSystem.HasValue('mcc_mode_flag', 'mode3'), '#high', '#low')]"
                         }
                         expand = {}
                     }
