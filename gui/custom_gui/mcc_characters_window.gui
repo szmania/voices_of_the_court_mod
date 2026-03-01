@@ -227,18 +227,18 @@ window = {
 
             blockoverride "header_text"
             {
-                text = mcc_characters_window_title
+                text = "Select characters"
             }
             icon = {
-                parentanchor = top|hcenter
-                position = { -70 22 }
-                size = { 24 24 }
+                parentanchor = top|left
+                position = { 10 20 }
+                size = { 16 16 }
                 texture = "gfx/interface/icons/logo/logo_transparent.dds"
             }
 
             text_single = {
-                parentanchor = top|hcenter
-                position = { 0 20 }
+                parentanchor = top|left
+                position = { 30 20 }
                 text = "Voices of the Court - Community Edition"
                 default_format = "#low"
                 using = Font_Size_Small
@@ -1002,7 +1002,7 @@ window = {
 
         text_single = {
             layoutpolicy_horizontal = expanding
-            text = "Voices of the Court - Community Edition"
+            text = "Community Edition"
             default_format = "#low"
             align = center
             alpha = 0.4
