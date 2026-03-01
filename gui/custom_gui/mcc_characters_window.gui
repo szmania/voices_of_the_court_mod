@@ -37,6 +37,8 @@ types mcc_character_presentation_types {
                 using = acs_skill_grid_text
                 text = "[Character.GetSkill('martial')]"
                 tooltip = "[martial|E] [Character.GetSkillWithLevel('martial')]"
+                default_format = "#medium"
+                fontsize_min = 12
             }
             background = {
                 using = acs_skill_grid_background
@@ -49,6 +51,8 @@ types mcc_character_presentation_types {
                 using = acs_skill_grid_text
                 text = "[Character.GetSkill('stewardship')]"
                 tooltip = "[stewardship|E] [Character.GetSkillWithLevel('stewardship')]"
+                default_format = "#medium"
+                fontsize_min = 12
             }
             background = {
                 using = acs_skill_grid_background
@@ -61,6 +65,8 @@ types mcc_character_presentation_types {
                 using = acs_skill_grid_text
                 text = "[Character.GetSkill('intrigue')]"
                 tooltip = "[intrigue|E] [Character.GetSkillWithLevel('intrigue')]"
+                default_format = "#medium"
+                fontsize_min = 12
             }
             background = {
                 using = acs_skill_grid_background
@@ -73,6 +79,8 @@ types mcc_character_presentation_types {
                 using = acs_skill_grid_text
                 text = "[Character.GetSkill('learning')]"
                 tooltip = "[learning|E] [Character.GetSkillWithLevel('learning')]"
+                default_format = "#medium"
+                fontsize_min = 12
             }
             background = {
                 using = acs_skill_grid_background
@@ -85,6 +93,8 @@ types mcc_character_presentation_types {
                 using = acs_skill_grid_text
                 text = "[Character.GetProwess]"
                 tooltip = "[Character.GetProwessBreakdown]"
+                default_format = "#medium"
+                fontsize_min = 12
             }
         }
     }
