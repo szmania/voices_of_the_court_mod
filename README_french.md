@@ -45,24 +45,24 @@ Enregistrez-le en tant que fichier séparé dans le dossier `custom`.
 - **Licence** : GNU General Public License v3.0 (GPLv3)
 - **Version CK3 supportée** : 1.18 "Crane"
 
-### Crédits et Attribution
-Ce projet est une œuvre dérivée basée sur VOTC / AliChat. Nous tenons à exprimer notre profonde gratitude aux développeurs qui ont maintenu ce projet en vie et repoussé les limites de l'IA dans Crusader Kings III :
+### Credits & Attribution
+This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
-**Créateurs originaux** : L'équipe VOTC et les contributeurs de la communauté.
+**Original Work**: Voices of the Court / AliChat
 
-**Développement continu** : Un grand merci à la communauté de développement chinoise, notamment Lisiyuan233, zhaowendao2005, et d'autres qui ont fourni des mises à jour cruciales et un soutien.
+**Original Authors**: The VOTC Team, [Durond](https://github.com/MrAndroPC/voices_of_the_court_mod), [MrAndroPC](https://github.com/MrAndroPC/voices_of_the_court_mod), and community contributors.
 
-**Soutien communautaire** : Merci à Durond et MrAndroPC ainsi qu'à la communauté élargie pour leurs idées et leur contexte historique concernant le projet.
+**Source**: [https://github.com/MrAndroPC/voices_of_the_court_mod](https://github.com/MrAndroPC/voices_of_the_court_mod)
 
-**Mainteneurs de l'Édition Communautaire** : L'équipe VOTC-CE et les contributeurs.
+**Original License**: Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) and GNU GPLv3.
 
-### Informations sur la Licence
-Certains des matériaux sources originaux de ce mod ont été publiés sous la licence Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+**Modifications**:
 
-Conformément à la section 4(b) de la licence CC BY-SA 4.0, cette œuvre dérivée est sous licence compatible BY-SA : la GNU General Public License v3.0 (GPLv3).
+* integration with Voices of the Court - Community Edition
+* Added features
+* Added bug fixes
 
-- **Licence originale** : CC BY-SA 4.0
-- **Licence actuelle** : GPLv3
+Relicensed derivative works under GNU GPLv3 as a compatible ShareAlike license.
 
 ### Notice GPLv3
 Ce programme est un logiciel libre ; vous pouvez le redistribuer et/ou le modifier selon les termes de la GNU General Public License telle que publiée par la Free Software Foundation, soit la version 3 de la Licence, soit (à votre choix) toute version ultérieure.

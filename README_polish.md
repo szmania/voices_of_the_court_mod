@@ -45,24 +45,24 @@ Zapisz go jako oddzielny plik w folderze `custom`.
 - **Licencja**: GNU General Public License v3.0 (GPLv3)
 - **Obsługiwana wersja CK3**: 1.18 "Crane"
 
-### Podziękowania i Atrybucja
-Ten projekt jest dziełem pochodnym opartym na VOTC / AliChat. Chcielibyśmy wyrazić naszą głęboką wdzięczność dla deweloperów, którzy utrzymali ten projekt przy życiu i poszerzyli granice AI w Crusader Kings III:
+### Credits & Attribution
+This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
-**Oryginalni Twórcy**: Zespół VOTC i współtwórcy społeczności.
+**Original Work**: Voices of the Court / AliChat
 
-**Kontynuowany Rozwój**: Szczególne podziękowania dla chińskiej społeczności deweloperskiej, w tym Lisiyuan233, zhaowendao2005 i innych, którzy zapewnili kluczowe aktualizacje i wsparcie.
+**Original Authors**: The VOTC Team, [Durond](https://github.com/MrAndroPC/voices_of_the_court_mod), [MrAndroPC](https://github.com/MrAndroPC/voices_of_the_court_mod), and community contributors.
 
-**Wsparcie Społeczności**: Dziękujemy Durondowi i MrAndroPC oraz szerszej społeczności za ich spostrzeżenia i historyczny kontekst dotyczący projektu.
+**Source**: [https://github.com/MrAndroPC/voices_of_the_court_mod](https://github.com/MrAndroPC/voices_of_the_court_mod)
 
-**Opiekunowie Edycji Społecznościowej**: Zespół VOTC-CE i współtwórcy.
+**Original License**: Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) and GNU GPLv3.
 
-### Informacje o Licencji
-Część oryginalnych materiałów źródłowych tego moda została wydana na licencji Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+**Modifications**:
 
-Zgodnie z sekcją 4(b) licencji CC BY-SA 4.0, to dzieło pochodne jest licencjonowane na licencji zgodnej z BY-SA: GNU General Public License v3.0 (GPLv3).
+* integration with Voices of the Court - Community Edition
+* Added features
+* Added bug fixes
 
-- **Oryginalna Licencja**: CC BY-SA 4.0
-- **Obecna Licencja**: GPLv3
+Relicensed derivative works under GNU GPLv3 as a compatible ShareAlike license.
 
 ### Uwaga GPLv3
 Ten program jest wolnym oprogramowaniem: możesz go rozpowszechniać i/lub modyfikować zgodnie z warunkami GNU General Public License opublikowanej przez Free Software Foundation, w wersji 3 Licencji lub (według twojego wyboru) dowolnej późniejszej wersji.

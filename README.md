@@ -46,19 +46,23 @@ Save it as a separate file in the `custom` folder.
 - **Supported CK3 Version**: 1.18 "Crane"
 
 ### Credits & Attribution
-This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
-**Original Creators**: The VOTC Team and community contributors.
+**Original Work**: Voices of the Court / AliChat
 
-**Community Edition Maintainers**: The VOTC-CE team and contributors.
+**Original Authors**: The VOTC Team, [Durond](https://github.com/MrAndroPC/voices_of_the_court_mod), [MrAndroPC](https://github.com/MrAndroPC/voices_of_the_court_mod), and community contributors.
 
-### Licensing Information
-Some of the original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+**Source**: [https://github.com/MrAndroPC/voices_of_the_court_mod](https://github.com/MrAndroPC/voices_of_the_court_mod)
 
-In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+**Original License**: Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) and GNU GPLv3.
 
-- **Original License**: CC BY-SA 4.0
-- **Current License**: GPLv3
+**Modifications**:
+
+* integration with Voices of the Court - Community Edition
+* Added features
+* Added bug fixes
+
+Relicensed derivative works under GNU GPLv3 as a compatible ShareAlike license.
 
 ### GPLv3 Notice
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

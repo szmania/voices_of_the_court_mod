@@ -45,24 +45,24 @@ path="C:/Users/ [Ваше имя пользователя ПК здесь] / Doc
 - **Лицензия**: GNU General Public License v3.0 (GPLv3)
 - **Поддерживаемая версия CK3**: 1.18 "Crane"
 
-### Благодарности и Атрибуция
-Этот проект является производной работой, основанной на VOTC / AliChat. Мы хотели бы выразить нашу глубокую благодарность разработчикам, которые поддерживали этот проект в живых и расширяли границы ИИ в Crusader Kings III:
+### Credits & Attribution
+This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
-**Оригинальные создатели**: Команда VOTC и участники сообщества.
+**Original Work**: Voices of the Court / AliChat
 
-**Продолжающаяся разработка**: Особая благодарность китайскому сообществу разработчиков, включая Lisiyuan233, zhaowendao2005 и других, которые предоставили важные обновления и поддержку.
+**Original Authors**: The VOTC Team, [Durond](https://github.com/MrAndroPC/voices_of_the_court_mod), [MrAndroPC](https://github.com/MrAndroPC/voices_of_the_court_mod), and community contributors.
 
-**Поддержка сообщества**: Спасибо Durond и MrAndroPC, а также более широкому сообществу за их идеи и исторический контекст относительно проекта.
+**Source**: [https://github.com/MrAndroPC/voices_of_the_court_mod](https://github.com/MrAndroPC/voices_of_the_court_mod)
 
-**Сопровождающие Community Edition**: Команда VOTC-CE и участники.
+**Original License**: Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) and GNU GPLv3.
 
-### Информация о лицензии
-Некоторые оригинальные исходные материалы для этого мода были выпущены под лицензией Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+**Modifications**:
 
-В соответствии с разделом 4(b) лицензии CC BY-SA 4.0, эта производная работа лицензируется под совместимой с BY-SA лицензией: GNU General Public License v3.0 (GPLv3).
+* integration with Voices of the Court - Community Edition
+* Added features
+* Added bug fixes
 
-- **Оригинальная лицензия**: CC BY-SA 4.0
-- **Текущая лицензия**: GPLv3
+Relicensed derivative works under GNU GPLv3 as a compatible ShareAlike license.
 
 ### Уведомление GPLv3
 Эта программа является свободным программным обеспечением: вы можете распространять и/или изменять её в соответствии с условиями GNU General Public License, опубликованной Free Software Foundation, либо версии 3 Лицензии, либо (по вашему выбору) любой более поздней версии.

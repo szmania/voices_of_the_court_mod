@@ -45,24 +45,24 @@ path="C:/Users/ [あなたのPCユーザー名] / Documents/Paradox Interactive/
 - **ライセンス**: GNU General Public License v3.0 (GPLv3)
 - **対応CK3バージョン**: 1.18 "Crane"
 
-### クレジットと帰属
-このプロジェクトはVOTC / AliChatに基づく派生作品です。このプロジェクトを維持し、Crusader Kings IIIにおけるAIの限界を押し広げた開発者たちに深い感謝の意を表します：
+### Credits & Attribution
+This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
-**オリジナルクリエイター**: VOTCチームとコミュニティ貢献者。
+**Original Work**: Voices of the Court / AliChat
 
-**継続的な開発**: Lisiyuan233、zhaowendao2005を含む中国の開発コミュニティに感謝します。彼らは重要なアップデートとサポートを提供しました。
+**Original Authors**: The VOTC Team, [Durond](https://github.com/MrAndroPC/voices_of_the_court_mod), [MrAndroPC](https://github.com/MrAndroPC/voices_of_the_court_mod), and community contributors.
 
-**コミュニティサポート**: DurondとMrAndroPC、そしてプロジェクトに関する洞察と歴史的文脈を提供してくれた広範なコミュニティに感謝します。
+**Source**: [https://github.com/MrAndroPC/voices_of_the_court_mod](https://github.com/MrAndroPC/voices_of_the_court_mod)
 
-**コミュニティエディション管理者**: VOTC-CEチームと貢献者。
+**Original License**: Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) and GNU GPLv3.
 
-### ライセンス情報
-このModの一部のオリジナルソース素材は、Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ライセンスの下で公開されました。
+**Modifications**:
 
-CC BY-SA 4.0ライセンスのセクション4(b)に従い、この派生作品はBY-SA互換ライセンスであるGNU General Public License v3.0 (GPLv3)の下でライセンスされています。
+* integration with Voices of the Court - Community Edition
+* Added features
+* Added bug fixes
 
-- **オリジナルライセンス**: CC BY-SA 4.0
-- **現在のライセンス**: GPLv3
+Relicensed derivative works under GNU GPLv3 as a compatible ShareAlike license.
 
 ### GPLv3通知
 このプログラムはフリーソフトウェアです：Free Software Foundationによって公開されたGNU General Public Licenseの条項に従って、このプログラムを再配布および/または変更することができます。ライセンスのバージョン3、または（あなたの選択により）それ以降のバージョンのいずれかです。
