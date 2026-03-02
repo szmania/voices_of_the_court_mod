@@ -38,23 +38,35 @@ path="C:/Users/ [사용자 PC 이름] / Documents/Paradox Interactive/Crusader K
 **해결책**:
 `custom` 폴더에 별도의 파일로 저장하세요.
 
-Mod Name: Voices of the Court - Community Edition
-License: GNU General Public License v3.0 (GPLv3)
+## 라이선스 및 저작권 표시
 
-Credits & Attribution
-This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+### 모드 정보
+- **모드 이름**: Voices of the Court - Community Edition (VOTC-CE)
+- **라이선스**: GNU General Public License v3.0 (GPLv3)
+- **지원 CK3 버전**: 1.18 "Crane"
 
-Original Creators: The VOTC Team and community contributors.
+### 크레딧 및 저작권 표시
+이 프로젝트는 VOTC / AliChat을 기반으로 한 파생 작품입니다. 이 프로젝트를 유지하고 Crusader Kings III에서 AI의 한계를 넓힌 개발자들에게 깊은 감사를 표합니다:
 
-Continued Development: Special thanks to the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
+**원작자**: VOTC 팀 및 커뮤니티 기여자.
 
-Community Support: Thanks to Durond and MrAndroPC and the broader community for their insights and historical context regarding the project.
+**지속적인 개발**: Lisiyuan233, zhaowendao2005를 포함한 중국 개발 커뮤니티에 특별한 감사를 드립니다. 그들은 중요한 업데이트와 지원을 제공했습니다.
 
-Licensing Information
-Some of original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+**커뮤니티 지원**: Durond와 MrAndroPC, 그리고 프로젝트에 대한 통찰력과 역사적 맥락을 제공한 더 넓은 커뮤니티에 감사드립니다.
 
-In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+**커뮤니티 에디션 관리자**: VOTC-CE 팀 및 기여자.
 
-Original License: CC BY-SA 4.0
+### 라이선스 정보
+이 모드의 일부 원본 소스 자료는 Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) 라이선스로 공개되었습니다.
 
-Current License: GPLv3
+CC BY-SA 4.0 라이선스의 섹션 4(b)에 따라, 이 파생 작품은 BY-SA 호환 라이선스인 GNU General Public License v3.0 (GPLv3)으로 라이선스됩니다.
+
+- **원본 라이선스**: CC BY-SA 4.0
+- **현재 라이선스**: GPLv3
+
+### GPLv3 고지
+이 프로그램은 자유 소프트웨어입니다: Free Software Foundation에서 게시한 GNU General Public License의 조건에 따라 이 프로그램을 재배포 및/또는 수정할 수 있습니다. 라이선스 버전 3 또는 (선택에 따라) 이후 버전 중 하나입니다.
+
+이 프로그램은 유용할 것이라는 희망으로 배포되지만, 상품성이나 특정 목적에의 적합성에 대한 묵시적 보증을 포함한 어떠한 보증도 없습니다. 자세한 내용은 GNU General Public License를 참조하십시오.
+
+이 프로그램과 함께 GNU General Public License의 사본을 받았어야 합니다. 그렇지 않은 경우 <https://www.gnu.org/licenses/>를 참조하십시오.

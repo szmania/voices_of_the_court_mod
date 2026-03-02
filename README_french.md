@@ -38,23 +38,35 @@ Si la boîte de dialogue n'apparaît toujours pas après avoir installé et acti
 **Solution** :
 Enregistrez-le en tant que fichier séparé dans le dossier `custom`.
 
-Mod Name: Voices of the Court - Community Edition
-License: GNU General Public License v3.0 (GPLv3)
+## Licence et Attribution
 
-Credits & Attribution
-This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+### Informations sur le Mod
+- **Nom du Mod** : Voices of the Court - Community Edition (VOTC-CE)
+- **Licence** : GNU General Public License v3.0 (GPLv3)
+- **Version CK3 supportée** : 1.18 "Crane"
 
-Original Creators: The VOTC Team and community contributors.
+### Crédits et Attribution
+Ce projet est une œuvre dérivée basée sur VOTC / AliChat. Nous tenons à exprimer notre profonde gratitude aux développeurs qui ont maintenu ce projet en vie et repoussé les limites de l'IA dans Crusader Kings III :
 
-Continued Development: Special thanks to the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
+**Créateurs originaux** : L'équipe VOTC et les contributeurs de la communauté.
 
-Community Support: Thanks to Durond and MrAndroPC and the broader community for their insights and historical context regarding the project.
+**Développement continu** : Un grand merci à la communauté de développement chinoise, notamment Lisiyuan233, zhaowendao2005, et d'autres qui ont fourni des mises à jour cruciales et un soutien.
 
-Licensing Information
-Some of original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+**Soutien communautaire** : Merci à Durond et MrAndroPC ainsi qu'à la communauté élargie pour leurs idées et leur contexte historique concernant le projet.
 
-In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+**Mainteneurs de l'Édition Communautaire** : L'équipe VOTC-CE et les contributeurs.
 
-Original License: CC BY-SA 4.0
+### Informations sur la Licence
+Certains des matériaux sources originaux de ce mod ont été publiés sous la licence Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
 
-Current License: GPLv3
+Conformément à la section 4(b) de la licence CC BY-SA 4.0, cette œuvre dérivée est sous licence compatible BY-SA : la GNU General Public License v3.0 (GPLv3).
+
+- **Licence originale** : CC BY-SA 4.0
+- **Licence actuelle** : GPLv3
+
+### Notice GPLv3
+Ce programme est un logiciel libre ; vous pouvez le redistribuer et/ou le modifier selon les termes de la GNU General Public License telle que publiée par la Free Software Foundation, soit la version 3 de la Licence, soit (à votre choix) toute version ultérieure.
+
+Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE ; sans même la garantie implicite de QUALITÉ MARCHANDE ou d'ADÉQUATION À UN USAGE PARTICULIER. Consultez la GNU General Public License pour plus de détails.
+
+Vous devriez avoir reçu une copie de la GNU General Public License avec ce programme. Si ce n'est pas le cas, consultez <https://www.gnu.org/licenses/>.
