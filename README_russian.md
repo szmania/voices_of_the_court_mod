@@ -38,23 +38,35 @@ path="C:/Users/ [Ваше имя пользователя ПК здесь] / Doc
 **Решение**:
 Сохраните его как отдельный файл в папке `custom`.
 
-Mod Name: Voices of the Court - Community Edition
-License: GNU General Public License v3.0 (GPLv3)
+## Лицензия и Атрибуция
 
-Credits & Attribution
-This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+### Информация о моде
+- **Название мода**: Voices of the Court - Community Edition (VOTC-CE)
+- **Лицензия**: GNU General Public License v3.0 (GPLv3)
+- **Поддерживаемая версия CK3**: 1.18 "Crane"
 
-Original Creators: The VOTC Team and community contributors.
+### Благодарности и Атрибуция
+Этот проект является производной работой, основанной на VOTC / AliChat. Мы хотели бы выразить нашу глубокую благодарность разработчикам, которые поддерживали этот проект в живых и расширяли границы ИИ в Crusader Kings III:
 
-Continued Development: Special thanks to the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
+**Оригинальные создатели**: Команда VOTC и участники сообщества.
 
-Community Support: Thanks to Durond and MrAndroPC and the broader community for their insights and historical context regarding the project.
+**Продолжающаяся разработка**: Особая благодарность китайскому сообществу разработчиков, включая Lisiyuan233, zhaowendao2005 и других, которые предоставили важные обновления и поддержку.
 
-Licensing Information
-Some of original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+**Поддержка сообщества**: Спасибо Durond и MrAndroPC, а также более широкому сообществу за их идеи и исторический контекст относительно проекта.
 
-In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+**Сопровождающие Community Edition**: Команда VOTC-CE и участники.
 
-Original License: CC BY-SA 4.0
+### Информация о лицензии
+Некоторые оригинальные исходные материалы для этого мода были выпущены под лицензией Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
 
-Current License: GPLv3
+В соответствии с разделом 4(b) лицензии CC BY-SA 4.0, эта производная работа лицензируется под совместимой с BY-SA лицензией: GNU General Public License v3.0 (GPLv3).
+
+- **Оригинальная лицензия**: CC BY-SA 4.0
+- **Текущая лицензия**: GPLv3
+
+### Уведомление GPLv3
+Эта программа является свободным программным обеспечением: вы можете распространять и/или изменять её в соответствии с условиями GNU General Public License, опубликованной Free Software Foundation, либо версии 3 Лицензии, либо (по вашему выбору) любой более поздней версии.
+
+Эта программа распространяется в надежде, что она будет полезной, но БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ; даже без подразумеваемой гарантии КОММЕРЧЕСКОЙ ЦЕННОСТИ или ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ. Подробнее см. в GNU General Public License.
+
+Вы должны были получить копию GNU General Public License вместе с этой программой. Если нет, см. <https://www.gnu.org/licenses/>.

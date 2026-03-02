@@ -40,23 +40,35 @@ path="C:/Users/ 这里是你电脑的用户名 / Documents/Paradox Interactive/C
 **解决**：  
 另存一个放在custom文件夹中。
 
-Mod Name: Voices of the Court - Community Edition
-License: GNU General Public License v3.0 (GPLv3)
+## 许可证与归属
 
-Credits & Attribution
-This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+### 模组信息
+- **模组名称**: Voices of the Court - Community Edition (VOTC-CE)
+- **许可证**: GNU General Public License v3.0 (GPLv3)
+- **支持的CK3版本**: 1.18 "Crane"
 
-Original Creators: The VOTC Team and community contributors.
+### 致谢与归属
+本项目是基于VOTC / AliChat的衍生作品。我们想向那些让这个项目保持活力并推动Crusader Kings III中AI边界的开发者们表达我们深深的感激之情：
 
-Continued Development: Special thanks to the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
+**原创作者**: VOTC团队和社区贡献者。
 
-Community Support: Thanks to Durond and MrAndroPC and the broader community for their insights and historical context regarding the project.
+**持续开发**: 特别感谢中国开发社区，包括Lisiyuan233、zhaowendao2005等，他们提供了关键的更新和支持。
 
-Licensing Information
-Some of original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+**社区支持**: 感谢Durond和MrAndroPC以及更广泛的社区对项目的见解和历史背景。
 
-In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+**社区版维护者**: VOTC-CE团队和贡献者。
 
-Original License: CC BY-SA 4.0
+### 许可证信息
+本模组的一些原始源材料是在Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)许可证下发布的。
 
-Current License: GPLv3
+根据CC BY-SA 4.0许可证的第4(b)节，本衍生作品正在使用BY-SA兼容许可证进行许可：GNU General Public License v3.0 (GPLv3)。
+
+- **原始许可证**: CC BY-SA 4.0
+- **当前许可证**: GPLv3
+
+### GPLv3声明
+本程序是自由软件：您可以根据自由软件基金会发布的GNU通用公共许可证的条款重新分发和/或修改它，许可证版本3或（根据您的选择）任何更高版本。
+
+本程序是希望它有用而分发的，但没有任何保证；甚至没有适销性或特定用途适用性的暗示保证。有关更多详细信息，请参阅GNU通用公共许可证。
+
+您应该已经收到了GNU通用公共许可证的副本以及本程序。如果没有，请参阅<https://www.gnu.org/licenses/>。

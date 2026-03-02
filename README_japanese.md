@@ -38,23 +38,35 @@ path="C:/Users/ [あなたのPCユーザー名] / Documents/Paradox Interactive/
 **解決策**:
 `custom` フォルダに別のファイルとして保存してください。
 
-Mod Name: Voices of the Court - Community Edition
-License: GNU General Public License v3.0 (GPLv3)
+## ライセンスと帰属
 
-Credits & Attribution
-This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+### Mod情報
+- **Mod名**: Voices of the Court - Community Edition (VOTC-CE)
+- **ライセンス**: GNU General Public License v3.0 (GPLv3)
+- **対応CK3バージョン**: 1.18 "Crane"
 
-Original Creators: The VOTC Team and community contributors.
+### クレジットと帰属
+このプロジェクトはVOTC / AliChatに基づく派生作品です。このプロジェクトを維持し、Crusader Kings IIIにおけるAIの限界を押し広げた開発者たちに深い感謝の意を表します：
 
-Continued Development: Special thanks to the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
+**オリジナルクリエイター**: VOTCチームとコミュニティ貢献者。
 
-Community Support: Thanks to Durond and MrAndroPC and the broader community for their insights and historical context regarding the project.
+**継続的な開発**: Lisiyuan233、zhaowendao2005を含む中国の開発コミュニティに感謝します。彼らは重要なアップデートとサポートを提供しました。
 
-Licensing Information
-Some of original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+**コミュニティサポート**: DurondとMrAndroPC、そしてプロジェクトに関する洞察と歴史的文脈を提供してくれた広範なコミュニティに感謝します。
 
-In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+**コミュニティエディション管理者**: VOTC-CEチームと貢献者。
 
-Original License: CC BY-SA 4.0
+### ライセンス情報
+このModの一部のオリジナルソース素材は、Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ライセンスの下で公開されました。
 
-Current License: GPLv3
+CC BY-SA 4.0ライセンスのセクション4(b)に従い、この派生作品はBY-SA互換ライセンスであるGNU General Public License v3.0 (GPLv3)の下でライセンスされています。
+
+- **オリジナルライセンス**: CC BY-SA 4.0
+- **現在のライセンス**: GPLv3
+
+### GPLv3通知
+このプログラムはフリーソフトウェアです：Free Software Foundationによって公開されたGNU General Public Licenseの条項に従って、このプログラムを再配布および/または変更することができます。ライセンスのバージョン3、または（あなたの選択により）それ以降のバージョンのいずれかです。
+
+このプログラムは有用であることを期待して配布されていますが、商品性や特定目的への適合性の黙示的保証を含め、いかなる保証もありません。詳細についてはGNU General Public Licenseを参照してください。
+
+あなたはこのプログラムと一緒にGNU General Public Licenseのコピーを受け取っているはずです。そうでない場合は、<https://www.gnu.org/licenses/>を参照してください。

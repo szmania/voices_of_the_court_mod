@@ -38,23 +38,35 @@ Jeśli okno dialogowe nadal nie pojawia się po zainstalowaniu i włączeniu mod
 **Rozwiązanie**:
 Zapisz go jako oddzielny plik w folderze `custom`.
 
-Mod Name: Voices of the Court - Community Edition
-License: GNU General Public License v3.0 (GPLv3)
+## Licencja i Atrybucja
 
-Credits & Attribution
-This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+### Informacje o Modzie
+- **Nazwa Moda**: Voices of the Court - Community Edition (VOTC-CE)
+- **Licencja**: GNU General Public License v3.0 (GPLv3)
+- **Obsługiwana wersja CK3**: 1.18 "Crane"
 
-Original Creators: The VOTC Team and community contributors.
+### Podziękowania i Atrybucja
+Ten projekt jest dziełem pochodnym opartym na VOTC / AliChat. Chcielibyśmy wyrazić naszą głęboką wdzięczność dla deweloperów, którzy utrzymali ten projekt przy życiu i poszerzyli granice AI w Crusader Kings III:
 
-Continued Development: Special thanks to the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
+**Oryginalni Twórcy**: Zespół VOTC i współtwórcy społeczności.
 
-Community Support: Thanks to Durond and MrAndroPC and the broader community for their insights and historical context regarding the project.
+**Kontynuowany Rozwój**: Szczególne podziękowania dla chińskiej społeczności deweloperskiej, w tym Lisiyuan233, zhaowendao2005 i innych, którzy zapewnili kluczowe aktualizacje i wsparcie.
 
-Licensing Information
-Some of original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+**Wsparcie Społeczności**: Dziękujemy Durondowi i MrAndroPC oraz szerszej społeczności za ich spostrzeżenia i historyczny kontekst dotyczący projektu.
 
-In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+**Opiekunowie Edycji Społecznościowej**: Zespół VOTC-CE i współtwórcy.
 
-Original License: CC BY-SA 4.0
+### Informacje o Licencji
+Część oryginalnych materiałów źródłowych tego moda została wydana na licencji Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
 
-Current License: GPLv3
+Zgodnie z sekcją 4(b) licencji CC BY-SA 4.0, to dzieło pochodne jest licencjonowane na licencji zgodnej z BY-SA: GNU General Public License v3.0 (GPLv3).
+
+- **Oryginalna Licencja**: CC BY-SA 4.0
+- **Obecna Licencja**: GPLv3
+
+### Uwaga GPLv3
+Ten program jest wolnym oprogramowaniem: możesz go rozpowszechniać i/lub modyfikować zgodnie z warunkami GNU General Public License opublikowanej przez Free Software Foundation, w wersji 3 Licencji lub (według twojego wyboru) dowolnej późniejszej wersji.
+
+Ten program jest rozpowszechniany w nadziei, że będzie użyteczny, ale BEZ ŻADNEJ GWARANCJI; nawet bez domyślnej gwarancji PRZYDATNOŚCI HANDLOWEJ lub PRZYDATNOŚCI DO OKREŚLONEGO CELU. Więcej szczegółów znajdziesz w GNU General Public License.
+
+Powinieneś otrzymać kopię GNU General Public License wraz z tym programem. Jeśli nie, zobacz <https://www.gnu.org/licenses/>.
