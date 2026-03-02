@@ -48,7 +48,7 @@ Zapisz go jako oddzielny plik w folderze `custom`.
 ### Credits & Attribution
 This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
-**Original Work**: Voices of the Court / AliChat
+**Original Work**: Voices of the Court and Voices of the Court 2.0 Mod
 
 **Original Authors**: The VOTC Team, Durond, MrAndroPC, and community contributors.
 
@@ -58,7 +58,7 @@ This project, Voices of the Court - Community Edition, is a derivative work of V
 
 **Modifications**:
 
-* integration with Voices of the Court - Community Edition
+* Integration with Voices of the Court - Community Edition
 * Added features
 * Added bug fixes
 

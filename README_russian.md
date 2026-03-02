@@ -48,7 +48,7 @@ path="C:/Users/ [Ваше имя пользователя ПК здесь] / Doc
 ### Credits & Attribution
 This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
-**Original Work**: Voices of the Court / AliChat
+**Original Work**: Voices of the Court and Voices of the Court 2.0 Mod
 
 **Original Authors**: The VOTC Team, Durond, MrAndroPC, and community contributors.
 
