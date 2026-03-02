@@ -48,11 +48,7 @@ Save it as a separate file in the `custom` folder.
 ### Credits & Attribution
 This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
 
-**Original Creators**: The VOTC Team and community contributors. Thanks to Durond and MrAndroPC.
-
-**Continued Development**: Special thanks to the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
-
-**Community Support**: Thanks to the broader community for their insights, feedback and historical context regarding the project.
+**Original Creators**: The VOTC Team and community contributors.
 
 **Community Edition Maintainers**: The VOTC-CE team and contributors.
 
