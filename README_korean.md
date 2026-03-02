@@ -50,9 +50,9 @@ This project, Voices of the Court - Community Edition, is a derivative work of V
 
 **Original Work**: Voices of the Court / AliChat
 
-**Original Authors**: The VOTC Team, [Durond](https://github.com/MrAndroPC/voices_of_the_court_mod), [MrAndroPC](https://github.com/MrAndroPC/voices_of_the_court_mod), and community contributors.
+**Original Authors**: The VOTC Team, Durond, MrAndroPC, and community contributors.
 
-**Source**: [https://github.com/MrAndroPC/voices_of_the_court_mod](https://github.com/MrAndroPC/voices_of_the_court_mod)
+**Source**: [https://github.com/Voices-of-the-Court/votc_mod](https://github.com/Voices-of-the-Court/votc_mod)
 
 **Original License**: Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) and GNU GPLv3.
 
