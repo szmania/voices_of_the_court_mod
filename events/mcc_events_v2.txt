@@ -12,8 +12,8 @@ mcc_event_v2.1000 = {
 	window = character_event
 	left_portrait = {
 		character = scope:recipient
-	}	
-	
+	}
+
 	immediate = {
 		random_courtier_or_guest = {
 			save_scope_as = recipient
@@ -26,7 +26,7 @@ mcc_event_v2.1000 = {
 			trigger_event = mcc_event_v2.1002
 		}
 	}
-	
+
 	option ={
 		name = mcc_event.1002.exit
 	}
@@ -59,8 +59,8 @@ mcc_event_v2.1002 = {
 			}
 			clear_variable_list = talk_scene_flags
 		}
-		set_global_variable = { 
-			name = talk_scene 
+		set_global_variable = {
+			name = talk_scene
 			value = flag:talk_scene_throne_room
 		}
 		# Interior - Castle/Palace
@@ -379,16 +379,12 @@ mcc_event_v2.1002 = {
 			target = flag:talk_scene_examination_room
 		}
 	}
-	
+
 	widget = {
         gui = "votc_scene_selector_widget"
         container = "custom_widgets_container"
     }
 
-	option ={
-		name = votc_talk_change_scene_selection
-		trigger_event = mcc_event_v2.1002
-	}
 	option ={
 		#trigger = {
 		#	has_global_variable = talk_scene
@@ -411,7 +407,12 @@ mcc_event_v2.1002 = {
 		name = votc_talk_mcc_selector
 		trigger_event = mcc_event_v2.1003
 	}
-	
+
+    option ={
+        name = votc_talk_change_scene_selection
+        trigger_event = mcc_event_v2.1002
+    }
+
 	option ={
 		name = mcc_event.1002.exit
 	}
@@ -430,7 +431,7 @@ mcc_event_v2.1003 = {
 		clear_variable_list = mcc_characters_all_in_location
 		clear_variable_list = mcc_characters_selected
 		every_pinned_character = {
-			limit = { 
+			limit = {
 				is_alive = yes
 				not = { any_player = { this = prev } }
 				this.location = scope:actor.location
@@ -443,7 +444,7 @@ mcc_event_v2.1003 = {
 			}
 		}
 		every_pinned_character = {
-			limit = { 
+			limit = {
 				is_alive = yes
 				not = { any_player = { this = prev } }
 			}
@@ -456,7 +457,7 @@ mcc_event_v2.1003 = {
 		}
 		scope:actor.location = {
 			every_character_in_location = {
-				limit = { 
+				limit = {
 					is_alive = yes
 					not = { any_player = { this = prev } }
 				}
@@ -470,7 +471,7 @@ mcc_event_v2.1003 = {
 		}
 
 	}
-	
+
 	widget = {
         gui = "mcc_select_characters_widget"
         container = "custom_widgets_container"
@@ -487,7 +488,7 @@ mcc_event_v2.1003 = {
 		name = votc_talk_selected
 		trigger_event = mcc_event_v2.8999
 	}
-	
+
 	option ={
 		name = mcc_event.1002.exit
 	}
@@ -499,7 +500,7 @@ mcc_event_v2.7001 = {
 		window = fullscreen_event
 		theme = clipboard_transfer_event_theme
 		desc = mcc_event_v2.7001.desc
-		
+
 
 		widget = {
 			gui = "event_window_widget_talk_clear"
@@ -508,7 +509,7 @@ mcc_event_v2.7001 = {
 
 }
 
-#hidden Event fired when initating conversation with someone. 
+#hidden Event fired when initating conversation with someone.
 #The only reason this exist is to open the 'event_window_widget_talk' gui event widget, so we can copy the data to the clipboard using the EventWindowData.CopyToClipboard guifunction.
 mcc_event_v2.8999 = {
 	type = character_event
@@ -519,10 +520,10 @@ mcc_event_v2.8999 = {
 	immediate = {
 		scope:recipient = {
 			log_gamedata_v3s = yes
-		}		
+		}
 	}
-	
-	#this widget is what calls the EventWindowData.CopyToClipboard guifunction, 
+
+	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
 	widget = {
         gui = "event_window_widget_talk_v2"
         container = "custom_widgets_container"
@@ -538,15 +539,15 @@ mcc_event_v2.9000 = {
 	immediate = {
 		scope:recipient = {
 			log_gamedata_v3l = yes
-		}		
+		}
 	}
-	
-	#this widget is what calls the EventWindowData.CopyToClipboard guifunction, 
+
+	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
 	widget = {
         gui = "event_window_widget_talk_v2"
         container = "custom_widgets_container"
     }
-	
+
 
 	#option ={
 	#	name = "debug"
@@ -563,15 +564,15 @@ mcc_event_v2.9001 = {
 		scope:recipient = {
 			log_gamedata_v3 = yes
 		}
-		
+
 	}
-	
-	#this widget is what calls the EventWindowData.CopyToClipboard guifunction, 
+
+	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
 	widget = {
         gui = "event_window_widget_talk_v2"
         container = "custom_widgets_container"
     }
-	
+
 
 	#option ={
 	#	name = "debug"
@@ -590,14 +591,14 @@ mcc_event_v2.9002 = {
         gui = "event_window_widget_talk_close_v2"
         container = "custom_widgets_container"
     }
-	
+
 	immediate = {
 		remove_global_variable = talk_pose
 		every_in_global_list = {
 			variable = mcc_characters_list_v2
 			remove_variable = talk_pose
 		}
-		
+
 		remove_global_variable = mcc_character_0
 		remove_global_variable = mcc_character_1
 		remove_global_variable = mcc_character_2
@@ -616,12 +617,12 @@ mcc_event_v2.9003 = {
 	window = fullscreen_event
 	theme = clipboard_transfer_event_theme
 	desc = talk_event.9003.desc
-	
+
 	widget = {
         gui = "event_window_widget_talk_clear"
         container = "custom_widgets_container"
     }
-	
+
 
 }
 
@@ -644,15 +645,15 @@ mcc_event_v2.9999 = {
 	theme = clipboard_transfer_event_theme
 	desc = talk_event.9999.desc
 
-	#this widget is what calls the EventWindowData.CopyToClipboard guifunction, 
+	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
 	widget = {
         gui = "event_window_widget_message_clear"
         container = "custom_widgets_container"
     }
-	
+
 	immediate = {
 		trigger_event = mcc_event_v2.9998
-	
+
 	}
 
 	#option ={

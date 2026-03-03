@@ -127,7 +127,7 @@ mcc_event.1002.desc:0 "Te has encontrado con [recipient.GetShortUINamePossessive
 votc_talk_together:0 "Hablar juntos con personajes fijados"
 votc_talk_alone:0 "Hablar a solas con [recipient.GetTitledFirstName]"
 votc_talk_change_scene_selection:0 "Cambiar selección de escena"
-votc_scene_selector_title:0 "Seleccionar escena de conversación - Community Edition"
+votc_scene_selector_title:0 "Seleccionar escena de conversación - Voices of the Court - Community Edition"
 
 mcc_event_v2.7001.desc:0 "VOTC:BACKGROUND/;/[GetGlobalVariable('votc_background_texture').GetFlagName]"
 votc_placeholder:0 " "
@@ -175,7 +175,7 @@ votc_council_intent_desc:0 "Centrarse en asuntos de estado y deberes del consejo
 votc_mcc_selector_mode1:0 "Personajes fijados en esta ubicación"
 votc_mcc_selector_mode2:0 "Todos los personajes fijados (ilimitado)"
 votc_mcc_selector_mode3:0 "Todos los personajes en esta ubicación"
-mcc_characters_window_title:0 "Seleccionar personajes para la conversación - Community Edition"
+mcc_characters_window_title:0 "Seleccionar personajes para la conversación - Voices of the Court - Community Edition"
 votc_talk_selected:0 "Hablar con [recipient.GetTitledFirstName] y personajes seleccionados"
 votc_talk_change_mcc_selection:0 "Cambiar personajes seleccionados"
 votc_talk_mcc_selector:0 "Seleccionar personajes para hablar junto con [recipient.GetTitledFirstName]"

@@ -140,7 +140,7 @@ mcc_event.1002.desc:0 "Вы встретили [recipient.GetShortUINamePossessi
 votc_talk_together:0 "Поговорить вместе с закреплёнными персонажами"
 votc_talk_alone:0 "Поговорить наедине с [recipient.GetTitledFirstName]"
 votc_talk_change_scene_selection:0 "Изменить выбор сцены"
-votc_scene_selector_title:0 "Выбрать сцену разговора - Community Edition"
+votc_scene_selector_title:0 "Выбрать сцену разговора - Voices of the Court - Community Edition"
 
 
 mcc_event_v2.7001.desc:0 "VOTC:BACKGROUND/;/[GetGlobalVariable('votc_background_texture').GetFlagName]"
@@ -190,7 +190,7 @@ votc_council_intent_desc:0 "Сосредоточиться на делах го�
 votc_mcc_selector_mode1:0 "Закрепленные персонажи в этой локации"
 votc_mcc_selector_mode2:0 "Все закрепленные персонажи (без ограничений)"
 votc_mcc_selector_mode3:0 "Все персонажи в этой локации"
-mcc_characters_window_title:0 "Выберите персонажей для беседы - Community Edition"
+mcc_characters_window_title:0 "Выберите персонажей для беседы - Voices of the Court - Community Edition"
 votc_talk_selected:0 "Начать разговор с [recipient.GetTitledFirstName] и выбранными персонажами"
 votc_talk_change_mcc_selection:0 "Изменить выбор персонажей"
 votc_talk_mcc_selector:0 "Выберите персонажей для разговора с [recipient.GetTitledFirstName]"
