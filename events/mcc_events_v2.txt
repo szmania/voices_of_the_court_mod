@@ -445,6 +445,11 @@ mcc_event_v2.1002 = {
 			name = talk_scene_flags
 			target = flag:talk_scene_examination_room
 		}
+
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_armycamp
+		}
 	}
 
 	widget = {

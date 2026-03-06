@@ -12435,4 +12435,18 @@ talk_background = {
 		}
 	}
 
+	texture = {
+		reference = "event_scenes/armycamp.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_armycamp
+		}
+	}
+
+    environment = {
+        reference = "environment_armycamp
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_armycamp
+        }
+    }
+
 }
