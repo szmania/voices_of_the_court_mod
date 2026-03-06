@@ -1,4 +1,4 @@
-﻿talk_scene_alley_night = {
+﻿ talk_scene_alley_night = {
 	texture = {
 		reference = "event_scenes/mpo_campfire_steppe.dds"
 		trigger = {
