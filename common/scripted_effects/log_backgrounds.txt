@@ -6219,4 +6219,17 @@
 		set_global_variable = { name = votc_background_texture value = flag:texture_tgp_japanese_city }
 	}
 
+}log_backgrounds_effect = {
+	if = {
+		limit = {
+			global_variable:talk_scene = flag:talk_scene_armycamp
+		}
+		set_global_variable = {
+			name = votc_background_texture
+			value = flag:talk_scene_armycamp
+		}
+		trigger_event = {
+			id = mcc_event_v2.7001
+		}
+	}
 }

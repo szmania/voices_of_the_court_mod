@@ -5874,3 +5874,7 @@ talk_scene_japanese_city = {
 	}
 
 }
+illustration = {
+	name = talk_scene_armycamp
+	texture = "gfx/interface/illustrations/scenes/armycamp.dds"
+}
