@@ -5878,6 +5878,3 @@ talk_scene_japanese_city = {
 talk_scene_armycamp = {
 	texture = "gfx/interface/illustrations/scenes/armycamp.dds"
 }
-talk_scene_armycamp = {
-	texture = "gfx/interface/illustrations/scenes/armycamp.dds"
-}

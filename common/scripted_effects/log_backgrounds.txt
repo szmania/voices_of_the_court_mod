@@ -6218,20 +6218,10 @@
 		}
 		set_global_variable = { name = votc_background_texture value = flag:texture_tgp_japanese_city }
 	}
-	limit = {
+
+	else_if = {
             global_var:talk_scene = flag:talk_scene_armycamp
         }
         set_global_variable = { name = votc_background_texture value = flag:texture_armycamp }
     }
-}
-log_backgrounds_effect = {
-	if = {
-		limit = {
-			global_var:talk_scene = flag:talk_scene_armycamp
-		}
-		set_global_variable = { name = votc_background_texture value = flag:texture_armycamp }
-		trigger_event = {
-			id = mcc_event_v2.7001
-		}
-	}
 }
