@@ -2,3 +2,5 @@ debug/*
 debug*
 .idea/*
 .idea*
+.cecli*
+.cecli.plans.md
