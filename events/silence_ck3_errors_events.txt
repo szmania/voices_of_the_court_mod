@@ -357,8 +357,8 @@ votc_silence_ck3_errors_event.0001 = {
 			votc_silence_ck3_errors_effect = { ERROR = texture_bedchamber_east3 }
 			votc_silence_ck3_errors_effect = { ERROR = talk_scene_ep3_frontend_adventurer }
 			votc_silence_ck3_errors_effect = { ERROR = texture_ep3_frontend_adventurer }
-			votc_silence_ck3_errors_effect = { ERROR = talk_scene_ep3_frontend_adventurer }
-			votc_silence_ck3_errors_effect = { ERROR = texture_ep3_frontend_adventurer }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_ep3_frontend_byzantine }
+			votc_silence_ck3_errors_effect = { ERROR = texture_ep3_frontend_byzantine }
 			votc_silence_ck3_errors_effect = { ERROR = talk_scene_ep3_frontend_byzantine }
 			votc_silence_ck3_errors_effect = { ERROR = texture_ep3_frontend_byzantine }
 			votc_silence_ck3_errors_effect = { ERROR = talk_scene_family_meeting_east }

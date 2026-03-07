@@ -468,7 +468,7 @@ mcc_event_v2.1002 = {
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
-			target = flag:talk_scene_ep3_frontend_adventurer
+			target = flag:talk_scene_ep3_frontend_byzantine
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
