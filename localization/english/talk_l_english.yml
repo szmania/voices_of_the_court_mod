@@ -127,6 +127,8 @@ talk_scene_family_meeting_east_title:0 "Eastern Family Meeting"
 talk_scene_fp1_frontend_nontribal_title:0 "Non-Tribal Frontend"
 talk_scene_fp1_frontend_tribal_title:0 "Tribal Frontend"
 talk_scene_fp2_frontend_iberian_title:0 "Iberian Frontend"
+talk_scene_bedchamber_east3_title:0 "Eastern Bedchamber 3"
+talk_scene_ep3_frontend_adventurer_title:0 "Adventurer's Camp"
 
 mcc_interaction:0 "Start conversation"
 mcc_interaction.desc:0 "Start a conversation with selected character or travel to their location."
