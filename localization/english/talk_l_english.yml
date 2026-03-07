@@ -119,6 +119,7 @@ talk_scene_city_steppe_title:0 "Steppe City"
 talk_scene_examination_room_title:0 "Examination Room"
 talk_scene_chinese_city_title:0 "Chinese City"
 talk_scene_japanese_city_title:0 "Japanese City"
+talk_scene_bedchamber_east3_title:0 "Eastern Bedchamber 3"
 
 mcc_interaction:0 "Start conversation"
 mcc_interaction.desc:0 "Start a conversation with selected character or travel to their location."
