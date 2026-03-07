@@ -349,6 +349,8 @@ votc_silence_ck3_errors_event.0001 = {
 			votc_silence_ck3_errors_effect = { ERROR = texture_tgp_moon_festival_japan }
 			votc_silence_ck3_errors_effect = { ERROR = texture_fp1_throneroom_nontribal }
 			votc_silence_ck3_errors_effect = { ERROR = texture_armycamp }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_bedchamber_east1 }
+			votc_silence_ck3_errors_effect = { ERROR = texture_bedchamber_east1 }
 
 			votc_silence_ck3_errors_effect = { ERROR = votc_letter_artifact }
 			votc_silence_ck3_errors_effect = { ERROR = talk_first_scope }
