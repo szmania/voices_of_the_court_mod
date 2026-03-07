@@ -130,6 +130,7 @@ talk_scene_fp2_frontend_iberian_title:0 "Iberian Frontend"
 talk_scene_fp3_frontend_iranian_title:0 "Iranian Frontend"
 talk_scene_bedchamber_east3_title:0 "Eastern Bedchamber 3"
 talk_scene_ep3_frontend_adventurer_title:0 "Adventurer's Camp"
+talk_scene_frontend_india_title:0 "Indian Frontend"
 
 mcc_interaction:0 "Start conversation"
 mcc_interaction.desc:0 "Start a conversation with selected character or travel to their location."
