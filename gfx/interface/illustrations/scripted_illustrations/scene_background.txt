@@ -12443,10 +12443,31 @@ talk_background = {
 	}
 
     environment = {
-        reference = "environment_armycamp
+        reference = "environment_event_genericcamp"
         trigger = {
             global_var:talk_scene = flag:talk_scene_armycamp
         }
     }
-
+	texture = {
+		reference = "event_scenes/bedchamber_east1.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east1
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+    environment = {
+        reference = "environment_tgp_wedding_bedroom_asia"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_bedchamber_east1
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+        }
+    }
 }
