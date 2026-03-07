@@ -450,6 +450,46 @@ mcc_event_v2.1002 = {
 			name = talk_scene_flags
 			target = flag:talk_scene_armycamp
 		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_bedchamber_east1
+		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_bedchamber_east2
+		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_bedchamber_east3
+		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_ep3_frontend_adventurer
+		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_ep3_frontend_adventurer
+		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_ep3_frontend_byzantine
+		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_family_meeting_east
+		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_fp1_frontend_nontribal
+		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_fp1_frontend_tribal
+		}
+		add_to_variable_list = {
+			name = talk_scene_flags
+			target = flag:talk_scene_fp2_frontend_iberian
+		}
 	}
 
 	widget = {

@@ -6224,4 +6224,58 @@
         }
         set_global_variable = { name = votc_background_texture value = flag:texture_armycamp }
     }
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east1
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_bedchamber_east1 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east2
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_bedchamber_east2 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east3
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_bedchamber_east3 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_ep3_frontend_adventurer
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_ep3_frontend_adventurer }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_ep3_frontend_byzantine
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_ep3_frontend_byzantine }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_family_meeting_east
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_family_meeting_east }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_fp1_frontend_nontribal
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_fp1_frontend_nontribal }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_fp1_frontend_tribal
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_fp1_frontend_tribal }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_fp2_frontend_iberian
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_fp2_frontend_iberian }
+	}
 }
