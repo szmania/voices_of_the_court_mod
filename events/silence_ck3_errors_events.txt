@@ -369,6 +369,10 @@ votc_silence_ck3_errors_event.0001 = {
 			votc_silence_ck3_errors_effect = { ERROR = texture_fp1_frontend_tribal }
 			votc_silence_ck3_errors_effect = { ERROR = talk_scene_fp2_frontend_iberian }
 			votc_silence_ck3_errors_effect = { ERROR = texture_fp2_frontend_iberian }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_bedchamber_east3 }
+			votc_silence_ck3_errors_effect = { ERROR = texture_bedchamber_east3 }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_ep3_frontend_adventurer }
+			votc_silence_ck3_errors_effect = { ERROR = texture_ep3_frontend_adventurer }
 
 			votc_silence_ck3_errors_effect = { ERROR = votc_letter_artifact }
 			votc_silence_ck3_errors_effect = { ERROR = talk_first_scope }
