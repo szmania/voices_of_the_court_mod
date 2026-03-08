@@ -377,6 +377,66 @@ votc_silence_ck3_errors_event.0001 = {
 			votc_silence_ck3_errors_effect = { ERROR = texture_ep3_frontend_adventurer }
 			votc_silence_ck3_errors_effect = { ERROR = talk_scene_frontend_india }
 			votc_silence_ck3_errors_effect = { ERROR = texture_frontend_india }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_frontend_mediterranean }
+			votc_silence_ck3_errors_effect = { ERROR = texture_frontend_mediterranean }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_frontend_tribal }
+			votc_silence_ck3_errors_effect = { ERROR = texture_frontend_tribal }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_frontend_west }
+			votc_silence_ck3_errors_effect = { ERROR = texture_frontend_west }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_garden_east1 }
+			votc_silence_ck3_errors_effect = { ERROR = texture_garden_east1 }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_garden_east2 }
+			votc_silence_ck3_errors_effect = { ERROR = texture_garden_east2 }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_harem }
+			votc_silence_ck3_errors_effect = { ERROR = texture_harem }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_huanghelou }
+			votc_silence_ck3_errors_effect = { ERROR = texture_huanghelou }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_hunt_foggy }
+			votc_silence_ck3_errors_effect = { ERROR = texture_hunt_foggy }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_iron_throne }
+			votc_silence_ck3_errors_effect = { ERROR = texture_iron_throne }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_kaifenghuangcheng }
+			votc_silence_ck3_errors_effect = { ERROR = texture_kaifenghuangcheng }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_leshandafou }
+			votc_silence_ck3_errors_effect = { ERROR = texture_leshandafou }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_lingyinsi }
+			votc_silence_ck3_errors_effect = { ERROR = texture_lingyinsi }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_marketeast }
+			votc_silence_ck3_errors_effect = { ERROR = texture_marketeast }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_mpo_frontend_nomad }
+			votc_silence_ck3_errors_effect = { ERROR = texture_mpo_frontend_nomad }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_shaolinsi }
+			votc_silence_ck3_errors_effect = { ERROR = texture_shaolinsi }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_taishan }
+			votc_silence_ck3_errors_effect = { ERROR = texture_taishan }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_tavern_east }
+			votc_silence_ck3_errors_effect = { ERROR = texture_tavern_east }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_tengwangge }
+			votc_silence_ck3_errors_effect = { ERROR = texture_tengwangge }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_tgp_frontend_celestial }
+			votc_silence_ck3_errors_effect = { ERROR = texture_tgp_frontend_celestial }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_tgp_frontend_japan }
+			votc_silence_ck3_errors_effect = { ERROR = texture_tgp_frontend_japan }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_throneroom_east_empire }
+			votc_silence_ck3_errors_effect = { ERROR = texture_throneroom_east_empire }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_throneroom_east_empire1 }
+			votc_silence_ck3_errors_effect = { ERROR = texture_throneroom_east_empire1 }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_throneroom_east_empire2 }
+			votc_silence_ck3_errors_effect = { ERROR = texture_throneroom_east_empire2 }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_throneroom_east_fuya }
+			votc_silence_ck3_errors_effect = { ERROR = texture_throneroom_east_fuya }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_throneroom_east_fuya1 }
+			votc_silence_ck3_errors_effect = { ERROR = texture_throneroom_east_fuya1 }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_throneroom_east_fuya2 }
+			votc_silence_ck3_errors_effect = { ERROR = texture_throneroom_east_fuya2 }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_wudangshandaoguan }
+			votc_silence_ck3_errors_effect = { ERROR = texture_wudangshandaoguan }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_wulingyuan }
+			votc_silence_ck3_errors_effect = { ERROR = texture_wulingyuan }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_yueyanglou }
+			votc_silence_ck3_errors_effect = { ERROR = texture_yueyanglou }
+			votc_silence_ck3_errors_effect = { ERROR = talk_scene_yungangshiku }
+			votc_silence_ck3_errors_effect = { ERROR = texture_yungangshiku }
 
 			votc_silence_ck3_errors_effect = { ERROR = votc_letter_artifact }
 			votc_silence_ck3_errors_effect = { ERROR = talk_first_scope }

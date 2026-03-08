@@ -6285,3 +6285,135 @@ talk_scene_tgp_frontend_celestial = {
 		}
 	}
 }
+talk_scene_tgp_frontend_japan = {
+	texture = {
+		reference = "event_scenes/tgp_frontend_japan.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_throneroom_east_empire1 = {
+	texture = {
+		reference = "event_scenes/throneroom_east_empire1.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_throneroom_east_empire2 = {
+	texture = {
+		reference = "event_scenes/throneroom_east_empire2.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_throneroom_east_fuya = {
+	texture = {
+		reference = "event_scenes/throneroom_east_fuya.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_throneroom_east_fuya1 = {
+	texture = {
+		reference = "event_scenes/throneroom_east_fuya1.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_throneroom_east_fuya2 = {
+	texture = {
+		reference = "event_scenes/throneroom_east_fuya2.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_wudangshandaoguan = {
+	texture = {
+		reference = "event_scenes/wudangshandaoguan.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_wulingyuan = {
+	texture = {
+		reference = "event_scenes/wulingyuan.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_yueyanglou = {
+	texture = {
+		reference = "event_scenes/yueyanglou.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_yungangshiku = {
+	texture = {
+		reference = "event_scenes/yungangshiku.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
+talk_scene_throneroom_east_empire = {
+	texture = {
+		reference = "event_scenes/throneroom_east_empire.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
