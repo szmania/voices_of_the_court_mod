@@ -6273,3 +6273,15 @@ talk_scene_tengwangge = {
 		}
 	}
 }
+talk_scene_tgp_frontend_celestial = {
+	texture = {
+		reference = "event_scenes/tgp_frontend_celestial.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+				}
+			}
+		}
+	}
+}
