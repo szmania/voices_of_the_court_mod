@@ -3480,7 +3480,7 @@ talk_background = {
 #					scope:activity = {
 #						activity.location ?= { steppe_building_gfx_use_indian_trigger = yes }
 #					}
-#				}	
+#				}
 #			}
 #		}
 #	}
@@ -3510,7 +3510,7 @@ talk_background = {
 #					scope:activity = {
 #						activity.location ?= { steppe_building_gfx_use_indian_trigger = yes }
 #					}
-#				}	
+#				}
 #			}
 #		}
 #	}
@@ -5663,7 +5663,7 @@ talk_background = {
 	}
 
 	texture = {
-		reference = "event_scenes/bedchamber.dds"
+		reference = "scenes/bedchamber.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_bedchamber
 		}
@@ -12436,7 +12436,7 @@ talk_background = {
 	}
 
 	texture = {
-		reference = "event_scenes/armycamp.dds"
+		reference = "scenes/armycamp.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_armycamp
 		}
@@ -12449,7 +12449,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/bedchamber_east1.dds"
+		reference = "scenes/bedchamber_east1.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_bedchamber_east1
 			location = {
@@ -12471,7 +12471,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/bedchamber_east2.dds"
+		reference = "scenes/bedchamber_east2.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_bedchamber_east2
 			location = {
@@ -12493,7 +12493,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/bedchamber_east3.dds"
+		reference = "scenes/bedchamber_east3.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_bedchamber_east3
 			location = {
@@ -12515,7 +12515,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/ep3_frontend_adventurer.dds"
+		reference = "scenes/ep3_frontend_adventurer.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_ep3_frontend_adventurer
 			is_adventurer = yes
@@ -12529,7 +12529,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/ep3_frontend_byzantine.dds"
+		reference = "scenes/ep3_frontend_byzantine.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_ep3_frontend_byzantine
 			location = {
@@ -12551,7 +12551,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/family_meeting_east.dds"
+		reference = "scenes/family_meeting_east.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_family_meeting_east
 			location = {
@@ -12573,7 +12573,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/fp1_frontend_nontribal.dds"
+		reference = "scenes/fp1_frontend_nontribal.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_fp1_frontend_nontribal
 			NOT = { government_has_flag = government_is_tribal }
@@ -12587,7 +12587,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/fp1_frontend_tribal.dds"
+		reference = "scenes/fp1_frontend_tribal.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_fp1_frontend_tribal
 			government_has_flag = government_is_tribal
@@ -12601,7 +12601,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/fp2_frontend_iberian.dds"
+		reference = "scenes/fp2_frontend_iberian.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_fp2_frontend_iberian
 			location = {
@@ -12623,7 +12623,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/fp3_frontend_iranian.dds"
+		reference = "scenes/fp3_frontend_iranian.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_fp3_frontend_iranian
 			location = {
@@ -12645,7 +12645,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/frontend_east.dds"
+		reference = "scenes/frontend_east.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_frontend_east
 			location = {
@@ -12667,7 +12667,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/frontend_india.dds"
+		reference = "scenes/frontend_india.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_frontend_india
 			location = {
@@ -12689,7 +12689,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/frontend_mediterranean.dds"
+		reference = "scenes/frontend_mediterranean.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_frontend_mediterranean
 			location = {
@@ -12711,7 +12711,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/frontend_tribal.dds"
+		reference = "scenes/frontend_tribal.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_frontend_tribal
 			location = {
@@ -12755,7 +12755,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/garden_east1.dds"
+		reference = "scenes/garden_east1.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_garden_east1
 			location = {
@@ -12777,7 +12777,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/garden_east2.dds"
+		reference = "scenes/garden_east2.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_garden_east2
 			location = {
@@ -12799,7 +12799,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/harem.dds"
+		reference = "scenes/harem.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_harem
 			location = {
@@ -12821,7 +12821,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/huanghelou.dds"
+		reference = "scenes/huanghelou.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_huanghelou
 			location = {
@@ -12843,7 +12843,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/hunt_foggy.dds"
+		reference = "scenes/hunt_foggy.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_hunt_foggy
 			is_host_of_hunt_activity = yes
@@ -12857,7 +12857,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/iron_throne.dds"
+		reference = "scenes/iron_throne.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_iron_throne
 			location = {
@@ -12885,7 +12885,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/kaifenghuangcheng.dds"
+		reference = "scenes/kaifenghuangcheng.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_kaifenghuangcheng
 			location = {
@@ -12907,7 +12907,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/leshandafou.dds"
+		reference = "scenes/leshandafou.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_leshandafou
 			location = {
@@ -12929,7 +12929,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/lingyinsi.dds"
+		reference = "scenes/lingyinsi.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_lingyinsi
 			location = {
@@ -12951,7 +12951,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/marketeast.dds"
+		reference = "scenes/marketeast.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_marketeast
 			location = {
@@ -12973,7 +12973,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/mpo_frontend_nomad.dds"
+		reference = "scenes/mpo_frontend_nomad.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_mpo_frontend_nomad
 			location = {
@@ -12995,7 +12995,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/shaolinsi.dds"
+		reference = "scenes/shaolinsi.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_shaolinsi
 			location = {
@@ -13017,7 +13017,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/taishan.dds"
+		reference = "scenes/taishan.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_taishan
 			location = {
@@ -13039,7 +13039,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/tavern_east.dds"
+		reference = "scenes/tavern_east.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_tavern_east
 			location = {
@@ -13061,7 +13061,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/tengwangge.dds"
+		reference = "scenes/tengwangge.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_tengwangge
 			location = {
@@ -13083,7 +13083,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/tgp_frontend_celestial.dds"
+		reference = "scenes/tgp_frontend_celestial.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_tgp_frontend_celestial
 			location = {
@@ -13105,7 +13105,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/tgp_frontend_japan.dds"
+		reference = "scenes/tgp_frontend_japan.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_tgp_frontend_japan
 			location = {
@@ -13127,7 +13127,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/throneroom_east_empire.dds"
+		reference = "scenes/throneroom_east_empire.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throneroom_east_empire
 			location = {
@@ -13149,7 +13149,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/throneroom_east_empire1.dds"
+		reference = "scenes/throneroom_east_empire1.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throneroom_east_empire1
 			location = {
@@ -13171,7 +13171,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/throneroom_east_empire2.dds"
+		reference = "scenes/throneroom_east_empire2.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
 			location = {
@@ -13193,7 +13193,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/throneroom_east_fuya.dds"
+		reference = "scenes/throneroom_east_fuya.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya
 			location = {
@@ -13215,7 +13215,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/throneroom_east_fuya1.dds"
+		reference = "scenes/throneroom_east_fuya1.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya1
 			location = {
@@ -13237,7 +13237,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/throneroom_east_fuya2.dds"
+		reference = "scenes/throneroom_east_fuya2.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya2
 			location = {
@@ -13259,7 +13259,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/wudangshandaoguan.dds"
+		reference = "scenes/wudangshandaoguan.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_wudangshandaoguan
 			location = {
@@ -13281,7 +13281,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/wulingyuan.dds"
+		reference = "scenes/wulingyuan.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_wulingyuan
 			location = {
@@ -13303,7 +13303,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/yueyanglou.dds"
+		reference = "scenes/yueyanglou.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_yueyanglou
 			location = {
@@ -13325,7 +13325,7 @@ talk_background = {
         }
     }
 	texture = {
-		reference = "event_scenes/yungangshiku.dds"
+		reference = "scenes/yungangshiku.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_yungangshiku
 			location = {

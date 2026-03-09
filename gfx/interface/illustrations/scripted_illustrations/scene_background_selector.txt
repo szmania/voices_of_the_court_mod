@@ -1653,7 +1653,7 @@ talk_scene_feast = {
 					scope:activity = {
 						activity_location ?= { steppe_building_gfx_use_indian_trigger = yes }
 					}
-				}	
+				}
 			}
 		}
 	}
@@ -2686,7 +2686,7 @@ talk_scene_bedchamber = {
 	}
 
 	texture = {
-		reference = "event_scenes/bedchamber.dds"
+		reference = "scenes/bedchamber.dds"
 	}
 
 }
@@ -5876,11 +5876,11 @@ talk_scene_japanese_city = {
 }
 
 talk_scene_armycamp = {
-	texture = "gfx/interface/illustrations/scenes/armycamp.dds"
+	texture = "scenes/armycamp.dds"
 }
 talk_scene_bedchamber_east1 = {
 	texture = {
-		reference = "event_scenes/bedchamber_east1.dds"
+		reference = "scenes/bedchamber_east1.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -5892,7 +5892,7 @@ talk_scene_bedchamber_east1 = {
 }
 talk_scene_bedchamber_east2 = {
 	texture = {
-		reference = "event_scenes/bedchamber_east2.dds"
+		reference = "scenes/bedchamber_east2.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -5904,7 +5904,7 @@ talk_scene_bedchamber_east2 = {
 }
 talk_scene_bedchamber_east3 = {
 	texture = {
-		reference = "event_scenes/bedchamber_east3.dds"
+		reference = "scenes/bedchamber_east3.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -5916,15 +5916,7 @@ talk_scene_bedchamber_east3 = {
 }
 talk_scene_ep3_frontend_adventurer = {
 	texture = {
-		reference = "event_scenes/ep3_frontend_adventurer.dds"
-		trigger = {
-			is_adventurer = yes
-		}
-	}
-}
-talk_scene_ep3_frontend_adventurer = {
-	texture = {
-		reference = "event_scenes/ep3_frontend_adventurer.dds"
+		reference = "scenes/ep3_frontend_adventurer.dds"
 		trigger = {
 			is_adventurer = yes
 		}
@@ -5932,7 +5924,7 @@ talk_scene_ep3_frontend_adventurer = {
 }
 talk_scene_ep3_frontend_byzantine = {
 	texture = {
-		reference = "event_scenes/ep3_frontend_byzantine.dds"
+		reference = "scenes/ep3_frontend_byzantine.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -5944,7 +5936,7 @@ talk_scene_ep3_frontend_byzantine = {
 }
 talk_scene_family_meeting_east = {
 	texture = {
-		reference = "event_scenes/family_meeting_east.dds"
+		reference = "scenes/family_meeting_east.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -5956,47 +5948,7 @@ talk_scene_family_meeting_east = {
 }
 talk_scene_fp1_frontend_nontribal = {
 	texture = {
-		reference = "event_scenes/fp1_frontend_nontribal.dds"
-		trigger = {
-			NOT = { government_has_flag = government_is_tribal }
-		}
-	}
-}
-talk_scene_ep3_frontend_adventurer = {
-	texture = {
-		reference = "event_scenes/ep3_frontend_adventurer.dds"
-		trigger = {
-			is_adventurer = yes
-		}
-	}
-}
-talk_scene_ep3_frontend_byzantine = {
-	texture = {
-		reference = "event_scenes/ep3_frontend_byzantine.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					culture ?= { has_graphical_byzantine_culture_group_trigger = yes }
-				}
-			}
-		}
-	}
-}
-talk_scene_family_meeting_east = {
-	texture = {
-		reference = "event_scenes/family_meeting_east.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
-				}
-			}
-		}
-	}
-}
-talk_scene_fp1_frontend_nontribal = {
-	texture = {
-		reference = "event_scenes/fp1_frontend_nontribal.dds"
+		reference = "scenes/fp1_frontend_nontribal.dds"
 		trigger = {
 			NOT = { government_has_flag = government_is_tribal }
 		}
@@ -6004,7 +5956,7 @@ talk_scene_fp1_frontend_nontribal = {
 }
 talk_scene_fp1_frontend_tribal = {
 	texture = {
-		reference = "event_scenes/fp1_frontend_tribal.dds"
+		reference = "scenes/fp1_frontend_tribal.dds"
 		trigger = {
 			government_has_flag = government_is_tribal
 		}
@@ -6012,7 +5964,7 @@ talk_scene_fp1_frontend_tribal = {
 }
 talk_scene_fp2_frontend_iberian = {
 	texture = {
-		reference = "event_scenes/fp2_frontend_iberian.dds"
+		reference = "scenes/fp2_frontend_iberian.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6024,7 +5976,7 @@ talk_scene_fp2_frontend_iberian = {
 }
 talk_scene_fp3_frontend_iranian = {
 	texture = {
-		reference = "event_scenes/fp3_frontend_iranian.dds"
+		reference = "scenes/fp3_frontend_iranian.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6036,7 +5988,7 @@ talk_scene_fp3_frontend_iranian = {
 }
 talk_scene_frontend_east = {
 	texture = {
-		reference = "event_scenes/frontend_east.dds"
+		reference = "scenes/frontend_east.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6048,7 +6000,7 @@ talk_scene_frontend_east = {
 }
 talk_scene_frontend_india = {
 	texture = {
-		reference = "event_scenes/frontend_india.dds"
+		reference = "scenes/frontend_india.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6060,7 +6012,7 @@ talk_scene_frontend_india = {
 }
 talk_scene_frontend_mediterranean = {
 	texture = {
-		reference = "event_scenes/frontend_mediterranean.dds"
+		reference = "scenes/frontend_mediterranean.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6072,7 +6024,7 @@ talk_scene_frontend_mediterranean = {
 }
 talk_scene_frontend_tribal = {
 	texture = {
-		reference = "event_scenes/frontend_tribal.dds"
+		reference = "scenes/frontend_tribal.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6096,7 +6048,7 @@ talk_scene_frontend_west = {
 }
 talk_scene_garden_east1 = {
 	texture = {
-		reference = "event_scenes/garden_east1.dds"
+		reference = "scenes/garden_east1.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6108,7 +6060,7 @@ talk_scene_garden_east1 = {
 }
 talk_scene_garden_east2 = {
 	texture = {
-		reference = "event_scenes/garden_east2.dds"
+		reference = "scenes/garden_east2.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6120,7 +6072,7 @@ talk_scene_garden_east2 = {
 }
 talk_scene_harem = {
 	texture = {
-		reference = "event_scenes/harem.dds"
+		reference = "scenes/harem.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6132,7 +6084,7 @@ talk_scene_harem = {
 }
 talk_scene_huanghelou = {
 	texture = {
-		reference = "event_scenes/huanghelou.dds"
+		reference = "scenes/huanghelou.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6144,7 +6096,7 @@ talk_scene_huanghelou = {
 }
 talk_scene_hunt_foggy = {
 	texture = {
-		reference = "event_scenes/hunt_foggy.dds"
+		reference = "scenes/hunt_foggy.dds"
 		trigger = {
 			is_host_of_hunt_activity = yes
 		}
@@ -6152,7 +6104,7 @@ talk_scene_hunt_foggy = {
 }
 talk_scene_iron_throne = {
 	texture = {
-		reference = "event_scenes/iron_throne.dds"
+		reference = "scenes/iron_throne.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6167,7 +6119,7 @@ talk_scene_iron_throne = {
 }
 talk_scene_kaifenghuangcheng = {
 	texture = {
-		reference = "event_scenes/kaifenghuangcheng.dds"
+		reference = "scenes/kaifenghuangcheng.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6179,7 +6131,7 @@ talk_scene_kaifenghuangcheng = {
 }
 talk_scene_leshandafou = {
 	texture = {
-		reference = "event_scenes/leshandafou.dds"
+		reference = "scenes/leshandafou.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6191,7 +6143,7 @@ talk_scene_leshandafou = {
 }
 talk_scene_lingyinsi = {
 	texture = {
-		reference = "event_scenes/lingyinsi.dds"
+		reference = "scenes/lingyinsi.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6203,7 +6155,7 @@ talk_scene_lingyinsi = {
 }
 talk_scene_marketeast = {
 	texture = {
-		reference = "event_scenes/marketeast.dds"
+		reference = "scenes/marketeast.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6215,7 +6167,7 @@ talk_scene_marketeast = {
 }
 talk_scene_mpo_frontend_nomad = {
 	texture = {
-		reference = "event_scenes/mpo_frontend_nomad.dds"
+		reference = "scenes/mpo_frontend_nomad.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6227,7 +6179,7 @@ talk_scene_mpo_frontend_nomad = {
 }
 talk_scene_shaolinsi = {
 	texture = {
-		reference = "event_scenes/shaolinsi.dds"
+		reference = "scenes/shaolinsi.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6239,7 +6191,7 @@ talk_scene_shaolinsi = {
 }
 talk_scene_taishan = {
 	texture = {
-		reference = "event_scenes/taishan.dds"
+		reference = "scenes/taishan.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6251,7 +6203,7 @@ talk_scene_taishan = {
 }
 talk_scene_tavern_east = {
 	texture = {
-		reference = "event_scenes/tavern_east.dds"
+		reference = "scenes/tavern_east.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6263,7 +6215,7 @@ talk_scene_tavern_east = {
 }
 talk_scene_tengwangge = {
 	texture = {
-		reference = "event_scenes/tengwangge.dds"
+		reference = "scenes/tengwangge.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6275,7 +6227,7 @@ talk_scene_tengwangge = {
 }
 talk_scene_tgp_frontend_celestial = {
 	texture = {
-		reference = "event_scenes/tgp_frontend_celestial.dds"
+		reference = "scenes/tgp_frontend_celestial.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6287,7 +6239,7 @@ talk_scene_tgp_frontend_celestial = {
 }
 talk_scene_tgp_frontend_japan = {
 	texture = {
-		reference = "event_scenes/tgp_frontend_japan.dds"
+		reference = "scenes/tgp_frontend_japan.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6299,7 +6251,7 @@ talk_scene_tgp_frontend_japan = {
 }
 talk_scene_throneroom_east_empire1 = {
 	texture = {
-		reference = "event_scenes/throneroom_east_empire1.dds"
+		reference = "scenes/throneroom_east_empire1.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6311,7 +6263,7 @@ talk_scene_throneroom_east_empire1 = {
 }
 talk_scene_throneroom_east_empire2 = {
 	texture = {
-		reference = "event_scenes/throneroom_east_empire2.dds"
+		reference = "scenes/throneroom_east_empire2.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6323,7 +6275,7 @@ talk_scene_throneroom_east_empire2 = {
 }
 talk_scene_throneroom_east_fuya = {
 	texture = {
-		reference = "event_scenes/throneroom_east_fuya.dds"
+		reference = "scenes/throneroom_east_fuya.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6335,7 +6287,7 @@ talk_scene_throneroom_east_fuya = {
 }
 talk_scene_throneroom_east_fuya1 = {
 	texture = {
-		reference = "event_scenes/throneroom_east_fuya1.dds"
+		reference = "scenes/throneroom_east_fuya1.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6347,7 +6299,7 @@ talk_scene_throneroom_east_fuya1 = {
 }
 talk_scene_throneroom_east_fuya2 = {
 	texture = {
-		reference = "event_scenes/throneroom_east_fuya2.dds"
+		reference = "scenes/throneroom_east_fuya2.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6359,7 +6311,7 @@ talk_scene_throneroom_east_fuya2 = {
 }
 talk_scene_wudangshandaoguan = {
 	texture = {
-		reference = "event_scenes/wudangshandaoguan.dds"
+		reference = "scenes/wudangshandaoguan.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6371,7 +6323,7 @@ talk_scene_wudangshandaoguan = {
 }
 talk_scene_wulingyuan = {
 	texture = {
-		reference = "event_scenes/wulingyuan.dds"
+		reference = "scenes/wulingyuan.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6383,7 +6335,7 @@ talk_scene_wulingyuan = {
 }
 talk_scene_yueyanglou = {
 	texture = {
-		reference = "event_scenes/yueyanglou.dds"
+		reference = "scenes/yueyanglou.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6395,7 +6347,7 @@ talk_scene_yueyanglou = {
 }
 talk_scene_yungangshiku = {
 	texture = {
-		reference = "event_scenes/yungangshiku.dds"
+		reference = "scenes/yungangshiku.dds"
 		trigger = {
 			location = {
 				province_owner = {
@@ -6407,7 +6359,7 @@ talk_scene_yungangshiku = {
 }
 talk_scene_throneroom_east_empire = {
 	texture = {
-		reference = "event_scenes/throneroom_east_empire.dds"
+		reference = "scenes/throneroom_east_empire.dds"
 		trigger = {
 			location = {
 				province_owner = {
