@@ -76,7 +76,7 @@ talk_background = {
 	}
 
 	texture = {
-		reference = "event_scenes/alley.dds"
+		reference = "scenes/alley.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_alley_night
 		}

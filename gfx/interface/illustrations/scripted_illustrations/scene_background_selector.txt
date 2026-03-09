@@ -35,7 +35,7 @@
 	}
 
 	texture = {
-		reference = "event_scenes/alley.dds"
+		reference = "scenes/alley.dds"
 	}
 
 }
