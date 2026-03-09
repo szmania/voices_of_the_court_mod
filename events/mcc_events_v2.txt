@@ -83,16 +83,6 @@ mcc_event_v2.1002 = {
 		add_to_variable_list = {
 			name = talk_scene_flags
 			target = flag:talk_scene_study
-
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_study
-		}
-
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_sitting_room
-		}
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
@@ -146,16 +136,6 @@ mcc_event_v2.1002 = {
 			name = talk_scene_flags
 			target = flag:talk_scene_cave
 		}
-
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_prison_fp2
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_prison_fp1_tribal
-		}
-
 		# Exterior - Castle/Estate
 		add_to_variable_list = {
 			name = talk_scene_flags
@@ -172,19 +152,6 @@ mcc_event_v2.1002 = {
 		add_to_variable_list = {
 			name = talk_scene_flags
 			target = flag:talk_scene_dog_kennels
-		}
-
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_alley
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_market
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_gallows
 		}
 
 		# Urban - Public Spaces
@@ -245,11 +212,6 @@ mcc_event_v2.1002 = {
 		add_to_variable_list = {
 			name = talk_scene_flags
 			target = flag:talk_scene_temple
-
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_church
-		}
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
@@ -282,11 +244,6 @@ mcc_event_v2.1002 = {
 		add_to_variable_list = {
 			name = talk_scene_flags
 			target = flag:talk_scene_camp
-
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_camp
-		}
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
@@ -377,31 +334,6 @@ mcc_event_v2.1002 = {
 		add_to_variable_list = {
 			name = talk_scene_flags
 			target = flag:talk_scene_farmland
-
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_desert
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_mountains
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_forest
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_forest_pine
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_drylands
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_steppe
-		}
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
@@ -536,10 +468,6 @@ mcc_event_v2.1002 = {
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
-			target = flag:talk_scene_iron_throne
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
 			target = flag:talk_scene_kaifenghuangcheng
 		}
 		add_to_variable_list = {
@@ -585,26 +513,6 @@ mcc_event_v2.1002 = {
 		add_to_variable_list = {
 			name = talk_scene_flags
 			target = flag:talk_scene_throneroom_east_empire
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_throneroom_east_empire1
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_throneroom_east_empire2
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_throneroom_east_fuya
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_throneroom_east_fuya1
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_throneroom_east_fuya2
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags

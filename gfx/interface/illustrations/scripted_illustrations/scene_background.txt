@@ -76,7 +76,7 @@ talk_background = {
 	}
 
 	texture = {
-		reference = "scenes/alley.dds"
+		reference = "event_scenes/alley.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_alley_night
 		}
@@ -5663,7 +5663,7 @@ talk_background = {
 	}
 
 	texture = {
-		reference = "scenes/bedchamber.dds"
+		reference = "event_scenes/bedchamber.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_bedchamber
 		}
@@ -12460,7 +12460,7 @@ talk_background = {
 		}
 	}
     environment = {
-        reference = "environment_tgp_wedding_bedroom_asia"
+        reference = "environment_bedchamber_east1"
         trigger = {
             global_var:talk_scene = flag:talk_scene_bedchamber_east1
 			location = {
@@ -12482,7 +12482,7 @@ talk_background = {
 		}
 	}
     environment = {
-        reference = "environment_tgp_wedding_bedroom_asia"
+        reference = "environment_bedchamber_east2"
         trigger = {
             global_var:talk_scene = flag:talk_scene_bedchamber_east2
 			location = {
@@ -12504,7 +12504,7 @@ talk_background = {
 		}
 	}
     environment = {
-        reference = "environment_tgp_wedding_bedroom_asia"
+        reference = "environment_bedchamber_east3"
         trigger = {
             global_var:talk_scene = flag:talk_scene_bedchamber_east3
 			location = {
@@ -12859,26 +12859,26 @@ talk_background = {
 	texture = {
 		reference = "scenes/iron_throne.dds"
 		trigger = {
-			global_var:talk_scene = flag:talk_scene_iron_throne
+			global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					OR = {
-						government = feudal_government
-						government = clan_government
+                        government_has_flag = government_is_tribal
+                        government_has_flag = government_is_clan
 					}
 				}
 			}
 		}
 	}
     environment = {
-        reference = "environment_throneroom_west"
+        reference = "environment_ep2_melee"
         trigger = {
             global_var:talk_scene = flag:talk_scene_iron_throne
 			location = {
 				province_owner = {
 					OR = {
-						government = feudal_government
-						government = clan_government
+                        government_has_flag = government_is_tribal
+                        government_has_flag = government_is_clan
 					}
 				}
 			}
@@ -13129,7 +13129,7 @@ talk_background = {
 	texture = {
 		reference = "scenes/throneroom_east_empire.dds"
 		trigger = {
-			global_var:talk_scene = flag:talk_scene_throneroom_east_empire
+			global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13140,7 +13140,7 @@ talk_background = {
     environment = {
         reference = "environment_frontend_east"
         trigger = {
-            global_var:talk_scene = flag:talk_scene_throneroom_east_empire
+            global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13151,7 +13151,7 @@ talk_background = {
 	texture = {
 		reference = "scenes/throneroom_east_empire1.dds"
 		trigger = {
-			global_var:talk_scene = flag:talk_scene_throneroom_east_empire1
+			global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13162,7 +13162,7 @@ talk_background = {
     environment = {
         reference = "environment_frontend_east"
         trigger = {
-            global_var:talk_scene = flag:talk_scene_throneroom_east_empire1
+            global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13173,7 +13173,7 @@ talk_background = {
 	texture = {
 		reference = "scenes/throneroom_east_empire2.dds"
 		trigger = {
-			global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
+			global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13184,7 +13184,7 @@ talk_background = {
     environment = {
         reference = "environment_frontend_east"
         trigger = {
-            global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
+            global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13195,7 +13195,7 @@ talk_background = {
 	texture = {
 		reference = "scenes/throneroom_east_fuya.dds"
 		trigger = {
-			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya
+			global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13206,7 +13206,7 @@ talk_background = {
     environment = {
         reference = "environment_frontend_east"
         trigger = {
-            global_var:talk_scene = flag:talk_scene_throneroom_east_fuya
+            global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13217,7 +13217,7 @@ talk_background = {
 	texture = {
 		reference = "scenes/throneroom_east_fuya1.dds"
 		trigger = {
-			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya1
+			global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13228,7 +13228,7 @@ talk_background = {
     environment = {
         reference = "environment_frontend_east"
         trigger = {
-            global_var:talk_scene = flag:talk_scene_throneroom_east_fuya1
+            global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13239,7 +13239,7 @@ talk_background = {
 	texture = {
 		reference = "scenes/throneroom_east_fuya2.dds"
 		trigger = {
-			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya2
+			global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13250,7 +13250,7 @@ talk_background = {
     environment = {
         reference = "environment_frontend_east"
         trigger = {
-            global_var:talk_scene = flag:talk_scene_throneroom_east_fuya2
+            global_var:talk_scene = flag:talk_scene_throne_room
 			location = {
 				province_owner = {
 					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
@@ -13346,4 +13346,5 @@ talk_background = {
 			}
         }
     }
+
 }

@@ -1,4 +1,4 @@
-﻿ talk_scene_alley_night = {
+﻿talk_scene_alley_night = {
 	texture = {
 		reference = "event_scenes/mpo_campfire_steppe.dds"
 		trigger = {
@@ -35,7 +35,7 @@
 	}
 
 	texture = {
-		reference = "scenes/alley.dds"
+		reference = "event_scenes/alley.dds"
 	}
 
 }
@@ -2686,7 +2686,7 @@ talk_scene_bedchamber = {
 	}
 
 	texture = {
-		reference = "scenes/bedchamber.dds"
+		reference = "event_scenes/bedchamber.dds"
 	}
 
 }
@@ -3347,7 +3347,7 @@ talk_scene_throne_room = {
 							title:c_byzantion = {
 								any_de_jure_top_liege = { this = root }
 							}
-					}
+					    }
 					}
 				}
 			}
@@ -3510,6 +3510,96 @@ talk_scene_throne_room = {
 							steppe_building_gfx_use_east_asian_trigger = yes
 						}
 					}
+				}
+			}
+		}
+	}
+
+    texture = {
+        reference = "scenes/iron_throne.dds"
+        trigger = {
+            location = {
+                province_owner = {
+                    OR = {
+                        government_has_flag = government_is_tribal
+                        government_has_flag = government_is_clan
+                    }
+                }
+            }
+        }
+    }
+
+	texture = {
+		reference = "scenes/throneroom_east_empire1.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+                    is_governor_or_admin_count = no
+                    high_tier_throne_room_trigger = { REGION = east_asia }
+                    OR = {
+                        culture = { has_graphical_east_asia_culture_group_trigger = yes }
+                        root.location = {
+                            steppe_building_gfx_use_east_asian_trigger = yes
+                        }
+                    }
+                    highest_held_title_tier >= tier_empire
+                    government_has_flag = government_has_merit
+				}
+			}
+		}
+	}
+
+	texture = {
+		reference = "scenes/throneroom_east_empire2.dds"
+		trigger = {
+			location = {
+				province_owner = {
+					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+                    high_tier_throne_room_trigger = { REGION = east_asia }
+                    OR = {
+                        culture = { has_graphical_east_asia_culture_group_trigger = yes }
+                        root.location = {
+                            steppe_building_gfx_use_east_asian_trigger = yes
+                        }
+                    }
+                    highest_held_title_tier >= tier_empire
+				}
+			}
+		}
+	}
+
+	texture = {
+		reference = "scenes/throneroom_east_fuya.dds"
+		trigger = {
+			location = {
+				province_owner = {
+                    culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+                    root.location ?= province:b_fuyang
+				}
+			}
+		}
+	}
+
+	texture = {
+		reference = "scenes/throneroom_east_fuya1.dds"
+		trigger = {
+			location = {
+				province_owner = {
+                    culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+                    root.location ?= province:b_fuyang_1
+				}
+			}
+		}
+	}
+
+	texture = {
+		reference = "scenes/throneroom_east_fuya2.dds"
+		trigger = {
+			location = {
+				province_owner = {
+                    culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+                    root.location ?= province:b_fuyang_2
 				}
 			}
 		}
@@ -5876,8 +5966,11 @@ talk_scene_japanese_city = {
 }
 
 talk_scene_armycamp = {
-	texture = "scenes/armycamp.dds"
+	texture = {
+		reference =  "scenes/armycamp.dds""event_scenes/tgp_japanese_city.dds"
+	}
 }
+
 talk_scene_bedchamber_east1 = {
 	texture = {
 		reference = "scenes/bedchamber_east1.dds"
@@ -6102,21 +6195,7 @@ talk_scene_hunt_foggy = {
 		}
 	}
 }
-talk_scene_iron_throne = {
-	texture = {
-		reference = "scenes/iron_throne.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					OR = {
-						government = feudal_government
-						government = clan_government
-					}
-				}
-			}
-		}
-	}
-}
+
 talk_scene_kaifenghuangcheng = {
 	texture = {
 		reference = "scenes/kaifenghuangcheng.dds"
@@ -6249,66 +6328,7 @@ talk_scene_tgp_frontend_japan = {
 		}
 	}
 }
-talk_scene_throneroom_east_empire1 = {
-	texture = {
-		reference = "scenes/throneroom_east_empire1.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
-				}
-			}
-		}
-	}
-}
-talk_scene_throneroom_east_empire2 = {
-	texture = {
-		reference = "scenes/throneroom_east_empire2.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
-				}
-			}
-		}
-	}
-}
-talk_scene_throneroom_east_fuya = {
-	texture = {
-		reference = "scenes/throneroom_east_fuya.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
-				}
-			}
-		}
-	}
-}
-talk_scene_throneroom_east_fuya1 = {
-	texture = {
-		reference = "scenes/throneroom_east_fuya1.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
-				}
-			}
-		}
-	}
-}
-talk_scene_throneroom_east_fuya2 = {
-	texture = {
-		reference = "scenes/throneroom_east_fuya2.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
-				}
-			}
-		}
-	}
-}
+
 talk_scene_wudangshandaoguan = {
 	texture = {
 		reference = "scenes/wudangshandaoguan.dds"
