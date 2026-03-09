@@ -41,12 +41,12 @@ Enregistrez-le en tant que fichier séparé dans le dossier `custom`.
 ## Licence et Attribution
 
 ### Informations sur le Mod
-- **Nom du Mod** : Voices of the Court - Community Edition (VOTC-CE)
+- **Nom du Mod** : Voices of the Court 2.0 - Community Edition (VOTC-CE)
 - **Licence** : GNU General Public License v3.0 (GPLv3)
 - **Version CK3 supportée** : 1.18 "Crane"
 
 ### Credits & Attribution
-This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
+This project, Voices of the Court 2.0 - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
 **Original Work**: Voices of the Court and Voices of the Court 2.0 Mod
 
@@ -58,7 +58,7 @@ This project, Voices of the Court - Community Edition, is a derivative work of V
 
 **Modifications**:
 
-* integration with Voices of the Court - Community Edition
+* integration with Voices of the Court 2.0 - Community Edition
 * Added features
 * Added bug fixes
 
