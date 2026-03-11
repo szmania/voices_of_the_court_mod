@@ -593,7 +593,7 @@ mcc_event_v2.9002 = {
     }
 
 	immediate = {
-		remove_global_variable = talk_pose
+		remove_global_variable = talk_scene
 		every_in_global_list = {
 			variable = mcc_characters_list_v2
 			remove_variable = talk_pose

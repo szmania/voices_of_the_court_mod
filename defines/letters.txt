@@ -1,3 +1,0 @@
-NGUI = {
-    RENAME_MAX_LENGTH = 5000
-}

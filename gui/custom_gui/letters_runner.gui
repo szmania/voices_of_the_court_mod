@@ -24,7 +24,7 @@ window = {
 	
 		state = {
 			name = _show2
-			trigger_on_create = yes
+			trigger_when = "[Not(GetGlobalVariable('talk_scene').IsSet)]"
 			duration = 2
 			on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/letters_runner.gui letters_runner_counter')]"
 		}
