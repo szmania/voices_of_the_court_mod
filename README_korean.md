@@ -41,12 +41,12 @@ path="C:/Users/ [사용자 PC 이름] / Documents/Paradox Interactive/Crusader K
 ## 라이선스 및 저작권 표시
 
 ### 모드 정보
-- **모드 이름**: Voices of the Court - Community Edition (VOTC-CE)
+- **모드 이름**: Voices of the Court 2.0 - Community Edition (VOTC-CE)
 - **라이선스**: GNU General Public License v3.0 (GPLv3)
 - **지원 CK3 버전**: 1.18 "Crane"
 
 ### Credits & Attribution
-This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
+This project, Voices of the Court 2.0 - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
 **Original Work**: Voices of the Court and Voices of the Court 2.0 Mod
 
@@ -58,7 +58,7 @@ This project, Voices of the Court - Community Edition, is a derivative work of V
 
 **Modifications**:
 
-* integration with Voices of the Court - Community Edition
+* integration with Voices of the Court 2.0 - Community Edition
 * Added features
 * Added bug fixes
 

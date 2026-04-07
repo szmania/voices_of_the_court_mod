@@ -127,7 +127,7 @@ mcc_event.1002.desc:0 "Spotkałeś się z [recipient.GetShortUINamePossessive] w
 votc_talk_together:0 "Rozmawiaj razem z przypętymi postaciami"
 votc_talk_alone:0 "Rozmawiaj sam na sam z [recipient.GetTitledFirstName]"
 votc_talk_change_scene_selection:0 "Zmień wybór sceny"
-votc_scene_selector_title:0 "Wybierz scenę rozmowy - Voices of the Court - Community Edition"
+votc_scene_selector_title:0 "Wybierz scenę rozmowy - Voices of the Court 2.0 - Community Edition"
 
 mcc_event_v2.7001.desc:0 "VOTC:BACKGROUND/;/[GetGlobalVariable('votc_background_texture').GetFlagName]"
 votc_placeholder:0 " "
@@ -175,7 +175,7 @@ votc_council_intent_desc:0 "Skoncentruj się na sprawach państwowych i obowiąz
 votc_mcc_selector_mode1:0 "Przypięte postacie w tej lokalizacji"
 votc_mcc_selector_mode2:0 "Wszystkie przypięte postacie (bez limitu)"
 votc_mcc_selector_mode3:0 "Wszystkie postacie w tej lokalizacji"
-mcc_characters_window_title:0 "Wybierz postacie do rozmowy - Voices of the Court - Community Edition"
+mcc_characters_window_title:0 "Wybierz postacie do rozmowy - Voices of the Court 2.0 - Community Edition"
 votc_talk_selected:0 "Rozmawiaj z [recipient.GetTitledFirstName] i wybranymi postaciami"
 votc_talk_change_mcc_selection:0 "Zmień wybrane postacie"
 votc_talk_mcc_selector:0 "Wybierz postacie do rozmowy wraz z [recipient.GetTitledFirstName]"

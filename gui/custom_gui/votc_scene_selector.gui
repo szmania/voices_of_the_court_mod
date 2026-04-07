@@ -34,7 +34,7 @@
             text_single = {
                 parentanchor = top|left
                 position = { 50 30 }
-                text = "Voices of the Court - Community Edition"
+                text = "Voices of the Court 2.0 - Community Edition"
                 default_format = "#low"
                 using = Font_Size_Small
                 max_width = 250

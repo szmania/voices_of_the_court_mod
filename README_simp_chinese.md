@@ -43,12 +43,12 @@ path="C:/Users/ 这里是你电脑的用户名 / Documents/Paradox Interactive/C
 ## 许可证与归属
 
 ### 模组信息
-- **模组名称**: Voices of the Court - Community Edition (VOTC-CE)
+- **模组名称**: Voices of the Court 2.0 - Community Edition (VOTC-CE)
 - **许可证**: GNU General Public License v3.0 (GPLv3)
 - **支持的CK3版本**: 1.18 "Crane"
 
 ### Credits & Attribution
-This project, Voices of the Court - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
+This project, Voices of the Court 2.0 - Community Edition, is a derivative work of Voices of the Court (VOTC) / AliChat.
 
 **Original Work**: Voices of the Court and Voices of the Court 2.0 Mod
 
@@ -60,7 +60,7 @@ This project, Voices of the Court - Community Edition, is a derivative work of V
 
 **Modifications**:
 
-* integration with Voices of the Court - Community Edition
+* integration with Voices of the Court 2.0 - Community Edition
 * Added features
 * Added bug fixes
 
