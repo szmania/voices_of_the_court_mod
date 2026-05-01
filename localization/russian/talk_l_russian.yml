@@ -200,3 +200,6 @@ votc_relaese_letter_decision_desc:0 "Освободить текущую цеп�
 votc_relaese_letter_decision_tooltip:0 "Освободить цепочку писем"
 votc_relaese_letter_decision_confirm:0 "Освободить цепочку писем"
 votc_relaese_letter_decision_effect_desc:0 "Вы освободите текущую цепочку писем, ожидающую ответа. Это действие позволит вам обойти счётчик процесса писем и, скорее всего, перезапишет любые предыдущие ответы, которые ещё не были получены. Если вы использовали функцию написания писем без запущенной бэкенд-программы, рекомендуется выполнить эту операцию вручную один раз!"
+
+talk_scene_family_meeting_east_title:0 "Eastern Family Meeting"
+talk_scene_harem_title:0 "Harem"

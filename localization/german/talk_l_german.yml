@@ -185,3 +185,6 @@ votc_relaese_letter_decision_desc:0 "Die aktuelle Briefkette freigeben, die auf 
 votc_relaese_letter_decision_tooltip:0 "Briefkette freigeben"
 votc_relaese_letter_decision_confirm:0 "Briefkette freigeben"
 votc_relaese_letter_decision_effect_desc:0 "Ihr werdet die aktuelle Briefkette freigeben, die auf eine Antwort wartet. Diese Aktion ermöglicht es Euch, den Briefprozesszähler zu umgehen und wird höchstwahrscheinlich alle vorherigen Antworten überschreiben, die noch nicht eingegangen sind. Wenn Ihr die Briefschreibfunktion ohne laufendes Backend-Programm verwendet habt, wird empfohlen, diese Operation einmal manuell durchzuführen!"
+
+talk_scene_family_meeting_east_title:0 "Eastern Family Meeting"
+talk_scene_harem_title:0 "Harem"

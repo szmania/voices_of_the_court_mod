@@ -185,3 +185,6 @@ votc_relaese_letter_decision_desc:0 "Liberar el hilo de cartas actual en espera 
 votc_relaese_letter_decision_tooltip:0 "Liberar hilo de cartas"
 votc_relaese_letter_decision_confirm:0 "Liberar hilo de cartas"
 votc_relaese_letter_decision_effect_desc:0 "Liberarás el hilo de cartas actual en espera de una respuesta. Esta acción te permite omitir el contador del proceso de cartas y probablemente sobrescribirá cualquier respuesta anterior que aún no se haya recibido. Si usaste la función de escritura de cartas sin que el programa backend esté en ejecución, ¡se recomienda realizar esta operación manualmente una vez!"
+
+talk_scene_family_meeting_east_title:0 "Eastern Family Meeting"
+talk_scene_harem_title:0 "Harem"

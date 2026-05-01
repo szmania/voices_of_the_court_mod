@@ -437,6 +437,8 @@ votc_silence_ck3_errors_event.0001 = {
 			votc_silence_ck3_errors_effect = { ERROR = texture_yueyanglou }
 			votc_silence_ck3_errors_effect = { ERROR = talk_scene_yungangshiku }
 			votc_silence_ck3_errors_effect = { ERROR = texture_yungangshiku }
+			votc_silence_ck3_errors_effect = { ERROR = texture_family_meeting_east }
+			votc_silence_ck3_errors_effect = { ERROR = texture_harem }
 
 			votc_silence_ck3_errors_effect = { ERROR = votc_letter_artifact }
 			votc_silence_ck3_errors_effect = { ERROR = talk_first_scope }
