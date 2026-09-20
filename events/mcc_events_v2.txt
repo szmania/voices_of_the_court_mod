@@ -412,14 +412,6 @@ mcc_event_v2.1002 = {
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
-			target = flag:talk_scene_family_meeting_east
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_family_meeting_east
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
 			target = flag:talk_scene_fp1_frontend_nontribal
 		}
 		add_to_variable_list = {
@@ -461,10 +453,6 @@ mcc_event_v2.1002 = {
 		add_to_variable_list = {
 			name = talk_scene_flags
 			target = flag:talk_scene_garden_east2
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_harem
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
@@ -541,75 +529,7 @@ mcc_event_v2.1002 = {
 
 		add_to_variable_list = {
 			name = talk_scene_flags
-			target = flag:talk_scene_frontend_west
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_garden_east1
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_garden_east2
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_harem
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_hunt_foggy
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
 			target = flag:talk_scene_iron_throne
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_kaifenghuangcheng
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_leshandafou
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_lingyinsi
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_marketeast
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_mpo_frontend_nomad
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_shaolinsi
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_taishan
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_tavern_east
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_tengwangge
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_tgp_frontend_celestial
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_tgp_frontend_japan
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_throneroom_east_empire
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
@@ -631,55 +551,7 @@ mcc_event_v2.1002 = {
 			name = talk_scene_flags
 			target = flag:talk_scene_throneroom_east_fuya2
 		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_wudangshandaoguan
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_wulingyuan
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_yueyanglou
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_yungangshiku
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_fp1_frontend_nontribal
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_fp1_frontend_tribal
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_fp2_frontend_iberian
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_fp3_frontend_iranian
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_frontend_east
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_frontend_india
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_frontend_mediterranean
-		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_frontend_tribal
-		}
-	}
+}
 
 	widget = {
         gui = "votc_scene_selector_widget"
