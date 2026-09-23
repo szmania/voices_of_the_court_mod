@@ -6448,26 +6448,12 @@ talk_scene_japanese_city = {
 talk_scene_family_meeting_east = {
 	texture = {
 		reference = "scenes/family_meeting_east.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
-				}
-			}
-		}
 	}
 }
 
 talk_scene_harem = {
 	texture = {
 		reference = "scenes/harem.dds"
-		trigger = {
-			location = {
-				province_owner = {
-					culture ?= { has_graphical_mena_culture_group_trigger = yes }
-				}
-			}
-		}
 	}
 }
 
@@ -6475,6 +6461,7 @@ talk_scene_armycamp = {
 	texture = {
 		reference = "scenes/armycamp.dds"
 	}
+}
 
 talk_scene_huanghelou = {
 	texture = {
@@ -6540,5 +6527,179 @@ talk_scene_yueyanglou = {
 talk_scene_yungangshiku = {
 	texture = {
 		reference = "scenes/yungangshiku.dds"
+	}
+}
+
+talk_scene_bedchamber_east1 = {
+	texture = {
+		reference = "scenes/bedchamber_east1.dds"
+	}
+}
+
+talk_scene_bedchamber_east2 = {
+	texture = {
+		reference = "scenes/bedchamber_east2.dds"
+	}
+}
+
+talk_scene_bedchamber_east3 = {
+	texture = {
+		reference = "scenes/bedchamber_east3.dds"
+	}
+}
+
+talk_scene_ep3_frontend_adventurer = {
+	texture = {
+		reference = "scenes/ep3_frontend_adventurer.dds"
+	}
+}
+
+talk_scene_ep3_frontend_byzantine = {
+	texture = {
+		reference = "scenes/ep3_frontend_byzantine.dds"
+	}
+}
+
+talk_scene_fp1_frontend_nontribal = {
+	texture = {
+		reference = "scenes/fp1_frontend_nontribal.dds"
+	}
+}
+
+talk_scene_fp1_frontend_tribal = {
+	texture = {
+		reference = "scenes/fp1_frontend_tribal.dds"
+	}
+}
+
+talk_scene_fp2_frontend_iberian = {
+	texture = {
+		reference = "scenes/fp2_frontend_iberian.dds"
+	}
+}
+
+talk_scene_fp3_frontend_iranian = {
+	texture = {
+		reference = "scenes/fp3_frontend_iranian.dds"
+	}
+}
+
+talk_scene_frontend_east = {
+	texture = {
+		reference = "scenes/frontend_east.dds"
+	}
+}
+
+talk_scene_frontend_india = {
+	texture = {
+		reference = "scenes/frontend_india.dds"
+	}
+}
+
+talk_scene_frontend_mediterranean = {
+	texture = {
+		reference = "scenes/frontend_mediterranean.dds"
+	}
+}
+
+talk_scene_frontend_tribal = {
+	texture = {
+		reference = "scenes/frontend_tribal.dds"
+	}
+}
+
+talk_scene_frontend_west = {
+	texture = {
+		reference = "scenes/frontend_west.dds"
+	}
+}
+
+talk_scene_garden_east1 = {
+	texture = {
+		reference = "scenes/garden_east1.dds"
+	}
+}
+
+talk_scene_garden_east2 = {
+	texture = {
+		reference = "scenes/garden_east2.dds"
+	}
+}
+
+talk_scene_hunt_foggy = {
+	texture = {
+		reference = "event_scenes/ep2_hunt_foggy_forest.dds"
+	}
+}
+
+talk_scene_iron_throne = {
+	texture = {
+		reference = "scenes/iron_throne.dds"
+	}
+}
+
+talk_scene_marketeast = {
+	texture = {
+		reference = "scenes/marketeast.dds"
+	}
+}
+
+talk_scene_mpo_frontend_nomad = {
+	texture = {
+		reference = "scenes/mpo_frontend_nomad.dds"
+	}
+}
+
+talk_scene_tavern_east = {
+	texture = {
+		reference = "scenes/tavern_east.dds"
+	}
+}
+
+talk_scene_tgp_frontend_celestial = {
+	texture = {
+		reference = "scenes/tgp_frontend_celestial.dds"
+	}
+}
+
+talk_scene_tgp_frontend_japan = {
+	texture = {
+		reference = "scenes/tgp_frontend_japan.dds"
+	}
+}
+
+talk_scene_throneroom_east_empire = {
+	texture = {
+		reference = "scenes/throneroom_east_empire.dds"
+	}
+}
+
+talk_scene_throneroom_east_empire1 = {
+	texture = {
+		reference = "scenes/throneroom_east_empire1.dds"
+	}
+}
+
+talk_scene_throneroom_east_empire2 = {
+	texture = {
+		reference = "scenes/throneroom_east_empire2.dds"
+	}
+}
+
+talk_scene_throneroom_east_fuya = {
+	texture = {
+		reference = "scenes/throneroom_east_fuya.dds"
+	}
+}
+
+talk_scene_throneroom_east_fuya1 = {
+	texture = {
+		reference = "scenes/throneroom_east_fuya1.dds"
+	}
+}
+
+talk_scene_throneroom_east_fuya2 = {
+	texture = {
+		reference = "scenes/throneroom_east_fuya2.dds"
 	}
 }
