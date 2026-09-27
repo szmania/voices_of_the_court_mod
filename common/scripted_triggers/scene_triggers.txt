@@ -119,3 +119,7 @@ AND = {
 	}
 }
 
+# VOTC: used by scene_background.txt for the ep3_frontend_byzantine talk scene (no stock byzantine region trigger exists)
+votc_should_use_byzantine_graphics_trigger = {
+	culture ?= { has_building_gfx = byzantine_building_gfx }
+}

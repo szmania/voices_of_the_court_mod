@@ -12744,9 +12744,10 @@ talk_background = {
 		reference = "scenes/iron_throne.dds"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_iron_throne
-			OR = {
-				government_has_flag = government_is_tribal
-				government_has_flag = government_is_clan
+			AND = {
+				current_date >= 4000.1.1
+				current_date < 9000.1.1
+				government_has_flag = government_is_feudal
 			}
 		}
 	}
@@ -12754,9 +12755,10 @@ talk_background = {
         reference = "environment_ep2_melee"
         trigger = {
             global_var:talk_scene = flag:talk_scene_iron_throne
-			OR = {
-				government_has_flag = government_is_tribal
-				government_has_flag = government_is_clan
+			AND = {
+				current_date >= 4000.1.1
+				current_date < 9000.1.1
+				government_has_flag = government_is_feudal
 			}
         }
     }

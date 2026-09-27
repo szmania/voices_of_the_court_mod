@@ -3743,9 +3743,10 @@ talk_scene_throne_room = {
         trigger = {
             location = {
                 province_owner = {
-                    OR = {
-                        government_has_flag = government_is_tribal
-                        government_has_flag = government_is_clan
+                    AND = {
+						current_date >= 4000.1.1
+						current_date < 9000.1.1
+						government_has_flag = government_is_feudal
                     }
                 }
             }
@@ -4010,19 +4011,6 @@ talk_scene_throne_room = {
             location = {
                 province_owner = {
                     culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
-                }
-            }
-        }
-    }
-    texture = {
-        reference = "scenes/iron_throne.dds"
-        trigger = {
-            location = {
-                province_owner = {
-                    OR = {
-                        government = feudal_government
-                        government = clan_government
-                    }
                 }
             }
         }
@@ -6568,9 +6556,9 @@ talk_scene_taishan = {
 		trigger = {
 			has_graphical_east_asia_region_trigger = yes
 		}
-		reference = "scenes/taishan.dds"	
-	}	
-}	
+		reference = "scenes/taishan.dds"
+	}
+}
 
 
 talk_scene_tengwangge = {
@@ -6780,10 +6768,11 @@ talk_scene_hunt_foggy = {
 talk_scene_iron_throne = {
 	texture = {
 		trigger = {
-			OR = {
-				government_has_flag = government_is_tribal
-				government_has_flag = government_is_clan
-				}
+			AND = {
+				current_date >= 4000.1.1
+				current_date < 9000.1.1
+				government_has_flag = government_is_feudal
+			}
 		}
 		reference = "scenes/iron_throne.dds"
 	}

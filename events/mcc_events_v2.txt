@@ -706,9 +706,10 @@ mcc_event_v2.1002 = {
 
 		if = {
 			limit = {
-				OR = {
-					government_has_flag = government_is_tribal
-					government_has_flag = government_is_clan
+				AND = {
+					current_date >= 4000.1.1
+					current_date < 9000.1.1
+					government_has_flag = government_is_feudal
 				}
 			}
 			add_to_variable_list = {
