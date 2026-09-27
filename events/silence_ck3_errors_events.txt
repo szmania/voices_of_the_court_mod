@@ -439,6 +439,24 @@ votc_silence_ck3_errors_event.0001 = {
 			votc_silence_ck3_errors_effect = { ERROR = texture_yungangshiku }
 			votc_silence_ck3_errors_effect = { ERROR = texture_family_meeting_east }
 			votc_silence_ck3_errors_effect = { ERROR = texture_harem }
+			votc_silence_ck3_errors_effect = { ERROR = texture_armycamp }
+			votc_silence_ck3_errors_effect = { ERROR = texture_frontend_east }
+			# VOTC Section 9: DDS coverage expansion - new scenes (L-series)
+			votc_silence_ck3_errors_effect = { ERROR = texture_bp1_desert }
+			votc_silence_ck3_errors_effect = { ERROR = texture_garden_mena_day }
+			votc_silence_ck3_errors_effect = { ERROR = texture_hills }
+			votc_silence_ck3_errors_effect = { ERROR = texture_falconry_mews }
+			votc_silence_ck3_errors_effect = { ERROR = texture_chariot_track }
+			votc_silence_ck3_errors_effect = { ERROR = texture_hippodrome }
+			votc_silence_ck3_errors_effect = { ERROR = texture_ocean_norse }
+			votc_silence_ck3_errors_effect = { ERROR = texture_steppe_evening }
+			votc_silence_ck3_errors_effect = { ERROR = texture_festival_ritual_japan }
+			votc_silence_ck3_errors_effect = { ERROR = texture_overflowing_river }
+			votc_silence_ck3_errors_effect = { ERROR = texture_ruined_holding }
+			votc_silence_ck3_errors_effect = { ERROR = texture_tanabata_festival }
+			votc_silence_ck3_errors_effect = { ERROR = texture_camp_new }
+			votc_silence_ck3_errors_effect = { ERROR = texture_courtyard_night }
+			votc_silence_ck3_errors_effect = { ERROR = texture_market_new }
 
 			votc_silence_ck3_errors_effect = { ERROR = votc_letter_artifact }
 			votc_silence_ck3_errors_effect = { ERROR = talk_first_scope }

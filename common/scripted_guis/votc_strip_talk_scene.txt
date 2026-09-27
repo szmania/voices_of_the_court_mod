@@ -1,0 +1,9 @@
+﻿votc_strip_talk_scene = {
+	# Bug M fix (M-A): teardown cleanup for talk_scene, executed from the close
+	# widget AFTER GUI.ClearWidgets has removed the talk window, so the background
+	# illustration is never re-evaluated against an unset talk_scene while visible.
+	scope = character
+	effect = {
+		remove_global_variable = talk_scene
+	}
+}

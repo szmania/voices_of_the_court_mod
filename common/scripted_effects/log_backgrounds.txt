@@ -6476,4 +6476,95 @@
 		}
 		set_global_variable = { name = votc_background_texture value = flag:texture_yungangshiku }
 	}
+	# VOTC Section 9: DDS coverage expansion - new scenes (L-series)
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_bp1_desert
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_bp1_desert }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_garden_mena_day
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_garden_mena_day }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_hills
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_hills }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_falconry_mews
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_falconry_mews }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_chariot_track
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_chariot_track }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_hippodrome
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_hippodrome }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_ocean_norse
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_ocean_norse }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_steppe_evening
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_steppe_evening }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_festival_ritual_japan
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_festival_ritual_japan }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_overflowing_river
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_overflowing_river }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_ruined_holding
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_ruined_holding }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_tanabata_festival
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_tanabata_festival }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_camp_new
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_camp_new }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_courtyard_night
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_courtyard_night }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_market_new
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_market_new }
+	}
 }

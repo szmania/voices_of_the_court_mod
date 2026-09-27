@@ -158,10 +158,10 @@ talk_scene_temple = {
 				province_owner = {
 					is_landless_adventurer = yes
 					NOR = {
-						religion = religion:tengrism_religion
-						religion = religion:magyar_religion
-						religion = religion:siberian_religion
-						religion = religion:kamuyism_religion
+						religion ?= { this = religion:tengrism_religion }
+						religion ?= { this = religion:magyar_religion }
+						religion ?= { this = religion:siberian_religion }
+						religion ?= { this = religion:kamuyism_religion }
 					}
 				}
 			}
@@ -175,10 +175,10 @@ talk_scene_temple = {
 				province_owner = {
 					OR = {
 						government_has_flag = government_is_nomadic
-						religion = religion:tengrism_religion
-						religion = religion:magyar_religion
-						religion = religion:siberian_religion
-						religion = religion:kamuyism_religion
+						religion ?= { this = religion:tengrism_religion }
+						religion ?= { this = religion:magyar_religion }
+						religion ?= { this = religion:siberian_religion }
+						religion ?= { this = religion:kamuyism_religion }
 						AND = {
 							religion = religion:buddhism_religion
 							root.location ?= {
@@ -1764,6 +1764,7 @@ talk_scene_feast = {
 	texture = {
 		reference = "event_scenes/fp1_viking_feast.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			OR = {
 				scope:activity = {
 					activity_location = {
@@ -3828,7 +3829,7 @@ talk_scene_throne_room = {
     texture = {
         reference = "scenes/ep3_frontend_adventurer.dds"
         trigger = {
-            is_adventurer = yes
+            is_landless_adventurer = yes
         }
     }
     texture = {
@@ -4874,7 +4875,9 @@ talk_scene_hunt_poachers_camp = {
 	texture = {
 		reference = "scenes/hunt_foggy.dds"
 		trigger = {
-			is_host_of_hunt_activity = yes
+			involved_activity ?= {
+				has_activity_type = activity_hunt
+			}
 		}
 	}
 }
@@ -4883,6 +4886,7 @@ talk_scene_hunt_activity_camp = {
 	texture = {
 		reference = "event_scenes/ep2_hunt_snowy_forest.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			scope:activity = {
 				activity_location ?= { hunt_snowy_forest_trigger = yes }
 			}
@@ -4892,6 +4896,7 @@ talk_scene_hunt_activity_camp = {
 	texture = {
 		reference = "event_scenes/mountains.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			scope:activity = {
 				activity_location ?= { graphical_wilderness_mountains_trigger = yes }
 			}
@@ -4901,6 +4906,7 @@ talk_scene_hunt_activity_camp = {
 	texture = {
 		reference = "event_scenes/bp1_jungle.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			scope:activity = {
 				activity_location ?= { graphical_wilderness_jungle_trigger = yes }
 			}
@@ -4910,6 +4916,7 @@ talk_scene_hunt_activity_camp = {
 	texture = {
 		reference = "event_scenes/mpo_hunt_steppe.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			scope:activity = {
 			activity_host = { government_has_flag = government_is_nomadic }
 			}
@@ -4919,6 +4926,7 @@ talk_scene_hunt_activity_camp = {
 	texture = {
 		reference = "event_scenes/steppe.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			scope:activity = {
 				activity_location ?= { graphical_wilderness_steppe_trigger = yes }
 			}
@@ -4928,6 +4936,7 @@ talk_scene_hunt_activity_camp = {
 	texture = {
 		reference = "event_scenes/desert.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			scope:activity = {
 				activity_location ?= { graphical_wilderness_desert_trigger = yes }
 			}
@@ -4937,6 +4946,7 @@ talk_scene_hunt_activity_camp = {
 	texture = {
 		reference = "event_scenes/drylands.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			scope:activity = {
 				activity_location ?= { graphical_drylands_trigger = yes }
 			}
@@ -5017,6 +5027,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_village_festival_western.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_tournament }
@@ -5028,6 +5039,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/tgp_tanabata_festival_night_japan.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_tour }
@@ -5045,6 +5057,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/tgp_wedding_ceremony_asia.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_tour }
@@ -5062,6 +5075,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_feast_steppe.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_tour }
@@ -5078,6 +5092,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_feast_sub_saharan.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_tour }
@@ -5101,6 +5116,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_feast_indian.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_tour }
@@ -5118,6 +5134,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_village_festival_western.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_tour }
@@ -5129,6 +5146,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_wedding_ceremony_mena.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_wedding }
@@ -5143,6 +5161,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_wedding_ceremony_western.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_wedding }
@@ -5157,6 +5176,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_wedding_ceremony_mena.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_wedding }
@@ -5183,6 +5203,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_wedding_ceremony_indian.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_wedding }
@@ -5200,6 +5221,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/tgp_wedding_ceremony_asia.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_wedding }
@@ -5217,6 +5239,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_wedding_ceremony_western.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_wedding }
@@ -5228,6 +5251,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_hunt_snowy_forest.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity = {
@@ -5251,6 +5275,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_hunt_forest_managed.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity = {
@@ -5270,6 +5295,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/forest_pine.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity = {
@@ -5284,6 +5310,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/forest.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity = {
@@ -5298,6 +5325,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_hunt_generic.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= {
@@ -5314,6 +5342,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_hunt_generic.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_hunt }
@@ -5325,6 +5354,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep3_hagia_sophia.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5339,6 +5369,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/fp3_temple.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5351,6 +5382,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/mpo_temple_steppe.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5409,6 +5441,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep3_holysite_orthodox.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5432,6 +5465,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/tgp_holysite_asia.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5451,6 +5485,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_holysite_mena.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5470,6 +5505,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_holysite_indian.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5489,6 +5525,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/fp2_temple.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5505,6 +5542,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_holysite_western.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5527,6 +5565,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_holysite_tribal.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5558,6 +5597,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/fp1_tribal_temple.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5574,6 +5614,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_holysite_tribal.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5598,6 +5639,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/temple.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
@@ -5609,6 +5651,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep3_feast_byzantine.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_feast }
@@ -5625,6 +5668,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/fp1_viking_feast.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_feast }
@@ -5641,6 +5685,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_feast_indian.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_feast }
@@ -5657,6 +5702,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_feast_mena.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_feast }
@@ -5690,6 +5736,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_feast_steppe.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_feast }
@@ -5706,6 +5753,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/ep2_feast_sub_saharan.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_feast }
@@ -5718,6 +5766,7 @@ talk_scene_involved_activity = {
 	texture = {
 		reference = "event_scenes/tgp_feast_asia.dds"
 		trigger = {
+			root = { exists = scope:activity }
 			location = {
 				province_owner = {
 					involved_activity ?= { has_activity_type = activity_feast }
@@ -6447,12 +6496,18 @@ talk_scene_japanese_city = {
 
 talk_scene_family_meeting_east = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/family_meeting_east.dds"
 	}
 }
 
 talk_scene_harem = {
 	texture = {
+		trigger = {
+			has_graphical_mena_region_trigger = yes
+		}
 		reference = "scenes/harem.dds"
 	}
 }
@@ -6465,36 +6520,54 @@ talk_scene_armycamp = {
 
 talk_scene_huanghelou = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/huanghelou.dds"
 	}
 }
 
 talk_scene_kaifenghuangcheng = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/kaifenghuangcheng.dds"
 	}
 }
 
 talk_scene_leshandafou = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/leshandafou.dds"
 	}
 }
 
 talk_scene_lingyinsi = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/lingyinsi.dds"
 	}
 }
 
 talk_scene_shaolinsi = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/shaolinsi.dds"
 	}
 }
 
 talk_scene_taishan = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/taishan.dds"	
 	}	
 }	
@@ -6502,204 +6575,496 @@ talk_scene_taishan = {
 
 talk_scene_tengwangge = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/tengwangge.dds"
 	}
 }
 
 talk_scene_wudangshandaoguan = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/wudangshandaoguan.dds"
 	}
 }
 
 talk_scene_wulingyuan = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/wulingyuan.dds"
 	}
 }
 
 talk_scene_yueyanglou = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/yueyanglou.dds"
 	}
 }
 
 talk_scene_yungangshiku = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/yungangshiku.dds"
 	}
 }
 
 talk_scene_bedchamber_east1 = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/bedchamber_east1.dds"
 	}
 }
 
 talk_scene_bedchamber_east2 = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/bedchamber_east2.dds"
 	}
 }
 
 talk_scene_bedchamber_east3 = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/bedchamber_east3.dds"
 	}
 }
 
 talk_scene_ep3_frontend_adventurer = {
 	texture = {
+		trigger = {
+			is_landless_adventurer = yes
+		}
 		reference = "scenes/ep3_frontend_adventurer.dds"
 	}
 }
 
 talk_scene_ep3_frontend_byzantine = {
 	texture = {
+		trigger = {
+			votc_should_use_byzantine_graphics_trigger = yes
+		}
 		reference = "scenes/ep3_frontend_byzantine.dds"
 	}
 }
 
 talk_scene_fp1_frontend_nontribal = {
 	texture = {
+		trigger = {
+			NOT = { government_has_flag = government_is_tribal }
+		}
 		reference = "scenes/fp1_frontend_nontribal.dds"
 	}
 }
 
 talk_scene_fp1_frontend_tribal = {
 	texture = {
+		trigger = {
+			government_has_flag = government_is_tribal
+		}
 		reference = "scenes/fp1_frontend_tribal.dds"
 	}
 }
 
 talk_scene_fp2_frontend_iberian = {
 	texture = {
+		trigger = {
+			culture ?= {
+				has_graphical_iberian_culture_group_trigger = yes
+			}
+		}
 		reference = "scenes/fp2_frontend_iberian.dds"
 	}
 }
 
 talk_scene_fp3_frontend_iranian = {
 	texture = {
+		trigger = {
+			culture ?= {
+				has_graphical_iranian_culture_group_trigger = yes
+			}
+		}
 		reference = "scenes/fp3_frontend_iranian.dds"
 	}
 }
 
 talk_scene_frontend_east = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/frontend_east.dds"
 	}
 }
 
 talk_scene_frontend_india = {
 	texture = {
+		trigger = {
+			has_graphical_india_region_trigger = yes
+		}
 		reference = "scenes/frontend_india.dds"
 	}
 }
 
 talk_scene_frontend_mediterranean = {
 	texture = {
+		trigger = {
+			has_graphical_mediterranean_region_trigger = yes
+		}
 		reference = "scenes/frontend_mediterranean.dds"
 	}
 }
 
 talk_scene_frontend_tribal = {
 	texture = {
+		trigger = {
+			government_has_flag = government_is_tribal
+		}
 		reference = "scenes/frontend_tribal.dds"
 	}
 }
 
 talk_scene_frontend_west = {
 	texture = {
+		trigger = {
+			has_graphical_western_region_trigger = yes
+		}
 		reference = "scenes/frontend_west.dds"
 	}
 }
 
 talk_scene_garden_east1 = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/garden_east1.dds"
 	}
 }
 
 talk_scene_garden_east2 = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/garden_east2.dds"
 	}
 }
 
 talk_scene_hunt_foggy = {
 	texture = {
+		trigger = {
+			involved_activity ?= {
+				has_activity_type = activity_hunt
+			}
+		}
 		reference = "event_scenes/ep2_hunt_foggy_forest.dds"
 	}
 }
 
 talk_scene_iron_throne = {
 	texture = {
+		trigger = {
+			OR = {
+				government_has_flag = government_is_tribal
+				government_has_flag = government_is_clan
+				}
+		}
 		reference = "scenes/iron_throne.dds"
 	}
 }
 
 talk_scene_marketeast = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/marketeast.dds"
 	}
 }
 
 talk_scene_mpo_frontend_nomad = {
 	texture = {
+		trigger = {
+			government_has_flag = government_is_nomadic
+		}
 		reference = "scenes/mpo_frontend_nomad.dds"
 	}
 }
 
 talk_scene_tavern_east = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/tavern_east.dds"
 	}
 }
 
 talk_scene_tgp_frontend_celestial = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/tgp_frontend_celestial.dds"
 	}
 }
 
 talk_scene_tgp_frontend_japan = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/tgp_frontend_japan.dds"
 	}
 }
 
 talk_scene_throneroom_east_empire = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/throneroom_east_empire.dds"
 	}
 }
 
 talk_scene_throneroom_east_empire1 = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/throneroom_east_empire1.dds"
 	}
 }
 
 talk_scene_throneroom_east_empire2 = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/throneroom_east_empire2.dds"
 	}
 }
 
 talk_scene_throneroom_east_fuya = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/throneroom_east_fuya.dds"
 	}
 }
 
 talk_scene_throneroom_east_fuya1 = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/throneroom_east_fuya1.dds"
 	}
 }
 
 talk_scene_throneroom_east_fuya2 = {
 	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
 		reference = "scenes/throneroom_east_fuya2.dds"
+	}
+}
+
+# VOTC Section 9: DDS coverage expansion - new scene cards (L-series)
+# Gated texture mirrors the renderer gate (minus the global_var:talk_scene key); unconditional fallback keeps the thumbnail visible.
+
+talk_scene_bp1_desert = {
+	texture = {
+		trigger = {
+			location = {
+				graphical_wilderness_desert_trigger = yes
+			}
+		}
+		reference = "event_scenes/bp1_desert.dds"
+	}
+	texture = {
+		reference = "event_scenes/bp1_desert.dds"
+	}
+}
+
+talk_scene_garden_mena_day = {
+	texture = {
+		trigger = {
+			OR = {
+				has_graphical_mena_region_trigger = yes
+				has_graphical_african_culture_group_trigger = yes
+				has_graphical_steppe_culture_group_trigger = yes
+			}
+		}
+		reference = "event_scenes/bp1_garden_mena_day.dds"
+	}
+	texture = {
+		reference = "event_scenes/bp1_garden_mena_day.dds"
+	}
+}
+
+talk_scene_hills = {
+	texture = {
+		trigger = {
+			location = {
+				graphical_hills_trigger = yes
+			}
+		}
+		reference = "event_scenes/bp1_hills.dds"
+	}
+	texture = {
+		reference = "event_scenes/bp1_hills.dds"
+	}
+}
+
+talk_scene_falconry_mews = {
+	texture = {
+		trigger = {
+			involved_activity ?= { has_activity_type = activity_hunt }
+		}
+		reference = "event_scenes/ep2_hunt_falconry_mews.dds"
+	}
+	texture = {
+		reference = "event_scenes/ep2_hunt_falconry_mews.dds"
+	}
+}
+
+talk_scene_chariot_track = {
+	texture = {
+		trigger = {
+			involved_activity ?= { has_activity_type = activity_chariot_race }
+		}
+		reference = "event_scenes/ep3_chariots_track.dds"
+	}
+	texture = {
+		reference = "event_scenes/ep3_chariots_track.dds"
+	}
+}
+
+talk_scene_hippodrome = {
+	texture = {
+		trigger = {
+			involved_activity ?= { has_activity_type = activity_chariot_race }
+		}
+		reference = "event_scenes/ep3_hippodrome_chariot_race.dds"
+	}
+	texture = {
+		reference = "event_scenes/ep3_hippodrome_chariot_race.dds"
+	}
+}
+
+talk_scene_ocean_norse = {
+	texture = {
+		trigger = {
+			fp1_should_use_norse_graphics_trigger = yes
+		}
+		reference = "event_scenes/fp1_ocean_norse.dds"
+	}
+	texture = {
+		reference = "event_scenes/fp1_ocean_norse.dds"
+	}
+}
+
+talk_scene_steppe_evening = {
+	texture = {
+		trigger = {
+			OR = {
+				government_has_flag = government_is_nomadic
+				AND = {
+					government_has_flag = government_is_tribal
+					root.location = {
+						culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+					}
+				}
+			}
+		}
+		reference = "event_scenes/mpo_steppe_evening.dds"
+	}
+	texture = {
+		reference = "event_scenes/mpo_steppe_evening.dds"
+	}
+}
+
+talk_scene_festival_ritual_japan = {
+	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
+		reference = "event_scenes/tgp_festival_ritual_japan.dds"
+	}
+	texture = {
+		reference = "event_scenes/tgp_festival_ritual_japan.dds"
+	}
+}
+
+talk_scene_overflowing_river = {
+	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
+		reference = "event_scenes/tgp_overflowing_river.dds"
+	}
+	texture = {
+		reference = "event_scenes/tgp_overflowing_river.dds"
+	}
+}
+
+talk_scene_ruined_holding = {
+	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
+		reference = "event_scenes/tgp_ruined_holding.dds"
+	}
+	texture = {
+		reference = "event_scenes/tgp_ruined_holding.dds"
+	}
+}
+
+talk_scene_tanabata_festival = {
+	texture = {
+		trigger = {
+			has_graphical_east_asia_region_trigger = yes
+		}
+		reference = "event_scenes/tgp_tanabata_festival_japan.dds"
+	}
+	texture = {
+		reference = "event_scenes/tgp_tanabata_festival_japan.dds"
+	}
+}
+
+talk_scene_camp_new = {
+	texture = {
+		reference = "scenes/camp.dds"
+	}
+}
+
+talk_scene_courtyard_night = {
+	texture = {
+		reference = "scenes/courtyard_night.dds"
+	}
+}
+
+talk_scene_market_new = {
+	texture = {
+		reference = "scenes/market.dds"
 	}
 }
