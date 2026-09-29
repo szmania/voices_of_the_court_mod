@@ -9,7 +9,11 @@
         name = widget_show
         trigger_on_create = yes
 
+		# Bug M fix (M-A): strip talk_scene AFTER the talk window widgets are cleared,
+		# so the background never re-evaluates against an unset talk_scene while the
+		# window can still paint (prevents the courtyard.dds fallback flash on close).
 		on_start = "[ExecuteConsoleCommand('GUI.ClearWidgets talk_window_v2 talk_window_counter')]"
+		on_start = "[GetScriptedGui('votc_strip_talk_scene').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 	}
 
 

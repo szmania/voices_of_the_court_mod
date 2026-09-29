@@ -6219,4 +6219,352 @@
 		set_global_variable = { name = votc_background_texture value = flag:texture_tgp_japanese_city }
 	}
 
+	else_if = {
+            global_var:talk_scene = flag:talk_scene_armycamp
+        }
+        set_global_variable = { name = votc_background_texture value = flag:texture_armycamp }
+    }
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east1
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_bedchamber_east1 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east2
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_bedchamber_east2 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east3
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_bedchamber_east3 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_ep3_frontend_adventurer
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_ep3_frontend_adventurer }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_ep3_frontend_byzantine
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_ep3_frontend_byzantine }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_family_meeting_east
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_family_meeting_east }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_fp1_frontend_nontribal
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_fp1_frontend_nontribal }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_fp1_frontend_tribal
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_fp1_frontend_tribal }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_fp2_frontend_iberian
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_fp2_frontend_iberian }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_fp3_frontend_iranian
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_fp3_frontend_iranian }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_frontend_east
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_frontend_east }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_frontend_india
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_frontend_india }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_frontend_mediterranean
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_frontend_mediterranean }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_frontend_tribal
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_frontend_tribal }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_frontend_west
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_frontend_west }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_garden_east1
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_garden_east1 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_garden_east2
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_garden_east2 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_harem
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_harem }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_huanghelou
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_huanghelou }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_hunt_foggy
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_hunt_foggy }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_iron_throne
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_iron_throne }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_kaifenghuangcheng
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_kaifenghuangcheng }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_leshandafou
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_leshandafou }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_lingyinsi
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_lingyinsi }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_marketeast
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_marketeast }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_mpo_frontend_nomad
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_mpo_frontend_nomad }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_shaolinsi
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_shaolinsi }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_taishan
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_taishan }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_tavern_east
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_tavern_east }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_tengwangge
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_tengwangge }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_tgp_frontend_celestial
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_tgp_frontend_celestial }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_tgp_frontend_japan
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_tgp_frontend_japan }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_empire
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_throneroom_east_empire }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_empire1
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_throneroom_east_empire1 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_throneroom_east_empire2 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_throneroom_east_fuya }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya1
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_throneroom_east_fuya1 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya2
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_throneroom_east_fuya2 }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_wudangshandaoguan
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_wudangshandaoguan }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_wulingyuan
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_wulingyuan }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_yueyanglou
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_yueyanglou }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_yungangshiku
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_yungangshiku }
+	}
+	# VOTC Section 9: DDS coverage expansion - new scenes (L-series)
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_bp1_desert
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_bp1_desert }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_garden_mena_day
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_garden_mena_day }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_hills
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_hills }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_falconry_mews
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_falconry_mews }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_chariot_track
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_chariot_track }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_hippodrome
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_hippodrome }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_ocean_norse
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_ocean_norse }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_steppe_evening
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_steppe_evening }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_festival_ritual_japan
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_festival_ritual_japan }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_overflowing_river
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_overflowing_river }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_ruined_holding
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_ruined_holding }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_tanabata_festival
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_tanabata_festival }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_camp_new
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_camp_new }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_courtyard_night
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_courtyard_night }
+	}
+	else_if = {
+		limit = {
+			global_var:talk_scene = flag:talk_scene_market_new
+		}
+		set_global_variable = { name = votc_background_texture value = flag:texture_market_new }
+	}
 }

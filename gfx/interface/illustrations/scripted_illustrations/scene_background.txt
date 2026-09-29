@@ -3480,7 +3480,7 @@ talk_background = {
 #					scope:activity = {
 #						activity.location ?= { steppe_building_gfx_use_indian_trigger = yes }
 #					}
-#				}	
+#				}
 #			}
 #		}
 #	}
@@ -3510,7 +3510,7 @@ talk_background = {
 #					scope:activity = {
 #						activity.location ?= { steppe_building_gfx_use_indian_trigger = yes }
 #					}
-#				}	
+#				}
 #			}
 #		}
 #	}
@@ -12435,4 +12435,901 @@ talk_background = {
 		}
 	}
 
+	texture = {
+		reference = "scenes/armycamp.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_armycamp
+		}
+	}
+
+    environment = {
+        reference = "environment_event_genericcamp"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_armycamp
+        }
+    }
+	texture = {
+		reference = "scenes/bedchamber_east1.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east1
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_bedchamber_east1"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_bedchamber_east1
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/bedchamber_east2.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east2
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_bedchamber_east2"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_bedchamber_east2
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/bedchamber_east3.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east3
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_bedchamber_east3"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_bedchamber_east3
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/ep3_frontend_adventurer.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ep3_frontend_adventurer
+			is_landless_adventurer = yes
+		}
+	}
+    environment = {
+        reference = "environment_ep3_frontend_adventurer_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_ep3_frontend_adventurer
+			is_landless_adventurer = yes
+        }
+    }
+	texture = {
+		reference = "scenes/ep3_frontend_byzantine.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ep3_frontend_byzantine
+			votc_should_use_byzantine_graphics_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_ep3_frontend_byzantine_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_ep3_frontend_byzantine
+			votc_should_use_byzantine_graphics_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/family_meeting_east.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_family_meeting_east
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_family_meeting_east"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_family_meeting_east
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/fp1_frontend_nontribal.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_fp1_frontend_nontribal
+			NOT = { government_has_flag = government_is_tribal }
+		}
+	}
+    environment = {
+        reference = "environment_fp1_frontend_nontribal_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_fp1_frontend_nontribal
+			NOT = { government_has_flag = government_is_tribal }
+        }
+    }
+	texture = {
+		reference = "scenes/fp1_frontend_tribal.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_fp1_frontend_tribal
+			government_has_flag = government_is_tribal
+		}
+	}
+    environment = {
+        reference = "environment_fp1_frontend_tribal_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_fp1_frontend_tribal
+			government_has_flag = government_is_tribal
+        }
+    }
+	texture = {
+		reference = "scenes/fp2_frontend_iberian.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_fp2_frontend_iberian
+			culture ?= {
+				has_graphical_iberian_culture_group_trigger = yes
+			}
+		}
+	}
+    environment = {
+        reference = "environment_fp2_frontend_iberian_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_fp2_frontend_iberian
+			culture ?= {
+				has_graphical_iberian_culture_group_trigger = yes
+			}
+        }
+    }
+	texture = {
+		reference = "scenes/fp3_frontend_iranian.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_fp3_frontend_iranian
+			culture ?= {
+				has_graphical_iranian_culture_group_trigger = yes
+			}
+		}
+	}
+    environment = {
+        reference = "environment_fp3_frontend_iranian_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_fp3_frontend_iranian
+			culture ?= {
+				has_graphical_iranian_culture_group_trigger = yes
+			}
+        }
+    }
+	texture = {
+		reference = "scenes/frontend_east.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_east
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_frontend_east
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/frontend_india.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_india
+			has_graphical_india_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_india_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_frontend_india
+			has_graphical_india_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/frontend_mediterranean.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_mediterranean
+			has_graphical_mediterranean_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_mediterranean_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_frontend_mediterranean
+			has_graphical_mediterranean_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/frontend_tribal.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_tribal
+			government_has_flag = government_is_tribal
+		}
+	}
+    environment = {
+        reference = "environment_frontend_tribal_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_frontend_tribal
+			government_has_flag = government_is_tribal
+        }
+    }
+	texture = {
+		reference = "scenes/frontend_west.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_west
+			has_graphical_western_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_west_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_frontend_west
+			has_graphical_western_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/garden_east1.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_garden_east1
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_tgp_garden_asia"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_garden_east1
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/garden_east2.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_garden_east2
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_tgp_garden_asia"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_garden_east2
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/harem.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_harem
+			has_graphical_mena_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_event_harem"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_harem
+			has_graphical_mena_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/huanghelou.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_huanghelou
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_huanghelou
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/hunt_foggy.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hunt_foggy
+			involved_activity ?= {
+				has_activity_type = activity_hunt
+			}
+		}
+	}
+    environment = {
+        reference = "environment_hunt_foggy_forest"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_hunt_foggy
+			involved_activity ?= {
+				has_activity_type = activity_hunt
+			}
+        }
+    }
+	texture = {
+		reference = "scenes/iron_throne.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_iron_throne
+			AND = {
+				current_date >= 4000.1.1
+				current_date < 9000.1.1
+				government_has_flag = government_is_feudal
+			}
+		}
+	}
+    environment = {
+        reference = "environment_ep2_melee"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_iron_throne
+			AND = {
+				current_date >= 4000.1.1
+				current_date < 9000.1.1
+				government_has_flag = government_is_feudal
+			}
+        }
+    }
+	texture = {
+		reference = "scenes/kaifenghuangcheng.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_kaifenghuangcheng
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_kaifenghuangcheng
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/leshandafou.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_leshandafou
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_leshandafou
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/lingyinsi.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_lingyinsi
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_lingyinsi
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/marketeast.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_marketeast
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_event_market_east"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_marketeast
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/mpo_frontend_nomad.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_mpo_frontend_nomad
+			government_has_flag = government_is_nomadic
+		}
+	}
+    environment = {
+        reference = "environment_mpo_frontend_nomad_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_mpo_frontend_nomad
+			government_has_flag = government_is_nomadic
+        }
+    }
+	texture = {
+		reference = "scenes/shaolinsi.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_shaolinsi
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_shaolinsi
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/taishan.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_taishan
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_taishan
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/tavern_east.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tavern_east
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_tgp_tavern_asia"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_tavern_east
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/tengwangge.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tengwangge
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_tengwangge
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/tgp_frontend_celestial.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tgp_frontend_celestial
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_tgp_frontend_celestial_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_tgp_frontend_celestial
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/tgp_frontend_japan.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tgp_frontend_japan
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_tgp_frontend_japan_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_tgp_frontend_japan
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/throneroom_east_empire.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_empire
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_throneroom_east_empire
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/throneroom_east_empire1.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_empire1
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_throneroom_east_empire1
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/throneroom_east_empire2.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/throneroom_east_fuya.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_throneroom_east_fuya
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/throneroom_east_fuya1.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya1
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_throneroom_east_fuya1
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/throneroom_east_fuya2.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya2
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_throneroom_east_fuya2
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/wudangshandaoguan.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_wudangshandaoguan
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_wudangshandaoguan
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/wulingyuan.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_wulingyuan
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_wulingyuan
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/yueyanglou.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_yueyanglou
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_yueyanglou
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+	texture = {
+		reference = "scenes/yungangshiku.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_yungangshiku
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+    environment = {
+        reference = "environment_frontend_east_main"
+        trigger = {
+            global_var:talk_scene = flag:talk_scene_yungangshiku
+			has_graphical_east_asia_region_trigger = yes
+        }
+    }
+
+	# VOTC Section 9: DDS coverage expansion - new scenes (L-series), inserted before the unconditional fallback
+
+	# Desert Dunes (bp1_desert)
+	texture = {
+		reference = "event_scenes/bp1_desert.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bp1_desert
+			location = {
+				graphical_wilderness_desert_trigger = yes
+			}
+		}
+	}
+	environment = {
+		reference = "environment_event_bp1_desert"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bp1_desert
+			location = {
+				graphical_wilderness_desert_trigger = yes
+			}
+		}
+	}
+
+	# Spice Garden (bp1_garden_mena_day)
+	texture = {
+		reference = "event_scenes/bp1_garden_mena_day.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_garden_mena_day
+			OR = {
+				has_graphical_mena_region_trigger = yes
+				has_graphical_african_culture_group_trigger = yes
+				has_graphical_steppe_culture_group_trigger = yes
+			}
+		}
+	}
+	environment = {
+		reference = "environment_event_garden"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_garden_mena_day
+			OR = {
+				has_graphical_mena_region_trigger = yes
+				has_graphical_african_culture_group_trigger = yes
+				has_graphical_steppe_culture_group_trigger = yes
+			}
+		}
+	}
+
+	# Hill Country (bp1_hills)
+	texture = {
+		reference = "event_scenes/bp1_hills.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hills
+			location = {
+				graphical_hills_trigger = yes
+			}
+		}
+	}
+	environment = {
+		reference = "environment_event_bp1_hills"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hills
+			location = {
+				graphical_hills_trigger = yes
+			}
+		}
+	}
+
+	# Falconry Mews (ep2_hunt_falconry_mews)
+	texture = {
+		reference = "event_scenes/ep2_hunt_falconry_mews.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_falconry_mews
+			involved_activity ?= { has_activity_type = activity_hunt }
+		}
+	}
+	environment = {
+		reference = "environment_hunt_falconry_mews"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_falconry_mews
+			involved_activity ?= { has_activity_type = activity_hunt }
+		}
+	}
+
+	# Chariot Track (ep3_chariots_track)
+	texture = {
+		reference = "event_scenes/ep3_chariots_track.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_chariot_track
+			involved_activity ?= { has_activity_type = activity_chariot_race }
+		}
+	}
+	environment = {
+		reference = "environment_ep3_chariot_track"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_chariot_track
+			involved_activity ?= { has_activity_type = activity_chariot_race }
+		}
+	}
+
+	# Hippodrome (ep3_hippodrome_chariot_race)
+	texture = {
+		reference = "event_scenes/ep3_hippodrome_chariot_race.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hippodrome
+			involved_activity ?= { has_activity_type = activity_chariot_race }
+		}
+	}
+	environment = {
+		reference = "environment_ep3_chariot_race"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hippodrome
+			involved_activity ?= { has_activity_type = activity_chariot_race }
+		}
+	}
+
+	# Norse Waters (fp1_ocean_norse)
+	texture = {
+		reference = "event_scenes/fp1_ocean_norse.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ocean_norse
+			fp1_should_use_norse_graphics_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_fp1_ocean"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ocean_norse
+			fp1_should_use_norse_graphics_trigger = yes
+		}
+	}
+
+	# Steppe Dusk (mpo_steppe_evening)
+	texture = {
+		reference = "event_scenes/mpo_steppe_evening.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_steppe_evening
+			OR = {
+				government_has_flag = government_is_nomadic
+				AND = {
+					government_has_flag = government_is_tribal
+					root.location = {
+						culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+					}
+				}
+			}
+		}
+	}
+	environment = {
+		reference = "environment_mpo_steppe_evening"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_steppe_evening
+			OR = {
+				government_has_flag = government_is_nomadic
+				AND = {
+					government_has_flag = government_is_tribal
+					root.location = {
+						culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+					}
+				}
+			}
+		}
+	}
+
+	# Shrine Ritual (tgp_festival_ritual_japan)
+	texture = {
+		reference = "event_scenes/tgp_festival_ritual_japan.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_festival_ritual_japan
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_festival_ritual_japan"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_festival_ritual_japan
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+
+	# Flooding River (tgp_overflowing_river)
+	texture = {
+		reference = "event_scenes/tgp_overflowing_river.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_overflowing_river
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_overflowing_river"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_overflowing_river
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+
+	# Ruined Holding (tgp_ruined_holding)
+	texture = {
+		reference = "event_scenes/tgp_ruined_holding.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ruined_holding
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_ruined_holding"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ruined_holding
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+
+	# Tanabata Festival (tgp_tanabata_festival_japan)
+	texture = {
+		reference = "event_scenes/tgp_tanabata_festival_japan.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tanabata_festival
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_tanabata_festival_japan"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tanabata_festival
+			has_graphical_east_asia_region_trigger = yes
+		}
+	}
+
+	# Field Camp (mod scenes/camp.dds)
+	texture = {
+		reference = "scenes/camp.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_camp_new
+		}
+	}
+	environment = {
+		reference = "environment_event_genericcamp"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_camp_new
+		}
+	}
+
+	# Night Courtyard (mod scenes/courtyard_night.dds)
+	texture = {
+		reference = "scenes/courtyard_night.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_courtyard_night
+		}
+	}
+	environment = {
+		reference = "environment_event_fp3_courtyard_night"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_courtyard_night
+		}
+	}
+
+	# Bazaar Street (mod scenes/market.dds)
+	texture = {
+		reference = "scenes/market.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_market_new
+		}
+	}
+	environment = {
+		reference = "environment_event_market_west"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_market_new
+		}
+	}
+
+	# Unconditional fallback: guarantees a background even if talk_scene is unset or unmatched
+	texture = {
+		reference = "event_scenes/courtyard.dds"
+	}
+	environment = {
+		reference = "environment_event_courtyard"
+	}
 }

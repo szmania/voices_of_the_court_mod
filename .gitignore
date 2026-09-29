@@ -1,2 +1,7 @@
-# Local mod install helper — machine-specific, not for the repo.
 install_mod.py
+debug/*
+debug*
+.idea/*
+.idea*
+.cecli*
+.cecli.plans.md
