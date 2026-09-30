@@ -13,7 +13,6 @@
         name = widget_show
         trigger_on_create = yes
 		
-		on_start = "[EventWindowData.CopyToClipboard]"
 		
 		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/talk_window_v2.gui talk_window_v2')]"
 	}

@@ -1035,7 +1035,7 @@ mcc_event_v2.7001 = {
 }
 
 #hidden Event fired when initating conversation with someone.
-#The only reason this exist is to open the 'event_window_widget_talk' gui event widget, so we can copy the data to the clipboard using the EventWindowData.CopyToClipboard guifunction.
+#The only reason this exist is to open the 'event_window_widget_talk' gui event widget and emit the VOTC:IN trigger to debug.log.
 mcc_event_v2.8999 = {
 	type = character_event
 	title = votc_placeholder
@@ -1043,12 +1043,12 @@ mcc_event_v2.8999 = {
 	desc = talk_event.9001.desc
 
 	immediate = {
+		debug_log = "VOTC:IN/;/clipboard"
 		scope:recipient = {
 			log_gamedata_v3s = yes
 		}
 	}
 
-	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
 	widget = {
         gui = "event_window_widget_talk_v2"
         container = "custom_widgets_container"
@@ -1062,12 +1062,12 @@ mcc_event_v2.9000 = {
 	desc = talk_event.9001.desc
 
 	immediate = {
+		debug_log = "VOTC:IN/;/clipboard"
 		scope:recipient = {
 			log_gamedata_v3l = yes
 		}
 	}
 
-	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
 	widget = {
         gui = "event_window_widget_talk_v2"
         container = "custom_widgets_container"
@@ -1086,13 +1086,13 @@ mcc_event_v2.9001 = {
 	desc = talk_event.9001.desc
 
 	immediate = {
+		debug_log = "VOTC:IN/;/clipboard"
 		scope:recipient = {
 			log_gamedata_v3 = yes
 		}
 
 	}
 
-	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
 	widget = {
         gui = "event_window_widget_talk_v2"
         container = "custom_widgets_container"
@@ -1118,6 +1118,7 @@ mcc_event_v2.9002 = {
     }
 
 	immediate = {
+		debug_log = "VOTC:CLOSE/;/clipboard"
 		# Bug M fix (M-A): talk_scene is now stripped by votc_strip_talk_scene from the
 		# close widget AFTER GUI.ClearWidgets, so the talk window background never
 		# re-evaluates against an unset talk_scene during the visible close (no courtyard flash).
@@ -1155,6 +1156,10 @@ mcc_event_v2.9003 = {
 	theme = clipboard_transfer_event_theme
 	desc = talk_event.9003.desc
 
+	immediate = {
+		debug_log = "VOTC:EFFECT_ACCEPTED/;/clipboard"
+	}
+
 	widget = {
         gui = "event_window_widget_talk_clear"
         container = "custom_widgets_container"
@@ -1182,7 +1187,6 @@ mcc_event_v2.9999 = {
 	theme = clipboard_transfer_event_theme
 	desc = talk_event.9999.desc
 
-	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
 	widget = {
         gui = "event_window_widget_message_clear"
         container = "custom_widgets_container"

@@ -227,6 +227,10 @@ message_event.361 = {
 	theme = clipboard_transfer_event_theme
 	
 	desc = message_event.361.desc
+
+	immediate = {
+		debug_log = "VOTC:LETTER/;/clipboard"
+	}
 	widget = {
         gui = "event_window_widget_talk_clear"
         container = "custom_widgets_container"
@@ -240,6 +244,10 @@ message_event.362 = {
 	title = votc_placeholder
 	theme = realm
 	desc = message_event.362.desc
+
+	immediate = {
+		debug_log = "VOTC:LETTER_ACCEPTED/;/clipboard"
+	}
 	widget = {
         gui = "event_window_widget_message_open"
         container = "custom_widgets_container"

@@ -8,7 +8,6 @@ hbox = {
 	state = {
         name = widget_show
         trigger_on_create = yes
-		on_start = "[EventWindowData.CopyToClipboard]"
 		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_letter.gui votc_letter')]"
 	}
 
