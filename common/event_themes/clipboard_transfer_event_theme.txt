@@ -1,7 +1,7 @@
 ﻿#the reason I did this is so the annoying bell sound doesn't get played everytime we we write to the clipboard
 clipboard_transfer_event_theme = {
 	background = {
-		reference = throne_room
+		using = Background_Area_Dark
 	}
 
 	icon = {
