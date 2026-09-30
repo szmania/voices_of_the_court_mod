@@ -1074,9 +1074,10 @@ mcc_event_v2.9000 = {
     }
 
 
-	#option ={
-	#	name = "debug"
-	#}
+	option = {
+		name = mcc_event.1002.exit
+		trigger_event = mcc_event_v2.9002
+	}
 }
 
 mcc_event_v2.9001 = {
@@ -1099,9 +1100,10 @@ mcc_event_v2.9001 = {
     }
 
 
-	#option ={
-	#	name = "debug"
-	#}
+	option = {
+		name = mcc_event.1002.exit
+		trigger_event = mcc_event_v2.9002
+	}
 }
 
 #close talk window

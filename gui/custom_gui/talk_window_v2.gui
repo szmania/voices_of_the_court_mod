@@ -5,18 +5,18 @@ window = {
 	movable = no
 	#position = { -80 130 }
 	layer = royal_court
-	
+
 	state = {
 		name = itsshowtime
 		trigger_on_create = yes
 		on_finish = "[GetVariableSystem.Set( 'blur', '1' )]"
-		
+
 	}
 	datacontext = "[GetIllustration('talk_background')]"
 	background = {
 		texture = "[Illustration.GetTexture(GetPlayer.MakeScope)]"
 	}
-  
+
 	# First row from back
 	conversation_partner_v2 = {
 		visible = "[GetGlobalVariable('mcc_character_0').IsSet]"
@@ -120,26 +120,26 @@ window = {
 
 
 
-		button_standard = {
+	button_standard = {
 		parentanchor = top|left
 		position = { 0 0}
 		size = { 60 20 }
 		raw_text = "exit"
-		
-		onclick = "[ExecuteConsoleCommand('event mcc_event_v2.9002')]"		
-		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets talk_window_v2 talk_window_counter')]"		
+
+		onclick = "[ExecuteConsoleCommand('event mcc_event_v2.9002')]"
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets talk_window_v2 talk_window_counter')]"
 	}
-	
+
 	#close window
 	hbox = {
 		name = "talk_window_counter"
-	
+
 		state = {
 			name = _show
 			trigger_on_create = yes
 			on_finish = "[ExecuteConsoleCommand('run votc.txt')]"
 		}
-	
+
 		state = {
 			name = _show2
 			trigger_on_create = yes

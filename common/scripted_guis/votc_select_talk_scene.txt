@@ -4,6 +4,6 @@
             name = talk_scene
             value = scope:selected_scene
         }
-        debug_log = "[VOTC] talk_scene set via selector"
+        debug_log = "VOTC talk_scene set via selector"
     }
 }
