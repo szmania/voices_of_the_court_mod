@@ -7,7 +7,6 @@
         name = widget_show
         trigger_on_create = yes
 
-		on_start = "[EventWindowData.CopyToClipboard]"
 		on_finish = "[EventWindowData.CopyToClipboard]"
 	}
 
