@@ -1,8 +1,8 @@
-version="2.2.0"
+version="2.3.1"
 tags={
 	"Gameplay"
-    "1.19 'Scribe'"
+    "1.20 'Crozier'"
 }
 name="Voices of the Court 2.0 - Community Edition"
-supported_version="1.19.*"
+supported_version="1.20.*"
 path="mod/votc_community_edition"

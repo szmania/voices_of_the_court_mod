@@ -1,17 +1,16 @@
 ﻿#the reason I did this is so the annoying bell sound doesn't get played everytime we we write to the clipboard
 clipboard_transfer_event_theme = {
-	background = {
-	
-		reference = "gfx/interface/icons/event_types/type_domain.dds"
-	}
+    background = {
+        reference = throne_room
+    }
 
-	icon = {	
+    icon = {
 
-		reference = tavern
-	}
-	
-	sound = {			
+        reference = "gfx/interface/icons/event_types/type_diplomacy.dds"
+    }
 
-		reference = reference = "event:/SFX/Events/Themes/sfx_event_theme_type_social"
+	sound = {
+
+		reference = "event:/SFX/Events/Themes/sfx_event_theme_type_social"
 	}
 }
