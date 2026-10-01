@@ -1,6 +1,5 @@
 
 namespace = mcc_event_v2
-namespace = votc_daily_tick
 
 ## TODO: We need to decide who can try to speak with player and where (or will we let player to decide, where to speak with a character)
 ## Probably we could make more such events for another situations, e.g. make event of conversation before/after battle
@@ -1210,30 +1209,4 @@ mcc_event_v2.9999 = {
 	#}
 
 
-}
-
-# VOTC Daily Tick - Hidden self-looping event that emits the current game date
-# to debug.log every day (parsed by the votc-ce app). Started via
-# on_game_start_after_lobby (new game) and re-armed for pre-existing saves via
-# the quarterly_playable_pulse piggyback in common/on_action/votc_on_actions.txt.
-votc_daily_tick.0001 = {
-	type = character_event
-	hidden = yes
-
-	immediate = {
-		# Emit VOTC:DATE to debug.log (vanilla pattern: debug_log = <loc key>)
-		debug_log = talk_event.9999.desc
-
-		# Mark this character's loop as armed, so the quarterly_playable_pulse
-		# piggyback (re-arm for pre-existing saves) does not start a duplicate loop.
-		set_variable = votc_daily_tick_armed
-
-		# Reschedule self for the next day (daily loop; timers persist across saves)
-		trigger_event = {
-			id = votc_daily_tick.0001
-			days = 1
-		}
-	}
-
-	# No options - background tick only
 }
