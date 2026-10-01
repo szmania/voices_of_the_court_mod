@@ -8,7 +8,7 @@ message_event.360 = {
 	theme = diplomacy
 	left_portrait = {
 		character = scope:recipient
-	}	
+	}
 	#orphan = yes
 
 	widget = {
@@ -42,7 +42,7 @@ message_event.360 = {
 
 		# if/else structure to set delivery thread based on variable availability
 		if = {
-			limit = { 
+			limit = {
 				not = { exists = global_var:votc_letter_1 }
 			}
 			set_global_variable = votc_letter_1
@@ -56,7 +56,7 @@ message_event.360 = {
 			}
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				not = { exists = global_var:votc_letter_2 }
 			}
 			# When variable letter2 does not exist, set letter2 as the current thread
@@ -71,7 +71,7 @@ message_event.360 = {
 			}
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				not = { exists = global_var:votc_letter_3 }
 			}
 			# When variable letter3 does not exist, set letter3 as the current thread
@@ -86,7 +86,7 @@ message_event.360 = {
 			}
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				not = { exists = global_var:votc_letter_4 }
 			}
 			# When variable letter4 does not exist, set letter4 as the current thread
@@ -101,7 +101,7 @@ message_event.360 = {
 			}
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				not = { exists = global_var:votc_letter_5 }
 			}
 			# When variable letter5 does not exist, set letter5 as the current thread
@@ -116,7 +116,7 @@ message_event.360 = {
 			}
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				not = { exists = global_var:votc_letter_6 }
 			}
 			# When variable letter6 does not exist, set letter6 as the current thread
@@ -132,7 +132,7 @@ message_event.360 = {
 			#debug_log = "VOTC:LETTER set to thread votc_letter_6"
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				not = { exists = global_var:votc_letter_7 }
 			}
 			# When variable letter7 does not exist, set letter7 as the current thread
@@ -148,7 +148,7 @@ message_event.360 = {
 			#debug_log = "VOTC:LETTER set to thread votc_letter_7"
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				not = { exists = global_var:votc_letter_8 }
 			}
 			# When variable letter8 does not exist, set letter8 as the current thread
@@ -163,7 +163,7 @@ message_event.360 = {
 			}
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				not = { exists = global_var:votc_letter_9 }
 			}
 			# When variable letter9 does not exist, set letter9 as the current thread
@@ -177,7 +177,7 @@ message_event.360 = {
 				value = scope:recipient
 			}
 		}
-		
+
 		# Reserve the post-send checkpoint token before this snapshot is logged.
 		# The app uses it to attach the reply summary even if its run file has not
 		# yet written the new node variables when the next CK3 event fires.
@@ -234,7 +234,7 @@ message_event.361 = {
 	title = votc_placeholder
 	window = fullscreen_event
 	theme = clipboard_transfer_event_theme
-	
+
 	desc = message_event.361.desc
 	widget = {
         gui = "event_window_widget_talk_clear"
@@ -249,6 +249,7 @@ message_event.362 = {
 	title = votc_placeholder
 	theme = realm
 	desc = message_event.362.desc
+	window = fullscreen_event
 	widget = {
         gui = "event_window_widget_message_open"
         container = "custom_widgets_container"
