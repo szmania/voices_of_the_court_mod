@@ -50,6 +50,25 @@ mcc_event_v2.1002 = {
 	window = character_event
 
 	immediate = {
+        remove_global_variable = mcc_character_0
+        remove_global_variable = mcc_character_1
+        remove_global_variable = mcc_character_2
+        remove_global_variable = mcc_character_3
+        remove_global_variable = mcc_character_4
+        remove_global_variable = mcc_character_5
+        remove_global_variable = mcc_character_6
+        remove_global_variable = mcc_character_7
+        remove_global_variable = mcc_character_8
+        remove_global_variable = mcc_character_9
+        remove_global_variable = mcc_character_10
+        remove_global_variable = mcc_character_11
+        remove_global_variable = mcc_character_12
+        remove_global_variable = mcc_character_13
+        remove_global_variable = mcc_character_14
+        remove_global_variable = mcc_character_15
+
+        clear_global_variable_list = mcc_characters_list_v2
+
 		involved_activity = {
 			save_scope_as = activity
 		}
@@ -1040,6 +1059,7 @@ mcc_event_v2.8999 = {
 	title = votc_placeholder
 	theme = clipboard_transfer_event_theme
 	desc = talk_event.9001.desc
+	window = fullscreen_event
 
 	immediate = {
 		scope:recipient = {
@@ -1059,6 +1079,7 @@ mcc_event_v2.9000 = {
 	title = votc_placeholder
 	theme = clipboard_transfer_event_theme
 	desc = talk_event.9001.desc
+	window = fullscreen_event
 
 	immediate = {
 		scope:recipient = {
@@ -1083,6 +1104,7 @@ mcc_event_v2.9001 = {
 	title = votc_placeholder
 	theme = clipboard_transfer_event_theme
 	desc = talk_event.9001.desc
+	window = fullscreen_event
 
 	immediate = {
 		scope:recipient = {
@@ -1195,4 +1217,6 @@ mcc_event_v2.9999 = {
 	#option ={
 	#	name = "debug"
 	#}
+
+
 }

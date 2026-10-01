@@ -25,7 +25,7 @@
 				province_owner = {
 					root.location ?= {
 						OR = {
-							culture ?= { has_graphical_east_asia_culture_group_trigger = yes }
+							culture = { has_graphical_east_asia_culture_group_trigger = yes }
 							steppe_building_gfx_use_east_asian_trigger = yes
 						}
 					}

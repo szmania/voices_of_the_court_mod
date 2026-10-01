@@ -1,8 +1,9 @@
 ﻿log_character_v2 = {
-	debug_log = log_character
+	#debug_log = log_character
+	log_characterr = yes
 
 	#log_relations = yes
-	
+
 	log_opinion_breakdown = yes
 
 	#log_new_relations = yes
@@ -179,7 +180,7 @@ log_secrets = {
 	save_scope_as = votc_mcc_tmp_var
     every_secret = {
 		debug_log = "VOTC:IN/;/secret/;/[PREV.Char.GetID]/;/[THIS.Secret.GetNameNoTooltip]/;/[THIS.Secret.GetDesc]/;/[THIS.Secret.GetCategoryName]/;/[GetSecretType(THIS.Secret)]"
-		
+
 		# Log this secret is is_shunned_for or is_criminal_for liege, court_owner or province owner
 		if = {
 			limit = {
@@ -204,7 +205,7 @@ log_secrets = {
 				debug_log = "VOTC:IN/;/secret_target/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/[PREV.Secret.GetNameNoTooltip]/;/[THIS.Char.GetID]/;/[THIS.Char.GetTitledFirstNameNicknamedNoTooltipRegnal]"
 			}
 		}
-		
+
 		# Log all knowers of this secret
 		every_secret_knower = {
 			save_scope_as = mcc_sec_k
@@ -212,7 +213,7 @@ log_secrets = {
 				NOT = { this = scope:votc_mcc_tmp_var }
 			}
 			debug_log = "VOTC:IN/;/secret_knower/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/[PREV.Secret.GetNameNoTooltip]/;/[THIS.Char.GetID]/;/[THIS.Char.GetTitledFirstNameNicknamedNoTooltipRegnal]"
-			
+
 			# Log if knower spent this secret
 			if = {
 				limit = {
@@ -257,7 +258,7 @@ log_ksecrets = {
 		secret_owner = {
 			debug_log = "VOTC:IN/;/k_secret_owner/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/[THIS.Char.GetID]/;/[THIS.Char.GetTitledFirstNameNicknamedNoTooltipRegnal]"
 		}
-		# Log this secret is is_shunned_for or is_criminal_for 
+		# Log this secret is is_shunned_for or is_criminal_for
 		if = {
 			limit = {
 				is_criminal_for = secret_owner
@@ -281,7 +282,7 @@ log_ksecrets = {
 				debug_log = "VOTC:IN/;/k_secret_target/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/[THIS.Char.GetID]/;/[THIS.Char.GetTitledFirstNameNicknamedNoTooltipRegnal]"
 			}
 		}
-		
+
 		# Log if this character spent this secret
 		if = {
 			limit = {
@@ -303,7 +304,7 @@ log_ksecrets = {
 		else = {
 			debug_log = "VOTC:IN/;/k_secret_can_be_exposed/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/no"
 		}
-		
+
 		# Log all knowers of this secret (for rp might be useful, so character could tell, who told this secret)
 		every_secret_knower = {
 			limit = {
@@ -428,7 +429,7 @@ log_relatives = {
 			limit = {
 				any_parent = {
 					even_if_dead = yes
-					count = 2 
+					count = 2
 				}
 			}
 			every_parent = {
@@ -451,18 +452,18 @@ log_relatives = {
 
 		# kid marital status
 		if = {
-			limit = { 
+			limit = {
 				is_concubine = yes
 			}
 			debug_log = "VOTC:IN/;/kid_is_concubine/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/[THIS.Char.GetConsort.GetID]/;/[THIS.Char.GetConsort.GetFullNameNicknamedNoTooltip]/;/"
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				any_consort = { count > 0 }
 			}
 			every_consort = {
 				if = {
-					limit = { 
+					limit = {
 						is_concubine = yes
 					}
 					debug_log = "VOTC:IN/;/kid_concubine/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/[THIS.Char.GetFullNameNicknamedNoTooltip]"
@@ -478,7 +479,7 @@ log_relatives = {
 				debug_log = "VOTC:IN/;/kid_betrothed/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/[THIS.Char.GetFullNameNicknamedNoTooltip]"
 			}
 		}
-		else = { 
+		else = {
 			debug_log = "VOTC:IN/;/kid_unmarried/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/"
 		}
 		debug_log = "VOTC:IN/;/kid_eob/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/"
@@ -492,14 +493,14 @@ log_relatives = {
 			limit = {
 				any_parent = {
 					even_if_dead = yes
-					count = 2 
+					count = 2
 				}
 			}
 			every_parent = {
 				even_if_dead = yes
 				limit = {
-					NOT = { 
-						is_parent_of = scope:votc_mcc_tmp_var 
+					NOT = {
+						is_parent_of = scope:votc_mcc_tmp_var
 					}
 				}
 				debug_log = "VOTC:IN/;/sibling_other_parent/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/[THIS.Char.GetTitledFirstNameNicknamedNoTooltipRegnal]"
@@ -517,18 +518,18 @@ log_relatives = {
 
 		# sibling marital status
 		if = {
-			limit = { 
+			limit = {
 				is_concubine = yes
 			}
 			debug_log = "VOTC:IN/;/sibling_is_concubine/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/[THIS.Char.GetConsort.GetID]/;/[THIS.Char.GetConsort.GetFullNameNicknamedNoTooltip]/;/"
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				any_consort = { count > 0 }
 			}
 			every_consort = {
 				if = {
-					limit = { 
+					limit = {
 						is_concubine = yes
 					}
 					debug_log = "VOTC:IN/;/sibling_concubine/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/[THIS.Char.GetFullNameNicknamedNoTooltip]"
@@ -544,10 +545,13 @@ log_relatives = {
 				debug_log = "VOTC:IN/;/sibling_betrothed/;/[GetGlobalVariable('votc_mcc_tmp_var').GetCharacter.GetID]/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/[THIS.Char.GetFullNameNicknamedNoTooltip]"
 			}
 		}
-		else = { 
+		else = {
 			debug_log = "VOTC:IN/;/sibling_unmarried/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/"
 		}
 		debug_log = "VOTC:IN/;/sibling_eob/;/[PREV.Char.GetID]/;/[THIS.Char.GetID]/;/"
 	}
+}
+	log_characterr = {
+    	debug_log = "VOTC:IN/;/character/;/[THIS.Char.GetID]/;/[THIS.Char.GetTitledFirstNameNoTooltip]/;/[THIS.Char.GetFullNameNicknamedNoTooltipRegnal]/;/[THIS.Char.GetPrimaryTitle.GetNameNoTooltip]/;/[THIS.Char.GetSheHe]/;/[THIS.Char.GetAge]/;/[THIS.Char.GetGold]/;/[THIS.Char.GetOpinionOf(GetPlayer)]/;/[THIS.Char.GetSexuality]/;/[THIS.Char.GetAIPersonalityNoTooltip]/;/[THIS.Char.GetAIGreed]/;/[THIS.Char.IsIndependentRuler]/;/[THIS.Char.GetLiege.GetFullNameNicknamedNoTooltipRegnal]/;/[THIS.Char.GetConsort.GetFullNameNicknamedNoTooltipRegnal]/;/[THIS.Char.GetCulture.GetName]/;/[THIS.Char.GetFaith.GetName]/;/[THIS.Char.GetHouse.GetName]/;/[THIS.Char.IsRuler]/;/[THIS.Char.GetFirstNameNoTooltip]/;/[THIS.Char.GetCapitalLocation.GetNameNoTooltip]/;/[THIS.Char.GetTopLiege]/;/[THIS.Char.GetProwess]/;/[THIS.Char.IsKnight]/;/[THIS.Char.GetLiege.GetActiveLawInGroupWithFlag('realm_law').GetNameNoTooltip]/;/[THIS.Char.IsLandedRuler]/;/[THIS.Char.GetHeldCourtAndCouncilPositionsString]/;/[THIS.Char.GetPrimaryTitle.GetRankConcept]"
 
 }
