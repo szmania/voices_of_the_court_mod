@@ -726,7 +726,7 @@ mcc_event_v2.1002 = {
 		if = {
 			limit = {
 				AND = {
-					current_date >= 4000.1.1
+					current_date >= 8000.1.1
 					current_date < 9000.1.1
 					government_has_flag = government_is_feudal
 				}
