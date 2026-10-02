@@ -1,0 +1,6 @@
+﻿l_russian:
+
+votc_ai_initiate_event_title:0 "Просьба о разговоре"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] хочет поговорить с вами."
+votc_ai_initiate_accept:0 "Поговорить с [recipient.GetTitledFirstName]"
+votc_ai_initiate_decline:0 "Не сейчас"

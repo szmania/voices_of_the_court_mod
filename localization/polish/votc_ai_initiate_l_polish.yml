@@ -1,0 +1,6 @@
+﻿l_polish:
+
+votc_ai_initiate_event_title:0 "Prośba o rozmowę"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] chce z tobą porozmawiać."
+votc_ai_initiate_accept:0 "Porozmawiaj z [recipient.GetTitledFirstName]"
+votc_ai_initiate_decline:0 "Nie teraz"

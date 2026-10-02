@@ -1,0 +1,6 @@
+﻿l_korean:
+
+votc_ai_initiate_event_title:0 "대화 요청"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName]이(가) 당신과 대화하기를 원합니다."
+votc_ai_initiate_accept:0 "[recipient.GetTitledFirstName] 과 대화하기"
+votc_ai_initiate_decline:0 "지금은 안 함"

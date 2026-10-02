@@ -1,0 +1,6 @@
+﻿l_english:
+
+votc_ai_initiate_event_title:0 "A Conversation Request"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] wishes to speak with you."
+votc_ai_initiate_accept:0 "Speak with [recipient.GetTitledFirstName]"
+votc_ai_initiate_decline:0 "Not now"

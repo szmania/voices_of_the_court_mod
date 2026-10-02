@@ -1,0 +1,6 @@
+﻿l_french:
+
+votc_ai_initiate_event_title:0 "Une demande de conversation"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] souhaite vous parler."
+votc_ai_initiate_accept:0 "Parler avec [recipient.GetTitledFirstName]"
+votc_ai_initiate_decline:0 "Pas maintenant"

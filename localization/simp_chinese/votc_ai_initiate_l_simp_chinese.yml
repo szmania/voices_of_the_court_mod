@@ -1,0 +1,6 @@
+﻿l_simp_chinese:
+
+votc_ai_initiate_event_title:0 "对话请求"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName]想与你交谈｡ "
+votc_ai_initiate_accept:0 "与[recipient.GetTitledFirstName]交谈"
+votc_ai_initiate_decline:0 "现在不行"

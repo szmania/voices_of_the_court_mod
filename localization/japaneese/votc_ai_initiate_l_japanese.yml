@@ -1,0 +1,6 @@
+﻿l_japanese:
+
+votc_ai_initiate_event_title:0 "会話の要求"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName]があなたと話したがっています。"
+votc_ai_initiate_accept:0 "[recipient.GetTitledFirstName]と話す"
+votc_ai_initiate_decline:0 "今はやめておく"

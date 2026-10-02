@@ -1,0 +1,21 @@
+﻿# VOTC AI-initiated conversations (VOTC-182) eligibility triggers.
+#
+# Scope = the candidate AI character; root = the player the request would go to.
+# All trigger names verified against the CK3 1.10.2 authoritative lists
+# (.cecli/temp/trigs.log).
+votc_ai_can_initiate_conversation_trigger = {
+	is_ai = yes
+	is_alive = yes
+	is_adult = yes
+	NOT = { is_imprisoned = yes }
+	# No conversation currently in progress.
+	NOT = { has_global_variable = talk_scene }
+	# A sensible relation to the player: own courtier, family, vassal or liege.
+	OR = {
+		is_courtier_of = root
+		is_close_family_of = root
+		is_extended_family_of = root
+		is_vassal_of = root
+		is_liege_or_above_of = root
+	}
+}
