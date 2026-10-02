@@ -5,23 +5,29 @@
 	movable = no
 	#position = { -80 130 }
 	layer = bottom_bottom
-	
+
 	state = {
 		name = itsshowtime
 		trigger_on_create = yes
 		on_finish = "[GetVariableSystem.Set( 'blur', '1' )]"
-		
+
 	}
 
 	hbox = {
 		name = "letters_runner_counter"
-	
+
 		state = {
 			name = _show
 			trigger_on_create = yes
 			on_finish = "[ExecuteConsoleCommand('run letters.txt')]"
 		}
-	
+
+		state = {
+			name = _show3
+			trigger_on_create = yes
+			on_finish = "[ExecuteConsoleCommand('run votc_letter_actions.txt')]"
+		}
+
 		state = {
 			name = _show2
 			trigger_when = "[Not(GetGlobalVariable('talk_scene').IsSet)]"
