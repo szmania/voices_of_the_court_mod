@@ -255,3 +255,16 @@ message_event.362 = {
         container = "custom_widgets_container"
     }
 }
+
+# Runs letter effects/actions
+message_event.363 = {
+	type = character_event
+	title = votc_placeholder
+	theme = realm
+	desc = message_event.363.desc
+	window = fullscreen_event
+	widget = {
+        gui = "event_window_widget_message_effect"
+        container = "custom_widgets_container"
+    }
+}
