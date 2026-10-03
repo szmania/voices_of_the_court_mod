@@ -1,6 +1,8 @@
 ﻿l_russian:
 
 votc_ai_initiate_event_title:0 "Просьба о разговоре"
-votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] хочет поговорить с вами."
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] хочет поговорить с вами. Встреча назначена в [Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))]."
 votc_ai_initiate_accept:0 "Поговорить с [recipient.GetTitledFirstName]"
 votc_ai_initiate_decline:0 "Не сейчас"
+votc_ai_initiate_setup_title:0 "Настройка разговора"
+votc_ai_initiate_setup_desc:0 "Где должен состояться разговор и кто должен присоединиться к [recipient.GetTitledFirstName]?"

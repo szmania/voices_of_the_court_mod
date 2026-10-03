@@ -1,6 +1,8 @@
 ﻿l_japanese:
 
 votc_ai_initiate_event_title:0 "会話の要求"
-votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName]があなたと話したがっています。"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName]があなたと話したがっています。場所は[Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))]です。"
 votc_ai_initiate_accept:0 "[recipient.GetTitledFirstName]と話す"
 votc_ai_initiate_decline:0 "今はやめておく"
+votc_ai_initiate_setup_title:0 "会話の設定"
+votc_ai_initiate_setup_desc:0 "どこで会話を行い、誰が[recipient.GetTitledFirstName]と一緒に参加しますか?"

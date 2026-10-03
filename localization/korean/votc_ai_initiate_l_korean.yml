@@ -1,6 +1,8 @@
 ﻿l_korean:
 
 votc_ai_initiate_event_title:0 "대화 요청"
-votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName]이(가) 당신과 대화하기를 원합니다."
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName]이(가) 당신과 대화하기를 원합니다. 만날 장소는 [Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))]입니다."
 votc_ai_initiate_accept:0 "[recipient.GetTitledFirstName] 과 대화하기"
 votc_ai_initiate_decline:0 "지금은 안 함"
+votc_ai_initiate_setup_title:0 "대화 설정"
+votc_ai_initiate_setup_desc:0 "대화는 어디에서 진행하고, 누가 [recipient.GetTitledFirstName]과(와) 함께 참여할까요?"
