@@ -856,8 +856,8 @@ votc_build_talk_scene_flags = {
 }
 
 # An AI character at the player's location asks to speak with the player.
-# The AI (scripted random selection) picks the initiator, 0-3 other
-# participants at the location, and the scene, then pops up a request event
+# The AI (scripted random selection) picks the initiator, 2-15 other
+# participants at the location (75% of the time none), and the scene, then pops up a request event
 # the player can accept or decline. Runs on the player's scope.
 votc_ai_initiate_conversation_effect = {
 	# Save the player so nested list access works from candidate scopes.
@@ -879,10 +879,7 @@ votc_ai_initiate_conversation_effect = {
 	}
 	if = {
 		limit = {
-			variable_list_size = {
-				name = votc_ai_initiate_candidates
-				value > 0
-			}
+			has_variable_list = votc_ai_initiate_candidates
 		}
 		# The AI initiator.
 		random_in_list = {
@@ -893,24 +890,58 @@ votc_ai_initiate_conversation_effect = {
 			name = votc_ai_initiator
 			value = scope:recipient
 		}
-		# The AI selects 0-15 other characters at the location to join the
-		# conversation (fits the mcc_character_0..15 slots). They land in the same
-		# list the normal MCC flow uses.
-		every_in_list = {
-			variable = votc_ai_initiate_candidates
-			limit = {
-				NOT = { this = scope:recipient }
-			}
-			random = {
-				chance = 40
-				scope:actor = {
-					if = {
-						limit = {
-							variable_list_size = {
+		# The AI decides whether to bring company: 75% of the time it is just
+		# the initiator and the player; 25% of the time it brings 2-15 other
+		# eligible characters from the location (never the player). They land in
+		# the same list the normal MCC flow uses.
+		random = {
+			chance = 25
+			every_in_list = {
+				variable = votc_ai_initiate_candidates
+				limit = {
+					NOT = { this = scope:recipient }
+				}
+				random = {
+					chance = 50
+					scope:actor = {
+						if = {
+							limit = {
+								OR = {
+									NOT = { has_variable_list = mcc_characters_selected }
+									variable_list_size = {
+										name = mcc_characters_selected
+										value < 15
+									}
+								}
+							}
+							add_to_variable_list = {
 								name = mcc_characters_selected
-								value < 15
+								target = prev
 							}
 						}
+					}
+				}
+			}
+			# Guarantee at least 2 extra participants when the 25% branch fires.
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_variable_list = mcc_characters_selected }
+						variable_list_size = {
+							name = mcc_characters_selected
+							value < 2
+						}
+					}
+				}
+				ordered_in_list = {
+					variable = votc_ai_initiate_candidates
+					limit = {
+						NOT = { this = scope:recipient }
+					}
+					order_by = age
+					min = 0
+					max = 2
+					scope:actor = {
 						add_to_variable_list = {
 							name = mcc_characters_selected
 							target = prev

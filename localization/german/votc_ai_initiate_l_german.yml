@@ -1,8 +1,8 @@
 ﻿l_german:
 
 votc_ai_initiate_event_title:0 "Eine Gesprächsanfrage"
-votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] mochte mit Ihnen sprechen. Es mochte Sie in [Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))] treffen."
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] möchte mit Ihnen sprechen. Es möchte Sie in [Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))] treffen."
 votc_ai_initiate_accept:0 "Mit [recipient.GetTitledFirstName] sprechen"
 votc_ai_initiate_decline:0 "Nicht jetzt"
-votc_ai_initiate_setup_title:0 "Gesprachseinrichtung"
-votc_ai_initiate_setup_desc:0 "Wo soll das Gesprach stattfinden, und wer soll sich [recipient.GetTitledFirstName] anschliessen?"
+votc_ai_initiate_setup_title:0 "Gesprächseinrichtung"
+votc_ai_initiate_setup_desc:0 "Wo soll das Gespräch stattfinden, und wer soll sich [recipient.GetTitledFirstName] anschließen?"
