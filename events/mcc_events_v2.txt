@@ -209,6 +209,18 @@ mcc_event_v2.1003 = {
 
 	option ={
 		name = mcc_event.1002.exit
+		# VOTC-182 4.20: leaving the MCC character-selection popup before the conversation
+		# starts displeases the initiator. Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			scope:recipient = {
+				add_opinion = {
+					target = root
+					modifier = conversation_opinion
+					opinion = -5
+				}
+			}
+		}
 	}
 
 }
@@ -248,6 +260,16 @@ mcc_event_v2.8999 = {
 			limit = { has_global_variable = votc_ai_initiator }
 			debug_log = "VOTC:IN/;/ai_speaks_first/;/[GetGlobalVariable('votc_ai_initiator').GetCharacter.GetID]/;/"
 		}
+		# VOTC-182 4.21: +1 opinion when the conversation starts (player toward the AI initiator). Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
+		}
+
 	}
 
 	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
@@ -273,6 +295,16 @@ mcc_event_v2.9000 = {
 			limit = { has_global_variable = votc_ai_initiator }
 			debug_log = "VOTC:IN/;/ai_speaks_first/;/[GetGlobalVariable('votc_ai_initiator').GetCharacter.GetID]/;/"
 		}
+		# VOTC-182 4.21: +1 opinion when the conversation starts (player toward the AI initiator). Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
+		}
+
 	}
 
 	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
@@ -302,6 +334,15 @@ mcc_event_v2.9001 = {
 		if = {
 			limit = { has_global_variable = votc_ai_initiator }
 			debug_log = "VOTC:IN/;/ai_speaks_first/;/[GetGlobalVariable('votc_ai_initiator').GetCharacter.GetID]/;/"
+		}
+		# VOTC-182 4.21: +1 opinion when the conversation starts (player toward the AI initiator). Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
 		}
 
 	}
@@ -437,16 +478,6 @@ mcc_event_v2.1010 = {
 
 	option = {
 		name = votc_ai_initiate_accept
-		# VOTC-182 4.5/4.12: +1 opinion from player toward the AI initiator.
-		# Only applies to AI-initiated conversations.
-		if = {
-			limit = { has_global_variable = votc_ai_initiator }
-			add_opinion = {
-				target = scope:recipient
-				modifier = conversation_opinion
-				opinion = 1
-			}
-		}
 		# VOTC-182 4.8: open the setup popup instead of starting directly.
 		trigger_event = mcc_event_v2.1011
 	}
@@ -528,5 +559,14 @@ mcc_event_v2.1011 = {
 		remove_global_variable = votc_ai_initiator
 		remove_global_variable = talk_scene
 		clear_variable_list = mcc_characters_selected
+	}
+}
+
+# VOTC-182 4.19: monthly self-sustaining tick for AI-initiated conversations.
+mcc_event_v2.1012 = {
+	hidden = yes
+	immediate = {
+		remove_character_flag = votc_ai_tick_armed
+		votc_ai_initiate_conversation_effect = yes
 	}
 }
