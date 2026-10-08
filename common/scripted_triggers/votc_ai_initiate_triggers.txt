@@ -8,6 +8,8 @@ votc_ai_can_initiate_conversation_trigger = {
 	is_alive = yes
 	is_adult = yes
 	NOT = { is_imprisoned = yes }
+	# The AI cannot initiate twice within the cooldown window.
+	NOT = { has_character_flag = votc_ai_initiate_cooldown }
 	# No conversation currently in progress.
 	NOT = { has_global_variable = talk_scene }
 	# A sensible relation to the player: own courtier, family, vassal or liege.

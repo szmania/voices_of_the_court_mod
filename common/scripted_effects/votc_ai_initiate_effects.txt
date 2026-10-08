@@ -859,10 +859,10 @@ votc_build_talk_scene_flags = {
 # The AI (scripted random selection) picks the initiator, 2-15 other
 # participants at the location (75% of the time none), and the scene, then pops up a request event
 # the player can accept or decline. Runs on the player's scope.
-votc_ai_initiate_conversation_effect = {
-	# Save the player so nested list access works from candidate scopes.
-	save_scope_as = actor
+votc_ai_initiate_request_effect = {
+
 	clear_variable_list = mcc_characters_selected
+
 	# Build the AI candidate list at the player's location.
 	location = {
 		every_character_in_location = {
@@ -961,15 +961,58 @@ votc_ai_initiate_conversation_effect = {
 		}
 		clear_variable_list = talk_scene_flags
 		# Cooldowns so neither side is asked again immediately.
-		add_character_flag = { flag = votc_ai_initiate_cooldown days = 60 }
+		add_character_flag = { flag = votc_ai_initiate_cooldown days = 10 }
 		scope:recipient = {
-			add_character_flag = { flag = votc_ai_initiate_cooldown days = 60 }
+			add_character_flag = { flag = votc_ai_initiate_cooldown days = 10 }
 		}
 		clear_variable_list = votc_ai_initiate_candidates
 		# Popup to the player: accept or decline the conversation.
 		trigger_event = mcc_event_v2.1010
 	}
 	else = {
+
 		clear_variable_list = votc_ai_initiate_candidates
+
 	}
+
+}
+
+
+
+votc_ai_initiate_conversation_effect = {
+
+	# Save the player so nested list access works from candidate scopes.
+
+	save_scope_as = actor
+
+	# 0-2 requests per month, randomized.
+
+	random_list = {
+
+		60 = {}
+
+		30 = { votc_ai_initiate_request_effect = yes }
+
+		10 = {
+
+			votc_ai_initiate_request_effect = yes
+
+			votc_ai_initiate_request_effect = yes
+
+		}
+
+	}
+
+	# Re-arm the monthly tick so the loop sustains itself.
+
+	if = {
+
+		limit = { NOT = { has_character_flag = votc_ai_tick_armed } }
+
+		add_character_flag = { flag = votc_ai_tick_armed days = 35 }
+
+		trigger_event = { id = mcc_event_v2.1012 days = 30 }
+
+	}
+
 }
