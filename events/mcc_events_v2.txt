@@ -88,9 +88,9 @@ mcc_event_v2.1002 = {
 		trigger_event = mcc_event_v2.8999
 	}
 	option ={
-		#trigger = {
-		#	has_global_variable = talk_scene
-		#}
+		trigger = {
+			NOT = { has_variable_list = mcc_characters_selected }
+		}
 		name = votc_talk_alone
 		trigger_event = mcc_event_v2.9000
 	}
@@ -117,6 +117,16 @@ mcc_event_v2.1002 = {
 
 	option ={
 		name = mcc_event.1002.exit
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			scope:recipient = {
+				add_opinion = {
+					target = root
+					modifier = conversation_opinion
+					opinion = -5
+				}
+			}
+		}
 	}
 }
 
@@ -475,7 +485,18 @@ mcc_event_v2.1011 = {
 	}
 
 	option = {
+		name = votc_talk_selected
+		trigger = {
+			has_variable_list = mcc_characters_selected
+		}
+		trigger_event = mcc_event_v2.8999
+	}
+
+	option = {
 		name = votc_talk_alone
+		trigger = {
+			NOT = { has_variable_list = mcc_characters_selected }
+		}
 		trigger_event = mcc_event_v2.8999
 	}
 
