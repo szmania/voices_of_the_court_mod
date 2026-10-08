@@ -80,6 +80,13 @@ mcc_event_v2.1002 = {
         container = "custom_widgets_container"
     }
 
+	option = {
+		name = votc_talk_selected
+		trigger = {
+			has_variable_list = mcc_characters_selected
+		}
+		trigger_event = mcc_event_v2.8999
+	}
 	option ={
 		#trigger = {
 		#	has_global_variable = talk_scene
