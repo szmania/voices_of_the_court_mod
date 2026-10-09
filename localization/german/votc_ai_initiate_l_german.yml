@@ -1,7 +1,7 @@
 ﻿l_german:
 
 votc_ai_initiate_event_title:0 "Eine Gesprächsanfrage"
-votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] möchte mit Ihnen sprechen. Es möchte Sie in [Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))] treffen.[AddLocalizationIf( DataModelHasItems( GetPlayer.MakeScope.GetList( 'mcc_characters_selected' ) ), 'VOTC_AI_INITIATE_JOINING' )]"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] möchte mit Ihnen sprechen und Sie in [Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))] treffen.[AddLocalizationIf( DataModelHasItems( GetPlayer.MakeScope.GetList( 'mcc_characters_selected' ) ), 'VOTC_AI_INITIATE_JOINING' )]"
 votc_ai_initiate_accept:0 "Mit [recipient.GetTitledFirstName] sprechen"
 votc_ai_initiate_decline:0 "Nicht jetzt"
 votc_ai_initiate_setup_title:0 "Gesprächseinrichtung"
