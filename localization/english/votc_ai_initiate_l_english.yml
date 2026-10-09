@@ -1,8 +1,10 @@
 ﻿l_english:
 
 votc_ai_initiate_event_title:0 "A Conversation Request"
-votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] wishes to speak with you. It wants to meet at [Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))]."
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName] wishes to speak with you. It wants to meet at [Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))].[AddLocalizationIf( DataModelHasItems( GetPlayer.MakeScope.GetList( 'mcc_characters_selected' ) ), 'VOTC_AI_INITIATE_JOINING' )]"
 votc_ai_initiate_accept:0 "Speak with [recipient.GetTitledFirstName]"
 votc_ai_initiate_decline:0 "Not now"
 votc_ai_initiate_setup_title:0 "Conversation Setup"
 votc_ai_initiate_setup_desc:0 "Where should the conversation take place, and who should join [recipient.GetTitledFirstName]?"
+VOTC_AI_INITIATE_JOINING:0 " Joining: [DataModelJoinList( GetPlayer.MakeScope.GetList( 'mcc_characters_selected' ), 'VOTC_AI_INITIATE_JOINING_ITEM', 'MODEL_LIST_SEPARATOR_AND_LIST' )]"
+VOTC_AI_INITIATE_JOINING_ITEM:0 "[Scope.Char.GetTitledFirstName]"

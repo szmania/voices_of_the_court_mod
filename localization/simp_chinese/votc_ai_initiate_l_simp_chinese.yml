@@ -1,8 +1,10 @@
 ﻿l_simp_chinese:
 
 votc_ai_initiate_event_title:0 "对话请求"
-votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName]想与你交谈｡对方想在[Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))]与你会面。"
+votc_ai_initiate_event_desc:0 "[recipient.GetTitledFirstName]想与你交谈｡对方想在[Localize(Concatenate(GetGlobalVariable('talk_scene').GetFlagName, '_title'))]与你会面。[AddLocalizationIf( DataModelHasItems( GetPlayer.MakeScope.GetList( 'mcc_characters_selected' ) ), 'VOTC_AI_INITIATE_JOINING' )]"
 votc_ai_initiate_accept:0 "与[recipient.GetTitledFirstName]交谈"
 votc_ai_initiate_decline:0 "现在不行"
 votc_ai_initiate_setup_title:0 "对话设置"
 votc_ai_initiate_setup_desc:0 "对话应在何处进行，谁将与[recipient.GetTitledFirstName]一同参加?"
+VOTC_AI_INITIATE_JOINING:0 " Joining: [DataModelJoinList( GetPlayer.MakeScope.GetList( 'mcc_characters_selected' ), 'VOTC_AI_INITIATE_JOINING_ITEM', 'MODEL_LIST_SEPARATOR_AND_LIST' )]"
+VOTC_AI_INITIATE_JOINING_ITEM:0 "[Scope.Char.GetTitledFirstName]"

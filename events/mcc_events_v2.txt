@@ -85,21 +85,54 @@ mcc_event_v2.1002 = {
 		trigger = {
 			has_variable_list = mcc_characters_selected
 		}
+		# VOTC-182 4.5/4.12: +1 opinion from player toward the AI initiator.
+		# Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
+		}
 		trigger_event = mcc_event_v2.8999
+		remove_global_variable = votc_ai_initiator
 	}
 	option ={
 		trigger = {
 			NOT = { has_variable_list = mcc_characters_selected }
 		}
 		name = votc_talk_alone
+		# VOTC-182 4.5/4.12: +1 opinion from player toward the AI initiator.
+		# Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
+		}
 		trigger_event = mcc_event_v2.9000
+		remove_global_variable = votc_ai_initiator
 	}
 	option ={
 		#trigger = {
 		#	has_global_variable = talk_scene
 		#}
 		name = votc_talk_together
+		# VOTC-182 4.5/4.12: +1 opinion from player toward the AI initiator.
+		# Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
+		}
 		trigger_event = mcc_event_v2.9001
+		remove_global_variable = votc_ai_initiator
 	}
 
 	option ={
@@ -127,6 +160,7 @@ mcc_event_v2.1002 = {
 				}
 			}
 		}
+		remove_global_variable = votc_ai_initiator
 	}
 }
 
@@ -194,7 +228,18 @@ mcc_event_v2.1003 = {
 		#	has_global_variable = talk_scene
 		#}
 		name = votc_talk_selected
+		# VOTC-182 4.5/4.12: +1 opinion from player toward the AI initiator.
+		# Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
+		}
 		trigger_event = mcc_event_v2.8999
+		remove_global_variable = votc_ai_initiator
 	}
 
 	option ={
@@ -209,8 +254,6 @@ mcc_event_v2.1003 = {
 
 	option ={
 		name = mcc_event.1002.exit
-		# VOTC-182 4.20: leaving the MCC character-selection popup before the conversation
-		# starts displeases the initiator. Only applies to AI-initiated conversations.
 		if = {
 			limit = { has_global_variable = votc_ai_initiator }
 			scope:recipient = {
@@ -221,8 +264,8 @@ mcc_event_v2.1003 = {
 				}
 			}
 		}
+		remove_global_variable = votc_ai_initiator
 	}
-
 }
 #log_backgrounds
 mcc_event_v2.7001 = {
@@ -260,16 +303,6 @@ mcc_event_v2.8999 = {
 			limit = { has_global_variable = votc_ai_initiator }
 			debug_log = "VOTC:IN/;/ai_speaks_first/;/[GetGlobalVariable('votc_ai_initiator').GetCharacter.GetID]/;/"
 		}
-		# VOTC-182 4.21: +1 opinion when the conversation starts (player toward the AI initiator). Only applies to AI-initiated conversations.
-		if = {
-			limit = { has_global_variable = votc_ai_initiator }
-			add_opinion = {
-				target = scope:recipient
-				modifier = conversation_opinion
-				opinion = 1
-			}
-		}
-
 	}
 
 	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
@@ -295,16 +328,6 @@ mcc_event_v2.9000 = {
 			limit = { has_global_variable = votc_ai_initiator }
 			debug_log = "VOTC:IN/;/ai_speaks_first/;/[GetGlobalVariable('votc_ai_initiator').GetCharacter.GetID]/;/"
 		}
-		# VOTC-182 4.21: +1 opinion when the conversation starts (player toward the AI initiator). Only applies to AI-initiated conversations.
-		if = {
-			limit = { has_global_variable = votc_ai_initiator }
-			add_opinion = {
-				target = scope:recipient
-				modifier = conversation_opinion
-				opinion = 1
-			}
-		}
-
 	}
 
 	#this widget is what calls the EventWindowData.CopyToClipboard guifunction,
@@ -334,15 +357,6 @@ mcc_event_v2.9001 = {
 		if = {
 			limit = { has_global_variable = votc_ai_initiator }
 			debug_log = "VOTC:IN/;/ai_speaks_first/;/[GetGlobalVariable('votc_ai_initiator').GetCharacter.GetID]/;/"
-		}
-		# VOTC-182 4.21: +1 opinion when the conversation starts (player toward the AI initiator). Only applies to AI-initiated conversations.
-		if = {
-			limit = { has_global_variable = votc_ai_initiator }
-			add_opinion = {
-				target = scope:recipient
-				modifier = conversation_opinion
-				opinion = 1
-			}
 		}
 
 	}
@@ -520,6 +534,16 @@ mcc_event_v2.1011 = {
 		trigger = {
 			has_variable_list = mcc_characters_selected
 		}
+		# VOTC-182 4.5/4.12: +1 opinion from player toward the AI initiator.
+		# Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
+		}
 		trigger_event = mcc_event_v2.8999
 	}
 
@@ -527,6 +551,16 @@ mcc_event_v2.1011 = {
 		name = votc_talk_alone
 		trigger = {
 			NOT = { has_variable_list = mcc_characters_selected }
+		}
+		# VOTC-182 4.5/4.12: +1 opinion from player toward the AI initiator.
+		# Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
 		}
 		trigger_event = mcc_event_v2.8999
 	}
