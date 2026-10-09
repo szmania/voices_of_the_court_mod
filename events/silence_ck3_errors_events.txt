@@ -477,6 +477,7 @@ votc_silence_ck3_errors_event.0001 = {
 			votc_silence_ck3_errors_effect = { ERROR = votc_letter_distance }
 			votc_silence_ck3_errors_effect = { ERROR = message_second_scope_letter_8 }
 			votc_silence_ck3_errors_effect = { ERROR = selected_scene }
+			votc_silence_ck3_errors_effect = { ERROR = votc_ai_conversation_frequency }
         }
     }
 }

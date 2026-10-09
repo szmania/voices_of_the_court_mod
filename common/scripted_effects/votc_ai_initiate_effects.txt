@@ -985,22 +985,49 @@ votc_ai_initiate_conversation_effect = {
 
 	save_scope_as = actor
 
-	# 0-2 requests per month, randomized.
 
-	random_list = {
-
-		80 = {}
-
-		15 = { votc_ai_initiate_request_effect = yes }
-
-		5 = {
-
-			votc_ai_initiate_request_effect = yes
-
-			votc_ai_initiate_request_effect = yes
-
+	# VOTC-183: Frequency branches. global_var:votc_ai_conversation_frequency is set
+	# by the votc_ai_frequency_*_decision decisions (0=Off, 1=Low, 2=Default, 3=High).
+	# Default (2) preserves the original 80/15/5 weights. The else block covers saves
+	# from before the setting existed (variable unset) by falling back to Default.
+	if = {
+		limit = { global_var:votc_ai_conversation_frequency = 0 }
+		random_list = {
+			100 = {}
 		}
-
+	}
+	else_if = {
+		limit = { global_var:votc_ai_conversation_frequency = 1 }
+		random_list = {
+			80 = {}
+			15 = { votc_ai_initiate_request_effect = yes }
+			5 = {
+				votc_ai_initiate_request_effect = yes
+				votc_ai_initiate_request_effect = yes
+			}
+		}
+	}
+	else_if = {
+		limit = { global_var:votc_ai_conversation_frequency = 3 }
+		random_list = {
+			40 = {}
+			40 = { votc_ai_initiate_request_effect = yes }
+			20 = {
+				votc_ai_initiate_request_effect = yes
+				votc_ai_initiate_request_effect = yes
+			}
+		}
+	}
+	else = {
+		# Default (2) or unset variable: original 80/15/5 weights.
+		random_list = {
+			80 = {}
+			15 = { votc_ai_initiate_request_effect = yes }
+			5 = {
+				votc_ai_initiate_request_effect = yes
+				votc_ai_initiate_request_effect = yes
+			}
+		}
 	}
 
 	# Re-arm the monthly tick so the loop sustains itself.

@@ -1,0 +1,103 @@
+﻿# VOTC-183: User-controlled AI conversation frequency.
+# Four mutually exclusive decisions set global_var:votc_ai_conversation_frequency (0-3).
+# The currently active setting's decision is hidden via is_shown.
+
+votc_ai_frequency_off_decision = {
+	decision_group_type = decisions
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
+
+	is_shown = {
+		NOT = { global_var:votc_ai_conversation_frequency = 0 }
+	}
+
+	effect = {
+		custom_tooltip = votc_ai_frequency_off_decision_effect_desc
+		set_global_variable = {
+			name = votc_ai_conversation_frequency
+			value = 0
+		}
+	}
+
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+}
+
+votc_ai_frequency_low_decision = {
+	decision_group_type = decisions
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
+
+	is_shown = {
+		NOT = { global_var:votc_ai_conversation_frequency = 1 }
+	}
+
+	effect = {
+		custom_tooltip = votc_ai_frequency_low_decision_effect_desc
+		set_global_variable = {
+			name = votc_ai_conversation_frequency
+			value = 1
+		}
+	}
+
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+}
+
+votc_ai_frequency_default_decision = {
+	decision_group_type = decisions
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
+
+	is_shown = {
+		NOT = { global_var:votc_ai_conversation_frequency = 2 }
+	}
+
+	effect = {
+		custom_tooltip = votc_ai_frequency_default_decision_effect_desc
+		set_global_variable = {
+			name = votc_ai_conversation_frequency
+			value = 2
+		}
+	}
+
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+}
+
+votc_ai_frequency_high_decision = {
+	decision_group_type = decisions
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
+
+	is_shown = {
+		NOT = { global_var:votc_ai_conversation_frequency = 3 }
+	}
+
+	effect = {
+		custom_tooltip = votc_ai_frequency_high_decision_effect_desc
+		set_global_variable = {
+			name = votc_ai_conversation_frequency
+			value = 3
+		}
+	}
+
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+}
