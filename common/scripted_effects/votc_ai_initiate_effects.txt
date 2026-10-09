@@ -1000,7 +1000,7 @@ votc_ai_initiate_conversation_effect = {
 		limit = { global_var:votc_ai_conversation_frequency = 1 }
 		random_list = {
 			90 = {}
-			10 = { votc_ai_initiate_request_effect = yes }
+			8 = { votc_ai_initiate_request_effect = yes }
 			2 = {
 				votc_ai_initiate_request_effect = yes
 				votc_ai_initiate_request_effect = yes
@@ -1022,8 +1022,8 @@ votc_ai_initiate_conversation_effect = {
 		# Default (2) or unset variable: original 80/15/5 weights.
 		random_list = {
 			80 = {}
-			15 = { votc_ai_initiate_request_effect = yes }
-			5 = {
+			16 = { votc_ai_initiate_request_effect = yes }
+			4 = {
 				votc_ai_initiate_request_effect = yes
 				votc_ai_initiate_request_effect = yes
 			}
