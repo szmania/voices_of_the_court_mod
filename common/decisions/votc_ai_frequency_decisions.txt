@@ -10,7 +10,10 @@ votc_ai_frequency_off_decision = {
 	}
 
 	is_shown = {
-		NOT = { global_var:votc_ai_conversation_frequency = 0 }
+		trigger_if = {
+			limit = { has_global_variable = votc_ai_conversation_frequency }
+			NOT = { global_var:votc_ai_conversation_frequency = 0 }
+		}
 	}
 
 	effect = {
@@ -35,7 +38,10 @@ votc_ai_frequency_low_decision = {
 	}
 
 	is_shown = {
-		NOT = { global_var:votc_ai_conversation_frequency = 1 }
+		trigger_if = {
+			limit = { has_global_variable = votc_ai_conversation_frequency }
+			NOT = { global_var:votc_ai_conversation_frequency = 1 }
+		}
 	}
 
 	effect = {
@@ -60,7 +66,10 @@ votc_ai_frequency_default_decision = {
 	}
 
 	is_shown = {
-		NOT = { global_var:votc_ai_conversation_frequency = 2 }
+		trigger_if = {
+			limit = { has_global_variable = votc_ai_conversation_frequency }
+			NOT = { global_var:votc_ai_conversation_frequency = 2 }
+		}
 	}
 
 	effect = {
@@ -85,7 +94,10 @@ votc_ai_frequency_high_decision = {
 	}
 
 	is_shown = {
-		NOT = { global_var:votc_ai_conversation_frequency = 3 }
+		trigger_if = {
+			limit = { has_global_variable = votc_ai_conversation_frequency }
+			NOT = { global_var:votc_ai_conversation_frequency = 3 }
+		}
 	}
 
 	effect = {
