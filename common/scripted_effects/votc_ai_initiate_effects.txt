@@ -989,11 +989,11 @@ votc_ai_initiate_conversation_effect = {
 
 	random_list = {
 
-		60 = {}
+		80 = {}
 
-		30 = { votc_ai_initiate_request_effect = yes }
+		15 = { votc_ai_initiate_request_effect = yes }
 
-		10 = {
+		5 = {
 
 			votc_ai_initiate_request_effect = yes
 
