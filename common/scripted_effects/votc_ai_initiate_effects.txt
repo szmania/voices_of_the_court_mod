@@ -999,9 +999,9 @@ votc_ai_initiate_conversation_effect = {
 	else_if = {
 		limit = { global_var:votc_ai_conversation_frequency = 1 }
 		random_list = {
-			80 = {}
-			15 = { votc_ai_initiate_request_effect = yes }
-			5 = {
+			90 = {}
+			10 = { votc_ai_initiate_request_effect = yes }
+			2 = {
 				votc_ai_initiate_request_effect = yes
 				votc_ai_initiate_request_effect = yes
 			}
