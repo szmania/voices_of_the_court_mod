@@ -195,6 +195,7 @@ votc_conversation_history_decision_tooltip:0 "Abrir el visor de historial de con
 votc_conversation_history_decision_confirm:0 "Ver historial de conversaciones"
 votc_conversation_history_decision_effect_desc:0 "Abre el visor de historial de conversaciones. Esto también sincroniza la época del punto de control para que el visor solo muestre conversaciones consistentes con tu guardado actual."
 
+
 talk_scene_family_meeting_east_title:0 "Eastern Family Meeting"
 talk_scene_harem_title:0 "Harem"
 talk_scene_armycamp_title:0 "Campamento militar"
@@ -253,3 +254,4 @@ talk_scene_camp_new_title:0 "Campamento de Campaña"
 talk_scene_courtyard_night_title:0 "Patio Nocturno"
 talk_scene_market_new_title:0 "Calle del Bazar"
 talk_scene_iron_throne_title:0 "Trono de Hierro"
+votc_continue_button:0 "Continuar"

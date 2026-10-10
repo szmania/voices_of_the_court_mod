@@ -210,6 +210,7 @@ votc_conversation_history_decision_tooltip:0 "Открыть просмотрщ�
 votc_conversation_history_decision_confirm:0 "Просмотр истории диалогов"
 votc_conversation_history_decision_effect_desc:0 "Открывает просмотрщик истории диалогов. Это также синхронизирует эпоху контрольной точки, чтобы просмотрщик показывал только диалоги, соответствующие текущему сохранению."
 
+
 talk_scene_family_meeting_east_title:0 "Eastern Family Meeting"
 talk_scene_harem_title:0 "Harem"
 talk_scene_armycamp_title:0 "Армейский лагерь"
@@ -268,3 +269,4 @@ talk_scene_camp_new_title:0 "Полевой лагерь"
 talk_scene_courtyard_night_title:0 "Ночной двор"
 talk_scene_market_new_title:0 "Базарная улица"
 talk_scene_iron_throne_title:0 "Железный трон"
+votc_continue_button:0 "Продолжить"

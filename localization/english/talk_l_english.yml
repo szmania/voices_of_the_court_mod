@@ -255,3 +255,4 @@ votc_conversation_history_decision:0 "View Conversation History"
 votc_conversation_history_decision_tooltip:0 "Open the conversation history viewer in the VOTC app."
 votc_conversation_history_decision_confirm:0 "View Conversation History"
 votc_conversation_history_decision_effect_desc:0 "Opens the conversation history viewer. This also synchronizes the checkpoint epoch so the viewer only shows conversations consistent with your current save."
+

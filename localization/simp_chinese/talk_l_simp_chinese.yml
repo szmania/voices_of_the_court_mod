@@ -198,6 +198,7 @@ votc_conversation_history_decision_tooltip:0 "在 VOTC 应用中打开对话历�
 votc_conversation_history_decision_confirm:0 "查看对话历史"
 votc_conversation_history_decision_effect_desc:0 "打开对话历史查看器。这也会同步检查点 epoch，使查看器只显示与当前存档一致的对话。"
 
+
 talk_scene_family_meeting_east_title:0 "Eastern Family Meeting"
 talk_scene_harem_title:0 "Harem"
 talk_scene_armycamp_title:0 "军营"
