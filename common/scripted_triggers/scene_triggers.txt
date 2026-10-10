@@ -123,3 +123,12 @@ AND = {
 votc_should_use_byzantine_graphics_trigger = {
 	culture ?= { has_building_gfx = byzantine_building_gfx }
 }
+
+# VOTC AGOT: true when the AGOT timeline is active (internal date years 8000-9000).
+# Used by AGOT-gated texture blocks in the scene illustration files.
+votc_is_agot_timeline_trigger = {
+	AND = {
+		current_date >= 8000.1.1
+		current_date < 9000.1.1
+	}
+}
