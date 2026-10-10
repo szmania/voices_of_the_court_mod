@@ -1,35 +1,15 @@
-
-﻿#datacontext
-
-is
-
-the
-
-talking
-
-partner,
-
-use
-
-the
-
-'talk_first_scope'
-
-global
-
-variable
-
-to
-
-scope
-
-the
-
-player
-
+#datacontext is the talking partner, use the 'talk_first_scope' global variable to scope the player
 talk_background = {
+
 	texture = {
 		reference = "scenes_agot/alley_night_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_alley_night
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_alley"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_alley_night
 			votc_is_agot_timeline_trigger = yes
@@ -133,6 +113,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/alley_day_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_alley_day
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_alley_day"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_alley_day
 			votc_is_agot_timeline_trigger = yes
@@ -311,6 +298,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_armory"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_armory
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_tent_interior_mongol.dds"
 		trigger = {
@@ -396,6 +390,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_battlefield"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_battlefield
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/battlefield.dds"
 		trigger = {
@@ -412,6 +413,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/temple_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_temple
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_temple"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_temple
 			votc_is_agot_timeline_trigger = yes
@@ -898,6 +906,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_corridor"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_corridor_night
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_campfire_steppe.dds"
 		trigger = {
@@ -1235,6 +1250,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_corridor_day"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_corridor_day
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_camp_steppe.dds"
 		trigger = {
@@ -1529,6 +1551,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/council_chamber_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_council_chamber
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_council"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_council_chamber
 			votc_is_agot_timeline_trigger = yes
@@ -1972,6 +2001,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/courtyard_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_courtyard
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_bp2_courtyard"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_courtyard
 			votc_is_agot_timeline_trigger = yes
@@ -2608,6 +2644,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_dungeon"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_dungeon
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/fp1_tribal_prison.dds"
 		trigger = {
@@ -2773,6 +2816,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_fp1_ocean"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ocean
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/fp1_ocean.dds"
 		trigger = {
@@ -2789,6 +2839,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/terrain_travel_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_terrain_travel
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_forest"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_terrain_travel
 			votc_is_agot_timeline_trigger = yes
@@ -3550,6 +3607,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_docks"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_docks
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/tgp_village_sea.dds"
 		trigger = {
@@ -3754,6 +3818,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_farms"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_farmland
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/tgp_rice_fields.dds"
 		trigger = {
@@ -3832,6 +3903,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/feast_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_feast
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_activity_western_feast"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_feast
 			votc_is_agot_timeline_trigger = yes
@@ -4271,6 +4349,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_gallows"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_gallows
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_campfire_steppe.dds"
 		trigger = {
@@ -4331,6 +4416,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/garden_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_garden
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_garden"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_garden
 			votc_is_agot_timeline_trigger = yes
@@ -4809,6 +4901,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_market_west"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_market
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_hunt_steppe.dds"
 		trigger = {
@@ -5276,6 +5375,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_market_west"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_village
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_hunt_steppe.dds"
 		trigger = {
@@ -5586,6 +5692,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ep3_constantinople_on_fire"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_burning_building
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_raid_burning_asian.dds"
 		trigger = {
@@ -5676,6 +5789,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/sitting_room_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_sitting_room
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_sittingroom"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_sitting_room
 			votc_is_agot_timeline_trigger = yes
@@ -6114,6 +6234,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_bedchamber"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bedchamber
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_tent_interior_mongol.dds"
 		trigger = {
@@ -6426,6 +6553,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/study_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_study
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_study"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_study
 			votc_is_agot_timeline_trigger = yes
@@ -6817,6 +6951,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/relaxing_room_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_relaxing_room
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_bp1_relaxing_room_western"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_relaxing_room
 			votc_is_agot_timeline_trigger = yes
@@ -7245,6 +7386,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_study_physician"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_physicians_study
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_tent_interior_mongol.dds"
 		trigger = {
@@ -7520,6 +7668,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_tavern"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tavern
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/ep2_feast_steppe.dds"
 		trigger = {
@@ -7734,6 +7889,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/throne_room_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throne_room
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_west_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throne_room
 			votc_is_agot_timeline_trigger = yes
@@ -8500,6 +8662,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ep3_family_estate"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_estate
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/tgp_moon_festival_japan.dds"
 		trigger = {
@@ -8731,6 +8900,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_genericcamp"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_army_camp
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_hunt_steppe.dds"
 		trigger = {
@@ -8832,6 +9008,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_fp3_bathhouse"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bath_house
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/fp3_bathhouse.dds"
 		trigger = {
@@ -8848,6 +9031,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/runestone_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_runestone
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_fp1_runestone"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_runestone
 			votc_is_agot_timeline_trigger = yes
@@ -8874,6 +9064,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_fp1_runestone_circle"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_runestone_circle
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/fp1_runestone_circle.dds"
 		trigger = {
@@ -8895,6 +9092,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_fp1_beached_longship"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_beached_longships
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/fp1_beached_longship.dds"
 		trigger = {
@@ -8911,6 +9115,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/kitchen_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_kitchen
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_bp1_kitchen_western"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_kitchen
 			votc_is_agot_timeline_trigger = yes
@@ -9137,6 +9348,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_bp1_bonfire"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bonfire
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_campfire_steppe.dds"
 		trigger = {
@@ -9177,6 +9395,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/wine_cellar_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_wine_cellar
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_bp1_wine_cellar"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_wine_cellar
 			votc_is_agot_timeline_trigger = yes
@@ -9302,6 +9527,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/crossroads_inn_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_crossroads_inn
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_bp1_crossroads_inn"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_crossroads_inn
 			votc_is_agot_timeline_trigger = yes
@@ -9708,6 +9940,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_sittingroom"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_cave
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/fp3_cave.dds"
 		trigger = {
@@ -9724,6 +9963,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/tournament_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tournament
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_village_festival"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_tournament
 			votc_is_agot_timeline_trigger = yes
@@ -9897,6 +10143,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/holy_site_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_holy_site
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_western_holy_site"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_holy_site
 			votc_is_agot_timeline_trigger = yes
@@ -10349,6 +10602,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_travel_bridge"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_travel_bridge
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/ep2_travel_bridge.dds"
 		trigger = {
@@ -10365,6 +10625,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/hunt_forest_hut_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hunt_forest_hut
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_generic_hunt"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_hunt_forest_hut
 			votc_is_agot_timeline_trigger = yes
@@ -10391,6 +10658,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_hunt_forest_cave"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hunt_forest_cave
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/ep2_hunt_cave_entrance.dds"
 		trigger = {
@@ -10407,6 +10681,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/hunt_foggy_forest_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hunt_foggy_forest
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_hunt_foggy_forest"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_hunt_foggy_forest
 			votc_is_agot_timeline_trigger = yes
@@ -10433,6 +10714,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_dog_kennels"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_dog_kennels
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/ep2_dog_kennels.dds"
 		trigger = {
@@ -10454,6 +10742,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_forest_pine"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hunt_activity_camp
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes_agot/hunt_poachers_camp_agot.dds"
 		trigger = {
@@ -10461,8 +10756,22 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_forest_pine"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hunt_poachers_camp
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes_agot/wedding_ceremony_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_wedding_ceremony
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_western_wedding"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_wedding_ceremony
 			votc_is_agot_timeline_trigger = yes
@@ -10772,6 +11081,13 @@ talk_background = {
 	#
 	texture = {
 		reference = "scenes_agot/involved_activity_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_involved_activity
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_feast"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_involved_activity
 			votc_is_agot_timeline_trigger = yes
@@ -12607,6 +12923,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_bp2_nursery"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_nursery
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_tent_interior_mongol.dds"
 		trigger = {
@@ -12685,6 +13008,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/university_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_university
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_bp2_university_mena"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_university
 			votc_is_agot_timeline_trigger = yes
@@ -12881,6 +13211,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ce1_catacombs"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_catacombs
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/fp4_catacombs.dds"
 		trigger = {
@@ -12897,6 +13234,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/condemned_village_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_condemned_village
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_ce1_condemned_village"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_condemned_village
 			votc_is_agot_timeline_trigger = yes
@@ -12939,6 +13283,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ce1_funeral_pyre"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_funeral_pyre
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_raid_burning_asian.dds"
 		trigger = {
@@ -12976,6 +13327,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_legendary_battlefield"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_legendary_battlefield
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/fp4_legendary_battlefield.dds"
 		trigger = {
@@ -12992,6 +13350,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/constantinople_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_constantinople
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_ep3_constantinople"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_constantinople
 			votc_is_agot_timeline_trigger = yes
@@ -13018,6 +13383,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ep3_castle_gates"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_city_gate
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/ep3_city_gate.dds"
 		trigger = {
@@ -13034,6 +13406,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/relaxing_tent_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_relaxing_tent
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_ep3_living_tent_interior"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_relaxing_tent
 			votc_is_agot_timeline_trigger = yes
@@ -13083,6 +13462,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/survey_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_survey
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_bp2_courtyard"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_survey
 			votc_is_agot_timeline_trigger = yes
@@ -13260,6 +13646,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/terrain_settlement_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_terrain_settlement
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_travel_hills_settlement"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_terrain_settlement
 			votc_is_agot_timeline_trigger = yes
@@ -13608,6 +14001,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_travel_hills_settlement"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_terrain_settlement_no_owner
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/ep2_travel_farm.dds"
 		trigger = {
@@ -13877,6 +14277,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ep3_camp_fire"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_campfire
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_campfire_steppe.dds"
 		trigger = {
@@ -13921,6 +14328,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/camp_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_camp
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_ep3_arid_camp"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_camp
 			votc_is_agot_timeline_trigger = yes
@@ -13975,6 +14389,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ep3_army_camp"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_camp_night
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_campfire_steppe.dds"
 		trigger = {
@@ -14024,6 +14445,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ep3_military_tent_interior"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_military_tent
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/mpo_tent_interior_mongol.dds"
 		trigger = {
@@ -14068,6 +14496,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/village_festival_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_village_festival
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_village_festival"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_village_festival
 			votc_is_agot_timeline_trigger = yes
@@ -14320,6 +14755,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_bp3_coast"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_coast
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/bp3_coast.dds"
 		trigger = {
@@ -14336,6 +14778,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/city_steppe_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_city_steppe
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_mpo_city_steppe"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_city_steppe
 			votc_is_agot_timeline_trigger = yes
@@ -14362,6 +14811,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_tgp_examination_room"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_examination_room
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/tgp_examination_room.dds"
 		trigger = {
@@ -14378,6 +14834,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/chinese_city_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_chinese_city
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_chinese_city"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_chinese_city
 			votc_is_agot_timeline_trigger = yes
@@ -14404,6 +14867,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_tgp_japanese_city"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_japanese_city
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/tgp_japanese_city.dds"
 		trigger = {
@@ -14425,6 +14895,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_genericcamp"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_armycamp
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/armycamp.dds"
 		trigger = {
@@ -14441,6 +14918,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/bedchamber_east1_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east1
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_bedchamber_east1"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_bedchamber_east1
 			votc_is_agot_timeline_trigger = yes
@@ -14469,6 +14953,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_bedchamber_east2"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east2
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/bedchamber_east2.dds"
 		trigger = {
@@ -14487,6 +14978,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/bedchamber_east3_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bedchamber_east3
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_bedchamber_east3"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_bedchamber_east3
 			votc_is_agot_timeline_trigger = yes
@@ -14515,6 +15013,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ep3_frontend_adventurer_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ep3_frontend_adventurer
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/ep3_frontend_adventurer.dds"
 		trigger = {
@@ -14533,6 +15038,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/ep3_frontend_byzantine_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ep3_frontend_byzantine
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_ep3_frontend_byzantine_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_ep3_frontend_byzantine
 			votc_is_agot_timeline_trigger = yes
@@ -14561,6 +15073,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_family_meeting_east"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_family_meeting_east
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/family_meeting_east.dds"
 		trigger = {
@@ -14579,6 +15098,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/fp1_frontend_nontribal_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_fp1_frontend_nontribal
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_fp1_frontend_nontribal_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_fp1_frontend_nontribal
 			votc_is_agot_timeline_trigger = yes
@@ -14611,6 +15137,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_fp1_frontend_tribal_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_fp1_frontend_tribal
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/fp1_frontend_tribal.dds"
 		trigger = {
@@ -14629,6 +15162,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/fp2_frontend_iberian_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_fp2_frontend_iberian
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_fp2_frontend_iberian_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_fp2_frontend_iberian
 			votc_is_agot_timeline_trigger = yes
@@ -14661,6 +15201,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_fp3_frontend_iranian_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_fp3_frontend_iranian
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/fp3_frontend_iranian.dds"
 		trigger = {
@@ -14683,6 +15230,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/frontend_east_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_east
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_east_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_frontend_east
 			votc_is_agot_timeline_trigger = yes
@@ -14711,6 +15265,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_india_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_india
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/frontend_india.dds"
 		trigger = {
@@ -14729,6 +15290,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/frontend_mediterranean_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_mediterranean
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_mediterranean_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_frontend_mediterranean
 			votc_is_agot_timeline_trigger = yes
@@ -14757,6 +15325,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_tribal_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_tribal
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/frontend_tribal.dds"
 		trigger = {
@@ -14775,6 +15350,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/frontend_west_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_frontend_west
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_west_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_frontend_west
 			votc_is_agot_timeline_trigger = yes
@@ -14803,6 +15385,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_tgp_garden_asia"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_garden_east1
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/garden_east1.dds"
 		trigger = {
@@ -14821,6 +15410,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/garden_east2_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_garden_east2
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_garden_asia"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_garden_east2
 			votc_is_agot_timeline_trigger = yes
@@ -14849,6 +15445,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_harem"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_harem
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/harem.dds"
 		trigger = {
@@ -14872,6 +15475,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_huanghelou
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/huanghelou.dds"
 		trigger = {
@@ -14890,6 +15500,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/hunt_foggy_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hunt_foggy
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_hunt_foggy_forest"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_hunt_foggy
 			votc_is_agot_timeline_trigger = yes
@@ -14942,6 +15559,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_kaifenghuangcheng
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/kaifenghuangcheng.dds"
 		trigger = {
@@ -14960,6 +15584,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/leshandafou_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_leshandafou
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_east_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_leshandafou
 			votc_is_agot_timeline_trigger = yes
@@ -14988,6 +15619,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_lingyinsi
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/lingyinsi.dds"
 		trigger = {
@@ -15006,6 +15644,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/marketeast_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_marketeast
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_market_east"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_marketeast
 			votc_is_agot_timeline_trigger = yes
@@ -15034,6 +15679,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_mpo_frontend_nomad_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_mpo_frontend_nomad
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/mpo_frontend_nomad.dds"
 		trigger = {
@@ -15052,6 +15704,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/shaolinsi_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_shaolinsi
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_east_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_shaolinsi
 			votc_is_agot_timeline_trigger = yes
@@ -15080,6 +15739,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_taishan
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/taishan.dds"
 		trigger = {
@@ -15098,6 +15764,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/tavern_east_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tavern_east
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_tavern_asia"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_tavern_east
 			votc_is_agot_timeline_trigger = yes
@@ -15126,6 +15799,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tengwangge
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/tengwangge.dds"
 		trigger = {
@@ -15144,6 +15824,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/tgp_frontend_celestial_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tgp_frontend_celestial
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_frontend_celestial_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_tgp_frontend_celestial
 			votc_is_agot_timeline_trigger = yes
@@ -15172,6 +15859,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_tgp_frontend_japan_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tgp_frontend_japan
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/tgp_frontend_japan.dds"
 		trigger = {
@@ -15190,6 +15884,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/throneroom_east_empire_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_empire
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_east_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throneroom_east_empire
 			votc_is_agot_timeline_trigger = yes
@@ -15218,6 +15919,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_empire1
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/throneroom_east_empire1.dds"
 		trigger = {
@@ -15236,6 +15944,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/throneroom_east_empire2_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_east_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throneroom_east_empire2
 			votc_is_agot_timeline_trigger = yes
@@ -15264,6 +15979,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/throneroom_east_fuya.dds"
 		trigger = {
@@ -15282,6 +16004,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/throneroom_east_fuya1_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya1
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_east_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya1
 			votc_is_agot_timeline_trigger = yes
@@ -15310,6 +16039,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_throneroom_east_fuya2
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/throneroom_east_fuya2.dds"
 		trigger = {
@@ -15328,6 +16064,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/wudangshandaoguan_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_wudangshandaoguan
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_east_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_wudangshandaoguan
 			votc_is_agot_timeline_trigger = yes
@@ -15356,6 +16099,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_wulingyuan
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/wulingyuan.dds"
 		trigger = {
@@ -15379,6 +16129,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_frontend_east_main"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_yueyanglou
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/yueyanglou.dds"
 		trigger = {
@@ -15397,6 +16154,13 @@ talk_background = {
 
 	texture = {
 		reference = "scenes_agot/yungangshiku_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_yungangshiku
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_frontend_east_main"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_yungangshiku
 			votc_is_agot_timeline_trigger = yes
@@ -15427,6 +16191,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_bp1_desert"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_bp1_desert
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/bp1_desert.dds"
 		trigger = {
@@ -15450,6 +16221,13 @@ talk_background = {
 	# Spice Garden (bp1_garden_mena_day)
 	texture = {
 		reference = "scenes_agot/garden_mena_day_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_garden_mena_day
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_garden"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_garden_mena_day
 			votc_is_agot_timeline_trigger = yes
@@ -15487,6 +16265,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_bp1_hills"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hills
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/bp1_hills.dds"
 		trigger = {
@@ -15510,6 +16295,13 @@ talk_background = {
 	# Falconry Mews (ep2_hunt_falconry_mews)
 	texture = {
 		reference = "scenes_agot/falconry_mews_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_falconry_mews
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_hunt_falconry_mews"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_falconry_mews
 			votc_is_agot_timeline_trigger = yes
@@ -15543,6 +16335,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_ep3_chariot_track"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_chariot_track
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/ep3_chariots_track.dds"
 		trigger = {
@@ -15566,6 +16365,13 @@ talk_background = {
 	# Hippodrome (ep3_hippodrome_chariot_race)
 	texture = {
 		reference = "scenes_agot/hippodrome_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_hippodrome
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_ep3_chariot_race"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_hippodrome
 			votc_is_agot_timeline_trigger = yes
@@ -15599,6 +16405,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_fp1_ocean"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ocean_norse
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/fp1_ocean_norse.dds"
 		trigger = {
@@ -15618,6 +16431,13 @@ talk_background = {
 	# Steppe Dusk (mpo_steppe_evening)
 	texture = {
 		reference = "scenes_agot/steppe_evening_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_steppe_evening
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_mpo_steppe_evening"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_steppe_evening
 			votc_is_agot_timeline_trigger = yes
@@ -15667,6 +16487,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_tgp_festival_ritual_japan"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_festival_ritual_japan
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/tgp_festival_ritual_japan.dds"
 		trigger = {
@@ -15686,6 +16513,13 @@ talk_background = {
 	# Flooding River (tgp_overflowing_river)
 	texture = {
 		reference = "scenes_agot/overflowing_river_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_overflowing_river
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_overflowing_river"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_overflowing_river
 			votc_is_agot_timeline_trigger = yes
@@ -15715,6 +16549,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_tgp_ruined_holding"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_ruined_holding
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "event_scenes/tgp_ruined_holding.dds"
 		trigger = {
@@ -15734,6 +16575,13 @@ talk_background = {
 	# Tanabata Festival (tgp_tanabata_festival_japan)
 	texture = {
 		reference = "scenes_agot/tanabata_festival_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_tanabata_festival
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_tgp_tanabata_festival_japan"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_tanabata_festival
 			votc_is_agot_timeline_trigger = yes
@@ -15763,6 +16611,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_genericcamp"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_camp_new
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/camp.dds"
 		trigger = {
@@ -15785,6 +16640,13 @@ talk_background = {
 			votc_is_agot_timeline_trigger = yes
 		}
 	}
+	environment = {
+		reference = "environment_event_fp3_courtyard_night"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_courtyard_night
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
 	texture = {
 		reference = "scenes/courtyard_night.dds"
 		trigger = {
@@ -15802,6 +16664,13 @@ talk_background = {
 	# Bazaar Street (mod scenes/market.dds)
 	texture = {
 		reference = "scenes_agot/market_new_agot.dds"
+		trigger = {
+			global_var:talk_scene = flag:talk_scene_market_new
+			votc_is_agot_timeline_trigger = yes
+		}
+	}
+	environment = {
+		reference = "environment_event_market_west"
 		trigger = {
 			global_var:talk_scene = flag:talk_scene_market_new
 			votc_is_agot_timeline_trigger = yes
