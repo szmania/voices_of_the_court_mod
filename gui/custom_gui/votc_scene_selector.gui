@@ -90,7 +90,6 @@
                                         button_standard_clean = {
                                             size = { 320 180 }
                                             onclick = "[GetScriptedGui('votc_select_talk_scene').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_scene', MakeScopeFlag(Scope.GetFlagName)).End)]"
-                                            onclick = "[GetVariableSystem.Clear('votc_scene_selector_opened')]"
                                             state = {
                                                 name = hover
                                                 trigger_on_hover_start = yes
@@ -105,6 +104,10 @@
                                                 name = select_animation
                                                 trigger_on_click = yes
                                                 duration = 0.3
+                                                # Alley background fix (2026-10-10): the card's second onclick (selector close) was
+                                                # overwritten by last-wins semantics, so the scripted gui never ran and talk_scene kept
+                                                # its throne_room default. Close is now a state action, which fires reliably alongside onclick.
+                                                on_start = "[GetVariableSystem.Clear('votc_scene_selector_opened')]"
                                                 on_finish = "[SetWidgetColor('votc_scene_card_border', 1.0, 0.8, 0.4, 0.9)]"
                                                 property = color
                                                 start = { 0.8 0.7 0.5 0.6 }
@@ -222,4 +225,3 @@
 
     
 }
-

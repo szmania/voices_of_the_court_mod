@@ -951,12 +951,17 @@ votc_ai_initiate_request_effect = {
 			}
 		}
 		# The AI picks the scene from the same valid pool the player would see.
-		votc_build_talk_scene_flags = yes
-		random_in_list = {
-			variable = talk_scene_flags
-			set_global_variable = {
-				name = talk_scene
-				value = this
+		# Guarded (alley background bugfix, 2026-10-10): only randomize when talk_scene
+		# is unset, so an AI-initiated conversation never clobbers a user-selected scene.
+		if = {
+			limit = { NOT = { has_global_variable = talk_scene } }
+			votc_build_talk_scene_flags = yes
+			random_in_list = {
+				variable = talk_scene_flags
+				set_global_variable = {
+					name = talk_scene
+					value = this
+				}
 			}
 		}
 		clear_variable_list = talk_scene_flags
