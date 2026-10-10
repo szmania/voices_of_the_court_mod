@@ -1,0 +1,48 @@
+#==========================================================================
+#  VOTC-194: NPC Initiative - on_action hooks
+#  Namespace: votc_ce_initiative
+#
+#  We only *append* sub-on_actions to already existing engine on_actions.
+#  This is the officially documented, override-free pattern, see
+#  game/common/on_action/_on_actions.info ("MODDING INFO" section).
+#  Do NOT add an "effect = { }" block here to an on_action that already
+#  has one - that would create a conflict.
+#==========================================================================
+
+# New campaign / freshly generated world -> arm the loop for every human player.
+on_game_start = {
+	on_actions = {
+		votc_ce_initiative_bootstrap_global
+	}
+}
+
+# Watchdog (root = a playable character): re-arms the loop if it ever dies
+# (character succession, event loss, mod loaded into an ongoing save...).
+quarterly_playable_pulse = {
+	on_actions = {
+		votc_ce_initiative_bootstrap
+	}
+}
+
+# Second watchdog, spread out over the year.
+random_yearly_playable_pulse = {
+	on_actions = {
+		votc_ce_initiative_bootstrap
+	}
+}
+
+# Empty scope: on_game_start has no root, so walk the players manually.
+votc_ce_initiative_bootstrap_global = {
+	effect = {
+		every_player = {
+			votc_ce_initiative_bootstrap_char = yes
+		}
+	}
+}
+
+# Root = character.
+votc_ce_initiative_bootstrap = {
+	effect = {
+		votc_ce_initiative_bootstrap_char = yes
+	}
+}

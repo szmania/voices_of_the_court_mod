@@ -6,25 +6,26 @@
 # and vanilla common/on_action/_on_actions.info), so the work lives in a mod-owned
 # relay on_action instead.
 #
-# quarterly_playable_pulse runs once per quarter (the most frequent built-in
-# playable-character pulse; CK3 has no monthly pulse) for every playable character
-# with the character as its scope; is_ai = no narrows it to human players (in
-# multiplayer every player gets their own pulse run). Cooldown flags keep the
-# cadence from spamming.
-quarterly_playable_pulse = {
-	on_actions = {
-		votc_ai_initiate_conversation_pulse
-	}
-}
-
-votc_ai_initiate_conversation_pulse = {
-	trigger = {
-		is_ai = no
-		# The cooldown flag is set on the player when a request is created, and on
-		# the AI initiator too, so neither side is asked again immediately.
-		NOT = { has_character_flag = votc_ai_initiate_cooldown }
-	}
-	effect = {
-		votc_ai_initiate_conversation_effect = yes
-	}
-}
+# VOTC-194: the quarterly hook below is RETIRED.  The unified NPC Initiative
+# (common/on_action/votc_ce_initiative_on_actions.txt) replaces the old flat-random
+# ai-initiate loop with relationship-weighted selection, travel-to-you, decline
+# grudges and its own settings hub.  The supporting effects
+# (votc_ai_initiate_request_effect, votc_ai_initiate_conversation_effect,
+# votc_build_talk_scene_flags) and the mcc_event_v2.1010/1011/1012 pipeline are
+# still in use by the new system, so they stay.  Kept commented for easy rollback:
+#
+# quarterly_playable_pulse = {
+# 	on_actions = {
+# 		votc_ai_initiate_conversation_pulse
+# 	}
+# }
+#
+# votc_ai_initiate_conversation_pulse = {
+# 	trigger = {
+# 		is_ai = no
+# 		NOT = { has_character_flag = votc_ai_initiate_cooldown }
+# 	}
+# 	effect = {
+# 		votc_ai_initiate_conversation_effect = yes
+# 	}
+# }

@@ -34,5 +34,14 @@
 			duration = 2
 			on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/letters_runner.gui letters_runner_counter')]"
 		}
+
+		# VOTC-194: the NPC letter channel.  The desktop patch routes letterId
+		# "npcltr" to run/npcltr.txt; this state executes it on the same beat as
+		# the player's own letters.  Harmless when the file does not exist.
+		state = {
+			name = _show_npcltr
+			trigger_on_create = yes
+			on_finish = "[ExecuteConsoleCommand('run npcltr.txt')]"
+		}
 	}
 }

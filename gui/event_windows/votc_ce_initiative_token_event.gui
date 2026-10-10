@@ -1,0 +1,42 @@
+#==========================================================================
+#  VOTC-194: NPC Initiative - invisible clipboard-token event window
+#
+#  votc_ce_initiative.160 exists for one reason only: its widget calls
+#  EventWindowData.CopyToClipboard, so the desktop app notices that new data
+#  is waiting in the log.  The stock window for that event is
+#  `fullscreen_event`, which flashed a full screen window for every letter.
+#
+#  This window is the same trick VOTC itself uses in votc_invisible_event.gui:
+#  a 1x1 window on the tutorial layer, with the EventWindowData datacontext
+#  and nothing to look at.  It also starts the letter channel's own runner,
+#  which is what executes run/npcltr.txt where the app writes the letter.
+#==========================================================================
+
+window = {
+	name = "votc_ce_initiative_token_event"
+	gfxtype = windowgfx
+	parentanchor = top|right
+	layer = tutorial
+	allow_outside = yes
+	size = { 1 1 }
+	position = { 0 0 }
+
+	datacontext = "[EventWindow.AccessEventWindowData]"
+
+	state = {
+		name = _copy
+		trigger_on_create = yes
+		on_finish = "[EventWindowData.CopyToClipboard]"
+	}
+
+	state = {
+		name = _runner
+		trigger_on_create = yes
+		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_ce_npc_letter_runner.gui votc_ce_npc_letter_runner')]"
+	}
+
+	hbox = {
+		size = { 1 1 }
+		alpha = 0
+	}
+}

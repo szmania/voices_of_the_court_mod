@@ -1,0 +1,25 @@
+# VOTC-194: NPC Initiative eligibility triggers.
+#
+# Scope = the candidate AI character; root = the player the request would go to.
+# is_ai = yes also guarantees the player themself can never be picked.
+
+# A talk request needs the character to be reachable: alive, adult, AI,
+# not imprisoned, not already on the road, and not holding a decline grudge.
+votc_ce_initiative_is_valid_candidate = {
+	is_alive = yes
+	is_adult = yes
+	is_ai = yes
+	NOT = { is_imprisoned = yes }
+	NOT = { is_travelling = yes }
+	NOT = { has_character_flag = votc_ce_initiative_declined }
+	# No conversation currently in progress (same guard the old ai-initiate used).
+	NOT = { has_global_variable = talk_scene }
+}
+
+# Letters do not need the two of you to be in the same place, so a travelling
+# or imprisoned character may still write.
+votc_ce_initiative_is_letter_candidate = {
+	is_alive = yes
+	is_adult = yes
+	is_ai = yes
+}

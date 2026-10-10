@@ -418,6 +418,12 @@ mcc_event_v2.9002 = {
 		# conversations do not emit the ai_speaks_first marker.
 		remove_global_variable = votc_ai_initiator
 		clear_variable_list = mcc_characters_selected
+
+		# VOTC-194: remember who the player just talked to (fills the NPC-initiative
+		# candidate list).  scope:recipient is the conversation counterparty here;
+		# the recorder logs a breadcrumb when the scope is missing so a silent
+		# failure can never starve the feature.
+		votc_ce_initiative_record = yes
 	}
 }
 

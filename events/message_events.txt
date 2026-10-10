@@ -209,10 +209,15 @@ message_event.360 = {
 
 		clear_global_variable_list = mcc_characters_list_v2
 
+		# VOTC-194: remember who the player just wrote to (fills the NPC-initiative
+		# letter candidate list).  scope:actor is the player, scope:recipient the
+		# addressee; the recorder is a no-op for non-AI addressees.
+		votc_ce_initiative_record_written = yes
+
 		trigger_event = {
 			id = message_event.361
 			# Setting delay to give debuglog and backend program time to react, otherwise debuglog reading may fail or produce errors
-			days = 1
+				days = 1
 		}
 	}
 

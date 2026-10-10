@@ -1,0 +1,548 @@
+# VOTC-194: NPC Initiative - scripted effects (CE-native rewrite).
+# root = the player character; scope:recipient = the NPC (VOTC convention).
+
+votc_ce_initiative_bootstrap_char = {
+	if = {
+		limit = {
+			is_ai = no
+			is_alive = yes
+		}
+		if = {
+			limit = { NOT = { has_global_variable = votc_ce_initiative_freq } }
+			set_global_variable = { name = votc_ce_initiative_freq value = 182 }
+		}
+		if = {
+			limit = { NOT = { has_global_variable = votc_ce_initiative_chance } }
+			set_global_variable = { name = votc_ce_initiative_chance value = 15 }
+		}
+		if = {
+			limit = { NOT = { has_global_variable = votc_ce_initiative_letter_freq } }
+			set_global_variable = { name = votc_ce_initiative_letter_freq value = 182 }
+		}
+		if = {
+			limit = { NOT = { exists = global_var:votc_ce_initiative_heartbeat } }
+			trigger_event = { id = votc_ce_initiative.1 days = 15 }
+		}
+		votc_ce_initiative_purge_lists = yes
+		votc_ce_initiative_release_stale = yes
+		if = {
+			limit = { NOT = { exists = global_var:votc_ce_initiative_letter_heartbeat } }
+			trigger_event = { id = votc_ce_initiative.5 days = 10 }
+		}
+	}
+}
+
+votc_ce_initiative_purge_lists = {
+	if = {
+		limit = { has_variable_list = votc_talked_characters }
+		if = {
+			limit = { has_variable_list = votc_ce_initiative_tmp }
+			clear_variable_list = votc_ce_initiative_tmp
+		}
+		every_in_list = {
+			variable = votc_talked_characters
+			limit = { is_alive = yes }
+			save_temporary_scope_as = votc_ce_purge_keep
+			root = {
+				add_to_variable_list = { name = votc_ce_initiative_tmp target = scope:votc_ce_purge_keep }
+			}
+		}
+		clear_variable_list = votc_talked_characters
+		if = {
+			limit = {
+				has_variable_list = votc_ce_initiative_tmp
+				variable_list_size = { name = votc_ce_initiative_tmp value >= 1 }
+			}
+			every_in_list = {
+				variable = votc_ce_initiative_tmp
+				save_temporary_scope_as = votc_ce_purge_keep
+				root = {
+					add_to_variable_list = { name = votc_talked_characters target = scope:votc_ce_purge_keep }
+				}
+			}
+		}
+		clear_variable_list = votc_ce_initiative_tmp
+	}
+	if = {
+		limit = { has_variable_list = votc_written_characters }
+		if = {
+			limit = { has_variable_list = votc_ce_initiative_tmp }
+			clear_variable_list = votc_ce_initiative_tmp
+		}
+		every_in_list = {
+			variable = votc_written_characters
+			limit = { is_alive = yes }
+			save_temporary_scope_as = votc_ce_purge_keep
+			root = {
+				add_to_variable_list = { name = votc_ce_initiative_tmp target = scope:votc_ce_purge_keep }
+			}
+		}
+		clear_variable_list = votc_written_characters
+		if = {
+			limit = {
+				has_variable_list = votc_ce_initiative_tmp
+				variable_list_size = { name = votc_ce_initiative_tmp value >= 1 }
+			}
+			every_in_list = {
+				variable = votc_ce_initiative_tmp
+				save_temporary_scope_as = votc_ce_purge_keep
+				root = {
+					add_to_variable_list = { name = votc_written_characters target = scope:votc_ce_purge_keep }
+				}
+			}
+		}
+		clear_variable_list = votc_ce_initiative_tmp
+	}
+}
+
+votc_ce_initiative_release_stale = {
+	if = {
+		limit = {
+			has_global_variable = votc_ce_initiative_player
+			OR = {
+				NOT = { exists = global_var:votc_ce_initiative_char }
+				global_var:votc_ce_initiative_char = { NOT = { is_alive = yes } }
+			}
+		}
+		debug_log = "VOTC_CE_INIT: the invited character is dead or gone - releasing the invitation"
+		remove_global_variable = votc_ce_initiative_player
+		remove_global_variable = votc_ce_initiative_char
+	}
+	if = {
+		limit = {
+			has_global_variable = votc_ce_initiative_letter_pending
+			OR = {
+				NOT = { exists = global_var:votc_ce_initiative_letter_char }
+				global_var:votc_ce_initiative_letter_char = { NOT = { is_alive = yes } }
+			}
+		}
+		debug_log = "VOTC_CE_LETTER: the writer is dead or gone - releasing the in-flight guard"
+		votc_ce_initiative_letter_cleanup = yes
+	}
+	if = {
+		limit = {
+			has_global_variable = votc_ce_initiative_letter_pending
+			NOT = { has_global_variable = votc_npcltr }
+			exists = global_var:votc_ce_initiative_letter_char
+			global_var:votc_ce_initiative_letter_char = { is_alive = yes }
+		}
+		debug_log = "VOTC_CE_LETTER: reply landed through the normal letter channel (unpatched app) - releasing the in-flight guard"
+		votc_ce_initiative_letter_cleanup = yes
+	}
+}
+
+votc_ce_initiative_try = {
+	votc_ce_initiative_purge_lists = yes
+	votc_ce_initiative_release_stale = yes
+	if = {
+		limit = {
+			is_ai = no
+			is_alive = yes
+			NOT = { is_imprisoned = yes }
+			NOT = { is_travelling = yes }
+			has_variable_list = votc_talked_characters
+			NOT = { exists = global_var:votc_ce_initiative_player }
+		}
+		votc_ce_initiative_merge_watch = yes
+		if = {
+			limit = { global_var:votc_ce_initiative_chance = 5 }
+			random = { chance = 5 votc_ce_initiative_launch = yes }
+		}
+		else_if = {
+			limit = { global_var:votc_ce_initiative_chance = 15 }
+			random = { chance = 15 votc_ce_initiative_launch = yes }
+		}
+		else_if = {
+			limit = { global_var:votc_ce_initiative_chance = 30 }
+			random = { chance = 30 votc_ce_initiative_launch = yes }
+		}
+		else = {
+			random = { chance = 15 votc_ce_initiative_launch = yes }
+		}
+	}
+}
+
+votc_ce_initiative_merge_watch = {
+	root = {
+		every_pinned_character = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_adult = yes
+					is_ai = yes
+					NOT = { this = root }
+				}
+				save_temporary_scope_as = votc_ce_initiative_pinned
+				root = {
+					if = {
+						limit = { NOT = { has_variable_list = votc_talked_characters } }
+						add_to_variable_list = { name = votc_talked_characters target = scope:votc_ce_initiative_pinned }
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								is_target_in_variable_list = { name = votc_talked_characters target = scope:votc_ce_initiative_pinned }
+							}
+						}
+						add_to_variable_list = { name = votc_talked_characters target = scope:votc_ce_initiative_pinned }
+					}
+				}
+			}
+		}
+	}
+}
+
+votc_ce_initiative_launch = {
+	if = {
+		limit = { NOT = { exists = global_var:votc_ce_initiative_player } }
+		save_scope_as = actor
+		ordered_in_list = {
+			variable = votc_talked_characters
+			limit = {
+				votc_ce_initiative_is_valid_candidate = yes
+				is_at_same_location = root
+			}
+			order_by = votc_ce_initiative_weight
+			max = 1
+			save_scope_as = votc_ce_initiative_target
+		}
+		if = {
+			limit = { NOT = { exists = scope:votc_ce_initiative_target } }
+			ordered_in_list = {
+				variable = votc_talked_characters
+				limit = { votc_ce_initiative_is_valid_candidate = yes }
+				order_by = votc_ce_initiative_weight
+				max = 1
+				save_scope_as = votc_ce_initiative_target
+			}
+		}
+		if = {
+			limit = { exists = scope:votc_ce_initiative_target }
+			set_global_variable = { name = votc_ce_initiative_char value = scope:votc_ce_initiative_target }
+			set_global_variable = { name = votc_ce_initiative_player value = root days = 90 }
+			scope:votc_ce_initiative_target = {
+				if = {
+					limit = { opinion = { target = root value >= 25 } }
+					set_global_variable = { name = votc_ce_initiative_mood value = flag:warm }
+				}
+				else_if = {
+					limit = { opinion = { target = root value <= -25 } }
+					set_global_variable = { name = votc_ce_initiative_mood value = flag:cold }
+				}
+				else = {
+					set_global_variable = { name = votc_ce_initiative_mood value = flag:neutral }
+				}
+			}
+			debug_log = "VOTC_CE_INIT: picked [scope:votc_ce_initiative_target.GetID] to request a talk"
+			trigger_event = votc_ce_initiative.2
+		}
+	}
+}
+
+votc_ce_initiative_record = {
+	if = {
+		limit = { exists = scope:recipient }
+		scope:recipient = {
+			debug_log = "VOTC_CE_INIT: recorded a talk with [scope:recipient.GetID]"
+			if = {
+				limit = { has_character_flag = votc_ce_initiative_declined }
+				remove_character_flag = votc_ce_initiative_declined
+			}
+		}
+		if = {
+			limit = { root = { is_ai = no } }
+			root = {
+				if = {
+					limit = { has_variable_list = votc_talked_characters }
+					if = {
+						limit = {
+							NOT = {
+								is_target_in_variable_list = { name = votc_talked_characters target = scope:recipient }
+							}
+						}
+						add_to_variable_list = { name = votc_talked_characters target = scope:recipient }
+					}
+				}
+				else = {
+					add_to_variable_list = { name = votc_talked_characters target = scope:recipient }
+				}
+			}
+		}
+	}
+	else = {
+		debug_log = "VOTC_CE_INIT: no recipient scope - talk not recorded"
+	}
+}
+
+votc_ce_initiative_record_written = {
+	if = {
+		limit = {
+			exists = scope:recipient
+			scope:recipient = { is_ai = yes }
+		}
+		scope:actor = {
+			if = {
+				limit = { has_variable_list = votc_written_characters }
+				if = {
+					limit = {
+						NOT = {
+							is_target_in_variable_list = { name = votc_written_characters target = scope:recipient }
+						}
+					}
+					add_to_variable_list = { name = votc_written_characters target = scope:recipient }
+				}
+			}
+			else = {
+				add_to_variable_list = { name = votc_written_characters target = scope:recipient }
+			}
+		}
+	}
+}
+
+votc_ce_initiative_letter_pick = {
+	votc_ce_initiative_release_stale = yes
+	votc_ce_initiative_build_letter_pool = yes
+	if = {
+		limit = {
+			has_variable_list = votc_ce_initiative_letter_pool
+			variable_list_size = { name = votc_ce_initiative_letter_pool value >= 1 }
+		}
+		save_scope_as = actor
+		if = {
+			limit = {
+				exists = global_var:votc_ce_initiative_last_writer
+				variable_list_size = { name = votc_ce_initiative_letter_pool value >= 2 }
+			}
+			ordered_in_list = {
+				variable = votc_ce_initiative_letter_pool
+				limit = {
+					votc_ce_initiative_is_letter_candidate = yes
+					NOT = { this = global_var:votc_ce_initiative_last_writer }
+				}
+				order_by = votc_ce_initiative_weight
+				max = 1
+				save_scope_as = votc_ce_initiative_letter
+			}
+		}
+		if = {
+			limit = { NOT = { exists = scope:votc_ce_initiative_letter } }
+			ordered_in_list = {
+				variable = votc_ce_initiative_letter_pool
+				limit = { votc_ce_initiative_is_letter_candidate = yes }
+				order_by = votc_ce_initiative_weight
+				max = 1
+				save_scope_as = votc_ce_initiative_letter
+			}
+		}
+		if = {
+			limit = { exists = scope:votc_ce_initiative_letter }
+			set_global_variable = { name = votc_ce_initiative_letter_char value = scope:votc_ce_initiative_letter }
+			set_global_variable = { name = votc_ce_initiative_letter_player value = root days = 400 }
+			set_global_variable = { name = votc_ce_initiative_letter_pending value = yes days = 400 }
+			set_global_variable = { name = votc_ce_initiative_last_writer value = scope:votc_ce_initiative_letter days = 400 }
+			debug_log = "VOTC_CE_LETTER: picked [scope:votc_ce_initiative_letter.GetID] to write"
+			root = { votc_ce_initiative_letter = yes }
+		}
+	}
+}
+
+votc_ce_initiative_build_letter_pool = {
+	if = {
+		limit = { has_variable_list = votc_ce_initiative_letter_pool }
+		clear_variable_list = votc_ce_initiative_letter_pool
+	}
+	if = {
+		limit = { has_variable_list = votc_talked_characters }
+		every_in_list = {
+			variable = votc_talked_characters
+			limit = { is_alive = yes }
+			save_temporary_scope_as = votc_ce_lp_target
+			root = {
+				add_to_variable_list = { name = votc_ce_initiative_letter_pool target = scope:votc_ce_lp_target }
+			}
+		}
+	}
+	if = {
+		limit = { has_variable_list = votc_written_characters }
+		every_in_list = {
+			variable = votc_written_characters
+			limit = { is_alive = yes }
+			save_temporary_scope_as = votc_ce_lp_target
+			root = {
+				if = {
+					limit = {
+						NOT = {
+							is_target_in_variable_list = { name = votc_ce_initiative_letter_pool target = scope:votc_ce_lp_target }
+						}
+					}
+					add_to_variable_list = { name = votc_ce_initiative_letter_pool target = scope:votc_ce_lp_target }
+				}
+			}
+		}
+	}
+	root = {
+		every_pinned_character = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_adult = yes
+					is_ai = yes
+					NOT = { this = root }
+				}
+				save_temporary_scope_as = votc_ce_lp_target
+				root = {
+					if = {
+						limit = {
+							NOT = {
+								is_target_in_variable_list = { name = votc_ce_initiative_letter_pool target = scope:votc_ce_lp_target }
+							}
+						}
+						add_to_variable_list = { name = votc_ce_initiative_letter_pool target = scope:votc_ce_lp_target }
+					}
+				}
+			}
+		}
+	}
+}
+
+votc_ce_initiative_letter = {
+	if = {
+		limit = { exists = global_var:votc_ce_initiative_letter_char }
+		global_var:votc_ce_initiative_letter_char = {
+			save_temporary_scope_as = votc_ce_initiative_sender
+		}
+		if = {
+			limit = { exists = global_var:votc_ce_initiative_letter_player }
+			global_var:votc_ce_initiative_letter_player = {
+				save_temporary_scope_as = votc_ce_initiative_recipient
+			}
+		}
+		else = {
+			root = { save_temporary_scope_as = votc_ce_initiative_recipient }
+		}
+		scope:votc_ce_initiative_recipient = { save_scope_as = actor }
+		scope:votc_ce_initiative_sender = {
+			debug_log = "VOTC:IN/;/init/;/[GetPlayer.GetID]/;/[GetPlayer.GetTitledFirstNameNicknamedNoTooltipRegnal]/;/[THIS.Char.GetID]/;/[THIS.Char.GetTitledFirstNameNicknamedNoTooltipRegnal]/;/[GetCurrentDate.GetStringShort]/;/flag:talk_letter/;/[THIS.Char.GetCurrentLocation.GetName]/;/none/;/[GetCurrentDate.GetDateAsTotalDays]/;/none"
+		}
+		if = {
+			limit = { exists = global_var:votc_ce_initiative_letter_player }
+			global_var:votc_ce_initiative_letter_player = { log_character_v2 = yes }
+		}
+		else = {
+			root = { log_character_v2 = yes }
+		}
+		scope:votc_ce_initiative_sender = {
+			log_character_v2 = yes
+			if = {
+				limit = {
+					OR = {
+						has_relation_lover = scope:votc_ce_initiative_recipient
+						has_relation_soulmate = scope:votc_ce_initiative_recipient
+					}
+				}
+				debug_log = votc_ce_initiative_log_letter_lover
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_relation_friend = scope:votc_ce_initiative_recipient
+						has_relation_best_friend = scope:votc_ce_initiative_recipient
+					}
+				}
+				debug_log = votc_ce_initiative_log_letter_friend
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_relation_rival = scope:votc_ce_initiative_recipient
+						has_relation_nemesis = scope:votc_ce_initiative_recipient
+					}
+				}
+				debug_log = votc_ce_initiative_log_letter_rival
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_parent_of = scope:votc_ce_initiative_recipient
+						is_child_of = scope:votc_ce_initiative_recipient
+						is_sibling_of = scope:votc_ce_initiative_recipient
+					}
+				}
+				debug_log = votc_ce_initiative_log_letter_kin
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_liege_or_above_of = scope:votc_ce_initiative_recipient
+						is_vassal_of = scope:votc_ce_initiative_recipient
+					}
+				}
+				debug_log = votc_ce_initiative_log_letter_liege
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_relation_guardian = scope:votc_ce_initiative_recipient
+						has_relation_ward = scope:votc_ce_initiative_recipient
+					}
+				}
+				debug_log = votc_ce_initiative_log_letter_mentor
+			}
+			else = {
+				debug_log = votc_ce_initiative_log_letter_plain
+			}
+		}
+		set_global_variable = { name = message_second_scope_npcltr value = scope:votc_ce_initiative_sender }
+		set_global_variable = { name = votc_npcltr value = yes days = 400 }
+		trigger_event = { id = mcc_event_v2.9998 }
+		trigger_event = { id = votc_ce_initiative.160 days = 1 }
+	}
+}
+
+votc_ce_initiative_letter_take = {
+	if = {
+		limit = {
+			exists = global_var:votc_latest_letter
+			exists = global_var:votc_ce_initiative_letter_player
+		}
+		debug_log = "VOTC_CE_LETTER: reply taken, opening the letter window"
+		global_var:votc_ce_initiative_letter_player = {
+			trigger_event = votc_ce_initiative.153
+		}
+	}
+	else = {
+		debug_log = "VOTC_CE_LETTER: a reply arrived but there is no artifact (create_artifact failed)"
+		votc_ce_initiative_letter_cleanup = yes
+	}
+}
+
+votc_ce_initiative_letter_cleanup = {
+	remove_global_variable = votc_ce_initiative_letter_pending
+	remove_global_variable = votc_ce_initiative_letter_char
+	remove_global_variable = votc_ce_initiative_letter_player
+	remove_global_variable = message_second_scope_npcltr
+}
+
+votc_ce_initiative_letter_destroy = {
+	if = {
+		limit = { exists = global_var:votc_latest_letter }
+		global_var:votc_latest_letter = { destroy_artifact = this }
+	}
+	remove_global_variable = votc_latest_letter
+}
+
+votc_ce_initiative_decline_grudge = {
+	if = {
+		limit = { exists = global_var:votc_ce_initiative_char }
+		global_var:votc_ce_initiative_char = {
+			if = {
+				limit = { opinion = { target = root value <= 0 } }
+				add_character_flag = { flag = votc_ce_initiative_declined days = 365 }
+			}
+			else = {
+				add_character_flag = { flag = votc_ce_initiative_declined days = 182 }
+			}
+		}
+	}
+	remove_global_variable = votc_ce_initiative_player
+}

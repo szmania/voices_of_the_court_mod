@@ -1,0 +1,804 @@
+#==========================================================================
+#  VOTC-194: NPC Initiative - events
+#  namespace = votc_ce_initiative
+#
+#   .1     hidden  tick loop (root = player)
+#   .2     prompt  "<NPC> wants to talk to you"  -> accept / decline
+#   .3     hidden  commit an accepted invitation (open the CE talk flow)
+#   .4     hidden  arrival of a travelling NPC -> back to .3
+#   .9     hidden  the player declined
+#   .5     hidden  letter heartbeat (a FIXED cadence, no dice)
+#   .152   hidden  a letter arrived through run/npcltr.txt
+#   .153   window  the letter itself (+ write-back)
+#   .160   token   invisible clipboard token for a letter
+#   .100   settings hub
+#   .101   toggle on / off
+#   .110   interval page      .111 / .112 / .113 / .114
+#   .120   probability page   .121 / .122 / .123
+#   .130   test now (talk)
+#   .140   letters on / off
+#   .170   letter interval page   .171 / .172 / .173
+#   .174   write one right now
+#==========================================================================
+
+namespace = votc_ce_initiative
+
+#--------------------------------------------------------------------------
+#  .1  Hidden heartbeat.  Re-arms itself every <votc_ce_initiative_freq>
+#      days and rolls for a random already-known NPC.
+#--------------------------------------------------------------------------
+votc_ce_initiative.1 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		# 400 days: the longest interval is a full year, and a shorter life made
+		# the bootstrap watchdog fire an out-of-schedule round every year.
+		set_global_variable = {
+			name = votc_ce_initiative_heartbeat
+			value = root
+			days = 400
+		}
+		if = {
+			limit = {
+				is_ai = no
+				is_alive = yes
+				NOT = { has_global_variable = votc_ce_initiative_off }
+			}
+			votc_ce_initiative_try = yes
+		}
+		# Re-arm.
+		if = {
+			limit = { global_var:votc_ce_initiative_freq = 30 }
+			trigger_event = {
+				id = votc_ce_initiative.1
+				days = 30
+			}
+		}
+		else_if = {
+			limit = { global_var:votc_ce_initiative_freq = 91 }
+			trigger_event = {
+				id = votc_ce_initiative.1
+				days = 91
+			}
+		}
+		else_if = {
+			limit = { global_var:votc_ce_initiative_freq = 182 }
+			trigger_event = {
+				id = votc_ce_initiative.1
+				days = 182
+			}
+		}
+		else = {
+			trigger_event = {
+				id = votc_ce_initiative.1
+				days = 365
+			}
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .5  Letter heartbeat.  A FIXED cadence - no dice.  Re-arms itself every
+#      <votc_ce_initiative_letter_freq> days and writes one letter from a
+#      weighted-eligible target.  votc_ce_initiative_letter_pending keeps a
+#      second letter from stacking on top of one still being generated.
+#--------------------------------------------------------------------------
+votc_ce_initiative.5 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_letter_heartbeat
+			value = root
+			days = 400
+		}
+		if = {
+			limit = {
+				is_ai = no
+				is_alive = yes
+				NOT = { has_global_variable = votc_ce_initiative_off }
+				NOT = { has_global_variable = votc_ce_initiative_no_letters }
+				NOT = { exists = global_var:votc_ce_initiative_letter_pending }
+			}
+			votc_ce_initiative_letter_pick = yes
+		}
+		if = {
+			limit = { global_var:votc_ce_initiative_letter_freq = 90 }
+			trigger_event = { id = votc_ce_initiative.5 days = 90 }
+		}
+		else_if = {
+			limit = { global_var:votc_ce_initiative_letter_freq = 182 }
+			trigger_event = { id = votc_ce_initiative.5 days = 182 }
+		}
+		else = {
+			trigger_event = { id = votc_ce_initiative.5 days = 365 }
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .2  The actual "someone wants to talk to you" prompt.
+#--------------------------------------------------------------------------
+votc_ce_initiative.2 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.2.title
+	desc = votc_ce_initiative.2.desc
+	window = character_event
+
+	left_portrait = {
+		character = global_var:votc_ce_initiative_char
+	}
+
+	immediate = {
+		global_var:votc_ce_initiative_char = {
+			save_scope_as = recipient
+		}
+	}
+
+	# Already here -> jump straight into the CE conversation setup.
+	option = {
+		name = votc_ce_initiative_accept_here
+		trigger = {
+			exists = global_var:votc_ce_initiative_char
+			global_var:votc_ce_initiative_char = {
+				is_at_same_location = root
+			}
+		}
+		trigger_event = votc_ce_initiative.3
+	}
+
+	# Somewhere else -> they will come to you first.
+	option = {
+		name = votc_ce_initiative_accept_travel
+		trigger = {
+			NOT = {
+				global_var:votc_ce_initiative_char = {
+					is_at_same_location = root
+				}
+			}
+		}
+		trigger_event = votc_ce_initiative.3
+	}
+
+	option = {
+		name = votc_ce_initiative_decline
+		trigger_event = votc_ce_initiative.9
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .3  Accepted.  Either open the CE talk flow right away, or send the NPC
+#      travelling towards the player.
+#
+#  We reuse the VOTC-182 conversation pipeline: arm votc_ai_initiator /
+#  talk_scene / mcc_characters_selected, then trigger mcc_event_v2.1010 so
+#  the player gets the normal scene/participant setup with AI speaking first.
+#--------------------------------------------------------------------------
+votc_ce_initiative.3 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		# root is the player here (this event always runs on the player), so
+		# record them as the counterparty the CE talk flow must use.
+		set_global_variable = {
+			name = votc_ce_initiative_player
+			value = root
+			days = 3
+		}
+		if = {
+			limit = { exists = global_var:votc_ce_initiative_char }
+			global_var:votc_ce_initiative_char = {
+				save_scope_as = recipient
+			}
+			if = {
+				limit = {
+					scope:recipient = { is_at_same_location = root }
+				}
+				# Hand over to the CE conversation flow.  votc_ai_initiator tells
+				# the pipeline which AI character speaks first; the scene and
+				# participants are prepared the same way the old ai-initiate did.
+				set_global_variable = {
+					name = votc_ai_initiator
+					value = scope:recipient
+				}
+				votc_build_talk_scene_flags = yes
+				random_in_list = {
+					variable = talk_scene_flags
+					set_global_variable = {
+						name = talk_scene
+						value = this
+					}
+				}
+				clear_variable_list = talk_scene_flags
+				root = {
+					trigger_event = mcc_event_v2.1010
+				}
+			}
+			else_if = {
+				limit = {
+					scope:recipient = { is_travelling = no }
+				}
+				scope:recipient = {
+					start_travel_plan = {
+						destination = root.location
+						on_arrival_event = votc_ce_initiative.4
+					}
+				}
+				set_global_variable = {
+					name = votc_ce_initiative_player
+					value = root
+					days = 730
+				}
+			}
+			else = {
+				# Fallback: the NPC was already on the road when the player
+				# accepted.  Open the conversation anyway instead of stalling.
+				set_global_variable = {
+					name = votc_ai_initiator
+					value = scope:recipient
+				}
+				votc_build_talk_scene_flags = yes
+				random_in_list = {
+					variable = talk_scene_flags
+					set_global_variable = {
+						name = talk_scene
+						value = this
+					}
+				}
+				clear_variable_list = talk_scene_flags
+				root = {
+					trigger_event = mcc_event_v2.1010
+				}
+			}
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .4  The invited NPC arrived next to the player -> resume .3.
+#--------------------------------------------------------------------------
+votc_ce_initiative.4 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		if = {
+			limit = { exists = global_var:votc_ce_initiative_player }
+			global_var:votc_ce_initiative_player = {
+				trigger_event = votc_ce_initiative.3
+			}
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .9  Declined.  The NPC will not pester the player for a while; the length
+#      of the grudge is opinion-scaled (votc_ce_initiative_decline_grudge).
+#--------------------------------------------------------------------------
+votc_ce_initiative.9 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		remove_global_variable = votc_ce_initiative_player
+		votc_ce_initiative_decline_grudge = yes
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .152  A letter arrived through the NPC LETTER channel.
+#        The script in run/npcltr.txt - written by the patched desktop app
+#        and executed by gui/custom_gui/votc_ce_npc_letter_runner.gui (plus
+#        the extended letters_runner) - fires this.  Hidden: no clipboard
+#        write, no letter parchment, nothing that belongs to the player's own
+#        letters.
+#--------------------------------------------------------------------------
+votc_ce_initiative.152 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		votc_ce_initiative_letter_take = yes
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .153  The letter itself.
+#
+#  The stock letter parchment is deliberately NOT reused: it renders a fixed
+#  localization key around votc_latest_letter.  Here the heading is raw
+#  localization text (which IS rich-text parsed, so #T really renders large)
+#  and the body comes out of the reply artifact as a data function (which is
+#  NOT parsed - plain text with real newlines, exactly what the model wrote).
+#--------------------------------------------------------------------------
+votc_ce_initiative.153 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.153.title
+	desc = votc_ce_initiative.153.desc
+	window = character_event
+
+	left_portrait = {
+		# NOT scope:actor - a plain character_event carries no actor scope.  The
+		# sender travels in a global variable so this also works when the letter
+		# arrives long after the request (the round trip is tens of game days).
+		character = global_var:votc_ce_initiative_letter_char
+	}
+
+	immediate = {
+		# Intentionally empty.  The window is rendered AFTER this immediate
+		# runs, and it reads both votc_ce_initiative_letter_char and the reply
+		# artifact - clearing either here would blank the letter.
+	}
+
+	# Write-back: open the existing write-message flow with the sender
+	# preselected (message_event.360 reads scope:recipient as the addressee).
+	option = {
+		name = votc_ce_initiative_letter_write_back
+		trigger = {
+			exists = global_var:votc_ce_initiative_letter_char
+			global_var:votc_ce_initiative_letter_char = { is_alive = yes }
+		}
+		if = {
+			limit = { exists = global_var:votc_ce_initiative_letter_char }
+			global_var:votc_ce_initiative_letter_char = {
+				save_scope_as = recipient
+			}
+			scope:recipient = {
+				save_scope_as = actor
+			}
+		}
+		# The reply is over: release the guard and drop the throw-away journal.
+		votc_ce_initiative_letter_destroy = yes
+		votc_ce_initiative_letter_cleanup = yes
+		trigger_event = message_event.360
+	}
+
+	option = {
+		name = votc_ce_initiative_letter_confirm
+	}
+
+	after = {
+		# The letter has been read: drop the journal and release the
+		# one-letter-per-interval gate so the next interval can write again.
+		votc_ce_initiative_letter_destroy = yes
+		votc_ce_initiative_letter_cleanup = yes
+	}
+}
+
+#==========================================================================
+#  Settings
+#==========================================================================
+
+#--------------------------------------------------------------------------
+#  .100  Hub
+#--------------------------------------------------------------------------
+votc_ce_initiative.100 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.100.title
+	desc = votc_ce_initiative.100.desc
+	window = character_event
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_variable = votc_ce_initiative_freq } }
+			set_global_variable = {
+				name = votc_ce_initiative_freq
+				value = 182
+			}
+		}
+		if = {
+			limit = { NOT = { has_global_variable = votc_ce_initiative_chance } }
+			set_global_variable = {
+				name = votc_ce_initiative_chance
+				value = 15
+			}
+		}
+		if = {
+			limit = { NOT = { has_global_variable = votc_ce_initiative_letter_freq } }
+			set_global_variable = {
+				name = votc_ce_initiative_letter_freq
+				value = 182
+			}
+		}
+	}
+
+	option = {
+		name = votc_ce_initiative_opt_enable
+		trigger = { has_global_variable = votc_ce_initiative_off }
+		trigger_event = votc_ce_initiative.101
+	}
+	option = {
+		name = votc_ce_initiative_opt_disable
+		trigger = { NOT = { has_global_variable = votc_ce_initiative_off } }
+		trigger_event = votc_ce_initiative.101
+	}
+	option = {
+		name = votc_ce_initiative_opt_freq
+		trigger_event = votc_ce_initiative.110
+	}
+	option = {
+		name = votc_ce_initiative_opt_chance
+		trigger_event = votc_ce_initiative.120
+	}
+	option = {
+		name = votc_ce_initiative_opt_letters_on
+		trigger = { has_global_variable = votc_ce_initiative_no_letters }
+		trigger_event = votc_ce_initiative.140
+	}
+	option = {
+		name = votc_ce_initiative_opt_letters_off
+		trigger = { NOT = { has_global_variable = votc_ce_initiative_no_letters } }
+		trigger_event = votc_ce_initiative.140
+	}
+	option = {
+		name = votc_ce_initiative_opt_letter_freq
+		trigger_event = votc_ce_initiative.170
+	}
+	option = {
+		name = votc_ce_initiative_opt_letter_test
+		trigger_event = votc_ce_initiative.174
+	}
+	option = {
+		name = votc_ce_initiative_opt_test
+		trigger_event = votc_ce_initiative.130
+	}
+	option = {
+		name = votc_ce_initiative_opt_close
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .101  Toggle the whole feature
+#--------------------------------------------------------------------------
+votc_ce_initiative.101 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		if = {
+			limit = { has_global_variable = votc_ce_initiative_off }
+			remove_global_variable = votc_ce_initiative_off
+			if = {
+				limit = { NOT = { exists = global_var:votc_ce_initiative_heartbeat } }
+				trigger_event = {
+					id = votc_ce_initiative.1
+					days = 5
+				}
+			}
+		}
+		else = {
+			set_global_variable = {
+				name = votc_ce_initiative_off
+				value = yes
+			}
+			if = {
+				limit = { exists = global_var:votc_ce_initiative_player }
+				remove_global_variable = votc_ce_initiative_player
+			}
+		}
+		trigger_event = votc_ce_initiative.100
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .110  Interval page   (30 = monthly, 91 = quarterly, 182 = half a year)
+#--------------------------------------------------------------------------
+votc_ce_initiative.110 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.110.title
+	desc = votc_ce_initiative.110.desc
+	window = character_event
+
+	option = {
+		name = votc_ce_initiative_opt_freq_m
+		trigger_event = votc_ce_initiative.111
+	}
+	option = {
+		name = votc_ce_initiative_opt_freq_q
+		trigger_event = votc_ce_initiative.112
+	}
+	option = {
+		name = votc_ce_initiative_opt_freq_s
+		trigger_event = votc_ce_initiative.113
+	}
+	option = {
+		name = votc_ce_initiative_opt_freq_y
+		trigger_event = votc_ce_initiative.114
+	}
+	option = {
+		name = votc_ce_initiative_opt_back
+		trigger_event = votc_ce_initiative.100
+	}
+	option = {
+		name = votc_ce_initiative_opt_close
+	}
+}
+
+votc_ce_initiative.111 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_freq
+			value = 30
+		}
+		trigger_event = votc_ce_initiative.110
+	}
+}
+
+votc_ce_initiative.112 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_freq
+			value = 91
+		}
+		trigger_event = votc_ce_initiative.110
+	}
+}
+
+votc_ce_initiative.113 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_freq
+			value = 182
+		}
+		trigger_event = votc_ce_initiative.110
+	}
+}
+
+votc_ce_initiative.114 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_freq
+			value = 365
+		}
+		trigger_event = votc_ce_initiative.110
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .120  Probability page
+#--------------------------------------------------------------------------
+votc_ce_initiative.120 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.120.title
+	desc = votc_ce_initiative.120.desc
+	window = character_event
+
+	option = {
+		name = votc_ce_initiative_opt_chance_l
+		trigger_event = votc_ce_initiative.121
+	}
+	option = {
+		name = votc_ce_initiative_opt_chance_m
+		trigger_event = votc_ce_initiative.122
+	}
+	option = {
+		name = votc_ce_initiative_opt_chance_h
+		trigger_event = votc_ce_initiative.123
+	}
+	option = {
+		name = votc_ce_initiative_opt_back
+		trigger_event = votc_ce_initiative.100
+	}
+	option = {
+		name = votc_ce_initiative_opt_close
+	}
+}
+
+votc_ce_initiative.121 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_chance
+			value = 5
+		}
+		trigger_event = votc_ce_initiative.120
+	}
+}
+
+votc_ce_initiative.122 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_chance
+			value = 15
+		}
+		trigger_event = votc_ce_initiative.120
+	}
+}
+
+votc_ce_initiative.123 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_chance
+			value = 30
+		}
+		trigger_event = votc_ce_initiative.120
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .130  Fire one invitation right now (testing / instant gratification).
+#--------------------------------------------------------------------------
+votc_ce_initiative.130 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_variable_list = votc_talked_characters
+				NOT = { exists = global_var:votc_ce_initiative_player }
+			}
+			votc_ce_initiative_launch = yes
+		}
+		# Nothing happened -> nobody eligible yet, show the hub again.
+		if = {
+			limit = { NOT = { exists = global_var:votc_ce_initiative_player } }
+			trigger_event = votc_ce_initiative.100
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .140  Turn the letters on / off
+#--------------------------------------------------------------------------
+votc_ce_initiative.140 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		if = {
+			limit = { has_global_variable = votc_ce_initiative_no_letters }
+			remove_global_variable = votc_ce_initiative_no_letters
+		}
+		else = {
+			set_global_variable = {
+				name = votc_ce_initiative_no_letters
+				value = yes
+			}
+		}
+		trigger_event = votc_ce_initiative.100
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .160  The outbound token for an NPC letter.  An invisible event whose only
+#        job is to put "VOTC:LETTER" on the clipboard (see
+#        votc_ce_initiative_token_event.gui) so the desktop app starts reading
+#        the log, and to start the letter's own runner.  VOTC's
+#        message_event.361 does the same thing but its window is
+#        `fullscreen_event`, which flashed a full screen window for every letter.
+#--------------------------------------------------------------------------
+votc_ce_initiative.160 = {
+	type = character_event
+	title = votc_placeholder
+	window = votc_ce_initiative_token_event
+	desc = votc_ce_initiative_token_letter
+}
+
+#--------------------------------------------------------------------------
+#  .170  Letter interval page   (90 = three months, 182 = half a year, 365 = a year)
+#--------------------------------------------------------------------------
+votc_ce_initiative.170 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.170.title
+	desc = votc_ce_initiative.170.desc
+	window = character_event
+
+	option = {
+		name = votc_ce_initiative_opt_letter_freq_3m
+		trigger_event = votc_ce_initiative.171
+	}
+	option = {
+		name = votc_ce_initiative_opt_letter_freq_6m
+		trigger_event = votc_ce_initiative.172
+	}
+	option = {
+		name = votc_ce_initiative_opt_letter_freq_1y
+		trigger_event = votc_ce_initiative.173
+	}
+	option = {
+		name = votc_ce_initiative_opt_back
+		trigger_event = votc_ce_initiative.100
+	}
+	option = {
+		name = votc_ce_initiative_opt_close
+	}
+}
+
+votc_ce_initiative.171 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_letter_freq
+			value = 90
+		}
+		trigger_event = votc_ce_initiative.170
+	}
+}
+
+votc_ce_initiative.172 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_letter_freq
+			value = 182
+		}
+		trigger_event = votc_ce_initiative.170
+	}
+}
+
+votc_ce_initiative.173 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_letter_freq
+			value = 365
+		}
+		trigger_event = votc_ce_initiative.170
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .174  Fire one letter right now (testing / instant gratification).
+#--------------------------------------------------------------------------
+votc_ce_initiative.174 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { exists = global_var:votc_ce_initiative_letter_pending } }
+			votc_ce_initiative_letter_pick = yes
+		}
+		# Nothing happened -> nobody eligible yet, show the hub again.
+		if = {
+			limit = { NOT = { exists = global_var:votc_ce_initiative_letter_pending } }
+			trigger_event = votc_ce_initiative.100
+		}
+	}
+}

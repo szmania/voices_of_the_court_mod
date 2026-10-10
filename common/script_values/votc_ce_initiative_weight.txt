@@ -1,0 +1,85 @@
+# VOTC-194: relationship weight for NPC-initiative candidate selection.
+# Evaluated on a candidate character; scope:actor = the player (saved by the
+# calling effect, the same pattern votc_ai_initiate_conversation_effect uses
+# so nested list scopes can read the player - see weight_memory_relevance.txt
+# for the script_value style used here).
+# Higher = the character reaches out sooner. Closest - and bitterest - first.
+votc_ce_initiative_weight = {
+	value = 10
+
+	# Opinion magnitude: strong feelings either way make a character act.
+	if = {
+		limit = { opinion = { target = scope:actor value >= 50 } }
+		add = 60
+	}
+	else_if = {
+		limit = { opinion = { target = scope:actor value >= 25 } }
+		add = 30
+	}
+	else_if = {
+		limit = { opinion = { target = scope:actor value <= -50 } }
+		add = 70
+	}
+	else_if = {
+		limit = { opinion = { target = scope:actor value <= -25 } }
+		add = 40
+	}
+
+	# Closeness of the bond.
+	if = {
+		limit = {
+			OR = {
+				has_relation_lover = scope:actor
+				has_relation_soulmate = scope:actor
+				has_relation_best_friend = scope:actor
+			}
+		}
+		add = 50
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_relation_friend = scope:actor
+				is_close_family_of = scope:actor
+			}
+		}
+		add = 30
+	}
+	else_if = {
+		limit = { is_extended_family_of = scope:actor }
+		add = 15
+	}
+
+	# Bitterness of the bond: rivals and nemeses scheme too.
+	if = {
+		limit = { has_relation_nemesis = scope:actor }
+		add = 45
+	}
+	else_if = {
+		limit = { has_relation_rival = scope:actor }
+		add = 25
+	}
+
+	# Feudal duty: vassal or liege of the player.
+	if = {
+		limit = {
+			OR = {
+				is_vassal_of = scope:actor
+				is_liege_or_above_of = scope:actor
+			}
+		}
+		add = 10
+	}
+
+	# Mentor/ward bond: has_relation_guardian = X means "I am X's guardian",
+	# has_relation_ward = X means "I am X's ward" (see 00_scheme_values.txt).
+	if = {
+		limit = {
+			OR = {
+				has_relation_guardian = scope:actor
+				has_relation_ward = scope:actor
+			}
+		}
+		add = 10
+	}
+}
