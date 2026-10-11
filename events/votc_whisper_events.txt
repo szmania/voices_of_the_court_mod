@@ -1,1 +1,373 @@
-﻿
+﻿#==========================================================================
+#  The Whisper Ledger  -  events  (VOTC-195)
+#  namespace = votc_whisper
+#
+#   .10   hidden   weekly heartbeat (root = player)
+#   .20   window   the ledger report (four sections, four headings)
+#   .30   hidden   a section arrived through the WHISPER channel
+#   .40   hidden   gather + ask for the first section
+#   .45   window   nothing to report
+#   .50   token    the outbound clipboard token
+#   .100  hub      settings
+#   .101  hidden   toggle on / off
+#   .110  page     cadence        .111 / .112 / .113
+#   .120  hidden   compose one right now
+#   .130  hidden   read the last ledger
+#
+#  The report is assembled from FOUR separate replies: CK3 cannot split a
+#  string, and rich text coming out of a data function is not parsed, so four
+#  separate strings are the only way to render real large section headings.
+#  Each reply arrives through run/votc_whisper.txt (primary, once the desktop
+#  app has the whisper branch) or through the message_event.362 fallback, and
+#  is stored by votc_whisper_take_section; the last one opens .20.
+#==========================================================================
+
+namespace = votc_whisper
+
+#--------------------------------------------------------------------------
+#  .10  Hidden heartbeat.  Re-arms itself weekly.  The season guard (armed
+#       when a report is dismissed, lasting one cadence plus buffer) keeps the
+#       cadence from stacking reports on top of each other.
+#--------------------------------------------------------------------------
+votc_whisper.10 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		set_global_variable = {
+			name = votc_whisper_heartbeat
+			value = root
+			days = 400
+		}
+
+		if = {
+			limit = {
+				is_ai = no
+				is_alive = yes
+				NOT = { has_global_variable = votc_whisper_off }
+				NOT = { has_global_variable = votc_whisper_season }
+				NOT = { has_global_variable = votc_whisper_seq }
+				NOT = { has_global_variable = votc_whisper_ready }
+				NOT = { has_global_variable = votc_whisper_pending }
+			}
+			trigger_event = votc_whisper.40
+		}
+
+		# weekly re-arm, so a cadence change is picked up quickly
+		trigger_event = {
+			id = votc_whisper.10
+			days = 7
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .30  A section arrived through the WHISPER channel.  The script in
+#       run/votc_whisper.txt - written by the desktop app and executed by
+#       gui/custom_gui/votc_whisper_runner.gui - fires this.  Hidden: no
+#       window, no clipboard write, no letter parchment anywhere.
+#--------------------------------------------------------------------------
+votc_whisper.30 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		votc_whisper_take_section = yes
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .40  Gather and send.
+#--------------------------------------------------------------------------
+votc_whisper.40 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		votc_whisper_start = yes
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .20  The ledger report.  The four bodies come from the artifacts the
+#       desktop app built, the four headings are raw localization text (which
+#       is rich-text parsed, so #T really is rendered large).
+#--------------------------------------------------------------------------
+votc_whisper.20 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_whisper.20.title
+	desc = votc_whisper.20.desc
+	window = character_event
+
+	left_portrait = {
+		character = root
+	}
+
+	widget = {
+		gui = "votc_whisper_hub_widget"
+		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		# The section artifacts have just been handed to the desc.  Drop the
+		# pointer to the last of them so nothing later renders a destroyed
+		# artifact.  The section variables themselves are kept until the NEXT
+		# report starts (votc_whisper_start clears them), which is what keeps
+		# "Read the Last Ledger" working after the window is dismissed.
+		remove_global_variable = votc_latest_letter
+	}
+
+	option = {
+		name = votc_whisper_confirm
+	}
+
+	after = {
+		# seq_cleanup also releases votc_whisper_pending, which is what
+		# re-enables the letter parchment for ordinary letters.
+		votc_whisper_seq_cleanup = yes
+		remove_global_variable = votc_whisper_show_now
+		# the next ledger is assembled one full cadence (+ buffer) from now
+		set_global_variable = {
+			name = votc_whisper_season
+			value = yes
+			days = votc_whisper_season_days
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .45  Nothing to report: the keeper comes back empty handed.  Only shown
+#       for a manually requested report, so the automatic run can never nag
+#       the player.
+#--------------------------------------------------------------------------
+votc_whisper.45 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_whisper.45.title
+	desc = votc_whisper.45.desc
+	window = character_event
+
+	option = {
+		name = votc_whisper_confirm
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .50  The outbound token.  An invisible event whose only job is to put
+#       "VOTC:LETTER" on the clipboard (see votc_whisper_token.gui) so the
+#       desktop app starts reading the log we just wrote.  VOTC's own
+#       message_event.361 does the same thing, but its window is
+#       fullscreen_event, which flashed a full screen window for EVERY
+#       request - four per report.
+#--------------------------------------------------------------------------
+votc_whisper.50 = {
+	type = character_event
+	theme = clipboard_transfer_event_theme
+	title = votc_placeholder
+	window = votc_whisper_token
+	desc = votc_whisper_token_letter
+}
+
+#--------------------------------------------------------------------------
+#  .100  Settings hub.
+#--------------------------------------------------------------------------
+votc_whisper.100 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_whisper.100.title
+	desc = votc_whisper.100.desc
+	window = character_event
+
+	widget = {
+		gui = "votc_whisper_hub_widget"
+		container = "custom_widgets_container"
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_variable = votc_whisper_freq } }
+			set_global_variable = {
+				name = votc_whisper_freq
+				value = 182
+			}
+		}
+	}
+
+	option = {
+		name = votc_whisper_opt_enable
+		trigger = { has_global_variable = votc_whisper_off }
+		trigger_event = votc_whisper.101
+	}
+	option = {
+		name = votc_whisper_opt_disable
+		trigger = { NOT = { has_global_variable = votc_whisper_off } }
+		trigger_event = votc_whisper.101
+	}
+	option = {
+		name = votc_whisper_opt_cadence
+		trigger_event = votc_whisper.110
+	}
+	option = {
+		name = votc_whisper_opt_now
+		trigger_event = votc_whisper.120
+	}
+	option = {
+		name = votc_whisper_opt_close
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .101  Toggle on / off.
+#--------------------------------------------------------------------------
+votc_whisper.101 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		if = {
+			limit = { has_global_variable = votc_whisper_off }
+			remove_global_variable = votc_whisper_off
+			if = {
+				limit = { NOT = { exists = global_var:votc_whisper_heartbeat } }
+				trigger_event = {
+					id = votc_whisper.10
+					days = 10
+				}
+			}
+		}
+		else = {
+			set_global_variable = {
+				name = votc_whisper_off
+				value = yes
+			}
+		}
+		trigger_event = votc_whisper.100
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .110  Cadence page (91 = a season, 182 = half a year, 365 = a year).
+#--------------------------------------------------------------------------
+votc_whisper.110 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_whisper.110.title
+	desc = votc_whisper.110.desc
+	window = character_event
+
+	widget = {
+		gui = "votc_whisper_hub_widget"
+		container = "custom_widgets_container"
+	}
+
+	option = {
+		name = votc_whisper_opt_season
+		trigger_event = votc_whisper.111
+	}
+	option = {
+		name = votc_whisper_opt_half_year
+		trigger_event = votc_whisper.112
+	}
+	option = {
+		name = votc_whisper_opt_year
+		trigger_event = votc_whisper.113
+	}
+	option = {
+		name = votc_whisper_opt_back
+		trigger_event = votc_whisper.100
+	}
+	option = {
+		name = votc_whisper_opt_close
+	}
+}
+
+votc_whisper.111 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		set_global_variable = {
+			name = votc_whisper_freq
+			value = 91
+		}
+		trigger_event = votc_whisper.110
+	}
+}
+
+votc_whisper.112 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		set_global_variable = {
+			name = votc_whisper_freq
+			value = 182
+		}
+		trigger_event = votc_whisper.110
+	}
+}
+
+votc_whisper.113 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		set_global_variable = {
+			name = votc_whisper_freq
+			value = 365
+		}
+		trigger_event = votc_whisper.110
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .120  Compose one right now (testing / impatience).
+#--------------------------------------------------------------------------
+votc_whisper.120 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		# the player asked for it, so ignore the season guard for this one
+		set_global_variable = {
+			name = votc_whisper_show_now
+			value = yes
+			days = 60
+		}
+		# forced: votc_whisper_start refuses to run while a report is already
+		# in flight, but a player who presses the button wants a report now
+		votc_whisper_start_forced = yes
+		# start only sets votc_whisper_seq when it actually found someone worth
+		# listening to; otherwise say so instead of doing nothing
+		if = {
+			limit = { has_global_variable = votc_whisper_seq }
+			trigger_event = votc_whisper.100
+		}
+		else = {
+			trigger_event = votc_whisper.45
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .130  Read the last ledger again.  The section artifacts are kept until
+#        the next report starts, so this simply re-opens the report window.
+#--------------------------------------------------------------------------
+votc_whisper.130 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		trigger_event = votc_whisper.20
+	}
+}
