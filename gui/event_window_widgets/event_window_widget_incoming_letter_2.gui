@@ -10,7 +10,7 @@ hbox = {
         name = widget_show
         trigger_on_create = yes
 
-		on_start = "[ExecuteConsoleCommand('run incomingletter_v2_2.txt')]"
+		on_start = "[ExecuteConsoleCommand('run votc_ce_incomingletter_v2_2.txt')]"
 	}
 
 	expand = {}

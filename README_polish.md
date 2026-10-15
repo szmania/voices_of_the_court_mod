@@ -27,7 +27,7 @@ path="C:/Users/ [Twoja nazwa użytkownika PC] / Documents/Paradox Interactive/Cr
 Jeśli okno dialogowe nadal nie pojawia się po zainstalowaniu i włączeniu moda lokalizacyjnego, ścieżka folderu użytkownika CK3 może być ustawiona nieprawidłowo lub gra może być w trybie Ironman. Ten mod nie działa w trybie Ironman.
 
 ## 4. Błąd "TypeError: Cannot read properties of undefined (reading 'playerID')" z czerwonym tekstem podczas otwierania okna czatu
-**Rozwiązanie**: Utwórz folder o nazwie `run` w `Documents\Paradox Interactive\Crusader Kings III`. Wejdź do tego folderu i utwórz plik tekstowy o nazwie `votc.txt`.
+**Rozwiązanie**: Utwórz folder o nazwie `run` w `Documents\Paradox Interactive\Crusader Kings III`. Wejdź do tego folderu i utwórz plik tekstowy o nazwie `votc_ce.txt`.
 
 ## 5. Ostatnie wspomnienia nie są odczytywane podczas rozmowy z postaciami
 **Rozwiązanie**:
