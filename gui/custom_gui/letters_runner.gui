@@ -36,12 +36,12 @@
 		}
 
 		# VOTC-194: the NPC letter channel.  The desktop patch routes letterId
-		# "npcltr" to run/npcltr.txt; this state executes it on the same beat as
+		# "npcltr" to run/votc_ce_npcltr.txt; this state executes it on the same beat as
 		# the player's own letters.  Harmless when the file does not exist.
 		state = {
 			name = _show_npcltr
 			trigger_on_create = yes
-			on_finish = "[ExecuteConsoleCommand('run npcltr.txt')]"
+			on_finish = "[ExecuteConsoleCommand('run votc_ce_npcltr.txt')]"
 		}
 	}
 }

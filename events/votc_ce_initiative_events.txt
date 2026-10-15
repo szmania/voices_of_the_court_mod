@@ -8,7 +8,7 @@
 #   .4     hidden  arrival of a travelling NPC -> back to .3
 #   .9     hidden  the player declined
 #   .5     hidden  letter heartbeat (a FIXED cadence, no dice)
-#   .152   hidden  a letter arrived through run/npcltr.txt
+#   .152   hidden  a letter arrived through run/votc_ce_npcltr.txt
 #   .153   window  the letter itself (+ write-back)
 #   .160   token   invisible clipboard token for a letter
 #   .100   settings hub
@@ -296,7 +296,7 @@ votc_ce_initiative.9 = {
 
 #--------------------------------------------------------------------------
 #  .152  A letter arrived through the NPC LETTER channel.
-#        The script in run/npcltr.txt - written by the patched desktop app
+#        The script in run/votc_ce_npcltr.txt - written by the patched desktop app
 #        and executed by gui/custom_gui/votc_ce_npc_letter_runner.gui (plus
 #        the extended letters_runner) - fires this.  Hidden: no clipboard
 #        write, no letter parchment, nothing that belongs to the player's own

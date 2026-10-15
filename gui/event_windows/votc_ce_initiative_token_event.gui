@@ -9,7 +9,7 @@
 #  This window is the same trick VOTC itself uses in votc_invisible_event.gui:
 #  a 1x1 window on the tutorial layer, with the EventWindowData datacontext
 #  and nothing to look at.  It also starts the letter channel's own runner,
-#  which is what executes run/npcltr.txt where the app writes the letter.
+#  which is what executes run/votc_ce_npcltr.txt where the app writes the letter.
 #==========================================================================
 
 window = {
