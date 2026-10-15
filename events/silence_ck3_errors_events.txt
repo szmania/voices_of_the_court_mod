@@ -478,6 +478,32 @@ votc_silence_ck3_errors_event.0001 = {
 			votc_silence_ck3_errors_effect = { ERROR = message_second_scope_letter_8 }
 			votc_silence_ck3_errors_effect = { ERROR = selected_scene }
 			votc_silence_ck3_errors_effect = { ERROR = votc_ai_conversation_frequency }
-        }
-    }
+
+			# VOTC-195: The Whisper Ledger - new variables and flags
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_freq }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_pending }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_seq }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_step }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_player }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_latest }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_sec_world }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_sec_realm }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_sec_court }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_sec_circle }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_ready }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_heartbeat }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_season }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_done }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_halt }
+			votc_silence_ck3_errors_effect = { ERROR = message_second_scope_whisper }
+			votc_silence_ck3_errors_effect = { ERROR = whisper_ledger }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cand }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_pinned }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cat_foreign }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cat_realm }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cat_court }
+			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cat_circle }
+		}
+	}
 }

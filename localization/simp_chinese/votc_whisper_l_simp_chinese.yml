@@ -1,0 +1,73 @@
+﻿l_simp_chinese:
+
+# The Whisper Ledger - outbound character data, one key per whisper category.
+# The 27-field layout matches log_character_l_english.yml exactly; slot 25
+# (held court and council positions) is repurposed to carry the category label
+# the desktop app reads back.
+votc_whisper_log_chr_foreign:0 "VOTC:IN/;/character/;/$r_0$/;/$r_1$/;/$r_2$/;/$r_3$/;/$r_4$/;/$r_5$/;/$r_6$/;/$r_7$/;/$r_8$/;/$r_9$/;/$r_10$/;/$r_11$/;/$r_12$/;/$r_13$/;/$r_14$/;/$r_15$/;/$r_16$/;/$r_17$/;/$r_18$/;/$r_19$/;/$r_20$/;/$r_21$/;/$r_22$/;/$r_23$/;/$r_24$/;/whisper_foreign/;/$r_26$"
+votc_whisper_log_chr_realm:0 "VOTC:IN/;/character/;/$r_0$/;/$r_1$/;/$r_2$/;/$r_3$/;/$r_4$/;/$r_5$/;/$r_6$/;/$r_7$/;/$r_8$/;/$r_9$/;/$r_10$/;/$r_11$/;/$r_12$/;/$r_13$/;/$r_14$/;/$r_15$/;/$r_16$/;/$r_17$/;/$r_18$/;/$r_19$/;/$r_20$/;/$r_21$/;/$r_22$/;/$r_23$/;/$r_24$/;/whisper_realm/;/$r_26$"
+votc_whisper_log_chr_court:0 "VOTC:IN/;/character/;/$r_0$/;/$r_1$/;/$r_2$/;/$r_3$/;/$r_4$/;/$r_5$/;/$r_6$/;/$r_7$/;/$r_8$/;/$r_9$/;/$r_10$/;/$r_11$/;/$r_12$/;/$r_13$/;/$r_14$/;/$r_15$/;/$r_16$/;/$r_17$/;/$r_18$/;/$r_19$/;/$r_20$/;/$r_21$/;/$r_22$/;/$r_23$/;/$r_24$/;/whisper_court/;/$r_26$"
+votc_whisper_log_chr_circle:0 "VOTC:IN/;/character/;/$r_0$/;/$r_1$/;/$r_2$/;/$r_3$/;/$r_4$/;/$r_5$/;/$r_6$/;/$r_7$/;/$r_8$/;/$r_9$/;/$r_10$/;/$r_11$/;/$r_12$/;/$r_13$/;/$r_14$/;/$r_15$/;/$r_16$/;/$r_17$/;/$r_18$/;/$r_19$/;/$r_20$/;/$r_21$/;/$r_22$/;/$r_23$/;/$r_24$/;/whisper_circle/;/$r_26$"
+
+# field expressions shared by the four keys above
+r_0:0 "[THIS.Char.GetID]"
+r_1:0 "[THIS.Char.GetTitledFirstNameNoTooltip]"
+r_2:0 "[THIS.Char.GetFullNameNicknamedNoTooltipRegnal]"
+r_3:0 "[THIS.Char.GetPrimaryTitle.GetNameNoTooltip]"
+r_4:0 "[THIS.Char.GetSheHe]"
+r_5:0 "[THIS.Char.GetAge]"
+r_6:0 "[THIS.Char.GetGold]"
+r_7:0 "[THIS.Char.GetOpinionOf(GetPlayer)]"
+r_8:0 "[THIS.Char.GetSexuality]"
+r_9:0 "[THIS.Char.GetAIPersonalityNoTooltip]"
+r_10:0 "[THIS.Char.GetAIGreed]"
+r_11:0 "[THIS.Char.IsIndependentRuler]"
+r_12:0 "[THIS.Char.GetLiege.GetFullNameNicknamedNoTooltipRegnal]"
+r_13:0 "[THIS.Char.GetConsort.GetFullNameNicknamedNoTooltipRegnal]"
+r_14:0 "[THIS.Char.GetCulture.GetName]"
+r_15:0 "[THIS.Char.GetFaith.GetName]"
+r_16:0 "[THIS.Char.GetHouse.GetName]"
+r_17:0 "[THIS.Char.IsRuler]"
+r_18:0 "[THIS.Char.GetFirstNameNoTooltip]"
+r_19:0 "[THIS.Char.GetCapitalLocation.GetNameNoTooltip]"
+r_20:0 "[THIS.Char.GetTopLiege]"
+r_21:0 "[THIS.Char.GetProwess]"
+r_22:0 "[THIS.Char.IsKnight]"
+r_23:0 "[THIS.Char.GetLiege.GetActiveLawInGroupWithFlag('realm_law').GetNameNoTooltip]"
+r_24:0 "[THIS.Char.IsLandedRuler]"
+r_26:0 "[THIS.Char.GetPrimaryTitle.GetRankConcept]"
+
+# The ledger report window
+votc_whisper.20.title:0 "The Whisper Ledger"
+votc_whisper.20.desc:0 "#T #bold Distant Lands#!#!\n\n[GetGlobalVariable('votc_whisper_sec_world').Artifact.GetDesc]\n\n#T #bold The Realm#!#!\n\n[GetGlobalVariable('votc_whisper_sec_realm').Artifact.GetDesc]\n\n#T #bold Your Court#!#!\n\n[GetGlobalVariable('votc_whisper_sec_court').Artifact.GetDesc]\n\n#T #bold Inner Circle#!#!\n\n[GetGlobalVariable('votc_whisper_sec_circle').Artifact.GetDesc]"
+votc_whisper.45.title:0 "The Keeper's Word"
+votc_whisper.45.desc:0 "Your keeper of the ledger bows and admits that there is nothing to tell: no envoys have come back from abroad, and neither your own lords nor those closest to you have done anything worth repeating."
+votc_whisper_token_letter:0 "VOTC:LETTER"
+votc_whisper_confirm:0 "Noted."
+
+# Settings hub
+votc_whisper.100.title:0 "The Whisper Ledger - Settings"
+votc_whisper.100.desc:0 "Your keeper of the ledger gathers what the court, the realm and the wider world have been saying, and lays one report before you every [GetGlobalVariable('votc_whisper_freq').GetValue] days.\n\nIt is written quietly in the background, so nothing interrupts your play while the scribes work.\n\nThe report covers kings and emperors within your diplomatic reach, dukes of your own realm, the courtiers and councillors at your side, and the people closest to you.  Characters you pin in the outliner are covered as well, and are filed under the inner circle."
+votc_whisper_opt_enable:0 "Enable the whisper ledger"
+votc_whisper_opt_disable:0 "Disable the whisper ledger"
+votc_whisper_opt_cadence:0 "Set the cadence..."
+votc_whisper_opt_now:0 "Compose one right now"
+votc_whisper_opt_close:0 "Close"
+
+# Cadence page
+votc_whisper.110.title:0 "Cadence"
+votc_whisper.110.desc:0 "Current: one report every [GetGlobalVariable('votc_whisper_freq').GetValue] days. The report always covers memories from the same length of time."
+votc_whisper_opt_season:0 "A season (91 days)"
+votc_whisper_opt_half_year:0 "Half a year (182 days)"
+votc_whisper_opt_year:0 "A full year (365 days)"
+votc_whisper_opt_back:0 "Back"
+
+# Decisions
+votc_whisper_settings_decision:0 "The Whisper Ledger"
+votc_whisper_settings_decision_desc:0 "Configure the whisper ledger: how often your keeper gathers whispers about the great and the close to you."
+votc_whisper_settings_decision_tooltip:0 "Open the whisper ledger settings."
+votc_whisper_settings_decision_confirm:0 "Open settings"
+votc_whisper_read_last_decision:0 "Read the Last Ledger"
+votc_whisper_read_last_decision_desc:0 "Re-open the most recent whisper ledger."
+votc_whisper_read_last_decision_tooltip:0 "Read the last ledger your keeper delivered."
+votc_whisper_read_last_decision_confirm:0 "Read the last ledger"

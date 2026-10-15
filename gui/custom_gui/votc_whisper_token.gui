@@ -1,0 +1,56 @@
+#==========================================================================
+#  The Whisper Ledger - invisible clipboard-token event window  (VOTC-195)
+#
+#  Some VOTC events exist for one reason only: their widget calls
+#  EventWindowData.CopyToClipboard, so the desktop app notices that new data is
+#  waiting in the log.  The stock windows for those events are *visible*
+#  (fullscreen_event for the outgoing token, the default character_event for
+#  message_event.362), so a report used to flash several extra windows on top of
+#  the one the player actually wants.
+#
+#  This window is the same trick VOTC itself uses in votc_invisible_event.gui:
+#  a 1x1 window on the tutorial layer, with the EventWindowData datacontext and
+#  nothing to look at.
+#
+#  It is used by votc_whisper.50 - the outgoing token for a WHISPER request.
+#  It only ever copies: opening the letter parchment lives in
+#  event_window_widget_message_open.gui, which is what message_event.362 uses.
+#  Keeping them apart matters, because this window is reached once per request
+#  and at that moment votc_latest_letter still points at the previous reply.
+#
+#  It also starts the whisper channel's runner, which is what executes
+#  run/votc_whisper.txt where the app writes a finished section.
+#
+#  Note the widget a stock token event declares cannot do this job: it uses
+#  container = "custom_widgets_container", which is defined per-window in
+#  vanilla and does not exist in a mod window, so it never renders here.
+#==========================================================================
+
+window = {
+	name = "votc_whisper_token"
+	gfxtype = windowgfx
+	parentanchor = top|right
+	layer = tutorial
+	allow_outside = yes
+	size = { 1 1 }
+	position = { 0 0 }
+
+	datacontext = "[EventWindow.AccessEventWindowData]"
+
+	state = {
+		name = _copy
+		trigger_on_create = yes
+		on_finish = "[EventWindowData.CopyToClipboard]"
+	}
+
+	state = {
+		name = _runner
+		trigger_on_create = yes
+		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_whisper_runner.gui votc_whisper_runner')]"
+	}
+
+	hbox = {
+		size = { 1 1 }
+		alpha = 0
+	}
+}

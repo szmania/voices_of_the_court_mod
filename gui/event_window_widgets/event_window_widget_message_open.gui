@@ -9,11 +9,18 @@
 		on_finish = "[EventWindowData.CopyToClipboard]"
 	}
 
+	# VOTC-195: The Whisper Ledger.  While a whisper sequence is armed, the
+	# reply's own message_event.362 window must NOT open the letter parchment -
+	# the section is consumed by votc_whisper_deliver and rendered inside the
+	# ledger report window instead.  votc_whisper_pending is released in
+	# votc_whisper.20's after block, so ordinary letters are unaffected.
 	state = {
 		name = widget_create_window
 		trigger_on_create = yes
+		trigger_when = "[Not(GetGlobalVariable('votc_whisper_pending').IsSet)]"
 		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_letter.gui votc_letter')]"
 	}
 
 	expand = {}
 }
+

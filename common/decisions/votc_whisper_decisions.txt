@@ -1,0 +1,80 @@
+﻿#==========================================================================
+#  The Whisper Ledger  -  decisions  (VOTC-195)
+#  Entry point in the Decisions tab.  One decision opens the settings hub,
+#  one re-opens the most recent report.
+#==========================================================================
+
+votc_whisper_settings_decision = {
+	decision_group_type = decisions
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
+
+	sort_order = 89
+
+	desc = votc_whisper_settings_decision_desc
+	selection_tooltip = votc_whisper_settings_decision_tooltip
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		is_ai = no
+	}
+
+	cooldown = { days = 1 }
+
+	effect = {
+		if = {
+			limit = { NOT = { has_global_variable = votc_whisper_freq } }
+			set_global_variable = {
+				name = votc_whisper_freq
+				value = 182
+			}
+		}
+		trigger_event = votc_whisper.100
+	}
+
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+}
+
+votc_whisper_read_last_decision = {
+	decision_group_type = decisions
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
+
+	sort_order = 90
+
+	desc = votc_whisper_read_last_decision_desc
+	selection_tooltip = votc_whisper_read_last_decision_tooltip
+
+	is_shown = {
+		is_ai = no
+		OR = {
+			has_global_variable = votc_whisper_sec_world
+			has_global_variable = votc_whisper_sec_realm
+			has_global_variable = votc_whisper_sec_court
+			has_global_variable = votc_whisper_sec_circle
+		}
+	}
+
+	is_valid = {
+		is_ai = no
+	}
+
+	effect = {
+		trigger_event = votc_whisper.130
+	}
+
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+}

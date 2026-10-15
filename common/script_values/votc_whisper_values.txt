@@ -1,0 +1,15 @@
+﻿#==========================================================================
+#  The Whisper Ledger  -  script values  (VOTC-195)
+#==========================================================================
+
+# Season guard length: one full cadence plus a two-week buffer, read from the
+# player's cadence setting so a quarterly report is not blocked for a year.
+# Falls back to the half-year default when the cadence global is not set yet.
+votc_whisper_season_days = {
+	value = 182
+	if = {
+		limit = { exists = global_var:votc_whisper_freq }
+		value = global_var:votc_whisper_freq
+	}
+	add = 14
+}
