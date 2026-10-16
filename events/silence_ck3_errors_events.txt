@@ -503,7 +503,25 @@ votc_silence_ck3_errors_event.0001 = {
 			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cat_foreign }
 			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cat_realm }
 			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cat_court }
-			votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cat_circle }
+votc_silence_ck3_errors_effect = { ERROR = votc_whisper_cat_circle }
+
+			# VOTC-CE: Incoming NPC letters - sender slot globals used by the
+			# incoming-letter title loc before the slots are ever filled.
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letter_sender_1 }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letter_sender_2 }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letter_sender_3 }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letter_sender_4 }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letter_sender_5 }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letter_sender_6 }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letter_sender_7 }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letter_sender_8 }
+
+			# VOTC-CE: Incoming NPC letters - settings/frequency globals.
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letters_enabled }
+votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letters_frequency }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letters_family_frequency }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letters_poetry_frequency }
+			votc_silence_ck3_errors_effect = { ERROR = votc_incoming_letters_event_frequency }
 		}
 	}
 }
