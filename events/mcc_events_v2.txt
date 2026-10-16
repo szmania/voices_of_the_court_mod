@@ -437,7 +437,7 @@ mcc_event_v2.9003 = {
 
 }
 
-#run/letters.txt executor
+#run/votc_ce_letters.txt executor
 mcc_event_v2.9998 = {
 	type = character_event
 	title = votc_placeholder
