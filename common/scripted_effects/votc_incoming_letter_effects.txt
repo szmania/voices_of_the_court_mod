@@ -2487,5 +2487,47 @@ votc_start_incoming_letter_effect = {
 	}
 	else = {
 		debug_log = "VOTC:INCOMING_LETTER/;/skipped/;/assert/actor_is_ai"
+}
+
+# ------------------------------
+# Default settings (default-on policy)
+# ------------------------------
+
+# Applies the default incoming-letter settings: enabled plus the four frequency
+# defaults. Each frequency is only set when absent, so an existing player choice
+# is never overwritten. Shared by the game-start hook, the enable sgui and the
+# enable decision so all three paths stay identical.
+votc_incoming_letters_apply_default_settings_effect = {
+	set_variable = {
+		name = votc_incoming_letters_enabled
+		value = 1
+	}
+	if = {
+		limit = { NOT = { has_variable = votc_incoming_letters_frequency } }
+		set_variable = {
+			name = votc_incoming_letters_frequency
+			value = 2
+		}
+	}
+	if = {
+		limit = { NOT = { has_variable = votc_incoming_letters_event_frequency } }
+		set_variable = {
+			name = votc_incoming_letters_event_frequency
+			value = 2
+		}
+	}
+	if = {
+		limit = { NOT = { has_variable = votc_incoming_letters_family_frequency } }
+		set_variable = {
+			name = votc_incoming_letters_family_frequency
+			value = 2
+		}
+	}
+	if = {
+		limit = { NOT = { has_variable = votc_incoming_letters_poetry_frequency } }
+		set_variable = {
+			name = votc_incoming_letters_poetry_frequency
+			value = 2
+		}
 	}
 }

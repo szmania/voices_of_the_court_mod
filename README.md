@@ -27,7 +27,7 @@ path="C:/Users/ [Your PC Username Here] / Documents/Paradox Interactive/Crusader
 If the dialog box still does not appear after installing and enabling the localization mod, the CK3 user folder path may be set incorrectly, or the game might be in Ironman mode. This mod does not work in Ironman mode.
 
 ## 4. Error "TypeError: Cannot read properties of undefined (reading 'playerID')" with red text when opening the chat window
-**Solution**: Create a folder named `run` in `Documents\Paradox Interactive\Crusader Kings III`. Enter that folder and create a text file named `votc.txt`.
+**Solution**: Create a folder named `run` in `Documents\Paradox Interactive\Crusader Kings III`. Enter that folder and create a text file named `votc_ce.txt`.
 
 ## 5. Recent memories are not being read when talking to characters
 **Solution**:

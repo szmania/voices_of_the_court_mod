@@ -4,38 +4,9 @@
 votc_incoming_letters_enable_sgui = {
 	scope = character
 	effect = {
-		set_variable = {
-			name = votc_incoming_letters_enabled
-			value = 1
-		}
-		if = {
-			limit = { NOT = { has_variable = votc_incoming_letters_frequency } }
-			set_variable = {
-				name = votc_incoming_letters_frequency
-				value = 2
-			}
-		}
-		if = {
-			limit = { NOT = { has_variable = votc_incoming_letters_event_frequency } }
-			set_variable = {
-				name = votc_incoming_letters_event_frequency
-				value = 2
-			}
-		}
-		if = {
-			limit = { NOT = { has_variable = votc_incoming_letters_family_frequency } }
-			set_variable = {
-				name = votc_incoming_letters_family_frequency
-				value = 2
-			}
-		}
-		if = {
-			limit = { NOT = { has_variable = votc_incoming_letters_poetry_frequency } }
-			set_variable = {
-				name = votc_incoming_letters_poetry_frequency
-				value = 2
-			}
-		}
+		# Default-on policy: shared with the game-start hook and the enable
+		# decision so all three paths set identical defaults.
+		votc_incoming_letters_apply_default_settings_effect = yes
 	}
 }
 
@@ -43,8 +14,12 @@ votc_incoming_letters_disable_sgui = {
 	scope = character
 	effect = {
 		remove_variable = votc_incoming_letters_enabled
-	}
-}
+		# Opt-out marker: an explicit "off" must never be silently reverted by
+		# the game-start default-on hook.
+		set_variable = {
+			name = votc_incoming_letters_opt_out
+			value = 1
+		}
 
 votc_incoming_letters_frequency_off_sgui = {
 	scope = character

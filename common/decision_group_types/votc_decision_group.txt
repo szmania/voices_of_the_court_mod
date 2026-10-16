@@ -1,5 +1,5 @@
-﻿# VOTC decisions live in their own group, sorted below vanilla's generic
+﻿# VOTC-CE decisions live in their own group, sorted below vanilla's generic
 # `decisions` group (10) and above `courtier` (1).
-votc = {
+votc_ce = {
 	sort_order = 5
 }

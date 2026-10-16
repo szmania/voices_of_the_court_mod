@@ -27,7 +27,7 @@ path="C:/Users/ [あなたのPCユーザー名] / Documents/Paradox Interactive/
 ローカライズModをインストールして有効にしてもダイアログボックスが表示されない場合は、CK3のユーザーフォルダパスが正しく設定されていないか、ゲームがアイアンマンモードになっている可能性があります。このModはアイアンマンモードでは動作しません。
 
 ## 4. チャットウィンドウを開くと赤文字で "TypeError: Cannot read properties of undefined (reading 'playerID')" というエラーが出る
-**解決策**: `Documents\Paradox Interactive\Crusader Kings III` 内に `run` という名前のフォルダを作成します。そのフォルダに入り、 `votc.txt` という名前のテキストファイルを作成します。
+**解決策**: `Documents\Paradox Interactive\Crusader Kings III` 内に `run` という名前のフォルダを作成します。そのフォルダに入り、 `votc_ce.txt` という名前のテキストファイルを作成します。
 
 ## 5. キャラクターと話す際、最近の記憶が読み込まれない
 **解決策**:

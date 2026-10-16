@@ -27,7 +27,7 @@ path="C:/Users/ [Ihr PC-Benutzername hier] / Documents/Paradox Interactive/Crusa
 Wenn das Dialogfeld nach der Installation und Aktivierung der Lokalisierungs-Mod immer noch nicht erscheint, ist möglicherweise der Pfad des CK3-Benutzerordners falsch eingestellt oder das Spiel befindet sich im Ironman-Modus. Diese Mod funktioniert nicht im Ironman-Modus.
 
 ## 4. Fehler "TypeError: Cannot read properties of undefined (reading 'playerID')" mit rotem Text beim Öffnen des Chat-Fensters
-**Lösung**: Erstellen Sie einen Ordner namens `run` in `Documents\Paradox Interactive\Crusader Kings III`. Gehen Sie in diesen Ordner und erstellen Sie eine Textdatei namens `votc.txt`.
+**Lösung**: Erstellen Sie einen Ordner namens `run` in `Documents\Paradox Interactive\Crusader Kings III`. Gehen Sie in diesen Ordner und erstellen Sie eine Textdatei namens `votc_ce.txt`.
 
 ## 5. Kürzliche Erinnerungen werden beim Sprechen mit Charakteren nicht gelesen
 **Lösung**:

@@ -29,7 +29,7 @@ path="C:/Users/ 这里是你电脑的用户名 / Documents/Paradox Interactive/C
 如果安装开启汉化mod后依然不会弹出对话框，可能是CK3 用户文件夹路径设置不正确，或者是游戏处于铁人模式，改mod在铁人模式下不会生效。
 
 ## 四、打开聊天窗口时，收到一个带有红色文本的错误"TypeError： Cannot read properties of undedined （reading 'playerID'）"
-**解决**：在`Documents\Paradox Interactive\Crusader Kings III`中创建一个名为 `run` 的文件夹，进入创建的文件夹并创建一个名为 `votc.txt` 的文本文件
+**解决**：在`Documents\Paradox Interactive\Crusader Kings III`中创建一个名为 `run` 的文件夹，进入创建的文件夹并创建一个名为 `votc_ce.txt` 的文本文件
 
 ## 五、和人物对话时读取不到最近的记忆
 **解决**：  
