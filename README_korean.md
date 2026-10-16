@@ -27,7 +27,7 @@ path="C:/Users/ [사용자 PC 이름] / Documents/Paradox Interactive/Crusader K
 현지화 모드를 설치하고 활성화했는데도 대화창이 나타나지 않는다면, CK3 사용자 폴더 경로가 잘못 설정되었거나 게임이 아이언맨 모드일 수 있습니다. 이 모드는 아이언맨 모드에서 작동하지 않습니다.
 
 ## 4. 채팅창을 열 때 빨간색 텍스트로 "TypeError: Cannot read properties of undefined (reading 'playerID')" 오류가 발생합니다
-**해결책**: `Documents\Paradox Interactive\Crusader Kings III` 안에 `run`이라는 이름의 폴더를 만듭니다. 해당 폴더로 들어가 `votc.txt`라는 이름의 텍스트 파일을 만듭니다.
+**해결책**: `Documents\Paradox Interactive\Crusader Kings III` 안에 `run`이라는 이름의 폴더를 만듭니다. 해당 폴더로 들어가 `votc_ce.txt`라는 이름의 텍스트 파일을 만듭니다.
 
 ## 5. 캐릭터와 대화할 때 최근 기억이 읽히지 않습니다
 **해결책**:

@@ -1,5 +1,5 @@
 ﻿votc_relaese_letter_decision = {
-	decision_group_type = decisions
+	decision_group_type = votc_ce
 
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
@@ -26,7 +26,7 @@
 }
 
 votc_relaese_battle_report_decision = {
-	decision_group_type = decisions
+	decision_group_type = votc_ce
 
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
@@ -91,7 +91,7 @@ votc_relaese_battle_report_decision = {
 }
 
 votc_conversation_history_decision = {
-	decision_group_type = decisions
+	decision_group_type = votc_ce
 
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
