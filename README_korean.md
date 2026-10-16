@@ -60,6 +60,7 @@ This project, Voices of the Court 2.0 - Community Edition, is a derivative work 
 
 * integration with Voices of the Court 2.0 - Community Edition
 * Added features
+* NPC 주도권 추가 (NPC가 이제 대화를 시작하고 편지를 보낼 수 있으며, 기존 AI 시작 루프를 대체합니다)
 * Added bug fixes
 
 Relicensed derivative works under GNU GPLv3 as a compatible ShareAlike license.

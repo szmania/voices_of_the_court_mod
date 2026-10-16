@@ -214,8 +214,8 @@ def main():
             err(f'missing widget for slot {slot}')
             continue
         widget = read(p)
-        if f'run incomingletter_v2_{slot}.txt' not in widget:
-            err(f'widget {slot} does not execute run incomingletter_v2_{slot}.txt')
+        if f'run votc_ce_incomingletter_v2_{slot}.txt' not in widget:
+            err(f'widget {slot} does not execute run votc_ce_incomingletter_v2_{slot}.txt')
     triggers = contents.get('common/scripted_triggers/votc_incoming_letter_triggers.txt', '')
     for slot in (7, 8):
         if f'incoming_letter_{slot}' not in triggers:

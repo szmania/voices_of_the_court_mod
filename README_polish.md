@@ -60,6 +60,7 @@ This project, Voices of the Court 2.0 - Community Edition, is a derivative work 
 
 * Integration with Voices of the Court 2.0 - Community Edition
 * Added features
+* Dodano inicjatywę NPC (NPC mogą teraz inicjować rozmowy i wysyłać listy, zastępując stary cykl inicjacji AI)
 * Added bug fixes
 
 Relicensed derivative works under GNU GPLv3 as a compatible ShareAlike license.

@@ -60,6 +60,7 @@ This project, Voices of the Court 2.0 - Community Edition, is a derivative work 
 
 * integration with Voices of the Court 2.0 - Community Edition
 * Added features
+* Ajout de l'initiative des PNJ (les PNJ peuvent désormais initier des conversations et envoyer des lettres, remplaçant l'ancienne boucle d'initiation par l'IA)
 * Added bug fixes
 
 Relicensed derivative works under GNU GPLv3 as a compatible ShareAlike license.

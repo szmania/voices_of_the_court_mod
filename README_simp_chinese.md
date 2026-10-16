@@ -62,6 +62,7 @@ This project, Voices of the Court 2.0 - Community Edition, is a derivative work 
 
 * integration with Voices of the Court 2.0 - Community Edition
 * Added features
+* 添加了 NPC 主动发起机制（NPC 现在可以主动发起对话并发送信件，取代了旧的 AI 发起循环）
 * Added bug fixes
 
 Relicensed derivative works under GNU GPLv3 as a compatible ShareAlike license.
