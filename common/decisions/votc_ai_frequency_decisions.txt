@@ -3,7 +3,7 @@
 # The currently active setting's decision is hidden via is_shown.
 
 votc_ai_frequency_off_decision = {
-	decision_group_type = decisions
+	decision_group_type = votc_ce
 
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
@@ -31,7 +31,7 @@ votc_ai_frequency_off_decision = {
 }
 
 votc_ai_frequency_low_decision = {
-	decision_group_type = decisions
+	decision_group_type = votc_ce
 
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
@@ -59,7 +59,7 @@ votc_ai_frequency_low_decision = {
 }
 
 votc_ai_frequency_default_decision = {
-	decision_group_type = decisions
+	decision_group_type = votc_ce
 
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
@@ -87,7 +87,7 @@ votc_ai_frequency_default_decision = {
 }
 
 votc_ai_frequency_high_decision = {
-	decision_group_type = decisions
+	decision_group_type = votc_ce
 
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"

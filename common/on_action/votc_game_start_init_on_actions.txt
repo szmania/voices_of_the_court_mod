@@ -25,6 +25,16 @@ votc_game_start_init_relay = {
 	effect = {
 		every_player = {
 			limit = { is_ai = no }
+			# Default-on policy: NPC-initiated letters are enabled out of the box
+			# for a new campaign. The opt-out marker (set by both disable paths)
+			# keeps an explicit "off" from being silently reverted.
+			if = {
+				limit = {
+					NOT = { has_variable = votc_incoming_letters_enabled }
+					NOT = { has_variable = votc_incoming_letters_opt_out }
+				}
+				votc_incoming_letters_apply_default_settings_effect = yes
+			}
 			# Idempotent: an intact campaign id and checkpoint are left as they
 			# are, a missing one is generated here rather than on the first
 			# conversation. The bootstrap kind the effect records says which of
