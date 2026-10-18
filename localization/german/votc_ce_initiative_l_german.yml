@@ -1,12 +1,21 @@
-﻿﻿l_german:
+﻿l_german:
+
+#--------------------------------------------------------------------------
+# NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
+# Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
+# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
+# votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
+# which documents the votc_incoming_letter_event / talk-interaction keys only.
+#--------------------------------------------------------------------------
 
  votc_ce_initiative.2.title:0 "Eine Gesprächsanfrage"
- votc_ce_initiative.2.desc:0 "[global_var:votc_ce_initiative_char.GetTitledFirstName] möchte mit Ihnen sprechen."
+ votc_ce_initiative.2.desc:0 "[GetGlobalVariable('votc_ce_initiative_char').Char.GetTitledFirstName] möchte mit Ihnen sprechen."
  votc_ce_initiative_accept_here:0 "Jetzt sprechen"
  votc_ce_initiative_accept_travel:0 "Hierher einladen"
  votc_ce_initiative_decline:0 "Nicht jetzt"
  votc_ce_initiative.153.title:0 "Ein Brief trifft ein"
- votc_ce_initiative.153.desc:0 "#T [global_var:votc_ce_initiative_letter_char.GetTitledFirstName]#!\n\n[global_var:votc_latest_letter.GetDescription]"
+ votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "Schließen"
  votc_ce_initiative_letter_write_back:0 "Antworten"
  votc_ce_initiative.100.title:0 "NSC-Initiative-Einstellungen"
@@ -38,7 +47,7 @@
  votc_ce_initiative_opt_letter_freq_3m:0 "Vierteljährlich (90 Tage)"
  votc_ce_initiative_opt_letter_freq_6m:0 "Halbjährlich (182 Tage)"
  votc_ce_initiative_opt_letter_freq_1y:0 "Jährlich (365 Tage)"
- votc_ce_initiative_settings_decision:0 "NSC-Initiative-Einstellungen"
+ votc_ce_initiative_settings_decision:0 "VOTC-CE: NSC-Initiative-Einstellungen"
  votc_ce_initiative_settings_decision_desc:0 "Konfigurieren Sie Häufigkeit und Chance, dass NSC Gespräche beginnen oder Briefe schreiben."
  votc_ce_initiative_settings_decision_tooltip:0 "NSC-Initiative-Einstellungsfenster öffnen"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
@@ -50,3 +59,13 @@
  votc_ce_initiative_log_letter_liege:0 "VOTC:IN/;/letter_payload/;/liege"
  votc_ce_initiative_log_letter_mentor:0 "VOTC:IN/;/letter_payload/;/mentor"
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
+ votc_ce_initiative_settings_decision_confirm:0 "NSC-Initiative-Einstellungen"
+
+# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+ votc_ce_initiative_opt_incoming:0 "Eingehende Briefe"
+ votc_ce_initiative.180.title:0 "Häufigkeit eingehender Briefe"
+ votc_ce_initiative.180.desc:0 "Legen Sie fest, wie oft andere Charaktere Ihnen situative Briefe senden (Vasallenberichte, Bittschriften, Sticheleien, Grüße)."
+ votc_ce_initiative_opt_incoming_low:0 "Niedrig (25 %)"
+ votc_ce_initiative_opt_incoming_normal:0 "Standard (50 %)"
+ votc_ce_initiative_opt_incoming_high:0 "Hoch (80 %)"
+ votc_ce_initiative_opt_incoming_max:0 "Maximal (100 %)"

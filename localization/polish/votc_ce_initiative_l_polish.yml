@@ -1,12 +1,21 @@
-﻿﻿l_polish:
+﻿l_polish:
+
+#--------------------------------------------------------------------------
+# NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
+# Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
+# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
+# votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
+# which documents the votc_incoming_letter_event / talk-interaction keys only.
+#--------------------------------------------------------------------------
 
  votc_ce_initiative.2.title:0 "Prośba o rozmowę"
- votc_ce_initiative.2.desc:0 "[global_var:votc_ce_initiative_char.GetTitledFirstName] chce z tobą porozmawiać."
+ votc_ce_initiative.2.desc:0 "[GetGlobalVariable('votc_ce_initiative_char').Char.GetTitledFirstName] chce z tobą porozmawiać."
  votc_ce_initiative_accept_here:0 "Porozmawiaj teraz"
  votc_ce_initiative_accept_travel:0 "Zaproś do przybycia tutaj"
  votc_ce_initiative_decline:0 "Nie teraz"
  votc_ce_initiative.153.title:0 "Przychodzi list"
- votc_ce_initiative.153.desc:0 "#T [global_var:votc_ce_initiative_letter_char.GetTitledFirstName]#!\n\n[global_var:votc_latest_letter.GetDescription]"
+ votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "Zamknij"
  votc_ce_initiative_letter_write_back:0 "Odpisz"
  votc_ce_initiative.100.title:0 "Ustawienia Inicjatywy NPC"
@@ -38,7 +47,7 @@
  votc_ce_initiative_opt_letter_freq_3m:0 "Co kwartał (90 dni)"
  votc_ce_initiative_opt_letter_freq_6m:0 "Co pół roku (182 dni)"
  votc_ce_initiative_opt_letter_freq_1y:0 "Co rok (365 dni)"
- votc_ce_initiative_settings_decision:0 "Ustawienia Inicjatywy NPC"
+ votc_ce_initiative_settings_decision:0 "VOTC-CE: Ustawienia Inicjatywy NPC"
  votc_ce_initiative_settings_decision_desc:0 "Skonfiguruj częstotliwość i szansę, że NPC rozpoczną rozmowę lub napiszą list."
  votc_ce_initiative_settings_decision_tooltip:0 "Otwórz okno ustawień Inicjatywy NPC"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
@@ -50,3 +59,13 @@
  votc_ce_initiative_log_letter_liege:0 "VOTC:IN/;/letter_payload/;/liege"
  votc_ce_initiative_log_letter_mentor:0 "VOTC:IN/;/letter_payload/;/mentor"
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
+ votc_ce_initiative_settings_decision_confirm:0 "Ustawienia Inicjatywy NPC"
+
+# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+ votc_ce_initiative_opt_incoming:0 "Listy przychodzące"
+ votc_ce_initiative.180.title:0 "Częstość listów przychodzących"
+ votc_ce_initiative.180.desc:0 "Ustaw, jak często inne postacie wysyłają do ciebie listy sytuacyjne (raporty wasali, petycje, zaczepki, pozdrowienia)."
+ votc_ce_initiative_opt_incoming_low:0 "Niska (25%)"
+ votc_ce_initiative_opt_incoming_normal:0 "Standardowa (50%)"
+ votc_ce_initiative_opt_incoming_high:0 "Wysoka (80%)"
+ votc_ce_initiative_opt_incoming_max:0 "Maksymalna (100%)"

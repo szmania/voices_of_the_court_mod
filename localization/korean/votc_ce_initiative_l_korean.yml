@@ -1,12 +1,21 @@
-﻿﻿l_korean:
+﻿l_korean:
+
+#--------------------------------------------------------------------------
+# NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
+# Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
+# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
+# votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
+# which documents the votc_incoming_letter_event / talk-interaction keys only.
+#--------------------------------------------------------------------------
 
  votc_ce_initiative.2.title:0 "대화 요청"
- votc_ce_initiative.2.desc:0 "[global_var:votc_ce_initiative_char.GetTitledFirstName]이(가) 당신과 대화하기를 원합니다."
+ votc_ce_initiative.2.desc:0 "[GetGlobalVariable('votc_ce_initiative_char').Char.GetTitledFirstName]이(가) 당신과 대화하기를 원합니다."
  votc_ce_initiative_accept_here:0 "지금 대화하기"
  votc_ce_initiative_accept_travel:0 "이곳으로 초대하기"
  votc_ce_initiative_decline:0 "지금은 안 함"
  votc_ce_initiative.153.title:0 "편지 도착"
- votc_ce_initiative.153.desc:0 "#T [global_var:votc_ce_initiative_letter_char.GetTitledFirstName]#!\n\n[global_var:votc_latest_letter.GetDescription]"
+ votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "닫기"
  votc_ce_initiative_letter_write_back:0 "답장하기"
  votc_ce_initiative.100.title:0 "NPC 주도성 설정"
@@ -38,7 +47,7 @@
  votc_ce_initiative_opt_letter_freq_3m:0 "분기별 (90일)"
  votc_ce_initiative_opt_letter_freq_6m:0 "반년별 (182일)"
  votc_ce_initiative_opt_letter_freq_1y:0 "매년 (365일)"
- votc_ce_initiative_settings_decision:0 "NPC 주도성 설정"
+ votc_ce_initiative_settings_decision:0 "VOTC-CE: NPC 주도성 설정"
  votc_ce_initiative_settings_decision_desc:0 "NPC가 대화를 시작하거나 편지를 쓰는 빈도 및 확률을 설정합니다."
  votc_ce_initiative_settings_decision_tooltip:0 "NPC 주도성 설정 창 열기"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
@@ -50,3 +59,13 @@
  votc_ce_initiative_log_letter_liege:0 "VOTC:IN/;/letter_payload/;/liege"
  votc_ce_initiative_log_letter_mentor:0 "VOTC:IN/;/letter_payload/;/mentor"
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
+ votc_ce_initiative_settings_decision_confirm:0 "NPC 주도성 설정"
+
+# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+ votc_ce_initiative_opt_incoming:0 "받은 편지"
+ votc_ce_initiative.180.title:0 "받은 편지 빈도"
+ votc_ce_initiative.180.desc:0 "다른 인물이 상황에 따른 편지(가신 보고, 청원, 조롱, 인사)를 보내는 빈도를 설정합니다."
+ votc_ce_initiative_opt_incoming_low:0 "낮음 (25%)"
+ votc_ce_initiative_opt_incoming_normal:0 "기본 (50%)"
+ votc_ce_initiative_opt_incoming_high:0 "높음 (80%)"
+ votc_ce_initiative_opt_incoming_max:0 "최대 (100%)"
