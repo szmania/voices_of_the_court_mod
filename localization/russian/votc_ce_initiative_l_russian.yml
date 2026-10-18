@@ -47,9 +47,9 @@
  votc_ce_initiative_opt_letter_freq_3m:0 "Ежеквартально (90 дн.)"
  votc_ce_initiative_opt_letter_freq_6m:0 "Раз в полгода (182 дн.)"
  votc_ce_initiative_opt_letter_freq_1y:0 "Ежегодно (365 дн.)"
- votc_ce_initiative_settings_decision:0 "VOTC-CE: Настройки инициативы ИИ"
- votc_ce_initiative_settings_decision_desc:0 "Настройте частоту и вероятность того, что ИИ будут начинать разговоры или писать письма."
- votc_ce_initiative_settings_decision_tooltip:0 "Открыть окно настроек инициативы ИИ"
+ votc_ce_initiative_settings_decision:0 "VOTC-CE: Настройки"
+ votc_ce_initiative_settings_decision_desc:0 "Настройте, как часто персонажи обращаются к вам, начинают разговоры или пишут письма."
+ votc_ce_initiative_settings_decision_tooltip:0 "Открыть окно настроек VOTC-CE"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
  votc_huixin_titlenpcltr:0 "Письмо"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
@@ -59,7 +59,7 @@
  votc_ce_initiative_log_letter_liege:0 "VOTC:IN/;/letter_payload/;/liege"
  votc_ce_initiative_log_letter_mentor:0 "VOTC:IN/;/letter_payload/;/mentor"
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
- votc_ce_initiative_settings_decision_confirm:0 "Настройки инициативы ИИ"
+ votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Настройки"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
  votc_ce_initiative_opt_incoming:0 "Входящие письма"
@@ -69,3 +69,12 @@
  votc_ce_initiative_opt_incoming_normal:0 "Обычная (50%)"
  votc_ce_initiative_opt_incoming_high:0 "Высокая (80%)"
  votc_ce_initiative_opt_incoming_max:0 "Максимальная (100%)"
+
+# VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
+ votc_ce_initiative_opt_ai_freq:0 "Диалоги ИИ"
+ votc_ce_initiative.190.title:0 "Диалоги ИИ"
+ votc_ce_initiative.190.desc:0 "Выберите, как часто персонажи ИИ просят поговорить с вами."
+ votc_ce_initiative_opt_incoming_toggle:0 "Отключить письма ИИ"
+ votc_ce_initiative_opt_incoming_toggle_off:0 "Включить письма ИИ"
+ votc_ce_initiative_opt_incoming_clear:0 "Очистить слоты входящих писем"
+ votc_ce_initiative_opt_incoming_details:0 "Подробные настройки писем"

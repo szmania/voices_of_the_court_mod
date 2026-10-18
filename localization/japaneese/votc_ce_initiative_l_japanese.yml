@@ -47,9 +47,9 @@
  votc_ce_initiative_opt_letter_freq_3m:0 "四半期ごと（90日）"
  votc_ce_initiative_opt_letter_freq_6m:0 "半年ごと（182日）"
  votc_ce_initiative_opt_letter_freq_1y:0 "毎年（365日）"
- votc_ce_initiative_settings_decision:0 "VOTC-CE: NPC主導性設定"
- votc_ce_initiative_settings_decision_desc:0 "NPCが会話を開始したり手紙を書いたりする頻度と確率を設定します。"
- votc_ce_initiative_settings_decision_tooltip:0 "NPC主導性設定ウィンドウを開く"
+ votc_ce_initiative_settings_decision:0 "VOTC-CE: 設定"
+ votc_ce_initiative_settings_decision_desc:0 "人物があなたに接触したり、会話を始めたり、手紙を書いたりする頻度を設定します。"
+ votc_ce_initiative_settings_decision_tooltip:0 "VOTC-CE設定ウィンドウを開く"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
  votc_huixin_titlenpcltr:0 "手紙"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
@@ -59,7 +59,7 @@
  votc_ce_initiative_log_letter_liege:0 "VOTC:IN/;/letter_payload/;/liege"
  votc_ce_initiative_log_letter_mentor:0 "VOTC:IN/;/letter_payload/;/mentor"
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
- votc_ce_initiative_settings_decision_confirm:0 "NPC主導性設定"
+ votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: 設定"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
  votc_ce_initiative_opt_incoming:0 "受信の手紙"
@@ -69,3 +69,12 @@
  votc_ce_initiative_opt_incoming_normal:0 "標準(50%)"
  votc_ce_initiative_opt_incoming_high:0 "高い(80%)"
  votc_ce_initiative_opt_incoming_max:0 "最大(100%)"
+
+# VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
+ votc_ce_initiative_opt_ai_freq:0 "AI会話"
+ votc_ce_initiative.190.title:0 "AI会話"
+ votc_ce_initiative.190.desc:0 "AIキャラクターがあなたに話しかける頻度を選択します。"
+ votc_ce_initiative_opt_incoming_toggle:0 "NPC手紙を無効化"
+ votc_ce_initiative_opt_incoming_toggle_off:0 "NPC手紙を有効化"
+ votc_ce_initiative_opt_incoming_clear:0 "受信手紙のスロットをクリア"
+ votc_ce_initiative_opt_incoming_details:0 "詳細な手紙設定"

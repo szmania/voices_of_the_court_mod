@@ -47,9 +47,9 @@
  votc_ce_initiative_opt_letter_freq_3m:0 "Trimestral (90 Días)"
  votc_ce_initiative_opt_letter_freq_6m:0 "Semestral (182 Días)"
  votc_ce_initiative_opt_letter_freq_1y:0 "Anual (365 Días)"
- votc_ce_initiative_settings_decision:0 "VOTC-CE: Ajustes de Iniciativa PNJ"
- votc_ce_initiative_settings_decision_desc:0 "Configura la frecuencia y probabilidad de que los PNJ inicien conversaciones o escriban cartas."
- votc_ce_initiative_settings_decision_tooltip:0 "Abrir ventana de ajustes de Iniciativa PNJ"
+ votc_ce_initiative_settings_decision:0 "VOTC-CE: Ajustes"
+ votc_ce_initiative_settings_decision_desc:0 "Configura con qué frecuencia los personajes se acercan a ti, inician conversaciones o te escriben cartas."
+ votc_ce_initiative_settings_decision_tooltip:0 "Abrir la ventana de ajustes de VOTC-CE"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
  votc_huixin_titlenpcltr:0 "Carta"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
@@ -59,7 +59,7 @@
  votc_ce_initiative_log_letter_liege:0 "VOTC:IN/;/letter_payload/;/liege"
  votc_ce_initiative_log_letter_mentor:0 "VOTC:IN/;/letter_payload/;/mentor"
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
- votc_ce_initiative_settings_decision_confirm:0 "Ajustes de Iniciativa PNJ"
+ votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Ajustes"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
  votc_ce_initiative_opt_incoming:0 "Cartas entrantes"
@@ -69,3 +69,12 @@
  votc_ce_initiative_opt_incoming_normal:0 "Normal (50%)"
  votc_ce_initiative_opt_incoming_high:0 "Alta (80%)"
  votc_ce_initiative_opt_incoming_max:0 "Máxima (100%)"
+
+# VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
+ votc_ce_initiative_opt_ai_freq:0 "Conversaciones de IA"
+ votc_ce_initiative.190.title:0 "Conversaciones de IA"
+ votc_ce_initiative.190.desc:0 "Elige con qué frecuencia los personajes de IA piden hablar contigo."
+ votc_ce_initiative_opt_incoming_toggle:0 "Desactivar cartas PNJ"
+ votc_ce_initiative_opt_incoming_toggle_off:0 "Activar cartas PNJ"
+ votc_ce_initiative_opt_incoming_clear:0 "Vaciar ranuras de cartas entrantes"
+ votc_ce_initiative_opt_incoming_details:0 "Ajustes detallados de cartas"

@@ -19,6 +19,10 @@
 #   .140   letters on / off
 #   .170   letter interval page   .171 / .172 / .173
 #   .174   write one right now
+#   .180   incoming-letters page (frequency + toggle + clear + details)
+#   .181-.184 hidden  incoming-letter frequency setters
+#   .185   hidden  incoming letters on / off (VOTC-194 14.3.1)
+#   .186   hidden  clear every pending incoming-letter slot (VOTC-194 14.3.2)
 #==========================================================================
 
 namespace = votc_ce_initiative
@@ -869,6 +873,33 @@ votc_ce_initiative.180 = {
 		name = votc_ce_initiative_opt_incoming_max
 		trigger_event = votc_ce_initiative.184
 	}
+	# VOTC-194 14.3.1: incoming-letters on/off.  State-named keys with inverted
+	# gating - the same pattern as the .140 letters toggle (see the plan's
+	# "Do NOT fix" note): opt_incoming_toggle means letters are currently ON and
+	# its label is the action available in that state (Disable), while
+	# opt_incoming_toggle_off means they are currently OFF (Enable).  Both fire
+	# .185, which flips the state, so the label always matches the click outcome.
+	option = {
+		name = votc_ce_initiative_opt_incoming_toggle
+		trigger = { has_variable = votc_incoming_letters_enabled }
+		trigger_event = votc_ce_initiative.185
+	}
+	option = {
+		name = votc_ce_initiative_opt_incoming_toggle_off
+		trigger = { NOT = { has_variable = votc_incoming_letters_enabled } }
+		trigger_event = votc_ce_initiative.185
+	}
+	# VOTC-194 14.3.2: clear every pending incoming-letter slot.
+	option = {
+		name = votc_ce_initiative_opt_incoming_clear
+		trigger_event = votc_ce_initiative.186
+	}
+	# VOTC-194 14.3.3: detailed per-topic settings.  Reuses the existing opener
+	# widget + votc_incoming_letters_window.gui - no new UI.
+	option = {
+		name = votc_ce_initiative_opt_incoming_details
+		trigger_event = votc_letters_settings_bridge_event.9001
+	}
 	option = {
 		name = votc_ce_initiative_opt_back
 		trigger_event = votc_ce_initiative.100
@@ -926,6 +957,63 @@ votc_ce_initiative.184 = {
 			name = votc_incoming_letters_frequency
 			value = 4
 		}
+		trigger_event = votc_ce_initiative.180
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .185  Incoming letters on / off (VOTC-194 14.3.1).  Replaces the old
+#        votc_enable/disable_incoming_letters_decision pair.  The two hub
+#        options are state-named with inverted gating (see .180), so this
+#        event only has to flip the state - it never needs to know which
+#        label was clicked.
+#--------------------------------------------------------------------------
+votc_ce_initiative.185 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		if = {
+			limit = { has_variable = votc_incoming_letters_enabled }
+			remove_variable = votc_incoming_letters_enabled
+			# Opt-out marker: an explicit "off" must never be silently reverted by
+			# the game-start default-on hook (mirrors the old disable decision).
+			set_variable = {
+				name = votc_incoming_letters_opt_out
+				value = 1
+			}
+		}
+		else = {
+			# Default-on policy: shared with the game-start hook and the enable
+			# scripted gui so all three paths set identical defaults.
+			votc_incoming_letters_apply_default_settings_effect = yes
+		}
+		trigger_event = votc_ce_initiative.180
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .186  Clear every pending incoming-letter slot (VOTC-194 14.3.2).
+#        Replaces votc_clear_incoming_letters_decision.  The 8 clear effects
+#        read scope:actor for their per-slot timer variables, so the player is
+#        saved as actor first - the same shape the old decision used.
+#--------------------------------------------------------------------------
+votc_ce_initiative.186 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		save_scope_as = actor
+		votc_clear_incoming_letter_1_effect = yes
+		votc_clear_incoming_letter_2_effect = yes
+		votc_clear_incoming_letter_3_effect = yes
+		votc_clear_incoming_letter_4_effect = yes
+		votc_clear_incoming_letter_5_effect = yes
+		votc_clear_incoming_letter_6_effect = yes
+		votc_clear_incoming_letter_7_effect = yes
+		votc_clear_incoming_letter_8_effect = yes
 		trigger_event = votc_ce_initiative.180
 	}
 }

@@ -47,9 +47,9 @@
  votc_ce_initiative_opt_letter_freq_3m:0 "분기별 (90일)"
  votc_ce_initiative_opt_letter_freq_6m:0 "반년별 (182일)"
  votc_ce_initiative_opt_letter_freq_1y:0 "매년 (365일)"
- votc_ce_initiative_settings_decision:0 "VOTC-CE: NPC 주도성 설정"
- votc_ce_initiative_settings_decision_desc:0 "NPC가 대화를 시작하거나 편지를 쓰는 빈도 및 확률을 설정합니다."
- votc_ce_initiative_settings_decision_tooltip:0 "NPC 주도성 설정 창 열기"
+ votc_ce_initiative_settings_decision:0 "VOTC-CE: 설정"
+ votc_ce_initiative_settings_decision_desc:0 "인물이 당신에게 다가가거나 대화를 시작하거나 편지를 쓰는 빈도를 설정합니다."
+ votc_ce_initiative_settings_decision_tooltip:0 "VOTC-CE 설정 창 열기"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
  votc_huixin_titlenpcltr:0 "편지"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
@@ -59,7 +59,7 @@
  votc_ce_initiative_log_letter_liege:0 "VOTC:IN/;/letter_payload/;/liege"
  votc_ce_initiative_log_letter_mentor:0 "VOTC:IN/;/letter_payload/;/mentor"
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
- votc_ce_initiative_settings_decision_confirm:0 "NPC 주도성 설정"
+ votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: 설정"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
  votc_ce_initiative_opt_incoming:0 "받은 편지"
@@ -69,3 +69,12 @@
  votc_ce_initiative_opt_incoming_normal:0 "기본 (50%)"
  votc_ce_initiative_opt_incoming_high:0 "높음 (80%)"
  votc_ce_initiative_opt_incoming_max:0 "최대 (100%)"
+
+# VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
+ votc_ce_initiative_opt_ai_freq:0 "AI 대화"
+ votc_ce_initiative.190.title:0 "AI 대화"
+ votc_ce_initiative.190.desc:0 "AI 캐릭터가 당신에게 대화를 요청하는 빈도를 선택합니다."
+ votc_ce_initiative_opt_incoming_toggle:0 "NPC 편지 비활성화"
+ votc_ce_initiative_opt_incoming_toggle_off:0 "NPC 편지 활성화"
+ votc_ce_initiative_opt_incoming_clear:0 "받은 편지 슬롯 비우기"
+ votc_ce_initiative_opt_incoming_details:0 "상세 편지 설정"

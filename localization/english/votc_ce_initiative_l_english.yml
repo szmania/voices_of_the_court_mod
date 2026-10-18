@@ -47,9 +47,9 @@
  votc_ce_initiative_opt_letter_freq_3m:0 "Quarterly (90 Days)"
  votc_ce_initiative_opt_letter_freq_6m:0 "Semi-Annually (182 Days)"
  votc_ce_initiative_opt_letter_freq_1y:0 "Annually (365 Days)"
- votc_ce_initiative_settings_decision:0 "VOTC-CE: NPC Initiative Settings"
- votc_ce_initiative_settings_decision_desc:0 "Configure frequency and chance of NPCs initiating conversations or writing letters."
- votc_ce_initiative_settings_decision_tooltip:0 "Open NPC Initiative settings window"
+ votc_ce_initiative_settings_decision:0 "VOTC-CE: Settings"
+ votc_ce_initiative_settings_decision_desc:0 "Configure how often characters reach out to you, start conversations, or send letters."
+ votc_ce_initiative_settings_decision_tooltip:0 "Open the VOTC-CE settings window"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
  votc_huixin_titlenpcltr:0 "Letter"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
@@ -59,7 +59,7 @@
  votc_ce_initiative_log_letter_liege:0 "VOTC:IN/;/letter_payload/;/liege"
  votc_ce_initiative_log_letter_mentor:0 "VOTC:IN/;/letter_payload/;/mentor"
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
- votc_ce_initiative_settings_decision_confirm:0 "NPC Initiative Settings"
+ votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Settings"
 
 # VOTC-194 13.3.1/13.5.1: incoming-lettets hub page (namespace votc_ce_initiative)
  votc_ce_initiative_opt_incoming:0 "Incoming Letters"
@@ -69,3 +69,12 @@
  votc_ce_initiative_opt_incoming_normal:0 "Standard (50%)"
  votc_ce_initiative_opt_incoming_high:0 "High (80%)"
  votc_ce_initiative_opt_incoming_max:0 "Maximum (100%)"
+
+# VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
+ votc_ce_initiative_opt_ai_freq:0 "AI Conversations"
+ votc_ce_initiative.190.title:0 "AI Conversations"
+ votc_ce_initiative.190.desc:0 "Choose how often AI characters ask to speak with you."
+ votc_ce_initiative_opt_incoming_toggle:0 "Disable NPC Letters"
+ votc_ce_initiative_opt_incoming_toggle_off:0 "Enable NPC Letters"
+ votc_ce_initiative_opt_incoming_clear:0 "Clear Incoming Letter Slots"
+ votc_ce_initiative_opt_incoming_details:0 "Detailed Letter Settings"

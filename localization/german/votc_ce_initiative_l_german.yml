@@ -47,9 +47,9 @@
  votc_ce_initiative_opt_letter_freq_3m:0 "Vierteljährlich (90 Tage)"
  votc_ce_initiative_opt_letter_freq_6m:0 "Halbjährlich (182 Tage)"
  votc_ce_initiative_opt_letter_freq_1y:0 "Jährlich (365 Tage)"
- votc_ce_initiative_settings_decision:0 "VOTC-CE: NSC-Initiative-Einstellungen"
- votc_ce_initiative_settings_decision_desc:0 "Konfigurieren Sie Häufigkeit und Chance, dass NSC Gespräche beginnen oder Briefe schreiben."
- votc_ce_initiative_settings_decision_tooltip:0 "NSC-Initiative-Einstellungsfenster öffnen"
+ votc_ce_initiative_settings_decision:0 "VOTC-CE: Einstellungen"
+ votc_ce_initiative_settings_decision_desc:0 "Konfigurieren Sie, wie oft Charaktere auf Sie zugehen, Gespräche beginnen oder Briefe schreiben."
+ votc_ce_initiative_settings_decision_tooltip:0 "VOTC-CE-Einstellungsfenster öffnen"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
  votc_huixin_titlenpcltr:0 "Brief"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
@@ -59,7 +59,7 @@
  votc_ce_initiative_log_letter_liege:0 "VOTC:IN/;/letter_payload/;/liege"
  votc_ce_initiative_log_letter_mentor:0 "VOTC:IN/;/letter_payload/;/mentor"
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
- votc_ce_initiative_settings_decision_confirm:0 "NSC-Initiative-Einstellungen"
+ votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Einstellungen"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
  votc_ce_initiative_opt_incoming:0 "Eingehende Briefe"
@@ -69,3 +69,12 @@
  votc_ce_initiative_opt_incoming_normal:0 "Standard (50 %)"
  votc_ce_initiative_opt_incoming_high:0 "Hoch (80 %)"
  votc_ce_initiative_opt_incoming_max:0 "Maximal (100 %)"
+
+# VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
+ votc_ce_initiative_opt_ai_freq:0 "KI-Gespräche"
+ votc_ce_initiative.190.title:0 "KI-Gespräche"
+ votc_ce_initiative.190.desc:0 "Wählen Sie, wie oft KI-Charaktere Sie um ein Gespräch bitten."
+ votc_ce_initiative_opt_incoming_toggle:0 "NSC-Briefe deaktivieren"
+ votc_ce_initiative_opt_incoming_toggle_off:0 "NSC-Briefe aktivieren"
+ votc_ce_initiative_opt_incoming_clear:0 "Eingehende-Briefe-Slots leeren"
+ votc_ce_initiative_opt_incoming_details:0 "Detaillierte Briefeinstellungen"
