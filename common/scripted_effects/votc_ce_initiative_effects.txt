@@ -1,5 +1,28 @@
-# VOTC-194: NPC Initiative - scripted effects (CE-native rewrite).
+﻿# VOTC-194: NPC Initiative - scripted effects (CE-native rewrite).
 # root = the player character; scope:recipient = the NPC (VOTC convention).
+
+# VOTC-194 13.1.2: shared quarterly letter budget.  Counted across BOTH
+# letter systems (NPC Initiative npcltr + votc_incoming_letter slots),
+# checked against votc_letter_quarter_cap by both pickers.  The counter is
+# a timed global (91 days) so a stray count can never outlive its quarter;
+# re-seeding keeps the rolling quarter alive.
+votc_ce_letter_budget_increment = {
+	# VOTC-194: silently auto-initialize the rolling quarter counter if it
+	# expired or was never created, so the increment below can never read an
+	# unset global ("Failed to fetch variable" / "Invalid left side" errors).
+	if = {
+		limit = { NOT = { has_global_variable = votc_letters_this_quarter } }
+		set_global_variable = {
+			name = votc_letters_this_quarter
+			value = 0
+			days = 91
+		}
+	}
+	change_global_variable = {
+		name = votc_letters_this_quarter
+		add = 1
+	}
+}
 
 votc_ce_initiative_bootstrap_char = {
 	if = {
@@ -18,6 +41,24 @@ votc_ce_initiative_bootstrap_char = {
 		if = {
 			limit = { NOT = { has_global_variable = votc_ce_initiative_letter_freq } }
 			set_global_variable = { name = votc_ce_initiative_letter_freq value = 182 }
+		}
+		# VOTC-194 13.1.2: shared quarterly letter budget across the NPC
+		# Initiative and incoming-letter systems.  Default allowance: 2 letters
+		# per quarter from both systems combined.
+		if = {
+			limit = { NOT = { has_global_variable = votc_letter_quarter_cap } }
+			set_global_variable = { name = votc_letter_quarter_cap value = 2 }
+		}
+		# VOTC-194: keep the rolling quarter counter alive on ongoing saves -
+		# the quarterly watchdog re-seeds it whenever the 91-day expiry lapses
+		# (a 365-day talk cadence would otherwise leave it unset for months).
+		if = {
+			limit = { NOT = { has_global_variable = votc_letters_this_quarter } }
+			set_global_variable = {
+				name = votc_letters_this_quarter
+				value = 0
+				days = 91
+			}
 		}
 		if = {
 			limit = { NOT = { exists = global_var:votc_ce_initiative_heartbeat } }
@@ -299,13 +340,91 @@ votc_ce_initiative_record_written = {
 	}
 }
 
+# VOTC-194 13.2.2: an incoming letter's author joins the NPC-Initiative
+# pools so relationship weighting learns from both channels.  root = the
+# player, scope:recipient = the incoming letter's sender.  Talks and written
+# letters are both pools the pickers read, so the sender becomes reachable
+# by both; duplicates are no-ops.
+votc_ce_initiative_record_letter_sender = {
+	if = {
+		limit = { exists = scope:recipient }
+		scope:recipient = {
+			if = {
+				limit = { has_character_flag = votc_ce_initiative_declined }
+				remove_character_flag = votc_ce_initiative_declined
+			}
+		}
+		scope:actor = {
+			if = {
+				limit = { has_variable_list = votc_talked_characters }
+				if = {
+					limit = {
+						NOT = {
+							is_target_in_variable_list = { name = votc_talked_characters target = scope:recipient }
+						}
+					}
+					add_to_variable_list = { name = votc_talked_characters target = scope:recipient }
+				}
+			}
+			else = {
+				add_to_variable_list = { name = votc_talked_characters target = scope:recipient }
+			}
+		}
+		scope:actor = {
+			if = {
+				limit = { has_variable_list = votc_written_characters }
+				if = {
+					limit = {
+						NOT = {
+							is_target_in_variable_list = { name = votc_written_characters target = scope:recipient }
+						}
+					}
+					add_to_variable_list = { name = votc_written_characters target = scope:recipient }
+				}
+			}
+			else = {
+				add_to_variable_list = { name = votc_written_characters target = scope:recipient }
+			}
+		}
+	}
+}
+
 votc_ce_initiative_letter_pick = {
 	votc_ce_initiative_release_stale = yes
 	votc_ce_initiative_build_letter_pool = yes
+	# VOTC-194: seed the rolling quarter counter if it expired or was never
+	# created (fresh campaign; the 91-day expiry can lapse between heartbeats)
+	# so the shared-budget comparison below never reads an unset global.
+	if = {
+		limit = { NOT = { has_global_variable = votc_letters_this_quarter } }
+		set_global_variable = {
+			name = votc_letters_this_quarter
+			value = 0
+			days = 91
+		}
+	}
 	if = {
 		limit = {
 			has_variable_list = votc_ce_initiative_letter_pool
 			variable_list_size = { name = votc_ce_initiative_letter_pool value >= 1 }
+			# VOTC-194 13.1.1: an in-flight incoming-letter slot suppresses a
+			# same-quarter NPC-Initiative letter (mirror of the votc_npcltr gate
+			# on votc_incoming_letter_event.0001).
+			NOT = { has_global_variable = votc_incoming_letter_1 }
+			NOT = { has_global_variable = votc_incoming_letter_2 }
+			NOT = { has_global_variable = votc_incoming_letter_3 }
+			NOT = { has_global_variable = votc_incoming_letter_4 }
+			NOT = { has_global_variable = votc_incoming_letter_5 }
+			NOT = { has_global_variable = votc_incoming_letter_6 }
+			NOT = { has_global_variable = votc_incoming_letter_7 }
+			NOT = { has_global_variable = votc_incoming_letter_8 }
+			# VOTC-194 13.1.2: shared quarterly letter budget across both
+			# systems.  The OR-guard keeps an unset cap (pre-bootstrap) from
+			# freezing the picker (unset globals compare as 0 >= 0 -> never fire).
+			OR = {
+				NOT = { exists = global_var:votc_letter_quarter_cap }
+				NOT = { global_var:votc_letters_this_quarter >= global_var:votc_letter_quarter_cap }
+			}
 		}
 		save_scope_as = actor
 		if = {
@@ -494,6 +613,9 @@ votc_ce_initiative_letter = {
 		}
 		set_global_variable = { name = message_second_scope_npcltr value = scope:votc_ce_initiative_sender }
 		set_global_variable = { name = votc_npcltr value = yes days = 400 }
+		# VOTC-194 13.1.2: this NPC letter spends one unit of the shared
+		# quarterly letter budget.
+		votc_ce_letter_budget_increment = yes
 		trigger_event = { id = mcc_event_v2.9998 }
 		trigger_event = { id = votc_ce_initiative.160 days = 1 }
 	}

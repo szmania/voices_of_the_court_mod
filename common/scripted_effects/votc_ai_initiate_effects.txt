@@ -985,6 +985,15 @@ votc_ai_initiate_conversation_effect = {
 
 	save_scope_as = actor
 
+	# Ensure frequency variable exists so comparisons never throw unset-variable errors.
+	if = {
+		limit = { NOT = { has_global_variable = votc_ai_conversation_frequency } }
+		set_global_variable = {
+			name = votc_ai_conversation_frequency
+			value = 2
+		}
+	}
+
 
 	# VOTC-183: Frequency branches. global_var:votc_ai_conversation_frequency is set
 	# by the votc_ai_frequency_*_decision decisions (0=Off, 1=Low, 2=Default, 3=High).

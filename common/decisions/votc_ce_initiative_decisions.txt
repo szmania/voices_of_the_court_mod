@@ -1,11 +1,11 @@
-#==========================================================================
+﻿#==========================================================================
 #  VOTC-194: NPC Initiative - decision
 #  A tiny always-available entry point in the Decisions tab that opens the
 #  configuration window (votc_ce_initiative.100).
 #==========================================================================
 
 votc_ce_initiative_settings_decision = {
-	decision_group_type = decisions
+	decision_group_type = votc_ce
 
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
