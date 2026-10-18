@@ -1,4 +1,4 @@
-#==========================================================================
+﻿#==========================================================================
 #  VOTC-194: NPC Initiative - events
 #  namespace = votc_ce_initiative
 #
@@ -47,6 +47,14 @@ votc_ce_initiative.1 = {
 				NOT = { has_global_variable = votc_ce_initiative_off }
 			}
 			votc_ce_initiative_try = yes
+		}
+		# VOTC-194 13.1.2: refresh the rolling quarter for the shared letter
+		# budget.  Re-seeding the counter to 0 with a 91-day expiry gives a true
+		# quarterly reset no matter which cadence the letters run on.
+		set_global_variable = {
+			name = votc_letters_this_quarter
+			value = 0
+			days = 91
 		}
 		# Re-arm.
 		if = {
@@ -432,14 +440,23 @@ votc_ce_initiative.100 = {
 		name = votc_ce_initiative_opt_chance
 		trigger_event = votc_ce_initiative.120
 	}
+
+	# Letters toggle keys are STATE-named: opt_letters_on means "letters are currently ON",
+	# opt_letters_off means "letters are currently OFF". Their loc text is the ACTION available
+	# in that state ("Disable NPC Letters" / "Enable NPC Letters"), so the trigger gating is
+	# inverted relative to the key name: opt_letters_on shows when letters are ON
+	# (NOT = { has_global_variable = votc_ce_initiative_no_letters }) and opt_letters_off
+	# when letters are OFF (has_global_variable = ...). Both variants of .140 toggle the flag,
+	# so the button label always matches what clicking it does. Do NOT "fix" by swapping.
+
 	option = {
 		name = votc_ce_initiative_opt_letters_on
-		trigger = { has_global_variable = votc_ce_initiative_no_letters }
+		trigger = { NOT = { has_global_variable = votc_ce_initiative_no_letters } }
 		trigger_event = votc_ce_initiative.140
 	}
 	option = {
 		name = votc_ce_initiative_opt_letters_off
-		trigger = { NOT = { has_global_variable = votc_ce_initiative_no_letters } }
+		trigger = { has_global_variable = votc_ce_initiative_no_letters }
 		trigger_event = votc_ce_initiative.140
 	}
 	option = {
@@ -450,6 +467,12 @@ votc_ce_initiative.100 = {
 		name = votc_ce_initiative_opt_letter_test
 		trigger_event = votc_ce_initiative.174
 	}
+	# VOTC-194 13.3.1: incoming-letter frequency page (mirrors the legacy
+	# votc_open_incoming_letters_settings_decision).
+	option = {
+		name = votc_ce_initiative_opt_incoming
+		trigger_event = votc_ce_initiative.180
+	}
 	option = {
 		name = votc_ce_initiative_opt_test
 		trigger_event = votc_ce_initiative.130
@@ -458,6 +481,7 @@ votc_ce_initiative.100 = {
 		name = votc_ce_initiative_opt_close
 	}
 }
+
 
 #--------------------------------------------------------------------------
 #  .101  Toggle the whole feature
@@ -800,5 +824,108 @@ votc_ce_initiative.174 = {
 			limit = { NOT = { exists = global_var:votc_ce_initiative_letter_pending } }
 			trigger_event = votc_ce_initiative.100
 		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .180  Incoming Letters page (VOTC-194 13.3.1).  Mirrors the incoming-
+#       letter frequency setting (1 = 25%, 2 = 50% default, 3 = 80%, 4 = 100%)
+#       on the same variable the incoming-letter system already reads:
+#       votc_incoming_letters_frequency.  The legacy
+#       votc_open_incoming_letters_settings_decision stays until the transition
+#       completes (see 13.3.2).
+#--------------------------------------------------------------------------
+votc_ce_initiative.180 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.180.title
+	desc = votc_ce_initiative.180.desc
+	window = character_event
+
+	immediate = {
+		# Keep the incoming-letter system's own default if never configured.
+		if = {
+			limit = { NOT = { exists = global_var:votc_incoming_letters_frequency } }
+			set_global_variable = {
+				name = votc_incoming_letters_frequency
+				value = 2
+			}
+		}
+	}
+
+	option = {
+		name = votc_ce_initiative_opt_incoming_low
+		trigger_event = votc_ce_initiative.181
+	}
+	option = {
+		name = votc_ce_initiative_opt_incoming_normal
+		trigger_event = votc_ce_initiative.182
+	}
+	option = {
+		name = votc_ce_initiative_opt_incoming_high
+		trigger_event = votc_ce_initiative.183
+	}
+	option = {
+		name = votc_ce_initiative_opt_incoming_max
+		trigger_event = votc_ce_initiative.184
+	}
+	option = {
+		name = votc_ce_initiative_opt_back
+		trigger_event = votc_ce_initiative.100
+	}
+	option = {
+		name = votc_ce_initiative_opt_close
+	}
+}
+
+votc_ce_initiative.181 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_incoming_letters_frequency
+			value = 1
+		}
+		trigger_event = votc_ce_initiative.180
+	}
+}
+
+votc_ce_initiative.182 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_incoming_letters_frequency
+				value = 2
+		}
+		trigger_event = votc_ce_initiative.180
+	}
+}
+
+votc_ce_initiative.183 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_incoming_letters_frequency
+			value = 3
+		}
+		trigger_event = votc_ce_initiative.180
+	}
+}
+
+votc_ce_initiative.184 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		set_global_variable = {
+			name = votc_incoming_letters_frequency
+			value = 4
+		}
+		trigger_event = votc_ce_initiative.180
 	}
 }
