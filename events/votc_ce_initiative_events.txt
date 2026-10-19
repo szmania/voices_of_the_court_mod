@@ -486,14 +486,118 @@ votc_ce_initiative.100 = {
 		trigger_event = votc_ce_initiative.190
 	}
 	option = {
+		name = votc_ce_initiative_opt_release_letters
+		trigger_event = votc_ce_initiative.200
+	}
+	option = {
+		name = votc_ce_initiative_opt_release_battle_reports
+		trigger_event = votc_ce_initiative.201
+	}
+	option = {
+		name = votc_ce_initiative_opt_conversation_history
+		trigger_event = votc_ce_initiative.202
+	}
+	option = {
 		name = votc_ce_initiative_opt_test
 		trigger_event = votc_ce_initiative.130
 	}
 	option = {
 		name = votc_ce_initiative_opt_close
-	}
 }
 
+#--------------------------------------------------------------------------
+#  .200  Release Letter Thread (VOTC-194: user request)
+#--------------------------------------------------------------------------
+votc_ce_initiative.200 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		remove_global_variable= votc_letter_1
+		remove_global_variable= votc_letter_2
+		remove_global_variable= votc_letter_3
+		remove_global_variable= votc_letter_4
+		remove_global_variable= votc_letter_5
+		remove_global_variable= votc_letter_6
+		remove_global_variable= votc_letter_7
+		remove_global_variable= votc_letter_8
+		remove_global_variable= votc_letter_9
+		trigger_event = votc_ce_initiative.100
+	}
+#--------------------------------------------------------------------------
+#  .201  Release Battle Reports (VOTC-194: user request)
+#--------------------------------------------------------------------------
+votc_ce_initiative.201 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		remove_global_variable ?= votc_battle_report_pending
+		remove_global_variable ?= votc_battle_report_pending_valid
+		remove_global_variable ?= votc_battle_report_1
+		remove_global_variable ?= votc_battle_report_2
+		remove_global_variable ?= votc_battle_report_3
+		remove_global_variable ?= votc_battle_report_4
+		remove_global_variable ?= votc_battle_report_5
+		remove_global_variable ?= votc_battle_report_6
+		remove_global_variable ?= votc_battle_report_7
+		remove_global_variable ?= votc_battle_report_8
+		remove_global_variable ?= votc_battle_report_9
+		remove_global_variable ?= votc_battle_report_10
+		remove_global_variable ?= votc_battle_report_11
+		remove_global_variable ?= votc_battle_report_12
+		remove_global_variable ?= votc_battle_report_13
+		remove_global_variable ?= votc_battle_report_14
+		remove_global_variable ?= votc_battle_report_15
+		remove_variable ?= votc_battle_report_1_timer
+		remove_variable ?= votc_battle_report_1_sent_day
+		remove_variable ?= votc_battle_report_2_timer
+		remove_variable ?= votc_battle_report_2_sent_day
+		remove_variable ?= votc_battle_report_3_timer
+		remove_variable ?= votc_battle_report_3_sent_day
+		remove_variable ?= votc_battle_report_4_timer
+		remove_variable ?= votc_battle_report_4_sent_day
+		remove_variable ?= votc_battle_report_5_timer
+		remove_variable ?= votc_battle_report_5_sent_day
+		remove_variable ?= votc_battle_report_6_timer
+		remove_variable ?= votc_battle_report_6_sent_day
+		remove_variable ?= votc_battle_report_7_timer
+		remove_variable ?= votc_battle_report_7_sent_day
+		remove_variable ?= votc_battle_report_8_timer
+		remove_variable ?= votc_battle_report_8_sent_day
+		remove_variable ?= votc_battle_report_9_timer
+		remove_variable ?= votc_battle_report_9_sent_day
+		remove_variable ?= votc_battle_report_10_timer
+		remove_variable ?= votc_battle_report_10_sent_day
+		remove_variable ?= votc_battle_report_11_timer
+		remove_variable ?= votc_battle_report_11_sent_day
+		remove_variable ?= votc_battle_report_12_timer
+		remove_variable ?= votc_battle_report_12_sent_day
+		remove_variable ?= votc_battle_report_13_timer
+		remove_variable ?= votc_battle_report_13_sent_day
+		remove_variable ?= votc_battle_report_14_timer
+		remove_variable ?= votc_battle_report_14_sent_day
+		remove_variable ?= votc_battle_report_15_timer
+		remove_variable ?= votc_battle_report_15_sent_day
+		trigger_event = votc_ce_initiative.100
+	}
+#--------------------------------------------------------------------------
+#  .202  Conversation History (VOTC-194: user request)
+#--------------------------------------------------------------------------
+votc_ce_initiative.202 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		save_scope_as = actor
+		votc_init_checkpoint_effect = yes
+		debug_log = "VOTC:conversation_history/;/[GetPlayer.GetID]/;/[GetPlayer.MakeScope.Var('votc_checkpoint_epoch').GetValue|0]"
+		trigger_event = votc_checkpoint_event.9001
+		trigger_event = votc_ce_initiative.100
+	}
 
 #--------------------------------------------------------------------------
 #  .101  Toggle the whole feature
