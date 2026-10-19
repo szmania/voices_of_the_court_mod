@@ -23,6 +23,8 @@
 #   .181-.184 hidden  incoming-letter frequency setters
 #   .185   hidden  incoming letters on / off (VOTC-194 14.3.1)
 #   .186   hidden  clear every pending incoming-letter slot (VOTC-194 14.3.2)
+#   .190   AI-conversation presets page (VOTC-194 14.2.1)
+#   .191-.194 hidden  AI-conversation preset setters (VOTC-194 14.2.2)
 #==========================================================================
 
 namespace = votc_ce_initiative
@@ -476,6 +478,12 @@ votc_ce_initiative.100 = {
 	option = {
 		name = votc_ce_initiative_opt_incoming
 		trigger_event = votc_ce_initiative.180
+	}
+	# VOTC-194 14.2.4: AI-conversation presets page (replaces the four retired
+	# standalone votc_ai_frequency_*_decision decisions, see §14.1.1).
+	option = {
+		name = votc_ce_initiative_opt_ai_freq
+		trigger_event = votc_ce_initiative.190
 	}
 	option = {
 		name = votc_ce_initiative_opt_test
@@ -1015,5 +1023,129 @@ votc_ce_initiative.186 = {
 		votc_clear_incoming_letter_7_effect = yes
 		votc_clear_incoming_letter_8_effect = yes
 		trigger_event = votc_ce_initiative.180
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .190  AI Conversations presets page (VOTC-194 14.2.1).  Replaces the four
+#        standalone votc_ai_frequency_*_decision decisions retired in §14.1.1.
+#        The presets map onto the ACTIVE system (votc_ce_initiative_off /
+#        _freq / _chance) - the legacy votc_ai_conversation_frequency reader
+#        pipeline is retired, so writing that var would be a dead knob.
+#--------------------------------------------------------------------------
+votc_ce_initiative.190 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.190.title
+	desc = votc_ce_initiative.190.desc
+	window = character_event
+
+	option = {
+		name = votc_ai_frequency_off_decision
+		custom_tooltip = votc_ai_frequency_off_decision_effect_desc
+		trigger_event = votc_ce_initiative.191
+	}
+	option = {
+		name = votc_ai_frequency_low_decision
+		custom_tooltip = votc_ai_frequency_low_decision_effect_desc
+		trigger_event = votc_ce_initiative.192
+	}
+	option = {
+		name = votc_ai_frequency_default_decision
+		custom_tooltip = votc_ai_frequency_default_decision_effect_desc
+		trigger_event = votc_ce_initiative.193
+	}
+	option = {
+		name = votc_ai_frequency_high_decision
+		custom_tooltip = votc_ai_frequency_high_decision_effect_desc
+		trigger_event = votc_ce_initiative.194
+	}
+	option = {
+		name = votc_ce_initiative_opt_back
+		trigger_event = votc_ce_initiative.100
+	}
+	option = {
+		name = votc_ce_initiative_opt_close
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .191-.194  Preset setters (VOTC-194 14.2.2).  Hidden, orphan.  They write
+#  the ACTIVE globals directly (the same ones .101/.111-.114/.121-.123 write)
+#  so the heartbeat picks the new cadence up on its next re-arm.  .191 mirrors
+#  .101's else-branch cleanup and must NOT trigger .101 - that event toggles.
+#--------------------------------------------------------------------------
+votc_ce_initiative.191 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		set_global_variable = {
+			name = votc_ce_initiative_off
+			value = yes
+		}
+		if = {
+			limit = { exists = global_var:votc_ce_initiative_player }
+			remove_global_variable = votc_ce_initiative_player
+		}
+		trigger_event = votc_ce_initiative.190
+	}
+}
+
+votc_ce_initiative.192 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		remove_global_variable = votc_ce_initiative_off
+		set_global_variable = {
+			name = votc_ce_initiative_freq
+			value = 365
+		}
+		set_global_variable = {
+			name = votc_ce_initiative_chance
+			value = 5
+		}
+		trigger_event = votc_ce_initiative.190
+	}
+}
+
+votc_ce_initiative.193 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		remove_global_variable = votc_ce_initiative_off
+		set_global_variable = {
+			name = votc_ce_initiative_freq
+			value = 182
+		}
+		set_global_variable = {
+			name = votc_ce_initiative_chance
+			value = 15
+		}
+		trigger_event = votc_ce_initiative.190
+	}
+}
+
+votc_ce_initiative.194 = {
+	type = character_event
+	hidden = yes
+	orphan = yes
+
+	immediate = {
+		remove_global_variable = votc_ce_initiative_off
+		set_global_variable = {
+			name = votc_ce_initiative_freq
+			value = 30
+		}
+		set_global_variable = {
+			name = votc_ce_initiative_chance
+			value = 30
+		}
+		trigger_event = votc_ce_initiative.190
 	}
 }

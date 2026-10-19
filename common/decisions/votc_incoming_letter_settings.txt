@@ -1,112 +1,21 @@
-﻿votc_enable_incoming_letters_decision = {
-	decision_group_type = votc_ce
-
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-	}
-
-	is_shown = {
-		NOT = { has_variable = votc_incoming_letters_enabled }
-	}
-
-	effect = {
-		custom_tooltip = votc_enable_incoming_letters_decision_effect_desc
-		# Default-on policy: shared with the game-start hook and the enable sgui
-		# so all three paths set identical defaults.
-		votc_incoming_letters_apply_default_settings_effect = yes
-		if = {
-			limit = { NOT = { has_variable = votc_incoming_letters_event_frequency } }
-			set_variable = {
-				name = votc_incoming_letters_event_frequency
-				value = 2
-			}
-		}
-		if = {
-			limit = { NOT = { has_variable = votc_incoming_letters_family_frequency } }
-			set_variable = {
-				name = votc_incoming_letters_family_frequency
-				value = 2
-			}
-		}
-		if = {
-			limit = { NOT = { has_variable = votc_incoming_letters_poetry_frequency } }
-			set_variable = {
-				name = votc_incoming_letters_poetry_frequency
-				value = 2
-			}
-		}
-	}
-
-	ai_check_interval = 0
-}
-
-votc_disable_incoming_letters_decision = {
-	decision_group_type = votc_ce
-
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-	}
-
-	is_shown = {
-		has_variable = votc_incoming_letters_enabled
-	}
-
-	effect = {
-		custom_tooltip = votc_disable_incoming_letters_decision_effect_desc
-		remove_variable = votc_incoming_letters_enabled
-		# Opt-out marker: an explicit "off" must never be silently reverted by
-			# the game-start default-on hook.
-		set_variable = {
-			name = votc_incoming_letters_opt_out
-			value = 1
-		}
-
-	ai_check_interval = 0
-}
-
-votc_clear_incoming_letters_decision = {
-	decision_group_type = votc_ce
-
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-	}
-
-	is_shown = {
-		is_ai = no
-	}
-
-	effect = {
-		custom_tooltip = votc_clear_incoming_letters_decision_effect_desc
-		save_scope_as = actor
-		votc_clear_incoming_letter_1_effect = yes
-		votc_clear_incoming_letter_2_effect = yes
-		votc_clear_incoming_letter_3_effect = yes
-		votc_clear_incoming_letter_4_effect = yes
-		votc_clear_incoming_letter_5_effect = yes
-		votc_clear_incoming_letter_6_effect = yes
-		votc_clear_incoming_letter_7_effect = yes
-		votc_clear_incoming_letter_8_effect = yes
-	}
-
-	ai_check_interval = 0
-}
-
-# Opens the settings window via the bridge event, replacing mod1's HUD button.
-votc_open_incoming_letters_settings_decision = {
-	decision_group_type = votc_ce
-
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-	}
-
-	is_shown = {
-		is_ai = no
-	}
-
-	effect = {
-		custom_tooltip = votc_open_incoming_letters_settings_decision_effect_desc
-		trigger_event = votc_letters_settings_bridge_event.9001
-	}
-
-	ai_check_interval = 0
-}
+﻿# VOTC-194 14.1.2: the four standalone incoming-letter decisions
+# (votc_enable_incoming_letters_decision, votc_disable_incoming_letters_decision,
+# votc_clear_incoming_letters_decision, votc_open_incoming_letters_settings_decision)
+# are REMOVED - superseded by the NPC Initiative settings hub
+# (events/votc_ce_initiative_events.txt):
+#   - enable/disable -> hub .100 -> .180 page toggle options
+#     (votc_ce_initiative_opt_incoming_toggle / _toggle_off -> hidden .185,
+#     plan section 14.3.1)
+#   - clear pending slots -> hub .180 "Clear Incoming Letter Slots" option
+#     (votc_ce_initiative_opt_incoming_clear -> hidden .186, plan 14.3.2)
+#   - detailed per-topic settings -> hub .180 "Detailed Letter Settings" option
+#     (votc_ce_initiative_opt_incoming_details -> bridge event
+#     votc_letters_settings_bridge_event.9001, plan 14.3.3)
+#
+# KEEP THIS FILE as a pointer only: the variable defaults both systems read are
+# seeded by votc_incoming_letters_apply_default_settings_effect, which lives in
+# common/scripted_effects/votc_incoming_letter_effects.txt (around L2519) and is
+# still called by common/on_action/votc_game_start_init_on_actions.txt and
+# common/scripted_guis/votc_incoming_letters.txt - those call sites are
+# untouched.  The hub .185 enable path calls the same effect, so all paths set
+# identical defaults.
