@@ -498,6 +498,18 @@ votc_ce_initiative.100 = {
 		trigger_event = votc_ce_initiative.202
 	}
 	option = {
+		name = votc_ce_initiative_opt_release_letters
+		trigger_event = votc_ce_initiative.200
+	}
+	option = {
+		name = votc_ce_initiative_opt_release_battle_reports
+		trigger_event = votc_ce_initiative.201
+	}
+	option = {
+		name = votc_ce_initiative_opt_conversation_history
+		trigger_event = votc_ce_initiative.202
+	}
+	option = {
 		name = votc_ce_initiative_opt_test
 		trigger_event = votc_ce_initiative.130
 	}
