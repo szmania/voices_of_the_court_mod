@@ -1,4 +1,4 @@
-# VOTC-194: relationship weight for NPC-initiative candidate selection.
+﻿# VOTC-194: relationship weight for NPC-initiative candidate selection.
 # Evaluated on a candidate character; scope:actor = the player (saved by the
 # calling effect, the same pattern votc_ai_initiate_conversation_effect uses
 # so nested list scopes can read the player - see weight_memory_relevance.txt

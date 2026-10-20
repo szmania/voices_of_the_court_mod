@@ -1,5 +1,15 @@
 ﻿l_english:
 
+#--------------------------------------------------------------------------
+# NAMESPACE: votc_incoming_letter_event (talk_l_*.yml)
+# Keys here serve the INCOMING-LETTER system (PR #2 merge): letter titles
+# votc_incoming_letter_title1..8, settings HUD panel strings, arrival
+# descriptions, plus the shared talk/letter interaction strings used by both
+# letter systems.  DISJOINT from votc_ce_initiative_l_*.yml (NPC Initiative
+# hub/settings/letter window), which documents the votc_ce_initiative.* keys
+# only.  No key collisions.
+#--------------------------------------------------------------------------
+
 talk_interaction:0 "Talk"
 talk_interaction.desc:0 "Initiate a conversation"
 
@@ -239,7 +249,7 @@ votc_talk_selected:0 "Talk with [recipient.GetTitledFirstName] and selected char
 votc_talk_change_mcc_selection:0 "Change selected characters"
 votc_talk_mcc_selector:0 "Select characters to talk along with [recipient.GetTitledFirstName]"
 
-votc_relaese_letter_decision:0 "VOTC-CE Release Letter Thread"
+votc_relaese_letter_decision:0 "VOTC-CE: Release Letter Thread"
 votc_relaese_letter_decision_desc:0 "Release the current letter thread awaiting a reply"
 votc_letter_reply_fallback_desc:0 "The reply could not be generated. The letter thread was cleared and the timeline advanced."
 votc_relaese_letter_decision_tooltip:0 "Release Letter Thread"
@@ -249,12 +259,12 @@ votc_relaese_letter_decision_effect_desc:0 "You will release the current letter 
 votc_continue_button:0 "Continue"
 
 votc_battle_report_message_title:0 "Battle Report"
-votc_relaese_battle_report_decision:0 "VOTC-CE Release Battle Reports"
+votc_relaese_battle_report_decision:0 "VOTC-CE: Release Battle Reports"
 votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE Release Battle Reports"
 votc_relaese_battle_report_decision_confirm:0 "VOTC-CE Release Battle Reports"
 votc_relaese_battle_report_decision_effect_desc:0 "You will release all stuck battle report threads and allow new battle reports to be generated."
 
-votc_conversation_history_decision:0 "VOTC-CE View Conversation History"
+votc_conversation_history_decision:0 "VOTC-CE: View Conversation History"
 votc_conversation_history_decision_tooltip:0 "Open the conversation history viewer in the VOTC app."
 votc_conversation_history_decision_confirm:0 "View Conversation History"
 votc_conversation_history_decision_effect_desc:0 "Opens the conversation history viewer. This also synchronizes the checkpoint epoch so the viewer only shows conversations consistent with your current save."
@@ -302,13 +312,13 @@ votc_incoming_letters_event_frequency_off_desc:0 "#N Off#! — do not generate s
 votc_incoming_letters_enable_option:0 "Enable NPC-Initiated Letters"
 votc_incoming_letters_disable_option:0 "Disable NPC-Initiated Letters"
 votc_incoming_letters_close_option:0 "Close"
-votc_enable_incoming_letters_decision:0 "VOTC-CE Enable NPC Letters"
+votc_enable_incoming_letters_decision:0 "VOTC-CE: Enable NPC Letters"
 votc_enable_incoming_letters_decision_effect_desc:0 "NPCs may write you letters on their own initiative."
-votc_disable_incoming_letters_decision:0 "VOTC-CE Disable NPC Letters"
+votc_disable_incoming_letters_decision:0 "VOTC-CE: Disable NPC Letters"
 votc_disable_incoming_letters_decision_effect_desc:0 "Stop NPCs from writing letters on their own initiative."
-votc_clear_incoming_letters_decision:0 "VOTC-CE Clear Incoming Letter Slots"
+votc_clear_incoming_letters_decision:0 "VOTC-CE: Clear Incoming Letter Slots"
 votc_clear_incoming_letters_decision_effect_desc:0 "Clear all pending incoming letter slots."
-votc_open_incoming_letters_settings_decision:0 "VOTC-CE Incoming Letter Settings"
+votc_open_incoming_letters_settings_decision:0 "VOTC-CE: Incoming Letter Settings"
 votc_open_incoming_letters_settings_decision_effect_desc:0 "Open the settings window for NPC-initiated letters and battle reports."
 votc_enable_incoming_letters_decision_confirm:0 "Enable NPC Letters"
 votc_disable_incoming_letters_decision_confirm:0 "Disable NPC Letters"

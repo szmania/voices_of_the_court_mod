@@ -1336,6 +1336,25 @@ votc_start_incoming_letter_effect = {
 								value = scope:actor
 							}
 
+							# VOTC-194 13.1.2: this incoming letter spends one unit of the
+							# shared quarterly letter budget (same counter as NPC Initiative).
+							votc_ce_letter_budget_increment = yes
+
+							# VOTC-194 13.2.2: the letter's author joins the NPC-Initiative
+							# candidate pools so relationship weighting learns from both
+							# channels.  Sender = the snapshot (deathbed letters may use the
+							# deceased as the perceived sender).
+							scope:actor = {
+								if = {
+									limit = { exists = global_var:votc_incoming_letter_snapshot_sender }
+									global_var:votc_incoming_letter_snapshot_sender = {
+										save_scope_as = recipient
+									}
+									votc_ce_initiative_record_letter_sender = yes
+								}
+							}
+							}
+
 							# Preserve event-specific scopes for localization in the context line.
 							if = {
 								limit = {

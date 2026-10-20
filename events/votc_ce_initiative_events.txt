@@ -25,6 +25,9 @@
 #   .186   hidden  clear every pending incoming-letter slot (VOTC-194 14.3.2)
 #   .190   AI-conversation presets page (VOTC-194 14.2.1)
 #   .191-.194 hidden  AI-conversation preset setters (VOTC-194 14.2.2)
+#   .200-.202 hidden  release letters / release battle reports / conversation history (user request)
+#   .205   conversations sub-page (user request)
+#   .206   letters sub-page (user request)
 #==========================================================================
 
 namespace = votc_ce_initiative
@@ -427,82 +430,32 @@ votc_ce_initiative.100 = {
 			}
 		}
 	}
-
 	option = {
 		name = votc_ce_initiative_opt_enable
+		custom_tooltip = votc_ce_initiative_opt_enable_tooltip
 		trigger = { has_global_variable = votc_ce_initiative_off }
 		trigger_event = votc_ce_initiative.101
 	}
 	option = {
 		name = votc_ce_initiative_opt_disable
+		custom_tooltip = votc_ce_initiative_opt_disable_tooltip
 		trigger = { NOT = { has_global_variable = votc_ce_initiative_off } }
 		trigger_event = votc_ce_initiative.101
 	}
 	option = {
-		name = votc_ce_initiative_opt_freq
-		trigger_event = votc_ce_initiative.110
+		name = votc_ce_initiative_opt_conversations
+		custom_tooltip = votc_ce_initiative_opt_conversations_tooltip
+		trigger_event = votc_ce_initiative.205
 	}
 	option = {
-		name = votc_ce_initiative_opt_chance
-		trigger_event = votc_ce_initiative.120
-	}
-
-	# Letters toggle keys are STATE-named: opt_letters_on means "letters are currently ON",
-	# opt_letters_off means "letters are currently OFF". Their loc text is the ACTION available
-	# in that state ("Disable NPC Letters" / "Enable NPC Letters"), so the trigger gating is
-	# inverted relative to the key name: opt_letters_on shows when letters are ON
-	# (NOT = { has_global_variable = votc_ce_initiative_no_letters }) and opt_letters_off
-	# when letters are OFF (has_global_variable = ...). Both variants of .140 toggle the flag,
-	# so the button label always matches what clicking it does. Do NOT "fix" by swapping.
-
-	option = {
-		name = votc_ce_initiative_opt_letters_on
-		trigger = { NOT = { has_global_variable = votc_ce_initiative_no_letters } }
-		trigger_event = votc_ce_initiative.140
-	}
-	option = {
-		name = votc_ce_initiative_opt_letters_off
-		trigger = { has_global_variable = votc_ce_initiative_no_letters }
-		trigger_event = votc_ce_initiative.140
-	}
-	option = {
-		name = votc_ce_initiative_opt_letter_freq
-		trigger_event = votc_ce_initiative.170
-	}
-	option = {
-		name = votc_ce_initiative_opt_letter_test
-		trigger_event = votc_ce_initiative.174
-	}
-	# VOTC-194 13.3.1: incoming-letter frequency page (mirrors the legacy
-	# votc_open_incoming_letters_settings_decision).
-	option = {
-		name = votc_ce_initiative_opt_incoming
-		trigger_event = votc_ce_initiative.180
-	}
-	# VOTC-194 14.2.4: AI-conversation presets page (replaces the four retired
-	# standalone votc_ai_frequency_*_decision decisions, see §14.1.1).
-	option = {
-		name = votc_ce_initiative_opt_ai_freq
-		trigger_event = votc_ce_initiative.190
-	}
-	option = {
-		name = votc_ce_initiative_opt_release_letters
-		custom_tooltip = votc_ce_initiative_opt_release_letters_tooltip
-		trigger_event = votc_ce_initiative.200
+		name = votc_ce_initiative_opt_letters
+		custom_tooltip = votc_ce_initiative_opt_letters_tooltip
+		trigger_event = votc_ce_initiative.206
 	}
 	option = {
 		name = votc_ce_initiative_opt_release_battle_reports
 		custom_tooltip = votc_ce_initiative_opt_release_battle_reports_tooltip
 		trigger_event = votc_ce_initiative.201
-	}
-	option = {
-		name = votc_ce_initiative_opt_conversation_history
-		custom_tooltip = votc_ce_initiative_opt_conversation_history_tooltip
-		trigger_event = votc_ce_initiative.202
-	}
-	option = {
-		name = votc_ce_initiative_opt_test
-		trigger_event = votc_ce_initiative.130
 	}
 	option = {
 		name = votc_ce_initiative_opt_close
@@ -527,7 +480,7 @@ votc_ce_initiative.200 = {
 		remove_global_variable= votc_letter_7
 		remove_global_variable= votc_letter_8
 		remove_global_variable= votc_letter_9
-		trigger_event = votc_ce_initiative.100
+		trigger_event = votc_ce_initiative.206
 	}
 }
 #--------------------------------------------------------------------------
@@ -602,7 +555,7 @@ votc_ce_initiative.202 = {
 		votc_init_checkpoint_effect = yes
 		debug_log = "VOTC:conversation_history/;/[GetPlayer.GetID]/;/[GetPlayer.MakeScope.Var('votc_checkpoint_epoch').GetValue|0]"
 		trigger_event = votc_checkpoint_event.9001
-		trigger_event = votc_ce_initiative.100
+		trigger_event = votc_ce_initiative.205
 	}
 }
 
@@ -813,10 +766,10 @@ votc_ce_initiative.130 = {
 			}
 			votc_ce_initiative_launch = yes
 		}
-		# Nothing happened -> nobody eligible yet, show the hub again.
+		# Nothing happened -> nobody eligible yet, show the Conversations page again.
 		if = {
 			limit = { NOT = { exists = global_var:votc_ce_initiative_player } }
-			trigger_event = votc_ce_initiative.100
+			trigger_event = votc_ce_initiative.205
 		}
 	}
 }
@@ -840,7 +793,7 @@ votc_ce_initiative.140 = {
 				value = yes
 			}
 		}
-		trigger_event = votc_ce_initiative.100
+		trigger_event = votc_ce_initiative.206
 	}
 }
 
@@ -942,10 +895,10 @@ votc_ce_initiative.174 = {
 			limit = { NOT = { exists = global_var:votc_ce_initiative_letter_pending } }
 			votc_ce_initiative_letter_pick = yes
 		}
-		# Nothing happened -> nobody eligible yet, show the hub again.
+		# Nothing happened -> nobody eligible yet, show the Letters page again.
 		if = {
 			limit = { NOT = { exists = global_var:votc_ce_initiative_letter_pending } }
-			trigger_event = votc_ce_initiative.100
+			trigger_event = votc_ce_initiative.206
 		}
 	}
 }
@@ -1258,5 +1211,101 @@ votc_ce_initiative.194 = {
 			value = 30
 		}
 		trigger_event = votc_ce_initiative.190
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .205  Conversations sub-page (user request). Talk settings moved out of
+#  the hub: talk interval, talk chance, AI conversations, conversation
+#  history and a test talk now live here.
+#--------------------------------------------------------------------------
+votc_ce_initiative.205 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.205.title
+	desc = votc_ce_initiative.205.desc
+	window = character_event
+
+	option = {
+		name = votc_ce_initiative_opt_freq
+		trigger_event = votc_ce_initiative.110
+	}
+	option = {
+		name = votc_ce_initiative_opt_chance
+		trigger_event = votc_ce_initiative.120
+	}
+	option = {
+		name = votc_ce_initiative_opt_ai_freq
+		trigger_event = votc_ce_initiative.190
+	}
+	option = {
+		name = votc_ce_initiative_opt_conversation_history
+		custom_tooltip = votc_ce_initiative_opt_conversation_history_tooltip
+		trigger_event = votc_ce_initiative.202
+	}
+	option = {
+		name = votc_ce_initiative_opt_test
+		trigger_event = votc_ce_initiative.130
+	}
+	option = {
+		name = votc_ce_initiative_opt_back
+		trigger_event = votc_ce_initiative.100
+	}
+	option = {
+		name = votc_ce_initiative_opt_close
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .206  Letters sub-page (user request). Letter settings moved out of the
+#  hub: NPC letters on/off, letter interval, test letter, incoming letters
+#  and releasing letter threads now live here.
+#--------------------------------------------------------------------------
+votc_ce_initiative.206 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.206.title
+	desc = votc_ce_initiative.206.desc
+	window = character_event
+
+#  Letters toggle keys are STATE-named: opt_letters_on means letters are
+#  currently ON, opt_letters_off means currently OFF. Loc text is the
+#  available ACTION in that state, so trigger gating is inverted vs the
+#  key name: opt_letters_on gates on NOT has_global_variable
+#  votc_ce_initiative_no_letters, opt_letters_off gates on it. Both fire
+#  .140 which toggles the flag. Do NOT swap the gating (plan section 11).
+	option = {
+		name = votc_ce_initiative_opt_letters_on
+		trigger = { NOT = { has_global_variable = votc_ce_initiative_no_letters } }
+		trigger_event = votc_ce_initiative.140
+	}
+	option = {
+		name = votc_ce_initiative_opt_letters_off
+		trigger = { has_global_variable = votc_ce_initiative_no_letters }
+		trigger_event = votc_ce_initiative.140
+	}
+	option = {
+		name = votc_ce_initiative_opt_letter_freq
+		trigger_event = votc_ce_initiative.170
+	}
+	option = {
+		name = votc_ce_initiative_opt_letter_test
+		trigger_event = votc_ce_initiative.174
+	}
+	option = {
+		name = votc_ce_initiative_opt_incoming
+		trigger_event = votc_ce_initiative.180
+	}
+	option = {
+		name = votc_ce_initiative_opt_release_letters
+		custom_tooltip = votc_ce_initiative_opt_release_letters_tooltip
+		trigger_event = votc_ce_initiative.200
+	}
+	option = {
+		name = votc_ce_initiative_opt_back
+		trigger_event = votc_ce_initiative.100
+	}
+	option = {
+		name = votc_ce_initiative_opt_close
 	}
 }

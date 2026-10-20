@@ -1,4 +1,4 @@
-# VOTC-194: NPC Initiative eligibility triggers.
+﻿# VOTC-194: NPC Initiative eligibility triggers.
 #
 # Scope = the candidate AI character; root = the player the request would go to.
 # is_ai = yes also guarantees the player themself can never be picked.

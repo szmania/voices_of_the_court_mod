@@ -1,4 +1,4 @@
-#==========================================================================
+﻿#==========================================================================
 #  VOTC-194: NPC Initiative - on_action hooks
 #  Namespace: votc_ce_initiative
 #
@@ -34,6 +34,28 @@ random_yearly_playable_pulse = {
 # Empty scope: on_game_start has no root, so walk the players manually.
 votc_ce_initiative_bootstrap_global = {
 	effect = {
+		# VOTC-194: seed the shared quarterly letter budget counter at game
+		# start so no read site ever fetches an unset global.
+		if = {
+			limit = { NOT = { has_global_variable = votc_letters_this_quarter } }
+			set_global_variable = {
+				name = votc_letters_this_quarter
+				value = 0
+				days = 91
+			}
+		}
+		# Legacy VOTC-183 dummy: the retired ai-initiate pipeline
+		# (mcc_event_v2.1012 -> votc_ai_initiate_conversation_effect) still
+		# reads this global; give it a value so stray ticks and old saves stop
+		# throwing "Failed to fetch variable".  Any non-0/1/3 value falls into
+		# the legacy effect's default branch.
+		if = {
+			limit = { NOT = { has_global_variable = votc_ai_conversation_frequency } }
+			set_global_variable = {
+				name = votc_ai_conversation_frequency
+				value = 182
+			}
+		}
 		every_player = {
 			votc_ce_initiative_bootstrap_char = yes
 		}

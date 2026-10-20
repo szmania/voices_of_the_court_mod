@@ -12,6 +12,19 @@ votc_incoming_letter_event.0001 = {
 	trigger = {
 		is_ai = no
 		votc_incoming_letters_ready_trigger = yes
+		# VOTC-194 13.1.1: while an NPC-Initiative letter is in flight (marker
+		# votc_npcltr), a same-quarter incoming letter is suppressed so the two
+		# letter systems never double-dip in the same quarter.
+		NOT = { has_global_variable = votc_npcltr }
+		# VOTC-194 13.1.2: shared quarterly letter budget - an NPC-Initiative
+		# letter authored this quarter already spent the allowance.  The OR-guard
+		# keeps an unset cap (pre-bootstrap) or a lapsed counter (91-day expiry)
+		# from erroring on unset-global comparisons / freezing incoming letters.
+		OR = {
+			NOT = { exists = global_var:votc_letter_quarter_cap }
+			NOT = { exists = global_var:votc_letters_this_quarter }
+			NOT = { global_var:votc_letters_this_quarter >= global_var:votc_letter_quarter_cap }
+		}
 	}
 
 	immediate = {
@@ -77,13 +90,37 @@ votc_incoming_letter_event.0001 = {
 					}
 					10 = {
 						# rival_taunt
+						# VOTC-194 13.2.1: prefer the bitterest bond.  ordered_in_list
+						# walks the talked/written pools by relationship weight (opinion
+						# magnitude + rivalry intensity) so the strongest feeling wins;
+						# random_relation stays as the fallback so a rival that has never
+						# corresponded can still taunt.
 						scope:actor = {
-							random_relation = {
-								type = rival
-								limit = {
-									votc_incoming_letter_rival_author_valid_trigger = yes
+							if = {
+								limit = { has_variable_list = votc_talked_characters }
+								ordered_in_list = {
+									variable = votc_talked_characters
+									limit = {
+										votc_incoming_letter_rival_author_valid_trigger = yes
+										OR = {
+											has_relation_rival = root
+											has_relation_nemesis = root
+										}
+									}
+									order_by = votc_ce_initiative_weight
+									max = 1
+									save_scope_as = recipient
 								}
-								save_scope_as = recipient
+							}
+							if = {
+								limit = { NOT = { exists = scope:recipient } }
+								random_relation = {
+									type = rival
+									limit = {
+										votc_incoming_letter_rival_author_valid_trigger = yes
+									}
+									save_scope_as = recipient
+								}
 							}
 						}
 						if = {
@@ -105,15 +142,37 @@ votc_incoming_letter_event.0001 = {
 					}
 					15 = {
 						# dear_friend_greeting
+						# VOTC-194 13.2.1: prefer the closest bond, same shape as the rival
+						# branch above; random_relation remains the fallback.
 						scope:actor = {
-							random_relation = {
-								type = friend
-								limit = {
-									votc_incoming_letter_friend_author_valid_trigger = yes
+							if = {
+								limit = { has_variable_list = votc_talked_characters }
+								ordered_in_list = {
+									variable = votc_talked_characters
+									limit = {
+										votc_incoming_letter_friend_author_valid_trigger = yes
+										OR = {
+											has_relation_friend = root
+											has_relation_best_friend = root
+											has_relation_soulmate = root
+											has_relation_lover = root
+										}
+									}
+									order_by = votc_ce_initiative_weight
+									max = 1
+									save_scope_as = recipient
 								}
-								save_scope_as = recipient
 							}
-						}
+							if = {
+								limit = { NOT = { exists = scope:recipient } }
+								random_relation = {
+									type = friend
+									limit = {
+										votc_incoming_letter_friend_author_valid_trigger = yes
+									}
+									save_scope_as = recipient
+								}
+							}
 						if = {
 							limit = { exists = scope:recipient }
 							scope:recipient = {
@@ -145,6 +204,7 @@ votc_incoming_letter_event.0001 = {
 						else = {
 							debug_log = "VOTC:INCOMING_LETTER/;/quarterly/;/skipped/;/no_friend"
 						}
+					}
 					}
 					15 = {
 						# natural_disaster
@@ -708,6 +768,24 @@ votc_incoming_letter_event.0101 = {
 		}
 	}
 
+	# VOTC-194 13.4.1: write back - open the write-message flow with the
+	# sender preselected (message_event.360 reads scope:recipient as the
+	# addressee; votc_ce_initiative.153 uses the same pattern).
+	option = {
+		name = votc_ce_initiative_letter_write_back
+		trigger = {
+			exists = global_var:votc_incoming_letter_sender_1
+			global_var:votc_incoming_letter_sender_1 = { is_alive = yes }
+		}
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_1 }
+			global_var:votc_incoming_letter_sender_1 = { save_scope_as = recipient }
+			scope:actor = { save_scope_as = sender_actor }
+		}
+	}
+
+	# Open the write-message window with the sender preselected.
+	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_1"
 		container = "custom_widgets_container"
@@ -732,6 +810,24 @@ votc_incoming_letter_event.0102 = {
 		}
 	}
 
+	# VOTC-194 13.4.1: write back - open the write-message flow with the
+	# sender preselected (message_event.360 reads scope:recipient as the
+	# addressee; votc_ce_initiative.153 uses the same pattern).
+	option = {
+		name = votc_ce_initiative_letter_write_back
+		trigger = {
+			exists = global_var:votc_incoming_letter_sender_2
+			global_var:votc_incoming_letter_sender_2 = { is_alive = yes }
+		}
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_2 }
+			global_var:votc_incoming_letter_sender_2 = { save_scope_as = recipient }
+			scope:actor = { save_scope_as = sender_actor }
+		}
+	}
+
+	# Open the write-message window with the sender preselected.
+	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_2"
 		container = "custom_widgets_container"
@@ -756,6 +852,24 @@ votc_incoming_letter_event.0103 = {
 		}
 	}
 
+	# VOTC-194 13.4.1: write back - open the write-message flow with the
+	# sender preselected (message_event.360 reads scope:recipient as the
+	# addressee; votc_ce_initiative.153 uses the same pattern).
+	option = {
+		name = votc_ce_initiative_letter_write_back
+		trigger = {
+			exists = global_var:votc_incoming_letter_sender_3
+			global_var:votc_incoming_letter_sender_3 = { is_alive = yes }
+		}
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_3 }
+			global_var:votc_incoming_letter_sender_3 = { save_scope_as = recipient }
+			scope:actor = { save_scope_as = sender_actor }
+		}
+	}
+
+	# Open the write-message window with the sender preselected.
+	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_3"
 		container = "custom_widgets_container"
@@ -780,6 +894,24 @@ votc_incoming_letter_event.0104 = {
 		}
 	}
 
+	# VOTC-194 13.4.1: write back - open the write-message flow with the
+	# sender preselected (message_event.360 reads scope:recipient as the
+	# addressee; votc_ce_initiative.153 uses the same pattern).
+	option = {
+		name = votc_ce_initiative_letter_write_back
+		trigger = {
+			exists = global_var:votc_incoming_letter_sender_4
+			global_var:votc_incoming_letter_sender_4 = { is_alive = yes }
+		}
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_4 }
+			global_var:votc_incoming_letter_sender_4 = { save_scope_as = recipient }
+			scope:actor = { save_scope_as = sender_actor }
+		}
+	}
+
+	# Open the write-message window with the sender preselected.
+	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_4"
 		container = "custom_widgets_container"
@@ -804,6 +936,24 @@ votc_incoming_letter_event.0105 = {
 		}
 	}
 
+	# VOTC-194 13.4.1: write back - open the write-message flow with the
+	# sender preselected (message_event.360 reads scope:recipient as the
+	# addressee; votc_ce_initiative.153 uses the same pattern).
+	option = {
+		name = votc_ce_initiative_letter_write_back
+		trigger = {
+			exists = global_var:votc_incoming_letter_sender_5
+			global_var:votc_incoming_letter_sender_5 = { is_alive = yes }
+		}
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_5 }
+			global_var:votc_incoming_letter_sender_5 = { save_scope_as = recipient }
+			scope:actor = { save_scope_as = sender_actor }
+		}
+	}
+
+	# Open the write-message window with the sender preselected.
+	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_5"
 		container = "custom_widgets_container"
@@ -828,6 +978,24 @@ votc_incoming_letter_event.0106 = {
 		}
 	}
 
+	# VOTC-194 13.4.1: write back - open the write-message flow with the
+	# sender preselected (message_event.360 reads scope:recipient as the
+	# addressee; votc_ce_initiative.153 uses the same pattern).
+	option = {
+		name = votc_ce_initiative_letter_write_back
+		trigger = {
+			exists = global_var:votc_incoming_letter_sender_6
+			global_var:votc_incoming_letter_sender_6 = { is_alive = yes }
+		}
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_6 }
+			global_var:votc_incoming_letter_sender_6 = { save_scope_as = recipient }
+			scope:actor = { save_scope_as = sender_actor }
+		}
+	}
+
+	# Open the write-message window with the sender preselected.
+	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_6"
 		container = "custom_widgets_container"
@@ -852,6 +1020,24 @@ votc_incoming_letter_event.0107 = {
 		}
 	}
 
+	# VOTC-194 13.4.1: write back - open the write-message flow with the
+	# sender preselected (message_event.360 reads scope:recipient as the
+	# addressee; votc_ce_initiative.153 uses the same pattern).
+	option = {
+		name = votc_ce_initiative_letter_write_back
+		trigger = {
+			exists = global_var:votc_incoming_letter_sender_7
+			global_var:votc_incoming_letter_sender_7 = { is_alive = yes }
+		}
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_7 }
+			global_var:votc_incoming_letter_sender_7 = { save_scope_as = recipient }
+			scope:actor = { save_scope_as = sender_actor }
+		}
+	}
+
+	# Open the write-message window with the sender preselected.
+	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_7"
 		container = "custom_widgets_container"
@@ -876,6 +1062,24 @@ votc_incoming_letter_event.0108 = {
 		}
 	}
 
+	# VOTC-194 13.4.1: write back - open the write-message flow with the
+	# sender preselected (message_event.360 reads scope:recipient as the
+	# addressee; votc_ce_initiative.153 uses the same pattern).
+	option = {
+		name = votc_ce_initiative_letter_write_back
+		trigger = {
+			exists = global_var:votc_incoming_letter_sender_8
+			global_var:votc_incoming_letter_sender_8 = { is_alive = yes }
+		}
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_8 }
+			global_var:votc_incoming_letter_sender_8 = { save_scope_as = recipient }
+			scope:actor = { save_scope_as = sender_actor }
+		}
+	}
+
+	# Open the write-message window with the sender preselected.
+	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_8"
 		container = "custom_widgets_container"
