@@ -1,4 +1,4 @@
-﻿l_polish:
+﻿l_polish:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -18,7 +18,13 @@
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "Zamknij"
  votc_ce_initiative_letter_write_back:0 "Odpisz"
- votc_ce_initiative.100.title:0 "Ustawienia Inicjatywy NPC"
+ votc_ce_initiative.100.title:0 "VOTC-CE: Ustawienia"
+ votc_ce_initiative_opt_release_letters:0 "Zwolnij wątek listów"
+ votc_ce_initiative_opt_release_letters_tooltip:0 "Czyści wszystkie zapisane wątki listów (votc_letter_1..9)."
+ votc_ce_initiative_opt_release_battle_reports:0 "Zwolnij raporty bitew"
+ votc_ce_initiative_opt_release_battle_reports_tooltip:0 "Czyści wszystkie zapisane dane raportów bitew."
+ votc_ce_initiative_opt_conversation_history:0 "Historia rozmów"
+ votc_ce_initiative_opt_conversation_history_tooltip:0 "Otwiera okno historii rozmów gracza."
  votc_ce_initiative.100.desc:0 "Skonfiguruj, jak często NPC kontaktują się z tobą lub piszą listy."
  votc_ce_initiative_opt_enable:0 "Włącz Inicjatywę NPC"
  votc_ce_initiative_opt_disable:0 "Wyłącz Inicjatywę NPC"
@@ -74,9 +80,6 @@
  votc_ce_initiative_opt_ai_freq:0 "Rozmowy AI"
  votc_ce_initiative.190.title:0 "Rozmowy AI"
  votc_ce_initiative.190.desc:0 "Wybierz, jak często postacie AI proszą o rozmowę z tobą."
- votc_ce_initiative_opt_release_letters:0 "Wyczyść wszystkie listy"
- votc_ce_initiative_opt_release_battle_reports:0 "Wyczyść wszystkie raporty bitewne"
- votc_ce_initiative_opt_conversation_history:0 "Wyświetl historię rozmów"
  votc_ce_initiative_opt_incoming_toggle:0 "Wyłącz listy przychodzące"
  votc_ce_initiative_opt_incoming_toggle_off:0 "Włącz listy przychodzące"
  votc_ce_initiative_opt_incoming_clear:0 "Wyczyść sloty listów przychodzących"

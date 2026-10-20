@@ -487,26 +487,17 @@ votc_ce_initiative.100 = {
 	}
 	option = {
 		name = votc_ce_initiative_opt_release_letters
+		custom_tooltip = votc_ce_initiative_opt_release_letters_tooltip
 		trigger_event = votc_ce_initiative.200
 	}
 	option = {
 		name = votc_ce_initiative_opt_release_battle_reports
+		custom_tooltip = votc_ce_initiative_opt_release_battle_reports_tooltip
 		trigger_event = votc_ce_initiative.201
 	}
 	option = {
 		name = votc_ce_initiative_opt_conversation_history
-		trigger_event = votc_ce_initiative.202
-	}
-	option = {
-		name = votc_ce_initiative_opt_release_letters
-		trigger_event = votc_ce_initiative.200
-	}
-	option = {
-		name = votc_ce_initiative_opt_release_battle_reports
-		trigger_event = votc_ce_initiative.201
-	}
-	option = {
-		name = votc_ce_initiative_opt_conversation_history
+		custom_tooltip = votc_ce_initiative_opt_conversation_history_tooltip
 		trigger_event = votc_ce_initiative.202
 	}
 	option = {
@@ -515,6 +506,7 @@ votc_ce_initiative.100 = {
 	}
 	option = {
 		name = votc_ce_initiative_opt_close
+	}
 }
 
 #--------------------------------------------------------------------------
@@ -537,6 +529,7 @@ votc_ce_initiative.200 = {
 		remove_global_variable= votc_letter_9
 		trigger_event = votc_ce_initiative.100
 	}
+}
 #--------------------------------------------------------------------------
 #  .201  Release Battle Reports (VOTC-194: user request)
 #--------------------------------------------------------------------------
@@ -595,6 +588,7 @@ votc_ce_initiative.201 = {
 		remove_variable ?= votc_battle_report_15_sent_day
 		trigger_event = votc_ce_initiative.100
 	}
+}
 #--------------------------------------------------------------------------
 #  .202  Conversation History (VOTC-194: user request)
 #--------------------------------------------------------------------------
@@ -610,6 +604,7 @@ votc_ce_initiative.202 = {
 		trigger_event = votc_checkpoint_event.9001
 		trigger_event = votc_ce_initiative.100
 	}
+}
 
 #--------------------------------------------------------------------------
 #  .101  Toggle the whole feature

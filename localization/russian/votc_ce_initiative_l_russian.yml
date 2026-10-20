@@ -1,4 +1,4 @@
-﻿l_russian:
+﻿l_russian:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -18,7 +18,13 @@
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "Закрыть"
  votc_ce_initiative_letter_write_back:0 "Ответить"
- votc_ce_initiative.100.title:0 "Настройки инициативы ИИ"
+ votc_ce_initiative.100.title:0 "VOTC-CE: Настройки"
+ votc_ce_initiative_opt_release_letters:0 "Освободить ветку писем"
+ votc_ce_initiative_opt_release_letters_tooltip:0 "Очищает все сохранённые ветки писем (votc_letter_1..9)."
+ votc_ce_initiative_opt_release_battle_reports:0 "Освободить боевые доклады"
+ votc_ce_initiative_opt_release_battle_reports_tooltip:0 "Очищает все сохранённые данные боевых докладов."
+ votc_ce_initiative_opt_conversation_history:0 "История разговоров"
+ votc_ce_initiative_opt_conversation_history_tooltip:0 "Открывает окно истории разговоров игрока."
  votc_ce_initiative.100.desc:0 "Настройте, как часто персонажи обращаются к вам или отправляют письма."
  votc_ce_initiative_opt_enable:0 "Включить инициативу ИИ"
  votc_ce_initiative_opt_disable:0 "Выключить инициативу ИИ"
@@ -74,9 +80,6 @@
  votc_ce_initiative_opt_ai_freq:0 "Диалоги ИИ"
  votc_ce_initiative.190.title:0 "Диалоги ИИ"
  votc_ce_initiative.190.desc:0 "Выберите, как часто персонажи ИИ просят поговорить с вами."
- votc_ce_initiative_opt_release_letters:0 "Очистить все письма"
- votc_ce_initiative_opt_release_battle_reports:0 "Очистить все боевые отчеты"
- votc_ce_initiative_opt_conversation_history:0 "Посмотреть историю разговоров"
  votc_ce_initiative_opt_incoming_toggle:0 "Отключить входящие письма"
  votc_ce_initiative_opt_incoming_toggle_off:0 "Включить входящие письма"
  votc_ce_initiative_opt_incoming_clear:0 "Очистить слоты входящих писем"

@@ -1,4 +1,4 @@
-﻿l_korean:
+﻿l_korean:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -18,7 +18,13 @@
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "닫기"
  votc_ce_initiative_letter_write_back:0 "답장하기"
- votc_ce_initiative.100.title:0 "NPC 주도성 설정"
+ votc_ce_initiative.100.title:0 "VOTC-CE: 설정"
+ votc_ce_initiative_opt_release_letters:0 "편지 스레드 해제"
+ votc_ce_initiative_opt_release_letters_tooltip:0 "저장된 모든 편지 스레드를 지웁니다(votc_letter_1..9)."
+ votc_ce_initiative_opt_release_battle_reports:0 "전투 보고서 해제"
+ votc_ce_initiative_opt_release_battle_reports_tooltip:0 "저장된 모든 전투 보고서 데이터를 지웁니다."
+ votc_ce_initiative_opt_conversation_history:0 "대화 기록"
+ votc_ce_initiative_opt_conversation_history_tooltip:0 "플레이어의 대화 기록 창을 엽니다."
  votc_ce_initiative.100.desc:0 "NPC가 당신에게 대화를 요청하거나 편지를 보내는 빈도를 설정합니다."
  votc_ce_initiative_opt_enable:0 "NPC 주도성 활성화"
  votc_ce_initiative_opt_disable:0 "NPC 주도성 비활성화"
@@ -74,9 +80,6 @@
  votc_ce_initiative_opt_ai_freq:0 "AI 대화"
  votc_ce_initiative.190.title:0 "AI 대화"
  votc_ce_initiative.190.desc:0 "AI 캐릭터가 당신에게 대화를 요청하는 빈도를 선택합니다."
- votc_ce_initiative_opt_release_letters:0 "모든 편지 지우기"
- votc_ce_initiative_opt_release_battle_reports:0 "모든 전투 보고서 지우기"
- votc_ce_initiative_opt_conversation_history:0 "대화 기록 보기"
  votc_ce_initiative_opt_incoming_toggle:0 "수신 편지 비활성화"
  votc_ce_initiative_opt_incoming_toggle_off:0 "수신 편지 활성화"
  votc_ce_initiative_opt_incoming_clear:0 "수신 편지 슬롯 지우기"

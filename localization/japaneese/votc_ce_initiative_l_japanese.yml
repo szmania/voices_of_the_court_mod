@@ -1,4 +1,4 @@
-﻿l_japanese:
+﻿l_japanese:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -18,7 +18,13 @@
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "闭じる"
  votc_ce_initiative_letter_write_back:0 "返信する"
- votc_ce_initiative.100.title:0 "NPC主導性設定"
+ votc_ce_initiative.100.title:0 "VOTC-CE: 設定"
+ votc_ce_initiative_opt_release_letters:0 "手紙スレッドを解放"
+ votc_ce_initiative_opt_release_letters_tooltip:0 "保存されたすべての手紙スレッドを削除します(votc_letter_1..9)。"
+ votc_ce_initiative_opt_release_battle_reports:0 "戦闘報告を解放"
+ votc_ce_initiative_opt_release_battle_reports_tooltip:0 "保存されたすべての戦闘報告データを削除します。"
+ votc_ce_initiative_opt_conversation_history:0 "会話履歴"
+ votc_ce_initiative_opt_conversation_history_tooltip:0 "プレイヤーの会話履歴ウィンドウを開きます。"
  votc_ce_initiative.100.desc:0 "NPCがあなたに話しかけたり手紙を送ったりする頻度を設定します。"
  votc_ce_initiative_opt_enable:0 "NPC主導性を有効化"
  votc_ce_initiative_opt_disable:0 "NPC主導性を無効化"
@@ -74,9 +80,6 @@
  votc_ce_initiative_opt_ai_freq:0 "AI会話"
  votc_ce_initiative.190.title:0 "AI会話"
  votc_ce_initiative.190.desc:0 "AIキャラクターがあなたに話しかける頻度を選択します。"
- votc_ce_initiative_opt_release_letters:0 "すべての手紙をクリア"
- votc_ce_initiative_opt_release_battle_reports:0 "すべての戦闘報告をクリア"
- votc_ce_initiative_opt_conversation_history:0 "会話履歴を表示"
  votc_ce_initiative_opt_incoming_toggle:0 "受信レターを無効にする"
  votc_ce_initiative_opt_incoming_toggle_off:0 "受信レターを有効にする"
  votc_ce_initiative_opt_incoming_clear:0 "受信レタースロットをクリア"

@@ -1,4 +1,4 @@
-﻿l_simp_chinese:
+﻿l_simp_chinese:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -18,7 +18,13 @@
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "关闭"
  votc_ce_initiative_letter_write_back:0 "回复信件"
- votc_ce_initiative.100.title:0 "NPC主动性设置"
+ votc_ce_initiative.100.title:0 "VOTC-CE: 设置"
+ votc_ce_initiative_opt_release_letters:0 "释放信件线程"
+ votc_ce_initiative_opt_release_letters_tooltip:0 "清除所有已保存的信件线程（votc_letter_1..9）。"
+ votc_ce_initiative_opt_release_battle_reports:0 "释放战报"
+ votc_ce_initiative_opt_release_battle_reports_tooltip:0 "清除所有已保存的战报数据。"
+ votc_ce_initiative_opt_conversation_history:0 "对话历史"
+ votc_ce_initiative_opt_conversation_history_tooltip:0 "打开玩家的对话历史窗口。"
  votc_ce_initiative.100.desc:0 "配置NPC向你发起对话或发送信件的频率。"
  votc_ce_initiative_opt_enable:0 "启用NPC主动性"
  votc_ce_initiative_opt_disable:0 "禁用NPC主动性"
@@ -74,9 +80,6 @@
  votc_ce_initiative_opt_ai_freq:0 "AI 对话"
  votc_ce_initiative.190.title:0 "AI 对话"
  votc_ce_initiative.190.desc:0 "选择AI角色向您发起对话的频率。"
- votc_ce_initiative_opt_release_letters:0 "清除所有信件"
- votc_ce_initiative_opt_release_battle_reports:0 "清除所有战报"
- votc_ce_initiative_opt_conversation_history:0 "查看对话历史"
  votc_ce_initiative_opt_incoming_toggle:0 "禁用传入信件"
  votc_ce_initiative_opt_incoming_toggle_off:0 "启用传入信件"
  votc_ce_initiative_opt_incoming_clear:0 "清除传入信件槽位"

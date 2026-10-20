@@ -1,4 +1,4 @@
-﻿l_french:
+﻿l_french:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -18,7 +18,13 @@
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "Fermer"
  votc_ce_initiative_letter_write_back:0 "Répondre"
- votc_ce_initiative.100.title:0 "Paramètres d'initiative des PNJ"
+ votc_ce_initiative.100.title:0 "VOTC-CE : Paramètres"
+ votc_ce_initiative_opt_release_letters:0 "Libérer le fil de lettres"
+ votc_ce_initiative_opt_release_letters_tooltip:0 "Efface tous les fils de lettres enregistrés (votc_letter_1..9)."
+ votc_ce_initiative_opt_release_battle_reports:0 "Libérer les rapports de bataille"
+ votc_ce_initiative_opt_release_battle_reports_tooltip:0 "Efface toutes les données de rapports de bataille."
+ votc_ce_initiative_opt_conversation_history:0 "Historique des conversations"
+ votc_ce_initiative_opt_conversation_history_tooltip:0 "Ouvre la fenêtre d'historique des conversations du joueur."
  votc_ce_initiative.100.desc:0 "Configurez la fréquence à laquelle les PNJ vous contactent ou vous envoient des lettres."
  votc_ce_initiative_opt_enable:0 "Activer l'initiative des PNJ"
  votc_ce_initiative_opt_disable:0 "Désactiver l'initiative des PNJ"
@@ -74,12 +80,6 @@
  votc_ce_initiative_opt_ai_freq:0 "Conversations IA"
  votc_ce_initiative.190.title:0 "Conversations IA"
  votc_ce_initiative.190.desc:0 "Choisissez la fréquence à laquelle les personnages IA demandent à vous parler."
- votc_ce_initiative_opt_release_letters:0 "Effacer toutes les lettres"
- votc_ce_initiative_opt_release_battle_reports:0 "Effacer tous les rapports de bataille"
- votc_ce_initiative_opt_conversation_history:0 "Voir l'historique des conversations"
- votc_ce_initiative_opt_release_letters:0 "Effacer toutes les lettres"
- votc_ce_initiative_opt_release_battle_reports:0 "Effacer tous les rapports de bataille"
- votc_ce_initiative_opt_conversation_history:0 "Voir l'historique des conversations"
  votc_ce_initiative_opt_incoming_toggle:0 "Désactiver les lettres entrantes"
  votc_ce_initiative_opt_incoming_toggle_off:0 "Activer les lettres entrantes"
  votc_ce_initiative_opt_incoming_clear:0 "Effacer les emplacements de lettres entrantes"
