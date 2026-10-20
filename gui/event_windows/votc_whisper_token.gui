@@ -19,7 +19,7 @@
 #  and at that moment votc_latest_letter still points at the previous reply.
 #
 #  It also starts the whisper channel's runner, which is what executes
-#  run/votc_whisper.txt where the app writes a finished section.
+#  run/votc_ce_whisper.txt where the app writes a finished section.
 #
 #  Note the widget a stock token event declares cannot do this job: it uses
 #  container = "custom_widgets_container", which is defined per-window in

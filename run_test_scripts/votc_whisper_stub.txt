@@ -20,10 +20,10 @@
 #       sections (Distant Lands / The Realm / Your Court / Inner Circle).
 #
 #  Expected debug.log receipts:
-#    VOTC_WHISPER: took section 1 of 4 (world)
-#    VOTC_WHISPER: took section 2 of 4 (realm)
-#    VOTC_WHISPER: took section 3 of 4 (court)
-#    VOTC_WHISPER: took section 4 of 4 (circle)
+#    VOTC:WHISPER/;/took_section/;/1/;/world
+#    VOTC:WHISPER/;/took_section/;/2/;/realm
+#    VOTC:WHISPER/;/took_section/;/3/;/court
+#    VOTC:WHISPER/;/took_section/;/4/;/circle
 #
 #  Cleanup: the artifacts carry votc_letter_artifact, so the existing
 #  "burn letters" interaction or the next report start destroys them.

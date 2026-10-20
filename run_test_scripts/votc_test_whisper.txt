@@ -9,8 +9,8 @@
 #   VOTC:IN/;/init/;/.../;/flag:whisper_ledger/;/...   (long init line)
 #   VOTC:IN/;/character/;/.../;/whisper_foreign|whisper_realm|whisper_court|whisper_circle/;/...
 #   VOTC:IN/;/memory/;/...
-#   VOTC:LETTER/;/VOTC_WHISPER_REQUEST_<3|6|12>|<WORLD|REALM|COURT|CIRCLE>/;/whisper/;/...
-#   VOTC_WHISPER: request written to debug.log
+#   VOTC:WHISPER/;/<3|6|12>|<WORLD|REALM|COURT|CIRCLE>/;/<dateAsTotalDays>/;/
+#   VOTC:WHISPER/;/request_written
 #
 # Pass criteria:
 #   - the init line carries flag:whisper_ledger and the long campaign tail

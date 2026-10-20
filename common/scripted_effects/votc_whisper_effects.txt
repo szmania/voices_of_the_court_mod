@@ -12,12 +12,12 @@
 #  variable pointing at its own artifact, and the report window renders the
 #  headings as raw localization text (which IS rich-text parsed) around them.
 #
-#  The outbound data protocol is VOTC's own (VOTC:IN lines and the
-#  VOTC:LETTER request marker) so the desktop app can parse it without
-#  structural changes; the new vocabulary is the letterId "whisper", the
-#  VOTC_WHISPER_REQUEST_<n>|<SECTION> message, the flag:whisper_ledger
-#  conversation kind and the four whisper_* category labels in character
-#  line slot 25.
+#  The outbound data protocol is VOTC's own (VOTC:IN lines plus the
+#  dedicated VOTC:WHISPER request prefix, protocol v2) so the desktop app
+#  can parse it without structural changes; the vocabulary is the
+#  VOTC:WHISPER/;/<n>|<SECTION>/;/<date>/;/ request line, the
+#  flag:whisper_ledger conversation kind and the four whisper_* category
+#  labels in character line slot 25.
 #==========================================================================
 
 #--------------------------------------------------------------------------
@@ -419,56 +419,56 @@ votc_whisper_log_all = {
 votc_whisper_log_payload_world = {
 	if = {
 		limit = { global_var:votc_whisper_freq = 91 }
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_3|WORLD/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/3|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 	else_if = {
 		limit = { global_var:votc_whisper_freq = 365 }
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_12|WORLD/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/12|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 	else = {
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_6|WORLD/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/6|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 }
 
 votc_whisper_log_payload_realm = {
 	if = {
 		limit = { global_var:votc_whisper_freq = 91 }
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_3|REALM/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/3|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 	else_if = {
 		limit = { global_var:votc_whisper_freq = 365 }
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_12|REALM/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/12|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 	else = {
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_6|REALM/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/6|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 }
 
 votc_whisper_log_payload_court = {
 	if = {
 		limit = { global_var:votc_whisper_freq = 91 }
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_3|COURT/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/3|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 	else_if = {
 		limit = { global_var:votc_whisper_freq = 365 }
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_12|COURT/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/12|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 	else = {
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_6|COURT/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/6|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 }
 
 votc_whisper_log_payload_circle = {
 	if = {
 		limit = { global_var:votc_whisper_freq = 91 }
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_3|CIRCLE/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/3|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 	else_if = {
 		limit = { global_var:votc_whisper_freq = 365 }
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_12|CIRCLE/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/12|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 	else = {
-		debug_log = "VOTC:LETTER/;/VOTC_WHISPER_REQUEST_6|CIRCLE/;/whisper/;/[GetCurrentDate.GetDateAsTotalDays]/;/0/;/"
+		debug_log = "VOTC:WHISPER/;/6|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
 	}
 }
 
@@ -551,7 +551,7 @@ votc_whisper_ask = {
 		else_if = { limit = { global_var:votc_whisper_step = 2 } votc_whisper_log_payload_realm = yes }
 		else_if = { limit = { global_var:votc_whisper_step = 3 } votc_whisper_log_payload_court = yes }
 		else = { votc_whisper_log_payload_circle = yes }
-		debug_log = "VOTC_WHISPER: request written to debug.log"
+		debug_log = "VOTC:WHISPER/;/request_written"
 
 		# keeps ExecuteConsoleCommand('run letters.txt') alive
 		trigger_event = { id = mcc_event_v2.9998 }
@@ -655,7 +655,7 @@ votc_whisper_seq_cleanup = {
 #  Take one section out of global_var:votc_whisper_latest, then either ask
 #  for the next one or finish the report.  Both channels feed this:
 #
-#    * the dedicated WHISPER channel - run/votc_whisper.txt, written by the
+#    * the dedicated WHISPER channel - run/votc_ce_whisper.txt, written by the
 #      desktop app once it has the whisper branch - arrives through .30;
 #    * the fallback through VOTC's own letter channel (run/letters.txt)
 #      arrives through votc_whisper_deliver, which is used while the desktop
@@ -680,7 +680,7 @@ votc_whisper_take_section = {
 				value = global_var:votc_whisper_latest
 			}
 			set_global_variable = { name = votc_whisper_step value = 2 }
-			debug_log = "VOTC_WHISPER: took section 1 of 4 (world)"
+			debug_log = "VOTC:WHISPER/;/took_section/;/1/;/world"
 			global_var:votc_whisper_player = { votc_whisper_ask = yes }
 		}
 		else_if = {
@@ -690,7 +690,7 @@ votc_whisper_take_section = {
 				value = global_var:votc_whisper_latest
 			}
 			set_global_variable = { name = votc_whisper_step value = 3 }
-			debug_log = "VOTC_WHISPER: took section 2 of 4 (realm)"
+			debug_log = "VOTC:WHISPER/;/took_section/;/2/;/realm"
 			global_var:votc_whisper_player = { votc_whisper_ask = yes }
 		}
 		else_if = {
@@ -700,7 +700,7 @@ votc_whisper_take_section = {
 				value = global_var:votc_whisper_latest
 			}
 			set_global_variable = { name = votc_whisper_step value = 4 }
-			debug_log = "VOTC_WHISPER: took section 3 of 4 (court)"
+			debug_log = "VOTC:WHISPER/;/took_section/;/3/;/court"
 			global_var:votc_whisper_player = { votc_whisper_ask = yes }
 		}
 		else = {
@@ -709,7 +709,7 @@ votc_whisper_take_section = {
 				value = global_var:votc_whisper_latest
 			}
 			set_global_variable = { name = votc_whisper_done value = yes }
-			debug_log = "VOTC_WHISPER: took section 4 of 4 (circle)"
+			debug_log = "VOTC:WHISPER/;/took_section/;/4/;/circle"
 			# Deliver-on-ready: the report opens as soon as the last section has
 			# landed.  The player asked for a ledger, not for a ceremony.
 			votc_whisper_open = yes
@@ -721,7 +721,7 @@ votc_whisper_take_section = {
 	# votc_whisper_latest holds an empty scope.  Saying so out loud beats the
 	# silence this used to fail in.
 	else = {
-		debug_log = "VOTC_WHISPER: a reply arrived but there is no artifact (create_artifact failed)"
+		debug_log = "VOTC:WHISPER/;/no_artifact"
 	}
 }
 
@@ -732,7 +732,6 @@ votc_whisper_take_section = {
 #  parchment.
 #--------------------------------------------------------------------------
 votc_whisper_open = {
-	remove_global_variable = votc_whisper_ready
 	root = { trigger_event = votc_whisper.20 }
 }
 

@@ -17,7 +17,7 @@
 #  The report is assembled from FOUR separate replies: CK3 cannot split a
 #  string, and rich text coming out of a data function is not parsed, so four
 #  separate strings are the only way to render real large section headings.
-#  Each reply arrives through run/votc_whisper.txt (primary, once the desktop
+#  Each reply arrives through run/votc_ce_whisper.txt (primary, once the desktop
 #  app has the whisper branch) or through the message_event.362 fallback, and
 #  is stored by votc_whisper_take_section; the last one opens .20.
 #==========================================================================
@@ -48,7 +48,6 @@ votc_whisper.10 = {
 				NOT = { has_global_variable = votc_whisper_off }
 				NOT = { has_global_variable = votc_whisper_season }
 				NOT = { has_global_variable = votc_whisper_seq }
-				NOT = { has_global_variable = votc_whisper_ready }
 				NOT = { has_global_variable = votc_whisper_pending }
 			}
 			trigger_event = votc_whisper.40
@@ -64,7 +63,7 @@ votc_whisper.10 = {
 
 #--------------------------------------------------------------------------
 #  .30  A section arrived through the WHISPER channel.  The script in
-#       run/votc_whisper.txt - written by the desktop app and executed by
+#       run/votc_ce_whisper.txt - written by the desktop app and executed by
 #       gui/custom_gui/votc_whisper_runner.gui - fires this.  Hidden: no
 #       window, no clipboard write, no letter parchment anywhere.
 #--------------------------------------------------------------------------
@@ -158,7 +157,7 @@ votc_whisper.45 = {
 
 #--------------------------------------------------------------------------
 #  .50  The outbound token.  An invisible event whose only job is to put
-#       "VOTC:LETTER" on the clipboard (see votc_whisper_token.gui) so the
+#       "VOTC:WHISPER" on the clipboard (see votc_whisper_token.gui) so the
 #       desktop app starts reading the log we just wrote.  VOTC's own
 #       message_event.361 does the same thing, but its window is
 #       fullscreen_event, which flashed a full screen window for EVERY
