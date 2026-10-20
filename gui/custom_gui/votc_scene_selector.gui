@@ -1,4 +1,18 @@
 ﻿window = {
+    # Selector-close fix (2026-10-19): the card click sets the PDX global
+    # votc_selector_close (via votc_select_talk_scene). This watcher state
+    # (stock pattern: window_pam_christian_church.gui L42-53 trigger_when states)
+    # fires the moment that flag appears and clears the GUI visibility variable,
+    # so a single onclick (the scripted-gui Execute) both selects the scene AND
+    # closes the selector without chaining two onclick properties. The reopen
+    # path is unchanged: the widget's Toggle sets the GUI var back on.
+    # NOTE: do NOT run ck3_formatter on this file - it corrupts blockoverride syntax.
+    state = {
+        name = votc_selector_close_watch
+        trigger_when = "[GetScriptedGui('votc_selector_close_gui').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        on_start = "[GetVariableSystem.Clear('votc_scene_selector_opened')]"
+        on_start = "[GetScriptedGui('votc_selector_reopen_gui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+    }
     visible = "[GetVariableSystem.Exists('votc_scene_selector_opened')]"
 	name = "votc_scene_selector"
 	size = { 100% 100% }
@@ -90,7 +104,6 @@
                                         button_standard_clean = {
                                             size = { 320 180 }
                                             onclick = "[GetScriptedGui('votc_select_talk_scene').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_scene', MakeScopeFlag(Scope.GetFlagName)).End)]"
-                                            onclick = "[GetVariableSystem.Clear('votc_scene_selector_opened')]"
                                             state = {
                                                 name = hover
                                                 trigger_on_hover_start = yes
@@ -101,15 +114,14 @@
                                                 trigger_on_hover_end = yes
                                                 on_finish = "[SetWidgetColor('votc_scene_card_border', 0.8, 0.7, 0.5, 0.6)]"
                                             }
-                                            state = {
-                                                name = select_animation
-                                                trigger_on_click = yes
-                                                duration = 0.3
-                                                on_finish = "[SetWidgetColor('votc_scene_card_border', 1.0, 0.8, 0.4, 0.9)]"
-                                                property = color
-                                                start = { 0.8 0.7 0.5 0.6 }
-                                                end = { 1.0 0.8 0.4 0.9 }
-                                            }
+                                            # Selector-close fix (2026-10-19): the old select_animation state used
+                                            # trigger_on_click, which is NOT a valid CK3 state trigger (0 uses in all
+                                            # stock CK3/jomini .gui files; only trigger_on_create/hover/when exist),
+                                            # so it never fired and the selector never closed. The close now happens
+                                            # via the PDX flag votc_selector_close set by votc_select_talk_scene (see
+                                            # the window's visible expression). Visual click feedback comes from the
+                                            # button's built-in pressed frame (button_standard_clean inherits
+                                            # gfxtype = togglepushbuttongfx with uppressedframe = 3).
                                             vbox = {
                                                 layoutpolicy_horizontal = expanding
                                                 layoutpolicy_vertical = expanding
@@ -222,4 +234,3 @@
 
     
 }
-
