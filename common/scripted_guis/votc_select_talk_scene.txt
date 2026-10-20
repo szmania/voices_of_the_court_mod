@@ -1,9 +1,36 @@
 ﻿votc_select_talk_scene = {
-    effect = {
-        set_global_variable = {
-            name = talk_scene
-            value = scope:selected_scene
-        }
-        debug_log = "VOTC - talk_scene set via selector"
-    }
+	effect = {
+		set_global_variable = {
+			name = talk_scene
+			value = scope:selected_scene
+		}
+		# Selector-close fix (2026-10-19): PDX script cannot touch the GUI VariableSystem
+		# (VariableSystem has 0 entries in data_types_script.txt), so the window cannot be
+		# closed from inside this effect block directly. Instead we set a PDX global flag
+		# that the selector window's visible expression reads via the stock-validated
+		# GUI->PDX bridge GetScriptedGui('votc_selector_close_gui').IsShown(...) (same
+		# pattern as window_pam_christian_church.gui L52). The flag is cleared by the
+		# selector widget's open state (votc_scene_selector_widget.gui) so the selector
+		# can be reopened.
+		set_global_variable = votc_selector_close
+		debug_log = "VOTC - talk_scene set via selector"
+	}
+}
+
+# Selector-close fix (2026-10-19): read-only bridge scripted gui. Its is_shown is
+# true exactly while the one-shot close flag is set; the selector window's visible
+# expression Not()s it, so the window hides the moment a card is clicked. The flag
+# is cleared when the selector is (re)opened by votc_scene_selector_widget.gui.
+votc_selector_close_gui = {
+	is_shown = {
+		has_global_variable = votc_selector_close
+	}
+}
+
+# Selector-close fix (2026-10-19): clears the one-shot close flag when the selector
+# is (re)opened, so a card click that hid the selector does not permanently block it.
+votc_selector_reopen_gui = {
+	effect = {
+		remove_global_variable = votc_selector_close
+	}
 }

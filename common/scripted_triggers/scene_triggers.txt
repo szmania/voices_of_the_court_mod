@@ -8,12 +8,12 @@ can_talk_in_throneroom = {
 				scope:recipient = {is_courtier_of = scope:actor.location.province_owner}
 				scope:recipient = scope:actor.location.province_owner
 			}
-			
+
 		}
 		scope:actor.location = scope:recipient.location
 		scope:actor = {is_imprisoned = no}
 		scope:recipient = {is_imprisoned = no}
-		
+
 	}
 }
 
@@ -29,8 +29,8 @@ can_talk_in_garden = {
 				scope:recipient = {is_courtier_of = scope:actor.location.province_owner}
 				scope:recipient = scope:actor.location.province_owner
 			}
-			
-		}		
+
+		}
 	}
 }
 
@@ -39,7 +39,7 @@ can_talk_in_bedchamber = {
 		scope:actor.location = scope:recipient.location
 		scope:actor = {is_imprisoned = no}
 		scope:recipient = {is_imprisoned = no}
-		
+
 		scope:actor = {
 			primary_partner = scope:recipient
 		}
@@ -49,12 +49,12 @@ can_talk_in_bedchamber = {
 can_talk_in_dungeon = {
 	AND = {
 		scope:actor.location = scope:recipient.location
-		
+
 		OR = {
 			scope:actor = {is_imprisoned = yes}
 			scope:recipient = {is_imprisoned = yes}
 		}
-			
+
 	}
 }
 
@@ -62,7 +62,7 @@ can_talk_in_dungeon = {
 can_talk_in_feast = {
 	AND = {
 		scope:actor.location = scope:recipient.location
-		
+
 		scope:actor = {
 			involved_activity ?= { has_activity_type = activity_feast }
 			location ?= involved_activity.activity_location
@@ -71,12 +71,12 @@ can_talk_in_feast = {
 			involved_activity ?= { has_activity_type = activity_feast }
 			location ?= involved_activity.activity_location
 		}
-		
+
 	}
 }
 
-can_talk_in_armycamp = {	
-	AND = {	
+can_talk_in_armycamp = {
+	AND = {
 		scope:actor.location = scope:recipient.location
 		OR = {
 			scope:actor = {
@@ -85,19 +85,19 @@ can_talk_in_armycamp = {
 			scope:recipient = {
 				is_in_army = yes
 			}
-			scope:actor = {	
+			scope:actor = {
 				is_landless_ruler = yes
 			}
 		}
 	}
-	
-	
+
+
 }
 
 can_talk_in_hunt = {
 	AND = {
 		scope:actor.location = scope:recipient.location
-		
+
 		scope:actor = {
 			involved_activity ?= { has_activity_type = activity_hunt }
 			location ?= involved_activity.activity_location
@@ -106,7 +106,7 @@ can_talk_in_hunt = {
 			involved_activity ?= { has_activity_type = activity_hunt }
 			location ?= involved_activity.activity_location
 		}
-		
+
 	}
 }
 
@@ -115,7 +115,7 @@ AND = {
 		scope:actor.location = scope:recipient.location
 		scope:actor = {is_imprisoned = no}
 		scope:recipient = {is_imprisoned = no}
-		
+
 	}
 }
 
@@ -123,3 +123,4 @@ AND = {
 votc_should_use_byzantine_graphics_trigger = {
 	culture ?= { has_building_gfx = byzantine_building_gfx }
 }
+
