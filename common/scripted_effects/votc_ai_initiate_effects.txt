@@ -326,21 +326,48 @@ votc_build_talk_scene_flags = {
 		}
 
 		# Urban - Special Cities
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_constantinople
+		# AGOT gating: Constantinople does not exist in the AGOT universe, hide the card during AGOT years (8000-9000).
+		if = {
+			limit = {
+				NOT = {
+					current_date >= 8000.1.1
+					current_date < 9000.1.1
+				}
+			}
+			add_to_variable_list = {
+				name = talk_scene_flags
+				target = flag:talk_scene_constantinople
+			}
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
 			target = flag:talk_scene_city_steppe
 		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_chinese_city
+		# AGOT gating: Yi Ti cities do not exist in the AGOT universe, hide during AGOT years (8000-9000).
+		if = {
+			limit = {
+				NOT = {
+					current_date >= 8000.1.1
+					current_date < 9000.1.1
+				}
+			}
+			add_to_variable_list = {
+				name = talk_scene_flags
+				target = flag:talk_scene_chinese_city
+			}
 		}
-		add_to_variable_list = {
-			name = talk_scene_flags
-			target = flag:talk_scene_japanese_city
+		# AGOT gating: Yi Ti / Leng cities do not exist in the AGOT universe, hide during AGOT years (8000-9000).
+		if = {
+			limit = {
+				NOT = {
+					current_date >= 8000.1.1
+					current_date < 9000.1.1
+				}
+			}
+			add_to_variable_list = {
+				name = talk_scene_flags
+				target = flag:talk_scene_japanese_city
+			}
 		}
 		add_to_variable_list = {
 			name = talk_scene_flags
@@ -447,6 +474,11 @@ votc_build_talk_scene_flags = {
 		}
 		if = {
 			limit = {
+				# AGOT gating: Mediterranean Court (Braavos-style) reads as non-AGOT; hide during AGOT years (8000-9000).
+				NOT = {
+					current_date >= 8000.1.1
+					current_date < 9000.1.1
+				}
 				has_graphical_mediterranean_region_trigger = yes
 			}
 			add_to_variable_list = {
@@ -951,12 +983,17 @@ votc_ai_initiate_request_effect = {
 			}
 		}
 		# The AI picks the scene from the same valid pool the player would see.
-		votc_build_talk_scene_flags = yes
-		random_in_list = {
-			variable = talk_scene_flags
-			set_global_variable = {
-				name = talk_scene
-				value = this
+		# Guarded (alley background bugfix, 2026-10-10): only randomize when talk_scene
+		# is unset, so an AI-initiated conversation never clobbers a user-selected scene.
+		if = {
+			limit = { NOT = { has_global_variable = talk_scene } }
+			votc_build_talk_scene_flags = yes
+			random_in_list = {
+				variable = talk_scene_flags
+				set_global_variable = {
+					name = talk_scene
+					value = this
+				}
 			}
 		}
 		clear_variable_list = talk_scene_flags
