@@ -259,6 +259,19 @@ message_event.362 = {
         gui = "event_window_widget_message_open"
         container = "custom_widgets_container"
     }
+
+	# VOTC-195: The Whisper Ledger fallback channel.  While the desktop app has
+	# no whisper branch yet, a whisper reply arrives through the ordinary letter
+	# channel (run/letters.txt) and is hijacked into the whisper pipeline here.
+	# The hook is fully guarded: it only fires when a whisper sequence is armed
+	# (votc_whisper_pending), the app has already deleted the request marker
+	# (votc_whisper gone), the report is not finished yet (votc_whisper_done
+	# unset), and both the reply artifact (votc_latest_letter) and the player
+	# scope (votc_whisper_player) exist.  An ordinary letter never satisfies all
+	# five conditions at once, so the letter flow is untouched.
+	immediate = {
+		votc_whisper_deliver = yes
+	}
 }
 
 # Runs letter effects/actions

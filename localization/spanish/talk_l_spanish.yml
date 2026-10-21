@@ -199,8 +199,8 @@ votc_relaese_letter_decision_effect_desc:0 "Liberarás el hilo de cartas actual 
 
 votc_battle_report_message_title:0 "Informe de batalla"
 votc_relaese_battle_report_decision:0 "VOTC-CE: Liberar informes de batalla"
-votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE Liberar informes de batalla"
-votc_relaese_battle_report_decision_confirm:0 "VOTC-CE Liberar informes de batalla"
+votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE: Liberar informes de batalla"
+votc_relaese_battle_report_decision_confirm:0 "VOTC-CE: Liberar informes de batalla"
 votc_relaese_battle_report_decision_effect_desc:0 "Liberarás todos los hilos de informes de batalla atascados y permitirás que se generen nuevos informes."
 
 votc_conversation_history_decision:0 "VOTC-CE: Ver historial de conversaciones"

@@ -199,8 +199,8 @@ votc_relaese_letter_decision_effect_desc:0 "返信を待っている現在の手
 
 votc_battle_report_message_title:0 "戦況報告"
 votc_relaese_battle_report_decision:0 "VOTC-CE: 戦況報告を解放"
-votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE 戦況報告を解放"
-votc_relaese_battle_report_decision_confirm:0 "VOTC-CE 戦況報告を解放"
+votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE: 戦況報告を解放"
+votc_relaese_battle_report_decision_confirm:0 "VOTC-CE: 戦況報告を解放"
 votc_relaese_battle_report_decision_effect_desc:0 "スタックしたすべての戦況報告スレッドを解放し、新しい戦況報告の生成を許可します。"
 
 votc_conversation_history_decision:0 "VOTC-CE: 会話履歴を表示"

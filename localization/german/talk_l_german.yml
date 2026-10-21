@@ -199,8 +199,8 @@ votc_relaese_letter_decision_effect_desc:0 "Ihr werdet die aktuelle Briefkette f
 
 votc_battle_report_message_title:0 "Schlachtbericht"
 votc_relaese_battle_report_decision:0 "VOTC-CE: Schlachtberichte freigeben"
-votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE Schlachtberichte freigeben"
-votc_relaese_battle_report_decision_confirm:0 "VOTC-CE Schlachtberichte freigeben"
+votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE: Schlachtberichte freigeben"
+votc_relaese_battle_report_decision_confirm:0 "VOTC-CE: Schlachtberichte freigeben"
 votc_relaese_battle_report_decision_effect_desc:0 "Sie werden alle feststeckenden Schlachtbericht-Threads freigeben und neue Schlachtberichte ermöglichen."
 
 votc_conversation_history_decision:0 "VOTC-CE: Konversationsverlauf anzeigen"

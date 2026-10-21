@@ -214,8 +214,8 @@ votc_relaese_letter_decision_effect_desc:0 "Вы освободите текущ
 
 votc_battle_report_message_title:0 "Боевой отчет"
 votc_relaese_battle_report_decision:0 "VOTC-CE: Освободить боевые отчёты"
-votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE Освободить боевые отчёты"
-votc_relaese_battle_report_decision_confirm:0 "VOTC-CE Освободить боевые отчёты"
+votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE: Освободить боевые отчёты"
+votc_relaese_battle_report_decision_confirm:0 "VOTC-CE: Освободить боевые отчёты"
 votc_relaese_battle_report_decision_effect_desc:0 "Вы освободите все застрявшие потоки боевых отчетов и позволите создавать новые."
 
 votc_conversation_history_decision:0 "VOTC-CE: Просмотр истории диалогов"

@@ -199,8 +199,8 @@ votc_relaese_letter_decision_effect_desc:0 "답장을 기다리는 현재 편지
 
 votc_battle_report_message_title:0 "전투 보고"
 votc_relaese_battle_report_decision:0 "VOTC-CE: 전투 보고 해제"
-votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE 전투 보고 해제"
-votc_relaese_battle_report_decision_confirm:0 "VOTC-CE 전투 보고 해제"
+votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE: 전투 보고 해제"
+votc_relaese_battle_report_decision_confirm:0 "VOTC-CE: 전투 보고 해제"
 votc_relaese_battle_report_decision_effect_desc:0 "모든 막힌 전투 보고 스레드를 해제하고 새 전투 보고 생성을 허용합니다."
 
 votc_conversation_history_decision:0 "VOTC-CE: 대화 기록 보기"

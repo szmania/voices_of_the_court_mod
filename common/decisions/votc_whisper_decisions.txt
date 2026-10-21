@@ -1,6 +1,115 @@
-﻿# The Whisper Ledger decisions - RETIRED (folded into VOTC-CE Settings hub).
-# The three standalone decisions (settings / open ledger / read last) were
-# replaced by the Whisper Ledger sub-page of the NPC Initiative settings hub
-# (events/votc_ce_initiative_events.txt, hub .100 - The whisper
-# feature itself (votc_whisper_events.txt + gui + loc) is unchanged.
-# No decision blocks remain in this file.
+﻿#==========================================================================
+#  The Whisper Ledger  -  decisions  (VOTC-195)
+#  VOTC-CE decision-group entries.  One decision opens the settings hub,
+#  one opens the ledger report window, one re-opens the most recent report.
+#==========================================================================
+
+votc_whisper_settings_decision = {
+	decision_group_type = votc_ce
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
+
+	sort_order = 89
+
+	desc = votc_whisper_settings_decision_desc
+	selection_tooltip = votc_whisper_settings_decision_tooltip
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		is_ai = no
+	}
+
+	cooldown = { days = 1 }
+
+	effect = {
+		if = {
+			limit = { NOT = { has_global_variable = votc_whisper_freq } }
+			set_global_variable = {
+				name = votc_whisper_freq
+				value = 182
+			}
+		}
+		trigger_event = votc_whisper.100
+	}
+
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+}
+
+#==========================================================================
+#  VOTC-CE Whisper Ledger - opens the ledger report window directly.
+#==========================================================================
+
+votc_whisper_ledger_decision = {
+	decision_group_type = votc_ce
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
+
+	sort_order = 90
+
+	desc = votc_whisper_ledger_decision_desc
+	selection_tooltip = votc_whisper_ledger_decision_tooltip
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		is_ai = no
+	}
+
+	cooldown = { days = 1 }
+
+	effect = {
+		trigger_event = votc_whisper.20
+	}
+
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+}
+
+votc_whisper_read_last_decision = {
+	decision_group_type = votc_ce
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
+
+	sort_order = 91
+
+	desc = votc_whisper_read_last_decision_desc
+	selection_tooltip = votc_whisper_read_last_decision_tooltip
+
+	is_shown = {
+		is_ai = no
+		OR = {
+			has_global_variable = votc_whisper_sec_world
+			has_global_variable = votc_whisper_sec_realm
+			has_global_variable = votc_whisper_sec_court
+			has_global_variable = votc_whisper_sec_circle
+		}
+	}
+
+	is_valid = {
+		is_ai = no
+	}
+
+	effect = {
+		trigger_event = votc_whisper.130
+	}
+
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+}

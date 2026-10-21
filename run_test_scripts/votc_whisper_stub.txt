@@ -1,0 +1,60 @@
+#==========================================================================
+#  The Whisper Ledger - OFFLINE STUB for the app's section replies (VOTC-195)
+#
+#  Simulates ONE desktop-app reply so the full whisper pipeline can be
+#  exercised without the app.  The script shape mirrors the app contract
+#  (app-repo plan §2.2): per-reply guard first, then the artifact, then the
+#  marker deletion, then the intake event.
+#
+#  Usage (non-Ironman, with the desktop app CLOSED):
+#    1. Copy this file to:
+#         Documents\Paradox Interactive\Crusader Kings III\run\
+#    2. Console:  run votc_test_whisper.txt
+#       (fires votc_whisper.40: gathers targets, arms the request marker
+#        votc_whisper + the artifact-creator scope, asks for section 1)
+#    3. Console:  run votc_whisper_stub.txt
+#       (simulates section 1 -> "took section 1 of 4 (world)", and the
+#        pipeline immediately asks for section 2)
+#    4. Repeat step 3 three more times (4 sections total).
+#    5. After the 4th run the ledger report window opens with all four
+#       sections (Distant Lands / The Realm / Your Court / Inner Circle).
+#
+#  Expected debug.log receipts:
+#    VOTC:WHISPER/;/took_section/;/1/;/world
+#    VOTC:WHISPER/;/took_section/;/2/;/realm
+#    VOTC:WHISPER/;/took_section/;/3/;/court
+#    VOTC:WHISPER/;/took_section/;/4/;/circle
+#
+#  Cleanup: the artifacts carry votc_letter_artifact, so the existing
+#  "burn letters" interaction or the next report start destroys them.
+#  Nothing here touches the letter threads, checkpoints or the timeline.
+#
+#  NOTE: votc_whisper.30 is hidden and fires the token window, which boots
+#  the whisper runner poller (run votc_ce_whisper.txt every ~2 s).  With no
+#  app reply file present that poll just logs a harmless console error.
+#==========================================================================
+
+# Per-reply guard - FIRST LINE, identical to the app contract.
+remove_global_variable ?= votc_whisper
+
+create_artifact = {
+	name = votc_whisper_stub_ledger
+	description = "VOTC-CE offline stub - placeholder ledger section for window testing. Replace with generated prose once the desktop app ships the whisper branch."
+	type = journal
+	visuals = scroll
+	creator = global_var:message_second_scope_whisper
+	modifier = artifact_monthly_minor_prestige_1_modifier
+	wealth = 0
+	save_scope_as = votc_whisper_stub_artifact
+}
+if = {
+	limit = { exists = scope:votc_whisper_stub_artifact }
+	scope:votc_whisper_stub_artifact = {
+		set_variable = { name = votc_letter_artifact value = yes }
+	}
+	set_global_variable = {
+		name = votc_whisper_latest
+		value = scope:votc_whisper_stub_artifact
+	}
+}
+trigger_event = votc_whisper.30

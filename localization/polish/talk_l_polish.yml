@@ -199,8 +199,8 @@ votc_relaese_letter_decision_effect_desc:0 "Zwolnisz bieżący wątek listów oc
 
 votc_battle_report_message_title:0 "Raport bitewny"
 votc_relaese_battle_report_decision:0 "VOTC-CE: Zwolnij raporty bitewne"
-votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE Zwolnij raporty bitewne"
-votc_relaese_battle_report_decision_confirm:0 "VOTC-CE Zwolnij raporty bitewne"
+votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE: Zwolnij raporty bitewne"
+votc_relaese_battle_report_decision_confirm:0 "VOTC-CE: Zwolnij raporty bitewne"
 votc_relaese_battle_report_decision_effect_desc:0 "Zwolnisz wszystkie zablokowane wątki raportów bitewnych i pozwolisz na generowanie nowych raportów."
 
 votc_conversation_history_decision:0 "VOTC-CE: Zobacz historię rozmów"

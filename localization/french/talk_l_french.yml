@@ -199,8 +199,8 @@ votc_relaese_letter_decision_effect_desc:0 "Vous allez libérer le fil de lettre
 
 votc_battle_report_message_title:0 "Rapport de bataille"
 votc_relaese_battle_report_decision:0 "VOTC-CE: Libérer les rapports de bataille"
-votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE Libérer les rapports de bataille"
-votc_relaese_battle_report_decision_confirm:0 "VOTC-CE Libérer les rapports de bataille"
+votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE: Libérer les rapports de bataille"
+votc_relaese_battle_report_decision_confirm:0 "VOTC-CE: Libérer les rapports de bataille"
 votc_relaese_battle_report_decision_effect_desc:0 "Vous libérerez tous les threads de rapports de bataille bloqués et permettrez la génération de nouveaux rapports."
 
 votc_conversation_history_decision:0 "VOTC-CE: Voir l'historique des conversations"

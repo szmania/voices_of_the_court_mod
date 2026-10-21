@@ -202,8 +202,8 @@ votc_continue_button:0 "继续"
 
 votc_battle_report_message_title:0 "战报"
 votc_relaese_battle_report_decision:0 "VOTC-CE: 释放战报"
-votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE 释放战报"
-votc_relaese_battle_report_decision_confirm:0 "VOTC-CE 释放战报"
+votc_relaese_battle_report_decision_tooltip:0 "VOTC-CE: 释放战报"
+votc_relaese_battle_report_decision_confirm:0 "VOTC-CE: 释放战报"
 votc_relaese_battle_report_decision_effect_desc:0 "你将释放所有卡住的战报线程，允许生成新的战报。"
 
 votc_conversation_history_decision:0 "VOTC-CE: 查看对话历史"

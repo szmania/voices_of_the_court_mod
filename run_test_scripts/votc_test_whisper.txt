@@ -1,0 +1,29 @@
+# The Whisper Ledger - manual test script (VOTC-195).
+# Copy this file to: C:\Users\<you>\Documents\Paradox Interactive\Crusader Kings III\run
+# Run it from the CK3 console with: run votc_test_whisper.txt
+#
+# It fires the intake event directly, so the whole pipeline can be exercised
+# without the desktop app: gather -> tag -> log -> request -> (reply) -> report.
+#
+# Expected output in debug.log:
+#   VOTC:IN/;/init/;/.../;/flag:whisper_ledger/;/...   (long init line)
+#   VOTC:IN/;/character/;/.../;/whisper_foreign|whisper_realm|whisper_court|whisper_circle/;/...
+#   VOTC:IN/;/memory/;/...
+#   VOTC:WHISPER/;/<3|6|12>|<WORLD|REALM|COURT|CIRCLE>/;/<dateAsTotalDays>/;/
+#   VOTC:WHISPER/;/request_written
+#
+# Pass criteria:
+#   - the init line carries flag:whisper_ledger and the long campaign tail
+#   - character lines carry one of the four whisper_* category labels in slot 25
+#   - ZERO "Undefined event target 'actor'" errors in error.log
+#   - four request lines go out, one per section
+#
+# WARNING: this writes to global variables in the current save.  Back up first.
+
+# Fire the gather + first request.  votc_whisper.40 is the hidden intake event.
+trigger_event = votc_whisper.40
+
+# Report what the gather produced, so an empty collection is obvious.
+debug_log = "VOTC:TEST/;/whisper/;/targets/;/[GetPlayer.MakeScope.Var('votc_whisper_targets').GetListSize]"
+debug_log = "VOTC:TEST/;/whisper/;/freq/;/[GetGlobalVariable('votc_whisper_freq').GetValue|0]"
+debug_log = "VOTC:TEST/;/whisper/;/step/;/[GetGlobalVariable('votc_whisper_step').GetValue|0]"
