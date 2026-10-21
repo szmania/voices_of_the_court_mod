@@ -28,6 +28,7 @@
 #   .200-.202 hidden  release letters / release battle reports / conversation history (user request)
 #   .205   conversations sub-page (user request)
 #   .206   letters sub-page (user request)
+#   .210   whisper-ledger sub-page (user request)
 #==========================================================================
 
 namespace = votc_ce_initiative
@@ -451,6 +452,11 @@ votc_ce_initiative.100 = {
 		name = votc_ce_initiative_opt_letters
 		custom_tooltip = votc_ce_initiative_opt_letters_tooltip
 		trigger_event = votc_ce_initiative.206
+	}
+	option = {
+		name = votc_ce_initiative_opt_whisper_ledger
+		custom_tooltip = votc_ce_initiative_opt_whisper_ledger_tooltip
+		trigger_event = votc_ce_initiative.210
 	}
 	option = {
 		name = votc_ce_initiative_opt_release_battle_reports
@@ -1300,6 +1306,43 @@ votc_ce_initiative.206 = {
 		name = votc_ce_initiative_opt_release_letters
 		custom_tooltip = votc_ce_initiative_opt_release_letters_tooltip
 		trigger_event = votc_ce_initiative.200
+	}
+	option = {
+		name = votc_ce_initiative_opt_back
+		trigger_event = votc_ce_initiative.100
+	}
+	option = {
+		name = votc_ce_initiative_opt_close
+	}
+}
+
+#--------------------------------------------------------------------------
+#  .210  Whisper Ledger sub-page (user request).  Bridges the CE settings
+#  hub to the whisper feature (votc_whisper_events.txt): settings hub,
+#  current report, and last report.
+#--------------------------------------------------------------------------
+votc_ce_initiative.210 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ce_initiative.210.title
+	desc = votc_ce_initiative.210.desc
+	window = character_event
+
+	option = {
+		name = votc_ce_initiative_opt_whisper_settings
+		custom_tooltip = votc_ce_initiative_opt_whisper_settings_tooltip
+		trigger_event = votc_whisper.100
+	}
+	option = {
+		name = votc_ce_initiative_opt_whisper_open
+		custom_tooltip = votc_ce_initiative_opt_whisper_open_tooltip
+		trigger_event = votc_whisper.20
+	}
+	option = {
+		name = votc_ce_initiative_opt_whisper_read_last
+		custom_tooltip = votc_ce_initiative_opt_whisper_read_last_tooltip
+		trigger = { OR = { has_global_variable = votc_whisper_sec_world has_global_variable = votc_whisper_sec_realm has_global_variable = votc_whisper_sec_court has_global_variable = votc_whisper_sec_circle } }
+		trigger_event = votc_whisper.130
 	}
 	option = {
 		name = votc_ce_initiative_opt_back

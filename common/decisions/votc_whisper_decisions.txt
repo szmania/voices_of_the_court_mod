@@ -1,0 +1,6 @@
+﻿# The Whisper Ledger decisions - RETIRED (folded into VOTC-CE Settings hub).
+# The three standalone decisions (settings / open ledger / read last) were
+# replaced by the Whisper Ledger sub-page of the NPC Initiative settings hub
+# (events/votc_ce_initiative_events.txt, hub .100 - The whisper
+# feature itself (votc_whisper_events.txt + gui + loc) is unchanged.
+# No decision blocks remain in this file.

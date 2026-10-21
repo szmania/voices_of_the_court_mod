@@ -1,0 +1,53 @@
+#==========================================================================
+#  The Whisper Ledger - the whisper channel's runner  (VOTC-195)
+#
+#  The whisper system has its own run file: run/votc_ce_whisper.txt.  The desktop
+#  app writes a finished section there (once it gains the whisper branch, which
+#  routes letterId "whisper" to this file instead of letters.txt), and this
+#  widget executes it - the same idea as VOTC's own letters_runner.gui, but on
+#  a file of our own so the two channels can never step on each other.
+#
+#  This is the SECOND poller, kept as a backstop.  The primary one is VOTC's
+#  own letters_runner, which runs letters.txt for the whole session; the app's
+#  whisper branch writes to votc_ce_whisper.txt, which only this widget reads.
+#  Both running at once is harmless: the script the app writes is wrapped in a
+#  per-reply guard, so only the first pass does anything.
+#
+#  The loop condition is deliberately "nothing stopped us" rather than
+#  "votc_whisper_pending is armed".  Gating it on that flag would let the
+#  poller die with the flag - seconds into a round trip that takes the model a
+#  whole minute - so the reply would be written to a file nobody was reading
+#  any more.  Copying letters_runner.gui's shape (a counter widget re-created
+#  from its own state) keeps it alive instead.
+#==========================================================================
+
+window = {
+	name = "votc_whisper_runner"
+	size = { 1% 1% }
+	parentanchor = top|right
+	movable = no
+	layer = bottom_bottom
+
+	state = {
+		name = _boot
+		trigger_on_create = yes
+		on_finish = "[ExecuteConsoleCommand('run votc_ce_whisper.txt')]"
+	}
+
+	hbox = {
+		name = "votc_whisper_runner_counter"
+
+		state = {
+			name = _show
+			trigger_on_create = yes
+			on_finish = "[ExecuteConsoleCommand('run votc_ce_whisper.txt')]"
+		}
+
+		state = {
+			name = _again
+			trigger_when = "[Not(GetGlobalVariable('votc_whisper_halt').IsSet)]"
+			duration = 2
+			on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_whisper_runner.gui votc_whisper_runner_counter')]"
+		}
+	}
+}

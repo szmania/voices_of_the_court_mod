@@ -1,0 +1,759 @@
+﻿#==========================================================================
+#  The Whisper Ledger  -  scripted effects  (VOTC-195)
+#
+#  Every effect below runs with root = the player character, except
+#  votc_whisper_deliver, which is called from the message_event.362 fallback
+#  and reaches the player through global_var:votc_whisper_player.
+#
+#  The report is asked for ONE SECTION AT A TIME (world -> realm -> court ->
+#  circle): CK3 cannot split a string, and rich text inside a data function's
+#  output is not parsed, so the only way to get a real large section heading
+#  is to have four separate strings.  Each answer lands in its own global
+#  variable pointing at its own artifact, and the report window renders the
+#  headings as raw localization text (which IS rich-text parsed) around them.
+#
+#  The outbound data protocol is VOTC's own (VOTC:IN lines plus the
+#  dedicated VOTC:WHISPER request prefix, protocol v2) so the desktop app
+#  can parse it without structural changes; the vocabulary is the
+#  VOTC:WHISPER/;/<n>|<SECTION>/;/<date>/;/ request line, the
+#  flag:whisper_ledger conversation kind and the four whisper_* category
+#  labels in character line slot 25.
+#==========================================================================
+
+#--------------------------------------------------------------------------
+#  Loop bootstrap (root = character).  Cheap: bails out instantly for the AI.
+#  Also doubles as the self-healing pass: quarterly, plus on game start.
+#--------------------------------------------------------------------------
+votc_whisper_bootstrap_char = {
+	if = {
+		limit = {
+			is_ai = no
+			is_alive = yes
+		}
+		# A sequence that lost a reply leaves votc_whisper_seq behind, and that
+		# flag also gates the letter parchment - so a stale flag would hide
+		# every ordinary letter.  votc_whisper_ask always re-arms
+		# votc_whisper_pending right before a request, so "seq without pending"
+		# can only mean a dead sequence.
+		if = {
+			limit = {
+				has_global_variable = votc_whisper_seq
+				NOT = { has_global_variable = votc_whisper_pending }
+			}
+			votc_whisper_clear_sections = yes
+			votc_whisper_seq_cleanup = yes
+		}
+		# Normalize the cadence: only 91 / 182 / 365 are valid; a value left
+		# over from an older save (or garbage) is corrected here.
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_global_variable = votc_whisper_freq }
+					NOR = {
+						global_var:votc_whisper_freq = 91
+						global_var:votc_whisper_freq = 182
+						global_var:votc_whisper_freq = 365
+					}
+				}
+			}
+			set_global_variable = {
+				name = votc_whisper_freq
+				value = 182
+			}
+		}
+		if = {
+			limit = { NOT = { exists = global_var:votc_whisper_heartbeat } }
+			trigger_event = {
+				id = votc_whisper.10
+				days = 25
+			}
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  Append one candidate to the player's target list.
+#  Called with this = the candidate, root = the player.
+#--------------------------------------------------------------------------
+votc_whisper_add_target = {
+	save_temporary_scope_as = votc_whisper_cand
+	if = {
+		limit = { root = { has_variable_list = votc_whisper_targets } }
+		if = {
+			limit = {
+				root = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = votc_whisper_targets
+							target = scope:votc_whisper_cand
+						}
+					}
+				}
+			}
+			root = {
+				add_to_variable_list = {
+					name = votc_whisper_targets
+					target = scope:votc_whisper_cand
+				}
+			}
+		}
+	}
+	else = {
+		root = {
+			add_to_variable_list = {
+				name = votc_whisper_targets
+				target = scope:votc_whisper_cand
+			}
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  Build the target list.
+#    world   - kingdom tier and above, inside the player's diplomatic range
+#    realm   - duchy tier rulers of the player's own realm
+#    court   - courtiers, guests and councillors at the player's side
+#    circle  - close family, lovers, friends, guardians, rivals
+#    watched - whatever the player pinned in the outliner (filed under circle)
+#--------------------------------------------------------------------------
+votc_whisper_collect = {
+	if = {
+		limit = { has_variable_list = votc_whisper_targets }
+		clear_variable_list = votc_whisper_targets
+	}
+	if = {
+		limit = { has_variable_list = votc_whisper_watched }
+		clear_variable_list = votc_whisper_watched
+	}
+
+	# ---- watched : the characters the player pinned in the outliner ----
+	root = {
+		every_pinned_character = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_adult = yes
+					NOT = { this = root }
+				}
+				save_temporary_scope_as = votc_whisper_pinned
+				root = {
+					add_to_variable_list = {
+						name = votc_whisper_watched
+						target = scope:votc_whisper_pinned
+					}
+				}
+				votc_whisper_add_target = yes
+			}
+		}
+	}
+
+	# ---- world : kings and emperors inside the player's diplomatic range ----
+	every_ruler = {
+		limit = {
+			is_alive = yes
+			is_ai = yes
+			is_adult = yes
+			NOT = { this = root }
+			highest_held_title_tier >= tier_kingdom
+			in_diplomatic_range = root
+		}
+		votc_whisper_add_target = yes
+	}
+
+	# ---- realm : dukes of the player's own realm ----
+	every_ruler = {
+		limit = {
+			is_alive = yes
+			is_ai = yes
+			is_adult = yes
+			NOT = { this = root }
+			highest_held_title_tier = tier_duchy
+			top_liege = root.top_liege
+		}
+		votc_whisper_add_target = yes
+	}
+
+	# ---- court : courtiers, guests and councillors at the player's side ----
+	every_courtier_or_guest = {
+		limit = {
+			is_alive = yes
+			is_ai = yes
+			is_adult = yes
+			NOT = { this = root }
+			location = root.location
+		}
+		votc_whisper_add_target = yes
+	}
+	every_councillor = {
+		limit = {
+			is_alive = yes
+			is_ai = yes
+			is_adult = yes
+			NOT = { this = root }
+		}
+		votc_whisper_add_target = yes
+	}
+
+	# ---- circle : family ----
+	every_child = {
+		limit = {
+			is_alive = yes
+			is_ai = yes
+			NOT = { this = root }
+		}
+		votc_whisper_add_target = yes
+	}
+	every_sibling = {
+		limit = {
+			is_alive = yes
+			is_ai = yes
+		}
+		votc_whisper_add_target = yes
+	}
+	if = {
+		limit = {
+			exists = root.father
+			root.father = { is_alive = yes }
+			root.father = { is_ai = yes }
+		}
+		root.father = { votc_whisper_add_target = yes }
+	}
+	if = {
+		limit = {
+			exists = root.mother
+			root.mother = { is_alive = yes }
+			root.mother = { is_ai = yes }
+		}
+		root.mother = { votc_whisper_add_target = yes }
+	}
+
+	# ---- circle : relations ----
+	every_relation = {
+		type = friend
+		limit = { is_alive = yes  is_ai = yes }
+		votc_whisper_add_target = yes
+	}
+	every_relation = {
+		type = best_friend
+		limit = { is_alive = yes  is_ai = yes }
+		votc_whisper_add_target = yes
+	}
+	every_relation = {
+		type = lover
+		limit = { is_alive = yes  is_ai = yes }
+		votc_whisper_add_target = yes
+	}
+	every_relation = {
+		type = soulmate
+		limit = { is_alive = yes  is_ai = yes }
+		votc_whisper_add_target = yes
+	}
+	every_relation = {
+		type = rival
+		limit = { is_alive = yes  is_ai = yes }
+		votc_whisper_add_target = yes
+	}
+	every_relation = {
+		type = nemesis
+		limit = { is_alive = yes  is_ai = yes }
+		votc_whisper_add_target = yes
+	}
+	every_relation = {
+		type = guardian
+		limit = { is_alive = yes  is_ai = yes }
+		votc_whisper_add_target = yes
+	}
+	every_relation = {
+		type = ward
+		limit = { is_alive = yes  is_ai = yes }
+		votc_whisper_add_target = yes
+	}
+}
+
+#--------------------------------------------------------------------------
+#  Tag every target with exactly one category variable.
+#  Priority: circle (personal ties, pinned) > court > realm > world.
+#--------------------------------------------------------------------------
+votc_whisper_tag_categories = {
+	if = {
+		limit = { has_variable_list = votc_whisper_targets }
+		# default -> world
+		every_in_list = {
+			variable = votc_whisper_targets
+			if = { limit = { has_variable = votc_whisper_cat_circle } remove_variable = votc_whisper_cat_circle }
+			if = { limit = { has_variable = votc_whisper_cat_court } remove_variable = votc_whisper_cat_court }
+			if = { limit = { has_variable = votc_whisper_cat_realm } remove_variable = votc_whisper_cat_realm }
+			set_variable = { name = votc_whisper_cat_foreign value = yes }
+		}
+		# same realm -> realm
+		every_in_list = {
+			variable = votc_whisper_targets
+			limit = { top_liege = root.top_liege }
+			if = { limit = { has_variable = votc_whisper_cat_foreign } remove_variable = votc_whisper_cat_foreign }
+			if = { limit = { has_variable = votc_whisper_cat_court } remove_variable = votc_whisper_cat_court }
+			if = { limit = { has_variable = votc_whisper_cat_circle } remove_variable = votc_whisper_cat_circle }
+			set_variable = { name = votc_whisper_cat_realm value = yes }
+		}
+		# at the player's location -> court
+		every_in_list = {
+			variable = votc_whisper_targets
+			limit = { location = root.location }
+			if = { limit = { has_variable = votc_whisper_cat_foreign } remove_variable = votc_whisper_cat_foreign }
+			if = { limit = { has_variable = votc_whisper_cat_realm } remove_variable = votc_whisper_cat_realm }
+			if = { limit = { has_variable = votc_whisper_cat_circle } remove_variable = votc_whisper_cat_circle }
+			set_variable = { name = votc_whisper_cat_court value = yes }
+		}
+		# personal ties and pinned characters win over everything -> circle
+		every_in_list = {
+			variable = votc_whisper_targets
+			limit = {
+				OR = {
+					is_sibling_of = root
+					is_parent_of = root
+					is_child_of = root
+					has_relation_lover = root
+					has_relation_soulmate = root
+					has_relation_friend = root
+					has_relation_best_friend = root
+					has_relation_rival = root
+					has_relation_nemesis = root
+					has_relation_guardian = root
+					has_relation_ward = root
+					root = {
+						is_target_in_variable_list = {
+							name = votc_whisper_watched
+							target = prev
+						}
+					}
+				}
+			}
+			if = { limit = { has_variable = votc_whisper_cat_foreign } remove_variable = votc_whisper_cat_foreign }
+			if = { limit = { has_variable = votc_whisper_cat_realm } remove_variable = votc_whisper_cat_realm }
+			if = { limit = { has_variable = votc_whisper_cat_court } remove_variable = votc_whisper_cat_court }
+			set_variable = { name = votc_whisper_cat_circle value = yes }
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  Outbound log lines
+#--------------------------------------------------------------------------
+votc_whisper_log_init = {
+	# Lazy campaign bootstrap: the init line is the app's primary identity
+	# source, so the campaign id must exist BEFORE the line is logged (same
+	# idiom as log_gamedata_v3l).
+	every_player = {
+		limit = { is_ai = no }
+		votc_init_checkpoint_effect = yes
+	}
+	debug_log = "VOTC:IN/;/init/;/[GetPlayer.GetID]/;/[GetPlayer.GetTitledFirstNameNicknamedNoTooltipRegnal]/;/[GetPlayer.GetID]/;/[GetPlayer.GetTitledFirstNameNicknamedNoTooltipRegnal]/;/[GetCurrentDate.GetStringShort]/;/flag:whisper_ledger/;/[GetPlayer.GetCurrentLocation.GetName]/;/[GetPlayer.GetCurrentLocation.GetController.GetFullNameNicknamedNoTooltipRegnal]/;/[GetPlayer.MakeScope.Var('votc_checkpoint_epoch').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_node_a').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_node_b').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_parent_a').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_parent_b').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_checkpoint_token').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_checkpoint_pending_token').GetValue|0]/;/2/;/1/;/[GetGlobalVariable('votc_campaign_id_a').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_b').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_c').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_d').GetValue|0]/;/[GetGlobalVariable('votc_campaign_bootstrap_kind').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_schema').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_save_snapshot_protocol').GetValue|0]"
+}
+
+# Memories younger than a year.  Anything older is dropped here; the exact
+# window is applied by the prompt itself using the dates that travel with
+# every memory line.
+votc_whisper_log_memories = {
+	every_memory = {
+		limit = { memory_age_years < 1 }
+		set_variable = {
+			name = relevance_weight
+			value = weight_memory_relevance
+		}
+		debug_log = "VOTC:IN/;/memory/;/[THIS.CharacterMemory.GetOwner.GetID]/;/[THIS.CharacterMemory.GetName]/;/[THIS.CharacterMemory.GetCreationDate.GetStringShort]/;/[THIS.CharacterMemory.GetThirdPerspectiveDescription]/;/[THIS.Var('relevance_weight').GetValue]/;/[THIS.CharacterMemory.GetCreationDate.GetDateAsTotalDays]"
+	}
+}
+
+# One character, in the category picked by votc_whisper_tag_categories.
+# The four log keys differ only in the "held court and council positions"
+# slot, which carries the category label the desktop app reads back.
+votc_whisper_log_char = {
+	if = {
+		limit = { has_variable = votc_whisper_cat_circle }
+		debug_log = votc_whisper_log_chr_circle
+	}
+	else_if = {
+		limit = { has_variable = votc_whisper_cat_court }
+		debug_log = votc_whisper_log_chr_court
+	}
+	else_if = {
+		limit = { has_variable = votc_whisper_cat_realm }
+		debug_log = votc_whisper_log_chr_realm
+	}
+	else = {
+		debug_log = votc_whisper_log_chr_foreign
+	}
+	votc_whisper_log_memories = yes
+}
+
+# The whole material in one go.  It is re-sent before each of the four
+# section requests so a talk happening in between cannot clobber the game
+# data the desktop app rebuilds from the log.
+votc_whisper_log_all = {
+	# weight_memory_relevance reads scope:actor.  scope:actor only exists when
+	# the chain started from a character interaction - this one starts from a
+	# hidden heartbeat or a run file, so it has to be re-created here or every
+	# memory line raises "Undefined event target 'actor'" once per field.
+	if = {
+		limit = { exists = global_var:votc_whisper_player }
+		global_var:votc_whisper_player = { save_scope_as = actor }
+	}
+	else = {
+		root = { save_scope_as = actor }
+	}
+
+	root = { votc_whisper_log_init = yes }
+	root = { votc_whisper_log_char = yes }
+	every_in_list = {
+		variable = votc_whisper_targets
+		limit = { is_alive = yes }
+		votc_whisper_log_char = yes
+	}
+}
+
+#--------------------------------------------------------------------------
+#  The request itself.  The section (WORLD / REALM / COURT / CIRCLE) rides
+#  along in the marker so the prompt block can narrow itself to that section;
+#  the 3 / 6 / 12 encodes the cadence so the prompt can pick the memory
+#  window (91 / 182 / 365 game days).
+#--------------------------------------------------------------------------
+votc_whisper_log_payload_world = {
+	if = {
+		limit = { global_var:votc_whisper_freq = 91 }
+		debug_log = "VOTC:WHISPER/;/3|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+	else_if = {
+		limit = { global_var:votc_whisper_freq = 365 }
+		debug_log = "VOTC:WHISPER/;/12|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+	else = {
+		debug_log = "VOTC:WHISPER/;/6|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+}
+
+votc_whisper_log_payload_realm = {
+	if = {
+		limit = { global_var:votc_whisper_freq = 91 }
+		debug_log = "VOTC:WHISPER/;/3|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+	else_if = {
+		limit = { global_var:votc_whisper_freq = 365 }
+		debug_log = "VOTC:WHISPER/;/12|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+	else = {
+		debug_log = "VOTC:WHISPER/;/6|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+}
+
+votc_whisper_log_payload_court = {
+	if = {
+		limit = { global_var:votc_whisper_freq = 91 }
+		debug_log = "VOTC:WHISPER/;/3|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+	else_if = {
+		limit = { global_var:votc_whisper_freq = 365 }
+		debug_log = "VOTC:WHISPER/;/12|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+	else = {
+		debug_log = "VOTC:WHISPER/;/6|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+}
+
+votc_whisper_log_payload_circle = {
+	if = {
+		limit = { global_var:votc_whisper_freq = 91 }
+		debug_log = "VOTC:WHISPER/;/3|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+	else_if = {
+		limit = { global_var:votc_whisper_freq = 365 }
+		debug_log = "VOTC:WHISPER/;/12|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+	else = {
+		debug_log = "VOTC:WHISPER/;/6|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+	}
+}
+
+#--------------------------------------------------------------------------
+#  Ask the desktop app for the section stored in global_var:votc_whisper_step.
+#--------------------------------------------------------------------------
+votc_whisper_ask = {
+	if = {
+		limit = { NOT = { has_global_variable = votc_whisper_freq } }
+		set_global_variable = {
+			name = votc_whisper_freq
+			value = 182
+		}
+	}
+	if = {
+		limit = { NOT = { has_global_variable = votc_whisper_step } }
+		set_global_variable = {
+			name = votc_whisper_step
+			value = 1
+		}
+	}
+
+	if = {
+		limit = {
+			has_variable_list = votc_whisper_targets
+			variable_list_size = {
+				name = votc_whisper_targets
+				value >= 1
+			}
+		}
+		# All of these are refreshed on every request.  A single round trip
+		# takes the model 20-60 real seconds and the player runs at speed 5,
+		# where a game day is about a third of a second - so anything in the
+		# hundreds is minutes of real time.  votc_whisper_seq is the shorter of
+		# the two on purpose: if a section is ever lost the weekly heartbeat
+		# must still be able to start the next report, and it refuses to while
+		# seq is set.
+		set_global_variable = {
+			name = votc_whisper_pending
+			value = yes
+			days = 730
+		}
+		set_global_variable = {
+			name = votc_whisper_seq
+			value = yes
+			days = 400
+		}
+		set_global_variable = {
+			name = votc_whisper_player
+			value = root
+			days = 730
+		}
+		set_global_variable = {
+			name = message_second_scope_whisper
+			value = root
+		}
+		# THE MARKER.  The desktop app writes
+		#     remove_global_variable ?= votc_${letter.letterId}
+		# into every reply it generates, and our payload declares
+		# letterId = whisper.  So this variable is deleted by the app and by
+		# nothing else: "marker gone" is the only reliable proof that the
+		# message_event.362 we are looking at is OUR reply and not somebody
+		# else's ordinary letter.  See votc_whisper_deliver.
+		set_global_variable = {
+			name = votc_whisper
+			value = yes
+		}
+
+		# An explicit scope rather than root: this effect also runs on the
+		# re-asks, which come through votc_whisper.30 - an event fired from a
+		# run file, where the current scope is not guaranteed to be the player.
+		if = {
+			limit = { exists = global_var:votc_whisper_player }
+			global_var:votc_whisper_player = { votc_whisper_log_all = yes }
+		}
+		else = {
+			root = { votc_whisper_log_all = yes }
+		}
+		if = { limit = { global_var:votc_whisper_step = 1 } votc_whisper_log_payload_world = yes }
+		else_if = { limit = { global_var:votc_whisper_step = 2 } votc_whisper_log_payload_realm = yes }
+		else_if = { limit = { global_var:votc_whisper_step = 3 } votc_whisper_log_payload_court = yes }
+		else = { votc_whisper_log_payload_circle = yes }
+		debug_log = "VOTC:WHISPER/;/request_written"
+
+		# keeps ExecuteConsoleCommand('run letters.txt') alive
+		trigger_event = { id = mcc_event_v2.9998 }
+		# clipboard token, one day later so the debug log is flushed first.
+		# Our own invisible window on purpose: message_event.361 would flash
+		# VOTC's fullscreen window for every single request.
+		trigger_event = {
+			id = votc_whisper.50
+			days = 1
+		}
+	}
+}
+
+#--------------------------------------------------------------------------
+#  Destroy the four throw-away journals and forget the variables pointing at
+#  them.  Called when a NEW report starts (the previous report's artifacts
+#  stay readable through "Read the Last Ledger" until then).
+#--------------------------------------------------------------------------
+votc_whisper_clear_sections = {
+	if = {
+		limit = { exists = global_var:votc_whisper_sec_world }
+		global_var:votc_whisper_sec_world = { destroy_artifact = this }
+	}
+	remove_global_variable = votc_whisper_sec_world
+	if = {
+		limit = { exists = global_var:votc_whisper_sec_realm }
+		global_var:votc_whisper_sec_realm = { destroy_artifact = this }
+	}
+	remove_global_variable = votc_whisper_sec_realm
+	if = {
+		limit = { exists = global_var:votc_whisper_sec_court }
+		global_var:votc_whisper_sec_court = { destroy_artifact = this }
+	}
+	remove_global_variable = votc_whisper_sec_court
+	if = {
+		limit = { exists = global_var:votc_whisper_sec_circle }
+		global_var:votc_whisper_sec_circle = { destroy_artifact = this }
+	}
+	remove_global_variable = votc_whisper_sec_circle
+}
+
+#--------------------------------------------------------------------------
+#  Begin a report: gather everything, then ask for the first section.
+#--------------------------------------------------------------------------
+votc_whisper_start = {
+	# Never begin a second report on top of one that is still running.  The
+	# weekly heartbeat fires all the time and a report can take a while, so it
+	# used to be able to reset the step counter in mid-air, destroy the
+	# sections that had already arrived and scramble the rest.
+	if = {
+		limit = { NOT = { has_global_variable = votc_whisper_seq } }
+		votc_whisper_clear_sections = yes
+
+		votc_whisper_collect = yes
+		votc_whisper_tag_categories = yes
+
+		if = {
+			# the list still exists when nothing was collected, so its size has
+			# to be checked too - otherwise four pointless requests go out for
+			# an empty report
+			limit = {
+				has_variable_list = votc_whisper_targets
+				variable_list_size = {
+					name = votc_whisper_targets
+					value >= 1
+				}
+			}
+			set_global_variable = {
+				name = votc_whisper_step
+				value = 1
+			}
+			root = { votc_whisper_ask = yes }
+		}
+	}
+}
+
+# Same thing, but first throws away whatever was in flight.  Used by the
+# "compose one right now" button: if the player asks for a report they want
+# one, even if the previous one is still waiting for the model.
+votc_whisper_start_forced = {
+	votc_whisper_seq_cleanup = yes
+	votc_whisper_start = yes
+}
+
+#--------------------------------------------------------------------------
+#  Forget everything a sequence left behind.
+#--------------------------------------------------------------------------
+votc_whisper_seq_cleanup = {
+	remove_global_variable = votc_whisper_seq
+	remove_global_variable = votc_whisper_step
+	remove_global_variable = votc_whisper_pending
+	remove_global_variable = votc_whisper_done
+	remove_global_variable = votc_whisper_player
+	remove_global_variable = votc_whisper_latest
+	# the app deletes this one while a request is in flight; we only ever
+	# clear leftovers
+	remove_global_variable = votc_whisper
+}
+
+#--------------------------------------------------------------------------
+#  Take one section out of global_var:votc_whisper_latest, then either ask
+#  for the next one or finish the report.  Both channels feed this:
+#
+#    * the dedicated WHISPER channel - run/votc_ce_whisper.txt, written by the
+#      desktop app once it has the whisper branch - arrives through .30;
+#    * the fallback through VOTC's own letter channel (run/letters.txt)
+#      arrives through votc_whisper_deliver, which is used while the desktop
+#      app is still unpatched.
+#--------------------------------------------------------------------------
+votc_whisper_take_section = {
+	if = {
+		limit = {
+			exists = global_var:votc_whisper_latest
+			NOT = { has_global_variable = votc_whisper_done }
+		}
+
+		if = {
+			limit = { NOT = { has_global_variable = votc_whisper_step } }
+			set_global_variable = { name = votc_whisper_step value = 1 }
+		}
+
+		if = {
+			limit = { global_var:votc_whisper_step = 1 }
+			set_global_variable = {
+				name = votc_whisper_sec_world
+				value = global_var:votc_whisper_latest
+			}
+			set_global_variable = { name = votc_whisper_step value = 2 }
+			debug_log = "VOTC:WHISPER/;/took_section/;/1/;/world"
+			global_var:votc_whisper_player = { votc_whisper_ask = yes }
+		}
+		else_if = {
+			limit = { global_var:votc_whisper_step = 2 }
+			set_global_variable = {
+				name = votc_whisper_sec_realm
+				value = global_var:votc_whisper_latest
+			}
+			set_global_variable = { name = votc_whisper_step value = 3 }
+			debug_log = "VOTC:WHISPER/;/took_section/;/2/;/realm"
+			global_var:votc_whisper_player = { votc_whisper_ask = yes }
+		}
+		else_if = {
+			limit = { global_var:votc_whisper_step = 3 }
+			set_global_variable = {
+				name = votc_whisper_sec_court
+				value = global_var:votc_whisper_latest
+			}
+			set_global_variable = { name = votc_whisper_step value = 4 }
+			debug_log = "VOTC:WHISPER/;/took_section/;/3/;/court"
+			global_var:votc_whisper_player = { votc_whisper_ask = yes }
+		}
+		else = {
+			set_global_variable = {
+				name = votc_whisper_sec_circle
+				value = global_var:votc_whisper_latest
+			}
+			set_global_variable = { name = votc_whisper_done value = yes }
+			debug_log = "VOTC:WHISPER/;/took_section/;/4/;/circle"
+			# Deliver-on-ready: the report opens as soon as the last section has
+			# landed.  The player asked for a ledger, not for a ceremony.
+			votc_whisper_open = yes
+		}
+
+		remove_global_variable = votc_whisper_latest
+	}
+	# No artifact means the app's create_artifact did not produce anything, so
+	# votc_whisper_latest holds an empty scope.  Saying so out loud beats the
+	# silence this used to fail in.
+	else = {
+		debug_log = "VOTC:WHISPER/;/no_artifact"
+	}
+}
+
+#--------------------------------------------------------------------------
+#  Hand the finished report to the player.  Nothing else is cleared here on
+#  purpose: votc_whisper_pending has to stay armed until the report window is
+#  dismissed, or the last reply's own event window would open the letter
+#  parchment.
+#--------------------------------------------------------------------------
+votc_whisper_open = {
+	root = { trigger_event = votc_whisper.20 }
+}
+
+#--------------------------------------------------------------------------
+#  Vendored fallback for an UNPATCHED desktop app: the reply arrived through
+#  VOTC's letter channel (message_event.362).  See votc_whisper_take_section.
+#--------------------------------------------------------------------------
+votc_whisper_deliver = {
+	if = {
+		limit = {
+			has_global_variable = votc_whisper_pending
+			# the app deletes votc_whisper when it answers a whisper request, so
+			# "marker gone" is what separates our reply from an ordinary letter
+			NOT = { has_global_variable = votc_whisper }
+			NOT = { has_global_variable = votc_whisper_done }
+			exists = global_var:votc_latest_letter
+			exists = global_var:votc_whisper_player
+		}
+		set_global_variable = {
+			name = votc_whisper_latest
+			value = global_var:votc_latest_letter
+		}
+		votc_whisper_take_section = yes
+	}
+}

@@ -1,0 +1,19 @@
+hbox = {
+	name = "votc_whisper_hub_widget"
+	layoutpolicy_horizontal = expanding
+	margin = { 10 0 }
+
+	state = {
+		name = boot
+		trigger_on_create = yes
+
+		# run/letters.txt is only executed while the runner widget exists, and
+		# VOTC only creates it on demand - so opening one of our windows
+		# (re)starts it.  That is why every whisper window carries this widget.
+		on_start = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/letters_runner.gui letters_runner')]"
+
+		duration = 1
+	}
+
+	expand = {}
+}

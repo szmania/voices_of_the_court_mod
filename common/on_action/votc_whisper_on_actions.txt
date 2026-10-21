@@ -1,0 +1,42 @@
+﻿#==========================================================================
+#  The Whisper Ledger  -  on_action hooks  (VOTC-195)
+#
+#  Only appends sub-on_actions to existing engine on_actions, which is the
+#  official pattern (game/common/on_action/_on_actions.info): a second effect
+#  or trigger block for the same on_action is silently ignored, so the work
+#  lives in mod-owned relay on_actions instead (same idiom as the repo's
+#  votc_game_start_init_on_actions.txt and votc_ai_initiate.txt).
+#==========================================================================
+
+on_game_start_after_lobby = {
+	on_actions = {
+		votc_whisper_bootstrap_relay
+	}
+}
+
+quarterly_playable_pulse = {
+	on_actions = {
+		votc_whisper_pulse_relay
+	}
+}
+
+random_yearly_playable_pulse = {
+	on_actions = {
+		votc_whisper_pulse_relay
+	}
+}
+
+votc_whisper_bootstrap_relay = {
+	effect = {
+		every_player = {
+			limit = { is_ai = no }
+			votc_whisper_bootstrap_char = yes
+		}
+	}
+}
+
+votc_whisper_pulse_relay = {
+	effect = {
+		votc_whisper_bootstrap_char = yes
+	}
+}
