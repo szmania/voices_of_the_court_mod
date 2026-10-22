@@ -1,4 +1,5 @@
-﻿l_polish:
+﻿
+l_polish:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -68,9 +69,8 @@
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Ustawienia"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
- votc_ce_initiative_opt_incoming:0 "Listy przychodzące"
- votc_ce_initiative.180.title:0 "Częstość listów przychodzących"
- votc_ce_initiative.180.desc:0 "Ustaw, jak często inne postacie wysyłają do ciebie listy sytuacyjne (raporty wasali, petycje, zaczepki, pozdrowienia)."
+ votc_ce_initiative.180.title:0 "Listy"
+ votc_ce_initiative.180.desc:0 "Wszystkie ustawienia listów: główny przełącznik, częstotliwość listów i narzędzia listów."
  votc_ce_initiative_opt_incoming_low:0 "Niska (25%)"
  votc_ce_initiative_opt_incoming_normal:0 "Standardowa (50%)"
  votc_ce_initiative_opt_incoming_high:0 "Wysoka (80%)"
@@ -90,8 +90,6 @@
  votc_ce_initiative_opt_letters_tooltip:0 "Listy NPC wł./wył., interwał listów, list testowy, listy przychodzące i zwalnianie wątków listów."
  votc_ce_initiative.205.title:0 "Rozmowy"
  votc_ce_initiative.205.desc:0 "Jak często postacie proszą cię o rozmowę, oraz narzędzia rozmów."
- votc_ce_initiative.206.title:0 "Listy"
- votc_ce_initiative.206.desc:0 "Jak często postacie piszą do ciebie, oraz narzędzia listów."
  votc_ce_initiative_opt_whisper_ledger:0 "Szeptany rejestr"
  votc_ce_initiative_opt_whisper_ledger_tooltip:0 "Ustawienia szeptanego rejestru, biezacy raport i ostatni rejestr."
  votc_ce_initiative.210.title:0 "Szeptany rejestr"
@@ -102,7 +100,5 @@
  votc_ce_initiative_opt_whisper_open_tooltip:0 "Otworz biezacy raport szeptanego rejestru."
  votc_ce_initiative_opt_whisper_read_last:0 "Przeczytaj ostatni rejestr"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Ponownie otworz najnowszy raport szeptanego rejestru."
- votc_ce_initiative_opt_incoming_toggle:0 "Wyłącz listy przychodzące"
- votc_ce_initiative_opt_incoming_toggle_off:0 "Włącz listy przychodzące"
  votc_ce_initiative_opt_incoming_clear:0 "Wyczyść sloty listów przychodzących"
  votc_ce_initiative_opt_incoming_details:0 "Szczegółowe ustawienia listów"

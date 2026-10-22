@@ -1,4 +1,5 @@
-﻿l_japanese:
+﻿
+l_japanese:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -68,9 +69,8 @@
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: 設定"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
- votc_ce_initiative_opt_incoming:0 "受信の手紙"
- votc_ce_initiative.180.title:0 "受信手紙の頻度"
- votc_ce_initiative.180.desc:0 "他の人物から状況に応じた手紙(家臣の報告、請願、嘲り、挨拶)が届く頻度を設定します。"
+ votc_ce_initiative.180.title:0 "手紙"
+ votc_ce_initiative.180.desc:0 "すべての手紙設定：メインのオン/オフスイッチ、手紙の頻度、手紙のツール。"
  votc_ce_initiative_opt_incoming_low:0 "低い(25%)"
  votc_ce_initiative_opt_incoming_normal:0 "標準(50%)"
  votc_ce_initiative_opt_incoming_high:0 "高い(80%)"
@@ -90,8 +90,6 @@
  votc_ce_initiative_opt_letters_tooltip:0 "NPC手紙のオン/オフ、手紙の間隔、テスト手紙、受信手紙、手紙スレッドの解放。"
  votc_ce_initiative.205.title:0 "会話"
  votc_ce_initiative.205.desc:0 "キャラクターがあなたとの会話を求める頻度と、会話のツール。"
- votc_ce_initiative.206.title:0 "手紙"
- votc_ce_initiative.206.desc:0 "キャラクターがあなたに手紙を書く頻度と、手紙のツール。"
  votc_ce_initiative_opt_whisper_ledger:0 "囁き帳"
  votc_ce_initiative_opt_whisper_ledger_tooltip:0 "囁き帳の設定、現在の報告、そして最後の帳簿。"
  votc_ce_initiative.210.title:0 "囁き帳"
@@ -102,7 +100,5 @@
  votc_ce_initiative_opt_whisper_open_tooltip:0 "現在の囁き帳の報告を開きます。"
  votc_ce_initiative_opt_whisper_read_last:0 "最後の帳簿を読む"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "最新の囁き帳の報告を再び開きます。"
- votc_ce_initiative_opt_incoming_toggle:0 "受信レターを無効にする"
- votc_ce_initiative_opt_incoming_toggle_off:0 "受信レターを有効にする"
  votc_ce_initiative_opt_incoming_clear:0 "受信レタースロットをクリア"
  votc_ce_initiative_opt_incoming_details:0 "詳細な手紙設定"

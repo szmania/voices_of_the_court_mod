@@ -68,9 +68,8 @@
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Settings"
 
 # VOTC-194 13.3.1/13.5.1: incoming-lettets hub page (namespace votc_ce_initiative)
- votc_ce_initiative_opt_incoming:0 "Incoming Letters"
- votc_ce_initiative.180.title:0 "Incoming Letters Frequency"
- votc_ce_initiative.180.desc:0 "Set how often other characters send you situational letters (vassal memorials, petitions, taunts, greetings)."
+ votc_ce_initiative.180.title:0 "Letters"
+ votc_ce_initiative.180.desc:0 "All NPC letter settings: the master on/off switch, how often letters arrive, and letter tools."
  votc_ce_initiative_opt_incoming_low:0 "Low (25%)"
  votc_ce_initiative_opt_incoming_normal:0 "Standard (50%)"
  votc_ce_initiative_opt_incoming_high:0 "High (80%)"
@@ -90,8 +89,6 @@
  votc_ce_initiative_opt_letters_tooltip:0 "NPC letters on/off, letter interval, test letter, incoming letters, and releasing letter threads."
  votc_ce_initiative.205.title:0 "Conversations"
  votc_ce_initiative.205.desc:0 "How often characters ask to speak with you, and conversation tools."
- votc_ce_initiative.206.title:0 "Letters"
- votc_ce_initiative.206.desc:0 "How often characters write to you, and letter tools."
  votc_ce_initiative_opt_whisper_ledger:0 "Whisper Ledger"
  votc_ce_initiative_opt_whisper_ledger_tooltip:0 "The Whisper Ledger settings, the current report, and the last ledger."
  votc_ce_initiative.210.title:0 "Whisper Ledger"
@@ -102,7 +99,5 @@
  votc_ce_initiative_opt_whisper_open_tooltip:0 "Open the current whisper ledger report."
  votc_ce_initiative_opt_whisper_read_last:0 "Read the Last Ledger"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Re-open the most recent whisper ledger report."
- votc_ce_initiative_opt_incoming_toggle:0 "Disable NPC Letters"
- votc_ce_initiative_opt_incoming_toggle_off:0 "Enable NPC Letters"
  votc_ce_initiative_opt_incoming_clear:0 "Clear Incoming Letter Slots"
  votc_ce_initiative_opt_incoming_details:0 "Detailed Letter Settings"

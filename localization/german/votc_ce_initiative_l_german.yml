@@ -1,4 +1,5 @@
-﻿l_german:
+﻿
+l_german:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -68,9 +69,8 @@
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Einstellungen"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
- votc_ce_initiative_opt_incoming:0 "Eingehende Briefe"
- votc_ce_initiative.180.title:0 "Häufigkeit eingehender Briefe"
- votc_ce_initiative.180.desc:0 "Legen Sie fest, wie oft andere Charaktere Ihnen situative Briefe senden (Vasallenberichte, Bittschriften, Sticheleien, Grüße)."
+ votc_ce_initiative.180.title:0 "Briefe"
+ votc_ce_initiative.180.desc:0 "Alle Briefeinstellungen: der Hauptschalter, wie oft Briefe eintreffen, und Briefwerkzeuge."
  votc_ce_initiative_opt_incoming_low:0 "Niedrig (25 %)"
  votc_ce_initiative_opt_incoming_normal:0 "Standard (50 %)"
  votc_ce_initiative_opt_incoming_high:0 "Hoch (80 %)"
@@ -90,8 +90,6 @@
  votc_ce_initiative_opt_letters_tooltip:0 "NSC-Briefe ein/aus, Briefintervall, Testbrief, eingehende Briefe und Freigabe von Briefverläufen."
  votc_ce_initiative.205.title:0 "Gespräche"
  votc_ce_initiative.205.desc:0 "Wie oft Charaktere Sie um ein Gespräch bitten, und Gesprächswerkzeuge."
- votc_ce_initiative.206.title:0 "Briefe"
- votc_ce_initiative.206.desc:0 "Wie oft Charaktere Ihnen schreiben, und Briefwerkzeuge."
  votc_ce_initiative_opt_whisper_ledger:0 "Flüsterbuch"
  votc_ce_initiative_opt_whisper_ledger_tooltip:0 "Die Einstellungen des Flüsterbuchs, der aktuelle Bericht und das letzte Buch."
  votc_ce_initiative.210.title:0 "Flüsterbuch"
@@ -102,7 +100,5 @@
  votc_ce_initiative_opt_whisper_open_tooltip:0 "Den aktuellen Bericht des Flüsterbuchs öffnen."
  votc_ce_initiative_opt_whisper_read_last:0 "Das letzte Buch lesen"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Den jüngsten Bericht des Flüsterbuchs erneut öffnen."
- votc_ce_initiative_opt_incoming_toggle:0 "Eingehende Briefe deaktivieren"
- votc_ce_initiative_opt_incoming_toggle_off:0 "Eingehende Briefe aktivieren"
  votc_ce_initiative_opt_incoming_clear:0 "Eingehende Brief-Slots leeren"
  votc_ce_initiative_opt_incoming_details:0 "Detaillierte Briefeinstellungen"

@@ -1,4 +1,5 @@
-﻿l_korean:
+﻿
+l_korean:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -68,9 +69,8 @@
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: 설정"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
- votc_ce_initiative_opt_incoming:0 "받은 편지"
- votc_ce_initiative.180.title:0 "받은 편지 빈도"
- votc_ce_initiative.180.desc:0 "다른 인물이 상황에 따른 편지(가신 보고, 청원, 조롱, 인사)를 보내는 빈도를 설정합니다."
+ votc_ce_initiative.180.title:0 "편지"
+ votc_ce_initiative.180.desc:0 "모든 편지 설정: 전체 켜기/끄기 스위치, 편지 도착 빈도, 편지 도구."
  votc_ce_initiative_opt_incoming_low:0 "낮음 (25%)"
  votc_ce_initiative_opt_incoming_normal:0 "기본 (50%)"
  votc_ce_initiative_opt_incoming_high:0 "높음 (80%)"
@@ -90,8 +90,6 @@
  votc_ce_initiative_opt_letters_tooltip:0 "NPC 편지 켜기/끄기, 편지 간격, 테스트 편지, 수신 편지, 그리고 편지 스레드 해제."
  votc_ce_initiative.205.title:0 "대화"
  votc_ce_initiative.205.desc:0 "캐릭터가 당신과 대화를 요청하는 빈도와 대화 도구."
- votc_ce_initiative.206.title:0 "편지"
- votc_ce_initiative.206.desc:0 "캐릭터가 당신에게 편지를 쓰는 빈도와 편지 도구."
  votc_ce_initiative_opt_whisper_ledger:0 "속삭임 장부"
  votc_ce_initiative_opt_whisper_ledger_tooltip:0 "속삭임 장부 설정, 현재 보고서, 그리고 마지막 장부."
  votc_ce_initiative.210.title:0 "속삭임 장부"
@@ -102,7 +100,5 @@
  votc_ce_initiative_opt_whisper_open_tooltip:0 "현재 속삭임 장부 보고서를 엽니다."
  votc_ce_initiative_opt_whisper_read_last:0 "마지막 장부 읽기"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "가장 최근의 속삭임 장부 보고서를 다시 엽니다."
- votc_ce_initiative_opt_incoming_toggle:0 "수신 편지 비활성화"
- votc_ce_initiative_opt_incoming_toggle_off:0 "수신 편지 활성화"
  votc_ce_initiative_opt_incoming_clear:0 "수신 편지 슬롯 지우기"
  votc_ce_initiative_opt_incoming_details:0 "상세 편지 설정"

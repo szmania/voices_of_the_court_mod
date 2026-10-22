@@ -42,6 +42,17 @@ votc_ce_initiative_bootstrap_char = {
 			limit = { NOT = { has_global_variable = votc_ce_initiative_letter_freq } }
 			set_global_variable = { name = votc_ce_initiative_letter_freq value = 182 }
 		}
+		# VOTC-194 §17: ongoing-save default-on for incoming letters.  New
+		# campaigns are covered by the game-start hook (votc_game_start_init_relay);
+		# this mirrors it for saves that predate the feature.  The opt-out marker
+		# keeps an explicit "off" from being reverted.
+		if = {
+			limit = {
+				NOT = { has_variable = votc_incoming_letters_enabled }
+				NOT = { has_variable = votc_incoming_letters_opt_out }
+			}
+			votc_incoming_letters_apply_default_settings_effect = yes
+		}
 		# VOTC-194 13.1.2: shared quarterly letter budget across the NPC
 		# Initiative and incoming-letter systems.  Default allowance: 2 letters
 		# per quarter from both systems combined.

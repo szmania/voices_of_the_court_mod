@@ -1,4 +1,5 @@
-﻿l_spanish:
+﻿
+l_spanish:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -68,9 +69,8 @@
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Ajustes"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
- votc_ce_initiative_opt_incoming:0 "Cartas entrantes"
- votc_ce_initiative.180.title:0 "Frecuencia de cartas entrantes"
- votc_ce_initiative.180.desc:0 "Configura con qué frecuencia otros personajes te envían cartas situacionales (memoriales de vasallos, peticiones, burlas, saludos)."
+ votc_ce_initiative.180.title:0 "Cartas"
+ votc_ce_initiative.180.desc:0 "Todos los ajustes de cartas: el interruptor principal, la frecuencia de las cartas y las herramientas de cartas."
  votc_ce_initiative_opt_incoming_low:0 "Baja (25%)"
  votc_ce_initiative_opt_incoming_normal:0 "Normal (50%)"
  votc_ce_initiative_opt_incoming_high:0 "Alta (80%)"
@@ -90,8 +90,6 @@
  votc_ce_initiative_opt_letters_tooltip:0 "Cartas PNJ activadas/desactivadas, intervalo de cartas, carta de prueba, cartas entrantes y liberacion de hilos de cartas."
  votc_ce_initiative.205.title:0 "Conversaciones"
  votc_ce_initiative.205.desc:0 "Con que frecuencia los personajes piden hablar contigo, y herramientas de conversacion."
- votc_ce_initiative.206.title:0 "Cartas"
- votc_ce_initiative.206.desc:0 "Con que frecuencia los personajes te escriben, y herramientas de cartas."
  votc_ce_initiative_opt_whisper_ledger:0 "Registro de susurros"
  votc_ce_initiative_opt_whisper_ledger_tooltip:0 "La configuracion del registro de susurros, el informe actual y el ultimo registro."
  votc_ce_initiative.210.title:0 "Registro de susurros"
@@ -102,7 +100,5 @@
  votc_ce_initiative_opt_whisper_open_tooltip:0 "Abrir el informe actual del registro de susurros."
  votc_ce_initiative_opt_whisper_read_last:0 "Leer el ultimo registro"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Volver a abrir el informe mas reciente del registro de susurros."
- votc_ce_initiative_opt_incoming_toggle:0 "Desactivar cartas entrantes"
- votc_ce_initiative_opt_incoming_toggle_off:0 "Activar cartas entrantes"
  votc_ce_initiative_opt_incoming_clear:0 "Borrar ranuras de cartas entrantes"
  votc_ce_initiative_opt_incoming_details:0 "Ajustes detallados de cartas"

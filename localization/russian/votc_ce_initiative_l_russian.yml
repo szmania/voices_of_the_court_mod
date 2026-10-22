@@ -1,4 +1,5 @@
-﻿l_russian:
+﻿
+l_russian:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -68,9 +69,8 @@
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Настройки"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
- votc_ce_initiative_opt_incoming:0 "Входящие письма"
- votc_ce_initiative.180.title:0 "Частота входящих писем"
- votc_ce_initiative.180.desc:0 "Настройте, как часто другие персонажи отправляют вам ситуативные письма (донесения вассалов, прошения, насмешки, приветствия)."
+ votc_ce_initiative.180.title:0 "Письма"
+ votc_ce_initiative.180.desc:0 "Все настройки писем: главный переключатель, частота писем и инструменты писем."
  votc_ce_initiative_opt_incoming_low:0 "Низкая (25%)"
  votc_ce_initiative_opt_incoming_normal:0 "Обычная (50%)"
  votc_ce_initiative_opt_incoming_high:0 "Высокая (80%)"
@@ -90,8 +90,6 @@
  votc_ce_initiative_opt_letters_tooltip:0 "Письма NPC вкл./выкл., интервал писем, тестовое письмо, входящие письма и освобождение цепочек писем."
  votc_ce_initiative.205.title:0 "Разговоры"
  votc_ce_initiative.205.desc:0 "Как часто персонажи просят вас о разговоре, и инструменты разговоров."
- votc_ce_initiative.206.title:0 "Письма"
- votc_ce_initiative.206.desc:0 "Как часто персонажи пишут вам, и инструменты писем."
  votc_ce_initiative_opt_whisper_ledger:0 "Шепчущая книга"
  votc_ce_initiative_opt_whisper_ledger_tooltip:0 "Настройки Шепчущей книги, текущий отчёт и последняя книга."
  votc_ce_initiative.210.title:0 "Шепчущая книга"
@@ -102,7 +100,5 @@
  votc_ce_initiative_opt_whisper_open_tooltip:0 "Открыть текущий отчёт Шепчущей книги."
  votc_ce_initiative_opt_whisper_read_last:0 "Прочитать последнюю книгу"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Снова открыть самый свежий отчёт Шепчущей книги."
- votc_ce_initiative_opt_incoming_toggle:0 "Отключить входящие письма"
- votc_ce_initiative_opt_incoming_toggle_off:0 "Включить входящие письма"
  votc_ce_initiative_opt_incoming_clear:0 "Очистить слоты входящих писем"
  votc_ce_initiative_opt_incoming_details:0 "Подробные настройки писем"

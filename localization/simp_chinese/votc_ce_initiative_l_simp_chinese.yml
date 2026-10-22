@@ -1,4 +1,5 @@
-﻿l_simp_chinese:
+﻿
+l_simp_chinese:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -68,9 +69,8 @@
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: 设置"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
- votc_ce_initiative_opt_incoming:0 "来信"
- votc_ce_initiative.180.title:0 "来信频率"
- votc_ce_initiative.180.desc:0 "设置其他角色向您发送情境信件(家臣奏报、请愿、嘲讽、问候)的频率。"
+ votc_ce_initiative.180.title:0 "信件"
+ votc_ce_initiative.180.desc:0 "所有信件设置：总开关、信件到达频率以及信件工具。"
  votc_ce_initiative_opt_incoming_low:0 "低(25%)"
  votc_ce_initiative_opt_incoming_normal:0 "标准(50%)"
  votc_ce_initiative_opt_incoming_high:0 "高(80%)"
@@ -90,8 +90,6 @@
  votc_ce_initiative_opt_letters_tooltip:0 "NPC信件开关、信件间隔、测试信件、来信以及释放信件线程。"
  votc_ce_initiative.205.title:0 "对话"
  votc_ce_initiative.205.desc:0 "角色请求与你交谈的频率，以及对话工具。"
- votc_ce_initiative.206.title:0 "信件"
- votc_ce_initiative.206.desc:0 "角色给你写信的频率，以及信件工具。"
  votc_ce_initiative_opt_whisper_ledger:0 "耳语录"
  votc_ce_initiative_opt_whisper_ledger_tooltip:0 "耳语录设置、当前报告和上一份记录。"
  votc_ce_initiative.210.title:0 "耳语录"
@@ -102,7 +100,5 @@
  votc_ce_initiative_opt_whisper_open_tooltip:0 "打开当前的耳语录报告。"
  votc_ce_initiative_opt_whisper_read_last:0 "阅读上一份记录"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "重新打开最近的耳语录报告。"
- votc_ce_initiative_opt_incoming_toggle:0 "禁用传入信件"
- votc_ce_initiative_opt_incoming_toggle_off:0 "启用传入信件"
  votc_ce_initiative_opt_incoming_clear:0 "清除传入信件槽位"
  votc_ce_initiative_opt_incoming_details:0 "详细信件设置"

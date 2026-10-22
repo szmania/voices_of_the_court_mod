@@ -3,9 +3,9 @@
 # votc_clear_incoming_letters_decision, votc_open_incoming_letters_settings_decision)
 # are REMOVED - superseded by the NPC Initiative settings hub
 # (events/votc_ce_initiative_events.txt):
-#   - enable/disable -> hub .100 -> .180 page toggle options
-#     (votc_ce_initiative_opt_incoming_toggle / _toggle_off -> hidden .185,
-#     plan section 14.3.1)
+#   - enable/disable -> hub .100 -> .180 Letters page master toggle
+#     (votc_ce_initiative_opt_letters_on / _off -> hidden .140, which now
+#     flips BOTH letter systems; plan section 17)
 #   - clear pending slots -> hub .180 "Clear Incoming Letter Slots" option
 #     (votc_ce_initiative_opt_incoming_clear -> hidden .186, plan 14.3.2)
 #   - detailed per-topic settings -> hub .180 "Detailed Letter Settings" option
@@ -17,5 +17,5 @@
 # common/scripted_effects/votc_incoming_letter_effects.txt (around L2519) and is
 # still called by common/on_action/votc_game_start_init_on_actions.txt and
 # common/scripted_guis/votc_incoming_letters.txt - those call sites are
-# untouched.  The hub .185 enable path calls the same effect, so all paths set
+# untouched.  The hub .140 enable path calls the same effect, so all paths set
 # identical defaults.

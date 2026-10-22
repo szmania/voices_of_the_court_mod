@@ -1,4 +1,5 @@
-﻿l_french:
+﻿
+l_french:
 
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
@@ -68,9 +69,8 @@
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE : Paramètres"
 
 # VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
- votc_ce_initiative_opt_incoming:0 "Lettres entrantes"
- votc_ce_initiative.180.title:0 "Fréquence des lettres entrantes"
- votc_ce_initiative.180.desc:0 "Définissez la fréquence à laquelle d'autres personnages vous envoient des lettres de situation (mémoires, pétitions, provocations, salutations)."
+ votc_ce_initiative.180.title:0 "Lettres"
+ votc_ce_initiative.180.desc:0 "Tous les réglages des lettres : l'interrupteur principal, la fréquence des lettres et les outils de lettres."
  votc_ce_initiative_opt_incoming_low:0 "Faible (25 %)"
  votc_ce_initiative_opt_incoming_normal:0 "Normale (50 %)"
  votc_ce_initiative_opt_incoming_high:0 "Élevée (80 %)"
@@ -90,8 +90,6 @@
  votc_ce_initiative_opt_letters_tooltip:0 "Lettres des PNJ activees/desactivees, intervalle des lettres, lettre de test, lettres entrantes et liberation des fils de lettres."
  votc_ce_initiative.205.title:0 "Conversations"
  votc_ce_initiative.205.desc:0 "La frequence a laquelle les personnages demandent a vous parler, et les outils de conversation."
- votc_ce_initiative.206.title:0 "Lettres"
- votc_ce_initiative.206.desc:0 "La frequence a laquelle les personnages vous ecrivent, et les outils de lettres."
  votc_ce_initiative_opt_whisper_ledger:0 "Registre des murmures"
  votc_ce_initiative_opt_whisper_ledger_tooltip:0 "Les reglages du registre des murmures, le rapport actuel et le dernier registre."
  votc_ce_initiative.210.title:0 "Registre des murmures"
@@ -102,7 +100,5 @@
  votc_ce_initiative_opt_whisper_open_tooltip:0 "Ouvrir le rapport actuel du registre des murmures."
  votc_ce_initiative_opt_whisper_read_last:0 "Lire le dernier registre"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Rouvrir le rapport le plus recent du registre des murmures."
- votc_ce_initiative_opt_incoming_toggle:0 "Désactiver les lettres entrantes"
- votc_ce_initiative_opt_incoming_toggle_off:0 "Activer les lettres entrantes"
  votc_ce_initiative_opt_incoming_clear:0 "Effacer les emplacements de lettres entrantes"
  votc_ce_initiative_opt_incoming_details:0 "Paramètres détaillés des lettres"
