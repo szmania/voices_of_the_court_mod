@@ -4,7 +4,7 @@ l_french:
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
 # Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
-# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# .2/.3, letter events .153/.160/.180, settings hub .100-.198, the decision,
 # and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
 # votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
@@ -33,7 +33,6 @@ l_french:
  votc_ce_initiative_opt_chance:0 "Chance de conversation : [GetGlobalVariable('votc_ce_initiative_chance').GetValue]%"
  votc_ce_initiative_opt_letters_on:0 "Désactiver les lettres des PNJ"
  votc_ce_initiative_opt_letters_off:0 "Activer les lettres des PNJ"
- votc_ce_initiative_opt_letter_freq:0 "Intervalle des lettres : [GetGlobalVariable('votc_ce_initiative_letter_freq').GetValue] jours"
  votc_ce_initiative_opt_letter_test:0 "Envoyer une lettre de test maintenant"
  votc_ce_initiative_opt_test:0 "Demander une conversation de test maintenant"
  votc_ce_initiative_opt_close:0 "Fermer"
@@ -49,11 +48,6 @@ l_french:
  votc_ce_initiative_opt_chance_l:0 "Faible (5%)"
  votc_ce_initiative_opt_chance_m:0 "Moyen (15%)"
  votc_ce_initiative_opt_chance_h:0 "Élevé (30%)"
- votc_ce_initiative.170.title:0 "Fréquence des lettres"
- votc_ce_initiative.170.desc:0 "Sélectionnez la fréquence à laquelle les PNJ vous écrivent des lettres."
- votc_ce_initiative_opt_letter_freq_3m:0 "Trimestriel (90 jours)"
- votc_ce_initiative_opt_letter_freq_6m:0 "Semestriel (182 jours)"
- votc_ce_initiative_opt_letter_freq_1y:0 "Annuel (365 jours)"
  votc_ce_initiative_settings_decision:0 "VOTC-CE : Paramètres"
  votc_ce_initiative_settings_decision_desc:0 "Configurez la fréquence à laquelle les personnages vous contactent, engagent la conversation ou vous écrivent."
  votc_ce_initiative_settings_decision_tooltip:0 "Ouvrir la fenêtre des paramètres VOTC-CE"
@@ -68,13 +62,17 @@ l_french:
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE : Paramètres"
 
-# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+# VOTC-194 17/18: merged Letters page (namespace votc_ce_initiative)
  votc_ce_initiative.180.title:0 "Lettres"
- votc_ce_initiative.180.desc:0 "Tous les réglages des lettres : l'interrupteur principal, la fréquence des lettres et les outils de lettres."
- votc_ce_initiative_opt_incoming_low:0 "Faible (25 %)"
- votc_ce_initiative_opt_incoming_normal:0 "Normale (50 %)"
- votc_ce_initiative_opt_incoming_high:0 "Élevée (80 %)"
- votc_ce_initiative_opt_incoming_max:0 "Maximale (100 %)"
+ votc_ce_initiative.180.desc:0 "Outils de lettres : effacer les lettres entrantes en attente, ouvrir la fenetre de reglages detaillee et liberer les fils de lettres bloques."
+ votc_ce_initiative_opt_letters_freq_low:0 "Faible"
+ votc_ce_initiative_opt_letters_freq_medium:0 "Moyenne"
+ votc_ce_initiative_opt_letters_freq_high:0 "Élevée"
+ votc_ce_initiative_opt_letters_freq_max:0 "Maximale"
+ votc_ce_initiative_opt_letters_freq_low_effect_desc:0 "Lettres de PNJ environ une fois par an ; lettres entrantes rares (25 % de chance par trimestre, au plus une tous les 360 jours)."
+ votc_ce_initiative_opt_letters_freq_medium_effect_desc:0 "Lettres de PNJ environ deux fois par an ; lettres entrantes occasionnelles (50 % par trimestre, au plus une tous les 180 jours)."
+ votc_ce_initiative_opt_letters_freq_high_effect_desc:0 "Lettres de PNJ environ tous les trois mois ; lettres entrantes fréquentes (80 % par trimestre, au plus une tous les 90 jours)."
+ votc_ce_initiative_opt_letters_freq_max_effect_desc:0 "Lettres de PNJ environ tous les 45 jours ; lettres entrantes aussi souvent que permis (100 % par trimestre, sans délai). Les deux canaux partagent le budget trimestriel de lettres."
 
 # VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
  votc_ce_initiative_opt_ai_freq:0 "Conversations IA"
@@ -87,7 +85,7 @@ l_french:
  votc_ce_initiative_opt_conversations:0 "Conversations"
  votc_ce_initiative_opt_conversations_tooltip:0 "Intervalle et chance de conversation, conversations IA, historique des conversations et conversation de test."
  votc_ce_initiative_opt_letters:0 "Lettres"
- votc_ce_initiative_opt_letters_tooltip:0 "Lettres des PNJ activees/desactivees, intervalle des lettres, lettre de test, lettres entrantes et liberation des fils de lettres."
+ votc_ce_initiative_opt_letters_tooltip:0 "Outils de lettres : effacer les lettres entrantes en attente, ouvrir la fenetre des lettres entrantes (interrupteur principal, frequence unifiee, lettre de test) et liberer les fils de lettres bloques."
  votc_ce_initiative.205.title:0 "Conversations"
  votc_ce_initiative.205.desc:0 "La frequence a laquelle les personnages demandent a vous parler, et les outils de conversation."
  votc_ce_initiative_opt_whisper_ledger:0 "Registre des murmures"

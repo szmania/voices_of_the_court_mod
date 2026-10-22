@@ -4,7 +4,7 @@ l_korean:
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
 # Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
-# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# .2/.3, letter events .153/.160/.180, settings hub .100-.198, the decision,
 # and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
 # votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
@@ -33,7 +33,6 @@ l_korean:
  votc_ce_initiative_opt_chance:0 "대화 확률: [GetGlobalVariable('votc_ce_initiative_chance').GetValue]%"
  votc_ce_initiative_opt_letters_on:0 "NPC 편지 비활성화"
  votc_ce_initiative_opt_letters_off:0 "NPC 편지 활성화"
- votc_ce_initiative_opt_letter_freq:0 "편지 주기도: [GetGlobalVariable('votc_ce_initiative_letter_freq').GetValue]일"
  votc_ce_initiative_opt_letter_test:0 "지금 테스트 편지 보내기"
  votc_ce_initiative_opt_test:0 "지금 테스트 대화 요청하기"
  votc_ce_initiative_opt_close:0 "닫기"
@@ -49,11 +48,6 @@ l_korean:
  votc_ce_initiative_opt_chance_l:0 "낮음 (5%)"
  votc_ce_initiative_opt_chance_m:0 "보통 (15%)"
  votc_ce_initiative_opt_chance_h:0 "높음 (30%)"
- votc_ce_initiative.170.title:0 "편지 빈도"
- votc_ce_initiative.170.desc:0 "NPC가 당신에게 편지를 쓰는 빈도를 선택합니다."
- votc_ce_initiative_opt_letter_freq_3m:0 "분기별 (90일)"
- votc_ce_initiative_opt_letter_freq_6m:0 "반년별 (182일)"
- votc_ce_initiative_opt_letter_freq_1y:0 "매년 (365일)"
  votc_ce_initiative_settings_decision:0 "VOTC-CE: 설정"
  votc_ce_initiative_settings_decision_desc:0 "인물이 당신에게 다가가거나 대화를 시작하거나 편지를 쓰는 빈도를 설정합니다."
  votc_ce_initiative_settings_decision_tooltip:0 "VOTC-CE 설정 창 열기"
@@ -68,13 +62,17 @@ l_korean:
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: 설정"
 
-# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+# VOTC-194 17/18: merged Letters page (namespace votc_ce_initiative)
  votc_ce_initiative.180.title:0 "편지"
- votc_ce_initiative.180.desc:0 "모든 편지 설정: 전체 켜기/끄기 스위치, 편지 도착 빈도, 편지 도구."
- votc_ce_initiative_opt_incoming_low:0 "낮음 (25%)"
- votc_ce_initiative_opt_incoming_normal:0 "기본 (50%)"
- votc_ce_initiative_opt_incoming_high:0 "높음 (80%)"
- votc_ce_initiative_opt_incoming_max:0 "최대 (100%)"
+ votc_ce_initiative.180.desc:0 "편지 도구: 대기 중인 수신 편지를 지우고, 상세 설정 창을 열고, 막힌 편지 스레드를 해제합니다."
+ votc_ce_initiative_opt_letters_freq_low:0 "낮음"
+ votc_ce_initiative_opt_letters_freq_medium:0 "중간"
+ votc_ce_initiative_opt_letters_freq_high:0 "높음"
+ votc_ce_initiative_opt_letters_freq_max:0 "최대"
+ votc_ce_initiative_opt_letters_freq_low_effect_desc:0 "NPC 편지 약 1년에 한 번; 도착 편지 드묾 (분기당 25% 확률, 최대 360일에 한 통)."
+ votc_ce_initiative_opt_letters_freq_medium_effect_desc:0 "NPC 편지 약 1년에 두 번; 도착 편지 가끔 (분기당 50%, 최대 180일에 한 통)."
+ votc_ce_initiative_opt_letters_freq_high_effect_desc:0 "NPC 편지 약 3개월에 한 번; 도착 편지 잦음 (분기당 80%, 최대 90일에 한 통)."
+ votc_ce_initiative_opt_letters_freq_max_effect_desc:0 "NPC 편지 약 45일에 한 번; 도착 편지 허용 범위 내 최대 (분기당 100%, 간격 없음). 두 채널은 분기별 편지 예산을 공유합니다."
 
 # VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
  votc_ce_initiative_opt_ai_freq:0 "AI 대화"
@@ -87,7 +85,7 @@ l_korean:
  votc_ce_initiative_opt_conversations:0 "대화"
  votc_ce_initiative_opt_conversations_tooltip:0 "대화 간격, 대화 확률, AI 대화, 대화 기록, 그리고 테스트 대화."
  votc_ce_initiative_opt_letters:0 "편지"
- votc_ce_initiative_opt_letters_tooltip:0 "NPC 편지 켜기/끄기, 편지 간격, 테스트 편지, 수신 편지, 그리고 편지 스레드 해제."
+ votc_ce_initiative_opt_letters_tooltip:0 "편지 도구: 대기 중인 수신 편지를 지우고, 수신 편지 창(마스터 토글, 통합 빈도, 테스트 편지)을 열고, 막힌 편지 스레드를 해제합니다."
  votc_ce_initiative.205.title:0 "대화"
  votc_ce_initiative.205.desc:0 "캐릭터가 당신과 대화를 요청하는 빈도와 대화 도구."
  votc_ce_initiative_opt_whisper_ledger:0 "속삭임 장부"

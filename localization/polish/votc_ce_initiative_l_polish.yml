@@ -4,7 +4,7 @@ l_polish:
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
 # Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
-# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# .2/.3, letter events .153/.160/.180, settings hub .100-.198, the decision,
 # and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
 # votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
@@ -33,7 +33,6 @@ l_polish:
  votc_ce_initiative_opt_chance:0 "Szansa na rozmowę: [GetGlobalVariable('votc_ce_initiative_chance').GetValue]%"
  votc_ce_initiative_opt_letters_on:0 "Wyłącz listy od NPC"
  votc_ce_initiative_opt_letters_off:0 "Włącz listy od NPC"
- votc_ce_initiative_opt_letter_freq:0 "Częstotliwość listów: [GetGlobalVariable('votc_ce_initiative_letter_freq').GetValue] dni"
  votc_ce_initiative_opt_letter_test:0 "Wyślij list testowy teraz"
  votc_ce_initiative_opt_test:0 "Poproś o rozmowę testową teraz"
  votc_ce_initiative_opt_close:0 "Zamknij"
@@ -49,11 +48,6 @@ l_polish:
  votc_ce_initiative_opt_chance_l:0 "Niska (5%)"
  votc_ce_initiative_opt_chance_m:0 "Średnia (15%)"
  votc_ce_initiative_opt_chance_h:0 "Wysoka (30%)"
- votc_ce_initiative.170.title:0 "Częstotliwość listów"
- votc_ce_initiative.170.desc:0 "Wybierz, jak często NPC piszą do ciebie listy."
- votc_ce_initiative_opt_letter_freq_3m:0 "Co kwartał (90 dni)"
- votc_ce_initiative_opt_letter_freq_6m:0 "Co pół roku (182 dni)"
- votc_ce_initiative_opt_letter_freq_1y:0 "Co rok (365 dni)"
  votc_ce_initiative_settings_decision:0 "VOTC-CE: Ustawienia"
  votc_ce_initiative_settings_decision_desc:0 "Skonfiguruj, jak często postacie zwracają się do ciebie, zaczynają rozmowy lub piszą listy."
  votc_ce_initiative_settings_decision_tooltip:0 "Otwórz okno ustawień VOTC-CE"
@@ -68,13 +62,17 @@ l_polish:
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Ustawienia"
 
-# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+# VOTC-194 17/18: merged Letters page (namespace votc_ce_initiative)
  votc_ce_initiative.180.title:0 "Listy"
- votc_ce_initiative.180.desc:0 "Wszystkie ustawienia listów: główny przełącznik, częstotliwość listów i narzędzia listów."
- votc_ce_initiative_opt_incoming_low:0 "Niska (25%)"
- votc_ce_initiative_opt_incoming_normal:0 "Standardowa (50%)"
- votc_ce_initiative_opt_incoming_high:0 "Wysoka (80%)"
- votc_ce_initiative_opt_incoming_max:0 "Maksymalna (100%)"
+ votc_ce_initiative.180.desc:0 "Narzedzia listow: czyszczenie oczekujacych listow przychodzacych, otwieranie okna szczegolowych ustawien i zwalnianie zawieszonych watkow listow."
+ votc_ce_initiative_opt_letters_freq_low:0 "Niska"
+ votc_ce_initiative_opt_letters_freq_medium:0 "Średnia"
+ votc_ce_initiative_opt_letters_freq_high:0 "Wysoka"
+ votc_ce_initiative_opt_letters_freq_max:0 "Maksymalna"
+ votc_ce_initiative_opt_letters_freq_low_effect_desc:0 "Listy NPC około raz w roku; listy przychodzące rzadkie (25% szansy na kwartał, co najwyżej jeden na 360 dni)."
+ votc_ce_initiative_opt_letters_freq_medium_effect_desc:0 "Listy NPC około dwa razy w roku; listy przychodzące sporadyczne (50% na kwartał, co najwyżej jeden na 180 dni)."
+ votc_ce_initiative_opt_letters_freq_high_effect_desc:0 "Listy NPC około co trzy miesiące; listy przychodzące częste (80% na kwartał, co najwyżej jeden na 90 dni)."
+ votc_ce_initiative_opt_letters_freq_max_effect_desc:0 "Listy NPC około co 45 dni; listy przychodzące tak często, jak to możliwe (100% na kwartał, bez przerwy). Oba kanały dzielą kwartalny budżet listów."
 
 # VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
  votc_ce_initiative_opt_ai_freq:0 "Rozmowy AI"
@@ -87,7 +85,7 @@ l_polish:
  votc_ce_initiative_opt_conversations:0 "Rozmowy"
  votc_ce_initiative_opt_conversations_tooltip:0 "Interwał i szansa rozmowy, rozmowy AI, historia rozmów oraz rozmowa testowa."
  votc_ce_initiative_opt_letters:0 "Listy"
- votc_ce_initiative_opt_letters_tooltip:0 "Listy NPC wł./wył., interwał listów, list testowy, listy przychodzące i zwalnianie wątków listów."
+ votc_ce_initiative_opt_letters_tooltip:0 "Narzedzia listow: czyszczenie oczekujacych listow przychodzacych, otwieranie okna listow przychodzacych (glowny przelacznik, ujednolicona czestotliwosc, list testowy) i zwalnianie zawieszonych watkow listow."
  votc_ce_initiative.205.title:0 "Rozmowy"
  votc_ce_initiative.205.desc:0 "Jak często postacie proszą cię o rozmowę, oraz narzędzia rozmów."
  votc_ce_initiative_opt_whisper_ledger:0 "Szeptany rejestr"

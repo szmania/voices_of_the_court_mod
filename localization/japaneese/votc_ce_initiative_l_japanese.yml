@@ -4,7 +4,7 @@ l_japanese:
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
 # Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
-# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# .2/.3, letter events .153/.160/.180, settings hub .100-.198, the decision,
 # and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
 # votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
@@ -33,7 +33,6 @@ l_japanese:
  votc_ce_initiative_opt_chance:0 "会話確率: [GetGlobalVariable('votc_ce_initiative_chance').GetValue]%"
  votc_ce_initiative_opt_letters_on:0 "NPCの手紙を無効化"
  votc_ce_initiative_opt_letters_off:0 "NPCの手紙を有効化"
- votc_ce_initiative_opt_letter_freq:0 "手紙の間隔: [GetGlobalVariable('votc_ce_initiative_letter_freq').GetValue]日"
  votc_ce_initiative_opt_letter_test:0 "今すぐテスト手紙を送信"
  votc_ce_initiative_opt_test:0 "今すぐテスト会話を要求"
  votc_ce_initiative_opt_close:0 "閉じる"
@@ -49,11 +48,6 @@ l_japanese:
  votc_ce_initiative_opt_chance_l:0 "低（5%）"
  votc_ce_initiative_opt_chance_m:0 "中（15%）"
  votc_ce_initiative_opt_chance_h:0 "高（30%）"
- votc_ce_initiative.170.title:0 "手紙の頻度"
- votc_ce_initiative.170.desc:0 "NPCがあなたに手紙を書く頻度を選択します。"
- votc_ce_initiative_opt_letter_freq_3m:0 "四半期ごと（90日）"
- votc_ce_initiative_opt_letter_freq_6m:0 "半年ごと（182日）"
- votc_ce_initiative_opt_letter_freq_1y:0 "毎年（365日）"
  votc_ce_initiative_settings_decision:0 "VOTC-CE: 設定"
  votc_ce_initiative_settings_decision_desc:0 "人物があなたに接触したり、会話を始めたり、手紙を書いたりする頻度を設定します。"
  votc_ce_initiative_settings_decision_tooltip:0 "VOTC-CE設定ウィンドウを開く"
@@ -68,13 +62,17 @@ l_japanese:
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: 設定"
 
-# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+# VOTC-194 17/18: merged Letters page (namespace votc_ce_initiative)
  votc_ce_initiative.180.title:0 "手紙"
- votc_ce_initiative.180.desc:0 "すべての手紙設定：メインのオン/オフスイッチ、手紙の頻度、手紙のツール。"
- votc_ce_initiative_opt_incoming_low:0 "低い(25%)"
- votc_ce_initiative_opt_incoming_normal:0 "標準(50%)"
- votc_ce_initiative_opt_incoming_high:0 "高い(80%)"
- votc_ce_initiative_opt_incoming_max:0 "最大(100%)"
+ votc_ce_initiative.180.desc:0 "手紙ツール：保留中の受信手紙をクリアし、詳細設定ウィンドウを開き、スタックした手紙スレッドを解放します。"
+ votc_ce_initiative_opt_letters_freq_low:0 "低"
+ votc_ce_initiative_opt_letters_freq_medium:0 "中"
+ votc_ce_initiative_opt_letters_freq_high:0 "高"
+ votc_ce_initiative_opt_letters_freq_max:0 "最大"
+ votc_ce_initiative_opt_letters_freq_low_effect_desc:0 "NPCの手紙は約1年に1回。届く手紙はまれ（四半期ごとに25%の確率、最大360日に1通）。"
+ votc_ce_initiative_opt_letters_freq_medium_effect_desc:0 "NPCの手紙は約1年に2回。届く手紙はときどき（四半期ごとに50%、最大180日に1通）。"
+ votc_ce_initiative_opt_letters_freq_high_effect_desc:0 "NPCの手紙は約3ヶ月に1回。届く手紙は頻繁（四半期ごとに80%、最大90日に1通）。"
+ votc_ce_initiative_opt_letters_freq_max_effect_desc:0 "NPCの手紙は約45日に1回。届く手紙は許される限り頻繁（四半期ごとに100%、間隔なし）。両方のチャンネルは四半期の手紙予算を共有します。"
 
 # VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
  votc_ce_initiative_opt_ai_freq:0 "AI会話"
@@ -87,7 +85,7 @@ l_japanese:
  votc_ce_initiative_opt_conversations:0 "会話"
  votc_ce_initiative_opt_conversations_tooltip:0 "会話の間隔、会話の確率、AI会話、会話履歴、テスト会話。"
  votc_ce_initiative_opt_letters:0 "手紙"
- votc_ce_initiative_opt_letters_tooltip:0 "NPC手紙のオン/オフ、手紙の間隔、テスト手紙、受信手紙、手紙スレッドの解放。"
+ votc_ce_initiative_opt_letters_tooltip:0 "手紙ツール：保留中の受信手紙をクリアし、受信手紙ウィンドウ（マスタートグル、統一頻度、テスト手紙）を開き、スタックした手紙スレッドを解放します。"
  votc_ce_initiative.205.title:0 "会話"
  votc_ce_initiative.205.desc:0 "キャラクターがあなたとの会話を求める頻度と、会話のツール。"
  votc_ce_initiative_opt_whisper_ledger:0 "囁き帳"

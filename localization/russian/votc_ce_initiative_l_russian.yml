@@ -4,7 +4,7 @@ l_russian:
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
 # Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
-# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# .2/.3, letter events .153/.160/.180, settings hub .100-.198, the decision,
 # and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
 # votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
@@ -33,7 +33,6 @@ l_russian:
  votc_ce_initiative_opt_chance:0 "Шанс разговора: [GetGlobalVariable('votc_ce_initiative_chance').GetValue]%"
  votc_ce_initiative_opt_letters_on:0 "Отключить письма ИИ"
  votc_ce_initiative_opt_letters_off:0 "Включить письма ИИ"
- votc_ce_initiative_opt_letter_freq:0 "Интервал писем: [GetGlobalVariable('votc_ce_initiative_letter_freq').GetValue] дн."
  votc_ce_initiative_opt_letter_test:0 "Отправить тестовое письмо сейчас"
  votc_ce_initiative_opt_test:0 "Запросить тестовый разговор сейчас"
  votc_ce_initiative_opt_close:0 "Закрыть"
@@ -49,11 +48,6 @@ l_russian:
  votc_ce_initiative_opt_chance_l:0 "Низкий (5%)"
  votc_ce_initiative_opt_chance_m:0 "Средний (15%)"
  votc_ce_initiative_opt_chance_h:0 "Высокий (30%)"
- votc_ce_initiative.170.title:0 "Частота писем"
- votc_ce_initiative.170.desc:0 "Выберите, как часто ИИ пишут вам письма."
- votc_ce_initiative_opt_letter_freq_3m:0 "Ежеквартально (90 дн.)"
- votc_ce_initiative_opt_letter_freq_6m:0 "Раз в полгода (182 дн.)"
- votc_ce_initiative_opt_letter_freq_1y:0 "Ежегодно (365 дн.)"
  votc_ce_initiative_settings_decision:0 "VOTC-CE: Настройки"
  votc_ce_initiative_settings_decision_desc:0 "Настройте, как часто персонажи обращаются к вам, начинают разговоры или пишут письма."
  votc_ce_initiative_settings_decision_tooltip:0 "Открыть окно настроек VOTC-CE"
@@ -68,13 +62,17 @@ l_russian:
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Настройки"
 
-# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+# VOTC-194 17/18: merged Letters page (namespace votc_ce_initiative)
  votc_ce_initiative.180.title:0 "Письма"
- votc_ce_initiative.180.desc:0 "Все настройки писем: главный переключатель, частота писем и инструменты писем."
- votc_ce_initiative_opt_incoming_low:0 "Низкая (25%)"
- votc_ce_initiative_opt_incoming_normal:0 "Обычная (50%)"
- votc_ce_initiative_opt_incoming_high:0 "Высокая (80%)"
- votc_ce_initiative_opt_incoming_max:0 "Максимальная (100%)"
+ votc_ce_initiative.180.desc:0 "Инструменты писем: очистка ожидающих входящих писем, открытие окна подробных настроек и освобождение зависших цепочек писем."
+ votc_ce_initiative_opt_letters_freq_low:0 "Низкая"
+ votc_ce_initiative_opt_letters_freq_medium:0 "Средняя"
+ votc_ce_initiative_opt_letters_freq_high:0 "Высокая"
+ votc_ce_initiative_opt_letters_freq_max:0 "Максимальная"
+ votc_ce_initiative_opt_letters_freq_low_effect_desc:0 "Письма NPC примерно раз в год; входящие письма редки (25% шанс в квартал, не более одного за 360 дней)."
+ votc_ce_initiative_opt_letters_freq_medium_effect_desc:0 "Письма NPC примерно два раза в год; входящие письма время от времени (50% в квартал, не более одного за 180 дней)."
+ votc_ce_initiative_opt_letters_freq_high_effect_desc:0 "Письма NPC примерно раз в три месяца; входящие письма частые (80% в квартал, не более одного за 90 дней)."
+ votc_ce_initiative_opt_letters_freq_max_effect_desc:0 "Письма NPC примерно каждые 45 дней; входящие письма так часто, как разрешено (100% в квартал, без перерыва). Оба канала делят квартальный бюджет писем."
 
 # VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
  votc_ce_initiative_opt_ai_freq:0 "Диалоги ИИ"
@@ -87,7 +85,7 @@ l_russian:
  votc_ce_initiative_opt_conversations:0 "Разговоры"
  votc_ce_initiative_opt_conversations_tooltip:0 "Интервал и шанс разговора, диалоги ИИ, история разговоров и тестовый разговор."
  votc_ce_initiative_opt_letters:0 "Письма"
- votc_ce_initiative_opt_letters_tooltip:0 "Письма NPC вкл./выкл., интервал писем, тестовое письмо, входящие письма и освобождение цепочек писем."
+ votc_ce_initiative_opt_letters_tooltip:0 "Инструменты писем: очистка ожидающих входящих писем, открытие окна входящих писем (главный переключатель, единая частота, тестовое письмо) и освобождение зависших цепочек писем."
  votc_ce_initiative.205.title:0 "Разговоры"
  votc_ce_initiative.205.desc:0 "Как часто персонажи просят вас о разговоре, и инструменты разговоров."
  votc_ce_initiative_opt_whisper_ledger:0 "Шепчущая книга"

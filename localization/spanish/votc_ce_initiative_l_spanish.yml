@@ -4,7 +4,7 @@ l_spanish:
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
 # Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
-# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# .2/.3, letter events .153/.160/.180, settings hub .100-.198, the decision,
 # and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
 # votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
@@ -33,7 +33,6 @@ l_spanish:
  votc_ce_initiative_opt_chance:0 "Probabilidad de conversación: [GetGlobalVariable('votc_ce_initiative_chance').GetValue]%"
  votc_ce_initiative_opt_letters_on:0 "Desactivar Cartas PNJ"
  votc_ce_initiative_opt_letters_off:0 "Activar Cartas PNJ"
- votc_ce_initiative_opt_letter_freq:0 "Intervalo de cartas: [GetGlobalVariable('votc_ce_initiative_letter_freq').GetValue] Días"
  votc_ce_initiative_opt_letter_test:0 "Enviar carta de prueba ahora"
  votc_ce_initiative_opt_test:0 "Solicitar conversación de prueba ahora"
  votc_ce_initiative_opt_close:0 "Cerrar"
@@ -49,11 +48,6 @@ l_spanish:
  votc_ce_initiative_opt_chance_l:0 "Baja (5%)"
  votc_ce_initiative_opt_chance_m:0 "Media (15%)"
  votc_ce_initiative_opt_chance_h:0 "Alta (30%)"
- votc_ce_initiative.170.title:0 "Frecuencia de cartas"
- votc_ce_initiative.170.desc:0 "Selecciona con qué frecuencia los PNJ te escriben cartas."
- votc_ce_initiative_opt_letter_freq_3m:0 "Trimestral (90 Días)"
- votc_ce_initiative_opt_letter_freq_6m:0 "Semestral (182 Días)"
- votc_ce_initiative_opt_letter_freq_1y:0 "Anual (365 Días)"
  votc_ce_initiative_settings_decision:0 "VOTC-CE: Ajustes"
  votc_ce_initiative_settings_decision_desc:0 "Configura con qué frecuencia los personajes se acercan a ti, inician conversaciones o te escriben cartas."
  votc_ce_initiative_settings_decision_tooltip:0 "Abrir la ventana de ajustes de VOTC-CE"
@@ -68,13 +62,17 @@ l_spanish:
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: Ajustes"
 
-# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+# VOTC-194 17/18: merged Letters page (namespace votc_ce_initiative)
  votc_ce_initiative.180.title:0 "Cartas"
- votc_ce_initiative.180.desc:0 "Todos los ajustes de cartas: el interruptor principal, la frecuencia de las cartas y las herramientas de cartas."
- votc_ce_initiative_opt_incoming_low:0 "Baja (25%)"
- votc_ce_initiative_opt_incoming_normal:0 "Normal (50%)"
- votc_ce_initiative_opt_incoming_high:0 "Alta (80%)"
- votc_ce_initiative_opt_incoming_max:0 "Máxima (100%)"
+ votc_ce_initiative.180.desc:0 "Herramientas de cartas: borrar cartas entrantes pendientes, abrir la ventana de ajustes detallados y liberar hilos de cartas atascados."
+ votc_ce_initiative_opt_letters_freq_low:0 "Baja"
+ votc_ce_initiative_opt_letters_freq_medium:0 "Media"
+ votc_ce_initiative_opt_letters_freq_high:0 "Alta"
+ votc_ce_initiative_opt_letters_freq_max:0 "Máxima"
+ votc_ce_initiative_opt_letters_freq_low_effect_desc:0 "Cartas de PNJ aproximadamente una vez al año; cartas entrantes raras (25% de probabilidad por trimestre, como máximo una cada 360 días)."
+ votc_ce_initiative_opt_letters_freq_medium_effect_desc:0 "Cartas de PNJ aproximadamente dos veces al año; cartas entrantes ocasionales (50% por trimestre, como máximo una cada 180 días)."
+ votc_ce_initiative_opt_letters_freq_high_effect_desc:0 "Cartas de PNJ aproximadamente cada tres meses; cartas entrantes frecuentes (80% por trimestre, como máximo una cada 90 días)."
+ votc_ce_initiative_opt_letters_freq_max_effect_desc:0 "Cartas de PNJ aproximadamente cada 45 días; cartas entrantes tan a menudo como se permita (100% por trimestre, sin pausa). Ambos canales comparten el presupuesto trimestral de cartas."
 
 # VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
  votc_ce_initiative_opt_ai_freq:0 "Conversaciones de IA"
@@ -87,7 +85,7 @@ l_spanish:
  votc_ce_initiative_opt_conversations:0 "Conversaciones"
  votc_ce_initiative_opt_conversations_tooltip:0 "Intervalo y probabilidad de conversacion, conversaciones de IA, historial de conversaciones y una conversacion de prueba."
  votc_ce_initiative_opt_letters:0 "Cartas"
- votc_ce_initiative_opt_letters_tooltip:0 "Cartas PNJ activadas/desactivadas, intervalo de cartas, carta de prueba, cartas entrantes y liberacion de hilos de cartas."
+ votc_ce_initiative_opt_letters_tooltip:0 "Herramientas de cartas: borrar cartas entrantes pendientes, abrir la ventana de cartas entrantes (interruptor principal, frecuencia unificada, carta de prueba) y liberar hilos de cartas atascados."
  votc_ce_initiative.205.title:0 "Conversaciones"
  votc_ce_initiative.205.desc:0 "Con que frecuencia los personajes piden hablar contigo, y herramientas de conversacion."
  votc_ce_initiative_opt_whisper_ledger:0 "Registro de susurros"

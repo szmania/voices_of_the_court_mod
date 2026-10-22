@@ -4,7 +4,7 @@ l_simp_chinese:
 #--------------------------------------------------------------------------
 # NAMESPACE: votc_ce_initiative (votc_ce_initiative_l_*.yml)
 # Keys here serve the NPC INITIATIVE system (VOTC-194): talk request events
-# .2/.3, letter events .153/.160/.180, settings hub .100-.184, the decision,
+# .2/.3, letter events .153/.160/.180, settings hub .100-.198, the decision,
 # and the letterId-derived contract keys (votc_huixin_titlenpcltr and the
 # votc_ce_initiative_log_letter_* payload keys).  DISJOINT from talk_l_*.yml,
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
@@ -33,7 +33,6 @@ l_simp_chinese:
  votc_ce_initiative_opt_chance:0 "对话概率：[GetGlobalVariable('votc_ce_initiative_chance').GetValue]%"
  votc_ce_initiative_opt_letters_on:0 "禁用NPC信件"
  votc_ce_initiative_opt_letters_off:0 "启用NPC信件"
- votc_ce_initiative_opt_letter_freq:0 "信件间隔：[GetGlobalVariable('votc_ce_initiative_letter_freq').GetValue]天"
  votc_ce_initiative_opt_letter_test:0 "立即发送测试信件"
  votc_ce_initiative_opt_test:0 "立即请求测试对话"
  votc_ce_initiative_opt_close:0 "关闭"
@@ -49,11 +48,6 @@ l_simp_chinese:
  votc_ce_initiative_opt_chance_l:0 "低（5%）"
  votc_ce_initiative_opt_chance_m:0 "中（15%）"
  votc_ce_initiative_opt_chance_h:0 "高（30%）"
- votc_ce_initiative.170.title:0 "信件频率"
- votc_ce_initiative.170.desc:0 "选择NPC向你写信的频率。"
- votc_ce_initiative_opt_letter_freq_3m:0 "每季度（90天）"
- votc_ce_initiative_opt_letter_freq_6m:0 "每半年（182天）"
- votc_ce_initiative_opt_letter_freq_1y:0 "每年（365天）"
  votc_ce_initiative_settings_decision:0 "VOTC-CE: 设置"
  votc_ce_initiative_settings_decision_desc:0 "配置角色主动接触您、发起对话或写信的频率。"
  votc_ce_initiative_settings_decision_tooltip:0 "打开VOTC-CE设置窗口"
@@ -68,13 +62,17 @@ l_simp_chinese:
  votc_ce_initiative_log_letter_plain:0 "VOTC:IN/;/letter_payload/;/plain"
  votc_ce_initiative_settings_decision_confirm:0 "VOTC-CE: 设置"
 
-# VOTC-194 13.3.1/13.5.1: incoming-letters hub page (namespace votc_ce_initiative)
+# VOTC-194 17/18: merged Letters page (namespace votc_ce_initiative)
  votc_ce_initiative.180.title:0 "信件"
- votc_ce_initiative.180.desc:0 "所有信件设置：总开关、信件到达频率以及信件工具。"
- votc_ce_initiative_opt_incoming_low:0 "低(25%)"
- votc_ce_initiative_opt_incoming_normal:0 "标准(50%)"
- votc_ce_initiative_opt_incoming_high:0 "高(80%)"
- votc_ce_initiative_opt_incoming_max:0 "最高(100%)"
+ votc_ce_initiative.180.desc:0 "信件工具：清除待处理的来信、打开详细设置窗口并释放卡住的信件线程。"
+ votc_ce_initiative_opt_letters_freq_low:0 "低"
+ votc_ce_initiative_opt_letters_freq_medium:0 "中"
+ votc_ce_initiative_opt_letters_freq_high:0 "高"
+ votc_ce_initiative_opt_letters_freq_max:0 "最高"
+ votc_ce_initiative_opt_letters_freq_low_effect_desc:0 "NPC信件约每年一次；来信较少（每季度25%概率，最多每360天一封）。"
+ votc_ce_initiative_opt_letters_freq_medium_effect_desc:0 "NPC信件约每年两次；来信偶尔（每季度50%，最多每180天一封）。"
+ votc_ce_initiative_opt_letters_freq_high_effect_desc:0 "NPC信件约每三个月一次；来信频繁（每季度80%，最多每90天一封）。"
+ votc_ce_initiative_opt_letters_freq_max_effect_desc:0 "NPC信件约每45天一次；来信尽可能频繁（每季度100%，无间隔）。两个渠道共享季度信件预算。"
 
 # VOTC-194 14.2/14.3/14.4: consolidated settings menu (one decision, one hub)
  votc_ce_initiative_opt_ai_freq:0 "AI 对话"
@@ -87,7 +85,7 @@ l_simp_chinese:
  votc_ce_initiative_opt_conversations:0 "对话"
  votc_ce_initiative_opt_conversations_tooltip:0 "对话间隔、对话概率、AI对话、对话历史记录以及测试对话。"
  votc_ce_initiative_opt_letters:0 "信件"
- votc_ce_initiative_opt_letters_tooltip:0 "NPC信件开关、信件间隔、测试信件、来信以及释放信件线程。"
+ votc_ce_initiative_opt_letters_tooltip:0 "信件工具：清除待处理的来信、打开详细的来信窗口（总开关、统一频率、测试信件）并释放卡住的信件线程。"
  votc_ce_initiative.205.title:0 "对话"
  votc_ce_initiative.205.desc:0 "角色请求与你交谈的频率，以及对话工具。"
  votc_ce_initiative_opt_whisper_ledger:0 "耳语录"
