@@ -20,6 +20,8 @@ votc_incoming_letters_disable_sgui = {
 			name = votc_incoming_letters_opt_out
 			value = 1
 		}
+	}
+}
 
 votc_incoming_letters_frequency_off_sgui = {
 	scope = character
