@@ -24,8 +24,6 @@ votc_ce_initiative_settings_decision = {
 		is_ai = no
 	}
 
-	cooldown = { days = 1 }
-
 	effect = {
 		# Make sure the settings exist before the window reads them.
 		if = {
