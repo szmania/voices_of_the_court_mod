@@ -1,21 +1,40 @@
 ﻿# VOTC NPC-initiated letters: direct controls used by the custom HUD window.
 # The GUI root is always the local player character.
 
-votc_incoming_letters_enable_sgui = {
+
+# VOTC-194 §19: the master letter toggle + unified frequency presets + test
+# letter moved out of the retired events .140/.195-.198 into the Incoming
+# Letters window (gui/custom_gui/votc_incoming_letters_window.gui).
+#
+# §11 state-named gating contract (carried over from the events): the loc keys
+# name the CURRENT state (opt_letters_on = letters currently ON), while the
+# button label is the AVAILABLE ACTION.  So the GUI visible conditions are
+# inverted vs the key names - the "Disable" button (key opt_letters_on) is
+# visible when the letters are NOT disabled, and the "Enable" button (key
+# opt_letters_off) is visible when they are.  Do NOT swap the gating.
+
+# Master toggle - enable branch (mirrors the retired .140 enable branch).
+votc_incoming_letters_master_enable_sgui = {
 	scope = character
 	effect = {
+		remove_global_variable = votc_ce_initiative_no_letters
 		# Default-on policy: shared with the game-start hook and the enable
-		# decision so all three paths set identical defaults.
+		# scripted gui so all three paths set identical defaults.
 		votc_incoming_letters_apply_default_settings_effect = yes
 	}
 }
 
-votc_incoming_letters_disable_sgui = {
+# Master toggle - disable branch (mirrors the retired .140 disable branch).
+votc_incoming_letters_master_disable_sgui = {
 	scope = character
 	effect = {
+		set_global_variable = {
+			name = votc_ce_initiative_no_letters
+			value = yes
+		}
 		remove_variable = votc_incoming_letters_enabled
 		# Opt-out marker: an explicit "off" must never be silently reverted by
-		# the game-start default-on hook.
+		# the game-start default-on hook (mirrors the old disable decision).
 		set_variable = {
 			name = votc_incoming_letters_opt_out
 			value = 1
@@ -23,19 +42,20 @@ votc_incoming_letters_disable_sgui = {
 	}
 }
 
-votc_incoming_letters_frequency_off_sgui = {
+# VOTC-194 §18/§19: unified letter-frequency presets.  One preset drives BOTH
+# letter channels: the NPC-letter global (votc_ce_initiative_letter_freq, read
+# by the .5 heartbeat re-arm chain) and the incoming-letter PLAYER variable
+# (votc_incoming_letters_frequency - every consumer reads it on the player
+# scope, so the old global writes were dead knobs).  Presets write ONLY these
+# two storages: the master toggle and the votc_incoming_letters_opt_out marker
+# are untouched, so an explicit "off" survives a preset click.
+votc_incoming_letters_unified_low_sgui = {
 	scope = character
 	effect = {
-		set_variable = {
-			name = votc_incoming_letters_frequency
-			value = 5
+		set_global_variable = {
+			name = votc_ce_initiative_letter_freq
+			value = 365
 		}
-	}
-}
-
-votc_incoming_letters_frequency_low_sgui = {
-	scope = character
-	effect = {
 		set_variable = {
 			name = votc_incoming_letters_frequency
 			value = 1
@@ -43,9 +63,13 @@ votc_incoming_letters_frequency_low_sgui = {
 	}
 }
 
-votc_incoming_letters_frequency_normal_sgui = {
+votc_incoming_letters_unified_medium_sgui = {
 	scope = character
 	effect = {
+		set_global_variable = {
+			name = votc_ce_initiative_letter_freq
+			value = 182
+		}
 		set_variable = {
 			name = votc_incoming_letters_frequency
 			value = 2
@@ -53,9 +77,13 @@ votc_incoming_letters_frequency_normal_sgui = {
 	}
 }
 
-votc_incoming_letters_frequency_high_sgui = {
+votc_incoming_letters_unified_high_sgui = {
 	scope = character
 	effect = {
+		set_global_variable = {
+			name = votc_ce_initiative_letter_freq
+			value = 90
+		}
 		set_variable = {
 			name = votc_incoming_letters_frequency
 			value = 3
@@ -63,16 +91,25 @@ votc_incoming_letters_frequency_high_sgui = {
 	}
 }
 
-votc_incoming_letters_frequency_maximum_sgui = {
+votc_incoming_letters_unified_maximum_sgui = {
 	scope = character
 	effect = {
+		set_global_variable = {
+			name = votc_ce_initiative_letter_freq
+			value = 45
+		}
 		set_variable = {
 			name = votc_incoming_letters_frequency
 			value = 4
 		}
-		# Maximum frequency deliberately has no global cooldown, including one
-		# created before this setting was selected.
-		remove_variable ?= votc_incoming_letters_global_cooldown
+	}
+}
+
+# Send one letter right now (the retired .174 trigger, kept as-is).
+votc_incoming_letters_test_letter_sgui = {
+	scope = character
+	effect = {
+		trigger_event = votc_ce_initiative.174
 	}
 }
 

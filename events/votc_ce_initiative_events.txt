@@ -16,16 +16,23 @@
 #   .110   interval page      .111 / .112 / .113 / .114
 #   .120   probability page   .121 / .122 / .123
 #   .130   test now (talk)
-#   .140   hidden  combined master letters toggle (BOTH letter systems)
 #   .174   write one right now
-#   .180   Letters page (master toggle + unified frequency presets + test + incoming clear/details + release)
+#   .180   letter tools page (clear/details/release; toggle+frequency+test live in votc_incoming_letters_window.gui)
 #   .186   hidden  clear every pending incoming-letter slot (VOTC-194 14.3.2)
 #   .190   AI-conversation presets page (VOTC-194 14.2.1)
 #   .191-.194 hidden  AI-conversation preset setters (VOTC-194 14.2.2)
-#   .195-.198 hidden  unified letter-frequency preset setters (VOTC-194 §18)
 #   .200-.202 hidden  release letters / release battle reports / conversation history (user request)
 #   .205   conversations sub-page (user request)
 #   .210   whisper-ledger sub-page (user request)
+#
+#   VOTC-194 §19: the combined master letters toggle, the unified letter
+#   frequency presets and Send Test Letter Now moved OUT of the events into
+#   gui/custom_gui/votc_incoming_letters_window.gui (the Incoming Letters
+#   dialog) - one toggle, one interval, one home.  The old .140 / .195-.198
+#   events were deleted; their logic now lives in the
+#   votc_incoming_letters_master_* / votc_incoming_letters_unified_* /
+#   votc_incoming_letters_test_letter sguis (common/scripted_guis/
+#   votc_incoming_letters.txt).  .180 remains as the letter-tools page.
 #==========================================================================
 
 namespace = votc_ce_initiative
@@ -781,42 +788,6 @@ votc_ce_initiative.130 = {
 	}
 }
 
-#--------------------------------------------------------------------------
-#  .140  Turn the letters on / off
-#--------------------------------------------------------------------------
-votc_ce_initiative.140 = {
-	type = character_event
-	hidden = yes
-	orphan = yes
-
-	immediate = {
-		# VOTC-194 §17: .140 is now the COMBINED master toggle for BOTH letter
-		# systems - NPC-Initiative letters (global votc_ce_initiative_no_letters)
-		# and incoming situational letters (char var votc_incoming_letters_enabled).
-		# One click flips both, so the two letter kinds can never disagree.
-		if = {
-			limit = { has_global_variable = votc_ce_initiative_no_letters }
-			remove_global_variable = votc_ce_initiative_no_letters
-			# Default-on policy: shared with the game-start hook and the enable
-			# scripted gui so all three paths set identical defaults.
-			votc_incoming_letters_apply_default_settings_effect = yes
-		}
-		else = {
-			set_global_variable = {
-				name = votc_ce_initiative_no_letters
-				value = yes
-			}
-			remove_variable = votc_incoming_letters_enabled
-			# Opt-out marker: an explicit "off" must never be silently reverted by
-			# the game-start default-on hook (mirrors the old disable decision).
-			set_variable = {
-				name = votc_incoming_letters_opt_out
-				value = 1
-			}
-		}
-		trigger_event = votc_ce_initiative.180
-	}
-}
 
 #--------------------------------------------------------------------------
 #  .160  The outbound token for an NPC letter.  An invisible event whose only
@@ -831,76 +802,6 @@ votc_ce_initiative.160 = {
 	title = votc_placeholder
 	window = votc_ce_initiative_token_event
 	desc = votc_ce_initiative_token_letter
-}
-
-#--------------------------------------------------------------------------
-#  .170  Letter interval page   (90 = three months, 182 = half a year, 365 = a year)
-#--------------------------------------------------------------------------
-votc_ce_initiative.170 = {
-	type = character_event
-	theme = diplomacy_family_focus
-	title = votc_ce_initiative.170.title
-	desc = votc_ce_initiative.170.desc
-	window = character_event
-
-	option = {
-		name = votc_ce_initiative_opt_letter_freq_3m
-		trigger_event = votc_ce_initiative.171
-	}
-	option = {
-		name = votc_ce_initiative_opt_letter_freq_6m
-		trigger_event = votc_ce_initiative.172
-	}
-	option = {
-		name = votc_ce_initiative_opt_letter_freq_1y
-		trigger_event = votc_ce_initiative.173
-	}
-	option = {
-		name = votc_ce_initiative_opt_back
-		trigger_event = votc_ce_initiative.180
-	}
-	option = {
-		name = votc_ce_initiative_opt_close
-	}
-}
-
-votc_ce_initiative.171 = {
-	type = character_event
-	hidden = yes
-	orphan = yes
-	immediate = {
-		set_global_variable = {
-			name = votc_ce_initiative_letter_freq
-			value = 90
-		}
-		trigger_event = votc_ce_initiative.170
-	}
-}
-
-votc_ce_initiative.172 = {
-	type = character_event
-	hidden = yes
-	orphan = yes
-	immediate = {
-		set_global_variable = {
-			name = votc_ce_initiative_letter_freq
-			value = 182
-		}
-		trigger_event = votc_ce_initiative.170
-	}
-}
-
-votc_ce_initiative.173 = {
-	type = character_event
-	hidden = yes
-	orphan = yes
-	immediate = {
-		set_global_variable = {
-			name = votc_ce_initiative_letter_freq
-			value = 365
-		}
-		trigger_event = votc_ce_initiative.170
-	}
 }
 
 #--------------------------------------------------------------------------
@@ -925,12 +826,11 @@ votc_ce_initiative.174 = {
 }
 
 #--------------------------------------------------------------------------
-#  .180  Letters page (VOTC-194 §17: merged).  The single home for every
-#       letter setting: the combined master on/off toggle (.140, both letter
-#       systems), the NPC letter interval, a test letter, the incoming-letter
-#       frequency (1 = 25%, 2 = 50% default, 3 = 80%, 4 = 100% on
-#       votc_incoming_letters_frequency), clear + per-topic details, and
-#       releasing letter threads.  Supersedes the old .206 letters sub-page.
+#  .180  Letter tools page (VOTC-194 §19).  Maintenance only: clear pending
+#       incoming letters, open the detailed per-topic settings window, and
+#       release stuck letter threads.  The master toggle, the unified
+#       frequency presets and the test-letter button moved into
+#       gui/custom_gui/votc_incoming_letters_window.gui (§19).
 #--------------------------------------------------------------------------
 votc_ce_initiative.180 = {
 	type = character_event
@@ -940,56 +840,22 @@ votc_ce_initiative.180 = {
 	window = character_event
 
 	immediate = {
-		# Keep the incoming-letter system's own default if never configured.
+		# VOTC-194 §18: seed the incoming-letter frequency as a PLAYER VARIABLE
+		# (every consumer reads var:votc_incoming_letters_frequency on the player
+		# scope - the old global write here was a dead knob).  An explicit
+		# opt-out marker is honored: never re-enable behind the player's back.
 		if = {
-			limit = { NOT = { exists = global_var:votc_incoming_letters_frequency } }
-			set_global_variable = {
+			limit = {
+				NOT = { has_variable = votc_incoming_letters_frequency }
+				NOT = { has_variable = votc_incoming_letters_opt_out }
+			}
+			set_variable = {
 				name = votc_incoming_letters_frequency
 				value = 2
 			}
 		}
 	}
 
-	#  Letters toggle keys are STATE-named: opt_letters_on means letters are
-	#  currently ON, opt_letters_off means currently OFF. Loc text is the
-	#  available ACTION in that state, so trigger gating is inverted vs the
-	#  key name: opt_letters_on gates on NOT has_global_variable
-	#  votc_ce_initiative_no_letters, opt_letters_off gates on it. Both fire
-	#  .140 which toggles the flag. Do NOT swap the gating (plan section 11).
-	option = {
-		name = votc_ce_initiative_opt_letters_on
-		trigger = { NOT = { has_global_variable = votc_ce_initiative_no_letters } }
-		trigger_event = votc_ce_initiative.140
-	}
-	option = {
-		name = votc_ce_initiative_opt_letters_off
-		trigger = { has_global_variable = votc_ce_initiative_no_letters }
-		trigger_event = votc_ce_initiative.140
-	}
-	option = {
-		name = votc_ce_initiative_opt_letter_freq
-		trigger_event = votc_ce_initiative.170
-	}
-	option = {
-		name = votc_ce_initiative_opt_letter_test
-		trigger_event = votc_ce_initiative.174
-	}
-	option = {
-		name = votc_ce_initiative_opt_incoming_low
-		trigger_event = votc_ce_initiative.181
-	}
-	option = {
-		name = votc_ce_initiative_opt_incoming_normal
-		trigger_event = votc_ce_initiative.182
-	}
-	option = {
-		name = votc_ce_initiative_opt_incoming_high
-		trigger_event = votc_ce_initiative.183
-	}
-	option = {
-		name = votc_ce_initiative_opt_incoming_max
-		trigger_event = votc_ce_initiative.184
-	}
 	# VOTC-194 14.3.2: clear every pending incoming-letter slot.
 	option = {
 		name = votc_ce_initiative_opt_incoming_clear
@@ -1014,59 +880,6 @@ votc_ce_initiative.180 = {
 		name = votc_ce_initiative_opt_close
 	}
 }
-
-votc_ce_initiative.181 = {
-	type = character_event
-	hidden = yes
-	orphan = yes
-	immediate = {
-		set_global_variable = {
-			name = votc_incoming_letters_frequency
-			value = 1
-		}
-		trigger_event = votc_ce_initiative.180
-	}
-}
-
-votc_ce_initiative.182 = {
-	type = character_event
-	hidden = yes
-	orphan = yes
-	immediate = {
-		set_global_variable = {
-			name = votc_incoming_letters_frequency
-				value = 2
-		}
-		trigger_event = votc_ce_initiative.180
-	}
-}
-
-votc_ce_initiative.183 = {
-	type = character_event
-	hidden = yes
-	orphan = yes
-	immediate = {
-		set_global_variable = {
-			name = votc_incoming_letters_frequency
-			value = 3
-		}
-		trigger_event = votc_ce_initiative.180
-	}
-}
-
-votc_ce_initiative.184 = {
-	type = character_event
-	hidden = yes
-	orphan = yes
-	immediate = {
-		set_global_variable = {
-			name = votc_incoming_letters_frequency
-			value = 4
-		}
-		trigger_event = votc_ce_initiative.180
-	}
-}
-
 
 #--------------------------------------------------------------------------
 #  .186  Clear every pending incoming-letter slot (VOTC-194 14.3.2).
@@ -1216,6 +1029,7 @@ votc_ce_initiative.194 = {
 		trigger_event = votc_ce_initiative.190
 	}
 }
+
 
 #--------------------------------------------------------------------------
 #  .205  Conversations sub-page (user request). Talk settings moved out of

@@ -65,34 +65,17 @@
 			multiline = yes
 		}
 
-		text_single = {
-			visible = "[GreaterThan_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_enabled').GetValue, '(CFixedPoint)0' )]"
-			parentanchor = top|left
-			widgetanchor = top|left
-			position = { 0 122 }
-			size = { 320 28 }
-			text = votc_incoming_letters_status_enabled
-			align = center
-		}
-		text_single = {
-			visible = "[Not( GreaterThan_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_enabled').GetValue, '(CFixedPoint)0' ) )]"
-			parentanchor = top|left
-			widgetanchor = top|left
-			position = { 0 122 }
-			size = { 320 28 }
-			text = votc_incoming_letters_status_disabled
-			align = center
-		}
-
-		# The enable/disable button pair is laid out by an hbox (invisible
-		# variants collapse) instead of hand-computed hcenter offsets.
+		# VOTC-194 §19: the master letter toggle lives here now (moved from the
+		# retired .140 event).  Keys are STATE-named (opt_letters_on = letters
+		# currently ON), the label is the AVAILABLE ACTION, so the visible
+		# conditions are inverted vs the key names.  Do NOT swap the gating.
 		# The hbox must sit inside a widget: a bare container rejects hbox/vbox
 		# children (stack overflow crash, pdx_gui_container).
 		widget = {
 			size = { 660 34 }
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 150 }
+			position = { 0 122 }
 
 			hbox = {
 				parentanchor = hcenter
@@ -100,34 +83,28 @@
 				spacing = 20
 
 				button_standard = {
-					visible = "[Not( GreaterThan_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_enabled').GetValue, '(CFixedPoint)0' ) )]"
+					visible = "[Not(GetGlobalVariable('votc_ce_initiative_no_letters').IsSet)]"
 					size = { 210 34 }
-					text = votc_incoming_letters_enable_option
-					onclick = "[GetScriptedGui('votc_incoming_letters_enable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					text = votc_ce_initiative_opt_letters_on
+					tooltip = votc_ce_initiative_opt_letters_on
+					onclick = "[GetScriptedGui('votc_incoming_letters_master_disable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 				}
 				button_standard = {
-					visible = "[GreaterThan_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_enabled').GetValue, '(CFixedPoint)0' )]"
+					visible = "[GetGlobalVariable('votc_ce_initiative_no_letters').IsSet]"
 					size = { 210 34 }
-					text = votc_incoming_letters_disable_option
-					onclick = "[GetScriptedGui('votc_incoming_letters_disable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					text = votc_ce_initiative_opt_letters_off
+					tooltip = votc_ce_initiative_opt_letters_off
+					onclick = "[GetScriptedGui('votc_incoming_letters_master_enable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 				}
 			}
 		}
 
-		text_single = {
-			parentanchor = top|left
-			widgetanchor = top|left
-			position = { 0 194 }
-			size = { 660 30 }
-			text = votc_incoming_letters_frequency_heading
-			using = Font_Size_Medium
-			align = center
-		}
-
+		# VOTC-194 §18/§19: unified letter-frequency presets.  One row drives
+		# BOTH letter channels (NPC-letter cadence + incoming-letter chance).
 		widget = {
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 252 }
+			position = { 0 160 }
 			size = { 660 24 }
 			flowcontainer = {
 				size = { 660 24 }
@@ -137,12 +114,13 @@
 					size = { 24 24 }
 					parentanchor = vcenter
 					frame = "[BoolTo1And2( EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_frequency').GetValue, '(CFixedPoint)1' ) )]"
-					onclick = "[GetScriptedGui('votc_incoming_letters_frequency_low_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					onclick = "[GetScriptedGui('votc_incoming_letters_unified_low_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 				}
 				text_single = {
 					size = { 628 24 }
 					parentanchor = vcenter
-					text = votc_incoming_letters_frequency_low_desc
+					text = votc_ce_initiative_opt_letters_freq_low
+					tooltip = votc_ce_initiative_opt_letters_freq_low_effect_desc
 					align = nobaseline
 					multiline = yes
 				}
@@ -151,7 +129,7 @@
 		widget = {
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 276 }
+			position = { 0 184 }
 			size = { 660 24 }
 			flowcontainer = {
 				size = { 660 24 }
@@ -160,13 +138,14 @@
 				button_radio = {
 					size = { 24 24 }
 					parentanchor = vcenter
-					frame = "[BoolTo1And2( Or( EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_frequency').GetValue, '(CFixedPoint)0' ), EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_frequency').GetValue, '(CFixedPoint)2' ) ) )]"
-					onclick = "[GetScriptedGui('votc_incoming_letters_frequency_normal_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					frame = "[BoolTo1And2( EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_frequency').GetValue, '(CFixedPoint)2' ) )]"
+					onclick = "[GetScriptedGui('votc_incoming_letters_unified_medium_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 				}
 				text_single = {
 					size = { 628 24 }
 					parentanchor = vcenter
-					text = votc_incoming_letters_frequency_normal_desc
+					text = votc_ce_initiative_opt_letters_freq_medium
+					tooltip = votc_ce_initiative_opt_letters_freq_medium_effect_desc
 					align = nobaseline
 					multiline = yes
 				}
@@ -175,7 +154,7 @@
 		widget = {
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 300 }
+			position = { 0 208 }
 			size = { 660 24 }
 			flowcontainer = {
 				size = { 660 24 }
@@ -185,12 +164,13 @@
 					size = { 24 24 }
 					parentanchor = vcenter
 					frame = "[BoolTo1And2( EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_frequency').GetValue, '(CFixedPoint)3' ) )]"
-					onclick = "[GetScriptedGui('votc_incoming_letters_frequency_high_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					onclick = "[GetScriptedGui('votc_incoming_letters_unified_high_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 				}
 				text_single = {
 					size = { 628 24 }
 					parentanchor = vcenter
-					text = votc_incoming_letters_frequency_high_desc
+					text = votc_ce_initiative_opt_letters_freq_high
+					tooltip = votc_ce_initiative_opt_letters_freq_high_effect_desc
 					align = nobaseline
 					multiline = yes
 				}
@@ -199,49 +179,37 @@
 		widget = {
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 324 }
+			position = { 0 232 }
 			size = { 660 24 }
 			flowcontainer = {
 				size = { 660 24 }
-				direction = horizontal
+			direction = horizontal
 				spacing = 8
 				button_radio = {
 					size = { 24 24 }
 					parentanchor = vcenter
 					frame = "[BoolTo1And2( EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_frequency').GetValue, '(CFixedPoint)4' ) )]"
-					onclick = "[GetScriptedGui('votc_incoming_letters_frequency_maximum_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					onclick = "[GetScriptedGui('votc_incoming_letters_unified_maximum_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 				}
 				text_single = {
 					size = { 628 24 }
 					parentanchor = vcenter
-					text = votc_incoming_letters_frequency_maximum_desc
+					text = votc_ce_initiative_opt_letters_freq_max
+					tooltip = votc_ce_initiative_opt_letters_freq_max_effect_desc
 					align = nobaseline
 					multiline = yes
 				}
 			}
 		}
-		widget = {
-			parentanchor = top|left
-			widgetanchor = top|left
-			position = { 0 228 }
-			size = { 660 24 }
-			flowcontainer = {
-				size = { 660 24 }
-				direction = horizontal
-				spacing = 8
-				button_radio = {
-					size = { 24 24 }
-					parentanchor = vcenter
-					frame = "[BoolTo1And2( EqualTo_CFixedPoint( GetPlayer.MakeScope.Var('votc_incoming_letters_frequency').GetValue, '(CFixedPoint)5' ) )]"
-					onclick = "[GetScriptedGui('votc_incoming_letters_frequency_off_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				}
-				text_single = {
-					size = { 628 24 }
-					parentanchor = vcenter
-					text = votc_incoming_letters_frequency_off_desc
-					align = nobaseline
-				}
-			}
+
+		# VOTC-194 §19: Send Test Letter Now (moved from the retired .180 option).
+		button_standard = {
+			parentanchor = top|hcenter
+			widgetanchor = top|hcenter
+			position = { 0 262 }
+			size = { 210 34 }
+			text = votc_ce_initiative_opt_letter_test
+			onclick = "[GetScriptedGui('votc_incoming_letters_test_letter_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 		}
 
 		text_single = {
