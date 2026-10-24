@@ -13,6 +13,14 @@
 # visible when the letters are NOT disabled, and the "Enable" button (key
 # opt_letters_off) is visible when they are.  Do NOT swap the gating.
 
+# PERSISTENT-SETTINGS contract: the variables written by these sguis
+# (votc_ce_initiative_no_letters, votc_incoming_letters_enabled,
+# votc_incoming_letters_opt_out, votc_incoming_letters_frequency and the
+# per-topic *_frequency variables) are user settings serialized into the
+# save game.  NEVER add a `days` argument to any of the
+# set_global_variable / set_variable writes below - a timed variable would
+# silently expire and reset the player's choices.
+
 # Master toggle - enable branch (mirrors the retired .140 enable branch).
 votc_incoming_letters_master_enable_sgui = {
 	scope = character

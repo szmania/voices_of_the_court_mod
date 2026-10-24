@@ -841,18 +841,44 @@ votc_ce_initiative.180 = {
 	window = character_event
 
 	immediate = {
-		# VOTC-194 §18: seed the incoming-letter frequency as a PLAYER VARIABLE
-		# (every consumer reads var:votc_incoming_letters_frequency on the player
-		# scope - the old global write here was a dead knob).  An explicit
+		# VOTC-194 §18/§21: seed the letter frequencies as PLAYER VARIABLES
+		# (every consumer reads var:votc_incoming_letters_*_frequency on the
+		# player scope - the old global write here was a dead knob).  Each
+		# frequency is only set when absent, so an existing player choice is
+		# never overwritten (mirrors the only-when-unset shape of
+		# votc_incoming_letters_apply_default_settings_effect).  An explicit
 		# opt-out marker is honored: never re-enable behind the player's back.
+		# votc_incoming_letters_enabled is NOT seeded here - the enable path
+		# owns it.
 		if = {
-			limit = {
-				NOT = { has_variable = votc_incoming_letters_frequency }
-				NOT = { has_variable = votc_incoming_letters_opt_out }
+			limit = { NOT = { has_variable = votc_incoming_letters_opt_out } }
+			if = {
+				limit = { NOT = { has_variable = votc_incoming_letters_frequency } }
+				set_variable = {
+					name = votc_incoming_letters_frequency
+					value = 2
+				}
 			}
-			set_variable = {
-				name = votc_incoming_letters_frequency
-				value = 2
+			if = {
+				limit = { NOT = { has_variable = votc_incoming_letters_event_frequency } }
+				set_variable = {
+					name = votc_incoming_letters_event_frequency
+					value = 2
+				}
+			}
+			if = {
+				limit = { NOT = { has_variable = votc_incoming_letters_family_frequency } }
+				set_variable = {
+					name = votc_incoming_letters_family_frequency
+					value = 2
+				}
+			}
+			if = {
+				limit = { NOT = { has_variable = votc_incoming_letters_poetry_frequency } }
+				set_variable = {
+					name = votc_incoming_letters_poetry_frequency
+					value = 2
+				}
 			}
 		}
 	}

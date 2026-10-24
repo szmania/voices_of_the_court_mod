@@ -1616,7 +1616,12 @@ votc_start_incoming_letter_effect = {
 									}
 								}
 								else_if = {
-									limit = { $TYPE$ = flag:scheme_exposed }
+									limit = {
+										$TYPE$ = flag:scheme_exposed
+										exists = global_var:votc_incoming_letter_fact_scheme_owner
+										exists = global_var:votc_incoming_letter_fact_scheme_target
+										exists = global_var:votc_incoming_letter_fact_scheme_target_title
+									}
 									debug_log = "VOTC:INCOMING_LETTER/;/context/;/incoming_letter_1/;/scheme_exposed/;/[GetCurrentDate.GetStringShort]/;/[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetID]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_1_delivery_id').GetValue|0]/;/sender_location=[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetCurrentLocation.GetNameNoTooltip]/;/scheme_owner=[GetGlobalVariable('votc_incoming_letter_fact_scheme_owner').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target_title=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target_title').Title.GetNameNoTooltip]/;/scheme_type=[GetPlayer.MakeScope.Var('votc_scheme_type').GetFlagName]"
 								}
 								else_if = {
@@ -1727,7 +1732,12 @@ votc_start_incoming_letter_effect = {
 									}
 								}
 								else_if = {
-									limit = { $TYPE$ = flag:scheme_exposed }
+									limit = {
+										$TYPE$ = flag:scheme_exposed
+										exists = global_var:votc_incoming_letter_fact_scheme_owner
+										exists = global_var:votc_incoming_letter_fact_scheme_target
+										exists = global_var:votc_incoming_letter_fact_scheme_target_title
+									}
 									debug_log = "VOTC:INCOMING_LETTER/;/context/;/incoming_letter_2/;/scheme_exposed/;/[GetCurrentDate.GetStringShort]/;/[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetID]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_2_delivery_id').GetValue|0]/;/sender_location=[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetCurrentLocation.GetNameNoTooltip]/;/scheme_owner=[GetGlobalVariable('votc_incoming_letter_fact_scheme_owner').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target_title=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target_title').Title.GetNameNoTooltip]/;/scheme_type=[GetPlayer.MakeScope.Var('votc_scheme_type').GetFlagName]"
 								}
 								else_if = {
@@ -1838,7 +1848,12 @@ votc_start_incoming_letter_effect = {
 									}
 								}
 								else_if = {
-									limit = { $TYPE$ = flag:scheme_exposed }
+									limit = {
+										$TYPE$ = flag:scheme_exposed
+										exists = global_var:votc_incoming_letter_fact_scheme_owner
+										exists = global_var:votc_incoming_letter_fact_scheme_target
+										exists = global_var:votc_incoming_letter_fact_scheme_target_title
+									}
 									debug_log = "VOTC:INCOMING_LETTER/;/context/;/incoming_letter_3/;/scheme_exposed/;/[GetCurrentDate.GetStringShort]/;/[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetID]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_3_delivery_id').GetValue|0]/;/sender_location=[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetCurrentLocation.GetNameNoTooltip]/;/scheme_owner=[GetGlobalVariable('votc_incoming_letter_fact_scheme_owner').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target_title=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target_title').Title.GetNameNoTooltip]/;/scheme_type=[GetPlayer.MakeScope.Var('votc_scheme_type').GetFlagName]"
 								}
 								else_if = {
@@ -1949,7 +1964,12 @@ votc_start_incoming_letter_effect = {
 									}
 								}
 								else_if = {
-									limit = { $TYPE$ = flag:scheme_exposed }
+									limit = {
+										$TYPE$ = flag:scheme_exposed
+										exists = global_var:votc_incoming_letter_fact_scheme_owner
+										exists = global_var:votc_incoming_letter_fact_scheme_target
+										exists = global_var:votc_incoming_letter_fact_scheme_target_title
+									}
 									debug_log = "VOTC:INCOMING_LETTER/;/context/;/incoming_letter_4/;/scheme_exposed/;/[GetCurrentDate.GetStringShort]/;/[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetID]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_4_delivery_id').GetValue|0]/;/sender_location=[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetCurrentLocation.GetNameNoTooltip]/;/scheme_owner=[GetGlobalVariable('votc_incoming_letter_fact_scheme_owner').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target_title=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target_title').Title.GetNameNoTooltip]/;/scheme_type=[GetPlayer.MakeScope.Var('votc_scheme_type').GetFlagName]"
 								}
 								else_if = {
@@ -2060,7 +2080,12 @@ votc_start_incoming_letter_effect = {
 									}
 								}
 								else_if = {
-									limit = { $TYPE$ = flag:scheme_exposed }
+									limit = {
+										$TYPE$ = flag:scheme_exposed
+										exists = global_var:votc_incoming_letter_fact_scheme_owner
+										exists = global_var:votc_incoming_letter_fact_scheme_target
+										exists = global_var:votc_incoming_letter_fact_scheme_target_title
+									}
 									debug_log = "VOTC:INCOMING_LETTER/;/context/;/incoming_letter_5/;/scheme_exposed/;/[GetCurrentDate.GetStringShort]/;/[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetID]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_5_delivery_id').GetValue|0]/;/sender_location=[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetCurrentLocation.GetNameNoTooltip]/;/scheme_owner=[GetGlobalVariable('votc_incoming_letter_fact_scheme_owner').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target_title=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target_title').Title.GetNameNoTooltip]/;/scheme_type=[GetPlayer.MakeScope.Var('votc_scheme_type').GetFlagName]"
 								}
 								else_if = {
@@ -2171,7 +2196,12 @@ votc_start_incoming_letter_effect = {
 									}
 								}
 								else_if = {
-									limit = { $TYPE$ = flag:scheme_exposed }
+									limit = {
+										$TYPE$ = flag:scheme_exposed
+										exists = global_var:votc_incoming_letter_fact_scheme_owner
+										exists = global_var:votc_incoming_letter_fact_scheme_target
+										exists = global_var:votc_incoming_letter_fact_scheme_target_title
+									}
 									debug_log = "VOTC:INCOMING_LETTER/;/context/;/incoming_letter_6/;/scheme_exposed/;/[GetCurrentDate.GetStringShort]/;/[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetID]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_6_delivery_id').GetValue|0]/;/sender_location=[GetGlobalVariable('votc_incoming_letter_snapshot_sender').Char.GetCurrentLocation.GetNameNoTooltip]/;/scheme_owner=[GetGlobalVariable('votc_incoming_letter_fact_scheme_owner').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target').Char.GetFullNameNicknamedNoTooltipRegnal]/;/scheme_target_title=[GetGlobalVariable('votc_incoming_letter_fact_scheme_target_title').Title.GetNameNoTooltip]/;/scheme_type=[GetPlayer.MakeScope.Var('votc_scheme_type').GetFlagName]"
 								}
 								else_if = {
@@ -2516,6 +2546,11 @@ votc_start_incoming_letter_effect = {
 # defaults. Each frequency is only set when absent, so an existing player choice
 # is never overwritten. Shared by the game-start hook, the enable sgui and the
 # enable decision so all three paths stay identical.
+# PERSISTENT-SETTINGS contract: the variables written here (and by the
+# letter-settings sguis in common/scripted_guis/votc_incoming_letters.txt)
+# are user settings serialized into the save game.  NEVER add a `days`
+# argument to any of these set_variable / set_global_variable writes - a
+# timed variable would silently expire and reset the player's choices.
 votc_incoming_letters_apply_default_settings_effect = {
 	set_variable = {
 		name = votc_incoming_letters_enabled
