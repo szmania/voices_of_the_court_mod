@@ -762,6 +762,12 @@ votc_incoming_letter_event.0101 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# votc_incoming_letter_sender_1 on delivery, so Write back stays reachable.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_1 }
+			global_var:votc_incoming_letter_sender_1 = { save_scope_as = votc_incoming_reply_target }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0111
 			days = 1
@@ -774,18 +780,24 @@ votc_incoming_letter_event.0101 = {
 	option = {
 		name = votc_ce_initiative_letter_write_back
 		trigger = {
-			exists = global_var:votc_incoming_letter_sender_1
-			global_var:votc_incoming_letter_sender_1 = { is_alive = yes }
+			OR = {
+				exists = scope:votc_incoming_reply_target
+				exists = global_var:votc_incoming_letter_sender_1
+			}
 		}
+		# §24.2 optional deterministic reply-source marker (short-lived, self-clearing).
+		set_variable = { name = votc_incoming_reply_slot value = 1 days = 60 }
 		if = {
+			limit = { exists = scope:votc_incoming_reply_target }
+			scope:votc_incoming_reply_target = { save_scope_as = recipient }
+		}
+		else_if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_1 }
 			global_var:votc_incoming_letter_sender_1 = { save_scope_as = recipient }
-			scope:actor = { save_scope_as = sender_actor }
 		}
+		# §24.4.1: fire from INSIDE the option (top-level trigger_event is invalid and never fires).
+		trigger_event = message_event.360
 	}
-
-	# Open the write-message window with the sender preselected.
-	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_1"
 		container = "custom_widgets_container"
@@ -804,6 +816,12 @@ votc_incoming_letter_event.0102 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# votc_incoming_letter_sender_2 on delivery, so Write back stays reachable.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_2 }
+			global_var:votc_incoming_letter_sender_2 = { save_scope_as = votc_incoming_reply_target }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0112
 			days = 1
@@ -816,18 +834,24 @@ votc_incoming_letter_event.0102 = {
 	option = {
 		name = votc_ce_initiative_letter_write_back
 		trigger = {
-			exists = global_var:votc_incoming_letter_sender_2
-			global_var:votc_incoming_letter_sender_2 = { is_alive = yes }
+			OR = {
+				exists = scope:votc_incoming_reply_target
+				exists = global_var:votc_incoming_letter_sender_2
+			}
 		}
+		# §24.2 optional deterministic reply-source marker (short-lived, self-clearing).
+		set_variable = { name = votc_incoming_reply_slot value = 2 days = 60 }
 		if = {
+			limit = { exists = scope:votc_incoming_reply_target }
+			scope:votc_incoming_reply_target = { save_scope_as = recipient }
+		}
+		else_if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_2 }
 			global_var:votc_incoming_letter_sender_2 = { save_scope_as = recipient }
-			scope:actor = { save_scope_as = sender_actor }
 		}
+		# §24.4.1: fire from INSIDE the option (top-level trigger_event is invalid and never fires).
+		trigger_event = message_event.360
 	}
-
-	# Open the write-message window with the sender preselected.
-	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_2"
 		container = "custom_widgets_container"
@@ -846,6 +870,12 @@ votc_incoming_letter_event.0103 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# votc_incoming_letter_sender_3 on delivery, so Write back stays reachable.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_3 }
+			global_var:votc_incoming_letter_sender_3 = { save_scope_as = votc_incoming_reply_target }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0113
 			days = 1
@@ -858,18 +888,24 @@ votc_incoming_letter_event.0103 = {
 	option = {
 		name = votc_ce_initiative_letter_write_back
 		trigger = {
-			exists = global_var:votc_incoming_letter_sender_3
-			global_var:votc_incoming_letter_sender_3 = { is_alive = yes }
+			OR = {
+				exists = scope:votc_incoming_reply_target
+				exists = global_var:votc_incoming_letter_sender_3
+			}
 		}
+		# §24.2 optional deterministic reply-source marker (short-lived, self-clearing).
+		set_variable = { name = votc_incoming_reply_slot value = 3 days = 60 }
 		if = {
+			limit = { exists = scope:votc_incoming_reply_target }
+			scope:votc_incoming_reply_target = { save_scope_as = recipient }
+		}
+		else_if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_3 }
 			global_var:votc_incoming_letter_sender_3 = { save_scope_as = recipient }
-			scope:actor = { save_scope_as = sender_actor }
 		}
+		# §24.4.1: fire from INSIDE the option (top-level trigger_event is invalid and never fires).
+		trigger_event = message_event.360
 	}
-
-	# Open the write-message window with the sender preselected.
-	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_3"
 		container = "custom_widgets_container"
@@ -888,6 +924,12 @@ votc_incoming_letter_event.0104 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# votc_incoming_letter_sender_4 on delivery, so Write back stays reachable.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_4 }
+			global_var:votc_incoming_letter_sender_4 = { save_scope_as = votc_incoming_reply_target }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0114
 			days = 1
@@ -900,18 +942,24 @@ votc_incoming_letter_event.0104 = {
 	option = {
 		name = votc_ce_initiative_letter_write_back
 		trigger = {
-			exists = global_var:votc_incoming_letter_sender_4
-			global_var:votc_incoming_letter_sender_4 = { is_alive = yes }
+			OR = {
+				exists = scope:votc_incoming_reply_target
+				exists = global_var:votc_incoming_letter_sender_4
+			}
 		}
+		# §24.2 optional deterministic reply-source marker (short-lived, self-clearing).
+		set_variable = { name = votc_incoming_reply_slot value = 4 days = 60 }
 		if = {
+			limit = { exists = scope:votc_incoming_reply_target }
+			scope:votc_incoming_reply_target = { save_scope_as = recipient }
+		}
+		else_if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_4 }
 			global_var:votc_incoming_letter_sender_4 = { save_scope_as = recipient }
-			scope:actor = { save_scope_as = sender_actor }
 		}
+		# §24.4.1: fire from INSIDE the option (top-level trigger_event is invalid and never fires).
+		trigger_event = message_event.360
 	}
-
-	# Open the write-message window with the sender preselected.
-	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_4"
 		container = "custom_widgets_container"
@@ -930,6 +978,12 @@ votc_incoming_letter_event.0105 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# votc_incoming_letter_sender_5 on delivery, so Write back stays reachable.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_5 }
+			global_var:votc_incoming_letter_sender_5 = { save_scope_as = votc_incoming_reply_target }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0115
 			days = 1
@@ -942,18 +996,24 @@ votc_incoming_letter_event.0105 = {
 	option = {
 		name = votc_ce_initiative_letter_write_back
 		trigger = {
-			exists = global_var:votc_incoming_letter_sender_5
-			global_var:votc_incoming_letter_sender_5 = { is_alive = yes }
+			OR = {
+				exists = scope:votc_incoming_reply_target
+				exists = global_var:votc_incoming_letter_sender_5
+			}
 		}
+		# §24.2 optional deterministic reply-source marker (short-lived, self-clearing).
+		set_variable = { name = votc_incoming_reply_slot value = 5 days = 60 }
 		if = {
+			limit = { exists = scope:votc_incoming_reply_target }
+			scope:votc_incoming_reply_target = { save_scope_as = recipient }
+		}
+		else_if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_5 }
 			global_var:votc_incoming_letter_sender_5 = { save_scope_as = recipient }
-			scope:actor = { save_scope_as = sender_actor }
 		}
+		# §24.4.1: fire from INSIDE the option (top-level trigger_event is invalid and never fires).
+		trigger_event = message_event.360
 	}
-
-	# Open the write-message window with the sender preselected.
-	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_5"
 		container = "custom_widgets_container"
@@ -972,6 +1032,12 @@ votc_incoming_letter_event.0106 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# votc_incoming_letter_sender_6 on delivery, so Write back stays reachable.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_6 }
+			global_var:votc_incoming_letter_sender_6 = { save_scope_as = votc_incoming_reply_target }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0116
 			days = 1
@@ -984,18 +1050,24 @@ votc_incoming_letter_event.0106 = {
 	option = {
 		name = votc_ce_initiative_letter_write_back
 		trigger = {
-			exists = global_var:votc_incoming_letter_sender_6
-			global_var:votc_incoming_letter_sender_6 = { is_alive = yes }
+			OR = {
+				exists = scope:votc_incoming_reply_target
+				exists = global_var:votc_incoming_letter_sender_6
+			}
 		}
+		# §24.2 optional deterministic reply-source marker (short-lived, self-clearing).
+		set_variable = { name = votc_incoming_reply_slot value = 6 days = 60 }
 		if = {
+			limit = { exists = scope:votc_incoming_reply_target }
+			scope:votc_incoming_reply_target = { save_scope_as = recipient }
+		}
+		else_if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_6 }
 			global_var:votc_incoming_letter_sender_6 = { save_scope_as = recipient }
-			scope:actor = { save_scope_as = sender_actor }
 		}
+		# §24.4.1: fire from INSIDE the option (top-level trigger_event is invalid and never fires).
+		trigger_event = message_event.360
 	}
-
-	# Open the write-message window with the sender preselected.
-	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_6"
 		container = "custom_widgets_container"
@@ -1014,6 +1086,12 @@ votc_incoming_letter_event.0107 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# votc_incoming_letter_sender_7 on delivery, so Write back stays reachable.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_7 }
+			global_var:votc_incoming_letter_sender_7 = { save_scope_as = votc_incoming_reply_target }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0117
 			days = 1
@@ -1026,18 +1104,24 @@ votc_incoming_letter_event.0107 = {
 	option = {
 		name = votc_ce_initiative_letter_write_back
 		trigger = {
-			exists = global_var:votc_incoming_letter_sender_7
-			global_var:votc_incoming_letter_sender_7 = { is_alive = yes }
+			OR = {
+				exists = scope:votc_incoming_reply_target
+				exists = global_var:votc_incoming_letter_sender_7
+			}
 		}
+		# §24.2 optional deterministic reply-source marker (short-lived, self-clearing).
+		set_variable = { name = votc_incoming_reply_slot value = 7 days = 60 }
 		if = {
+			limit = { exists = scope:votc_incoming_reply_target }
+			scope:votc_incoming_reply_target = { save_scope_as = recipient }
+		}
+		else_if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_7 }
 			global_var:votc_incoming_letter_sender_7 = { save_scope_as = recipient }
-			scope:actor = { save_scope_as = sender_actor }
 		}
+		# §24.4.1: fire from INSIDE the option (top-level trigger_event is invalid and never fires).
+		trigger_event = message_event.360
 	}
-
-	# Open the write-message window with the sender preselected.
-	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_7"
 		container = "custom_widgets_container"
@@ -1056,6 +1140,12 @@ votc_incoming_letter_event.0108 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# votc_incoming_letter_sender_8 on delivery, so Write back stays reachable.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_sender_8 }
+			global_var:votc_incoming_letter_sender_8 = { save_scope_as = votc_incoming_reply_target }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0118
 			days = 1
@@ -1068,18 +1158,24 @@ votc_incoming_letter_event.0108 = {
 	option = {
 		name = votc_ce_initiative_letter_write_back
 		trigger = {
-			exists = global_var:votc_incoming_letter_sender_8
-			global_var:votc_incoming_letter_sender_8 = { is_alive = yes }
+			OR = {
+				exists = scope:votc_incoming_reply_target
+				exists = global_var:votc_incoming_letter_sender_8
+			}
 		}
+		# §24.2 optional deterministic reply-source marker (short-lived, self-clearing).
+		set_variable = { name = votc_incoming_reply_slot value = 8 days = 60 }
 		if = {
+			limit = { exists = scope:votc_incoming_reply_target }
+			scope:votc_incoming_reply_target = { save_scope_as = recipient }
+		}
+		else_if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_8 }
 			global_var:votc_incoming_letter_sender_8 = { save_scope_as = recipient }
-			scope:actor = { save_scope_as = sender_actor }
 		}
+		# §24.4.1: fire from INSIDE the option (top-level trigger_event is invalid and never fires).
+		trigger_event = message_event.360
 	}
-
-	# Open the write-message window with the sender preselected.
-	trigger_event = message_event.360
 	widget = {
 		gui = "event_window_widget_incoming_letter_8"
 		container = "custom_widgets_container"
