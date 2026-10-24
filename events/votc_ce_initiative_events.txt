@@ -362,9 +362,11 @@ votc_ce_initiative.153 = {
 	}
 
 	immediate = {
-		# Intentionally empty.  The window is rendered AFTER this immediate
-		# runs, and it reads both votc_ce_initiative_letter_char and the reply
-		# artifact - clearing either here would blank the letter.
+		# Intentionally empty apart from the breadcrumb.  The window is rendered
+		# AFTER this immediate runs, and it reads both votc_ce_initiative_letter_char
+		# and the reply artifact - clearing either here would blank the letter.
+		# §25.1.3: breadcrumb for the in-game body-rendering check.
+		debug_log = "VOTC_CE_LETTER: letter window opened (.153)"
 	}
 
 	# Write-back: open the existing write-message flow with the sender
@@ -375,19 +377,20 @@ votc_ce_initiative.153 = {
 			exists = global_var:votc_ce_initiative_letter_char
 			global_var:votc_ce_initiative_letter_char = { is_alive = yes }
 		}
+		# §25.1.1: queue the compose dialog FIRST, before any cleanup effects
+		# run - the after block already destroys the artifact and releases the
+		# guard once this event closes.  Scopes saved below are visible to the
+		# triggered event because it fires after the option completes.
+		trigger_event = message_event.360
 		if = {
 			limit = { exists = global_var:votc_ce_initiative_letter_char }
 			global_var:votc_ce_initiative_letter_char = {
 				save_scope_as = recipient
 			}
-			scope:recipient = {
+			root = {
 				save_scope_as = actor
 			}
 		}
-		# The reply is over: release the guard and drop the throw-away journal.
-		votc_ce_initiative_letter_destroy = yes
-		votc_ce_initiative_letter_cleanup = yes
-		trigger_event = message_event.360
 	}
 
 	option = {
