@@ -17,7 +17,7 @@
 #   .120   probability page   .121 / .122 / .123
 #   .130   test now (talk)
 #   .174   write one right now
-#   .180   letter tools page (clear/details/release; toggle+frequency+test live in votc_incoming_letters_window.gui)
+#   .180   letter tools page (clear/details/test/release; toggle+frequency live in votc_incoming_letters_window.gui; test also in the window)
 #   .186   hidden  clear every pending incoming-letter slot (VOTC-194 14.3.2)
 #   .190   AI-conversation presets page (VOTC-194 14.2.1)
 #   .191-.194 hidden  AI-conversation preset setters (VOTC-194 14.2.2)
@@ -826,11 +826,12 @@ votc_ce_initiative.174 = {
 }
 
 #--------------------------------------------------------------------------
-#  .180  Letter tools page (VOTC-194 §19).  Maintenance only: clear pending
-#       incoming letters, open the detailed per-topic settings window, and
-#       release stuck letter threads.  The master toggle, the unified
-#       frequency presets and the test-letter button moved into
-#       gui/custom_gui/votc_incoming_letters_window.gui (§19).
+#  .180  Letter tools page (VOTC-194 §19/§20).  Clear pending incoming
+#       letters, open the detailed per-topic settings window, send a test
+#       letter, and release stuck letter threads.  The master toggle and the
+#       unified frequency presets live in
+#       gui/custom_gui/votc_incoming_letters_window.gui (§19); the test-letter
+#       option was restored here per §20 (it also remains in the window).
 #--------------------------------------------------------------------------
 votc_ce_initiative.180 = {
 	type = character_event
@@ -866,6 +867,12 @@ votc_ce_initiative.180 = {
 	option = {
 		name = votc_ce_initiative_opt_incoming_details
 		trigger_event = votc_letters_settings_bridge_event.9001
+	}
+	# VOTC-194 §20: quick-access test letter restored on this page; the button
+	# also remains inside votc_incoming_letters_window.gui.
+	option = {
+		name = votc_ce_initiative_opt_letter_test
+		trigger_event = votc_ce_initiative.174
 	}
 	option = {
 		name = votc_ce_initiative_opt_release_letters

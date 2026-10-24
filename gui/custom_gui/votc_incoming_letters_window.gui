@@ -203,6 +203,7 @@
 		}
 
 		# VOTC-194 §19: Send Test Letter Now (moved from the retired .180 option).
+		# The quick-access option also returned to the .180 hub page (§20).
 		button_standard = {
 			parentanchor = top|hcenter
 			widgetanchor = top|hcenter
