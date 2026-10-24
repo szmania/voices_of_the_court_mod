@@ -18,8 +18,20 @@
 #  Keeping them apart matters, because this window is reached once per request
 #  and at that moment votc_latest_letter still points at the previous reply.
 #
-#  It also starts the whisper channel's runner, which is what executes
-#  run/votc_ce_whisper.txt where the app writes a finished section.
+#  It also starts BOTH runners: the whisper channel's runner (_runner state),
+#  which executes run/votc_ce_whisper.txt where the app writes a finished
+#  section, and the letters runner (_letters state), which keeps the letters
+#  poller alive for the unpatched-app fallback - a whisper reply can still
+#  arrive through the ordinary letter channel (see votc_whisper_deliver).
+#  VOTC-194 §22: the letters poller used to be booted by firing the VISIBLE
+#  mcc_event_v2.9998 placeholder event from votc_whisper_ask, which flashed
+#  an empty dialog for a split second before this token window replaced it
+#  one game day later; that trigger is gone and the boot moved here, invisibly.
+#
+#  Timing (§22.1.3): .50 fires 1 game day after the ask; the fallback reply
+#  lands 20-60 real seconds later and the letters_runner normally already
+#  exists from the letter flow (self-perpetuating counter), so the 1-day gap
+#  is safe.
 #
 #  Note the widget a stock token event declares cannot do this job: it uses
 #  container = "custom_widgets_container", which is defined per-window in
@@ -47,6 +59,12 @@ window = {
 		name = _runner
 		trigger_on_create = yes
 		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_whisper_runner.gui votc_whisper_runner')]"
+	}
+
+	state = {
+		name = _letters
+		trigger_on_create = yes
+		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/letters_runner.gui letters_runner')]"
 	}
 
 	hbox = {

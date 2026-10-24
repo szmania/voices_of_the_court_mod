@@ -553,8 +553,6 @@ votc_whisper_ask = {
 		else = { votc_whisper_log_payload_circle = yes }
 		debug_log = "VOTC:WHISPER/;/request_written"
 
-		# keeps ExecuteConsoleCommand('run letters.txt') alive
-		trigger_event = { id = mcc_event_v2.9998 }
 		# clipboard token, one day later so the debug log is flushed first.
 		# Our own invisible window on purpose: message_event.361 would flash
 		# VOTC's fullscreen window for every single request.
