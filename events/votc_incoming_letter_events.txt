@@ -1183,6 +1183,8 @@ votc_incoming_letter_event.0118 = {
 # -------------------------------------------------
 
 votc_incoming_letter_event.0201 = {
+	hidden = yes
+	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_1 }
@@ -1209,6 +1211,8 @@ votc_incoming_letter_event.0201 = {
 }
 
 votc_incoming_letter_event.0202 = {
+	hidden = yes
+	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_2 }
@@ -1235,6 +1239,8 @@ votc_incoming_letter_event.0202 = {
 }
 
 votc_incoming_letter_event.0203 = {
+	hidden = yes
+	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_3 }
@@ -1261,6 +1267,8 @@ votc_incoming_letter_event.0203 = {
 }
 
 votc_incoming_letter_event.0204 = {
+	hidden = yes
+	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_4 }
@@ -1287,6 +1295,8 @@ votc_incoming_letter_event.0204 = {
 }
 
 votc_incoming_letter_event.0205 = {
+	hidden = yes
+	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_5 }
@@ -1313,6 +1323,8 @@ votc_incoming_letter_event.0205 = {
 }
 
 votc_incoming_letter_event.0206 = {
+	hidden = yes
+	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_6 }
@@ -1339,6 +1351,8 @@ votc_incoming_letter_event.0206 = {
 }
 
 votc_incoming_letter_event.0207 = {
+	hidden = yes
+	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_7 }
@@ -1365,6 +1379,8 @@ votc_incoming_letter_event.0207 = {
 }
 
 votc_incoming_letter_event.0208 = {
+	hidden = yes
+	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_8 }
