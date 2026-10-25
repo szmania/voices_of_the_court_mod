@@ -763,6 +763,12 @@ votc_incoming_letter_event.0101 = {
 	immediate = {
 		save_scope_as = actor
 		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# §26.2: staleness guard - drop any leftover artifact global from a
+		# previous letter so the widget's parchment gate cannot fire early with
+		# the wrong body (the incoming run file re-sets it during window
+		# construction).
+		remove_global_variable ?= votc_latest_letter
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
 		# votc_incoming_letter_sender_1 on delivery, so Write back stays reachable.
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_1 }
@@ -816,6 +822,12 @@ votc_incoming_letter_event.0102 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# §26.2: staleness guard - drop any leftover artifact global from a
+		# previous letter so the widget's parchment gate cannot fire early with
+		# the wrong body (the incoming run file re-sets it during window
+		# construction).
+		remove_global_variable ?= votc_latest_letter
 		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
 		# votc_incoming_letter_sender_2 on delivery, so Write back stays reachable.
 		if = {
@@ -871,6 +883,12 @@ votc_incoming_letter_event.0103 = {
 	immediate = {
 		save_scope_as = actor
 		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# §26.2: staleness guard - drop any leftover artifact global from a
+		# previous letter so the widget's parchment gate cannot fire early with
+		# the wrong body (the incoming run file re-sets it during window
+		# construction).
+		remove_global_variable ?= votc_latest_letter
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
 		# votc_incoming_letter_sender_3 on delivery, so Write back stays reachable.
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_3 }
@@ -924,6 +942,12 @@ votc_incoming_letter_event.0104 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# §26.2: staleness guard - drop any leftover artifact global from a
+		# previous letter so the widget's parchment gate cannot fire early with
+		# the wrong body (the incoming run file re-sets it during window
+		# construction).
+		remove_global_variable ?= votc_latest_letter
 		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
 		# votc_incoming_letter_sender_4 on delivery, so Write back stays reachable.
 		if = {
@@ -979,6 +1003,12 @@ votc_incoming_letter_event.0105 = {
 	immediate = {
 		save_scope_as = actor
 		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# §26.2: staleness guard - drop any leftover artifact global from a
+		# previous letter so the widget's parchment gate cannot fire early with
+		# the wrong body (the incoming run file re-sets it during window
+		# construction).
+		remove_global_variable ?= votc_latest_letter
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
 		# votc_incoming_letter_sender_5 on delivery, so Write back stays reachable.
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_5 }
@@ -1032,6 +1062,12 @@ votc_incoming_letter_event.0106 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# §26.2: staleness guard - drop any leftover artifact global from a
+		# previous letter so the widget's parchment gate cannot fire early with
+		# the wrong body (the incoming run file re-sets it during window
+		# construction).
+		remove_global_variable ?= votc_latest_letter
 		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
 		# votc_incoming_letter_sender_6 on delivery, so Write back stays reachable.
 		if = {
@@ -1087,6 +1123,12 @@ votc_incoming_letter_event.0107 = {
 	immediate = {
 		save_scope_as = actor
 		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# §26.2: staleness guard - drop any leftover artifact global from a
+		# previous letter so the widget's parchment gate cannot fire early with
+		# the wrong body (the incoming run file re-sets it during window
+		# construction).
+		remove_global_variable ?= votc_latest_letter
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
 		# votc_incoming_letter_sender_7 on delivery, so Write back stays reachable.
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_sender_7 }
@@ -1140,6 +1182,12 @@ votc_incoming_letter_event.0108 = {
 
 	immediate = {
 		save_scope_as = actor
+		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
+		# §26.2: staleness guard - drop any leftover artifact global from a
+		# previous letter so the widget's parchment gate cannot fire early with
+		# the wrong body (the incoming run file re-sets it during window
+		# construction).
+		remove_global_variable ?= votc_latest_letter
 		# §24.1.1(c): capture the sender BEFORE the app run-file cleanup deletes
 		# votc_incoming_letter_sender_8 on delivery, so Write back stays reachable.
 		if = {

@@ -13,5 +13,18 @@ hbox = {
 		on_start = "[ExecuteConsoleCommand('run votc_ce_incomingletter_v2_1.txt')]"
 	}
 
+	# VOTC-194 §26: once the app run file exposes the letter artifact via the
+	# votc_latest_letter global, open the stock letter parchment (the same
+	# window stock letters use) so the AI body renders.  GUI states
+	# re-evaluate continuously, so this fires the moment the run file sets
+	# the global - no event-desc timing dependency.  Inert until app plan
+	# §13 ships (the gate simply never fires).
+	state = {
+		name = widget_create_window
+		trigger_on_create = yes
+		trigger_when = "[GetGlobalVariable('votc_latest_letter').IsSet]"
+		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_letter.gui votc_letter')]"
+	}
+
 	expand = {}
 }
