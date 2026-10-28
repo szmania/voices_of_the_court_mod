@@ -225,11 +225,37 @@ message_event.360 = {
 		name = send_message
 		#store_localized_text_in_death = test_saved_text
 		debug_log = message_text
+		# VOTC-194 §30.3.3: a reply-mode send consumes the read artifact and ends
+		# the reply turn; the chain continues when the NPC's next letter arrives as
+		# a new artifact.  Fresh letters are untouched (marker unset).
+		if = {
+			limit = { has_global_variable = votc_letter_replying }
+			remove_global_variable = votc_letter_replying
+			# VOTC-194: clear the reply sender with the marker - a stale sender
+			# must never leak into the next letter's "Reply to Letter from X" title.
+			remove_global_variable = votc_letter_reply_sender
+			votc_ce_initiative_letter_destroy = yes
+		}
 		trigger_event = mcc_event_v2.9998
 		#remove_variable = votc_message_text
 	}
 	option = {
-		name = mcc_event.1002.exit
+		# VOTC-194: dedicated Close key for the compose dialog.  The old shared
+		# mcc_event.1002.exit key ("Leave") is left untouched for its other callers.
+		name = votc_ce_initiative_letter_compose_close
+		# NOTE: no `enabled` field exists on CK3 event options (ck3-tiger rejects it
+		# as an unknown token).  An option with no `trigger` is always clickable,
+		# so this Close button is already dismissable before any text is entered.
+		# VOTC-194 §30.3.3: Close in reply mode = end the chain - consume the read
+		# artifact and clear the reply marker (same cleanup as Send).
+		if = {
+			limit = { has_global_variable = votc_letter_replying }
+			remove_global_variable = votc_letter_replying
+			# VOTC-194: clear the reply sender with the marker - a stale sender
+			# must never leak into the next letter's "Reply to Letter from X" title.
+			remove_global_variable = votc_letter_reply_sender
+			votc_ce_initiative_letter_destroy = yes
+		}
 	}
 }
 
@@ -271,6 +297,26 @@ message_event.362 = {
 	# five conditions at once, so the letter flow is untouched.
 	immediate = {
 		votc_whisper_deliver = yes
+		# VOTC-194 §30.1.3: arm the reply state for legacy letter replies.  When
+		# the artifact exists and this is NOT a whisper-hijacked reply, closing the
+		# parchment opens the compose dialog in reply mode.  votc_letter_reply_sender
+		# is normally set by the npcltr (.152) or incoming (.010N) path already;
+		# message_second_scope is the safe legacy fallback (set by the player's own
+		# message_event.360 send).
+		if = {
+			limit = {
+				exists = global_var:votc_latest_letter
+				NOT = { has_global_variable = votc_whisper_pending }
+			}
+			set_global_variable = { name = votc_letter_replyable value = yes }
+			if = {
+				limit = {
+					NOT = { has_global_variable = votc_letter_reply_sender }
+					exists = global_var:message_second_scope
+				}
+				set_global_variable = { name = votc_letter_reply_sender value = global_var:message_second_scope }
+			}
+		}
 	}
 }
 
