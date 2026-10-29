@@ -10,15 +10,14 @@ l_japanese:
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
 #--------------------------------------------------------------------------
 
- votc_ce_initiative.2.title:0 "会話の要求"
- votc_ce_initiative.2.desc:0 "[GetGlobalVariable('votc_ce_initiative_char').Char.GetTitledFirstName]があなたと話したがっています。"
- votc_ce_initiative_accept_here:0 "今話す"
- votc_ce_initiative_accept_travel:0 "ここに来るよう招待する"
  votc_ce_initiative_decline:0 "今はやめておく"
  votc_ce_initiative.153.title:0 "手紙が届く"
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "闭じる"
  votc_ce_initiative_letter_write_back:0 "返信する"
+votc_ce_initiative_letter_compose_close:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, Localize('votc_ce_initiative_letter_compose_close_reply'), Localize('votc_ce_initiative_letter_compose_close_fresh') )]"
+votc_ce_initiative_letter_compose_close_fresh:0 "閉じる"
+votc_ce_initiative_letter_compose_close_reply:0 "返信したくありません"
  votc_ce_initiative.100.title:0 "VOTC-CE: 設定"
  votc_ce_initiative_opt_release_letters:0 "手紙スレッドを解放"
  votc_ce_initiative_opt_release_letters_tooltip:0 "保存されたすべての手紙スレッドを削除します(votc_letter_1..9)。"
@@ -52,7 +51,7 @@ l_japanese:
  votc_ce_initiative_settings_decision_desc:0 "人物があなたに接触したり、会話を始めたり、手紙を書いたりする頻度を設定します。"
  votc_ce_initiative_settings_decision_tooltip:0 "VOTC-CE設定ウィンドウを開く"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
- votc_huixin_titlenpcltr:0 "手紙"
+votc_huixin_titlenpcltr:0 "[GetGlobalVariable('message_second_scope_npcltr').Char.GetTitledFirstName]からの手紙"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
  votc_ce_initiative_log_letter_friend:0 "VOTC:IN/;/letter_payload/;/friend"
  votc_ce_initiative_log_letter_rival:0 "VOTC:IN/;/letter_payload/;/rival"

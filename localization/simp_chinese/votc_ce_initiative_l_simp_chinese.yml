@@ -10,16 +10,14 @@ l_simp_chinese:
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
 #--------------------------------------------------------------------------
 
- votc_ce_initiative.2.title:0 "对话请求"
- votc_ce_initiative.2.desc:0 "[GetGlobalVariable('votc_ce_initiative_char').Char.GetTitledFirstName]想与你交谈。"
- votc_ce_initiative_accept_here:0 "现在交谈"
- votc_ce_initiative_accept_travel:0 "邀请对方前来"
  votc_ce_initiative_decline:0 "现在不行"
  votc_ce_initiative.153.title:0 "信件送达"
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "关闭"
  votc_ce_initiative_letter_write_back:0 "回复"
- votc_ce_initiative_letter_compose_close:0 "关闭"
+votc_ce_initiative_letter_compose_close:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, Localize('votc_ce_initiative_letter_compose_close_reply'), Localize('votc_ce_initiative_letter_compose_close_fresh') )]"
+votc_ce_initiative_letter_compose_close_fresh:0 "关闭"
+votc_ce_initiative_letter_compose_close_reply:0 "我不想回复"
  votc_ce_initiative.100.title:0 "VOTC-CE: 设置"
  votc_ce_initiative_opt_release_letters:0 "释放信件线程"
  votc_ce_initiative_opt_release_letters_tooltip:0 "清除所有已保存的信件线程（votc_letter_1..9）。"
@@ -53,7 +51,7 @@ l_simp_chinese:
  votc_ce_initiative_settings_decision_desc:0 "配置角色主动接触您、发起对话或写信的频率。"
  votc_ce_initiative_settings_decision_tooltip:0 "打开VOTC-CE设置窗口"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
- votc_huixin_titlenpcltr:0 "信件"
+votc_huixin_titlenpcltr:0 "来自[GetGlobalVariable('message_second_scope_npcltr').Char.GetTitledFirstName]的信件"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
  votc_ce_initiative_log_letter_friend:0 "VOTC:IN/;/letter_payload/;/friend"
  votc_ce_initiative_log_letter_rival:0 "VOTC:IN/;/letter_payload/;/rival"

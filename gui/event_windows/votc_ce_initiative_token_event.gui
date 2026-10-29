@@ -8,8 +8,19 @@
 #
 #  This window is the same trick VOTC itself uses in votc_invisible_event.gui:
 #  a 1x1 window on the tutorial layer, with the EventWindowData datacontext
-#  and nothing to look at.  It also starts the letter channel's own runner,
-#  which is what executes run/votc_ce_npcltr.txt where the app writes the letter.
+#  and nothing to look at.  It also starts BOTH runners: the NPC-letter
+#  channel's own runner (_runner state), which executes run/votc_ce_npcltr.txt
+#  where the app writes the letter, and the letters runner (_letters state),
+#  which keeps the letters poller alive for the unpatched-app fallback - an NPC
+#  letter can still arrive through the ordinary letter channel.
+#  VOTC-194 §22.3: the letters poller used to be booted by firing the VISIBLE
+#  mcc_event_v2.9998 placeholder event from votc_ce_initiative_letter, which
+#  flashed an empty dialog for a split second before this token window replaced
+#  it one game day later; that trigger is gone and the boot moved here,
+#  invisibly.  Timing: .160 fires 1 game day after the request; the fallback
+#  reply lands 20-60 real seconds later and the letters_runner normally already
+#  exists from the letter flow (self-perpetuating counter), so the 1-day gap is
+#  safe.
 #==========================================================================
 
 window = {
@@ -33,6 +44,12 @@ window = {
 		name = _runner
 		trigger_on_create = yes
 		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_ce_npc_letter_runner.gui votc_ce_npc_letter_runner')]"
+	}
+
+	state = {
+		name = _letters
+		trigger_on_create = yes
+		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/letters_runner.gui letters_runner')]"
 	}
 
 	hbox = {

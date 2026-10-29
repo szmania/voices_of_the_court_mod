@@ -286,7 +286,7 @@ votc_ce_initiative_launch = {
 				}
 			}
 			debug_log = "VOTC_CE_INIT: picked [scope:votc_ce_initiative_target.GetID] to request a talk"
-			trigger_event = votc_ce_initiative.2
+			trigger_event = votc_ce_initiative.3
 		}
 	}
 }
@@ -627,25 +627,7 @@ votc_ce_initiative_letter = {
 		# VOTC-194 13.1.2: this NPC letter spends one unit of the shared
 		# quarterly letter budget.
 		votc_ce_letter_budget_increment = yes
-		trigger_event = { id = mcc_event_v2.9998 }
 		trigger_event = { id = votc_ce_initiative.160 days = 1 }
-	}
-}
-
-votc_ce_initiative_letter_take = {
-	if = {
-		limit = {
-			exists = global_var:votc_latest_letter
-			exists = global_var:votc_ce_initiative_letter_player
-		}
-		debug_log = "VOTC_CE_LETTER: reply taken, opening the letter window"
-		global_var:votc_ce_initiative_letter_player = {
-			trigger_event = votc_ce_initiative.153
-		}
-	}
-	else = {
-		debug_log = "VOTC_CE_LETTER: a reply arrived but there is no artifact (create_artifact failed)"
-		votc_ce_initiative_letter_cleanup = yes
 	}
 }
 

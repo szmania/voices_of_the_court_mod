@@ -27,6 +27,12 @@
 		on_start = "[PdxGuiWidget.AccessChild('letter_paper').TriggerAnimation('hide')]"
 		on_start = "[PdxGuiWidget.AccessChild('letter_content').TriggerAnimation('hide')]"
 		on_start = "[PdxGuiWidget.AccessChild('letter_edges').TriggerAnimation('hide')]"
+		# VOTC-194 §30.2.2: closing the parchment (X) opens the compose dialog in
+		# reply mode when the letter just read is a replyable AI letter.  The sgui
+		# gates on votc_letter_replyable, so a fresh player letter or a
+		# whisper-hijacked reply is a no-op.  Runs BEFORE ClearWidgets so the
+		# compose event is queued while the parchment is still alive.
+		on_finish = "[GetScriptedGui('votc_letter_parchment_closed_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 		on_finish = "[ExecuteConsoleCommand('GUI.ClearWidgets votc_letter')]"
 	}
 

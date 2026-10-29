@@ -10,15 +10,14 @@ l_korean:
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
 #--------------------------------------------------------------------------
 
- votc_ce_initiative.2.title:0 "대화 요청"
- votc_ce_initiative.2.desc:0 "[GetGlobalVariable('votc_ce_initiative_char').Char.GetTitledFirstName]이(가) 당신과 대화하기를 원합니다."
- votc_ce_initiative_accept_here:0 "지금 대화하기"
- votc_ce_initiative_accept_travel:0 "이곳으로 초대하기"
  votc_ce_initiative_decline:0 "지금은 안 함"
  votc_ce_initiative.153.title:0 "편지 도착"
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "닫기"
  votc_ce_initiative_letter_write_back:0 "답장하기"
+votc_ce_initiative_letter_compose_close:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, Localize('votc_ce_initiative_letter_compose_close_reply'), Localize('votc_ce_initiative_letter_compose_close_fresh') )]"
+votc_ce_initiative_letter_compose_close_fresh:0 "닫기"
+votc_ce_initiative_letter_compose_close_reply:0 "답장하고 싶지 않습니다"
  votc_ce_initiative.100.title:0 "VOTC-CE: 설정"
  votc_ce_initiative_opt_release_letters:0 "편지 스레드 해제"
  votc_ce_initiative_opt_release_letters_tooltip:0 "저장된 모든 편지 스레드를 지웁니다(votc_letter_1..9)."
@@ -52,7 +51,7 @@ l_korean:
  votc_ce_initiative_settings_decision_desc:0 "인물이 당신에게 다가가거나 대화를 시작하거나 편지를 쓰는 빈도를 설정합니다."
  votc_ce_initiative_settings_decision_tooltip:0 "VOTC-CE 설정 창 열기"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
- votc_huixin_titlenpcltr:0 "편지"
+votc_huixin_titlenpcltr:0 "[GetGlobalVariable('message_second_scope_npcltr').Char.GetTitledFirstName]의 편지"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
  votc_ce_initiative_log_letter_friend:0 "VOTC:IN/;/letter_payload/;/friend"
  votc_ce_initiative_log_letter_rival:0 "VOTC:IN/;/letter_payload/;/rival"

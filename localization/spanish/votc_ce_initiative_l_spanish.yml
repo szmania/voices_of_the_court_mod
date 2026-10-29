@@ -10,15 +10,14 @@ l_spanish:
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
 #--------------------------------------------------------------------------
 
- votc_ce_initiative.2.title:0 "Una solicitud de conversación"
- votc_ce_initiative.2.desc:0 "[GetGlobalVariable('votc_ce_initiative_char').Char.GetTitledFirstName] desea hablar contigo."
- votc_ce_initiative_accept_here:0 "Hablar ahora"
- votc_ce_initiative_accept_travel:0 "Invitar a viajar aquí"
  votc_ce_initiative_decline:0 "Ahora no"
  votc_ce_initiative.153.title:0 "Llega una carta"
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "Cerrar"
  votc_ce_initiative_letter_write_back:0 "Responder"
+votc_ce_initiative_letter_compose_close:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, Localize('votc_ce_initiative_letter_compose_close_reply'), Localize('votc_ce_initiative_letter_compose_close_fresh') )]"
+votc_ce_initiative_letter_compose_close_fresh:0 "Cerrar"
+votc_ce_initiative_letter_compose_close_reply:0 "No deseo responder"
  votc_ce_initiative.100.title:0 "VOTC-CE: Ajustes"
  votc_ce_initiative_opt_release_letters:0 "Liberar hilo de cartas"
  votc_ce_initiative_opt_release_letters_tooltip:0 "Borra todos los hilos de cartas guardados (votc_letter_1..9)."
@@ -52,7 +51,7 @@ l_spanish:
  votc_ce_initiative_settings_decision_desc:0 "Configura con qué frecuencia los personajes se acercan a ti, inician conversaciones o te escriben cartas."
  votc_ce_initiative_settings_decision_tooltip:0 "Abrir la ventana de ajustes de VOTC-CE"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
- votc_huixin_titlenpcltr:0 "Carta"
+votc_huixin_titlenpcltr:0 "Carta de [GetGlobalVariable('message_second_scope_npcltr').Char.GetTitledFirstName]"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
  votc_ce_initiative_log_letter_friend:0 "VOTC:IN/;/letter_payload/;/friend"
  votc_ce_initiative_log_letter_rival:0 "VOTC:IN/;/letter_payload/;/rival"

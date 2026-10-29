@@ -10,15 +10,14 @@ l_russian:
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
 #--------------------------------------------------------------------------
 
- votc_ce_initiative.2.title:0 "Просьба о разговоре"
- votc_ce_initiative.2.desc:0 "[GetGlobalVariable('votc_ce_initiative_char').Char.GetTitledFirstName] хочет поговорить с вами."
- votc_ce_initiative_accept_here:0 "Поговорить сейчас"
- votc_ce_initiative_accept_travel:0 "Пригласить приехать сюда"
  votc_ce_initiative_decline:0 "Не сейчас"
  votc_ce_initiative.153.title:0 "Прибыло письмо"
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "Закрыть"
  votc_ce_initiative_letter_write_back:0 "Ответить"
+votc_ce_initiative_letter_compose_close:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, Localize('votc_ce_initiative_letter_compose_close_reply'), Localize('votc_ce_initiative_letter_compose_close_fresh') )]"
+votc_ce_initiative_letter_compose_close_fresh:0 "Закрыть"
+votc_ce_initiative_letter_compose_close_reply:0 "Я не хочу отвечать"
  votc_ce_initiative.100.title:0 "VOTC-CE: Настройки"
  votc_ce_initiative_opt_release_letters:0 "Освободить ветку писем"
  votc_ce_initiative_opt_release_letters_tooltip:0 "Очищает все сохранённые ветки писем (votc_letter_1..9)."
@@ -52,7 +51,7 @@ l_russian:
  votc_ce_initiative_settings_decision_desc:0 "Настройте, как часто персонажи обращаются к вам, начинают разговоры или пишут письма."
  votc_ce_initiative_settings_decision_tooltip:0 "Открыть окно настроек VOTC-CE"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
- votc_huixin_titlenpcltr:0 "Письмо"
+votc_huixin_titlenpcltr:0 "Письмо от [GetGlobalVariable('message_second_scope_npcltr').Char.GetTitledFirstName]"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
  votc_ce_initiative_log_letter_friend:0 "VOTC:IN/;/letter_payload/;/friend"
  votc_ce_initiative_log_letter_rival:0 "VOTC:IN/;/letter_payload/;/rival"

@@ -3,7 +3,8 @@
 #  namespace = votc_ce_initiative
 #
 #   .1     hidden  tick loop (root = player)
-#   .2     prompt  "<NPC> wants to talk to you"  -> accept / decline
+#   .2     RETIRED (VOTC-194 §34) - the request prompt was merged into the
+#           mcc_event_v2.1010 setup dialog; the id is kept free, not reused.
 #   .3     hidden  commit an accepted invitation (open the CE talk flow)
 #   .4     hidden  arrival of a travelling NPC -> back to .3
 #   .9     hidden  the player declined
@@ -147,57 +148,6 @@ votc_ce_initiative.5 = {
 }
 
 #--------------------------------------------------------------------------
-#  .2  The actual "someone wants to talk to you" prompt.
-#--------------------------------------------------------------------------
-votc_ce_initiative.2 = {
-	type = character_event
-	theme = diplomacy_family_focus
-	title = votc_ce_initiative.2.title
-	desc = votc_ce_initiative.2.desc
-	window = character_event
-
-	left_portrait = {
-		character = global_var:votc_ce_initiative_char
-	}
-
-	immediate = {
-		global_var:votc_ce_initiative_char = {
-			save_scope_as = recipient
-		}
-	}
-
-	# Already here -> jump straight into the CE conversation setup.
-	option = {
-		name = votc_ce_initiative_accept_here
-		trigger = {
-			exists = global_var:votc_ce_initiative_char
-			global_var:votc_ce_initiative_char = {
-				is_at_same_location = root
-			}
-		}
-		trigger_event = votc_ce_initiative.3
-	}
-
-	# Somewhere else -> they will come to you first.
-	option = {
-		name = votc_ce_initiative_accept_travel
-		trigger = {
-			NOT = {
-				global_var:votc_ce_initiative_char = {
-					is_at_same_location = root
-				}
-			}
-		}
-		trigger_event = votc_ce_initiative.3
-	}
-
-	option = {
-		name = votc_ce_initiative_decline
-		trigger_event = votc_ce_initiative.9
-	}
-}
-
-#--------------------------------------------------------------------------
 #  .3  Accepted.  Either open the CE talk flow right away, or send the NPC
 #      travelling towards the player.
 #
@@ -315,6 +265,20 @@ votc_ce_initiative.9 = {
 	orphan = yes
 
 	immediate = {
+		# VOTC-194 §34: the decline now happens inside the merged setup dialog
+		# (mcc_event_v2.1010), so the -5 opinion the old .2 prompt applied is
+		# applied here - the single place a declined invitation is handled.
+		# scope:recipient is the NPC who reached out (saved by .1010).
+		if = {
+			limit = { exists = scope:recipient }
+			scope:recipient = {
+				add_opinion = {
+					target = root
+					modifier = conversation_opinion
+					opinion = -5
+				}
+			}
+		}
 		remove_global_variable = votc_ce_initiative_player
 		votc_ce_initiative_decline_grudge = yes
 	}
@@ -334,74 +298,19 @@ votc_ce_initiative.152 = {
 	orphan = yes
 
 	immediate = {
-		votc_ce_initiative_letter_take = yes
-	}
-}
-
-#--------------------------------------------------------------------------
-#  .153  The letter itself.
-#
-#  The stock letter parchment is deliberately NOT reused: it renders a fixed
-#  localization key around votc_latest_letter.  Here the heading is raw
-#  localization text (which IS rich-text parsed, so #T really renders large)
-#  and the body comes out of the reply artifact as a data function (which is
-#  NOT parsed - plain text with real newlines, exactly what the model wrote).
-#--------------------------------------------------------------------------
-votc_ce_initiative.153 = {
-	type = character_event
-	theme = diplomacy_family_focus
-	title = votc_ce_initiative.153.title
-	desc = votc_ce_initiative.153.desc
-	window = character_event
-
-	left_portrait = {
-		# NOT scope:actor - a plain character_event carries no actor scope.  The
-		# sender travels in a global variable so this also works when the letter
-		# arrives long after the request (the round trip is tens of game days).
-		character = global_var:votc_ce_initiative_letter_char
-	}
-
-	immediate = {
-		# Intentionally empty apart from the breadcrumb.  The window is rendered
-		# AFTER this immediate runs, and it reads both votc_ce_initiative_letter_char
-		# and the reply artifact - clearing either here would blank the letter.
-		# §25.1.3: breadcrumb for the in-game body-rendering check.
-		debug_log = "VOTC_CE_LETTER: letter window opened (.153)"
-	}
-
-	# Write-back: open the existing write-message flow with the sender
-	# preselected (message_event.360 reads scope:recipient as the addressee).
-	option = {
-		name = votc_ce_initiative_letter_write_back
-		trigger = {
-			exists = global_var:votc_ce_initiative_letter_char
-			global_var:votc_ce_initiative_letter_char = { is_alive = yes }
-		}
-		# §25.1.1: queue the compose dialog FIRST, before any cleanup effects
-		# run - the after block already destroys the artifact and releases the
-		# guard once this event closes.  Scopes saved below are visible to the
-		# triggered event because it fires after the option completes.
-		trigger_event = message_event.360
+		# VOTC-194 §30.1.2: the npcltr run file already created the artifact and
+		# set votc_latest_letter, so hand the letter to the stock parchment
+		# (message_event.362) and arm the reply state - closing the parchment then
+		# opens the compose dialog in reply mode.  message_second_scope_npcltr is
+		# the sender the app set on the request; it is consumed here (the .153
+		# after-cleanup that used to release it is gone).
 		if = {
-			limit = { exists = global_var:votc_ce_initiative_letter_char }
-			global_var:votc_ce_initiative_letter_char = {
-				save_scope_as = recipient
-			}
-			root = {
-				save_scope_as = actor
-			}
+			limit = { exists = global_var:message_second_scope_npcltr }
+			set_global_variable = { name = votc_letter_reply_sender value = global_var:message_second_scope_npcltr }
 		}
-	}
-
-	option = {
-		name = votc_ce_initiative_letter_confirm
-	}
-
-	after = {
-		# The letter has been read: drop the journal and release the
-		# one-letter-per-interval gate so the next interval can write again.
-		votc_ce_initiative_letter_destroy = yes
-		votc_ce_initiative_letter_cleanup = yes
+		remove_global_variable = message_second_scope_npcltr
+		set_global_variable = { name = votc_letter_replyable value = yes }
+		trigger_event = message_event.362
 	}
 }
 

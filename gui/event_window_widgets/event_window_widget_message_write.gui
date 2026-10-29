@@ -6,6 +6,42 @@
 	#margin = { 10 0 }
 	#spacing = 10
 
+	# VOTC-194 §30.3.1: reply-mode preview.  When the compose dialog was opened
+	# by closing a replyable AI letter's parchment (votc_letter_replying), show
+	# the letter being replied to in a scroll box ABOVE the text area.  Fresh
+	# player-initiated letters never set the marker, so this stays hidden there.
+	widget = {
+		visible = "[GetGlobalVariable('votc_letter_replying').IsSet]"
+		layoutpolicy_horizontal = expanding
+		margin = { 30 0 }
+
+		vbox = {
+			layoutpolicy_horizontal = expanding
+
+			text_single = {
+				text = votc_letter_reply_scroll_header
+				using = Font_Type_Flavor
+				default_format = "#light_background"
+			}
+
+			scrollbox = {
+				size = { 560 200 }
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				blockoverride "scrollbox_content"
+				{
+					text_multi = {
+						max_width = 540
+						autoresize = yes
+						text = "[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
+						default_format = "#light_background;italic"
+						using = Font_Size_Medium
+					}
+				}
+			}
+		}
+	}
+
 	editbox_votc_with_label = {
 		layoutpolicy_horizontal = expanding
 		layoutpolicy_vertical = expanding

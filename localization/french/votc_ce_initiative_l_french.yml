@@ -10,15 +10,14 @@ l_french:
 # which documents the votc_incoming_letter_event / talk-interaction keys only.
 #--------------------------------------------------------------------------
 
- votc_ce_initiative.2.title:0 "Une demande de conversation"
- votc_ce_initiative.2.desc:0 "[GetGlobalVariable('votc_ce_initiative_char').Char.GetTitledFirstName] souhaite vous parler."
- votc_ce_initiative_accept_here:0 "Parler maintenant"
- votc_ce_initiative_accept_travel:0 "Inviter à voyager ici"
  votc_ce_initiative_decline:0 "Pas maintenant"
  votc_ce_initiative.153.title:0 "Une lettre arrive"
  votc_ce_initiative.153.desc:0 "#T [GetGlobalVariable('votc_ce_initiative_letter_char').Char.GetTitledFirstName]#!\n\n[GetGlobalVariable('votc_latest_letter').Artifact.GetDesc]"
  votc_ce_initiative_letter_confirm:0 "Fermer"
  votc_ce_initiative_letter_write_back:0 "Répondre"
+votc_ce_initiative_letter_compose_close:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, Localize('votc_ce_initiative_letter_compose_close_reply'), Localize('votc_ce_initiative_letter_compose_close_fresh') )]"
+votc_ce_initiative_letter_compose_close_fresh:0 "Fermer"
+votc_ce_initiative_letter_compose_close_reply:0 "Je ne souhaite pas répondre"
  votc_ce_initiative.100.title:0 "VOTC-CE : Paramètres"
  votc_ce_initiative_opt_release_letters:0 "Libérer le fil de lettres"
  votc_ce_initiative_opt_release_letters_tooltip:0 "Efface tous les fils de lettres enregistrés (votc_letter_1..9)."
@@ -52,7 +51,7 @@ l_french:
  votc_ce_initiative_settings_decision_desc:0 "Configurez la fréquence à laquelle les personnages vous contactent, engagent la conversation ou vous écrivent."
  votc_ce_initiative_settings_decision_tooltip:0 "Ouvrir la fenêtre des paramètres VOTC-CE"
  votc_ce_initiative_token_letter:0 "VOTC:LETTER"
- votc_huixin_titlenpcltr:0 "Lettre"
+votc_huixin_titlenpcltr:0 "Lettre de [GetGlobalVariable('message_second_scope_npcltr').Char.GetTitledFirstName]"
  votc_ce_initiative_log_letter_lover:0 "VOTC:IN/;/letter_payload/;/lover"
  votc_ce_initiative_log_letter_friend:0 "VOTC:IN/;/letter_payload/;/friend"
  votc_ce_initiative_log_letter_rival:0 "VOTC:IN/;/letter_payload/;/rival"

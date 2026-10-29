@@ -18,10 +18,12 @@ hbox = {
 	# window stock letters use) so the AI body renders.  GUI states
 	# re-evaluate continuously, so this fires the moment the run file sets
 	# the global - no event-desc timing dependency.  Inert until app plan
-	# §13 ships (the gate simply never fires).
+	# §13 ships (the gate never fires).  §29.2: this state is trigger_when-ONLY
+	# (no trigger_on_create) so it re-evaluates continuously and fires the
+	# moment the run file sets the global, even if that happens after the
+	# widget is created - closing the race with the run-file execution.
 	state = {
 		name = widget_create_window
-		trigger_on_create = yes
 		trigger_when = "[GetGlobalVariable('votc_latest_letter').IsSet]"
 		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_letter.gui votc_letter')]"
 	}

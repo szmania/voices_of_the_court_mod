@@ -281,3 +281,28 @@ votc_incoming_letters_event_frequency_maximum_sgui = {
 		}
 	}
 }
+
+# VOTC-194 §30.2.1: the letter parchment was closed.  When the letter that was
+# just read is a replyable AI letter (votc_letter_replyable), open the compose
+# dialog in REPLY mode: consume the marker, arm votc_letter_replying (the
+# compose widget's reply-preview scrollbox and the conditional title read it),
+# and hand the sender to message_event.360 as scope:recipient.  The saved
+# scopes propagate to the triggered event exactly like the §25.1.1 option
+# pattern.  A non-replyable close (fresh player letter, whisper-hijacked
+# reply) never satisfies the gate, so this is a no-op there.
+votc_letter_parchment_closed_sgui = {
+	scope = character
+	effect = {
+		if = {
+			limit = { has_global_variable = votc_letter_replyable }
+			remove_global_variable = votc_letter_replyable
+			set_global_variable = { name = votc_letter_replying value = yes }
+			if = {
+				limit = { exists = global_var:votc_letter_reply_sender }
+				global_var:votc_letter_reply_sender = { save_scope_as = recipient }
+			}
+			save_scope_as = actor
+			trigger_event = message_event.360
+		}
+	}
+}
