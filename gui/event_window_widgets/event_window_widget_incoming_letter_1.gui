@@ -7,10 +7,19 @@ hbox = {
 	margin = { 10 0 }
 
 	state = {
-        name = widget_show
-        trigger_on_create = yes
-
+		# Retry loop, not a one-shot: the desktop app writes run/votc_ce_incomingletter_v2_1.txt
+		# only AFTER this widget is created (clipboard hop -> LLM generation -> atomic write),
+		# so a create-time execution would miss the file.  trigger_when re-evaluates
+		# continuously and the state re-fires every `duration` beats while the slot global
+		# exists; the app's run file removes votc_incoming_letter_1 on success, which stops
+		# the loop (the .0111 cleanup event clears the slot a day later if the app never
+		# writes).  Re-running the file is a harmless no-op - its guard checks the slot
+		# global + delivery id + type.
+		name = widget_show
+		trigger_when = "[GetGlobalVariable('votc_incoming_letter_1').IsSet]"
+		duration = 2
 		on_start = "[ExecuteConsoleCommand('run votc_ce_incomingletter_v2_1.txt')]"
+		on_finish = "[ExecuteConsoleCommand('run votc_ce_incomingletter_v2_1.txt')]"
 	}
 
 	# VOTC-194 §26: once the app run file exposes the letter artifact via the
