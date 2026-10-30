@@ -3,8 +3,10 @@
 #  namespace = votc_ce_initiative
 #
 #   .1     hidden  tick loop (root = player)
-#   .2     RETIRED (VOTC-194 §34) - the request prompt was merged into the
-#           mcc_event_v2.1010 setup dialog; the id is kept free, not reused.
+#   .2     RETIRED (VOTC-194 §34) - the request prompt lives in the
+#           mcc_event_v2.1010 "A Conversation Request" dialog (two-step flow
+#           restored: .1010 accept -> mcc_event_v2.1011 setup); the id is kept
+#           free, not reused.
 #   .3     hidden  commit an accepted invitation (open the CE talk flow)
 #   .4     hidden  arrival of a travelling NPC -> back to .3
 #   .9     hidden  the player declined
@@ -265,9 +267,9 @@ votc_ce_initiative.9 = {
 	orphan = yes
 
 	immediate = {
-		# VOTC-194 §34: the decline now happens inside the merged setup dialog
-		# (mcc_event_v2.1010), so the -5 opinion the old .2 prompt applied is
-		# applied here - the single place a declined invitation is handled.
+		# VOTC-194 §34: the decline is handled by the mcc_event_v2.1010 "A
+		# Conversation Request" dialog, so the -5 opinion the old .2 prompt applied
+		# is applied here - the single place a declined invitation is handled.
 		# scope:recipient is the NPC who reached out (saved by .1010).
 		if = {
 			limit = { exists = scope:recipient }
