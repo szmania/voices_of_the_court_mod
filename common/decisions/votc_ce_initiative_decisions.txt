@@ -17,13 +17,11 @@ votc_ce_initiative_settings_decision = {
 	selection_tooltip = votc_ce_initiative_settings_decision_tooltip
 
 	is_shown = {
-		is_ai = no
+		NOT = { is_ai = yes }
 	}
-
 	is_valid = {
-		is_ai = no
+		NOT = { is_ai = yes }
 	}
-
 	effect = {
 		# Make sure the settings exist before the window reads them.
 		if = {
