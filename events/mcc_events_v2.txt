@@ -489,25 +489,73 @@ mcc_event_v2.9999 = {
 mcc_event_v2.1010 = {
 	type = character_event
 	theme = diplomacy_family_focus
-	# VOTC-194 §34: the old two-step request (1010 accept -> 1011 setup popup) is
-	# merged into this single dialog; mcc_event_v2.1011 is deleted.  The title and
-	# desc are the setup keys; the options are the former 1011 choices plus decline.
-	title = votc_ai_initiate_setup_title
-	desc = votc_ai_initiate_setup_desc
+	# VOTC-194: two-step request restored - this is the "A Conversation Request"
+	# prompt; Accept opens the separate Conversation Setup dialog (mcc_event_v2.1011).
+	title = votc_ai_initiate_event_title
+	desc = votc_ai_initiate_event_desc
 	window = character_event
 	left_portrait = {
 		character = scope:recipient
 	}
 
 	option = {
+		name = votc_ai_initiate_accept
+		# VOTC-182 4.5/4.12: +1 opinion from player toward the AI initiator.
+		# Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			add_opinion = {
+				target = scope:recipient
+				modifier = conversation_opinion
+				opinion = 1
+			}
+		}
+		# Open the setup popup instead of starting directly.
+		trigger_event = mcc_event_v2.1011
+	}
+
+	option = {
 		name = votc_ai_initiate_decline
-		# VOTC-194 §34: the decline is handled by votc_ce_initiative.9, which applies
-		# the -5 opinion and the opinion-scaled grudge in one place.
+		# The decline is handled by votc_ce_initiative.9, which applies the -5
+		# opinion and the opinion-scaled grudge in one place.
 		trigger_event = votc_ce_initiative.9
 		# Cleanup: nothing was started, strip the prepared state.
 		remove_global_variable = votc_ai_initiator
 		remove_global_variable = talk_scene
 		clear_variable_list = mcc_characters_selected
+	}
+
+	option = {
+		name = mcc_event.1002.exit
+		# Leaving the request displeases the initiator.
+		# Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			scope:recipient = {
+				add_opinion = {
+					target = root
+					modifier = conversation_opinion
+					opinion = -5
+				}
+			}
+		}
+		# Cleanup identical to decline: nothing was started, strip the prepared state.
+		remove_global_variable = votc_ai_initiator
+		remove_global_variable = talk_scene
+		clear_variable_list = mcc_characters_selected
+	}
+}
+
+#VOTC-182 4.8: Post-accept setup popup. Offers scene/character selection before
+#starting the conversation, mirroring the player-initiated flow.
+mcc_event_v2.1011 = {
+	type = character_event
+	theme = diplomacy_family_focus
+	title = votc_ai_initiate_setup_title
+	desc = votc_ai_initiate_setup_desc
+	window = character_event
+	left_portrait = {
+		character = scope:recipient
 	}
 
 	option = {
@@ -555,6 +603,28 @@ mcc_event_v2.1010 = {
 		name = votc_talk_mcc_selector
 		trigger_event = mcc_event_v2.1003
 	}
+
+	option = {
+		name = mcc_event.1002.exit
+		# Leaving before the conversation starts displeases the initiator.
+		# Only applies to AI-initiated conversations.
+		if = {
+			limit = { has_global_variable = votc_ai_initiator }
+			scope:recipient = {
+				add_opinion = {
+					target = root
+					modifier = conversation_opinion
+					opinion = -5
+				}
+			}
+		}
+		# Cleanup identical to decline: nothing was started, strip the prepared state.
+		remove_global_variable = votc_ai_initiator
+		remove_global_variable = talk_scene
+		clear_variable_list = mcc_characters_selected
+	}
+}
+
 
 
 # VOTC-182 4.19: monthly self-sustaining tick for AI-initiated conversations.
