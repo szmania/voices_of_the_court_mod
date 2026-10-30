@@ -3,6 +3,12 @@
 	layoutpolicy_horizontal = expanding
 	layoutpolicy_vertical = expanding
 
+	# VOTC-194 §34.2.2: an invisible child must not reserve layout space, or the
+	# hidden reply preview leaves a blank band above the textarea on the
+	# fresh-letter path (preview visible = no).  Stock-proven on flow containers
+	# (e.g. gui/shared/portraits.gui "[Character.IsValid]" + ignoreinvisible).
+	ignoreinvisible = yes
+
 	#margin = { 10 0 }
 	#spacing = 10
 
@@ -13,6 +19,10 @@
 	widget = {
 		visible = "[GetGlobalVariable('votc_letter_replying').IsSet]"
 		layoutpolicy_horizontal = expanding
+		# Fixed vertical policy: the preview takes only the height of its
+		# contents (header + 200px scrollbox); the editbox below keeps
+		# expanding and fills the rest.  No overlap.
+		layoutpolicy_vertical = fixed
 		margin = { 30 0 }
 
 		vbox = {
@@ -27,7 +37,12 @@
 			scrollbox = {
 				size = { 560 200 }
 				layoutpolicy_horizontal = expanding
-				layoutpolicy_vertical = expanding
+				# VOTC-194 §30.3.1 layout fix + §34.2.1: fixed vertical policy so
+				# the preview keeps its explicit 200px height (size = { 560 200 };
+				# the engine ignores min_size - use minimumsize if ever needed) and
+				# stacks ABOVE the textarea instead of competing with it for
+				# expanding space.
+				layoutpolicy_vertical = fixed
 				blockoverride "scrollbox_content"
 				{
 					text_multi = {
