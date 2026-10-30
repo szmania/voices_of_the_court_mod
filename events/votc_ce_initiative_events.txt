@@ -309,6 +309,12 @@ votc_ce_initiative.152 = {
 		if = {
 			limit = { exists = global_var:message_second_scope_npcltr }
 			set_global_variable = { name = votc_letter_reply_sender value = global_var:message_second_scope_npcltr }
+			# VOTC-194 §34: mirror the sender into message_second_scope so
+			# message_event.362's unconditional re-derivation (stale-sender
+			# fix) resolves to THIS letter's NPC instead of a previous
+			# letter's sender.  Safe: the artifact title already baked the
+			# name at create_artifact time (§31 timing contract).
+			set_global_variable = { name = message_second_scope value = global_var:message_second_scope_npcltr }
 		}
 		remove_global_variable = message_second_scope_npcltr
 		set_global_variable = { name = votc_letter_replyable value = yes }

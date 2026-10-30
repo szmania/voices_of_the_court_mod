@@ -297,23 +297,24 @@ message_event.362 = {
 	# five conditions at once, so the letter flow is untouched.
 	immediate = {
 		votc_whisper_deliver = yes
-		# VOTC-194 §30.1.3: arm the reply state for legacy letter replies.  When
-		# the artifact exists and this is NOT a whisper-hijacked reply, closing the
-		# parchment opens the compose dialog in reply mode.  votc_letter_reply_sender
-		# is normally set by the npcltr (.152) or incoming (.010N) path already;
-		# message_second_scope is the safe legacy fallback (set by the player's own
-		# message_event.360 send).
+		# VOTC-194 §30.1.3 + §34: arm the reply state for legacy letter replies.
+		# When the artifact exists and this is NOT a whisper-hijacked reply,
+		# closing the parchment opens the compose dialog in reply mode.  The
+		# reply sender is ALWAYS re-derived on landing: the old
+		# not-already-set guard let a sender from a PREVIOUS letter cycle
+		# survive into this one, so closing a reply from X opened
+		# "Reply to Letter from Y".  The npcltr path (.152) mirrors its
+		# sender into message_second_scope before triggering this event, so
+		# the derivation below is correct for every channel that lands here.
 		if = {
 			limit = {
 				exists = global_var:votc_latest_letter
 				NOT = { has_global_variable = votc_whisper_pending }
 			}
 			set_global_variable = { name = votc_letter_replyable value = yes }
+			remove_global_variable ?= votc_letter_reply_sender
 			if = {
-				limit = {
-					NOT = { has_global_variable = votc_letter_reply_sender }
-					exists = global_var:message_second_scope
-				}
+				limit = { exists = global_var:message_second_scope }
 				set_global_variable = { name = votc_letter_reply_sender value = global_var:message_second_scope }
 			}
 		}
