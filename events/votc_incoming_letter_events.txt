@@ -1174,6 +1174,99 @@ votc_incoming_letter_event.0118 = {
 # 0201-0208 clipboard bridge events (signal the desktop app)
 # -------------------------------------------------
 
+# 0300 invisible clipboard token for the bridge events .0201-.0208
+# The bridge events are hidden = yes + orphan = yes, so CK3 never creates their
+# event window and their widget block (EventWindowData.CopyToClipboard) never ran -
+# nothing reached the OS clipboard and the desktop app never saw VOTC:INCOMING_LETTER
+# (regression from commit 39f67f6b). This repair event is NOT hidden and option-less,
+# pointed at the 1x1 tutorial-layer token window votc_incoming_letter_token.gui, whose
+# _copy state calls [EventWindowData.CopyToClipboard]. Each .020N immediate fires it with
+# days = 0; the desc's first_valid picks the per-slot payload line (votc_incoming_letter_bridge_N),
+# which is what lands on the clipboard.
+# 0301-0308 invisible clipboard tokens for the bridge events .0201-.0208
+# The bridge events are hidden = yes + orphan = yes, so CK3 never creates their
+# event window and their widget block (EventWindowData.CopyToClipboard) never ran -
+# nothing reached the OS clipboard and the desktop app never saw VOTC:INCOMING_LETTER
+# (regression from commit 39f67f6b).  Each .020N immediate now fires its OWN token
+# event .030N (NOT hidden, option-less), pointed at the 1x1 tutorial-layer token
+# window votc_incoming_letter_token.gui, whose _copy state calls
+# [EventWindowData.CopyToClipboard].  CopyToClipboard copies the event's desc, so a
+# per-slot token is required: several slots can be occupied at once (family slot 7 /
+# poetry slot 8 run on independent cooldowns, and Maximum frequency removes the
+# shared cooldown), so a single shared token picking "the first occupied slot" would
+# copy the wrong payload.  One token per slot keeps the copied line deterministic.
+votc_incoming_letter_event.0301 = {
+	type = character_event
+	title = votc_incoming_letter_bridge_title
+	theme = clipboard_transfer_event_theme
+	window = votc_incoming_letter_token
+	trigger = { exists = global_var:votc_incoming_letter_1 }
+	desc = votc_incoming_letter_bridge_1
+}
+
+votc_incoming_letter_event.0302 = {
+	type = character_event
+	title = votc_incoming_letter_bridge_title
+	theme = clipboard_transfer_event_theme
+	window = votc_incoming_letter_token
+	trigger = { exists = global_var:votc_incoming_letter_2 }
+	desc = votc_incoming_letter_bridge_2
+}
+
+votc_incoming_letter_event.0303 = {
+	type = character_event
+	title = votc_incoming_letter_bridge_title
+	theme = clipboard_transfer_event_theme
+	window = votc_incoming_letter_token
+	trigger = { exists = global_var:votc_incoming_letter_3 }
+	desc = votc_incoming_letter_bridge_3
+}
+
+votc_incoming_letter_event.0304 = {
+	type = character_event
+	title = votc_incoming_letter_bridge_title
+	theme = clipboard_transfer_event_theme
+	window = votc_incoming_letter_token
+	trigger = { exists = global_var:votc_incoming_letter_4 }
+	desc = votc_incoming_letter_bridge_4
+}
+
+votc_incoming_letter_event.0305 = {
+	type = character_event
+	title = votc_incoming_letter_bridge_title
+	theme = clipboard_transfer_event_theme
+	window = votc_incoming_letter_token
+	trigger = { exists = global_var:votc_incoming_letter_5 }
+	desc = votc_incoming_letter_bridge_5
+}
+
+votc_incoming_letter_event.0306 = {
+	type = character_event
+	title = votc_incoming_letter_bridge_title
+	theme = clipboard_transfer_event_theme
+	window = votc_incoming_letter_token
+	trigger = { exists = global_var:votc_incoming_letter_6 }
+	desc = votc_incoming_letter_bridge_6
+}
+
+votc_incoming_letter_event.0307 = {
+	type = character_event
+	title = votc_incoming_letter_bridge_title
+	theme = clipboard_transfer_event_theme
+	window = votc_incoming_letter_token
+	trigger = { exists = global_var:votc_incoming_letter_7 }
+	desc = votc_incoming_letter_bridge_7
+}
+
+votc_incoming_letter_event.0308 = {
+	type = character_event
+	title = votc_incoming_letter_bridge_title
+	theme = clipboard_transfer_event_theme
+	window = votc_incoming_letter_token
+	trigger = { exists = global_var:votc_incoming_letter_8 }
+	desc = votc_incoming_letter_bridge_8
+}
+
 votc_incoming_letter_event.0201 = {
 	hidden = yes
 	orphan = yes
@@ -1181,6 +1274,7 @@ votc_incoming_letter_event.0201 = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_1 }
 			debug_log = "VOTC:INCOMING_LETTER/;/clipboard/;/incoming_letter_1/;/[GetGlobalVariable('votc_incoming_letter_type_1').GetFlagName]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_1_delivery_id').GetValue|0]/;/[GetPlayer.GetID]/;/2/;/1/;/[GetGlobalVariable('votc_campaign_id_a').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_b').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_c').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_d').GetValue|0]/;/[GetGlobalVariable('votc_campaign_bootstrap_kind').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_schema').GetValue|0]"
+			trigger_event = { id = votc_incoming_letter_event.0301 days = 0 }
 		}
 	}
 	type = character_event
@@ -1195,11 +1289,6 @@ votc_incoming_letter_event.0201 = {
 			desc = votc_incoming_letter_bridge_1
 		}
 	}
-
-	widget = {
-		gui = "event_window_widget_talk_clear"
-		container = "custom_widgets_container"
-	}
 }
 
 votc_incoming_letter_event.0202 = {
@@ -1209,6 +1298,7 @@ votc_incoming_letter_event.0202 = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_2 }
 			debug_log = "VOTC:INCOMING_LETTER/;/clipboard/;/incoming_letter_2/;/[GetGlobalVariable('votc_incoming_letter_type_2').GetFlagName]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_2_delivery_id').GetValue|0]/;/[GetPlayer.GetID]/;/2/;/1/;/[GetGlobalVariable('votc_campaign_id_a').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_b').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_c').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_d').GetValue|0]/;/[GetGlobalVariable('votc_campaign_bootstrap_kind').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_schema').GetValue|0]"
+			trigger_event = { id = votc_incoming_letter_event.0302 days = 0 }
 		}
 	}
 	type = character_event
@@ -1223,11 +1313,6 @@ votc_incoming_letter_event.0202 = {
 			desc = votc_incoming_letter_bridge_2
 		}
 	}
-
-	widget = {
-		gui = "event_window_widget_talk_clear"
-		container = "custom_widgets_container"
-	}
 }
 
 votc_incoming_letter_event.0203 = {
@@ -1237,6 +1322,7 @@ votc_incoming_letter_event.0203 = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_3 }
 			debug_log = "VOTC:INCOMING_LETTER/;/clipboard/;/incoming_letter_3/;/[GetGlobalVariable('votc_incoming_letter_type_3').GetFlagName]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_3_delivery_id').GetValue|0]/;/[GetPlayer.GetID]/;/2/;/1/;/[GetGlobalVariable('votc_campaign_id_a').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_b').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_c').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_d').GetValue|0]/;/[GetGlobalVariable('votc_campaign_bootstrap_kind').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_schema').GetValue|0]"
+			trigger_event = { id = votc_incoming_letter_event.0303 days = 0 }
 		}
 	}
 	type = character_event
@@ -1251,11 +1337,6 @@ votc_incoming_letter_event.0203 = {
 			desc = votc_incoming_letter_bridge_3
 		}
 	}
-
-	widget = {
-		gui = "event_window_widget_talk_clear"
-		container = "custom_widgets_container"
-	}
 }
 
 votc_incoming_letter_event.0204 = {
@@ -1265,6 +1346,7 @@ votc_incoming_letter_event.0204 = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_4 }
 			debug_log = "VOTC:INCOMING_LETTER/;/clipboard/;/incoming_letter_4/;/[GetGlobalVariable('votc_incoming_letter_type_4').GetFlagName]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_4_delivery_id').GetValue|0]/;/[GetPlayer.GetID]/;/2/;/1/;/[GetGlobalVariable('votc_campaign_id_a').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_b').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_c').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_d').GetValue|0]/;/[GetGlobalVariable('votc_campaign_bootstrap_kind').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_schema').GetValue|0]"
+			trigger_event = { id = votc_incoming_letter_event.0304 days = 0 }
 		}
 	}
 	type = character_event
@@ -1279,11 +1361,6 @@ votc_incoming_letter_event.0204 = {
 			desc = votc_incoming_letter_bridge_4
 		}
 	}
-
-	widget = {
-		gui = "event_window_widget_talk_clear"
-		container = "custom_widgets_container"
-	}
 }
 
 votc_incoming_letter_event.0205 = {
@@ -1293,6 +1370,7 @@ votc_incoming_letter_event.0205 = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_5 }
 			debug_log = "VOTC:INCOMING_LETTER/;/clipboard/;/incoming_letter_5/;/[GetGlobalVariable('votc_incoming_letter_type_5').GetFlagName]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_5_delivery_id').GetValue|0]/;/[GetPlayer.GetID]/;/2/;/1/;/[GetGlobalVariable('votc_campaign_id_a').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_b').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_c').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_d').GetValue|0]/;/[GetGlobalVariable('votc_campaign_bootstrap_kind').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_schema').GetValue|0]"
+			trigger_event = { id = votc_incoming_letter_event.0305 days = 0 }
 		}
 	}
 	type = character_event
@@ -1307,11 +1385,6 @@ votc_incoming_letter_event.0205 = {
 			desc = votc_incoming_letter_bridge_5
 		}
 	}
-
-	widget = {
-		gui = "event_window_widget_talk_clear"
-		container = "custom_widgets_container"
-	}
 }
 
 votc_incoming_letter_event.0206 = {
@@ -1321,6 +1394,7 @@ votc_incoming_letter_event.0206 = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_6 }
 			debug_log = "VOTC:INCOMING_LETTER/;/clipboard/;/incoming_letter_6/;/[GetGlobalVariable('votc_incoming_letter_type_6').GetFlagName]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_6_delivery_id').GetValue|0]/;/[GetPlayer.GetID]/;/2/;/1/;/[GetGlobalVariable('votc_campaign_id_a').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_b').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_c').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_d').GetValue|0]/;/[GetGlobalVariable('votc_campaign_bootstrap_kind').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_schema').GetValue|0]"
+			trigger_event = { id = votc_incoming_letter_event.0306 days = 0 }
 		}
 	}
 	type = character_event
@@ -1335,11 +1409,6 @@ votc_incoming_letter_event.0206 = {
 			desc = votc_incoming_letter_bridge_6
 		}
 	}
-
-	widget = {
-		gui = "event_window_widget_talk_clear"
-		container = "custom_widgets_container"
-	}
 }
 
 votc_incoming_letter_event.0207 = {
@@ -1349,6 +1418,7 @@ votc_incoming_letter_event.0207 = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_7 }
 			debug_log = "VOTC:INCOMING_LETTER/;/clipboard/;/incoming_letter_7/;/[GetGlobalVariable('votc_incoming_letter_type_7').GetFlagName]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_7_delivery_id').GetValue|0]/;/[GetPlayer.GetID]/;/2/;/1/;/[GetGlobalVariable('votc_campaign_id_a').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_b').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_c').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_d').GetValue|0]/;/[GetGlobalVariable('votc_campaign_bootstrap_kind').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_schema').GetValue|0]"
+			trigger_event = { id = votc_incoming_letter_event.0307 days = 0 }
 		}
 	}
 	type = character_event
@@ -1363,11 +1433,6 @@ votc_incoming_letter_event.0207 = {
 			desc = votc_incoming_letter_bridge_7
 		}
 	}
-
-	widget = {
-		gui = "event_window_widget_talk_clear"
-		container = "custom_widgets_container"
-	}
 }
 
 votc_incoming_letter_event.0208 = {
@@ -1377,6 +1442,7 @@ votc_incoming_letter_event.0208 = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_8 }
 			debug_log = "VOTC:INCOMING_LETTER/;/clipboard/;/incoming_letter_8/;/[GetGlobalVariable('votc_incoming_letter_type_8').GetFlagName]/;/[GetPlayer.MakeScope.Var('votc_incoming_letter_8_delivery_id').GetValue|0]/;/[GetPlayer.GetID]/;/2/;/1/;/[GetGlobalVariable('votc_campaign_id_a').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_b').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_c').GetValue|0]/;/[GetGlobalVariable('votc_campaign_id_d').GetValue|0]/;/[GetGlobalVariable('votc_campaign_bootstrap_kind').GetValue|0]/;/[GetPlayer.MakeScope.Var('votc_timeline_schema').GetValue|0]"
+			trigger_event = { id = votc_incoming_letter_event.0308 days = 0 }
 		}
 	}
 	type = character_event
@@ -1390,11 +1456,6 @@ votc_incoming_letter_event.0208 = {
 			}
 			desc = votc_incoming_letter_bridge_8
 		}
-	}
-
-	widget = {
-		gui = "event_window_widget_talk_clear"
-		container = "custom_widgets_container"
 	}
 }
 
