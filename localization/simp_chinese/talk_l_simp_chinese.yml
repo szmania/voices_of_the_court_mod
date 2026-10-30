@@ -38,7 +38,7 @@ votc_letter_reply_scroll_header:0 "您正在回复的信件："
 votc_message_desc:0 " "
 votc_message_tooltip:0 "如果信件内容不完整，请检查相应的信件宝物。"
 message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/"
-send_message:0 "发送"
+send_message:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, '发送回复', '发送' )]"
 
 # Titles for each letter thread
 votc_huixin_title1:0 "来自[GetGlobalVariable('message_second_scope_letter_1').Char.GetTitledFirstName]的回信"

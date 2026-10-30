@@ -38,7 +38,7 @@ votc_letter_reply_scroll_header:0 "답장하는 편지:"
 votc_message_desc:0 " "
 votc_message_tooltip:0 "메시지가 불완전한 경우 해당 편지 아티팩트를 확인하세요."
 message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/"
-send_message:0 "보내기"
+send_message:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, '답장 보내기', '보내기' )]"
 
 # Titles for each letter thread
 votc_huixin_title1:0 "[GetGlobalVariable('message_second_scope_letter_1').Char.GetTitledFirstName]의 답장"

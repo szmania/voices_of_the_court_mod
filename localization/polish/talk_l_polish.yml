@@ -38,7 +38,7 @@ votc_letter_reply_scroll_header:0 "List, na który odpowiadasz:"
 votc_message_desc:0 " "
 votc_message_tooltip:0 "Jeśli wiadomość jest niekompletna, sprawdź odpowiedni artefakt listu."
 message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/"
-send_message:0 "Wyślij"
+send_message:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, 'Wyślij odpowiedź', 'Wyślij' )]"
 
 # Titles for each letter thread
 votc_huixin_title1:0 "Odpowiedź od [GetGlobalVariable('message_second_scope_letter_1').Char.GetTitledFirstName]"

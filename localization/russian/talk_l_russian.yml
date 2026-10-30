@@ -45,7 +45,7 @@ votc_letter_reply_scroll_header:0 "Письмо, на которое вы отв
 votc_message_desc:0 " "
 votc_message_tooltip:0 "Если сообщение неполное, проверьте соответствующий артефакт письма."
 message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/"
-send_message:0 "Отправить"
+send_message:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, 'Отправить ответ', 'Отправить' )]"
 
 
 # Titles for each letter thread
