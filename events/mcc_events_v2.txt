@@ -515,17 +515,6 @@ mcc_event_v2.1010 = {
 	}
 
 	option = {
-		name = votc_ai_initiate_decline
-		# The decline is handled by votc_ce_initiative.9, which applies the -5
-		# opinion and the opinion-scaled grudge in one place.
-		trigger_event = votc_ce_initiative.9
-		# Cleanup: nothing was started, strip the prepared state.
-		remove_global_variable = votc_ai_initiator
-		remove_global_variable = talk_scene
-		clear_variable_list = mcc_characters_selected
-	}
-
-	option = {
 		name = mcc_event.1002.exit
 		# Leaving the request displeases the initiator.
 		# Only applies to AI-initiated conversations.
