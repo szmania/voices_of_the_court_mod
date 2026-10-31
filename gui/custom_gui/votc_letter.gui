@@ -1,7 +1,7 @@
 ﻿window = {
 	name = "votc_letter"
 	layer = middle
-	size = { 675 830 }
+	size = { 675 930 }           ############ SIZES NEED TO MATCH (VOTC-194: taller for reply dialog)
 	position = { 450 200 }
 	using = Window_Movable
 
@@ -68,7 +68,7 @@
 			bezier = { 0.3 0 0.7 1 }
 
 			animation = {
-				size = { 675 830 }           ############ SIZES NEED TO MATCH
+				size = { 675 930 }           ############ SIZES NEED TO MATCH (VOTC-194: taller for reply dialog)
 				bezier = { 0.8 0.3 0 1 }
 			}
 
@@ -144,7 +144,7 @@
 		name = "letter_content"
 		widgetanchor = center
 		parentanchor = center
-		size = { 675 830 }           ############ SIZES NEED TO MATCH
+		size = { 675 930 }           ############ SIZES NEED TO MATCH (VOTC-194: taller for reply dialog)
 		alpha = 0
 
 		state = {
@@ -154,7 +154,7 @@
 			using = Animation_FadeIn_Standard
 
 			animation = {
-				size = { 675 830 }           ############ SIZES NEED TO MATCH
+				size = { 675 930 }           ############ SIZES NEED TO MATCH (VOTC-194: taller for reply dialog)
 
 				bezier = { 0.8 0.3 0 1 }
 			}
@@ -284,7 +284,7 @@
 			bezier = { 0.3 0 0.7 1 }
 
 			animation = {
-				size = { 675 830 }           ############ SIZES NEED TO MATCH
+				size = { 675 930 }           ############ SIZES NEED TO MATCH (VOTC-194: taller for reply dialog)
 				bezier = { 0.8 0.3 0 1 }
 			}
 
