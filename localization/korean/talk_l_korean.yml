@@ -37,7 +37,9 @@ votc_letter_reply_title:0 "[GetGlobalVariable('votc_letter_reply_sender').GetCha
 votc_letter_reply_scroll_header:0 "답장하는 편지:"
 votc_message_desc:0 " "
 votc_message_tooltip:0 "메시지가 불완전한 경우 해당 편지 아티팩트를 확인하세요."
-message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/"
+message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/[AddLocalizationIf( GetPlayer.MakeScope.Var('votc_incoming_reply_slot').IsSet, 'votc_incoming_reply_marker' )]"
+# VOTC-194 §24.2.2: conditional write-back reply-source marker rendered only when votc_incoming_reply_slot was set by the .010N arrival event (§24.2.1). The marker key carries the trailing /;/ so the unset path is byte-identical.
+votc_incoming_reply_marker:0 "incoming_reply=[GetPlayer.MakeScope.Var('votc_incoming_reply_slot').GetValue|0]|[GetPlayer.MakeScope.Var('votc_incoming_reply_type').GetFlagName]|[GetPlayer.MakeScope.Var('votc_incoming_reply_delivery').GetValue|0]/;/"
 send_message:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, '답장 보내기', '보내기' )]"
 
 # Titles for each letter thread

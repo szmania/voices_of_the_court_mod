@@ -225,6 +225,10 @@ message_event.360 = {
 		name = send_message
 		#store_localized_text_in_death = test_saved_text
 		debug_log = message_text
+		# VOTC-194 §24.2.2: the reply-source marker (if any) was baked into the payload above - consume it now so a stale marker can never mis-chain a later letter.
+		remove_variable ?= votc_incoming_reply_slot
+		remove_variable ?= votc_incoming_reply_type
+		remove_variable ?= votc_incoming_reply_delivery
 		# VOTC-194 §30.3.3: a reply-mode send consumes the read artifact and ends
 		# the reply turn; the chain continues when the NPC's next letter arrives as
 		# a new artifact.  Fresh letters are untouched (marker unset).
