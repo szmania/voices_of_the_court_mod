@@ -308,8 +308,8 @@ votc_letter_parchment_closed_sgui = {
 			# until compose Send/Close, so a stale value leaked into the next
 			# letter's "Reply to Letter from X" title.
 			if = {
-				limit = { exists = global_var:votc_latest_letter }
-				global_var:votc_latest_letter = {
+				limit = { exists = global_var:votc_latest_letter.creator }
+				global_var:votc_latest_letter.creator = {
 					save_scope_as = votc_letter_reply_target
 				}
 			}
