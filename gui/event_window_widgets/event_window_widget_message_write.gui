@@ -18,6 +18,11 @@
 	# player-initiated letters never set the marker, so this stays hidden there.
 	widget = {
 		visible = "[GetGlobalVariable('votc_letter_replying').IsSet]"
+		# VOTC-194 §34.2.2 height budget: the stock character_event.gui window is
+		# 1120x585 and its custom_widgets_container vbox has allow_outside = yes,
+		# so an over-tall preview pushes the textarea under the option buttons.
+		# Preview height = header (~25) + scrollbox (140) = 165.
+			size = { 560 135 }
 		layoutpolicy_horizontal = expanding
 		# Fixed vertical policy: the preview takes only the height of its
 		# contents (header + 200px scrollbox); the editbox below keeps
@@ -35,10 +40,13 @@
 			}
 
 			scrollbox = {
-				size = { 560 200 }
+				# VOTC-194 §34.2.2: shrunk 200 -> 140 so preview + textarea fit the
+				# 585px stock window without the editbox being clipped by the
+				# Send/Close option bar (the parent container allows outside).
+				size = { 560 110 }
 				layoutpolicy_horizontal = expanding
 				# VOTC-194 §30.3.1 layout fix + §34.2.1: fixed vertical policy so
-				# the preview keeps its explicit 200px height (size = { 560 200 };
+				# the preview keeps its explicit 140px height (size = { 560 140 };
 				# the engine ignores min_size - use minimumsize if ever needed) and
 				# stacks ABOVE the textarea instead of competing with it for
 				# expanding space.

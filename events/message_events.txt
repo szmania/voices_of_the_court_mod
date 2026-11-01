@@ -9,6 +9,15 @@ message_event.360 = {
 	left_portrait = {
 		character = scope:recipient
 	}
+	# VOTC-194: right-side portrait for the compose dialog.  In reply mode the
+	# sender (votc_letter_reply_sender, set by votc_letter_parchment_closed_sgui
+	# BEFORE this event is triggered) is shown on the right; in fresh-letter mode
+	# the immediate below defaults the global to scope:recipient.  The immediate
+	# runs before the window renders, so the global is always set by the time the
+	# portrait block evaluates.
+	right_portrait = {
+		character = global_var:votc_message_right_portrait
+	}
 	#orphan = yes
 
 	widget = {
@@ -33,6 +42,38 @@ message_event.360 = {
 		set_global_variable = {
 			name = message_second_scope
 			value = scope:recipient
+		}
+		# VOTC-194: right-portrait target.  Default to the compose recipient;
+		# in reply mode override with the letter's actual sender so the portrait
+		# matches the "Reply to Letter from X" title.
+		set_global_variable = {
+			name = votc_message_right_portrait
+			value = scope:recipient
+		}
+		if = {
+			limit = { has_global_variable = votc_letter_reply_sender }
+			set_global_variable = {
+				name = votc_message_right_portrait
+				value = global_var:votc_letter_reply_sender
+			}
+		}
+		# VOTC-194: title hardening - if the compose was opened in reply mode but
+		# the reply-sender global is somehow unset (e.g. an older save where the
+		# sgui fallback path did not run), re-derive it from message_second_scope,
+		# which in reply mode IS the letter's sender (the sgui saves the sender as
+		# scope:recipient before triggering this event).  The title
+		# (votc_letter_reply_title) reads this global at window-render time, after
+		# this immediate, so the value is current when it evaluates.
+		if = {
+			limit = {
+				has_global_variable = votc_letter_replying
+				NOT = { has_global_variable = votc_letter_reply_sender }
+				exists = global_var:message_second_scope
+			}
+			set_global_variable = {
+				name = votc_letter_reply_sender
+				value = global_var:message_second_scope
+			}
 		}
 		# Testing distance calculation for days
 		set_global_variable = {
@@ -317,7 +358,22 @@ message_event.362 = {
 			}
 			set_global_variable = { name = votc_letter_replyable value = yes }
 			remove_global_variable ?= votc_letter_reply_sender
+			# VOTC-194 §39: prefer the ARTIFACT CREATOR (scope:artifact.creator,
+			# the stock artifact->character event target) - the app's
+			# create_artifact sets creator = the letter's NPC sender, so this is
+			# intrinsic to THIS letter and immune to a stale message_second_scope
+			# left by an earlier compose.  message_second_scope stays as the
+			# fallback for artifacts without a creator (older saves).
 			if = {
+				limit = {
+					exists = global_var:votc_latest_letter.creator
+				}
+				global_var:votc_latest_letter.creator = {
+					save_scope_as = votc_letter_reply_target
+				}
+				set_global_variable = { name = votc_letter_reply_sender value = scope:votc_letter_reply_target }
+			}
+			else_if = {
 				limit = { exists = global_var:message_second_scope }
 				set_global_variable = { name = votc_letter_reply_sender value = global_var:message_second_scope }
 			}
