@@ -779,9 +779,27 @@ votc_incoming_letter_event.0101 = {
 		}
 		set_global_variable = { name = votc_letter_replyable value = yes }
 		set_variable = { name = votc_incoming_reply_slot value = 1 days = 60 }
+		# VOTC-194 §24.2.1: capture the slot's type + delivery id too, so the
+		# player's write-back reply can carry the deterministic reply-source
+		# marker (slot|type|deliveryId) the app parses (app plan §12.4.1a).
+		# Both still exist here - the app run-file cleanup deletes them only
+		# after delivery, which is long after this arrival event fires.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_type_1 }
+			set_variable = { name = votc_incoming_reply_type value = global_var:votc_incoming_letter_type_1 days = 60 }
+		}
+		if = {
+			limit = { has_variable = votc_incoming_letter_1_delivery_id }
+			set_variable = { name = votc_incoming_reply_delivery value = var:votc_incoming_letter_1_delivery_id days = 60 }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0111
-			days = 1
+			# VOTC-194 §37.2.3: fallback cleanup moved from +1 day to the 400-day
+			# housekeeping lifetime so the slot globals survive until the app's run
+			# file executes and its own guarded cleanup removes them (the letters_runner
+			# poller loop then stops).  .011N's ?= clears no-op after a successful
+			# delivery; a never-delivered slot is released via .186 clear-pending.
+			days = 400
 		}
 	}
 
@@ -820,9 +838,27 @@ votc_incoming_letter_event.0102 = {
 		}
 		set_global_variable = { name = votc_letter_replyable value = yes }
 		set_variable = { name = votc_incoming_reply_slot value = 2 days = 60 }
+		# VOTC-194 §24.2.1: capture the slot's type + delivery id too, so the
+		# player's write-back reply can carry the deterministic reply-source
+		# marker (slot|type|deliveryId) the app parses (app plan §12.4.1a).
+		# Both still exist here - the app run-file cleanup deletes them only
+		# after delivery, which is long after this arrival event fires.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_type_2 }
+			set_variable = { name = votc_incoming_reply_type value = global_var:votc_incoming_letter_type_2 days = 60 }
+		}
+		if = {
+			limit = { has_variable = votc_incoming_letter_2_delivery_id }
+			set_variable = { name = votc_incoming_reply_delivery value = var:votc_incoming_letter_2_delivery_id days = 60 }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0112
-			days = 1
+			# VOTC-194 §37.2.3: fallback cleanup moved from +1 day to the 400-day
+			# housekeeping lifetime so the slot globals survive until the app's run
+			# file executes and its own guarded cleanup removes them (the letters_runner
+			# poller loop then stops).  .011N's ?= clears no-op after a successful
+			# delivery; a never-delivered slot is released via .186 clear-pending.
+			days = 400
 		}
 	}
 
@@ -861,9 +897,27 @@ votc_incoming_letter_event.0103 = {
 		}
 		set_global_variable = { name = votc_letter_replyable value = yes }
 		set_variable = { name = votc_incoming_reply_slot value = 3 days = 60 }
+		# VOTC-194 §24.2.1: capture the slot's type + delivery id too, so the
+		# player's write-back reply can carry the deterministic reply-source
+		# marker (slot|type|deliveryId) the app parses (app plan §12.4.1a).
+		# Both still exist here - the app run-file cleanup deletes them only
+		# after delivery, which is long after this arrival event fires.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_type_3 }
+			set_variable = { name = votc_incoming_reply_type value = global_var:votc_incoming_letter_type_3 days = 60 }
+		}
+		if = {
+			limit = { has_variable = votc_incoming_letter_3_delivery_id }
+			set_variable = { name = votc_incoming_reply_delivery value = var:votc_incoming_letter_3_delivery_id days = 60 }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0113
-			days = 1
+			# VOTC-194 §37.2.3: fallback cleanup moved from +1 day to the 400-day
+			# housekeeping lifetime so the slot globals survive until the app's run
+			# file executes and its own guarded cleanup removes them (the letters_runner
+			# poller loop then stops).  .011N's ?= clears no-op after a successful
+			# delivery; a never-delivered slot is released via .186 clear-pending.
+			days = 400
 		}
 	}
 
@@ -902,9 +956,27 @@ votc_incoming_letter_event.0104 = {
 		}
 		set_global_variable = { name = votc_letter_replyable value = yes }
 		set_variable = { name = votc_incoming_reply_slot value = 4 days = 60 }
+		# VOTC-194 §24.2.1: capture the slot's type + delivery id too, so the
+		# player's write-back reply can carry the deterministic reply-source
+		# marker (slot|type|deliveryId) the app parses (app plan §12.4.1a).
+		# Both still exist here - the app run-file cleanup deletes them only
+		# after delivery, which is long after this arrival event fires.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_type_4 }
+			set_variable = { name = votc_incoming_reply_type value = global_var:votc_incoming_letter_type_4 days = 60 }
+		}
+		if = {
+			limit = { has_variable = votc_incoming_letter_4_delivery_id }
+			set_variable = { name = votc_incoming_reply_delivery value = var:votc_incoming_letter_4_delivery_id days = 60 }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0114
-			days = 1
+			# VOTC-194 §37.2.3: fallback cleanup moved from +1 day to the 400-day
+			# housekeeping lifetime so the slot globals survive until the app's run
+			# file executes and its own guarded cleanup removes them (the letters_runner
+			# poller loop then stops).  .011N's ?= clears no-op after a successful
+			# delivery; a never-delivered slot is released via .186 clear-pending.
+			days = 400
 		}
 	}
 
@@ -943,9 +1015,27 @@ votc_incoming_letter_event.0105 = {
 		}
 		set_global_variable = { name = votc_letter_replyable value = yes }
 		set_variable = { name = votc_incoming_reply_slot value = 5 days = 60 }
+		# VOTC-194 §24.2.1: capture the slot's type + delivery id too, so the
+		# player's write-back reply can carry the deterministic reply-source
+		# marker (slot|type|deliveryId) the app parses (app plan §12.4.1a).
+		# Both still exist here - the app run-file cleanup deletes them only
+		# after delivery, which is long after this arrival event fires.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_type_5 }
+			set_variable = { name = votc_incoming_reply_type value = global_var:votc_incoming_letter_type_5 days = 60 }
+		}
+		if = {
+			limit = { has_variable = votc_incoming_letter_5_delivery_id }
+			set_variable = { name = votc_incoming_reply_delivery value = var:votc_incoming_letter_5_delivery_id days = 60 }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0115
-			days = 1
+			# VOTC-194 §37.2.3: fallback cleanup moved from +1 day to the 400-day
+			# housekeeping lifetime so the slot globals survive until the app's run
+			# file executes and its own guarded cleanup removes them (the letters_runner
+			# poller loop then stops).  .011N's ?= clears no-op after a successful
+			# delivery; a never-delivered slot is released via .186 clear-pending.
+			days = 400
 		}
 	}
 
@@ -984,9 +1074,27 @@ votc_incoming_letter_event.0106 = {
 		}
 		set_global_variable = { name = votc_letter_replyable value = yes }
 		set_variable = { name = votc_incoming_reply_slot value = 6 days = 60 }
+		# VOTC-194 §24.2.1: capture the slot's type + delivery id too, so the
+		# player's write-back reply can carry the deterministic reply-source
+		# marker (slot|type|deliveryId) the app parses (app plan §12.4.1a).
+		# Both still exist here - the app run-file cleanup deletes them only
+		# after delivery, which is long after this arrival event fires.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_type_6 }
+			set_variable = { name = votc_incoming_reply_type value = global_var:votc_incoming_letter_type_6 days = 60 }
+		}
+		if = {
+			limit = { has_variable = votc_incoming_letter_6_delivery_id }
+			set_variable = { name = votc_incoming_reply_delivery value = var:votc_incoming_letter_6_delivery_id days = 60 }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0116
-			days = 1
+			# VOTC-194 §37.2.3: fallback cleanup moved from +1 day to the 400-day
+			# housekeeping lifetime so the slot globals survive until the app's run
+			# file executes and its own guarded cleanup removes them (the letters_runner
+			# poller loop then stops).  .011N's ?= clears no-op after a successful
+			# delivery; a never-delivered slot is released via .186 clear-pending.
+			days = 400
 		}
 	}
 
@@ -1025,9 +1133,27 @@ votc_incoming_letter_event.0107 = {
 		}
 		set_global_variable = { name = votc_letter_replyable value = yes }
 		set_variable = { name = votc_incoming_reply_slot value = 7 days = 60 }
+		# VOTC-194 §24.2.1: capture the slot's type + delivery id too, so the
+		# player's write-back reply can carry the deterministic reply-source
+		# marker (slot|type|deliveryId) the app parses (app plan §12.4.1a).
+		# Both still exist here - the app run-file cleanup deletes them only
+		# after delivery, which is long after this arrival event fires.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_type_7 }
+			set_variable = { name = votc_incoming_reply_type value = global_var:votc_incoming_letter_type_7 days = 60 }
+		}
+		if = {
+			limit = { has_variable = votc_incoming_letter_7_delivery_id }
+			set_variable = { name = votc_incoming_reply_delivery value = var:votc_incoming_letter_7_delivery_id days = 60 }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0117
-			days = 1
+			# VOTC-194 §37.2.3: fallback cleanup moved from +1 day to the 400-day
+			# housekeeping lifetime so the slot globals survive until the app's run
+			# file executes and its own guarded cleanup removes them (the letters_runner
+			# poller loop then stops).  .011N's ?= clears no-op after a successful
+			# delivery; a never-delivered slot is released via .186 clear-pending.
+			days = 400
 		}
 	}
 
@@ -1066,9 +1192,27 @@ votc_incoming_letter_event.0108 = {
 		}
 		set_global_variable = { name = votc_letter_replyable value = yes }
 		set_variable = { name = votc_incoming_reply_slot value = 8 days = 60 }
+		# VOTC-194 §24.2.1: capture the slot's type + delivery id too, so the
+		# player's write-back reply can carry the deterministic reply-source
+		# marker (slot|type|deliveryId) the app parses (app plan §12.4.1a).
+		# Both still exist here - the app run-file cleanup deletes them only
+		# after delivery, which is long after this arrival event fires.
+		if = {
+			limit = { exists = global_var:votc_incoming_letter_type_8 }
+			set_variable = { name = votc_incoming_reply_type value = global_var:votc_incoming_letter_type_8 days = 60 }
+		}
+		if = {
+			limit = { has_variable = votc_incoming_letter_8_delivery_id }
+			set_variable = { name = votc_incoming_reply_delivery value = var:votc_incoming_letter_8_delivery_id days = 60 }
+		}
 		trigger_event = {
 			id = votc_incoming_letter_event.0118
-			days = 1
+			# VOTC-194 §37.2.3: fallback cleanup moved from +1 day to the 400-day
+			# housekeeping lifetime so the slot globals survive until the app's run
+			# file executes and its own guarded cleanup removes them (the letters_runner
+			# poller loop then stops).  .011N's ?= clears no-op after a successful
+			# delivery; a never-delivered slot is released via .186 clear-pending.
+			days = 400
 		}
 	}
 

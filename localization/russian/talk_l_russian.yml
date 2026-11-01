@@ -44,7 +44,10 @@ votc_letter_reply_title:0 "Ответить на письмо от [GetGlobalVar
 votc_letter_reply_scroll_header:0 "Письмо, на которое вы отвечаете:"
 votc_message_desc:0 " "
 votc_message_tooltip:0 "Если сообщение неполное, проверьте соответствующий артефакт письма."
-message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/"
+message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/[AddLocalizationIf( GetPlayer.MakeScope.Var('votc_incoming_reply_slot').IsSet, 'votc_incoming_reply_marker' )]"
+# VOTC-194 §24.2.2: необязательный маркер ответа на входящее письмо (выводится,
+# только когда votc_incoming_reply_slot установлен событием прибытия .010N).
+votc_incoming_reply_marker:0 "incoming_reply=[GetPlayer.MakeScope.Var('votc_incoming_reply_slot').GetValue|0]|[GetPlayer.MakeScope.Var('votc_incoming_reply_type').GetFlagName]|[GetPlayer.MakeScope.Var('votc_incoming_reply_delivery').GetValue|0]/;/"
 send_message:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, 'Отправить ответ', 'Отправить' )]"
 
 

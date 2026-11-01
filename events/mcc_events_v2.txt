@@ -504,11 +504,6 @@ mcc_event_v2.1010 = {
 		# Only applies to AI-initiated conversations.
 		if = {
 			limit = { has_global_variable = votc_ai_initiator }
-			add_opinion = {
-				target = scope:recipient
-				modifier = conversation_opinion
-				opinion = 1
-			}
 		}
 		# Open the setup popup instead of starting directly.
 		trigger_event = mcc_event_v2.1011

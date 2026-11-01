@@ -37,7 +37,10 @@ votc_letter_reply_title:0 "Répondre à la lettre de [GetGlobalVariable('votc_le
 votc_letter_reply_scroll_header:0 "La lettre à laquelle vous répondez :"
 votc_message_desc:0 " "
 votc_message_tooltip:0 "Si le message est incomplet, vérifiez l'artefact de lettre correspondant."
-message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/"
+message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/[AddLocalizationIf( GetPlayer.MakeScope.Var('votc_incoming_reply_slot').IsSet, 'votc_incoming_reply_marker' )]"
+# VOTC-194 §24.2.2: marqueur optionnel de réponse à lettre entrante (rendu seulement
+# quand votc_incoming_reply_slot est défini par l'événement d'arrivée .010N).
+votc_incoming_reply_marker:0 "incoming_reply=[GetPlayer.MakeScope.Var('votc_incoming_reply_slot').GetValue|0]|[GetPlayer.MakeScope.Var('votc_incoming_reply_type').GetFlagName]|[GetPlayer.MakeScope.Var('votc_incoming_reply_delivery').GetValue|0]/;/"
 send_message:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, 'Envoyer la réponse', 'Envoyer' )]"
 
 # Titles for each letter thread

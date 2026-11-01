@@ -1,0 +1,55 @@
+#==========================================================================
+#  VOTC incoming letters - invisible clipboard-token event window
+#
+#  The bridge events votc_incoming_letter_event.0201-.0208 exist for one
+#  reason only: their (former) widget called EventWindowData.CopyToClipboard,
+#  so the desktop app notices that a VOTC:INCOMING_LETTER payload is waiting.
+#  Commit 39f67f6b marked those bridge events hidden = yes + orphan = yes, and
+#  a hidden event never creates its event window, so the widget state never
+#  ran and nothing reached the OS clipboard - incoming letters stopped arriving.
+#
+#  This window restores clipboard delivery without any visible popup, using the
+#  proven token pattern of votc_ce_initiative_token_event.gui /
+#  votc_whisper_token.gui: a 1x1 window on the tutorial layer with the
+#  EventWindowData datacontext and nothing to look at.  The window is reached
+#  via votc_incoming_letter_event.0300 (NOT hidden), whose desc is the
+#  per-slot payload - CopyToClipboard copies the event's desc, so the correct
+#  slot line lands on the clipboard.
+#
+#  Note: a stock event's widget block cannot do this job here - it uses
+#  container = "custom_widgets_container", defined per-window in vanilla, which
+#  does not exist in a mod window, so it never renders.
+#==========================================================================
+
+window = {
+	name = "votc_incoming_letter_token"
+	gfxtype = windowgfx
+	parentanchor = top|right
+	layer = tutorial
+	allow_outside = yes
+	size = { 1 1 }
+	position = { 0 0 }
+
+	datacontext = "[EventWindow.AccessEventWindowData]"
+
+	state = {
+		name = _copy
+		trigger_on_create = yes
+		on_finish = "[EventWindowData.CopyToClipboard]"
+	}
+
+	# VOTC-194 §37.2.2: boot the letters poller.  The token fires per delivery
+	# on day 1, long before the app writes the run file, so the 8 per-slot
+	# _show_incoming_N states in letters_runner.gui must already exist to catch
+	# it.  Byte-identical to votc_ce_initiative_token_event.gui's _letters state.
+	state = {
+		name = _runner
+		trigger_on_create = yes
+		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/letters_runner.gui letters_runner')]"
+	}
+
+	hbox = {
+		size = { 1 1 }
+		alpha = 0
+	}
+}

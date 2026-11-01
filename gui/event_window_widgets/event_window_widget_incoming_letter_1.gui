@@ -12,7 +12,7 @@ hbox = {
 		# so a create-time execution would miss the file.  trigger_when re-evaluates
 		# continuously and the state re-fires every `duration` beats while the slot global
 		# exists; the app's run file removes votc_incoming_letter_1 on success, which stops
-		# the loop (the .0111 cleanup event clears the slot a day later if the app never
+		# the loop (the .0111 cleanup event clears the slot after 400 days if the app never
 		# writes).  Re-running the file is a harmless no-op - its guard checks the slot
 		# global + delivery id + type.
 		name = widget_show

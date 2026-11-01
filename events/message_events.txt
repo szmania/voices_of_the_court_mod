@@ -7,7 +7,10 @@ message_event.360 = {
 	desc = votc_message_desc
 	theme = diplomacy
 	left_portrait = {
-		character = scope:recipient
+		# VOTC-194 §40 (right_portrait fix): the player (root) is always the
+		# left portrait.  Previously this was scope:recipient, so in
+		# fresh-letter mode both portraits showed the same character (X).
+		character = root
 	}
 	# VOTC-194: right-side portrait for the compose dialog.  In reply mode the
 	# sender (votc_letter_reply_sender, set by votc_letter_parchment_closed_sgui
@@ -35,6 +38,15 @@ message_event.360 = {
 	}
 
 	immediate = {
+		# VOTC-194 §40 (right_portrait fix): clear any stale reply-sender and
+		# portrait globals first.  In reply mode the sgui
+		# (votc_letter_parchment_closed_sgui) has already set
+		# votc_letter_reply_sender before this event fires; the re-derivation
+		# block below restores it from message_second_scope if it was lost.
+		# In fresh-letter mode both stay cleared, so no stale portrait or
+		# "Reply to Letter from X" title can leak into a fresh compose.
+		remove_global_variable = votc_letter_reply_sender
+		remove_global_variable = votc_message_right_portrait
 		set_global_variable = {
 			name = message_first_scope
 			value = scope:actor
@@ -43,20 +55,6 @@ message_event.360 = {
 			name = message_second_scope
 			value = scope:recipient
 		}
-		# VOTC-194: right-portrait target.  Default to the compose recipient;
-		# in reply mode override with the letter's actual sender so the portrait
-		# matches the "Reply to Letter from X" title.
-		set_global_variable = {
-			name = votc_message_right_portrait
-			value = scope:recipient
-		}
-		if = {
-			limit = { has_global_variable = votc_letter_reply_sender }
-			set_global_variable = {
-				name = votc_message_right_portrait
-				value = global_var:votc_letter_reply_sender
-			}
-		}
 		# VOTC-194: title hardening - if the compose was opened in reply mode but
 		# the reply-sender global is somehow unset (e.g. an older save where the
 		# sgui fallback path did not run), re-derive it from message_second_scope,
@@ -64,6 +62,8 @@ message_event.360 = {
 		# scope:recipient before triggering this event).  The title
 		# (votc_letter_reply_title) reads this global at window-render time, after
 		# this immediate, so the value is current when it evaluates.
+		# Moved BEFORE the right-portrait assignment so the portrait picks up the
+		# re-derived sender in the same pass.
 		if = {
 			limit = {
 				has_global_variable = votc_letter_replying
@@ -73,6 +73,22 @@ message_event.360 = {
 			set_global_variable = {
 				name = votc_letter_reply_sender
 				value = global_var:message_second_scope
+			}
+		}
+		# VOTC-194: right-portrait target.  Default to the compose recipient
+		# (Character X) so fresh-letter mode shows the correspondent on the
+		# right and the player (root) on the left; in reply mode override with
+		# the letter's actual sender so the portrait matches the
+		# "Reply to Letter from X" title.
+		set_global_variable = {
+			name = votc_message_right_portrait
+			value = scope:recipient
+		}
+		if = {
+			limit = { has_global_variable = votc_letter_reply_sender }
+			set_global_variable = {
+				name = votc_message_right_portrait
+				value = global_var:votc_letter_reply_sender
 			}
 		}
 		# Testing distance calculation for days
@@ -281,6 +297,9 @@ message_event.360 = {
 			remove_global_variable = votc_letter_reply_sender
 			votc_ce_initiative_letter_destroy = yes
 		}
+		# VOTC-194 §40: always clear the right-portrait global on send so a stale
+		# correspondent can never leak into the next compose dialog.
+		remove_global_variable ?= votc_message_right_portrait
 		trigger_event = mcc_event_v2.9998
 		#remove_variable = votc_message_text
 	}
@@ -301,6 +320,8 @@ message_event.360 = {
 			remove_global_variable = votc_letter_reply_sender
 			votc_ce_initiative_letter_destroy = yes
 		}
+		# VOTC-194 §40: always clear the right-portrait global on close too.
+		remove_global_variable ?= votc_message_right_portrait
 	}
 }
 

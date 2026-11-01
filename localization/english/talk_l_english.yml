@@ -37,7 +37,12 @@ votc_letter_reply_title:0 "Reply to Letter from [GetGlobalVariable('votc_letter_
 votc_letter_reply_scroll_header:0 "The letter you are replying to:"
 votc_message_desc:0 " "
 votc_message_tooltip:0 "If the message is incomplete, check the corresponding letter artifact."
-message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/"
+message_text:0 "VOTC:LETTER/;/[GetPlayer.GetLocalizedText( 'votc_message_text' )]/;/[GetGlobalVariable('votc_letter_num').GetFlagName]/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_letter_distance').GetValue]/;/[AddLocalizationIf( GetPlayer.MakeScope.Var('votc_incoming_reply_slot').IsSet, 'votc_incoming_reply_marker' )]"
+# VOTC-194 §24.2.2: optional trailing reply-source marker.  Renders only when the
+# player is writing back to an incoming letter (votc_incoming_reply_slot set by the
+# arrival event .010N); the app parses it as parts[5] (parseReplyMarker) and links the
+# reply deterministically.  When unset the line is byte-identical to the old payload.
+votc_incoming_reply_marker:0 "incoming_reply=[GetPlayer.MakeScope.Var('votc_incoming_reply_slot').GetValue|0]|[GetPlayer.MakeScope.Var('votc_incoming_reply_type').GetFlagName]|[GetPlayer.MakeScope.Var('votc_incoming_reply_delivery').GetValue|0]/;/"
 send_message:0 "[Select_CString( GetGlobalVariable('votc_letter_replying').IsSet, 'Send reply', 'Send' )]"
 
 # Titles for each letter thread

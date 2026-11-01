@@ -19,9 +19,13 @@ votc_ce_initiative_settings_decision = {
 	is_shown = {
 		NOT = { is_ai = yes }
 	}
-	is_valid = {
-		NOT = { is_ai = yes }
-	}
+	# VOTC-194 §38.2.2: the is_valid block was deleted.  It was 100% redundant
+	# (is_shown already hides the decision from AI; ai_check_interval = 0 and
+	# ai_will_do = { base = 0 } keep AI from ever taking it; for a human player
+	# it always evaluated true) and it rendered a confusing "Is AI" requirement
+	# line in the decision tooltip.  Removing it also eliminates the vanilla
+	# trigger-localization warning class (is_ai has no 'first_not' perspective in
+	# common/trigger_localization/00_debug_triggers.txt) deterministically.
 	effect = {
 		# Make sure the settings exist before the window reads them.
 		if = {

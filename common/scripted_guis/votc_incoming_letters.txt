@@ -297,12 +297,72 @@ votc_letter_parchment_closed_sgui = {
 			limit = { has_global_variable = votc_letter_replyable }
 			remove_global_variable = votc_letter_replyable
 			set_global_variable = { name = votc_letter_replying value = yes }
+			# VOTC-194 §39: derive the reply sender from the ARTIFACT ITSELF
+			# (scope:artifact.creator - the stock artifact->character event target,
+			# proven in common/scripted_triggers/00_artifact_triggers.txt).  The
+			# app's create_artifact sets creator = the letter's NPC sender, so the
+			# binding is intrinsic to THIS letter and can never be stale: a second
+			# letter arriving while the first parchment is open cannot redirect
+			# the compose dialog.  The old votc_letter_reply_sender global was a
+			# single shared slot written by 10 arrival sites and never cleared
+			# until compose Send/Close, so a stale value leaked into the next
+			# letter's "Reply to Letter from X" title.
 			if = {
-				limit = { exists = global_var:votc_letter_reply_sender }
-				global_var:votc_letter_reply_sender = { save_scope_as = recipient }
+				limit = { exists = global_var:votc_latest_letter }
+				global_var:votc_latest_letter = {
+					save_scope_as = votc_letter_reply_target
+				}
+			}
+			# Fallback for a letter whose artifact carries no creator (older
+			# saves / a hand-fired test letter): keep the global, but only when
+			# it still resolves.  It is cleared on compose Send/Close (§39.2), so
+			# it can never outlive the letter it was written for.
+			if = {
+				limit = {
+					NOT = { exists = scope:votc_letter_reply_target }
+					exists = global_var:votc_letter_reply_sender
+				}
+				global_var:votc_letter_reply_sender = { save_scope_as = votc_letter_reply_target }
+			}
+			if = {
+				limit = { exists = scope:votc_letter_reply_target }
+				scope:votc_letter_reply_target = { save_scope_as = recipient }
+				# Overwrite the shared global with THIS letter's sender so the
+				# compose title (votc_letter_reply_title reads the global) is
+				# correct even if a previous letter left a stale value.  The
+				# global is removed on compose Send/Close (message_event.360),
+				# so it can never outlive this letter.
+				set_global_variable = { name = votc_letter_reply_sender value = scope:votc_letter_reply_target }
 			}
 			save_scope_as = actor
 			trigger_event = message_event.360
+		}
+	}
+}
+
+# VOTC-194 §37.2.4 (mod half): display trigger for incoming letters.  The
+# arrival events .0101-.0108 are hidden, so their event-window widgets never
+# instantiate and nothing opens the parchment when the app's run file sets
+# votc_latest_letter.  Contract: the app's incoming run file sets
+# votc_incoming_letter_popup (and mirrors the slot's sender into
+# message_second_scope) right before its cleanup lines.  The _popup state in
+# gui/custom_gui/letters_runner.gui (recreated every ~2s) fires this sgui,
+# which consumes the marker and triggers the stock non-hidden
+# message_event.362 - whose widget opens gui/custom_gui/votc_letter.gui and
+# whose immediate arms votc_letter_replyable + re-derives the reply sender
+# from message_second_scope.  Inert until the app writes the marker;
+# stock/npcltr letters never set it, so there is no double-open.  Known edge:
+# two incoming run files landing in the same ~2s window share one marker, so
+# only the newest artifact is displayed (the other stays in inventory + the
+# Letters tab).
+votc_incoming_letter_display_sgui = {
+	scope = character
+	effect = {
+		if = {
+			limit = { has_global_variable = votc_incoming_letter_popup }
+			# Consume the marker so the _popup watcher state stops.
+			remove_global_variable = votc_incoming_letter_popup
+			trigger_event = message_event.362
 		}
 	}
 }
