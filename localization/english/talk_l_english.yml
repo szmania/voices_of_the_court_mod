@@ -333,3 +333,6 @@ votc_enable_incoming_letters_decision_desc:0 "Allow NPCs to occasionally write t
 votc_disable_incoming_letters_decision_desc:0 "Stop new NPC-initiated letters. Letters already in transit will still be delivered."
 votc_clear_incoming_letters_decision_desc:0 "Forcibly clear all eight incoming-letter slots, including the dedicated close-family and poetry slots. Any letter that has not yet been delivered will be abandoned."
 votc_open_incoming_letters_settings_decision_desc:0 "Open the settings window that controls NPC-initiated letters and battle reports."
+
+letters.back_button:0 "Back"
+letters.close_button:0 "Close"

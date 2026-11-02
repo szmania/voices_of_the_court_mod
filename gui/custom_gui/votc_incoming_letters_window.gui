@@ -69,35 +69,37 @@
 		# retired .140 event).  Keys are STATE-named (opt_letters_on = letters
 		# currently ON), the label is the AVAILABLE ACTION, so the visible
 		# conditions are inverted vs the key names.  Do NOT swap the gating.
-		# The hbox must sit inside a widget: a bare container rejects hbox/vbox
-		# children (stack overflow crash, pdx_gui_container).
+		# Both toggle buttons overlap at the same spot inside this wrapper widget
+		# (only one is ever visible).  Do NOT put them back in an hbox: an
+		# invisible flow sibling still reserves its slot, so the visible button
+		# would jump between x=110 (letters ON) and x=340 (letters OFF) and
+		# misalign with the Send Test Letter button below (pinned at x=110).
 		widget = {
 			size = { 660 34 }
 			parentanchor = top|left
 			widgetanchor = top|left
 			position = { 0 122 }
 
-			hbox = {
-				parentanchor = hcenter
-				widgetanchor = hcenter
-				spacing = 20
-
-				button_standard = {
-					visible = "[Not(GetGlobalVariable('votc_ce_initiative_no_letters').IsSet)]"
-					size = { 210 34 }
-					text = votc_ce_initiative_opt_letters_on
-					tooltip = votc_ce_initiative_opt_letters_on
-					onclick = "[GetScriptedGui('votc_incoming_letters_master_disable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				}
-				button_standard = {
-					visible = "[GetGlobalVariable('votc_ce_initiative_no_letters').IsSet]"
-					size = { 210 34 }
-					text = votc_ce_initiative_opt_letters_off
-					tooltip = votc_ce_initiative_opt_letters_off
-					onclick = "[GetScriptedGui('votc_incoming_letters_master_enable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				}
+			button_standard = {
+				parentanchor = top|left
+				widgetanchor = top|left
+				position = { 110 0 }
+				visible = "[Not(GetGlobalVariable('votc_ce_initiative_no_letters').IsSet)]"
+				size = { 210 34 }
+				text = votc_ce_initiative_opt_letters_on
+				tooltip = votc_ce_initiative_opt_letters_on
+				onclick = "[GetScriptedGui('votc_incoming_letters_master_disable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 			}
-		}
+			button_standard = {
+				parentanchor = top|left
+				widgetanchor = top|left
+				position = { 110 0 }
+				visible = "[GetGlobalVariable('votc_ce_initiative_no_letters').IsSet]"
+				size = { 210 34 }
+				text = votc_ce_initiative_opt_letters_off
+				tooltip = votc_ce_initiative_opt_letters_off
+				onclick = "[GetScriptedGui('votc_incoming_letters_master_enable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
 
 		# VOTC-194 §18/§19: unified letter-frequency presets.  One row drives
 		# BOTH letter channels (NPC-letter cadence + incoming-letter chance).
@@ -209,7 +211,7 @@
 			size = { 210 34 }
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 110 160 }
+position = { 110 160 }
 
 			button_standard = {
 				size = { 210 34 }
@@ -219,6 +221,13 @@
 		}
 
 		text_single = {
+			parentanchor = top|left
+			widgetanchor = top|left
+			position = { 0 358 }
+			size = { 660 30 }
+			text = votc_incoming_letters_family_frequency_heading
+			using = Font_Size_Medium
+			align = center
 			parentanchor = top|left
 			widgetanchor = top|left
 			position = { 0 358 }

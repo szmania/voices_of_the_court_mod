@@ -293,6 +293,9 @@ votc_incoming_letters_family_frequency_low_desc:0 "#low Low#! — 25% quarterly 
 votc_incoming_letters_family_frequency_normal_desc:0 "#high Standard#! — 50% quarterly chance and a dedicated 180-day cooldown."
 votc_incoming_letters_family_frequency_high_desc:0 "#P High#! — 80% quarterly chance and a dedicated 90-day cooldown."
 votc_incoming_letters_family_frequency_maximum_desc:0 "#P Maximum#! — 100% quarterly chance and no dedicated family cooldown."
+
+letters.back_button:0 "Zurück"
+letters.close_button:0 "Schließen"
 votc_incoming_letters_family_frequency_off_desc:0 "#N Off#! — do not generate close-family letters."
 votc_incoming_letters_poetry_frequency_heading:0 "Poetry Letter Frequency"
 votc_incoming_letters_poetry_frequency_low_desc:0 "#low Low#! — 25% quarterly chance and a dedicated 360-day cooldown."
