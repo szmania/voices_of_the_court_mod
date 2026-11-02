@@ -73,6 +73,14 @@ votc_whisper.30 = {
 	orphan = yes
 
 	immediate = {
+		# VOTC-195 re-fire guard (mod half): unconditional execution receipt.
+		# .30 is fired only by the desktop app's reply script (its last line),
+		# so this line proves the script ran even when
+		# votc_whisper_take_section's guard bails (done-flag already set or an
+		# empty artifact) and took_section never logs.  The app clears
+		# run/votc_ce_whisper.txt on this receipt, which stops the ~2s poller
+		# from re-executing a stale file and re-firing the whole pipeline.
+		debug_log = "VOTC:WHISPER/;/reply_executed"
 		votc_whisper_take_section = yes
 	}
 }
