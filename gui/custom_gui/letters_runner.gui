@@ -23,6 +23,14 @@
 		}
 
 		state = {
+			# §42 REJECTED gate: trigger_when on votc_pending_letter_action was tried and
+			# reverted — nothing in either repo ever sets that global (the app's letter-action
+			# writers emit only message_*_scope / votcce_action_* + trigger_event = .363), so
+			# the gated state never fired and letter actions could never execute. The
+			# unconditional beat is also functional: executing the placeholder logs the
+			# VOTC:DATE heartbeat the app's date tracking consumes. The real spam symptom
+			# (console_failure: No such file in run/) is fixed app-side by the §42.3 startup
+			# seed, which keeps this beat harmless.
 			name = _show3
 			trigger_on_create = yes
 			on_finish = "[ExecuteConsoleCommand('run votc_ce_letter_actions.txt')]"
