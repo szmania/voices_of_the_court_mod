@@ -30,3 +30,6 @@ votc_ai_frequency_high_decision_tooltip:0 "AI 对话：高"
 votc_ai_frequency_high_decision_confirm:0 "AI 对话：高"
 votc_ai_frequency_high_decision_desc:0 "设置 AI 角色向您发起对话的频率。"
 votc_ai_frequency_high_decision_effect_desc:0 "AI 角色会频繁主动与您对话。"
+
+# VOTC-194 §54: opener button label in the Letters dialog
+votc_incoming_letters_open_settings_button_text:0 "主动来信与战报设置"

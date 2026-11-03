@@ -30,3 +30,6 @@ votc_ai_frequency_high_decision_tooltip:0 "Диалоги ИИ: Высокая"
 votc_ai_frequency_high_decision_confirm:0 "Диалоги ИИ: Высокая"
 votc_ai_frequency_high_decision_desc:0 "Настройте частоту, с которой ИИ-персонажи просят поговорить с вами."
 votc_ai_frequency_high_decision_effect_desc:0 "ИИ-персонажи будут часто инициировать с вами разговоры."
+
+# VOTC-194 §54: opener button label in the Letters dialog
+votc_incoming_letters_open_settings_button_text:0 "Входящие письма и боевые донесения"

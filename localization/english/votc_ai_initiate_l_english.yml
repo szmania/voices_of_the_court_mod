@@ -30,3 +30,6 @@ votc_ai_frequency_high_decision_tooltip:0 "AI Conversations: High"
 votc_ai_frequency_high_decision_confirm:0 "AI Conversations: High"
 votc_ai_frequency_high_decision_desc:0 "Set how often AI characters ask to speak with you."
 votc_ai_frequency_high_decision_effect_desc:0 "AI characters will frequently initiate conversations with you."
+
+# VOTC-194 §54: opener button label in the Letters dialog
+votc_incoming_letters_open_settings_button_text:0 "Incoming Letter & Battle Report Settings"

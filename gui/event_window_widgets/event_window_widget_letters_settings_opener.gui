@@ -13,8 +13,8 @@ hbox = {
 	button_standard = {
 		parentanchor = hcenter
 		size = { 260 34 }
-text = votc_incoming_letters_settings_title
-			tooltip = votc_incoming_letters_settings_desc
+		text = votc_incoming_letters_open_settings_button_text
+		tooltip = votc_incoming_letters_settings_desc
 		onclick = "[ExecuteConsoleCommands('GUI.ClearWidgets votc_incoming_letters_window; gui.createwidget gui/custom_gui/votc_incoming_letters_window.gui votc_incoming_letters_window')]"
 	}
 
@@ -31,10 +31,6 @@ text = votc_incoming_letters_settings_title
 		text = letters.close_button
 		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets event_window_widget_letters_settings_opener')]"
 	}
-		parentanchor = hcenter
-		size = { 260 34 }
-		text = BACK_TO_PREVIOUS_OPTION
-		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets event_window_widget_letters_settings_opener')]"
 	}
 
 	expand = {}

@@ -30,3 +30,6 @@ votc_ai_frequency_high_decision_tooltip:0 "AI会話：高"
 votc_ai_frequency_high_decision_confirm:0 "AI会話：高"
 votc_ai_frequency_high_decision_desc:0 "AIキャラクターがあなたに話しかける頻度を設定します。"
 votc_ai_frequency_high_decision_effect_desc:0 "AIキャラクターは頻繁にあなたとの会話を開始します。"
+
+# VOTC-194 §54: opener button label in the Letters dialog
+votc_incoming_letters_open_settings_button_text:0 "受信した手紙と戦闘報告の設定"

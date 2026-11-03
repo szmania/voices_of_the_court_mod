@@ -100,6 +100,7 @@
 				tooltip = votc_ce_initiative_opt_letters_off
 				onclick = "[GetScriptedGui('votc_incoming_letters_master_enable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 			}
+		}
 
 		# VOTC-194 §18/§19: unified letter-frequency presets.  One row drives
 		# BOTH letter channels (NPC-letter cadence + incoming-letter chance).
@@ -211,7 +212,7 @@
 			size = { 210 34 }
 			parentanchor = top|left
 			widgetanchor = top|left
-position = { 110 160 }
+			position = { 110 244 }
 
 			button_standard = {
 				size = { 210 34 }
@@ -221,13 +222,6 @@ position = { 110 160 }
 		}
 
 		text_single = {
-			parentanchor = top|left
-			widgetanchor = top|left
-			position = { 0 358 }
-			size = { 660 30 }
-			text = votc_incoming_letters_family_frequency_heading
-			using = Font_Size_Medium
-			align = center
 			parentanchor = top|left
 			widgetanchor = top|left
 			position = { 0 358 }

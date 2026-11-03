@@ -30,3 +30,6 @@ votc_ai_frequency_high_decision_tooltip:0 "KI-Gespräche: Hoch"
 votc_ai_frequency_high_decision_confirm:0 "KI-Gespräche: Hoch"
 votc_ai_frequency_high_decision_desc:0 "Legen Sie fest, wie oft KI-Charaktere Sie um ein Gespräch bitten."
 votc_ai_frequency_high_decision_effect_desc:0 "KI-Charaktere werden häufig Gespräche mit Ihnen beginnen."
+
+# VOTC-194 §54: opener button label in the Letters dialog
+votc_incoming_letters_open_settings_button_text:0 "Eingehende Briefe & Kampfberichte"
