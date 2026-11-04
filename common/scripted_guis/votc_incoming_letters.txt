@@ -312,6 +312,8 @@ votc_letter_parchment_closed_sgui = {
 				global_var:votc_latest_letter.creator = {
 					save_scope_as = votc_letter_reply_target
 				}
+				# Plan 55.4.1: derive-source breadcrumb.
+				debug_log = "VOTC:LETTER/;/reply_derive/;/creator"
 			}
 			# Fallback for a letter whose artifact carries no creator (older
 			# saves / a hand-fired test letter): keep the global, but only when
@@ -323,9 +325,35 @@ votc_letter_parchment_closed_sgui = {
 					exists = global_var:votc_letter_reply_sender
 				}
 				global_var:votc_letter_reply_sender = { save_scope_as = votc_letter_reply_target }
+				# Plan 55.4.1: derive-source breadcrumb.
+				debug_log = "VOTC:LETTER/;/reply_derive/;/fallback_global"
 			}
+			# Plan 55.4.2: THIRD fallback - message_second_scope always holds a
+			# character (set by message_event.360's immediate from scope:recipient,
+			# or mirrored by .152 / the incoming run files).  Byte-mirrors .360's
+			# own fallback so the compose can resolve even when the artifact has no
+			# creator AND the reply_sender global is unset.
 			if = {
-				limit = { exists = scope:votc_letter_reply_target }
+				limit = {
+					NOT = { exists = scope:votc_letter_reply_target }
+					exists = global_var:message_second_scope
+				}
+				global_var:message_second_scope = { save_scope_as = votc_letter_reply_target }
+				# Plan 55.4.1: derive-source breadcrumb.
+				debug_log = "VOTC:LETTER/;/reply_derive/;/message_second_scope"
+			}
+			# VOTC-194 §41.2.1 (F1b): if NO character can be derived, do NOT open
+			# the compose dialog in reply mode - an artifact/empty recipient
+			# renders a blank title and portrait.  Drop the reply marker and leave
+			# the parchment closed; the letter stays readable in the Letters tab.
+			if = {
+				limit = { NOT = { exists = scope:votc_letter_reply_target } }
+				remove_global_variable = votc_letter_replying
+				# Plan 55.4.3: make the suppression loud so a silent no-show is
+				# never mistaken for a working reply compose.
+				debug_log = "VOTC:LETTER/;/reply_compose_suppressed/;/no_sender"
+			}
+			else = {
 				scope:votc_letter_reply_target = { save_scope_as = recipient }
 				# Overwrite the shared global with THIS letter's sender so the
 				# compose title (votc_letter_reply_title reads the global) is
@@ -333,9 +361,17 @@ votc_letter_parchment_closed_sgui = {
 				# global is removed on compose Send/Close (message_event.360),
 				# so it can never outlive this letter.
 				set_global_variable = { name = votc_letter_reply_sender value = scope:votc_letter_reply_target }
+				save_scope_as = actor
+				# Plan 55.4.1: trigger-fire breadcrumb.
+				debug_log = "VOTC:LETTER/;/reply_compose_trigger/;/message_event_360"
+				trigger_event = message_event.360
 			}
-			save_scope_as = actor
-			trigger_event = message_event.360
+		}
+		else = {
+			# Plan 55.4.1: gate-fail breadcrumb - the parchment was closed but
+			# votc_letter_replyable was not set (non-replyable letter, or .362
+			# never armed it).  Distinguishes RC-A from RC-B in debug.log.
+			debug_log = "VOTC:LETTER/;/reply_compose_gate_fail/;/no_replyable"
 		}
 	}
 }
