@@ -17,9 +17,9 @@
 #  The report is assembled from FOUR separate replies: CK3 cannot split a
 #  string, and rich text coming out of a data function is not parsed, so four
 #  separate strings are the only way to render real large section headings.
-#  Each reply arrives through run/votc_ce_whisper.txt (primary, once the desktop
-#  app has the whisper branch) or through the message_event.362 fallback, and
-#  is stored by votc_whisper_take_section; the last one opens .20.
+#  Each reply arrives through run/votc_ce_whisper.txt, written by the desktop
+#  app, and is stored by votc_whisper_take_section; the last one opens .20.
+#  (VOTC-195 §56: the message_event.362 letter-channel fallback was removed.)
 #==========================================================================
 
 namespace = votc_whisper
@@ -120,12 +120,13 @@ votc_whisper.20 = {
 	}
 
 	immediate = {
-		# The section artifacts have just been handed to the desc.  Drop the
-		# pointer to the last of them so nothing later renders a destroyed
-		# artifact.  The section variables themselves are kept until the NEXT
-		# report starts (votc_whisper_start clears them), which is what keeps
+		# VOTC-195 §56: nothing is removed here.  The fallback-era cleanup
+		# (remove_global_variable = votc_latest_letter) assumed the last whisper
+		# section WAS the latest letter; the dedicated channel
+		# (votc_whisper_latest) never touches votc_latest_letter, so removing it
+		# here would clobber an ordinary letter that just landed.  Section
+		# variables are kept until the next report starts, which is what keeps
 		# "Read the Last Ledger" working after the window is dismissed.
-		remove_global_variable = votc_latest_letter
 	}
 
 	option = {
@@ -221,6 +222,10 @@ votc_whisper.100 = {
 	option = {
 		name = votc_whisper_opt_now
 		trigger_event = votc_whisper.120
+	}
+	option = {
+		name = votc_whisper_opt_back
+		trigger_event = votc_ce_initiative.210
 	}
 	option = {
 		name = votc_whisper_opt_close

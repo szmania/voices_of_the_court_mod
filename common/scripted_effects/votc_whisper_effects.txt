@@ -1,9 +1,10 @@
 ﻿#==========================================================================
 #  The Whisper Ledger  -  scripted effects  (VOTC-195)
 #
-#  Every effect below runs with root = the player character, except
-#  votc_whisper_deliver, which is called from the message_event.362 fallback
-#  and reaches the player through global_var:votc_whisper_player.
+#  Every effect below runs with root = the player character.
+#  (VOTC-195 §56: the message_event.362 letter-channel fallback and its
+#  vendored delivery effect were removed - the dedicated whisper channel is
+#  the only path.)
 #
 #  The report is asked for ONE SECTION AT A TIME (world -> realm -> court ->
 #  circle): CK3 cannot split a string, and rich text inside a data function's
@@ -419,56 +420,56 @@ votc_whisper_log_all = {
 votc_whisper_log_payload_world = {
 	if = {
 		limit = { global_var:votc_whisper_freq = 91 }
-		debug_log = "VOTC:WHISPER/;/3|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/3|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 	else_if = {
 		limit = { global_var:votc_whisper_freq = 365 }
-		debug_log = "VOTC:WHISPER/;/12|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/12|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 	else = {
-		debug_log = "VOTC:WHISPER/;/6|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/6|WORLD/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 }
 
 votc_whisper_log_payload_realm = {
 	if = {
 		limit = { global_var:votc_whisper_freq = 91 }
-		debug_log = "VOTC:WHISPER/;/3|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/3|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 	else_if = {
 		limit = { global_var:votc_whisper_freq = 365 }
-		debug_log = "VOTC:WHISPER/;/12|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/12|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 	else = {
-		debug_log = "VOTC:WHISPER/;/6|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/6|REALM/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 }
 
 votc_whisper_log_payload_court = {
 	if = {
 		limit = { global_var:votc_whisper_freq = 91 }
-		debug_log = "VOTC:WHISPER/;/3|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/3|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 	else_if = {
 		limit = { global_var:votc_whisper_freq = 365 }
-		debug_log = "VOTC:WHISPER/;/12|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/12|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 	else = {
-		debug_log = "VOTC:WHISPER/;/6|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/6|COURT/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 }
 
 votc_whisper_log_payload_circle = {
 	if = {
 		limit = { global_var:votc_whisper_freq = 91 }
-		debug_log = "VOTC:WHISPER/;/3|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/3|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 	else_if = {
 		limit = { global_var:votc_whisper_freq = 365 }
-		debug_log = "VOTC:WHISPER/;/12|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/12|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 	else = {
-		debug_log = "VOTC:WHISPER/;/6|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/"
+		debug_log = "VOTC:WHISPER/;/6|CIRCLE/;/[GetCurrentDate.GetDateAsTotalDays]/;/[GetGlobalVariable('votc_whisper_req_id').GetValue|0]/;/"
 	}
 }
 
@@ -528,10 +529,10 @@ votc_whisper_ask = {
 		# THE MARKER.  The desktop app writes
 		#     remove_global_variable ?= votc_${letter.letterId}
 		# into every reply it generates, and our payload declares
-		# letterId = whisper.  So this variable is deleted by the app and by
-		# nothing else: "marker gone" is the only reliable proof that the
-		# message_event.362 we are looking at is OUR reply and not somebody
-		# else's ordinary letter.  See votc_whisper_deliver.
+		# letterId = whisper, so the app's reply script deletes this variable.
+		# (VOTC-195 §56: with the letter-channel fallback removed, nothing in
+		# the mod consumes "marker gone" any more; the marker is kept for
+		# app-side compatibility only.)
 		set_global_variable = {
 			name = votc_whisper
 			value = yes
@@ -546,6 +547,23 @@ votc_whisper_ask = {
 		}
 		else = {
 			root = { votc_whisper_log_all = yes }
+		}
+		# VOTC-195 re-fire guard: bump a nonce once per request and ride it in
+		# the payload line's trailing field.  The app's reply script consumes it
+		# (votc_whisper_consumed_id), so a stale run file re-executed by the
+		# ~2s poller is a no-op instead of re-arming the whole pipeline.
+		if = {
+			limit = { exists = global_var:votc_whisper_req_id }
+			change_global_variable = {
+				name = votc_whisper_req_id
+				add = 1
+			}
+		}
+		else = {
+			set_global_variable = {
+				name = votc_whisper_req_id
+				value = 1
+			}
 		}
 		if = { limit = { global_var:votc_whisper_step = 1 } votc_whisper_log_payload_world = yes }
 		else_if = { limit = { global_var:votc_whisper_step = 2 } votc_whisper_log_payload_realm = yes }
@@ -651,13 +669,10 @@ votc_whisper_seq_cleanup = {
 
 #--------------------------------------------------------------------------
 #  Take one section out of global_var:votc_whisper_latest, then either ask
-#  for the next one or finish the report.  Both channels feed this:
-#
-#    * the dedicated WHISPER channel - run/votc_ce_whisper.txt, written by the
-#      desktop app once it has the whisper branch - arrives through .30;
-#    * the fallback through VOTC's own letter channel (run/letters.txt)
-#      arrives through votc_whisper_deliver, which is used while the desktop
-#      app is still unpatched.
+#  for the next one or finish the report.  The dedicated WHISPER channel -
+#  run/votc_ce_whisper.txt, written by the desktop app and executed by
+#  votc_whisper_runner.gui - arrives through .30.  (VOTC-195 §56: the old
+#  message_event.362 letter-channel fallback was removed.)
 #--------------------------------------------------------------------------
 votc_whisper_take_section = {
 	if = {
@@ -727,31 +742,13 @@ votc_whisper_take_section = {
 #  Hand the finished report to the player.  Nothing else is cleared here on
 #  purpose: votc_whisper_pending has to stay armed until the report window is
 #  dismissed, or the last reply's own event window would open the letter
-#  parchment.
+#  parchment.  (VOTC-195 §56: the parchment-gating rationale is fallback-era -
+#  those gates were removed - but the cleanup timing is kept unchanged.)
 #--------------------------------------------------------------------------
 votc_whisper_open = {
 	root = { trigger_event = votc_whisper.20 }
 }
 
 #--------------------------------------------------------------------------
-#  Vendored fallback for an UNPATCHED desktop app: the reply arrived through
-#  VOTC's letter channel (message_event.362).  See votc_whisper_take_section.
-#--------------------------------------------------------------------------
-votc_whisper_deliver = {
-	if = {
-		limit = {
-			has_global_variable = votc_whisper_pending
-			# the app deletes votc_whisper when it answers a whisper request, so
-			# "marker gone" is what separates our reply from an ordinary letter
-			NOT = { has_global_variable = votc_whisper }
-			NOT = { has_global_variable = votc_whisper_done }
-			exists = global_var:votc_latest_letter
-			exists = global_var:votc_whisper_player
-		}
-		set_global_variable = {
-			name = votc_whisper_latest
-			value = global_var:votc_latest_letter
-		}
-		votc_whisper_take_section = yes
-	}
-}
+#  (VOTC-195 §56: the vendored letter-channel fallback effect was removed -
+#  the dedicated whisper channel is the only path.)
