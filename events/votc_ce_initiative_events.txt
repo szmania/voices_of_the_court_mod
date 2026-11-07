@@ -179,6 +179,7 @@ votc_ce_initiative.3 = {
 				limit = {
 					scope:recipient = { is_at_same_location = root }
 				}
+				debug_log = "VOTC_CE_INIT: .3: NPC is co-located - firing mcc_event_v2.1010"
 				# Hand over to the CE conversation flow.  votc_ai_initiator tells
 				# the pipeline which AI character speaks first; the scene and
 				# participants are prepared the same way the old ai-initiate did.
@@ -209,6 +210,7 @@ votc_ce_initiative.3 = {
 						on_arrival_event = votc_ce_initiative.4
 					}
 				}
+				debug_log = "VOTC_CE_INIT: .3: NPC is away - starting travel plan (arrival re-fires .3)"
 				set_global_variable = {
 					name = votc_ce_initiative_player
 					value = root
@@ -555,7 +557,7 @@ votc_ce_initiative.110 = {
 	}
 	option = {
 		name = votc_ce_initiative_opt_back
-		trigger_event = votc_ce_initiative.100
+		trigger_event = votc_ce_initiative.205
 	}
 	option = {
 		name = votc_ce_initiative_opt_close
@@ -638,7 +640,7 @@ votc_ce_initiative.120 = {
 	}
 	option = {
 		name = votc_ce_initiative_opt_back
-		trigger_event = votc_ce_initiative.100
+		trigger_event = votc_ce_initiative.205
 	}
 	option = {
 		name = votc_ce_initiative_opt_close
@@ -895,7 +897,7 @@ votc_ce_initiative.190 = {
 	}
 	option = {
 		name = votc_ce_initiative_opt_back
-		trigger_event = votc_ce_initiative.100
+		trigger_event = votc_ce_initiative.205
 	}
 	option = {
 		name = votc_ce_initiative_opt_close
