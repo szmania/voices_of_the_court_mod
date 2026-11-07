@@ -22,13 +22,19 @@
 		# 1120x585 and its custom_widgets_container vbox has allow_outside = yes,
 		# so an over-tall preview pushes the textarea under the option buttons.
 		# Preview height = header (~25) + scrollbox (140) = 165.
-			size = { 560 135 }
+		size = { 560 135 }
 		layoutpolicy_horizontal = expanding
 		# Fixed vertical policy: the preview takes only the height of its
 		# contents (header + 200px scrollbox); the editbox below keeps
 		# expanding and fills the rest.  No overlap.
 		layoutpolicy_vertical = fixed
 		margin = { 30 0 }
+		# VOTC-194 §41.2.1 (F2): the preview body uses the parchment's exact text
+		# format (#light_background;italic = black italic), which is only readable
+		# on a light surface.  Give the preview the same paper background the
+		# parchment uses (non-skinned variant for event windows) so the black text
+		# is legible instead of black-on-dark.
+		using = Background_Letter_Default
 
 		vbox = {
 			layoutpolicy_horizontal = expanding
@@ -69,9 +75,13 @@
 		layoutpolicy_horizontal = expanding
 		layoutpolicy_vertical = expanding
 		margin = { 30 30 }
+		# VOTC-194 §41.2.1 (F4): bound the textarea block so preview (135) + label
+		# + textarea fits above the Send/Close option bar instead of pushing the
+		# buttons off the window border.
+		size = { 560 170 }
 
 
-		blockoverride "editbox_properties" 
+		blockoverride "editbox_properties"
 		{
 			name = "enter_text" # name referenced in code
 			multiline = yes
@@ -81,7 +91,7 @@
 		blockoverride "editbox_label"
 		{
 			text = event_window_widget_message_write_prompt
-			
+
 		}
 	}
 

@@ -1,0 +1,46 @@
+#==========================================================================
+#  VOTC letters_runner boot token - invisible 1x1 event window
+#
+#  Plan 52.2 (F1) + VOTC-195 §56: the letters_runner window
+#  (gui/custom_gui/letters_runner.gui) was previously created only by
+#  message/token event windows. In a fresh session with no such event, its
+#  _show3 beat (run votc_ce_letter_actions.txt) never fired and letter actions
+#  sat unexecuted until run manually. This token window is reached by
+#  votc_incoming_letter_event.0309, fired from the on_game_start_after_lobby
+#  relay, and its _runner state creates the letters_runner window once per
+#  session. The _whisper_runner state additionally boots the whisper channel's
+#  runner (gui/custom_gui/votc_whisper_runner.gui) so the whisper poller
+#  (run/votc_ce_whisper.txt) is alive from session start too, not only after
+#  the first votc_whisper.50 token. Byte-pattern of
+#  votc_incoming_letter_token.gui / votc_ce_initiative_token_event.gui.
+#==========================================================================
+
+window = {
+	name = "votc_letters_runner_boot_token"
+	gfxtype = windowgfx
+	parentanchor = top|right
+	layer = tutorial
+	allow_outside = yes
+	size = { 1 1 }
+	position = { 0 0 }
+
+	datacontext = "[EventWindow.AccessEventWindowData]"
+
+	state = {
+		name = _runner
+		trigger_on_create = yes
+		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/letters_runner.gui letters_runner')]"
+	}
+
+	state = {
+		name = _whisper_runner
+		trigger_on_create = yes
+		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/votc_whisper_runner.gui votc_whisper_runner')]"
+	}
+
+
+	hbox = {
+		size = { 1 1 }
+		alpha = 0
+	}
+}

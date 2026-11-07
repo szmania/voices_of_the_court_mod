@@ -1411,9 +1411,24 @@ votc_incoming_letter_event.0308 = {
 	desc = votc_incoming_letter_bridge_8
 }
 
+# 0309 session-boot token for the letters_runner poller (plan 52.2 F1).
+# The letters_runner window was previously created only by message/token
+# event windows; in a fresh session with no such event its _show3 beat
+# (run votc_ce_letter_actions.txt) never fired. This NOT-hidden option-less
+# token, fired once from the on_game_start_after_lobby relay, opens the
+# 1x1 boot window votc_letters_runner_boot_token.gui whose _runner state
+# creates the letters_runner window. desc is a blank loc key (the window
+# never copies to clipboard; the title is a blank space like the bridge
+# tokens). Same known-accepted option-less field-missing class as .0301-.0308.
+votc_incoming_letter_event.0309 = {
+	type = character_event
+	title = votc_incoming_letter_bridge_title
+	theme = clipboard_transfer_event_theme
+	window = votc_letters_runner_boot_token
+	desc = votc_incoming_letter_bridge_title
+}
+
 votc_incoming_letter_event.0201 = {
-	hidden = yes
-	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_1 }
@@ -1436,8 +1451,6 @@ votc_incoming_letter_event.0201 = {
 }
 
 votc_incoming_letter_event.0202 = {
-	hidden = yes
-	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_2 }
@@ -1460,8 +1473,6 @@ votc_incoming_letter_event.0202 = {
 }
 
 votc_incoming_letter_event.0203 = {
-	hidden = yes
-	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_3 }
@@ -1484,8 +1495,6 @@ votc_incoming_letter_event.0203 = {
 }
 
 votc_incoming_letter_event.0204 = {
-	hidden = yes
-	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_4 }
@@ -1508,8 +1517,6 @@ votc_incoming_letter_event.0204 = {
 }
 
 votc_incoming_letter_event.0205 = {
-	hidden = yes
-	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_5 }
@@ -1532,8 +1539,6 @@ votc_incoming_letter_event.0205 = {
 }
 
 votc_incoming_letter_event.0206 = {
-	hidden = yes
-	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_6 }
@@ -1556,8 +1561,6 @@ votc_incoming_letter_event.0206 = {
 }
 
 votc_incoming_letter_event.0207 = {
-	hidden = yes
-	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_7 }
@@ -1580,8 +1583,6 @@ votc_incoming_letter_event.0207 = {
 }
 
 votc_incoming_letter_event.0208 = {
-	hidden = yes
-	orphan = yes
 	immediate = {
 		if = {
 			limit = { exists = global_var:votc_incoming_letter_8 }

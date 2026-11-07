@@ -26,6 +26,12 @@ random_yearly_playable_pulse = {
 	}
 }
 
+#  VOTC-195 §56: the whisper runner (gui/custom_gui/votc_whisper_runner.gui)
+#  is booted at session start by the shared session-boot token
+#  votc_incoming_letter_event.0309 -> votc_letters_runner_boot_token.gui
+#  (_whisper_runner state), fired from on_game_start_after_lobby by
+#  votc_letters_runner_boot_relay in votc_incoming_letter_on_actions.txt.
+#  This file's relay only runs the per-player bootstrap/self-heal effect.
 votc_whisper_bootstrap_relay = {
 	effect = {
 		every_player = {

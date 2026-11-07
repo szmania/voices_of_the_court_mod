@@ -21,17 +21,16 @@
 #  It also starts BOTH runners: the whisper channel's runner (_runner state),
 #  which executes run/votc_ce_whisper.txt where the app writes a finished
 #  section, and the letters runner (_letters state), which keeps the letters
-#  poller alive for the unpatched-app fallback - a whisper reply can still
-#  arrive through the ordinary letter channel (see votc_whisper_deliver).
+#  poller alive.  (VOTC-195 §56: the unpatched-app letter-channel fallback was
+#  removed - the letters runner now only serves the ordinary letter channels.)
 #  VOTC-194 §22: the letters poller used to be booted by firing the VISIBLE
 #  mcc_event_v2.9998 placeholder event from votc_whisper_ask, which flashed
 #  an empty dialog for a split second before this token window replaced it
 #  one game day later; that trigger is gone and the boot moved here, invisibly.
 #
-#  Timing (§22.1.3): .50 fires 1 game day after the ask; the fallback reply
-#  lands 20-60 real seconds later and the letters_runner normally already
-#  exists from the letter flow (self-perpetuating counter), so the 1-day gap
-#  is safe.
+#  Timing (§22.1.3): .50 fires 1 game day after the ask; the whisper reply
+#  lands 20-60 real seconds later and the runners normally already exist from
+#  the letter flow (self-perpetuating counter), so the 1-day gap is safe.
 #
 #  Note the widget a stock token event declares cannot do this job: it uses
 #  container = "custom_widgets_container", which is defined per-window in

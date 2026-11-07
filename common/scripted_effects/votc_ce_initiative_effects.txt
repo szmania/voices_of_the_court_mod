@@ -211,7 +211,6 @@ votc_ce_initiative_try = {
 	votc_ce_initiative_merge_watch = yes
 	# VOTC-194 §57.3.1: pre-gate breadcrumb - records the gate state on EVERY
 	# entry so a silent no-fire is diagnosable from debug.log.
-	debug_log = "VOTC_CE_INIT: try gates: talked_list=[has_variable_list?] player_pending=[exists votc_ce_initiative_player?] off=[votc_ce_initiative_off?]"
 	if = {
 		limit = {
 			is_ai = no

@@ -9,7 +9,13 @@ hbox = {
         name = widget_show
         trigger_on_create = yes
 
+		# Plan 52.2 (F2): after clearing the counter, re-create the runner
+		# window so the ~2s recreation loop (_show2) and the letter-action
+		# beat (_show3) self-heal instead of staying dead until the next
+		# message/token event. gui.createwidget on an existing window is a
+		# no-op, so this is safe when the runner already exists.
 		on_start = "[ExecuteConsoleCommand('GUI.ClearWidgets letters_runner_counter')]"
+		on_finish = "[ExecuteConsoleCommand('gui.createwidget gui/custom_gui/letters_runner.gui letters_runner')]"
 	}
 
 	

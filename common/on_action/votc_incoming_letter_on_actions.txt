@@ -90,3 +90,27 @@ on_building_completed = {
 		votc_incoming_letter_event.0011
 	}
 }
+
+# Plan 52.2 (F1): boot the letters_runner poller window once per session.
+# on_game_start_after_lobby already has an effect block in vanilla, so a
+# second effect block here would be silently ignored; the official pattern
+# is a mod-owned relay (same as votc_game_start_init_relay). The relay fires
+# the non-hidden option-less token .0309 on the local player, whose boot
+# window creates gui/custom_gui/letters_runner.gui - guaranteeing the _show3
+# beat (run votc_ce_letter_actions.txt) and the _show/_show_npcltr/
+# _show_incoming_N beats exist from session start, not only after the first
+# message/token event.
+on_game_start_after_lobby = {
+	on_actions = {
+		votc_letters_runner_boot_relay
+	}
+}
+
+votc_letters_runner_boot_relay = {
+	effect = {
+		every_player = {
+			limit = { is_ai = no }
+			trigger_event = { id = votc_incoming_letter_event.0309 days = 0 }
+		}
+	}
+}

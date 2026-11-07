@@ -30,7 +30,10 @@
         margin_left = 5
         margin_right = 5
         margin_top = 5
-        size = { 300 230 }
+        # VOTC-194 §41.2.1 (F4): 230 -> 170 so the compose textarea fits the
+        # event window above the option bar.  Single consumer:
+        # editbox_votc_with_label -> event_window_widget_message_write.gui.
+        size = { 300 170 }
 
         using = tooltip_es
 

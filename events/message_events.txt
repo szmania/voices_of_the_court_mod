@@ -55,6 +55,26 @@ message_event.360 = {
 			name = message_second_scope
 			value = scope:recipient
 		}
+		# VOTC-194 §41.2.1 (F1): prefer the ARTIFACT CREATOR (scope:artifact.creator
+		# - the stock artifact->character event target).  The app's create_artifact
+		# sets creator = the letter's NPC sender, so this is intrinsic to THIS
+		# letter and immune to a stale message_second_scope.  Byte-mirrors
+		# message_event.362's §39 block.  Runs only when the sgui did not already
+		# set a reply sender (the normal path after §41.2.1).
+		if = {
+			limit = {
+				has_global_variable = votc_letter_replying
+				NOT = { has_global_variable = votc_letter_reply_sender }
+				exists = global_var:votc_latest_letter.creator
+			}
+			global_var:votc_latest_letter.creator = {
+				save_scope_as = votc_letter_reply_target
+			}
+			set_global_variable = {
+				name = votc_letter_reply_sender
+				value = scope:votc_letter_reply_target
+			}
+		}
 		# VOTC-194: title hardening - if the compose was opened in reply mode but
 		# the reply-sender global is somehow unset (e.g. an older save where the
 		# sgui fallback path did not run), re-derive it from message_second_scope,
@@ -64,7 +84,7 @@ message_event.360 = {
 		# this immediate, so the value is current when it evaluates.
 		# Moved BEFORE the right-portrait assignment so the portrait picks up the
 		# re-derived sender in the same pass.
-		if = {
+		else_if = {
 			limit = {
 				has_global_variable = votc_letter_replying
 				NOT = { has_global_variable = votc_letter_reply_sender }
@@ -300,6 +320,11 @@ message_event.360 = {
 		# VOTC-194 §40: always clear the right-portrait global on send so a stale
 		# correspondent can never leak into the next compose dialog.
 		remove_global_variable ?= votc_message_right_portrait
+		# VOTC-194 §52 (session persistence): always drop the read artifact global
+		# on send too - otherwise votc_latest_letter keeps pointing at the letter
+		# just answered and the next parchment close can re-arm reply mode from a
+		# stale artifact.
+		remove_global_variable ?= votc_latest_letter
 		trigger_event = mcc_event_v2.9998
 		#remove_variable = votc_message_text
 	}
@@ -352,20 +377,13 @@ message_event.362 = {
         container = "custom_widgets_container"
     }
 
-	# VOTC-195: The Whisper Ledger fallback channel.  While the desktop app has
-	# no whisper branch yet, a whisper reply arrives through the ordinary letter
-	# channel (run/letters.txt) and is hijacked into the whisper pipeline here.
-	# The hook is fully guarded: it only fires when a whisper sequence is armed
-	# (votc_whisper_pending), the app has already deleted the request marker
-	# (votc_whisper gone), the report is not finished yet (votc_whisper_done
-	# unset), and both the reply artifact (votc_latest_letter) and the player
-	# scope (votc_whisper_player) exist.  An ordinary letter never satisfies all
-	# five conditions at once, so the letter flow is untouched.
 	immediate = {
-		votc_whisper_deliver = yes
 		# VOTC-194 §30.1.3 + §34: arm the reply state for legacy letter replies.
-		# When the artifact exists and this is NOT a whisper-hijacked reply,
-		# closing the parchment opens the compose dialog in reply mode.  The
+		# When the artifact exists, closing the parchment opens the compose dialog
+		# in reply mode.  (VOTC-195 §56: the whisper fallback that used to hijack
+		# this event was removed - the dedicated whisper channel
+		# run/votc_ce_whisper.txt -> votc_whisper.30 is the only whisper path now,
+		# so every .362 landing is an ordinary letter.)  The
 		# reply sender is ALWAYS re-derived on landing: the old
 		# not-already-set guard let a sender from a PREVIOUS letter cycle
 		# survive into this one, so closing a reply from X opened
@@ -375,7 +393,6 @@ message_event.362 = {
 		if = {
 			limit = {
 				exists = global_var:votc_latest_letter
-				NOT = { has_global_variable = votc_whisper_pending }
 			}
 			set_global_variable = { name = votc_letter_replyable value = yes }
 			remove_global_variable ?= votc_letter_reply_sender

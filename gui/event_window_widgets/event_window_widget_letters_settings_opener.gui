@@ -10,27 +10,15 @@ hbox = {
 	flowcontainer = {
 		direction = vertical
 
-	button_standard = {
-		parentanchor = hcenter
-		size = { 260 34 }
-		text = votc_incoming_letters_open_settings_button_text
-		tooltip = votc_incoming_letters_settings_desc
-		onclick = "[ExecuteConsoleCommands('GUI.ClearWidgets votc_incoming_letters_window; gui.createwidget gui/custom_gui/votc_incoming_letters_window.gui votc_incoming_letters_window')]"
-	}
+		button_standard = {
+			parentanchor = hcenter
+            position = { 0 0 }
+			size = { 260 34 }
+			text = votc_incoming_letters_open_settings_button_text
+			tooltip = votc_incoming_letters_settings_desc
+			onclick = "[ExecuteConsoleCommands('GUI.ClearWidgets votc_incoming_letters_window; gui.createwidget gui/custom_gui/votc_incoming_letters_window.gui votc_incoming_letters_window')]"
+		}
 
-	button_standard = {
-		parentanchor = hcenter
-		size = { 260 34 }
-		text = letters.back_button
-		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets event_window_widget_letters_settings_opener')]"
-	}
-
-	button_standard = {
-		parentanchor = hcenter
-		size = { 260 34 }
-		text = letters.close_button
-		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets event_window_widget_letters_settings_opener')]"
-	}
 	}
 
 	expand = {}

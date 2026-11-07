@@ -78,7 +78,7 @@
 			size = { 660 34 }
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 122 }
+			position = { 130 102 }
 
 			button_standard = {
 				parentanchor = top|left
@@ -101,13 +101,25 @@
 				onclick = "[GetScriptedGui('votc_incoming_letters_master_enable_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 			}
 		}
+		widget = {
+			parentanchor = top|left
+			widgetanchor = top|left
+			position = { 0 195 }
+			size = { 660 24 }
+			text_single = {
+				size = { 660 30 }
+				text = votc_incoming_letters_overall_frequency_heading
+				using = Font_Size_Medium
+				align = center
+			}
+		}
 
 		# VOTC-194 §18/§19: unified letter-frequency presets.  One row drives
 		# BOTH letter channels (NPC-letter cadence + incoming-letter chance).
 		widget = {
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 200 }
+			position = { 0 225 }
 			size = { 660 24 }
 			flowcontainer = {
 				size = { 660 24 }
@@ -132,7 +144,7 @@
 		widget = {
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 224 }
+			position = { 0 249 }
 			size = { 660 24 }
 			flowcontainer = {
 				size = { 660 24 }
@@ -157,7 +169,7 @@
 		widget = {
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 248 }
+			position = { 0 273 }
 			size = { 660 24 }
 			flowcontainer = {
 				size = { 660 24 }
@@ -182,11 +194,11 @@
 		widget = {
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 0 272 }
+			position = { 0 297 }
 			size = { 660 24 }
 			flowcontainer = {
 				size = { 660 24 }
-			direction = horizontal
+				direction = horizontal
 				spacing = 8
 				button_radio = {
 					size = { 24 24 }
@@ -212,7 +224,7 @@
 			size = { 210 34 }
 			parentanchor = top|left
 			widgetanchor = top|left
-			position = { 110 244 }
+			position = { 240 150 }
 
 			button_standard = {
 				size = { 210 34 }
@@ -610,14 +622,16 @@
 				}
 			}
 		}
-
-		button_standard = {
-			parentanchor = top|hcenter
-			widgetanchor = top|hcenter
-			position = { 0 850 }
+		widget = {
 			size = { 210 34 }
-			text = votc_incoming_letters_close_option
-			onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets votc_incoming_letters_window')]"
+			parentanchor = top|left
+			widgetanchor = top|left
+			position = { 450 860 }
+			button_standard = {
+				size = { 210 34 }
+				text = votc_incoming_letters_close_option
+				onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets votc_incoming_letters_window')]"
+			}
 		}
 	}
 }

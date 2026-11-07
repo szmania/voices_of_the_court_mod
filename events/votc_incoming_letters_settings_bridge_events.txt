@@ -14,6 +14,10 @@ votc_letters_settings_bridge_event.9001 = {
 		container = "custom_widgets_container"
 	}
 
+	option = {
+		name = votc_incoming_letters_back_option
+		trigger_event = votc_ce_initiative.180
+	}
 	# A real option is required here (unlike the fire-and-forget clipboard
 	# bridge events): without any valid option the engine refuses to present
 	# the window, and the user never reaches the opener button above.
