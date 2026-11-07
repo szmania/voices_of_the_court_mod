@@ -162,6 +162,25 @@ votc_ce_initiative_release_stale = {
 	}
 	if = {
 		limit = {
+			has_global_variable = votc_ce_initiative_player
+			exists = global_var:votc_ce_initiative_char
+			global_var:votc_ce_initiative_char = {
+				is_alive = yes
+				is_travelling = no
+				NOT = { is_at_same_location = root }
+			}
+		}
+		# VOTC-194 §57.3.2: self-heal - the invited NPC is alive, NOT travelling
+		# and NOT at the player's location, so no arrival event (.4) can ever
+		# fire (the travel plan was silently cancelled).  Release the wedged
+		# invitation instead of letting it block the feature until the 730-day
+		# hard expiry on votc_ce_initiative_char lapses.
+		debug_log = "VOTC_CE_INIT: invited character is stranded (not travelling, not co-located) - releasing the wedged invitation"
+		remove_global_variable = votc_ce_initiative_player
+		remove_global_variable = votc_ce_initiative_char
+	}
+	if = {
+		limit = {
 			has_global_variable = votc_ce_initiative_letter_pending
 			OR = {
 				NOT = { exists = global_var:votc_ce_initiative_letter_char }
@@ -186,6 +205,13 @@ votc_ce_initiative_release_stale = {
 votc_ce_initiative_try = {
 	votc_ce_initiative_purge_lists = yes
 	votc_ce_initiative_release_stale = yes
+	# VOTC-194 §57.3.4: seed the pool from pinned characters BEFORE the
+	# has_variable_list gate, so a new player with pins but no completed
+	# VOTC talks is not locked out (chicken-and-egg fix).
+	votc_ce_initiative_merge_watch = yes
+	# VOTC-194 §57.3.1: pre-gate breadcrumb - records the gate state on EVERY
+	# entry so a silent no-fire is diagnosable from debug.log.
+	debug_log = "VOTC_CE_INIT: try gates: talked_list=[has_variable_list?] player_pending=[exists votc_ce_initiative_player?] off=[votc_ce_initiative_off?]"
 	if = {
 		limit = {
 			is_ai = no
@@ -195,7 +221,7 @@ votc_ce_initiative_try = {
 			has_variable_list = votc_talked_characters
 			NOT = { exists = global_var:votc_ce_initiative_player }
 		}
-		votc_ce_initiative_merge_watch = yes
+		debug_log = "VOTC_CE_INIT: try gates passed - rolling chance"
 		if = {
 			limit = { global_var:votc_ce_initiative_chance = 5 }
 			random = { chance = 5 votc_ce_initiative_launch = yes }
@@ -210,6 +236,31 @@ votc_ce_initiative_try = {
 		}
 		else = {
 			random = { chance = 15 votc_ce_initiative_launch = yes }
+	}
+	}
+	# VOTC-194 §57.3.1: name the exact blocked gate so a silent no-fire is
+	# diagnosable from debug.log instead of guesswork.
+	else = {
+		debug_log = "VOTC_CE_INIT: try gates blocked - mcc_event_v2.1010 not fired"
+		if = {
+			limit = { NOT = { has_variable_list = votc_talked_characters } }
+			debug_log = "VOTC_CE_INIT: gate fail - votc_talked_characters pool empty"
+		}
+		if = {
+			limit = { exists = global_var:votc_ce_initiative_player }
+			debug_log = "VOTC_CE_INIT: gate fail - an invitation is already pending"
+		}
+		if = {
+			limit = { has_global_variable = votc_ce_initiative_off }
+			debug_log = "VOTC_CE_INIT: gate fail - feature disabled (votc_ce_initiative_off)"
+		}
+		if = {
+			limit = { is_imprisoned = yes }
+			debug_log = "VOTC_CE_INIT: gate fail - the player is imprisoned"
+		}
+		if = {
+			limit = { is_travelling = yes }
+			debug_log = "VOTC_CE_INIT: gate fail - the player is travelling"
 		}
 	}
 }
@@ -248,6 +299,9 @@ votc_ce_initiative_launch = {
 	if = {
 		limit = { NOT = { exists = global_var:votc_ce_initiative_player } }
 		save_scope_as = actor
+		# VOTC-194 §57.3.1: breadcrumb before the same-location pick so a
+		# silent no-fire is diagnosable from debug.log.
+		debug_log = "VOTC_CE_INIT: launch: rolling same-location pick over votc_talked_characters"
 		ordered_in_list = {
 			variable = votc_talked_characters
 			limit = {
@@ -260,6 +314,8 @@ votc_ce_initiative_launch = {
 		}
 		if = {
 			limit = { NOT = { exists = scope:votc_ce_initiative_target } }
+			# VOTC-194 §57.3.1: breadcrumb before the fallback any-location pick.
+			debug_log = "VOTC_CE_INIT: launch: no same-location candidate - rolling any-location pick"
 			ordered_in_list = {
 				variable = votc_talked_characters
 				limit = { votc_ce_initiative_is_valid_candidate = yes }
@@ -270,7 +326,9 @@ votc_ce_initiative_launch = {
 		}
 		if = {
 			limit = { exists = scope:votc_ce_initiative_target }
-			set_global_variable = { name = votc_ce_initiative_char value = scope:votc_ce_initiative_target }
+			# VOTC-194 §57.3.2: hard expiry so a wedged invitation (e.g. a
+			# silently cancelled travel plan) cannot block the feature forever.
+			set_global_variable = { name = votc_ce_initiative_char value = scope:votc_ce_initiative_target days = 730 }
 			set_global_variable = { name = votc_ce_initiative_player value = root days = 90 }
 			scope:votc_ce_initiative_target = {
 				if = {
@@ -287,6 +345,16 @@ votc_ce_initiative_launch = {
 			}
 			debug_log = "VOTC_CE_INIT: picked [scope:votc_ce_initiative_target.GetID] to request a talk"
 			trigger_event = votc_ce_initiative.3
+		}
+		else = {
+			debug_log = "VOTC_CE_INIT: launch: no valid candidate in pool - mcc_event_v2.1010 not fired"
+			# VOTC-194 §57.3.1: the stuck-talk_scene disqualifier (see
+			# votc_ce_initiative_is_valid_candidate) silently removes every
+			# candidate - name it explicitly so the wedge is visible.
+			if = {
+				limit = { has_global_variable = talk_scene }
+				debug_log = "VOTC_CE_INIT: gate fail - talk_scene is set (stuck conversation?) disqualifying all candidates"
+			}
 		}
 	}
 }
