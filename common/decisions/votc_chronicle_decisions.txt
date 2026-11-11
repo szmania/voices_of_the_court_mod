@@ -1,24 +1,10 @@
-﻿# Open the court chronicle through the paired desktop app.
-votc_open_chronicle_manager_decision = {
-	decision_group_type = votc
-
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-	}
-
-	is_shown = {
-		is_ai = no
-	}
-
-	effect = {
-		custom_tooltip = votc_open_chronicle_manager_decision_effect_desc
-		hidden_effect = {
-			votc_chronicle_manual_tick_effect = yes
-		}
-	}
-
-	ai_check_interval = 0
-	ai_will_do = {
-		base = 0
-	}
-}
+#==========================================================================
+#  Open the court chronicle through the paired desktop app.
+#  RETIRED: the standalone votc_open_chronicle_manager_decision was moved into
+#  the VOTC-CE: Settings hub (events/votc_ce_initiative_events.txt, hub .100)
+#  as the "Open Court Chronicle" option, which triggers
+#  votc_chronicle_event.9004 (the VOTC:CHRONICLE_MANAGER clipboard event).
+#  The chronicle feature itself (votc_chronicle_events.txt,
+#  common/scripted_effects/votc_chronicle_effects.txt, gui, loc) is unchanged.
+#  No decision blocks remain in this file.
+#==========================================================================
