@@ -98,4 +98,6 @@ votc_huixin_titlenpcltr:0 "Brief von [GetGlobalVariable('message_second_scope_np
  votc_ce_initiative_opt_whisper_read_last:0 "Das letzte Buch lesen"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Den jüngsten Bericht des Flüsterbuchs erneut öffnen."
  votc_ce_initiative_opt_incoming_clear:0 "Eingehende Brief-Slots leeren"
+votc_ce_initiative_opt_open_chronicle:0 "Hofchronik öffnen"
+votc_ce_initiative_opt_open_chronicle_tooltip:0 "Das Fenster der Hofchronik (Hofhistoriker) öffnen"
  votc_ce_initiative_opt_incoming_details:0 "Detaillierte Briefeinstellungen"

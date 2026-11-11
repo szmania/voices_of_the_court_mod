@@ -97,4 +97,6 @@ votc_huixin_titlenpcltr:0 "Letter from [GetGlobalVariable('message_second_scope_
  votc_ce_initiative_opt_whisper_read_last:0 "Read the Last Ledger"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Re-open the most recent whisper ledger report."
  votc_ce_initiative_opt_incoming_clear:0 "Clear Incoming Letter Slots"
+votc_ce_initiative_opt_open_chronicle:0 "Open Court Chronicle"
+votc_ce_initiative_opt_open_chronicle_tooltip:0 "Open the Court Chronicle (Court Historian) window"
  votc_ce_initiative_opt_incoming_details:0 "Detailed Letter Settings"

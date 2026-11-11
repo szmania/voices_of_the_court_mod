@@ -98,4 +98,6 @@ votc_huixin_titlenpcltr:0 "来自[GetGlobalVariable('message_second_scope_npcltr
  votc_ce_initiative_opt_whisper_read_last:0 "阅读上一份记录"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "重新打开最近的耳语录报告。"
  votc_ce_initiative_opt_incoming_clear:0 "清除传入信件槽位"
+votc_ce_initiative_opt_open_chronicle:0 "打开宫廷编年史"
+votc_ce_initiative_opt_open_chronicle_tooltip:0 "打开宫廷编年史(编年史官)窗口"
  votc_ce_initiative_opt_incoming_details:0 "详细信件设置"

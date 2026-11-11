@@ -98,4 +98,6 @@ votc_huixin_titlenpcltr:0 "[GetGlobalVariable('message_second_scope_npcltr').Cha
  votc_ce_initiative_opt_whisper_read_last:0 "마지막 장부 읽기"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "가장 최근의 속삭임 장부 보고서를 다시 엽니다."
  votc_ce_initiative_opt_incoming_clear:0 "수신 편지 슬롯 지우기"
+votc_ce_initiative_opt_open_chronicle:0 "궁정 연대기 열기"
+votc_ce_initiative_opt_open_chronicle_tooltip:0 "궁정 연대기(궁정 역사가) 창 열기"
  votc_ce_initiative_opt_incoming_details:0 "상세 편지 설정"

@@ -98,4 +98,6 @@ votc_huixin_titlenpcltr:0 "[GetGlobalVariable('message_second_scope_npcltr').Cha
  votc_ce_initiative_opt_whisper_read_last:0 "最後の帳簿を読む"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "最新の囁き帳の報告を再び開きます。"
  votc_ce_initiative_opt_incoming_clear:0 "受信レタースロットをクリア"
+votc_ce_initiative_opt_open_chronicle:0 "宮廷年代記を開く"
+votc_ce_initiative_opt_open_chronicle_tooltip:0 "宮廷年代記(宮廷歴史家)ウィンドウを開く"
  votc_ce_initiative_opt_incoming_details:0 "詳細な手紙設定"

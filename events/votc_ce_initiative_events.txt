@@ -389,6 +389,14 @@ votc_ce_initiative.100 = {
 		trigger_event = votc_ce_initiative.210
 	}
 	option = {
+
+	option = {
+		name = votc_ce_initiative_opt_open_chronicle
+		custom_tooltip = votc_ce_initiative_opt_open_chronicle_tooltip
+		trigger = { }
+		trigger_event = votc_chronicle_event.9004
+}
+}
 		name = votc_ce_initiative_opt_release_battle_reports
 		custom_tooltip = votc_ce_initiative_opt_release_battle_reports_tooltip
 		trigger_event = votc_ce_initiative.201

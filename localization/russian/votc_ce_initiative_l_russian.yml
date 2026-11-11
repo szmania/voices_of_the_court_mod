@@ -98,4 +98,6 @@ votc_huixin_titlenpcltr:0 "Письмо от [GetGlobalVariable('message_second_
  votc_ce_initiative_opt_whisper_read_last:0 "Прочитать последнюю книгу"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Снова открыть самый свежий отчёт Шепчущей книги."
  votc_ce_initiative_opt_incoming_clear:0 "Очистить слоты входящих писем"
+votc_ce_initiative_opt_open_chronicle:0 "Открыть летопись двора"
+votc_ce_initiative_opt_open_chronicle_tooltip:0 "Открыть окно летописи двора (летописца двора)"
  votc_ce_initiative_opt_incoming_details:0 "Подробные настройки писем"

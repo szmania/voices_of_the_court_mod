@@ -98,4 +98,6 @@ votc_huixin_titlenpcltr:0 "List od [GetGlobalVariable('message_second_scope_npcl
  votc_ce_initiative_opt_whisper_read_last:0 "Przeczytaj ostatni rejestr"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Ponownie otworz najnowszy raport szeptanego rejestru."
  votc_ce_initiative_opt_incoming_clear:0 "Wyczyść sloty listów przychodzących"
+votc_ce_initiative_opt_open_chronicle:0 "Otwórz Kronikę Dworu"
+votc_ce_initiative_opt_open_chronicle_tooltip:0 "Otwórz okno Kroniki Dworu (Kronikarza Dworu)"
  votc_ce_initiative_opt_incoming_details:0 "Szczegółowe ustawienia listów"

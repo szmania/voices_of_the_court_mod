@@ -98,4 +98,6 @@ votc_huixin_titlenpcltr:0 "Carta de [GetGlobalVariable('message_second_scope_npc
  votc_ce_initiative_opt_whisper_read_last:0 "Leer el ultimo registro"
  votc_ce_initiative_opt_whisper_read_last_tooltip:0 "Volver a abrir el informe mas reciente del registro de susurros."
  votc_ce_initiative_opt_incoming_clear:0 "Borrar ranuras de cartas entrantes"
+votc_ce_initiative_opt_open_chronicle:0 "Abrir Crónica de la Corte"
+votc_ce_initiative_opt_open_chronicle_tooltip:0 "Abrir la ventana de la Crónica de la Corte (Historiador de la Corte)"
  votc_ce_initiative_opt_incoming_details:0 "Ajustes detallados de cartas"
