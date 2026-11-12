@@ -391,8 +391,7 @@ votc_ce_initiative.100 = {
 	option = {
 		name = votc_ce_initiative_opt_open_chronicle
 		custom_tooltip = votc_ce_initiative_opt_open_chronicle_tooltip
-		trigger = { }
-		trigger_event = votc_chronicle_event.9004
+		votc_chronicle_manual_tick_effect = yes
 	}
 	option = {
 		name = votc_ce_initiative_opt_release_battle_reports
