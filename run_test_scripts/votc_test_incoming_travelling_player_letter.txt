@@ -1,5 +1,5 @@
 ﻿# VOTC incoming letter test: letter to travelling player.
-# Console command: run votc_test_incoming_travelling_player_letter.txt
+# Console command: run votc_ce_test_incoming_travelling_player_letter.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 # ROOT is the player character. The legacy filename is retained for convenience,
 # but travel letters are now part of the single family_letter category. This

@@ -1,5 +1,5 @@
 ﻿# VOTC incoming letter test: pilgrimage tales.
-# Console command: run votc_test_incoming_pilgrimage.txt
+# Console command: run votc_ce_test_incoming_pilgrimage.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 # Selects a family member who has recently completed a travel plan.
 

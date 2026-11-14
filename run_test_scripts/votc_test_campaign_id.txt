@@ -1,6 +1,6 @@
 ﻿# VOTC campaign identity generation test.
 # Copy this file to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
-# Run this from the CK3 console with: run votc_test_campaign_id.txt
+# Run this from the CK3 console with: run votc_ce_test_campaign_id.txt
 #
 # WARNING: running this test writes to global variables in the current save.
 # The corrupt-detection phase saves and restores segment `a` so the save is

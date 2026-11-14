@@ -1,5 +1,5 @@
 ﻿# VOTC native Great Project incoming-letter test.
-# Console command: run votc_test_incoming_great_project.txt
+# Console command: run votc_ce_test_incoming_great_project.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 # Requires at least one CK3 Great Project that the player owns, founded, or
 # contributed to. Clears only VOTC report milestones, then runs the same

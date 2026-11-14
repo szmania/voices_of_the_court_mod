@@ -1,6 +1,6 @@
 ﻿# VOTC incoming letter test: siege report.
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
-# Console command: run votc_test_incoming_siege_letter.txt
+# Console command: run votc_ce_test_incoming_siege_letter.txt
 # ROOT is the player character. Searches the player's armies for one currently
 # besieging and, if found, triggers a siege_report incoming letter from the
 # army commander, bypassing the monthly probability gate but going through the

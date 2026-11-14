@@ -1,5 +1,5 @@
 ﻿# VOTC incoming letter test: ally call for aid.
-# Console command: run votc_test_incoming_ally_call.txt
+# Console command: run votc_ce_test_incoming_ally_call.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 # Requires the player to be allied with a valid AI character.
 # Selects a random rival of the recipient as the enemy and sets up the war

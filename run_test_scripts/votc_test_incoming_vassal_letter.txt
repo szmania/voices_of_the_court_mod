@@ -1,6 +1,6 @@
 ﻿# VOTC incoming letter test: vassal memorial.
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
-# Console command: run votc_test_incoming_vassal_letter.txt
+# Console command: run votc_ce_test_incoming_vassal_letter.txt
 # ROOT is the player character. Triggers a vassal_memorial incoming letter
 # from a random valid vassal, bypassing the yearly probability gate but going
 # through the full slot/log/bridge/arrival/cleanup pipeline. Requires the

@@ -1,6 +1,6 @@
 # The Whisper Ledger - manual test script (VOTC-195).
 # Copy this file to: C:\Users\<you>\Documents\Paradox Interactive\Crusader Kings III\run
-# Run it from the CK3 console with: run votc_test_whisper.txt
+# Run it from the CK3 console with: run votc_ce_test_whisper.txt
 #
 # It fires the intake event directly, so the whole pipeline can be exercised
 # without the desktop app: gather -> tag -> log -> request -> (reply) -> report.

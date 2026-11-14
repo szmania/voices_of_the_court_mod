@@ -1,6 +1,6 @@
 ﻿# VOTC checkpoint token generation test.
 # Copy this file to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
-# Run this from the CK3 console with: run votc_test_checkpoint_token.txt
+# Run this from the CK3 console with: run votc_ce_test_checkpoint_token.txt
 #
 # Verifies that votc_generate_pending_checkpoint_token_effect produces a
 # non-zero 29-bit token. The token starts at 1 and appends 28 random bits via

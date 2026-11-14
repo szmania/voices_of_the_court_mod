@@ -1,5 +1,5 @@
 ﻿# VOTC incoming letter test: natural disaster report.
-# Console command: run votc_test_incoming_natural_disaster.txt
+# Console command: run votc_ce_test_incoming_natural_disaster.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 
 save_scope_as = actor

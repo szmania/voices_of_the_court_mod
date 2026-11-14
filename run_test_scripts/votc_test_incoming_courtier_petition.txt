@@ -1,5 +1,5 @@
 ﻿# VOTC incoming letter test: courtier petition.
-# Console command: run votc_test_incoming_courtier_petition.txt
+# Console command: run votc_ce_test_incoming_courtier_petition.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 # ROOT is the player character. Triggers a courtier_petition incoming letter
 # from a random valid courtier, bypassing the quarterly probability gate but

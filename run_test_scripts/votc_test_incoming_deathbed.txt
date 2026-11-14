@@ -1,5 +1,5 @@
 ﻿# VOTC incoming letter test: deathbed/mourning letter.
-# Console command: run votc_test_incoming_deathbed.txt
+# Console command: run votc_ce_test_incoming_deathbed.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 # Selects a deceased close family member and a mourning author.
 # Defaults to the deceased-as-sender (natural death) branch. To test the

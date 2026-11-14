@@ -1,5 +1,5 @@
 ﻿# VOTC incoming letter test: close-family letter.
-# Console command: run votc_test_incoming_family_letter.txt
+# Console command: run votc_ce_test_incoming_family_letter.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 # ROOT is the player character. Triggers a family_letter from a valid spouse
 # or close blood relative without a location restriction. It bypasses the

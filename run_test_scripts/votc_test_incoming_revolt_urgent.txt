@@ -1,5 +1,5 @@
 ﻿# VOTC incoming letter test: revolt urgent.
-# Console command: run votc_test_incoming_revolt_urgent.txt
+# Console command: run votc_ce_test_incoming_revolt_urgent.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 # Ideally run while a peasant/populist revolt war is active against the player or a vassal.
 # Sets up scope:revolt_defender (the player), scope:enemy (a random rival), and the

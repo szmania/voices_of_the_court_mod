@@ -24,7 +24,7 @@ The P2 check covers BOM, balanced blocks, event/effect/localization references, 
 Install this checkout into an independent CK3 test mod directory, create its launcher `.mod` entry, enable that entry in a test playset and load a disposable save. Copy the two `run_test_scripts/votc_test_chronicle*.txt` scripts into CK3's `run` directory.
 
 1. Start the paired app. Use the **Open Court Chronicle** decision to open the manager without generating automatically.
-2. Run `run votc_test_chronicle.txt` or invoke the individual quarterly/yearly/manual effects from the console. Verify `VOTC:CHRONICLE_MEMORY` start/memory/participant/end records and the matching manager/tick request ID.
+2. Run `run votc_ce_test_chronicle.txt` or invoke the individual quarterly/yearly/manual effects from the console. Verify `VOTC:CHRONICLE_MEMORY` start/memory/participant/end records and the matching manager/tick request ID.
 3. Generate an entry from a conversation, ordinary letter, incoming letter and player memory; verify dates, source text and the active timeline.
 4. Disable automatic generation, then select quarterly/yearly in the app and verify matching pulses. Vanilla playable pulses are staggered by birthday; they are not calendar-boundary timers.
 5. Retry a failed request, regenerate after late sources arrive, and load a sibling save. Material from an abandoned branch must stay hidden.

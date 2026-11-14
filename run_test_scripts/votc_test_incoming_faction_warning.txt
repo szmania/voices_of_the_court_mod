@@ -1,5 +1,5 @@
 ﻿# VOTC incoming letter test: faction warning.
-# Console command: run votc_test_incoming_faction_warning.txt
+# Console command: run votc_ce_test_incoming_faction_warning.txt
 # Copy to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
 # Requires the player to be targeted by a dangerous faction.
 

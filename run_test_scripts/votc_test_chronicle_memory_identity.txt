@@ -7,7 +7,7 @@
 #   4. that description is dynamic text (compare output before/after a title change)
 #
 # Copy this file to: C:\Users\A\Documents\Paradox Interactive\Crusader Kings III\run
-# Run this from the CK3 console with: run votc_test_chronicle_memory_identity.txt
+# Run this from the CK3 console with: run votc_ce_test_chronicle_memory_identity.txt
 # ROOT is the player character. Check Documents\Paradox Interactive\Crusader Kings III\logs\debug.log
 # for lines prefixed with VOTC:MEMORY_SPIKE.
 #
