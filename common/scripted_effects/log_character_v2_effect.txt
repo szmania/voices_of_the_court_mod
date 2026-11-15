@@ -2,7 +2,7 @@
 	#debug_log = log_character
 	log_characterr = yes
 
-log_relations = yes
+    log_relations = yes
 
 	log_opinion_breakdown = yes
 
