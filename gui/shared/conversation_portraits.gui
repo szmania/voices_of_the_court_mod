@@ -8,6 +8,7 @@
             tooltip_visible = yes
             # Tooltip displays character name, title, and relationship to player
             tooltip = "[Character.GetFullName]\n[Character.GetPrimaryTitle.GetName]\n[Character.GetRelationToString(GetPlayer)]"
+            tooltip_offset = { 0 -50 }
             parentanchor = bottom|hcenter
             size = { 690 870 }
             using = portrait_base
@@ -29,6 +30,7 @@
         portrait_button = {
             tooltip_visible = yes
             # Tooltip displays character name, title, and relationship to player
+            tooltip_offset = { 0 -50 }
             tooltip = "[Character.GetFullName]\n[Character.GetPrimaryTitle.GetName]\n[Character.GetRelationToString(GetPlayer)]"
             parentanchor = bottom|hcenter
             size = { 690 1070 }
@@ -47,9 +49,9 @@
         size = {100 870 }
         tooltip_visible = yes
         using = Portrait_Background_Glows
+            tooltip_offset = { 0 -50 }
         portrait_button = {
             tooltip_visible = yes
-            # Tooltip displays character name, title, and relationship to player
             tooltip = "[Character.GetFullName]\n[Character.GetPrimaryTitle.GetName]\n[Character.GetRelationToString(GetPlayer)]"
             parentanchor = bottom|hcenter
             size = { 690 1070 }
