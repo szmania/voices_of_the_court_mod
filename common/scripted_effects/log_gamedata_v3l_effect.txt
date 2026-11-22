@@ -23,10 +23,16 @@
 			target = this
 		}
 	}
-    scope:actor = {
-		add_to_global_variable_list = {
-			name = mcc_characters_list_v2
-			target = this
+	# Self-talk only: add the player (scope:actor) to the portrait list only when
+	# actor == recipient, so one-on-one conversations show just the NPC portrait
+	# while self-talk still shows the player portrait.
+	if = {
+		limit = { scope:actor = scope:recipient }
+		scope:actor = {
+			add_to_global_variable_list = {
+				name = mcc_characters_list_v2
+				target = this
+			}
 		}
 	}
 
