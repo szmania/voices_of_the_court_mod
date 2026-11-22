@@ -106,7 +106,7 @@ talk_scene_alley_day = {
 								geographical_region = world_europe_west_iberia
 								faith
 								? = {
-									religion = religion:islam_religion
+									religion ?= religion:islam_religion
 								}
 							}
 							# Steppe mena fallback
@@ -214,19 +214,19 @@ talk_scene_temple = {
 					NOR = {
 						religion
 						? = {
-							this = religion:tengrism_religion
+							this ?= religion:tengrism_religion
 						}
 						religion
 						? = {
-							this = religion:magyar_religion
+							this ?= religion:magyar_religion
 						}
 						religion
 						? = {
-							this = religion:siberian_religion
+							this ?= religion:siberian_religion
 						}
 						religion
 						? = {
-							this = religion:kamuyism_religion
+							this ?= religion:kamuyism_religion
 						}
 					}
 				}
@@ -242,22 +242,22 @@ talk_scene_temple = {
 						government_has_flag = government_is_nomadic
 						religion
 						? = {
-							this = religion:tengrism_religion
+							this ?= religion:tengrism_religion
 						}
 						religion
 						? = {
-							this = religion:magyar_religion
+							this ?= religion:magyar_religion
 						}
 						religion
 						? = {
-							this = religion:siberian_religion
+							this ?= religion:siberian_religion
 						}
 						religion
 						? = {
-							this = religion:kamuyism_religion
+							this ?= religion:kamuyism_religion
 						}
 						AND = {
-							religion = religion:buddhism_religion
+							religion ?= religion:buddhism_religion
 							root.location
 							? = {
 								OR = {
@@ -269,7 +269,7 @@ talk_scene_temple = {
 							}
 						}
 						AND = {
-							religion = religion:buddhism_religion
+							religion ?= religion:buddhism_religion
 							root.location
 							? = {
 								OR = {
@@ -292,7 +292,7 @@ talk_scene_temple = {
 		trigger = {
 			location = {
 				province_owner = {
-					primary_title = title:e_byzantium
+					primary_title ?= title:e_byzantium
 					capital_county
 					? = title:c_byzantion
 				}
@@ -304,7 +304,7 @@ talk_scene_temple = {
 		trigger = {
 			location = {
 				province_owner = {
-					religion = religion:zoroastrianism_religion
+					religion ?= religion:zoroastrianism_religion
 				}
 			}
 		}
@@ -336,7 +336,7 @@ talk_scene_temple = {
 			location = {
 				province_owner = {
 					faith = {
-						religion = religion:christianity_religion
+						religion ?= religion:christianity_religion
 					}
 				}
 			}
@@ -348,7 +348,7 @@ talk_scene_temple = {
 			location = {
 				province_owner = {
 					faith = {
-						religion = religion:islam_religion
+						religion ?= religion:islam_religion
 					}
 				}
 			}
@@ -359,7 +359,7 @@ talk_scene_temple = {
 		trigger = {
 			location = {
 				province_owner = {
-					religion = religion:germanic_religion
+					religion ?= religion:germanic_religion
 				}
 			}
 		}
@@ -376,7 +376,7 @@ talk_scene_temple = {
 								OR = {
 									is_in_family = rf_eastern
 									is_in_family = rf_sinitic
-									this = religion:shintoism_religion
+									this ?= religion:shintoism_religion
 								}
 							}
 						}
@@ -1305,7 +1305,7 @@ talk_scene_courtyard = {
 			location = {
 				province_owner = {
 					root.location = {
-						county = title:c_byzantion
+						county ?= title:c_byzantion
 					}
 				}
 			}
@@ -1574,7 +1574,10 @@ talk_scene_terrain_travel = {
 			location = {
 				OR = {
 					terrain = terraced_hills
+					AND = {
+						has_tgp_dlc_trigger = yes
 					has_building_or_higher = paddy_fields_01
+					}
 				}
 			}
 		}
@@ -2050,7 +2053,10 @@ talk_scene_farmland = {
 			? = {
 				OR = {
 					terrain = terraced_hills
+				AND = {
+					has_tgp_dlc_trigger = yes
 					has_building_or_higher = paddy_fields_01
+				}
 				}
 			}
 		}
@@ -2796,7 +2802,7 @@ talk_scene_market = {
 								geographical_region = world_europe_west_iberia
 								faith
 								? = {
-									religion = religion:islam_religion
+									religion ?= religion:islam_religion
 								}
 							}
 							steppe_building_gfx_use_indian_trigger = yes
@@ -2959,7 +2965,7 @@ talk_scene_village = {
 						geographical_region = world_europe_west_iberia
 						faith
 						? = {
-							religion = religion:islam_religion
+							religion ?= religion:islam_religion
 						}
 					}
 					AND = {
@@ -4218,7 +4224,7 @@ talk_scene_throne_room = {
 			location = {
 				province_owner = {
 					tgp_has_ceremonial_liege_title_trigger = no
-					primary_title = title:e_japan
+					primary_title ?= title:e_japan
 				}
 			}
 		}
@@ -4253,9 +4259,14 @@ talk_scene_throne_room = {
 				province_owner = {
 					government_has_flag = government_is_nomadic
 					OR = {
+					AND = {
+						has_mpo_dlc_trigger = yes
+						OR = {
 						has_realm_law = nomadic_authority_3
 						has_realm_law = nomadic_authority_4
 						has_realm_law = nomadic_authority_5
+						}
+					}
 						has_trait = greatest_of_khans
 					}
 				}
@@ -4271,8 +4282,13 @@ talk_scene_throne_room = {
 						AND = {
 							government_has_flag = government_is_nomadic
 							NOR = {
+							AND = {
+								has_mpo_dlc_trigger = yes
+								OR = {
 								has_realm_law = nomadic_authority_4
 								has_realm_law = nomadic_authority_5
+								}
+							}
 								has_trait = greatest_of_khans
 							}
 						}
@@ -4349,7 +4365,7 @@ talk_scene_throne_room = {
 						root.location
 						? = province:b_constantinople
 						AND = {
-							primary_title = title:e_byzantium
+							primary_title ?= title:e_byzantium
 							title:c_byzantion = {
 								any_de_jure_top_liege = {
 									this = root
@@ -5688,7 +5704,7 @@ talk_scene_tournament = {
 						geographical_region = world_europe_west_iberia
 						root = {
 							faith = {
-								religion = religion:islam_religion
+								religion ?= religion:islam_religion
 							}
 						}
 					}
@@ -5723,7 +5739,7 @@ talk_scene_holy_site = {
 		reference = "event_scenes/ep2_holysite_jerusalem.dds"
 		trigger = {
 			root.location = {
-				county = title:c_jerusalem
+				county ?= title:c_jerusalem
 			}
 		}
 	}
@@ -5731,7 +5747,7 @@ talk_scene_holy_site = {
 		reference = "event_scenes/ep2_holysite_mecca.dds"
 		trigger = {
 			root.location = {
-				county = title:c_mecca
+				county ?= title:c_mecca
 			}
 		}
 	}
@@ -5739,7 +5755,7 @@ talk_scene_holy_site = {
 		reference = "event_scenes/ep3_hagia_sophia.dds"
 		trigger = {
 			root.location = {
-				county = title:c_byzantion
+				county ?= title:c_byzantion
 			}
 		}
 	}
@@ -5759,13 +5775,13 @@ talk_scene_holy_site = {
 				OR = {
 					religion = {
 						OR = {
-							this = religion:tengrism_religion
-							this = religion:magyar_religion
-							this = religion:siberian_religion
+							this ?= religion:tengrism_religion
+							this ?= religion:magyar_religion
+							this ?= religion:siberian_religion
 						}
 					}
 					AND = {
-						religion = religion:buddhism_religion
+						religion ?= religion:buddhism_religion
 						OR = {
 							geographical_region = world_steppe_east
 							geographical_region = world_steppe_central
@@ -5774,7 +5790,7 @@ talk_scene_holy_site = {
 						}
 					}
 					AND = {
-						religion = religion:buddhism_religion
+						religion ?= religion:buddhism_religion
 						OR = {
 							geographical_region = world_tibet
 							geographical_region = world_steppe_tarim
@@ -5799,13 +5815,13 @@ talk_scene_holy_site = {
 		trigger = {
 			root.location
 			? = {
-				religion = religion:christianity_religion
+				religion ?= religion:christianity_religion
 				OR = {
 					AND = {
 						culture = {
 							has_graphical_mediterranean_culture_group_trigger = yes
 						}
-						faith = faith:orthodox
+						faith ?= faith:orthodox
 					}
 					geographical_region = graphical_mena
 					geographical_region = graphical_india
@@ -6718,7 +6734,7 @@ talk_scene_involved_activity = {
 					? = {
 						has_activity_type = activity_pilgrimage
 					}
-					religion = religion:zoroastrianism_religion
+					religion ?= religion:zoroastrianism_religion
 				}
 			}
 		}
@@ -6738,13 +6754,13 @@ talk_scene_involved_activity = {
 					OR = {
 						religion = {
 							OR = {
-								this = religion:tengrism_religion
-								this = religion:magyar_religion
-								this = religion:siberian_religion
+								this ?= religion:tengrism_religion
+								this ?= religion:magyar_religion
+								this ?= religion:siberian_religion
 							}
 						}
 						AND = {
-							religion = religion:buddhism_religion
+							religion ?= religion:buddhism_religion
 							involved_activity = {
 								activity_location = {
 									OR = {
@@ -6757,7 +6773,7 @@ talk_scene_involved_activity = {
 							}
 						}
 						AND = {
-							religion = religion:buddhism_religion
+							religion ?= religion:buddhism_religion
 							involved_activity = {
 								activity_location = {
 									OR = {
@@ -6799,12 +6815,12 @@ talk_scene_involved_activity = {
 					? = {
 						has_activity_type = activity_pilgrimage
 					}
-					religion = religion:christianity_religion
+					religion ?= religion:christianity_religion
 					involved_activity = {
 						activity_location
 						? = {
 							OR = {
-								faith = faith:orthodox
+								faith ?= faith:orthodox
 								geographical_region = graphical_mena
 								geographical_region = graphical_india
 								geographical_region = world_europe_south_east
@@ -7493,7 +7509,7 @@ talk_scene_survey = {
 		reference = "event_scenes/ep3_constantinople.dds"
 		trigger = {
 			root.location = {
-				county = title:c_byzantion
+				county ?= title:c_byzantion
 			}
 		}
 	}
